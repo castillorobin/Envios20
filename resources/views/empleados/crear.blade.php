@@ -17,9 +17,8 @@
             </ul>
         </div>
         
-        <div class="container mt-5">
-            <h3>Usuario</h3>
-            <form>
+        <form id="formularios">
+            <div class="container mt-5">
                 <div class="mb-3">
                     <label for="nombre" class="form-label">Nombre</label>
                     <input type="text" class="form-control" id="nombre" required>
@@ -40,12 +39,9 @@
                         <input type="password" class="form-control" id="confirmar_contrasena" required>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
 
-        <div class="container mt-5">
-            <h3>Datos Personales</h3>
-            <form>
+            <div class="container mt-5">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="foto" class="form-label">Subir Foto</label>
@@ -79,12 +75,9 @@
                         <textarea class="form-control" id="direccion" required></textarea>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
 
-        <div class="container mt-5">
-            <h3>Datos Laborales</h3>
-            <form>
+            <div class="container mt-5">
                 <div class="row">
                     <div class="col-md-6 mb-3">
                         <label for="cargo" class="form-label">Cargo</label>
@@ -113,11 +106,24 @@
                     <label for="nota" class="form-label">Nota</label>
                     <textarea class="form-control" id="nota" required></textarea>
                 </div>
+            </div>
+
+            <div class="container mt-5">
                 <button type="submit" class="btn btn-primary">Agregar</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </x-default-layout>
 
-    <script src="assets/plugins/custom/formrepeater/formrepeater.bundle.js"></script>
+    <script>
+        document.getElementById('formularios').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Aquí puedes obtener los datos de los tres formularios y enviarlos al servidor
+            var usuarioFormData = new FormData(document.getElementById('usuarioForm'));
+            var datosPersonalesFormData = new FormData(document.getElementById('datosPersonalesForm'));
+            var datosLaboralesFormData = new FormData(document.getElementById('datosLaboralesForm'));
+
+            // Luego, puedes enviar los datos al servidor usando fetch() u otra técnica de tu elección
+        });
+    </script>
 </body>
 </html>
