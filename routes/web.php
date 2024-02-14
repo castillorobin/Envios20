@@ -22,6 +22,13 @@ Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['au
 Route::get('/error', function () {
     abort(500);
 });
+Route::get('/empleados', function () {
+    return view('empleados.empleados');
+});
+
+Route::get('/crear', function () {
+    return view('empleados.crear');
+});
 
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 
