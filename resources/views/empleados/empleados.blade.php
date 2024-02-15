@@ -36,12 +36,12 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Nombre del empleado</td>
-                        <td>Correo del empleado</td>
-                        <td>Teléfono del empleado</td>
-                        <td>Fecha de nacimiento del empleado</td>
-                        <td>DUI del empleado</td>
-                        <td>Dirección del empleado</td>
+                        <td>Nombre</td>
+                        <td>Correo</td>
+                        <td>Teléfono</td>
+                        <td>Fecha</td>
+                        <td>DUI</td>
+                        <td>Dirección</td>
                         <td>
                             <a href="#" class="btn btn-sm btn-primary"><i class="fas fa-edit"></i></a>
                             <a href="#" class="btn btn-sm btn-danger"><i class="fas fa-trash-alt"></i></a>
