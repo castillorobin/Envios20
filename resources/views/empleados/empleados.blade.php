@@ -9,7 +9,7 @@
 <body>
     <x-default-layout>
         <div class="menu-item px-3">
-        <div class="menu-content d-flex align-items-center px-3">
+        <div class="menu-content d-flex align-items-center px-5">
             <div class="symbol symbol-150px me-5">
                 <img alt="Logo" src="assets/media/avatars/300-1.jpg" style="width: 150px; height: 150px;" />
             </div>
@@ -32,36 +32,36 @@
             </div>
         </div>
     </div>
-    <div>
-    <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold mb-5 mb-xl-10">
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5 active" href="../../demo1/dist/account/overview.html">Overview</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/settings.html">Settings</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/security.html">Security</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/activity.html">Activity</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/billing.html">Billing</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/statements.html">Statements</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/referrals.html">Referrals</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/api-keys.html">API Keys</a>
-        </li>
-        <li class="nav-item mt-2">
-            <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/logs.html">Logs</a>
-        </li>
-    </ul>
+    <div  class="d-flex px-5">
+        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold mb-5 mb-xl-10">
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5 active" href="../../demo1/dist/account/overview.html">Overview</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/settings.html">Settings</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/security.html">Security</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/activity.html">Activity</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/billing.html">Billing</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/statements.html">Statements</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/referrals.html">Referrals</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/api-keys.html">API Keys</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/logs.html">Logs</a>
+            </li>
+        </ul>
 </div>
 
     
