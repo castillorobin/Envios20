@@ -135,3 +135,6 @@
     <script src="{{ asset('assets/js/validaciones.js') }}"></script>
 </body>
 </html>
+    
+    
+
