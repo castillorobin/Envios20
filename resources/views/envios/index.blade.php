@@ -2,6 +2,18 @@
 
 <x-default-layout>
 
+<script>
+  function actualizar(opcion){
+    var data = opcion.value;
+
+   //window.location = "http://209.145.56.57/pedido/indexdigitadofiltro/" + opcion.value; 
+
+    window.location = "http://127.0.0.1:8000/envio/indexdigitadofiltro/" + opcion.value;
+
+        
+    }
+</script>
+
 <div class="app-content flex-column-fluid">
 
 <div class="app-container container-xxl">
@@ -14,7 +26,7 @@
 
 
 
-<select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)">
+<select class="form-select" data-control="select2" id="comer" name="comer" onchange="actualizar(this)">
 <option value="">Buscar Comercio</option>
 
 @for($i=0;  $i< count($vendedores); $i++ )
