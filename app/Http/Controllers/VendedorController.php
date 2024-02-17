@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Envio;
-use Illuminate\Http\Request;
 use App\Models\Vendedor;
+use Illuminate\Http\Request;
 
-class EnvioController extends Controller
+class VendedorController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-
-        $vendedores = Vendedor::all();
-        return view('envios.index', compact('vendedores'));
-
+        //
     }
 
     /**
@@ -38,7 +34,7 @@ class EnvioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Envio $envio)
+    public function show(Vendedor $vendedor)
     {
         //
     }
@@ -46,7 +42,7 @@ class EnvioController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Envio $envio)
+    public function edit(Vendedor $vendedor)
     {
         //
     }
@@ -54,7 +50,7 @@ class EnvioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Envio $envio)
+    public function update(Request $request, Vendedor $vendedor)
     {
         //
     }
@@ -62,7 +58,7 @@ class EnvioController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Envio $envio)
+    public function destroy(Vendedor $vendedor)
     {
         //
     }

@@ -17,6 +17,10 @@
 <select class="form-select" id="comer" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer" onchange="actualizar(this)">
 <option value="">Buscar Comercio</option>
 
+@for($i=0;  $i< count($vendedores); $i++ )
+                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
+       
+                        @endfor
   
 </select>
 
