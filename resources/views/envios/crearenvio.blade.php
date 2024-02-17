@@ -25,7 +25,7 @@
             <!--begin:::Tab item-->
             <li class="nav-item" role="presentation">
                 <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_store" aria-selected="false" role="tab" tabindex="-1">
-                    <i class="ki-duotone ki-shop fs-2 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                    Store
+                    <i class="ki-duotone ki-shop fs-2 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i> Personalizado Departamental
                 </a>
             </li>
             <!--end:::Tab item-->
@@ -33,7 +33,7 @@
             <!--begin:::Tab item-->
             <li class="nav-item" role="presentation">
                 <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_localization" aria-selected="false" role="tab" tabindex="-1">
-                    <i class="ki-duotone ki-compass fs-2 me-2"><span class="path1"></span><span class="path2"></span></i>                    Localization
+                    <i class="ki-duotone ki-compass fs-2 me-2"><span class="path1"></span><span class="path2"></span></i>                   Punto fijo
                 </a>
             </li>
             <!--end:::Tab item-->
@@ -41,17 +41,13 @@
             <!--begin:::Tab item-->
             <li class="nav-item" role="presentation">
                 <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_products" aria-selected="false" role="tab" tabindex="-1">
-                    <i class="ki-duotone ki-package fs-2 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>                    Products
+                    <i class="ki-duotone ki-package fs-2 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>                  Casillero
                 </a>
             </li>
             <!--end:::Tab item-->
 
             <!--begin:::Tab item-->
-            <li class="nav-item" role="presentation">
-                <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_customers" aria-selected="false" role="tab" tabindex="-1">
-                    <i class="ki-duotone ki-people fs-2 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                    Customers
-                </a>
-            </li>
+            
             <!--end:::Tab item-->
         </ul>
         <!--end:::Tabs-->
