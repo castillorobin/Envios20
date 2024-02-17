@@ -65,13 +65,24 @@
 
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
-					<span class="menu-title">Digitador</span>
+					<span class="menu-title">Gestión de envios</span>
 					<span class="menu-arrow"></span>
 				</span>
 				<!--end:Menu link-->
 				<!--begin:Menu sub-->
 				<div class="menu-sub menu-sub-accordion">
 					<!--begin:Menu item-->
+					<div class="menu-item">
+					<a class="menu-link" href="/envio/crear">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Crear envios</span>
+						</a>
+						<!--end:Menu link-->
+					</div>
+
+
 					<div class="menu-item">
 						<!--begin:Menu link-->
 						<a class="menu-link" href="/envio">
@@ -84,7 +95,8 @@
 					</div>
 					<!--end:Menu item-->
 					<!--begin:Menu item-->
-					
+						<!--begin:Menu link-->
+						
 
 
 

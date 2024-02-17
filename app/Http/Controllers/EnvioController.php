@@ -18,6 +18,13 @@ class EnvioController extends Controller
         return view('envios.index', compact('vendedores'));
 
     }
+    public function crearenvio()
+    {
+
+        $vendedores = Vendedor::all();
+        return view('envios.crearenvio', compact('vendedores'));
+
+    }
 
     /**
      * Show the form for creating a new resource.
