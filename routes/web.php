@@ -33,3 +33,5 @@ Route::get('/crear', function () {
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
+
+Route::get('envio', [App\Http\Controllers\EnvioController::class, 'index'] )->name('index') ;
