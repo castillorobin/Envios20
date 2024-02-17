@@ -8,26 +8,8 @@
 </head>
 <body>
     <x-default-layout>
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a href="/empleados" class="btn btn-link btn-color-gray-500 btn-active-color-primary me-5 mb-2">Empleados</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/crear" class="btn btn-link btn-color-gray-500 btn-active-color-primary me-5 mb-2">Agregar</a>
-                </li>
-            </ul>
-        </div>
-        <div class="border rounded">
-            <select id="kt_docs_select2_rich_content" class="form-select form-select-primary" name="empleado" data-placeholder="Seleccione un empleado">
-                <option></option>
-                <option value="0" data-kt-rich-content-subcontent="..." data-kt-rich-content-icon="assets/media/avatars/300-6.jpg">Option Label 1</option>
-                <option value="1" data-kt-rich-content-subcontent="..." data-kt-rich-content-icon="assets/media/avatars/300-6.jpg">Option Label 1</option>
-            </select>
-        </div>
-        <br>
         <div class="menu-item px-3">
-        <div class="menu-content d-flex align-items-center px-3">
+        <div class="menu-content d-flex align-items-center px-5">
             <div class="symbol symbol-150px me-5">
                 <img alt="Logo" src="assets/media/avatars/300-1.jpg" style="width: 150px; height: 150px;" />
             </div>
@@ -50,68 +32,131 @@
             </div>
         </div>
     </div>
-    <br>
-    <div class="table-responsive">
-        <table class="table table-striped gy-7 gs-7">
-            <thead>
-               <h1>Informacion del empleado</h1>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><b>Nombre completo</b></td>
-                    <td>John Doe</td>
-                </tr>
-                <tr>
-                    <td><b>Correo Electrónico</b></td>
-                    <td>johndoe@example.com</td>
-                </tr>
-                <tr>
-                    <td><b>Teléfono</b></td>
-                    <td>12345678</td>
-                </tr>
-                <tr>
-                    <td><b>WhatsApp</b></td>
-                    <td>12345678</td>
-                </tr>
-                <tr>
-                    <td><b>Fecha de Nacimiento</b></td>
-                    <td>01/01/1990</td>
-                </tr>
-                <tr>
-                    <td><b>DUI</b></td>
-                    <td>12345678-9</td>
-                </tr>
-                <tr>
-                    <td><b>Dirección</b></td>
-                    <td>123 Main St</td>
-                </tr>
-                <tr>
-                    <td><b>Cargo</b></td>
-                    <td>Desarrollador Web</td>
-                </tr>
-                <tr>
-                    <td><b>Fecha de Alta</b></td>
-                    <td>01/01/2022</td>
-                </tr>
-                <tr>
-                    <td><b>N° ISSS</b></td>
-                    <td>123456789</td>
-                </tr>
-                <tr>
-                    <td><b>N° AFP</b></td>
-                    <td>123456789012</td>
-                </tr>
-                <tr>
-                    <td><b>Agencia de Registro</b></td>
-                    <td>SSS</td>
-                </tr>
-                <tr>
-                    <td><b>Nota</b></td>
-                    <td>Lorem ipsum dolor sit amet</td>
-                </tr>
-            </tbody>
-        </table>
+    <div  class="d-flex px-5">
+        <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold mb-5 mb-xl-10">
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5 active" href="../../demo1/dist/account/overview.html">Overview</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/settings.html">Settings</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/security.html">Security</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/activity.html">Activity</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/billing.html">Billing</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/statements.html">Statements</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/referrals.html">Referrals</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/api-keys.html">API Keys</a>
+            </li>
+            <li class="nav-item mt-2">
+                <a class="nav-link text-active-primary ms-4 me-10 py-5" href="../../demo1/dist/account/logs.html">Logs</a>
+            </li>
+        </ul>
+</div>
+
+    
+											
+<div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+    <div class="card-header cursor-pointer">
+        <div class="card-title m-0">
+            <h3 class="fw-bold m-0">Información del empleado</h3>
+        </div>
+        <div class="card-toolbar">
+            <a href="#" class="btn btn-sm btn-primary">Editar</a>
+        </div>
     </div>
+    <div class="card-body p-9">
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Nombre completo</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">John Doe</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Correo Electrónico</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">johndoe@example.com</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Teléfono</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">12345678</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">WhatsApp</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">12345678</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Fecha de Nacimiento</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">01/01/1990</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">DUI</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">12345678-9</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Dirección</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">123 Main St</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Cargo</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">Desarrollador Web</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Fecha de Alta</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">01/01/2022</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">N° ISSS</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">123456789</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">N° AFP</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">123456789012</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Agencia de Registro</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">SSS</span>
+            </div>
+        </div>
+        <div class="row mb-7">
+            <label class="col-lg-4 fw-semibold text-muted">Nota</label>
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">Lorem ipsum dolor sit amet</span>
+            </div>
+        </div>
+    </div>
+</div>
+
     </x-default-layout>
     <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
