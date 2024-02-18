@@ -37,3 +37,4 @@ require __DIR__.'/auth.php';
 Route::get('envio', [App\Http\Controllers\EnvioController::class, 'index'] )->name('index') ;
 Route::get('envio/indexdigitadofiltro/{id}', [App\Http\Controllers\EnvioController::class, 'indexdigitadofiltro'] )->name('indexdigitadofiltro') ;
 Route::get('envio/crear', [App\Http\Controllers\EnvioController::class, 'crearenvio'] )->name('crearenvio') ;
+Route::get('empleado', [App\Http\Controllers\EmpleadoController::class, 'empleado'] )->name('empleado') ;

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Vendedor;
+use App\Models\Empleado;
 
 class EmpleadoController extends Controller
 {
@@ -13,6 +15,13 @@ class EmpleadoController extends Controller
     {
         //
     }
+
+    public function empleado()
+    {
+        $vendedores = Empleado::all();
+        return view('empleados.index', compact('vendedores'));
+    }
+
 
     /**
      * Show the form for creating a new resource.
