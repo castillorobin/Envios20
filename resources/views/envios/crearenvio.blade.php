@@ -1,13 +1,8 @@
-
-
 <x-default-layout>
-
-
 <style>
     label.required::after {
     content: none; /* Oculta el asterisco */
 }
-
 </style>
 <div class="app-content flex-column-fluid">
 

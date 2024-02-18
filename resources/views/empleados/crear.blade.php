@@ -3,138 +3,152 @@
 <head>
     <title>Empleados</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/perfil.css') }}">
     <style>
-    input.border-black {
-        border: 2px solid black;
-    }
-    </style>
+    label.required::after {
+    content: none; /* Oculta el asterisco */
+}
+</style>
 </head>
 <body>
     <x-default-layout>
-        <div class="container">
-            <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a href="/empleados" class="btn btn-link btn-color-gray-500 btn-active-color-primary me-5 mb-2">Empleados</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/crear" class="btn btn-link btn-color-gray-500 btn-active-color-primary me-5 mb-2">Agregar</a>
-                </li>
-            </ul>
+    
+<div class="card mb-5 mb-xl-10">
+<div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
+	<div class="card-title m-0">
+	    <h3 class="fw-bold m-0">Profile Details</h3>
+	</div>									
+</div>
+<div id="kt_account_settings_profile_details" class="collapse show">
+	<form id="kt_account_profile_details_form" class="form">
+		<div class="card-body border-top p-9">										
+		
+        
+		<div class="row mb-6">
+			<label class="col-lg-4 col-form-label required fw-semibold fs-6">Nombre</label>							
+			<div class="col-lg-8">
+                <div class="col-lg-10 fv-row">
+                    <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+                </div>  
+			</div>
+		</div>
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Correo Electrónico</label>
+            <div class="col-lg-8">
+                <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
+            </div>
         </div>
-        <form id="kt_docs_formvalidation_text" class="form" action="#" autocomplete="off">
-            <hr class="border-dark">
-            <h1>Datos Usuarios</h1>
-            <div class="fv-row mb-10">
-                <label class="required fw-semibold fs-6 mb-2">Nombre</label>
-                <input type="text" name="nombre" class="form-control border-black mb-3 mb-lg-0" placeholder="" value="" />
-            </div>
-            <div class="fv-row mb-10">
-                <label class="required fw-semibold fs-6 mb-2">Correo Electrónico</label>
-                <input type="email" name="correo" class="form-control border-black mb-3 mb-lg-0" placeholder="" value="" />
-            </div>
-            <div class="row">
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Contraseña</label>
-                    <input type="password" name="contrasena" class="form-control border-black mb-3 mb-lg-0" placeholder="" value="" />
-                </div>
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Confirmar Contraseña</label>           
-                    <input type="password" name="confirmar_contrasena" class="form-control border-black mb-3 mb-lg-0" placeholder="" value="" />
-                </div>
-            </div>
-            <hr class="border-dark">
-            <h1>Datos personales</h1>
-            <div class="fv-row mb-4">
-                <div class="col-md">
-                    <div class="input-group">
-                        <input type="file" class="form-control" accept="image/jpeg, image/png" name="photo" id="photo-upload" style="display: none;" required>
-                        <label for="photo-upload" class="input-group-text w-100 bg-dark text-white d-flex justify-content-center align-items-center" style="cursor: pointer;">
-                            <i class="fas fa-upload me-2"></i> Subir Foto
-                        </label>
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">contraseña</label>
+            <div class="col-lg-8">
+                <div class="row">
+                    <div class="col-lg-6 fv-row">
+                        <input type="password" name="password" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Password" />
+                    </div>
+                    <div class="col-lg-6 fv-row">
+                        <input type="password" name="confirm_password" class="form-control form-control-lg form-control-solid" placeholder="Confirm Password" />
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="fv-row  col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Teléfono</label>
-                    <div class="input-group">
-                        <span class="input-group-text border-black">+503</span>
-                        <input type="text" name="telefono" class="form-control border-black " id="telefono" placeholder="" value="" />
-                    </div>
-                </div>
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">WhatsApp</label>
-                    <div class="input-group">
-                        <span class="input-group-text border-black">+503</span>
-                        <input type="text" name="whatsapp" class="form-control border-black" id="whatsapp" placeholder="" value="" />
-                    </div>
-                </div>
+        </div>
+
+        <div class="row mb-6">											
+			<label class="col-lg-4 col-form-label fw-semibold fs-6">Foto</label>
+		<div class="col-lg-8">
+		<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+		<div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/300-1.jpg)"></div>
+			<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+				<i class="ki-duotone ki-pencil fs-7">
+					<span class="path1"></span>
+					<span class="path2"></span>
+				</i>
+				<input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+			    <input type="hidden" name="avatar_remove" />
+			</label>
+				<span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+					<i class="ki-duotone ki-cross fs-2">
+					    <span class="path1"></span>
+						<span class="path2"></span>
+					</i>
+				</span>
+                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+					<i class="ki-duotone ki-cross fs-2">
+						<span class="path1"></span>
+						<span class="path2"></span>
+					</i>
+				</span>
+		</div>
+			<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+		</div>
+		</div>
+        
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Telefono</label>
+            <div class="col-lg-2">
+                <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
             </div>
-            <div class="row">
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Fecha de Nacimiento</label>
-                    <input type="date" name="fecha_nacimiento" class="form-control border-black" id="fecha_nacimiento" required />
-                </div>
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">DUI</label>
-                    <input type="text" name="dui" class="form-control border-black" id="dui" required pattern="[0-9]{8}-[0-9]{1}" title="Por favor, introduce un DUI válido ejemplo xxxxxxxx-x" />
-                </div>
+            <label class="col-lg-2 col-form-label required fw-semibold fs-6">WhatsApp</label>
+            <div class="col-lg-4">
+                <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
             </div>
-            <div class="fv-row mb-10">
-                <label for="exampleFormControlTextarea1" class="required fw-semibold fs-6 mb-2">Dirección</label>
-                <textarea class="form-control border-black border-3" name="direccion" id="direccion" rows="3"></textarea>
+        </div>
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Fecha de Nacimiento</label>
+            <div class="col-lg-2">
+                <input type="date" name="fecha_nacimiento" class="form-control form-control-lg form-control-solid" />
             </div>
-           
-            <hr class="border-dark">
-            <h1>Datos laborales</h1>
-            <div class="row">              
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Cargo</label>
-                    <input type="text" name="cargo" class="form-control border-black" id="cargo" required />
-                </div>
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Fecha de Alta</label>
-                    <input type="date" name="fecha_alta" class="form-control border-black" id="fecha_alta" required />
-                </div>
+            <label class="col-lg-2 col-form-label required fw-semibold fs-6">DUI</label>
+            <div class="col-lg-4">
+                <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
             </div>
-            <div class="row">
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Número de ISS</label>
-                    <input type="text" name="n_iss" class="form-control border-black" id="n_iss" required />
-                </div>
-                <div class="fv-row col-md-6 mb-3">
-                    <label class="required fw-semibold fs-6 mb-2">Número de AFP</label>
-                    <input type="text" name="n_afp" class="form-control border-black" id="n_afp" required />
-                </div>
+        </div>
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Dirección</label>
+            <div class="col-lg-8">
+                <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
             </div>
-            <div class="fv-row mb-10">
-                <label class="required fw-semibold fs-6 mb-2">Agencia de Registro</label>
-                <input type="text" name="agencia_registro" class="form-control border-black" id="agencia_registro" required />
+        </div>
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Cargo</label>
+            <div class="col-lg-2">
+                <input type="text" name="cargo" class="form-control form-control-lg form-control-solid" placeholder="Cargo" />
             </div>
-            <div class="fv-row mb-10">
-                <label class="fw-semibold fs-6 mb-2">Nota</label>
-                <textarea name="nota" class="form-control border-black" id="nota"></textarea>
+            <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
+            <div class="col-lg-4">
+                <input type="date" name="fecha_alta" class="form-control form-control-lg form-control-solid" />
             </div>
-            <!--botones-->
-            <div class="text-center">
-                <button id="kt_docs_formvalidation_text_submit" type="submit" class="btn btn-primary">
-                    <span class="indicator-label">
-                        Guarda empleado
-                    </span>
-                    <span class="indicator-progress">
-                        Por favor espere <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                    </span>
-                </button>
-                <button id="regresar" type="button" class="btn btn-primary me-3" onclick="window.location.href='/empleados'">
-                    Regresar a Empleados
-                </button>
+        </div>
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Número de ISSS</label>
+            <div class="col-lg-2">
+                <input type="text" name="n_isss" class="form-control form-control-lg form-control-solid" placeholder="N de ISSS" />
             </div>
-        </form>
-       
+            <label class="col-lg-2 col-form-label required fw-semibold fs-6">Número de AFP</label>
+            <div class="col-lg-4">
+                <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="N de AFP" />
+            </div>
+        </div>
+
+        <div class="row mb-6">
+            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nota</label>
+            <div class="col-lg-8">
+                <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
+            </div>
+        </div>
+		<div class="card-footer d-flex justify-content-center py-6 px-9">
+			<button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
+			<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+		</div>
+	</form>
+</div>
+</div>
     </x-default-layout>
-    <script src="{{ asset('assets/js/validaciones.js') }}"></script>
+    <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 </body>
 </html>
-    
-    
-
