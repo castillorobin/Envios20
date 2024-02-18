@@ -91,7 +91,7 @@
     <td style="font-weight: bolder; color: #484f55;">{{ $pedidos[$i]->destinatario }}</td>
     
     <td>{{ $pedidos[$i]->tipo }}</td>
-    <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->total }}</td>
+    <td style="font-weight: bolder; color: #484f55;">c</td>
     <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->envio }}</td>
     <td style="font-weight: bolder; color: #484f55;">${{ $pedidos[$i]->precio }}</td>
     <!--Empieza If s de estados -->
