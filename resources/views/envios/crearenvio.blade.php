@@ -3,7 +3,12 @@
 <x-default-layout>
 
 
+<style>
+    label.required::after {
+    content: none; /* Oculta el asterisco */
+}
 
+</style>
 <div class="app-content flex-column-fluid">
 
 <div class="app-container container-xxl">
@@ -38,7 +43,7 @@
             
     <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
         <div class="col-md-9 offset-md-3">
-            <h2>General Settings</h2>
+            <h2>Personalizado</h2>
         </div>
         <div class="fv-row col-md-12 mb-3">
                 <label class="required fw-semibold fs-6 mb-2">Destinatario</label>
@@ -152,7 +157,8 @@
     <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
         <div class="row mb-7">
             <div class="col-md-9 offset-md-3">
-                <h2>Store Settings</h2>
+                <h2>Personalizado Departamental
+</h2>
             </div>
         </div>
         <div class="fv-row col-md-12 mb-3">
@@ -268,13 +274,14 @@
     <form id="kt_ecommerce_settings_general_localization" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
         <div class="row mb-7">
             <div class="col-md-9 offset-md-3">
-                <h2>Localization Settings</h2>
+                <h2>Punto fijo</h2>
             </div>
         </div>
         <div class="fv-row col-md-12 mb-3">
-                <label class="required fw-semibold fs-6 mb-2">Destinatario</label>
-                <input type="text" name="destinatario" class="form-control border-black" id="destinatario" required />
-        </div>
+    <label class="fw-semibold fs-6 mb-2">Destinatario</label>
+    <input type="text" name="destinatario" class="form-control border-black" id="destinatario" required />
+</div>
+
         <div class="row">
             <div class="fv-row col-md-6 mb-3">
                 <label class="required fw-semibold fs-6 mb-2">Direccion</label>
@@ -382,7 +389,7 @@
     <form id="kt_ecommerce_settings_general_products" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
         <div class="row mb-7">
             <div class="col-md-9 offset-md-3">
-                <h2>Cateogries Settings</h2>
+                <h2>Casillero</h2>
             </div>
         </div>
         <div class="fv-row col-md-12 mb-3">
