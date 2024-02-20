@@ -30,7 +30,7 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="empleados/crear">
+						<a class="menu-link" href="/empleados/crear">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
