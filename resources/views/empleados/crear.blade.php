@@ -141,7 +141,7 @@
             </div>
         </div>
 		<div class="card-footer d-flex justify-content-center py-6 px-9">
-			<button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
+			<button type="reset" class="btn btn-primary btn-active-light-primary me-2">Discard</button>
 			<button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
 		</div>
 	</form>
