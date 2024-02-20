@@ -47,7 +47,7 @@
                             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nombre</label>
                             <div class="col-lg-8">
                                 <div class="col-lg-10 fv-row">
-                                    <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name" value="Max" />
+                                    <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre completo" value="Max" />
                                 </div>
                             </div>
                         </div>
@@ -57,19 +57,7 @@
                                 <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
                             </div>
                         </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-semibold fs-6">contraseña</label>
-                            <div class="col-lg-8">
-                                <div class="row">
-                                    <div class="col-lg-6 fv-row">
-                                        <input type="password" name="password" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Password" />
-                                    </div>
-                                    <div class="col-lg-6 fv-row">
-                                        <input type="password" name="confirm_password" class="form-control form-control-lg form-control-solid" placeholder="Confirm Password" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <h1>Datos personales</h1>
                         <hr>
                         <div class="row mb-6">
