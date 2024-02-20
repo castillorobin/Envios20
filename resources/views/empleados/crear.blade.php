@@ -23,8 +23,8 @@
 <div id="kt_account_settings_profile_details" class="collapse show">
 	<form id="kt_account_profile_details_form" class="form">
 		<div class="card-body border-top p-9">										
-		
-        
+		<h1>Datos usuarios</h1>
+        <hr>
 		<div class="row mb-6">
 			<label class="col-lg-4 col-form-label required fw-semibold fs-6">Nombre</label>							
 			<div class="col-lg-8">
@@ -52,7 +52,8 @@
                 </div>
             </div>
         </div>
-
+        <h1>Datos personales</h1>
+        <hr>
         <div class="row mb-6">											
 			<label class="col-lg-4 col-form-label fw-semibold fs-6">Foto</label>
 		<div class="col-lg-8">
@@ -82,7 +83,6 @@
 			<div class="form-text">Allowed file types: png, jpg, jpeg.</div>
 		</div>
 		</div>
-        
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Telefono</label>
             <div class="col-lg-2">
@@ -93,7 +93,6 @@
                 <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
             </div>
         </div>
-
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Fecha de Nacimiento</label>
             <div class="col-lg-2">
@@ -104,14 +103,14 @@
                 <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
             </div>
         </div>
-
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Dirección</label>
             <div class="col-lg-8">
                 <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
             </div>
         </div>
-
+        <h1>Datos laborales</h1>
+        <hr>
         <div class="row mb-6">
             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Cargo</label>
             <div class="col-lg-2">
