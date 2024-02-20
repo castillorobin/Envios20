@@ -96,6 +96,7 @@
                         <th class="min-w-150px">Teléfono</th>
                         <th class="min-w-150px">Email</th>
                         <th class="min-w-150px">Cargo</th>
+                        <th class="min-w-150px">Acción</th>
                     </tr>
                 </thead>
                 <!--end::Thead-->
@@ -122,6 +123,9 @@
                             
                             <td>
                             {{ $vendedores[$i]->cargo }}
+                            </td>
+                            <td>
+                            <a href="/empleados" class="btn btn-success">Ver</a>
                             </td>
                         </tr>
                           
