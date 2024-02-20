@@ -57,7 +57,7 @@
 			<label class="col-lg-4 col-form-label fw-semibold fs-6">Foto</label>
 		<div class="col-lg-8">
 		<div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-		<div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/300-1.jpg)"></div>
+		<div class="image-input-wrapper w-125px h-125px" style="background-image: url(/assets/media/avatars/300-1.jpg)"></div>
 			<label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
 				<i class="ki-duotone ki-pencil fs-7">
 					<span class="path1"></span>

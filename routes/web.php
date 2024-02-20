@@ -26,7 +26,7 @@ Route::get('/empleados', function () {
     return view('empleados.empleados');
 });
 
-Route::get('/crear', function () {
+Route::get('/empleados/crear', function () {
     return view('empleados.crear');
 });
 
