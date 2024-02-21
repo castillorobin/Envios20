@@ -131,7 +131,7 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
                                     <div class="col-lg-4">
                                         <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" required />
+                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
                                     </div>
                                 </div>
@@ -245,7 +245,7 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
                                     <div class="col-lg-4">
                                         <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" required />
+                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
                                     </div>
                                 </div>
@@ -359,7 +359,7 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
                                     <div class="col-lg-4">
                                         <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" required />
+                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
                                     </div>
                                 </div>
@@ -472,7 +472,7 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
                                     <div class="col-lg-4">
                                         <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" required />
+                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
                                     </div>
                                 </div>
@@ -504,3 +504,10 @@
                             </form>
                         </div>
 </x-default-layout>
+<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+<script src="assets/plugins/global/plugins.bundle.js"></script>
+<script>
+     flatpickr("#fecha_entrega", {
+        dateFormat: 'Y-m-d', 
+    });
+</script>
