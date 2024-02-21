@@ -29,6 +29,13 @@ class EmpleadoController extends Controller
         return view('empleados.empleados', compact('empleado'));
     }
 
+    public function empleadoeditar($id)
+    {
+        $empleado = Empleado::where('id', $id)->get();
+
+        return view('empleados.empleadoseditar', compact('empleado'));
+    }
+
 
     /**
      * Show the form for creating a new resource.

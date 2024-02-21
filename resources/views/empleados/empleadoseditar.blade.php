@@ -188,10 +188,10 @@
                         </div>
                         <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
                             <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="../../demo1/dist/account/overview.html">Detalles</a>
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5 " href="../../demo1/dist/account/overview.html">Detalles</a>
                             </li>
                             <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/empleados/editar/{{$empleado[0]->id}}">Editar</a>
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/empleados/editar/{{$empleado[0]->id}}">Editar</a>
                             </li>
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="../../demo1/dist/account/security.html">Security</a>
@@ -223,89 +223,316 @@
                             <h3 class="fw-bold m-0">Información del empleado</h3>
                         </div>
                         <div class="card-toolbar">
-                            <a href="#" class="btn btn-sm btn-primary">Editar</a>
+                           
                         </div>
                     </div>
                     <div class="card-body p-9">
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Nombre completo</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->nombre}}</span>
-                            </div>
+                    <form id="kt_account_profile_details_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" data-select2-id="select2-data-kt_account_profile_details_form">
+            <!--begin::Card body-->
+            <div class="card-body border-top p-9">
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Avatar</label>   
+                    <!--end::Label-->  
+                    
+                    <!--begin::Col-->
+                    <div class="col-lg-8">
+                        <!--begin::Image input-->
+                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
+                            <!--begin::Preview existing avatar-->
+                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/assets/media/avatars/300-1.jpg)"></div>
+                            <!--end::Preview existing avatar-->
+
+                            <!--begin::Label-->
+                            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Cambiar avatar" data-bs-original-title="Change avatar" data-kt-initialized="1">
+                                <i class="ki-duotone ki-pencil fs-7"><span class="path1"></span><span class="path2"></span></i>
+                                <!--begin::Inputs-->
+                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg">
+                                <input type="hidden" name="avatar_remove">
+                                <!--end::Inputs-->
+                            </label>
+                            <!--end::Label-->
+
+                            <!--begin::Cancel-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" aria-label="Cancel avatar" data-bs-original-title="Cancel avatar" data-kt-initialized="1">
+                                <i class="ki-duotone ki-cross fs-2"><span class="path1"></span><span class="path2"></span></i>                            </span>
+                            <!--end::Cancel-->
+
+                            <!--begin::Remove-->
+                            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" aria-label="Remove avatar" data-bs-original-title="Remove avatar" data-kt-initialized="1">
+                                <i class="ki-duotone ki-cross fs-2"><span class="path1"></span><span class="path2"></span></i>                            </span>
+                            <!--end::Remove-->
                         </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Correo Electrónico</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->correo}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Teléfono</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->telefono}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">WhatsApp</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->whatsapp}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Fecha de Nacimiento</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->fecha_nacimiento}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">DUI</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->dui}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Dirección</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->direccion}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Cargo</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->cargo}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Fecha de Alta</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->fecha_alta}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">N° ISSS</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->n_isss}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">N° AFP</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->n_afp}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Agencia de Registro</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->agencia_registro}}</span>
-                            </div>
-                        </div>
-                        <div class="row mb-7">
-                            <label class="col-lg-4 fw-semibold text-muted">Nota</label>
-                            <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->nota}}</span>
-                            </div>
-                        </div>
+                        <!--end::Image input-->
+
+                        <!--begin::Hint-->
+                        <div class="form-text">Archivos permitidos: png, jpg, jpeg.</div>
+                        <!--end::Hint-->
                     </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nombre</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8">
+                        <!--begin::Row-->
+                        <div class="row">
+                            <!--begin::Col-->
+                            <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                                <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="" value="{{$empleado[0]->nombre}}" spellcheck="false" data-ms-editor="true">
+                            <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                            <!--end::Col-->
+
+                            <!--begin::Col-->
+                            
+                            <!--end::Col-->
+                        </div>
+                        <!--end::Row-->
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">E-mail</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <input type="text" name="company" class="form-control form-control-lg form-control-solid" placeholder="Company name" value="{{$empleado[0]->correo}}" spellcheck="false" data-ms-editor="true">
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div><editor-squiggler><style>
+  @media print {
+    .ms-editor-squiggles-container {
+      display:none !important;
+    }
+  }
+  .ms-editor-squiggles-container {
+    all: initial;
+  }</style><div class="ms-editor-squiggles-container"></div></editor-squiggler></div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                        <span >Teléfono</span>
+
+                        
+<span class="ms-1" data-bs-toggle="tooltip" aria-label="Phone number must be active" data-bs-original-title="Phone number must be active" data-kt-initialized="1">
+	<span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span>                    </label>
+                    <!--end::Label-->
+                    
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <input type="tel" name="phone" class="form-control form-control-lg form-control-solid" placeholder="Phone number" value="{{$empleado[0]->telefono}}">
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">WhatsApp</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                        <input type="text" name="website" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="{{$empleado[0]->whatsapp}}" spellcheck="false" data-ms-editor="true">
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">
+                        <span >Fecha de Nacimiento</span>
+
+                        
+<span class="ms-1" data-bs-toggle="tooltip" aria-label="Country of origination" data-bs-original-title="Country of origination" data-kt-initialized="1">
+	<span class="path1"></span><span class="path2"></span><span class="path3"></span></i></span>                    </label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container" data-select2-id="select2-data-133-0ht8">
+                    <input type="text" name="website" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="{{$empleado[0]->fecha_nacimiento}}" spellcheck="false" data-ms-editor="true">
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">DUI</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                    <input type="text" name="website" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="{{$empleado[0]->dui}}" spellcheck="false" data-ms-editor="true">
+
+                        <!--begin::Hint-->
+                        
+                        <!--end::Hint-->
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Dirección</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        
+                    <input type="text" name="website" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="{{$empleado[0]->direccion}}" spellcheck="false" data-ms-editor="true">
+
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label  fw-semibold fs-6">Cargo</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row">
+                       
+                    <input type="text" name="website" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="{{$empleado[0]->cargo}}" spellcheck="false" data-ms-editor="true">
+
+
+
+                    </div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <!--begin::Input group-->
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Fecha de Alta</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <!--begin::Options-->
+                        <div class="d-flex align-items-center mt-3">
+                            <!--begin::Option-->
+                            <input type="text" name="website" class="form-control form-control-lg form-control-solid" placeholder="Company website" value="{{$empleado[0]->fecha_alta}}" spellcheck="false" data-ms-editor="true">
+                            <!--end::Option-->
+                        </div>
+                        <!--end::Options-->
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+                <!--end::Input group-->
+
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">N° ISSS</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <!--begin::Options-->
+                        <div class="d-flex align-items-center mt-3">
+                            <!--begin::Option-->
+                            <input type="text" name="website" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->n_isss}}" spellcheck="false" data-ms-editor="true">
+                            <!--end::Option-->
+                        </div>
+                        <!--end::Options-->
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">N° AFP</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <!--begin::Options-->
+                        <div class="d-flex align-items-center mt-3">
+                            <!--begin::Option-->
+                            <input type="text" name="website" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->n_afp}}" spellcheck="false" data-ms-editor="true">
+                            <!--end::Option-->
+                        </div>
+                        <!--end::Options-->
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+
+
+
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Agencia de Registro</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <!--begin::Options-->
+                        <div class="d-flex align-items-center mt-3">
+                            <!--begin::Option-->
+                            <input type="text" name="website" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->agencia_registro}}" spellcheck="false" data-ms-editor="true">
+                            <!--end::Option-->
+                        </div>
+                        <!--end::Options-->
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+
+
+                <div class="row mb-6">
+                    <!--begin::Label-->
+                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Nota</label>
+                    <!--end::Label-->
+
+                    <!--begin::Col-->
+                    <div class="col-lg-8 fv-row fv-plugins-icon-container">
+                        <!--begin::Options-->
+                        <div class="d-flex align-items-center mt-3">
+                            <!--begin::Option-->
+                            <input type="text" name="website" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->nota}}" spellcheck="false" data-ms-editor="true">
+                            <!--end::Option-->
+                        </div>
+                        <!--end::Options-->
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div></div>
+                    <!--end::Col-->
+                </div>
+
+
+                <!--end::Input group-->
+            </div>
+            <!--end::Card body-->
+
+            <!--begin::Actions-->
+            <div class="card-footer d-flex justify-content-end py-6 px-9">
+                
+                <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Editar</button>
+            </div>
+            <!--end::Actions-->
+        <input type="hidden"></form>
                 </div>
     </x-default-layout>
     <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
