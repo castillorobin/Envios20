@@ -9,14 +9,14 @@
     <style>
         label.required::after {
             content: none;
-            
+
         }
     </style>
 </head>
 
 <body>
     <x-default-layout>
-        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4 ms-1">
+        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4 ms-19">
             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                 <li class="breadcrumb-item text-muted">
@@ -32,7 +32,8 @@
                 <li class="breadcrumb-item text-muted">Crear</li>
             </ul>
         </div>
-        <div class="card mb-5 mb-xl-10">
+
+        <div class="card mb-5 mb-xl-10 mx-auto" style="max-width: 900px;">
             <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
                 <div class="card-title m-0">
                     <h3 class="fw-bold m-0">Crear Empleado</h3>
@@ -41,7 +42,7 @@
             <div id="kt_account_settings_profile_details" class="collapse show">
                 <form id="kt_account_profile_details_form" class="form">
                     <div class="card-body border-top p-9">
-                    <div class="row mb-6">
+                        <div class="row mb-6">
                             <label class="col-lg-4 col-form-label fw-semibold fs-6">Foto</label>
                             <div class="col-lg-8">
                                 <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
@@ -138,14 +139,15 @@
                                 <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
                             </div>
                         </div>
-                        <div class="card-footer d-flex justify-content-center py-6 px-9">
-                            <button type="reset" class="btn btn-primary btn-active-light-primary me-2">Discard</button>
-                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
+                        <div class="card-footer d-flex justify-content-end py-6 px-9">
+                            <button type="reset" class="btn btn-primary btn-active-light-primary me-2">Descartar</button>
+                            <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Guardar Cambios</button>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
+
     </x-default-layout>
     <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
