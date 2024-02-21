@@ -65,7 +65,7 @@
                             {{ $vendedores[$i]->cargo }}
                         </td>
                         <td>
-                            <a href="/empleados" class="btn btn-success">Ver</a>
+                            <a href="/empleados/{{$vendedores[$i]->id}}" class="btn btn-success">Ver</a>
                         </td>
                         </tr>
 

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/perfil.css') }}">
 </head>
 
-<body>
+<body> 
     <x-default-layout>
         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
@@ -33,7 +33,7 @@
                         <div class="d-flex flex-wrap flex-sm-nowrap">
                             <div class="me-7 mb-4">
                                 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                    <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                                    <img src="/assets/media/avatars/300-1.jpg" alt="image" />
                                     <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                 </div>
                             </div>
@@ -41,7 +41,7 @@
                                 <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
                                     <div class="d-flex flex-column">
                                         <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">Max Smith</a>
+                                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">{{$empleado[0]->nombre}}</a>
                                             <a href="#">
                                                 <i class="ki-duotone ki-verify fs-1 text-primary">
                                                     <span class="path1"></span>
@@ -226,79 +226,79 @@
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Nombre completo</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">John Doe</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->nombre}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Correo Electrónico</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">johndoe@example.com</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->correo}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Teléfono</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">12345678</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->telefono}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">WhatsApp</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">12345678</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->whatsapp}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Fecha de Nacimiento</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">01/01/1990</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->fecha_nacimiento}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">DUI</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">12345678-9</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->dui}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Dirección</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">123 Main St</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->direccion}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Cargo</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">Desarrollador Web</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->cargo}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Fecha de Alta</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">01/01/2022</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->fecha_alta}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">N° ISSS</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">123456789</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->n_isss}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">N° AFP</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">123456789012</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->n_afp}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Agencia de Registro</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">SSS</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->agencia_registro}}</span>
                             </div>
                         </div>
                         <div class="row mb-7">
                             <label class="col-lg-4 fw-semibold text-muted">Nota</label>
                             <div class="col-lg-8">
-                                <span class="fw-bold fs-6 text-gray-800">Lorem ipsum dolor sit amet</span>
+                                <span class="fw-bold fs-6 text-gray-800">{{$empleado[0]->nota}}</span>
                             </div>
                         </div>
                     </div>

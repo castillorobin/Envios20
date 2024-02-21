@@ -14,12 +14,19 @@ class EmpleadoController extends Controller
     public function index()
     {
         //
-    }
+    } 
 
     public function empleado()
     {
         $vendedores = Empleado::all();
         return view('empleados.index', compact('vendedores'));
+    }
+
+    public function empleadover($id)
+    {
+        $empleado = Empleado::where('id', $id)->get();
+
+        return view('empleados.empleados', compact('empleado'));
     }
 
 
