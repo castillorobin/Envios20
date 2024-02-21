@@ -4,24 +4,25 @@
             content: none;
         }
     </style>
-    <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4 ms-9">
-        <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
-        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-            <li class="breadcrumb-item text-muted">
-                <a href="/" class="text-muted text-hover-primary">Inicio</a>
-            </li>
-            <li class="breadcrumb-item">
-                <span class="bullet bg-gray-400 w-5px h-2px"></span>
-            </li>
-            <li class="breadcrumb-item text-muted">Gestion de envios</li>
-            <li class="breadcrumb-item">
-                <span class="bullet bg-gray-400 w-5px h-2px"></span>
-            </li>
-            <li class="breadcrumb-item text-muted">Crear envio</li>
-        </ul>
-    </div>
+
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
+            <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
+                <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
+                <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                    <li class="breadcrumb-item text-muted">
+                        <a href="/" class="text-muted text-hover-primary">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-muted">Gestion de envios</li>
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                    </li>
+                    <li class="breadcrumb-item text-muted">Crear envio</li>
+                </ul>
+            </div>
             <div class="card card-flush">
                 <div class="card-body">
                     <ul class="nav nav-tabs nav-line-tabs nav-line-tabs-2x border-transparent fs-4 fw-semibold mb-15" role="tablist">
@@ -507,7 +508,7 @@
 <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 <script src="assets/plugins/global/plugins.bundle.js"></script>
 <script>
-     flatpickr("#fecha_entrega", {
-        dateFormat: 'Y-m-d', 
+    flatpickr("#fecha_entrega", {
+        dateFormat: 'Y-m-d',
     });
 </script>
