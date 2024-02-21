@@ -10,8 +10,7 @@
 
 <body> 
     <x-default-layout>
-        
-        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4 ms-9">
+        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-9">
             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                 <li class="breadcrumb-item text-muted">
@@ -27,6 +26,9 @@
                 <li class="breadcrumb-item text-muted">Perfil de empleado</li>
             </ul>
         </div>
+
+
+
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <div id="kt_app_content_container" class="app-container container-xxl">
                 <div class="card mb-5 mb-xl-10">
@@ -188,7 +190,7 @@
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="../../demo1/dist/account/overview.html">Detalles</a>
                             </li>
                             <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="../../demo1/dist/account/settings.html">Settings</a>
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/empleados/editar/{{$empleado[0]->id}}">Editar</a>
                             </li>
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="../../demo1/dist/account/security.html">Security</a>
