@@ -11,6 +11,15 @@
 <body> 
     <x-default-layout>
 
+
+
+
+        <div id="kt_app_content" class="app-content flex-column-fluid">
+            <div id="kt_app_content_container" class="app-container container-xxl">
+               
+                    
+
+                    
         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -27,13 +36,8 @@
                 <li class="breadcrumb-item text-muted">Perfil de empleado</li>
             </ul>
         </div>
-
-
-
-        <div id="kt_app_content" class="app-content flex-column-fluid">
-            <div id="kt_app_content_container" class="app-container container-xxl">
-                <div class="card mb-5 mb-xl-10">
-                    <div class="card-body pt-9 pb-0">
+        <div class="card mb-5 mb-xl-10">
+                        <div class="card-body pt-9 pb-0">
                         <div class="d-flex flex-wrap flex-sm-nowrap">
                             <div class="me-7 mb-4">
                                 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
@@ -226,10 +230,10 @@
                            
                         </div>
                     </div>
-                    <div class="card-body p-9">
+                 
                     <form id="kt_account_profile_details_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" novalidate="novalidate" data-select2-id="select2-data-kt_account_profile_details_form">
             <!--begin::Card body-->
-            <div class="card-body border-top p-9">
+            <div class="card-body p-9">
                 <!--begin::Input group-->
                 <div class="row mb-6">
                     <!--begin::Label-->
