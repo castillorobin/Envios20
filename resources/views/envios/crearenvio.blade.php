@@ -4,7 +4,7 @@
             content: none;
         }
     </style>
-    <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
+    <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4 ms-9">
         <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
             <li class="breadcrumb-item text-muted">
@@ -53,9 +53,6 @@
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_general" role="tabpanel">
 
                             <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
-                                <div class="col-md-9 offset-md-3">
-                                    <h2>Personalizado</h2>
-                                </div>
                                 <div class="fv-row col-md-12 mb-3">
                                     <label class="required fw-semibold fs-6 mb-2">Destinatario</label>
                                     <input type="text" name="destinatario" class="form-control form-control-solid" id="destinatario" required />
@@ -108,7 +105,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row">
                                     <div class="fv-row col-md-6 mb-3">
                                         <label class="required fw-semibold fs-6 mb-2">Estado del envio</label>
@@ -166,12 +162,6 @@
 
                         <div class="tab-pane fade" id="kt_ecommerce_settings_store" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
-                                <div class="row mb-7">
-                                    <div class="col-md-9 offset-md-3">
-                                        <h2>Personalizado Departamental
-                                        </h2>
-                                    </div>
-                                </div>
                                 <div class="fv-row col-md-12 mb-3">
                                     <label class="required fw-semibold fs-6 mb-2">Destinatario</label>
                                     <input type="text" name="destinatario" class="form-control form-control-solid" id="destinatario" required />
@@ -283,11 +273,6 @@
                         <div class="tab-pane fade" id="kt_ecommerce_settings_localization" role="tabpanel">
 
                             <form id="kt_ecommerce_settings_general_localization" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
-                                <div class="row mb-7">
-                                    <div class="col-md-9 offset-md-3">
-                                        <h2>Punto fijo</h2>
-                                    </div>
-                                </div>
                                 <div class="fv-row col-md-12 mb-3">
                                     <label class="fw-semibold fs-6 mb-2">Destinatario</label>
                                     <input type="text" name="destinatario" class="form-control form-control-solid" id="destinatario" required />
@@ -398,11 +383,6 @@
                         </div>
                         <div class="tab-pane fade" id="kt_ecommerce_settings_products" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_products" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
-                                <div class="row mb-7">
-                                    <div class="col-md-9 offset-md-3">
-                                        <h2>Casillero</h2>
-                                    </div>
-                                </div>
                                 <div class="fv-row col-md-12 mb-3">
                                     <label class="required fw-semibold fs-6 mb-2">Destinatario</label>
                                     <input type="text" name="destinatario" class="form-control form-control-solid" id="destinatario" required />

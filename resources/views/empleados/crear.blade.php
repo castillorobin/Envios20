@@ -9,14 +9,14 @@
     <style>
         label.required::after {
             content: none;
-            /* Oculta el asterisco */
+            
         }
     </style>
 </head>
 
 <body>
     <x-default-layout>
-        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
+        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4 ms-1">
             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                 <li class="breadcrumb-item text-muted">
@@ -41,26 +41,7 @@
             <div id="kt_account_settings_profile_details" class="collapse show">
                 <form id="kt_account_profile_details_form" class="form">
                     <div class="card-body border-top p-9">
-                        <h1>Datos usuarios</h1>
-                        <hr>
-                        <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nombre</label>
-                            <div class="col-lg-8">
-                                <div class="col-lg-10 fv-row">
-                                    <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre completo" value="Max" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Correo Electrónico</label>
-                            <div class="col-lg-8">
-                                <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
-                            </div>
-                        </div>
-                        
-                        <h1>Datos personales</h1>
-                        <hr>
-                        <div class="row mb-6">
+                    <div class="row mb-6">
                             <label class="col-lg-4 col-form-label fw-semibold fs-6">Foto</label>
                             <div class="col-lg-8">
                                 <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
@@ -90,6 +71,20 @@
                             </div>
                         </div>
                         <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nombre</label>
+                            <div class="col-lg-8">
+                                <div class="col-lg-10 fv-row">
+                                    <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre completo" value="Max" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-4 col-form-label required fw-semibold fs-6">Correo Electrónico</label>
+                            <div class="col-lg-8">
+                                <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Telefono</label>
                             <div class="col-lg-2">
                                 <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
@@ -115,8 +110,6 @@
                                 <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
                             </div>
                         </div>
-                        <h1>Datos laborales</h1>
-                        <hr>
                         <div class="row mb-6">
                             <label class="col-lg-4 col-form-label required fw-semibold fs-6">Cargo</label>
                             <div class="col-lg-2">
@@ -149,6 +142,7 @@
                             <button type="reset" class="btn btn-primary btn-active-light-primary me-2">Discard</button>
                             <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
