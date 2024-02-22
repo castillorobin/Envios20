@@ -312,22 +312,24 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_general" role="tabpanel">
-
-                            <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
+ <!-- Inicia form de envio personalizado -->
+                            <form action="/envioguardarp" method="POST" id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework">
+                            @csrf
+                         @method('GET')
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
-                                        <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
+                                        <input type="text" name="Destinatariop" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Direccion</label>
                                     <div class="col-lg-4">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
+                                        <input type="text" name="direccionp" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input type="tel" name="telefonop" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
@@ -371,14 +373,14 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del envio</label>
                                     <div class="col-lg-4">
-                                        <select name="estado_envio" class="form-select form-select-solid" id="estado_envio" required>
+                                        <select name="estado_enviop" class="form-select form-select-solid" id="estado_enviop" required>
                                             <option value="Creado">Creado</option>
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
                                     <div class="col-lg-4">
-                                        <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
+                                        <select name="estado_pagop" class="form-select form-select-solid" id="estado_pagop" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
                                         </select>
@@ -387,7 +389,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo del envio</label>
                                     <div class="col-lg-4">
-                                        <select name="tipo_envio" class="form-select form-select-solid" id="tipo_envio" required>
+                                        <select name="tipo_enviop" class="form-select form-select-solid" id="tipo_enviop" required>
                                             <option value="personalizado">Personalizado</option>
                                             <option value="Normal">Normal</option>
                                         </select>
@@ -395,7 +397,7 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
                                     <div class="col-lg-4">
                                         <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
+                                            <input type="date" name="fecha_entregap" class="form-control form-control-solid" id="fecha_entregap" placeholder="Fecha de entrega" required />
                                         </div>
                                     </div>
                                 </div>
@@ -403,27 +405,28 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Nota</label>
                                     <div class="col-lg-10">
-                                        <textarea name="nota" class="form-control form-control-lg form-control-solid" id="nota" placeholder="Nota"></textarea>
+                                        <textarea name="notap" class="form-control form-control-lg form-control-solid" id="notap" placeholder="Nota"></textarea>
                                     </div>
                                 </div>
                                 <div class="row py-5">
                                     <div class="col-md-12 text-end">
                                         <div class="d-flex justify-content-end">
                                             <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancel
+                                                Cancelar
                                             </button>
                                             <button type="submit" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
                                                 <span class="indicator-label">
-                                                    Save
+                                                    Guardar
                                                 </span>
                                                 <span class="indicator-progress">
-                                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                                    Por favor espere... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                                 </span>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                            <!-- Termina form de envio personalizado -->
                         </div>
 
                         <div class="tab-pane fade" id="kt_ecommerce_settings_store" role="tabpanel">

@@ -23,6 +23,30 @@ class EnvioController extends Controller
 
         $vendedores = Vendedor::all();
         return view('envios.crearenvio', compact('vendedores'));
+ 
+    }
+
+    public function envioguardarp(Request $request)
+    {
+        $envio = new Envio();
+
+        $envio->nombre = $request->get('fname');
+        $envio->correo = $request->get('email');
+        $envio->telefono = $request->get('telefono');
+        $envio->whatsapp = $request->get('whatsapp');
+        $envio->fecha_nacimiento = $request->get('fecha_nacimiento');
+        $envio->dui = $request->get('dui');
+        $envio->direccion = $request->get('direccion');
+        $envio->cargo = $request->get('cargo');
+        $envio->fecha_alta = $request->get('fecha_alta');
+        $envio->n_isss = $request->get('n_isss');
+        $envio->n_afp = $request->get('n_afp');
+        $envio->nota = $request->get('nota');
+        
+        $envio->save();
+        $vendedores = Empleado::all();
+        return view('empleados.index', compact('vendedores'));
+
 
     }
 
