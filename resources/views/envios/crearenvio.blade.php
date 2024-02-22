@@ -1,4 +1,267 @@
 <x-default-layout>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+ 
+
+ $(document).ready(function() {
+  
+   					$("#envio").change(function() {
+       												 //alert($(this).val());
+          const tenv = document.getElementById("cenvio").value;
+					const preci = parseFloat(document.getElementById("precio").value);						                                                    
+          const envi =parseFloat($(this).val()); 
+          
+          if(tenv=="Pagado")
+          {
+            document.getElementById("total").value = preci;
+          }else{
+            document.getElementById("total").value = preci - envi;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+            $("#precio").change(function() {
+       												 //alert($(this).val());
+          const tenv2 = document.getElementById("cenvio").value;
+					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total").value = preci2;
+          }else{
+            document.getElementById("total").value = preci2 - envi2;
+          }               
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+
+            $("#cenvio").change(function() {
+       												 //alert($(this).val());
+          const tenv3 = document.getElementById("precio").value;
+					const envi3 = parseFloat(document.getElementById("envio").value);						                                                    
+          const preci3 =document.getElementById("cenvio").value; 
+          
+          if(preci3=="Pagado")
+          {
+            document.getElementById("total").value = tenv3;
+          }else{
+            document.getElementById("total").value = tenv3 - envi3;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+              
+                                            });
+</script>
+
+
+
+<script>
+ 
+
+ $(document).ready(function() {
+  
+   					$("#envio2").change(function() {
+       												 //alert($(this).val());
+          const tenv = document.getElementById("cenvio2").value;
+					const preci = parseFloat(document.getElementById("precio2").value);						                                                    
+          const envi =parseFloat($(this).val()); 
+          
+          if(tenv=="Pagado")
+          {
+            document.getElementById("total2").value = preci;
+          }else{
+            document.getElementById("total2").value = preci - envi;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+            $("#precio2").change(function() {
+       												 //alert($(this).val());
+          const tenv2 = document.getElementById("cenvio2").value;
+					const envi2 = parseFloat(document.getElementById("envio2").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total2").value = preci2;
+          }else{
+            document.getElementById("total2").value = preci2 - envi2;
+          }               
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+
+            $("#cenvio2").change(function() {
+       												 //alert($(this).val());
+          const tenv3 = document.getElementById("precio2").value;
+					const envi3 = parseFloat(document.getElementById("envio2").value);						                                                    
+          const preci3 =document.getElementById("cenvio2").value; 
+          
+          if(preci3=="Pagado")
+          {
+            document.getElementById("total2").value = tenv3;
+          }else{
+            document.getElementById("total2").value = tenv3 - envi3;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+              
+                                            });
+</script>
+
+<script>
+ 
+
+ $(document).ready(function() {
+  
+   					$("#envio3").change(function() {
+       												 //alert($(this).val());
+          const tenv = document.getElementById("cenvio3").value;
+					const preci = parseFloat(document.getElementById("precio3").value);						                                                    
+          const envi =parseFloat($(this).val()); 
+          
+          if(tenv=="Pagado")
+          {
+            document.getElementById("total3").value = preci;
+          }else{
+            document.getElementById("total3").value = preci - envi;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+            $("#precio3").change(function() {
+       												 //alert($(this).val());
+          const tenv2 = document.getElementById("cenvio3").value;
+					const envi2 = parseFloat(document.getElementById("envio3").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total3").value = preci2;
+          }else{
+            document.getElementById("total3").value = preci2 - envi2;
+          }               
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+
+            $("#cenvio3").change(function() {
+       												 //alert($(this).val());
+          const tenv3 = document.getElementById("precio3").value;
+					const envi3 = parseFloat(document.getElementById("envio3").value);						                                                    
+          const preci3 =document.getElementById("cenvio3").value; 
+          
+          if(preci3=="Pagado")
+          {
+            document.getElementById("total3").value = tenv3;
+          }else{
+            document.getElementById("total3").value = tenv3 - envi3;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+              
+                                            });
+</script>
+
+<script>
+ 
+
+ $(document).ready(function() {
+  
+   					$("#envio4").change(function() {
+       												 //alert($(this).val());
+          const tenv = document.getElementById("cenvio4").value;
+					const preci = parseFloat(document.getElementById("precio4").value);						                                                    
+          const envi =parseFloat($(this).val()); 
+          
+          if(tenv=="Pagado")
+          {
+            document.getElementById("total4").value = preci;
+          }else{
+            document.getElementById("total4").value = preci - envi;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+            $("#precio4").change(function() {
+       												 //alert($(this).val());
+          const tenv2 = document.getElementById("cenvio4").value;
+					const envi2 = parseFloat(document.getElementById("envio4").value);						                                                    
+          const preci2 =parseFloat($(this).val()); 
+          
+          if(tenv2=="Pagado")
+          {
+            document.getElementById("total4").value = preci2;
+          }else{
+            document.getElementById("total4").value = preci2 - envi2;
+          }               
+
+														//const castot = parseFloat(document.getElementById("totalc").value);
+														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+
+
+            $("#cenvio4").change(function() {
+       												 //alert($(this).val());
+          const tenv3 = document.getElementById("precio4").value;
+					const envi3 = parseFloat(document.getElementById("envio4").value);						                                                    
+          const preci3 =document.getElementById("cenvio4").value; 
+          
+          if(preci3=="Pagado")
+          {
+            document.getElementById("total4").value = tenv3;
+          }else{
+            document.getElementById("total4").value = tenv3 - envi3;
+          }
+                    
+
+														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+
+    				});
+              
+                                            });
+</script>
+
+
+
     <style>
         label.required::after {
             content: none;
@@ -52,33 +315,27 @@
 
                             <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                 <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
-                                    <div class="col-lg-2">
-                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
-                                        <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
+                                        <input type="text" name="Destinatariop" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Direccion</label>
                                     <div class="col-lg-4">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
+                                        <input type="text" name="direccionp" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Telefono</label>
-                                    <div class="col-lg-3">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
+                                    <div class="col-lg-4">
                                         <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
                                     <div class="col-lg-4">
-                                        <select name="cobro_envio" class="form-select form-select-solid" id="cobro_envio" required>
-                                            <option value="pendiente">Pendiente</option>
-                                            <option value="pagado">Pagado</option>
+                                        <select name="cenvio" class="form-select form-select-solid" id="cenvio" required>
+                                            <option value="Pendiente">Pendiente</option>
+                                            <option value="Pagado">Pagado</option>
                                         </select>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
@@ -87,7 +344,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="paquete" placeholder="Precio del paquete" value="" />
+                                            <input type="text" name="precio" class="form-control form-control-solid" id="precio" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -98,7 +355,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
+                                            <input type="text" name="envio" class="form-control form-control-solid" id="envio" placeholder="Precio del envio" value="0" />
                                         </div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
@@ -107,20 +364,20 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="total_pagar" placeholder="total a pagar" value="" />
+                                            <input type="text" name="total" class="form-control form-control-solid" id="total"  value="0" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del envio</label>
                                     <div class="col-lg-4">
-                                        <select name="estado_envio" class="form-select form-select-solid" id="estado_envio" required>
+                                        <select name="estado_enviop" class="form-select form-select-solid" id="estado_enviop" required>
                                             <option value="Creado">Creado</option>
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
-                                    <div class="col-lg-3">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
+                                    <div class="col-lg-4">
                                         <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
@@ -130,7 +387,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo del envio</label>
                                     <div class="col-lg-4">
-                                        <select name="tipo_envio" class="form-select form-select-solid" id="tipo_envio" required>
+                                        <select name="tipo_enviop" class="form-select form-select-solid" id="tipo_enviop" required>
                                             <option value="personalizado">Personalizado</option>
                                             <option value="Normal">Normal</option>
                                         </select>
@@ -138,7 +395,7 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Fecha de entrega</label>
                                     <div class="col-lg-3">
                                         <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
+                                            <input type="date" name="fecha_entregap" class="form-control form-control-solid" id="fecha_entregap" placeholder="Fecha de entrega" required />
                                         </div>
                                     </div>
                                 </div>
@@ -146,27 +403,28 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Nota</label>
                                     <div class="col-lg-10">
-                                        <textarea name="nota" class="form-control form-control-lg form-control-solid" id="nota" placeholder="Nota"></textarea>
+                                        <textarea name="notap" class="form-control form-control-lg form-control-solid" id="notap" placeholder="Nota"></textarea>
                                     </div>
                                 </div>
                                 <div class="row py-5">
                                     <div class="col-md-12 text-end">
                                         <div class="d-flex justify-content-end">
                                             <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancel
+                                                Cancelar
                                             </button>
                                             <button type="submit" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
                                                 <span class="indicator-label">
-                                                    Save
+                                                    Guardar
                                                 </span>
                                                 <span class="indicator-progress">
-                                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                                    Por favor espere... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                                 </span>
                                             </button>
                                         </div>
                                     </div>
                                 </div>
                             </form>
+                            <!-- Termina form de envio personalizado -->
                         </div>
 
                         <div class="tab-pane fade" id="kt_ecommerce_settings_store" role="tabpanel">
@@ -196,9 +454,9 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
                                     <div class="col-lg-4">
-                                        <select name="cobro_envio" class="form-select form-select-solid" id="cobro_envio" required>
-                                            <option value="pendiente">Pendiente</option>
-                                            <option value="pagado">Pagado</option>
+                                        <select name="cenvio2" class="form-select form-select-solid" id="cenvio2" required>
+                                            <option value="Pendiente">Pendiente</option>
+                                            <option value="Pagado">Pagado</option>
                                         </select>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
@@ -207,7 +465,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="paquete" placeholder="Precio del paquete" value="" />
+                                            <input type="text" name="precio2" class="form-control form-control-solid" id="precio2" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -218,7 +476,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
+                                            <input type="text" name="envio2" class="form-control form-control-solid" id="envio2" value="0" />
                                         </div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
@@ -227,7 +485,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="total_pagar" placeholder="total a pagar" value="" />
+                                            <input type="text" name="total2" class="form-control form-control-solid" id="total2" placeholder="total a pagar" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -316,9 +574,9 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
                                     <div class="col-lg-4">
-                                        <select name="cobro_envio" class="form-select form-select-solid" id="cobro_envio" required>
-                                            <option value="pendiente">Pendiente</option>
-                                            <option value="pagado">Pagado</option>
+                                        <select name="cenvio3" class="form-select form-select-solid" id="cenvio3" required>
+                                            <option value="Pendiente">Pendiente</option>
+                                            <option value="Pagado">Pagado</option>
                                         </select>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
@@ -327,7 +585,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="paquete" placeholder="Precio del paquete" value="" />
+                                            <input type="text" name="precio3" class="form-control form-control-solid" id="precio3" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -338,7 +596,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
+                                            <input type="text" name="envio3" class="form-control form-control-solid" id="envio3" value="0" />
                                         </div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
@@ -347,7 +605,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="total_pagar" placeholder="total a pagar" value="" />
+                                            <input type="text" name="total3" class="form-control form-control-solid" id="total3" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -435,9 +693,9 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
                                     <div class="col-lg-4">
-                                        <select name="cobro_envio" class="form-select form-select-solid" id="cobro_envio" required>
-                                            <option value="pendiente">Pendiente</option>
-                                            <option value="pagado">Pagado</option>
+                                        <select name="cenvio4" class="form-select form-select-solid" id="cenvio4" required>
+                                            <option value="Pendiente">Pendiente</option>
+                                            <option value="Pagado">Pagado</option>
                                         </select>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
@@ -446,7 +704,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="paquete" placeholder="Precio del paquete" value="" />
+                                            <input type="text" name="precio4" class="form-control form-control-solid" id="precio4" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -457,7 +715,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
+                                            <input type="text" name="envio4" class="form-control form-control-solid" id="envio4" value="0" />
                                         </div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
@@ -466,7 +724,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="paquete" class="form-control form-control-solid" id="total_pagar" placeholder="total a pagar" value="" />
+                                            <input type="text" name="total4" class="form-control form-control-solid" id="total4" value="0" />
                                         </div>
                                     </div>
                                 </div>
