@@ -47,7 +47,7 @@
                          @method('GET')
                             <div class="card-body border-top p-9">
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label fw-semibold fs-6">Foto</label>
+                                    <label class="col-lg-3 col-form-label fw-semibold fs-6">Foto</label>
                                     <div class="col-lg-8">
                                         <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                             <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/assets/media/avatars/300-1.jpg)"></div>
@@ -76,7 +76,7 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nombre</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre</label>
                                     <div class="col-lg-8">
                                         <div class="col-lg-10 fv-row">
                                             <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre completo" value="Max" />
@@ -84,61 +84,61 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Correo Electrónico</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Correo Electrónico</label>
                                     <div class="col-lg-8">
                                         <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Telefono</label>
-                                    <div class="col-lg-2">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
+                                    <div class="col-lg-3">
                                         <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">WhatsApp</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Fecha de Nacimiento</label>
-                                    <div class="col-lg-2">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Nacimiento</label>
+                                    <div class="col-lg-3">
                                         <input type="date" name="fecha_nacimiento" class="form-control form-control-lg form-control-solid" />
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">DUI</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Dirección</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Cargo</label>
-                                    <div class="col-lg-2">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Cargo</label>
+                                    <div class="col-lg-3">
                                         <input type="text" name="cargo" class="form-control form-control-lg form-control-solid" placeholder="Cargo" />
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <input type="date" name="fecha_alta" class="form-control form-control-lg form-control-solid" />
                                     </div>
                                 </div>
 
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Número de ISSS</label>
-                                    <div class="col-lg-2">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6 ">Número de ISSS</label>
+                                    <div class="col-lg-3">
                                         <input type="text" name="n_isss" class="form-control form-control-lg form-control-solid" placeholder="N de ISSS" />
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Número de AFP</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-3">
                                         <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="N de AFP" />
                                     </div>
                                 </div>
 
                                 <div class="row mb-6">
-                                    <label class="col-lg-4 col-form-label required fw-semibold fs-6">Nota</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nota</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
                                     </div>

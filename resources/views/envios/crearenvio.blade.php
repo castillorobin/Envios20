@@ -52,6 +52,12 @@
 
                             <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                 <div class="row mb-6">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
                                         <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
@@ -62,8 +68,8 @@
                                     <div class="col-lg-4">
                                         <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Telefono</label>
+                                    <div class="col-lg-3">
                                         <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                 </div>
@@ -75,8 +81,8 @@
                                             <option value="pagado">Pagado</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Precio del paquete</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -95,8 +101,8 @@
                                             <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
                                         </div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Total a pagar</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -113,8 +119,8 @@
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
+                                    <div class="col-lg-3">
                                         <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
@@ -129,8 +135,8 @@
                                             <option value="Normal">Normal</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Fecha de entrega</label>
+                                    <div class="col-lg-3">
                                         <div class="fv-row">
                                             <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
@@ -166,6 +172,12 @@
                         <div class="tab-pane fade" id="kt_ecommerce_settings_store" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                 <div class="row mb-6">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
                                         <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
@@ -176,8 +188,8 @@
                                     <div class="col-lg-4">
                                         <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Telefono</label>
+                                    <div class="col-lg-3">
                                         <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                 </div>
@@ -189,8 +201,8 @@
                                             <option value="pagado">Pagado</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Precio del paquete</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -209,8 +221,8 @@
                                             <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
                                         </div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Total a pagar</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -227,8 +239,8 @@
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
+                                    <div class="col-lg-3">
                                         <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
@@ -243,8 +255,8 @@
                                             <option value="Normal">Normal</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Fecha de entrega</label>
+                                    <div class="col-lg-3">
                                         <div class="fv-row">
                                             <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
@@ -280,6 +292,12 @@
 
                             <form id="kt_ecommerce_settings_general_localization" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                 <div class="row mb-6">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 me-2">Numero de guia</label>
+                                    <div class="col-lg-2 ms-2">
+                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
                                         <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
@@ -290,8 +308,8 @@
                                     <div class="col-lg-4">
                                         <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Telefono</label>
+                                    <div class="col-lg-3">
                                         <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                 </div>
@@ -303,8 +321,8 @@
                                             <option value="pagado">Pagado</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Precio del paquete</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -323,8 +341,8 @@
                                             <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
                                         </div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Total a pagar</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -341,8 +359,8 @@
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
+                                    <div class="col-lg-3">
                                         <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
@@ -357,8 +375,8 @@
                                             <option value="Normal">Normal</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Fecha de entrega</label>
+                                    <div class="col-lg-3">
                                         <div class="fv-row">
                                             <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
@@ -393,6 +411,12 @@
                         <div class="tab-pane fade" id="kt_ecommerce_settings_products" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_products" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                 <div class="row mb-6">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
                                         <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
@@ -403,8 +427,8 @@
                                     <div class="col-lg-4">
                                         <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Telefono</label>
+                                    <div class="col-lg-3">
                                         <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                 </div>
@@ -416,8 +440,8 @@
                                             <option value="pagado">Pagado</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Precio del paquete</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -436,8 +460,8 @@
                                             <input type="text" name="paquete" class="form-control form-control-solid" id="precio_envio" placeholder="Precio del envio" value="" />
                                         </div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Total a pagar</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
+                                    <div class="col-lg-3">
                                         <div class="input-group">
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
@@ -454,8 +478,8 @@
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
+                                    <div class="col-lg-3">
                                         <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
@@ -470,8 +494,8 @@
                                             <option value="Normal">Normal</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Fecha de entrega</label>
+                                    <div class="col-lg-3">
                                         <div class="fv-row">
                                             <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
                                         </div>
