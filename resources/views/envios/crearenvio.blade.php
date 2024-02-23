@@ -1,264 +1,244 @@
 <x-default-layout>
 
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-<script>
- 
+    <script>
+        $(document).ready(function() {
 
- $(document).ready(function() {
-  
-   					$("#envio").change(function() {
-       												 //alert($(this).val());
-          const tenv = document.getElementById("cenvio").value;
-					const preci = parseFloat(document.getElementById("precio").value);						                                                    
-          const envi =parseFloat($(this).val()); 
-          
-          if(tenv=="Pagado")
-          {
-            document.getElementById("total").value = preci;
-          }else{
-            document.getElementById("total").value = preci - envi;
-          }
-                    
+            $("#envio").change(function() {
+                //alert($(this).val());
+                const tenv = document.getElementById("cenvio").value;
+                const preci = parseFloat(document.getElementById("precio").value);
+                const envi = parseFloat($(this).val());
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
+                if (tenv == "Pagado") {
+                    document.getElementById("total").value = preci;
+                } else {
+                    document.getElementById("total").value = preci - envi;
+                }
 
-    				});
+
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
             $("#precio").change(function() {
-       												 //alert($(this).val());
-          const tenv2 = document.getElementById("cenvio").value;
-					const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
-          const preci2 =parseFloat($(this).val()); 
-          
-          if(tenv2=="Pagado")
-          {
-            document.getElementById("total").value = preci2;
-          }else{
-            document.getElementById("total").value = preci2 - envi2;
-          }               
+                //alert($(this).val());
+                const tenv2 = document.getElementById("cenvio").value;
+                const envi2 = parseFloat(document.getElementById("envio").value);
+                const preci2 = parseFloat($(this).val());
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
+                if (tenv2 == "Pagado") {
+                    document.getElementById("total").value = preci2;
+                } else {
+                    document.getElementById("total").value = preci2 - envi2;
+                }
 
-    				});
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
 
             $("#cenvio").change(function() {
-       												 //alert($(this).val());
-          const tenv3 = document.getElementById("precio").value;
-					const envi3 = parseFloat(document.getElementById("envio").value);						                                                    
-          const preci3 =document.getElementById("cenvio").value; 
-          
-          if(preci3=="Pagado")
-          {
-            document.getElementById("total").value = tenv3;
-          }else{
-            document.getElementById("total").value = tenv3 - envi3;
-          }
-                    
+                //alert($(this).val());
+                const tenv3 = document.getElementById("precio").value;
+                const envi3 = parseFloat(document.getElementById("envio").value);
+                const preci3 = document.getElementById("cenvio").value;
 
-														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
-
-    				});
-              
-                                            });
-</script>
+                if (preci3 == "Pagado") {
+                    document.getElementById("total").value = tenv3;
+                } else {
+                    document.getElementById("total").value = tenv3 - envi3;
+                }
 
 
+                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
 
-<script>
- 
+            });
 
- $(document).ready(function() {
-  
-   					$("#envio2").change(function() {
-       												 //alert($(this).val());
-          const tenv = document.getElementById("cenvio2").value;
-					const preci = parseFloat(document.getElementById("precio2").value);						                                                    
-          const envi =parseFloat($(this).val()); 
-          
-          if(tenv=="Pagado")
-          {
-            document.getElementById("total2").value = preci;
-          }else{
-            document.getElementById("total2").value = preci - envi;
-          }
-                    
+        });
+    </script>
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
 
-    				});
+
+    <script>
+        $(document).ready(function() {
+
+            $("#envio2").change(function() {
+                //alert($(this).val());
+                const tenv = document.getElementById("cenvio2").value;
+                const preci = parseFloat(document.getElementById("precio2").value);
+                const envi = parseFloat($(this).val());
+
+                if (tenv == "Pagado") {
+                    document.getElementById("total2").value = preci;
+                } else {
+                    document.getElementById("total2").value = preci - envi;
+                }
+
+
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
             $("#precio2").change(function() {
-       												 //alert($(this).val());
-          const tenv2 = document.getElementById("cenvio2").value;
-					const envi2 = parseFloat(document.getElementById("envio2").value);						                                                    
-          const preci2 =parseFloat($(this).val()); 
-          
-          if(tenv2=="Pagado")
-          {
-            document.getElementById("total2").value = preci2;
-          }else{
-            document.getElementById("total2").value = preci2 - envi2;
-          }               
+                //alert($(this).val());
+                const tenv2 = document.getElementById("cenvio2").value;
+                const envi2 = parseFloat(document.getElementById("envio2").value);
+                const preci2 = parseFloat($(this).val());
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
+                if (tenv2 == "Pagado") {
+                    document.getElementById("total2").value = preci2;
+                } else {
+                    document.getElementById("total2").value = preci2 - envi2;
+                }
 
-    				});
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
 
             $("#cenvio2").change(function() {
-       												 //alert($(this).val());
-          const tenv3 = document.getElementById("precio2").value;
-					const envi3 = parseFloat(document.getElementById("envio2").value);						                                                    
-          const preci3 =document.getElementById("cenvio2").value; 
-          
-          if(preci3=="Pagado")
-          {
-            document.getElementById("total2").value = tenv3;
-          }else{
-            document.getElementById("total2").value = tenv3 - envi3;
-          }
-                    
+                //alert($(this).val());
+                const tenv3 = document.getElementById("precio2").value;
+                const envi3 = parseFloat(document.getElementById("envio2").value);
+                const preci3 = document.getElementById("cenvio2").value;
 
-														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+                if (preci3 == "Pagado") {
+                    document.getElementById("total2").value = tenv3;
+                } else {
+                    document.getElementById("total2").value = tenv3 - envi3;
+                }
 
-    				});
-              
-                                            });
-</script>
 
-<script>
- 
+                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
 
- $(document).ready(function() {
-  
-   					$("#envio3").change(function() {
-       												 //alert($(this).val());
-          const tenv = document.getElementById("cenvio3").value;
-					const preci = parseFloat(document.getElementById("precio3").value);						                                                    
-          const envi =parseFloat($(this).val()); 
-          
-          if(tenv=="Pagado")
-          {
-            document.getElementById("total3").value = preci;
-          }else{
-            document.getElementById("total3").value = preci - envi;
-          }
-                    
+            });
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
+        });
+    </script>
 
-    				});
+    <script>
+        $(document).ready(function() {
+
+            $("#envio3").change(function() {
+                //alert($(this).val());
+                const tenv = document.getElementById("cenvio3").value;
+                const preci = parseFloat(document.getElementById("precio3").value);
+                const envi = parseFloat($(this).val());
+
+                if (tenv == "Pagado") {
+                    document.getElementById("total3").value = preci;
+                } else {
+                    document.getElementById("total3").value = preci - envi;
+                }
+
+
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
             $("#precio3").change(function() {
-       												 //alert($(this).val());
-          const tenv2 = document.getElementById("cenvio3").value;
-					const envi2 = parseFloat(document.getElementById("envio3").value);						                                                    
-          const preci2 =parseFloat($(this).val()); 
-          
-          if(tenv2=="Pagado")
-          {
-            document.getElementById("total3").value = preci2;
-          }else{
-            document.getElementById("total3").value = preci2 - envi2;
-          }               
+                //alert($(this).val());
+                const tenv2 = document.getElementById("cenvio3").value;
+                const envi2 = parseFloat(document.getElementById("envio3").value);
+                const preci2 = parseFloat($(this).val());
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
+                if (tenv2 == "Pagado") {
+                    document.getElementById("total3").value = preci2;
+                } else {
+                    document.getElementById("total3").value = preci2 - envi2;
+                }
 
-    				});
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
 
             $("#cenvio3").change(function() {
-       												 //alert($(this).val());
-          const tenv3 = document.getElementById("precio3").value;
-					const envi3 = parseFloat(document.getElementById("envio3").value);						                                                    
-          const preci3 =document.getElementById("cenvio3").value; 
-          
-          if(preci3=="Pagado")
-          {
-            document.getElementById("total3").value = tenv3;
-          }else{
-            document.getElementById("total3").value = tenv3 - envi3;
-          }
-                    
+                //alert($(this).val());
+                const tenv3 = document.getElementById("precio3").value;
+                const envi3 = parseFloat(document.getElementById("envio3").value);
+                const preci3 = document.getElementById("cenvio3").value;
 
-														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+                if (preci3 == "Pagado") {
+                    document.getElementById("total3").value = tenv3;
+                } else {
+                    document.getElementById("total3").value = tenv3 - envi3;
+                }
 
-    				});
-              
-                                            });
-</script>
 
-<script>
- 
+                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
 
- $(document).ready(function() {
-  
-   					$("#envio4").change(function() {
-       												 //alert($(this).val());
-          const tenv = document.getElementById("cenvio4").value;
-					const preci = parseFloat(document.getElementById("precio4").value);						                                                    
-          const envi =parseFloat($(this).val()); 
-          
-          if(tenv=="Pagado")
-          {
-            document.getElementById("total4").value = preci;
-          }else{
-            document.getElementById("total4").value = preci - envi;
-          }
-                    
+            });
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
+        });
+    </script>
 
-    				});
+    <script>
+        $(document).ready(function() {
+
+            $("#envio4").change(function() {
+                //alert($(this).val());
+                const tenv = document.getElementById("cenvio4").value;
+                const preci = parseFloat(document.getElementById("precio4").value);
+                const envi = parseFloat($(this).val());
+
+                if (tenv == "Pagado") {
+                    document.getElementById("total4").value = preci;
+                } else {
+                    document.getElementById("total4").value = preci - envi;
+                }
+
+
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
             $("#precio4").change(function() {
-       												 //alert($(this).val());
-          const tenv2 = document.getElementById("cenvio4").value;
-					const envi2 = parseFloat(document.getElementById("envio4").value);						                                                    
-          const preci2 =parseFloat($(this).val()); 
-          
-          if(tenv2=="Pagado")
-          {
-            document.getElementById("total4").value = preci2;
-          }else{
-            document.getElementById("total4").value = preci2 - envi2;
-          }               
+                //alert($(this).val());
+                const tenv2 = document.getElementById("cenvio4").value;
+                const envi2 = parseFloat(document.getElementById("envio4").value);
+                const preci2 = parseFloat($(this).val());
 
-														//const castot = parseFloat(document.getElementById("totalc").value);
-														//document.getElementById("ptotal").value = castot ; 
+                if (tenv2 == "Pagado") {
+                    document.getElementById("total4").value = preci2;
+                } else {
+                    document.getElementById("total4").value = preci2 - envi2;
+                }
 
-    				});
+                //const castot = parseFloat(document.getElementById("totalc").value);
+                //document.getElementById("ptotal").value = castot ; 
+
+            });
 
 
             $("#cenvio4").change(function() {
-       												 //alert($(this).val());
-          const tenv3 = document.getElementById("precio4").value;
-					const envi3 = parseFloat(document.getElementById("envio4").value);						                                                    
-          const preci3 =document.getElementById("cenvio4").value; 
-          
-          if(preci3=="Pagado")
-          {
-            document.getElementById("total4").value = tenv3;
-          }else{
-            document.getElementById("total4").value = tenv3 - envi3;
-          }
-                    
+                //alert($(this).val());
+                const tenv3 = document.getElementById("precio4").value;
+                const envi3 = parseFloat(document.getElementById("envio4").value);
+                const preci3 = document.getElementById("cenvio4").value;
 
-														//const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+                if (preci3 == "Pagado") {
+                    document.getElementById("total4").value = tenv3;
+                } else {
+                    document.getElementById("total4").value = tenv3 - envi3;
+                }
 
-    				});
-              
-                                            });
-</script>
+
+                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
+
+            });
+
+        });
+    </script>
 
 
 
@@ -315,6 +295,12 @@
 
                             <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                 <div class="row mb-6">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
+                                    <div class="col-lg-2">
+                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
                                         <input type="text" name="Destinatariop" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
@@ -364,7 +350,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="total" class="form-control form-control-solid" id="total"  value="0" />
+                                            <input type="text" name="total" class="form-control form-control-solid" id="total" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -376,8 +362,8 @@
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
-                                    <div class="col-lg-4">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
+                                    <div class="col-lg-3">
                                         <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
@@ -786,6 +772,11 @@
 
                             </form>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </x-default-layout>
 <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 <script src="assets/plugins/global/plugins.bundle.js"></script>
