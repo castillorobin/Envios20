@@ -30,7 +30,9 @@ Route::get('/empleados', function () {
 Route::get('/empleados/crear', function () {
     return view('empleados.crear');
 });
-
+Route::get('/envios/envi', function () {
+    return view('envios.envi');
+});
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
