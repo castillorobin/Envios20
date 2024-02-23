@@ -13,6 +13,20 @@ return new class extends Migration
     {
         Schema::create('envios', function (Blueprint $table) {
             $table->id();
+            $table->string('guia');
+            $table->string('destinatario');
+            $table->string('direccion');
+            $table->string('telefono');
+            $table->double('cobro');
+            $table->double('precio');
+            $table->double('envio');
+            $table->double('total');
+            $table->string('estado');
+            $table->string('pago');
+            $table->string('tipo');
+            $table->date('fecha_entrega');
+            $table->string('nota');
+            
             $table->timestamps();
         });
     }

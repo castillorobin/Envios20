@@ -273,7 +273,7 @@
                             <a class="nav-link text-active-primary d-flex align-items-center pb-5 active" data-bs-toggle="tab" href="#kt_ecommerce_settings_general" aria-selected="true" role="tab">
                                 <i class="ki-duotone ki-home fs-2 me-2"></i> Personalizado
                             </a>
-                        </li>
+                        </li> 
                         <li class="nav-item" role="presentation">
                             <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_store" aria-selected="false" role="tab" tabindex="-1">
                                 <i class="ki-duotone ki-shop fs-2 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i> Personalizado Departamental
@@ -303,7 +303,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
                                     <div class="col-lg-10">
-                                        <input type="text" name="Destinatariop" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
+                                        <input type="text" name="destinatariop" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
@@ -313,7 +313,7 @@
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input type="tel" name="telefonop" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
@@ -364,7 +364,7 @@
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
                                     <div class="col-lg-3">
-                                        <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
+                                        <select name="estado_pagop" class="form-select form-select-solid" id="estado_pagop" required>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">pagado</option>
                                         </select>

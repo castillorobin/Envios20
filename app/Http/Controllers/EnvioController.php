@@ -30,22 +30,26 @@ class EnvioController extends Controller
     {
         $envio = new Envio();
 
-        $envio->nombre = $request->get('fname');
-        $envio->correo = $request->get('email');
-        $envio->telefono = $request->get('telefono');
-        $envio->whatsapp = $request->get('whatsapp');
-        $envio->fecha_nacimiento = $request->get('fecha_nacimiento');
-        $envio->dui = $request->get('dui');
-        $envio->direccion = $request->get('direccion');
-        $envio->cargo = $request->get('cargo');
-        $envio->fecha_alta = $request->get('fecha_alta');
-        $envio->n_isss = $request->get('n_isss');
-        $envio->n_afp = $request->get('n_afp');
-        $envio->nota = $request->get('nota');
+        $envio->guia = $request->get('n_guia');
+        $envio->destinatario = $request->get('destinatariop');
+        $envio->direccion = $request->get('direccionp');
+        $envio->telefono = $request->get('telefonop');
+        $envio->cobro = $request->get('cenvio');
+        $envio->precio = $request->get('precio');
+        $envio->envio = $request->get('envio');
+        $envio->total = $request->get('total');
+        $envio->estado = $request->get('estado_enviop');
+        $envio->pago = $request->get('estado_pagop');
+        $envio->tipo = $request->get('tipo_enviop');
+        $envio->fecha_entrega = $request->get('fecha_entregap');
+        $envio->nota = $request->get('notap');
+        
+
+       
         
         $envio->save();
         $vendedores = Empleado::all();
-        return view('empleados.index', compact('vendedores'));
+        return view('envios.index', compact('vendedores'));
 
 
     }
