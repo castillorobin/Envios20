@@ -304,7 +304,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
                                     <div class="col-lg-2">
-                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guiaps" />
+                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">

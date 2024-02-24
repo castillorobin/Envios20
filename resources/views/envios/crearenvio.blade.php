@@ -294,7 +294,9 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_general" role="tabpanel">
 
-                            <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
+                            <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarp" method="POST">
+                            @csrf
+                         @method('GET')
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
                                     <div class="col-lg-2">

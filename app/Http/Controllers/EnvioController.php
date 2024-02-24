@@ -53,7 +53,7 @@ class EnvioController extends Controller
         
         $envio->save();
         $vendedores = Empleado::all();
-        return view('envios.index', compact('vendedores'));
+        return view('envios.crearenvio', compact('vendedores'));
 
 
     }
