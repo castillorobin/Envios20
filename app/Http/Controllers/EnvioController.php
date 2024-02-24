@@ -26,6 +26,13 @@ class EnvioController extends Controller
  
     }
 
+    public function enviopd()
+    {
+
+        $vendedores = Vendedor::all();
+        return view('envios.crearenviopd', compact('vendedores'));
+ 
+    }
     public function envioguardarp(Request $request)
     {
         $envio = new Envio();
@@ -43,9 +50,6 @@ class EnvioController extends Controller
         $envio->tipo = $request->get('tipo_enviop');
         $envio->fecha_entrega = $request->get('fecha_entregap');
         $envio->nota = $request->get('notap');
-        
-
-       
         
         $envio->save();
         $vendedores = Empleado::all();
