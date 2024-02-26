@@ -66,6 +66,7 @@
 
 
     <script>
+        /*
         $(document).ready(function() {
 
             $("#envio2").change(function() {
@@ -122,6 +123,7 @@
             });
 
         });
+        */
     </script>
 
     <script>
@@ -277,12 +279,12 @@
                             </a>
                         </li> 
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link text-active-primary d-flex align-items-center pb-5 active" data-bs-toggle="tab" href="#kt_ecommerce_settings_store" aria-selected="false" role="tab" tabindex="-1">
+                        <a class="nav-link text-active-primary d-flex align-items-center pb-5"  href="/enviopd" aria-selected="false" role="tab" tabindex="-1">
                                 <i class="ki-duotone ki-shop fs-2 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i> Personalizado Departamental
                             </a>
                         </li>
                         <li class="nav-item" role="presentation">
-                            <a class="nav-link text-active-primary d-flex align-items-center pb-5" href="/enviopf" aria-selected="false" role="tab" tabindex="-1">
+                            <a class="nav-link text-active-primary d-flex align-items-center pb-5 active" data-bs-toggle="tab" href="#kt_ecommerce_settings_localization" aria-selected="false" role="tab" tabindex="-1">
                                 <i class="ki-duotone ki-compass fs-2 me-2"><span class="path1"></span><span class="path2"></span></i> Punto fijo
                             </a>
                         </li>
@@ -299,11 +301,11 @@
                             <!-- Termina form de envio personalizado -->
                         </div>
 
-                        <div class="tab-pane fade active show" id="kt_ecommerce_settings_store" role="tabpanel">
-                            <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
+                        <div class="tab-pane fade active show" id="kt_ecommerce_settings_localization" role="tabpanel">
+                        <form id="kt_ecommerce_settings_general_localization" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
                                 <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
-                                    <div class="col-lg-2">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 me-2">Numero de guia</label>
+                                    <div class="col-lg-2 ms-2">
                                         <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
                                     </div>
                                 </div>
@@ -326,7 +328,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
                                     <div class="col-lg-4">
-                                        <select name="cenvio2" class="form-select form-select-solid" id="cenvio2" required>
+                                        <select name="cenvio3" class="form-select form-select-solid" id="cenvio3" required>
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -337,7 +339,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="precio2" class="form-control form-control-solid" id="precio2" value="0" />
+                                            <input type="text" name="precio3" class="form-control form-control-solid" id="precio3" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -348,7 +350,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="envio2" class="form-control form-control-solid" id="envio2" value="0" />
+                                            <input type="text" name="envio3" class="form-control form-control-solid" id="envio3" value="0" />
                                         </div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
@@ -357,7 +359,7 @@
                                             <span class="input-group-text" style="border: none;">
                                                 <i class="fas fa-dollar-sign"></i>
                                             </span>
-                                            <input type="text" name="total2" class="form-control form-control-solid" id="total2" placeholder="total a pagar" value="0" />
+                                            <input type="text" name="total3" class="form-control form-control-solid" id="total3" value="0" />
                                         </div>
                                     </div>
                                 </div>
@@ -381,7 +383,7 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo del envio</label>
                                     <div class="col-lg-4">
                                         <select name="tipo_envio" class="form-select form-select-solid" id="tipo_envio" required>
-                                            <option value="personalizado_departamental">Personalizado departamental</option>
+                                            <option value="punto_fijo">Punto fijo</option>
                                             <option value="Normal">Normal</option>
                                         </select>
                                     </div>
@@ -392,6 +394,7 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Nota</label>
                                     <div class="col-lg-10">

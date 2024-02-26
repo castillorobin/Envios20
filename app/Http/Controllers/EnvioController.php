@@ -33,6 +33,23 @@ class EnvioController extends Controller
         return view('envios.crearenviopd', compact('vendedores'));
  
     }
+
+    public function enviopf()
+    {
+
+        $vendedores = Vendedor::all();
+        return view('envios.crearenviopf', compact('vendedores'));
+ 
+    }
+
+    public function envioca()
+    {
+
+        $vendedores = Vendedor::all();
+        return view('envios.crearenvioca', compact('vendedores'));
+ 
+    }
+
     public function envioguardarp(Request $request)
     {
         $envio = new Envio();
@@ -57,6 +74,8 @@ class EnvioController extends Controller
 
 
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
