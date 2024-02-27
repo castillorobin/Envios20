@@ -61,6 +61,30 @@
 						</a>
 					</div>
 				</div>
+
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-title">Gestión de Comercios</span>
+					<span class="menu-arrow"></span>
+				</span>
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/comercio/crearcomercio">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Crear comercio</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a class="menu-link" href="#">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Listado</span>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
