@@ -306,15 +306,17 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Direccion</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" name="direccionp" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Dirección</label>
+                                    <div class="col-lg-4 mb-3">
+                                        <input type="text" name="direccionp" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 text-lg-end">Teléfono</label> <!-- Agregamos la clase text-lg-end para alinear a la derecha -->
                                     <div class="col-lg-4">
-                                        <input type="tel" name="telefonop" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input type="tel" name="telefonop" class="form-control form-control-lg form-control-solid" placeholder="Teléfono" />
                                     </div>
+                                    <div class="col-lg-2"></div>
                                 </div>
+
                                 <div class="row mb-6">
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
                                     <div class="col-lg-10">
@@ -361,7 +363,7 @@
                                             <option value="sin_entragar">sin entragar</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del pago</label>
+                                    <label class="col-lg-2 col-form-label required text-lg-end fw-semibold fs-6">Estado del pago</label>
                                     <div class="col-lg-4">
                                         <select name="estado_pagop" class="form-select form-select-solid" id="estado_pagop" required>
                                             <option value="por_pagar">Por pagar</option>
@@ -377,7 +379,7 @@
                                             <option value="Normal">Normal</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 text-lg-end">Fecha de entrega</label>
                                     <div class="col-lg-4">
                                         <div class="fv-row">
                                             <input type="date" name="fecha_entregap" class="form-control form-control-solid" id="fecha_entregap" placeholder="Fecha de entrega" required />
@@ -412,249 +414,7 @@
                             <!-- Termina form de envio personalizado -->
                         </div>
 
-                        <div class="tab-pane fade" id="kt_ecommerce_settings_store" role="tabpanel">
-                            <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Direccion</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
-                                    <div class="col-lg-4">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
-                                    <div class="col-lg-4">
-                                        <select name="cenvio2" class="form-select form-select-solid" id="cenvio2" required>
-                                            <option value="Pendiente">Pendiente</option>
-                                            <option value="Pagado">Pagado</option>
-                                        </select>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
-                                    <div class="col-lg-2">
-                                        <div class="input-group">
-                                            <span class="input-group-text" style="border: none;">
-                                                <i class="fas fa-dollar-sign"></i>
-                                            </span>
-                                            <input type="text" name="precio2" class="form-control form-control-solid" id="precio2" value="0" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Precio del envio</label>
-                                    <div class="col-lg-2">
-                                        <div class="input-group">
-                                            <span class="input-group-text" style="border: none;">
-                                                <i class="fas fa-dollar-sign"></i>
-                                            </span>
-                                            <input type="text" name="envio2" class="form-control form-control-solid" id="envio2" value="0" />
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
-                                    <div class="col-lg-2">
-                                        <div class="input-group">
-                                            <span class="input-group-text" style="border: none;">
-                                                <i class="fas fa-dollar-sign"></i>
-                                            </span>
-                                            <input type="text" name="total2" class="form-control form-control-solid" id="total2" placeholder="total a pagar" value="0" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del envio</label>
-                                    <div class="col-lg-4">
-                                        <select name="estado_envio" class="form-select form-select-solid" id="estado_envio" required>
-                                            <option value="Creado">Creado</option>
-                                            <option value="sin_entragar">sin entragar</option>
-                                        </select>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
-                                    <div class="col-lg-3">
-                                        <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
-                                            <option value="por_pagar">Por pagar</option>
-                                            <option value="pagado">pagado</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo del envio</label>
-                                    <div class="col-lg-4">
-                                        <select name="tipo_envio" class="form-select form-select-solid" id="tipo_envio" required>
-                                            <option value="personalizado_departamental">Personalizado departamental</option>
-                                            <option value="Normal">Normal</option>
-                                        </select>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Fecha de entrega</label>
-                                    <div class="col-lg-3">
-                                        <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Nota</label>
-                                    <div class="col-lg-10">
-                                        <textarea name="nota" class="form-control form-control-lg form-control-solid" id="nota" placeholder="Nota"></textarea>
-                                    </div>
-                                </div>
-                                <div class="row py-5">
-                                    <div class="col-md-12 text-end">
-                                        <div class="d-flex justify-content-end">
-                                            <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancel
-                                            </button>
-                                            <button type="submit" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
-                                                <span class="indicator-label">
-                                                    Save
-                                                </span>
-                                                <span class="indicator-progress">
-                                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
 
-                        <div class="tab-pane fade" id="kt_ecommerce_settings_localization" role="tabpanel">
-
-
-        
-                        <div class="tab-pane fade" id="kt_ecommerce_settings_products" role="tabpanel">
-                            <form id="kt_ecommerce_settings_general_products" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de guia</label>
-                                    <div class="col-lg-2">
-                                        <input type="text" name="n_guia" class="form-control form-control-lg form-control-solid" placeholder="# de guia" />
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Destinatario</label>
-                                    <div class="col-lg-10">
-                                        <input type="text" name="Destinatario" class="form-control form-control-lg form-control-solid" placeholder="Destinatario" />
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Direccion</label>
-                                    <div class="col-lg-4">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Direccion" />
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Telefono</label>
-                                    <div class="col-lg-3">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cobro del envío</label>
-                                    <div class="col-lg-4">
-                                        <select name="cenvio4" class="form-select form-select-solid" id="cenvio4" required>
-                                            <option value="Pendiente">Pendiente</option>
-                                            <option value="Pagado">Pagado</option>
-                                        </select>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Precio del paquete</label>
-                                    <div class="col-lg-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text" style="border: none;">
-                                                <i class="fas fa-dollar-sign"></i>
-                                            </span>
-                                            <input type="text" name="precio4" class="form-control form-control-solid" id="precio4" value="0" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Precio del envio</label>
-                                    <div class="col-lg-4">
-                                        <div class="input-group">
-                                            <span class="input-group-text" style="border: none;">
-                                                <i class="fas fa-dollar-sign"></i>
-                                            </span>
-                                            <input type="text" name="envio4" class="form-control form-control-solid" id="envio4" value="0" />
-                                        </div>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Total a pagar</label>
-                                    <div class="col-lg-3">
-                                        <div class="input-group">
-                                            <span class="input-group-text" style="border: none;">
-                                                <i class="fas fa-dollar-sign"></i>
-                                            </span>
-                                            <input type="text" name="total4" class="form-control form-control-solid" id="total4" value="0" />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado del envio</label>
-                                    <div class="col-lg-4">
-                                        <select name="estado_envio" class="form-select form-select-solid" id="estado_envio" required>
-                                            <option value="Creado">Creado</option>
-                                            <option value="sin_entragar">sin entragar</option>
-                                        </select>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Estado del pago</label>
-                                    <div class="col-lg-3">
-                                        <select name="estado_pago" class="form-select form-select-solid" id="estado_pago" required>
-                                            <option value="por_pagar">Por pagar</option>
-                                            <option value="pagado">pagado</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo del envio</label>
-                                    <div class="col-lg-4">
-                                        <select name="tipo_envio" class="form-select form-select-solid" id="tipo_envio" required>
-                                            <option value="asillero">Casillero</option>
-                                            <option value="Normal">Normal</option>
-                                        </select>
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6 ms-3">Fecha de entrega</label>
-                                    <div class="col-lg-3">
-                                        <div class="fv-row">
-                                            <input type="date" name="fecha_entrega" class="form-control form-control-solid" id="fecha_entrega" placeholder="Fecha de entrega" required />
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row mb-6">
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Nota</label>
-                                    <div class="col-lg-10">
-                                        <textarea name="nota" class="form-control form-control-lg form-control-solid" id="nota" placeholder="Nota"></textarea>
-                                    </div>
-                                </div>
-                                <div class="row py-5">
-                                    <div class="col-md-12 text-end">
-                                        <div class="d-flex justify-content-end">
-                                            <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancel
-                                            </button>
-                                            <button type="submit" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
-                                                <span class="indicator-label">
-                                                    Save
-                                                </span>
-                                                <span class="indicator-progress">
-                                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                </span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            </form>
-                        </div>
                     </div>
                 </div>
             </div>
