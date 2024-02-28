@@ -159,7 +159,7 @@
                     <div id="kt_app_content_container" class="app-container container-xxl">
                         <!--begin::Products-->
                         <div class="card card-flush">
-                            <!--begin::Card header-->
+                            <!--begin::Card header--> 
                             <div class="card-header align-items-center py-5 gap-2 gap-md-5">
                                 <!--begin::Card title-->
                                 <div class="card-title">

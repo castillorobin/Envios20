@@ -53,7 +53,7 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="/envio">
+						<a class="menu-link" href="/envios/envi">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
