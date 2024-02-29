@@ -3,248 +3,6 @@
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
-    <script>
-        /*
-        $(document).ready(function() {
-
-            $("#envio").change(function() {
-                //alert($(this).val());
-                const tenv = document.getElementById("cenvio").value;
-                const preci = parseFloat(document.getElementById("precio").value);
-                const envi = parseFloat($(this).val());
-
-                if (tenv == "Pagado") {
-                    document.getElementById("total").value = preci;
-                } else {
-                    document.getElementById("total").value = preci - envi;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-            $("#precio").change(function() {
-                //alert($(this).val());
-                const tenv2 = document.getElementById("cenvio").value;
-                const envi2 = parseFloat(document.getElementById("envio").value);
-                const preci2 = parseFloat($(this).val());
-
-                if (tenv2 == "Pagado") {
-                    document.getElementById("total").value = preci2;
-                } else {
-                    document.getElementById("total").value = preci2 - envi2;
-                }
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-
-            $("#cenvio").change(function() {
-                //alert($(this).val());
-                const tenv3 = document.getElementById("precio").value;
-                const envi3 = parseFloat(document.getElementById("envio").value);
-                const preci3 = document.getElementById("cenvio").value;
-
-                if (preci3 == "Pagado") {
-                    document.getElementById("total").value = tenv3;
-                } else {
-                    document.getElementById("total").value = tenv3 - envi3;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
-
-            });
-
-        });
-*/
-    </script>
-
-    <script>
-        /*
-        $(document).ready(function() {
-
-            $("#envio2").change(function() {
-                //alert($(this).val());
-                const tenv = document.getElementById("cenvio2").value;
-                const preci = parseFloat(document.getElementById("precio2").value);
-                const envi = parseFloat($(this).val());
-
-                if (tenv == "Pagado") {
-                    document.getElementById("total2").value = preci;
-                } else {
-                    document.getElementById("total2").value = preci - envi;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-            $("#precio2").change(function() {
-                //alert($(this).val());
-                const tenv2 = document.getElementById("cenvio2").value;
-                const envi2 = parseFloat(document.getElementById("envio2").value);
-                const preci2 = parseFloat($(this).val());
-
-                if (tenv2 == "Pagado") {
-                    document.getElementById("total2").value = preci2;
-                } else {
-                    document.getElementById("total2").value = preci2 - envi2;
-                }
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-
-            $("#cenvio2").change(function() {
-                //alert($(this).val());
-                const tenv3 = document.getElementById("precio2").value;
-                const envi3 = parseFloat(document.getElementById("envio2").value);
-                const preci3 = document.getElementById("cenvio2").value;
-
-                if (preci3 == "Pagado") {
-                    document.getElementById("total2").value = tenv3;
-                } else {
-                    document.getElementById("total2").value = tenv3 - envi3;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
-
-            });
-
-        });
-        */
-    </script>
-
-    <script>
-        /*
-        $(document).ready(function() {
-
-            $("#envio3").change(function() {
-                //alert($(this).val());
-                const tenv = document.getElementById("cenvio3").value;
-                const preci = parseFloat(document.getElementById("precio3").value);
-                const envi = parseFloat($(this).val());
-
-                if (tenv == "Pagado") {
-                    document.getElementById("total3").value = preci;
-                } else {
-                    document.getElementById("total3").value = preci - envi;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-            $("#precio3").change(function() {
-                //alert($(this).val());
-                const tenv2 = document.getElementById("cenvio3").value;
-                const envi2 = parseFloat(document.getElementById("envio3").value);
-                const preci2 = parseFloat($(this).val());
-
-                if (tenv2 == "Pagado") {
-                    document.getElementById("total3").value = preci2;
-                } else {
-                    document.getElementById("total3").value = preci2 - envi2;
-                }
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-
-            $("#cenvio3").change(function() {
-                //alert($(this).val());
-                const tenv3 = document.getElementById("precio3").value;
-                const envi3 = parseFloat(document.getElementById("envio3").value);
-                const preci3 = document.getElementById("cenvio3").value;
-
-                if (preci3 == "Pagado") {
-                    document.getElementById("total3").value = tenv3;
-                } else {
-                    document.getElementById("total3").value = tenv3 - envi3;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
-
-            });
-
-        });
-        */
-    </script>
-
-    <script>
-        $(document).ready(function() {
-
-            $("#envio4").change(function() {
-                //alert($(this).val());
-                const tenv = document.getElementById("cenvio4").value;
-                const preci = parseFloat(document.getElementById("precio4").value);
-                const envi = parseFloat($(this).val());
-
-                if (tenv == "Pagado") {
-                    document.getElementById("total4").value = preci;
-                } else {
-                    document.getElementById("total4").value = preci - envi;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-            $("#precio4").change(function() {
-                //alert($(this).val());
-                const tenv2 = document.getElementById("cenvio4").value;
-                const envi2 = parseFloat(document.getElementById("envio4").value);
-                const preci2 = parseFloat($(this).val());
-
-                if (tenv2 == "Pagado") {
-                    document.getElementById("total4").value = preci2;
-                } else {
-                    document.getElementById("total4").value = preci2 - envi2;
-                }
-
-                //const castot = parseFloat(document.getElementById("totalc").value);
-                //document.getElementById("ptotal").value = castot ; 
-
-            });
-
-
-            $("#cenvio4").change(function() {
-                //alert($(this).val());
-                const tenv3 = document.getElementById("precio4").value;
-                const envi3 = parseFloat(document.getElementById("envio4").value);
-                const preci3 = document.getElementById("cenvio4").value;
-
-                if (preci3 == "Pagado") {
-                    document.getElementById("total4").value = tenv3;
-                } else {
-                    document.getElementById("total4").value = tenv3 - envi3;
-                }
-
-
-                //const castot = parseFloat(document.getElementById("totalc").value);														//document.getElementById("ptotal").value = castot ; 
-
-            });
-
-        });
-    </script>
-
     <style>
         label.required::after {
             content: none;
@@ -299,137 +57,137 @@
 
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_products" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_products" class="form fv-plugins-bootstrap5 fv-plugins-framework " action="#">
-                                <div class="row my-3 mx-3">
-                                    <div class="form-floating col-lg-3">
+                                <div class="row my-4 mx-4">
+                                    <div class="form-floating col-lg-3 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" />
-                                        <label for="n_guia"># de guia</label>
+                                        <label for="n_guia" style="padding-left: 25px;"># de guia</label>
                                         <div id="n_guiaValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese solo números para la guía.
                                         </div>
                                     </div>
                                 </div>  
-                                <div class="row my-3 mx-3">
-                                    <div class="form-floating col-lg-12">
+                                <div class="row my-4 mx-4">
+                                    <div class="form-floating col-lg-12 mb-4">
                                         <select class="form-select form-select-solid" name="comercio" id="comercio" aria-label="Floating label select example">
                                             <option selected>selecione el comercio</option>
                                             <option value="1">ejemplo 1</option>
                                             <option value="2">ejemplo 2</option>
                                             <option value="3">ejemplo 3</option>
                                         </select>
-                                        <label for="comercio">Comercio</label>
+                                        <label for="comercio" style="padding-left: 25px;">Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione un comercio.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-3 mx-3">
-                                    <div class="form-floating col-lg-12">
+                                <div class="row my-4 mx-4">
+                                    <div class="form-floating col-lg-12 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="Destinatario" id="Destinatario" placeholder="Destinatario" />
-                                        <label for="Destinatario">Destinatario</label>
+                                        <label for="Destinatario" style="padding-left: 25px;">Destinatario</label>
                                         <div id="destinatarioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese el destinatario.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-3 mx-3">
+                                <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-7 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="direccion" id="direccion" placeholder="Dirección" />
-                                        <label for="direccion">Dirección</label>
+                                        <label for="direccion" style="padding-left: 25px;">Dirección</label>
                                         <div id="direccionValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese una dirección.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-5 mb-4">
                                         <input type="tel" class="form-control form-control-solid" name="telefono" id="telefono" placeholder="Teléfono" />
-                                        <label for="telefono">Teléfono</label>
+                                        <label for="telefono" style="padding-left: 25px;">Teléfono</label>
                                         <div id="telefonoValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un número de teléfono válido.
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="row my-3 mx-3">
-                                    <div class="form-floating col-lg-4">
+                                <div class="row my-4 mx-4">
+                                    <div class="form-floating col-lg-4 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="precio4" id="precio4" placeholder="Precio del paquete" />
-                                        <label for="precio4">Precio del paquete</label>
+                                        <label for="precio4" style="padding-left: 25px;">Precio del paquete</label>
                                         <div id="precio4ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el paquete.
                                         </div>
                                     </div>
-                                    <div class="form-floating col-lg-4">
+                                    <div class="form-floating col-lg-4 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="envio4" id="envio4" placeholder="Precio del envío" />
-                                        <label for="envio4">Precio del envío</label>
+                                        <label for="envio4" style="padding-left: 25px;">Precio del envío</label>
                                         <div id="envio4ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el envío.
                                         </div>
                                     </div>
-                                    <div class="form-floating col-lg-4">
+                                    <div class="form-floating col-lg-4 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="total4" id="total4" placeholder="Total a pagar" />
-                                        <label for="total4">Total a pagar</label>
+                                        <label for="total4" style="padding-left: 25px;">Total a pagar</label>
                                         <div id="total4ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un total válido a pagar.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-3 mx-3">
-                                    <div class="form-floating col-lg-6">
+                                <div class="row my-4 mx-4">
+                                    <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio4" id="cenvio4" aria-label="Floating label select example" required>
                                             <option selected>seleccione el estado cobro</option>
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
-                                        <label for="cenvio4">Cobro del envío</label>
+                                        <label for="cenvio4" style="padding-left: 25px;">Cobro del envío</label>
                                         <div id="cenvio4ValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione el estado de cobro del envío.
                                         </div>
                                     </div>
-                                    <div class="form-floating col-lg-6">
+                                    <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>
                                             <option selected>seleccione el estado del pago</option>
                                             <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">Pagado</option>
                                         </select>
-                                        <label for="estado_pago">Estado del pago</label>
+                                        <label for="estado_pago" style="padding-left: 25px;">Estado del pago</label>
                                         <div id="estadoPagoValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione el estado del pago.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-3 mx-3">
-                                    <div class="form-floating col-lg-4">
+                                <div class="row my-4 mx-4">
+                                    <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="tipo_envio" id="tipo_envio" aria-label="Floating label select example" required>
                                             <option selected>Seleccione el tipo de envío</option>
                                             <option value="Casillero">Casillero</option>
                                             <option value="Normal">Normal</option>
                                         </select>
-                                        <label for="tipo_envio">Tipo de envío</label>
+                                        <label for="tipo_envio" style="padding-left: 25px;">Tipo de envío</label>
                                         <div id="tipoEnvioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione el tipo de envío.
                                         </div>
                                     </div>
-                                    <div class="form-floating col-lg-4">
+                                    <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="estado_envio" id="estado_envio" aria-label="Floating label select example" required>
                                             <option selected>Seleccione el estado del envío</option>
                                             <option value="Creado">Creado</option>
                                             <option value="sin_entregar">Sin entregar</option>
                                         </select>
-                                        <label for="estado_envio">Estado del envío</label>
+                                        <label for="estado_envio" style="padding-left: 25px;">Estado del envío</label>
                                         <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione el estado del envío.
                                         </div>
                                     </div>
-                                    <div class="form-floating col-lg-4">
+                                    <div class="form-floating col-lg-4 mb-4">
                                         <input type="date" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" />
-                                        <label for="fecha_entrega">Fecha de entrega</label>
+                                        <label for="fecha_entrega" style="padding-left: 25px;">Fecha de entrega</label>
                                         <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione una fecha de entrega.
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row my-3 mx-3">
-                                    <div class="form-floating">
+                                <div class="row my-4 mx-4">
+                                    <div class="form-floating mb-4">
                                         <textarea name="nota" class="form-control form-control-solid" placeholder="Nota" id="nota" style="height: 80px"></textarea>
-                                        <label for="nota">Nota</label>
+                                        <label for="nota" style="padding-left: 25px;">Nota</label>
                                     </div>
                                 </div>
                                 <div class="row py-5">
@@ -473,3 +231,37 @@
     });
 </script>
 <script src="assets/js/validacionesenvioca.js"></script>
+<script>
+    $(document).ready(function() {
+
+        // Función para calcular el total
+        function calcularTotal() {
+            const precioPaquete = parseFloat($("#precio4").val()) || 0;
+            const precioEnvio = parseFloat($("#envio4").val()) || 0;
+            const estadoCobro = $("#cenvio4").val();
+            const estadoPago = $("#estado_pago").val();
+
+            let total = precioPaquete + precioEnvio;
+
+            if (estadoCobro === "Pendiente") {
+                total -= precioEnvio;
+            }
+
+            if (estadoPago === "por_pagar") {
+                total -= precioPaquete;
+            }
+
+            $("#total4").val(total.toFixed(2));
+        }
+
+        // Calcular total al cargar la página
+        calcularTotal();
+        $("#precio4").change(calcularTotal);
+        $("#envio4").change(calcularTotal);
+        $("#cenvio4").change(calcularTotal);
+        $("#estado_pago").change(calcularTotal);
+
+        $("#envio4").keyup(calcularTotal);
+
+    });
+</script>
