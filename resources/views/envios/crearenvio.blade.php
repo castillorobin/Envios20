@@ -10,6 +10,9 @@
         }
     </style>
 
+
+
+
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
@@ -71,11 +74,12 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" name="comercio" id="comercio" aria-label="Floating label select example">
-                                            <option selected>selecione el comercio</option>
-                                            <option value="1">ejemplo 1</option>
-                                            <option value="2">ejemplo 2</option>
-                                            <option value="3">ejemplo 3</option>
+                                        <select class="form-select form-select-solid" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer">
+                                        <option value="">Buscar Comercio</option>
+    @for($i=0;  $i< count($vendedores); $i++ )
+                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
+       
+                        @endfor
                                         </select>
                                         <label for="comercio" style="padding-left: 25px;">Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
