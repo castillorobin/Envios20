@@ -75,8 +75,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
                                         <select class="form-select form-select-solid" data-control="select2" name="comer">
-                                        <option selected>selecione el comercio</option>
-
+                                      
                                         @foreach ($vendedores as $vendedor)
                                         
                                         <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
@@ -140,7 +139,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio" id="cenvio" aria-label="Floating label select example" required>
-                                            <option selected>seleccione el estado cobro</option>
+                    
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -150,10 +149,10 @@
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>
-                                            <option selected>seleccione el estado del pago</option>
-                                            <option value="por_pagar">Por pagar</option>
-                                            <option value="pagado">Pagado</option>
+                                        <select class="form-select form-select-solid" name="estado_pagop" id="estado_pagop" aria-label="Floating label select example" required>
+                                            
+                                            <option value="Por pagar">Por pagar</option>
+                                            <option value="Pagado">Pagado</option>
                                         </select>
                                         <label for="estado_pago" style="padding-left: 25px;">Estado del pago</label>
                                         <div id="estadoPagoValidationFeedback" class="invalid-feedback">
@@ -163,8 +162,8 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <select class="form-select form-select-solid" name="tipo_envio" id="tipo_envio" aria-label="Floating label select example" required>
-                                            <option selected>Seleccione el tipo de envío</option>
+                                        <select class="form-select form-select-solid" name="tipo_enviop" id="tipo_enviop" aria-label="Floating label select example" required>
+                                           
                                             <option value="Personalizado">Personalizado </option>
                                             <option value="Normal">Normal</option>
                                         </select>
@@ -175,7 +174,7 @@
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="estado_enviop" id="estado_enviop" aria-label="Floating label select example" required>
-                                            <option selected>Seleccione el estado del envío</option>
+                                            
                                             <option value="Creado">Creado</option>
                                             <option value="sin_entregar">Sin entregar</option>
                                         </select>
@@ -520,7 +519,7 @@
                 total -= precioEnvio;
             }
 
-            if (estadoPago === "por_pagar") {
+            if (estadoPago === "Por pagar") {
                 total -= precioPaquete;
             }
 

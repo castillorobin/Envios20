@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('envios', function (Blueprint $table) {
             $table->id();
             $table->string('guia');
+            $table->string('comercio');
             $table->string('destinatario');
             $table->string('direccion');
             $table->string('telefono');
-            $table->double('cobro');
+            $table->string('cobro');
             $table->double('precio');
             $table->double('envio');
             $table->double('total');

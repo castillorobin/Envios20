@@ -55,8 +55,9 @@ class EnvioController extends Controller
     {
         $envio = new Envio();
 
-        $envio->guia = $request->get('n_guia');
+       $envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatariop');
+        $envio->comercio = $request->get('comercio');
         $envio->direccion = $request->get('direccionp');
         $envio->telefono = $request->get('telefonop');
         $envio->cobro = $request->get('cenvio');
@@ -70,12 +71,63 @@ class EnvioController extends Controller
         $envio->nota = $request->get('notap');
         
         $envio->save();
-        $vendedores = Empleado::all();
+        $vendedores = Vendedor::all();
         return view('envios.crearenvio', compact('vendedores'));
 
 
     }
 
+    public function envioguardarpd(Request $request)
+    {
+        $envio = new Envio();
+
+       $envio->guia = $request->get('n_guia');
+        $envio->destinatario = $request->get('destinatario');
+        $envio->comercio = $request->get('comercio');
+        $envio->direccion = $request->get('direccion');
+        $envio->telefono = $request->get('telefono');
+        $envio->cobro = $request->get('cenvio2');
+        $envio->precio = $request->get('precio2');
+        $envio->envio = $request->get('envio2');
+        $envio->total = $request->get('total2');
+        $envio->estado = $request->get('estado_envio');
+        $envio->pago = $request->get('estado_pago');
+        $envio->tipo = $request->get('tipo_envio');
+        $envio->fecha_entrega = $request->get('fecha_entrega');
+        $envio->nota = $request->get('nota');
+        
+        $envio->save();
+        $vendedores = Vendedor::all();
+        return view('envios.crearenviopd', compact('vendedores'));
+
+
+    }
+
+    public function envioguardarpf(Request $request)
+    {
+        $envio = new Envio();
+
+       $envio->guia = $request->get('n_guia');
+        $envio->destinatario = $request->get('destinatario');
+        $envio->comercio = $request->get('comercio');
+        $envio->direccion = $request->get('direccion');
+        $envio->telefono = $request->get('telefono');
+        $envio->cobro = $request->get('cenvio3');
+        $envio->precio = $request->get('precio3');
+        $envio->envio = $request->get('envio3');
+        $envio->total = $request->get('total3');
+        $envio->estado = $request->get('estado_envio');
+        $envio->pago = $request->get('estado_pago');
+        $envio->tipo = $request->get('tipo_envio');
+        $envio->fecha_entrega = $request->get('fecha_entrega');
+        $envio->nota = $request->get('nota');
+        
+        $envio->save();
+        $vendedores = Vendedor::all();
+        return view('envios.crearenviopf', compact('vendedores'));
+
+
+    }
     
 
     /**
