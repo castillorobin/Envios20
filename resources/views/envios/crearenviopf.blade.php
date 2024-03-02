@@ -1,8 +1,9 @@
 <x-default-layout>
-    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <script src="assets/plugins/global/plugins.bundle.js"></script>
+ 
 
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
     <style>
         label.required::after {
             content: none;
@@ -68,11 +69,11 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" name="comercio" id="comercio" aria-label="Floating label select example">
-                                            <option selected>selecione el comercio</option>
-                                            <option value="1">ejemplo 1</option>
-                                            <option value="2">ejemplo 2</option>
-                                            <option value="3">ejemplo 3</option>
+                                    <select class="form-select form-select-solid" data-control="select2"  name="comercio" id="comercio" aria-label="Floating label select example">
+                                        @foreach ($vendedores as $vendedor)
+                                        <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                        @endforeach
+   
                                         </select>
                                         <label for="comercio" style="padding-left: 25px;">Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">

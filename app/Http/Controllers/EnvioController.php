@@ -21,7 +21,7 @@ class EnvioController extends Controller
     public function crearenvio()
     {
 
-        $vendedores = Vendedor::all();
+        $vendedores = Vendedor::select('nombre')->get();
         return view('envios.crearenvio', compact('vendedores'));
  
     }

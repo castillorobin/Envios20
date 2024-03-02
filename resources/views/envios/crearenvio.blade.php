@@ -1,8 +1,8 @@
 <x-default-layout>
-    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-    <script src="assets/plugins/global/plugins.bundle.js"></script>
-
+    
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    
 
     <style>
         label.required::after {
@@ -74,14 +74,14 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-choices="data-choices" data-options='{"removeItemButton":true,"placeholder":true}' name="comer">
-                                        <option value="">Buscar Comercio</option>
-    @for($i=0;  $i< count($vendedores); $i++ )
-                    <option value="{{$vendedores[$i]->nombre}}">{{ $vendedores[$i]->nombre }} </option>
-       
-                        @endfor
+                                        <select class="form-select form-select-solid" data-control="select2" name="comer">
+                                      
+                                        @foreach ($vendedores as $vendedor)
+                                        <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                        @endforeach
+   
                                         </select>
-                                        <label for="comercio" style="padding-left: 25px;">Comercio</label>
+                                        <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione un comercio.
                                         </div>
@@ -271,7 +271,7 @@
             n_guiaValidationFeedback.style.display = 'none';
             return true;
         }
-    }
+    } 
 
     // Función para validar el campo de destinatario
     function validarDestinatario() {
