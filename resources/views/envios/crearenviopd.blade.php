@@ -8,7 +8,7 @@
         label.required::after {
             content: none;
         }
-    </style>
+    </style> 
 
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
@@ -60,7 +60,9 @@
                         </div>
 
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_store" role="tabpanel">
-                            <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="#">
+                            <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarpd" method="POST">
+                            @csrf
+                            @method('GET')
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-3 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" />
@@ -86,7 +88,7 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="Destinatario" id="Destinatario" placeholder="Destinatario" />
+                                        <input type="text" class="form-control form-control-solid" name="destinatario" id="destinatario" placeholder="Destinatario" />
                                         <label for="Destinatario" style="padding-left: 25px;">Destinatario</label>
                                         <div id="destinatarioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese el destinatario.
@@ -136,7 +138,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio2" id="cenvio2" aria-label="Floating label select example" required>
-                                            <option selected>seleccione el estado cobro</option>
+                                           
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -147,9 +149,9 @@
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>
-                                            <option selected>seleccione el estado del pago</option>
-                                            <option value="por_pagar">Por pagar</option>
-                                            <option value="pagado">Pagado</option>
+                                            
+                                            <option value="Por pagar">Por pagar</option>
+                                            <option value="Pagado">Pagado</option>
                                         </select>
                                         <label for="estado_pago" style="padding-left: 25px;">Estado del pago</label>
                                         <div id="estadoPagoValidationFeedback" class="invalid-feedback">
@@ -160,8 +162,8 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="tipo_envio" id="tipo_envio" aria-label="Floating label select example" required>
-                                            <option selected>Seleccione el tipo de envío</option>
-                                            <option value="personalizado_departamental">Personalizado departamental</option>
+                                           
+                                            <option value="Personalizado departamental">Personalizado departamental</option>
                                             <option value="Normal">Normal</option>
                                         </select>
                                         <label for="tipo_envio" style="padding-left: 25px;">Tipo de envío</label>
@@ -171,9 +173,9 @@
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="estado_envio" id="estado_envio" aria-label="Floating label select example" required>
-                                            <option selected>Seleccione el estado del envío</option>
+                                            
                                             <option value="Creado">Creado</option>
-                                            <option value="sin_entregar">Sin entregar</option>
+                                            <option value="Sin entregar">Sin entregar</option>
                                         </select>
                                         <label for="estado_envio" style="padding-left: 25px;">Estado del envío</label>
                                         <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
@@ -199,11 +201,11 @@
                                     <div class="col-md-12 text-end">
                                         <div class="d-flex justify-content-end">
                                             <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancel
+                                                Cancelar
                                             </button>
                                             <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
                                                 <span class="indicator-label">
-                                                    Save
+                                                    Guardar
                                                 </span>
                                                 <span class="indicator-progress">
                                                     Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
@@ -251,7 +253,7 @@
                 total -= precioEnvio;
             }
 
-            if (estadoPago === "por_pagar") {
+            if (estadoPago === "Por pagar") {
                 total -= precioPaquete;
             }
 
