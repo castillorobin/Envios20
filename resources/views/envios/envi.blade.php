@@ -237,114 +237,82 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
+
                                 <table class="table align-middle table-row-dashed fs-6 gy-4" id="kt_docs_datatable_subtable">
-                                    <thead>
-                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-                                            <th>Número de guía</th>
-                                            <th>Comercio</th>
-                                            <th>Destinatario</th>
-                                            <th>Dirección</th>
-                                            <th>Estado</th>
-                                            <th>Precio</th>
-                                            <th>Envío</th>
-                                            <th>Total</th>
-                                            <th>Estado del pago</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>12345</td>
-                                            <td>Comercio 1</td>
-                                            <td>Juan Pérez</td>
-                                            <td>Calle 123, Ciudad</td>
-                                            <td><span class="badge bg-success">Entregado</span></td>
-                                            <td>$50.00</td>
-                                            <td>$10.00</td>
-                                            <td>$60.00</td>
-                                            <td><span class="badge bg-success">Pagado</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px expand-btn">
-                                                    <span class="svg-icon fs-3 m-0 toggle-off">+</span>
-                                                    <span class="svg-icon fs-3 m-0 toggle-on">-</span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr class="expand-row" style="display: none;">
-                                            <td colspan="10">
-                                                <table class="table align-middle table-row-dashed fs-6 gy-4">
-                                                    <thead>
-                                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-                                                            <th>Fecha de creación</th>
-                                                            <th>Fecha de entrega</th>
-                                                            <th>Tipo de envío</th>
-                                                            <th>Recepción</th>
-                                                            <th>Repartidor</th>
-                                                            <th>Ruta</th>
-                                                            <th>Nota</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>2024-02-29</td>
-                                                            <td>2024-03-05</td>
-                                                            <td>Express</td>
-                                                            <td>Recibido por Juan</td>
-                                                            <td>Carlos</td>
-                                                            <td>Ruta 1</td>
-                                                            <td>Entrega urgente</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>54321</td>
-                                            <td>Comercio 2</td>
-                                            <td>Maria López</td>
-                                            <td>Avenida 456, Ciudad</td>
-                                            <td><span class="badge bg-danger">No entregado</span></td>
-                                            <td>$80.00</td>
-                                            <td>$15.00</td>
-                                            <td>$95.00</td>
-                                            <td><span class="badge bg-danger">No pagado</span></td>
-                                            <td>
-                                                <button class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px expand-btn">
-                                                    <span class="svg-icon fs-3 m-0 toggle-off">+</span>
-                                                    <span class="svg-icon fs-3 m-0 toggle-on">-</span>
-                                                </button>
-                                            </td>
-                                        </tr>
-                                        <tr class="expand-row" style="display: none;">
-                                            <td colspan="10">
-                                                <table class="table align-middle table-row-dashed fs-6 gy-4">
-                                                    <thead>
-                                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-                                                            <th>Fecha de creación</th>
-                                                            <th>Fecha de entrega</th>
-                                                            <th>Tipo de envío</th>
-                                                            <th>Recepción</th>
-                                                            <th>Repartidor</th>
-                                                            <th>Ruta</th>
-                                                            <th>Nota</th>
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        <tr>
-                                                            <td>2024-03-01</td>
-                                                            <td>-</td>
-                                                            <td>Normal</td>
-                                                            <td>-</td>
-                                                            <td>-</td>
-                                                            <td>-</td>
-                                                            <td>-</td>
-                                                        </tr>
-                                                    </tbody>
-                                                </table>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+    <!--begin::Table head-->
+    <thead>
+        <!--begin::Table row-->
+        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+            <th class="min-w-100px"># de guía</th>
+            <th class="text-centar min-w-100px">Comercio</th>
+            <th class="text-Center min-w-100px">Destinatario</th>
+            <th class="text-center min-w-100px">Dirección</th>
+            <th class="text-end min-w-100px">Estado</th>
+            <th class="text-end min-w-50px">Precio</th>
+            <th class="text-end min-w-50px">Envío</th>
+            <th class="text-end min-w-50px">Total</th>
+            <th class="text-center min-w-50px">Estado del pago</th>
+            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
+            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
+        </tr>
+        <!--end::Table row-->
+    </thead>
+    <!--end::Table head-->
+
+    <!--begin::Table body-->
+    <tbody class="fw-bold text-gray-600">
+        <tr>
+            <td >12345</td>
+            <td class="text-center" >Nombre del Comercio</td>
+            <td>Juan Pérez</td>
+            <td>Dirección de Envío</td>
+            <td>Enviado</td>
+            <td>$100.00</td>
+            <td>Normal</td>
+            <td>$120.00</td>
+            <td>Pagado</td>
+            <td>
+                <button type="button" class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px" data-kt-docs-datatable-subtable="expand_row">
+                    <span class="svg-icon fs-3 m-0 toggle-off">...</span>
+                    <span class="svg-icon fs-3 m-0 toggle-on">...</span>
+                </button>
+            </td>
+            <td></td> <!-- Celda vacía para simetría -->
+            <td></td> <!-- Celda vacía para simetría -->
+        </tr>
+        <tr data-kt-docs-datatable-subtable="subtable_template" class="d-none">
+            <td colspan="12">
+                <div class="row">
+                    <div class="col-6 col-lg-2">
+                        <div class="text-gray-900 fs-7">Fecha de creación:</div>
+                        <div class="text-muted fs-7 fw-bold"> 20/4/2020</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="text-gray-900 fs-7">Fecha de entrega:</div>
+                        <div class="text-muted fs-7 fw-bold">20/4/2020</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="text-gray-900 fs-7">Tipo de envío:</div>
+                        <div class="text-muted fs-7 fw-bold">Personalizado</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="text-gray-900 fs-7">Recepción:</div>
+                        <div class="text-muted fs-7 fw-bold">Entregado</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="text-gray-900 fs-7">Repartidor:</div>
+                        <div class="text-muted fs-7 fw-bold">Erick</div>
+                    </div>
+                    <div class="col-6 col-lg-2">
+                        <div class="text-gray-900 fs-7">Ruta:</div>
+                        <div class="text-muted fs-7 fw-bold">1</div>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+    <!--end::Table body-->
+</table>
                                 <!--end::Table -->
                             </div>
                             <!--end::Card body-->
@@ -394,13 +362,22 @@
 
 </body>
 <script>
-    document.querySelectorAll('.expand-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const expandRow = btn.parentElement.parentElement.nextElementSibling;
-            expandRow.style.display = expandRow.style.display === 'none' ? '' : 'none';
+    "use strict";
+    document.addEventListener('DOMContentLoaded', function() {
+        const buttons = document.querySelectorAll('[data-kt-docs-datatable-subtable="expand_row"]');
+        const subtable = document.querySelector('[data-kt-docs-datatable-subtable="subtable_template"]');
+
+        buttons.forEach(button => {
+            button.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const subtableRow = row.nextElementSibling;
+
+                if (subtableRow && subtableRow.getAttribute('data-kt-docs-datatable-subtable') === 'subtable_template') {
+                    subtableRow.classList.toggle('d-none');
+                }
+            });
         });
     });
 </script>
-
 
 </html>

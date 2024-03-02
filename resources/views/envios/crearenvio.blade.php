@@ -75,8 +75,10 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
                                         <select class="form-select form-select-solid" data-control="select2" name="comer">
-                                      
+                                        <option selected>selecione el comercio</option>
+
                                         @foreach ($vendedores as $vendedor)
+                                        
                                         <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
                                         @endforeach
    

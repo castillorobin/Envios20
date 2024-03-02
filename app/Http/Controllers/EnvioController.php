@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Envio;
 use Illuminate\Http\Request;
 use App\Models\Vendedor;
+use App\Models\Empleado;
 
 class EnvioController extends Controller
 {

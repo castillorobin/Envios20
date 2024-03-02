@@ -64,13 +64,14 @@
                                             Por favor ingrese solo números para la guía.
                                         </div>
                                     </div>
-                                </div>  
+                                </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                    <select class="form-select form-select-solid" data-control="select2"  name="comercio" id="comercio" >
-                                        @foreach ($vendedores as $vendedor)
-                                        <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
-                                        @endforeach
+                                        <select class="form-select form-select-solid" data-control="select2" name="comercio" id="comercio">
+                                            <option selected>selecione el comercio</option>
+                                            @foreach ($vendedores as $vendedor)
+                                            <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                            @endforeach
                                         </select>
                                         <label for="comercio" style="padding-left: 25px;">Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
