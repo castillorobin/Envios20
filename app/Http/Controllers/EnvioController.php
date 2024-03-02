@@ -54,8 +54,9 @@ class EnvioController extends Controller
     {
         $envio = new Envio();
 
-        $envio->guia = $request->get('n_guia');
+       $envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatariop');
+        $envio->comercio = $request->get('comercio');
         $envio->direccion = $request->get('direccionp');
         $envio->telefono = $request->get('telefonop');
         $envio->cobro = $request->get('cenvio');
@@ -69,7 +70,7 @@ class EnvioController extends Controller
         $envio->nota = $request->get('notap');
         
         $envio->save();
-        $vendedores = Empleado::all();
+        $vendedores = Vendedor::all();
         return view('envios.crearenvio', compact('vendedores'));
 
 
