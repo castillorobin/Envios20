@@ -13,6 +13,7 @@
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
     <!--begin::Theme mode setup on page load-->
     <script>
+        
         var defaultThemeMode = "light";
         var themeMode;
         if (document.documentElement) {
@@ -169,7 +170,7 @@
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Search Report" />
+                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
@@ -181,12 +182,12 @@
         <!==begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Pick date range" id="kt_ecommerce_report_customer_orders_daterangepicker" />
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_customer_orders_daterangepicker" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
+                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
                                             <option></option>
                                             <option value="all">All</option>
                                             <option value="active">Active</option>
@@ -261,16 +262,17 @@
 
     <!--begin::Table body-->
     <tbody class="fw-bold text-gray-600">
+    @foreach ($envios as $envio)
         <tr>
-            <td >12345</td>
-            <td class="text-center" >Nombre del Comercio</td>
-            <td>Juan Pérez</td>
-            <td>Dirección de Envío</td>
-            <td>Enviado</td>
-            <td>$100.00</td>
-            <td>Normal</td>
-            <td>$120.00</td>
-            <td>Pagado</td>
+            <td >{{ $envio->guia }} </td>
+            <td class="text-center" >{{ $envio->comercio }} </td>
+            <td>{{ $envio->destinatario }} </td>
+            <td>{{ $envio->direccion }} </td>
+            <td>{{ $envio->estado }} </td>
+            <td>{{ $envio->precio }} </td>
+            <td>{{ $envio->envio }} </td>
+            <td>{{ $envio->total }} </td>
+            <td>{{ $envio->pago }} </td>
             <td>
                 <button type="button" class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px" data-kt-docs-datatable-subtable="expand_row">
                     <span class="svg-icon fs-3 m-0 toggle-off">...</span>
@@ -289,11 +291,11 @@
                     </div>
                     <div class="col-6 col-lg-2">
                         <div class="text-gray-900 fs-7">Fecha de entrega:</div>
-                        <div class="text-muted fs-7 fw-bold">20/4/2020</div>
+                        <div class="text-muted fs-7 fw-bold">{{ $envio->fecha_entrega }} </div>
                     </div>
                     <div class="col-6 col-lg-2">
                         <div class="text-gray-900 fs-7">Tipo de envío:</div>
-                        <div class="text-muted fs-7 fw-bold">Personalizado</div>
+                        <div class="text-muted fs-7 fw-bold">{{ $envio->tipo }} </div>
                     </div>
                     <div class="col-6 col-lg-2">
                         <div class="text-gray-900 fs-7">Recepción:</div>
@@ -310,6 +312,7 @@
                 </div>
             </td>
         </tr>
+        @endforeach
     </tbody>
     <!--end::Table body-->
 </table>
@@ -378,6 +381,10 @@
             });
         });
     });
+</script>
+
+<script>
+    
 </script>
 
 </html>

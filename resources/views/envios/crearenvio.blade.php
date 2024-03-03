@@ -74,7 +74,7 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-control="select2" name="comer">
+                                        <select class="form-select form-select-solid" data-control="select2" name="comercio"> 
                                       
                                         @foreach ($vendedores as $vendedor)
                                         

@@ -51,6 +51,14 @@ class EnvioController extends Controller
  
     }
 
+    public function envioli()
+    {
+
+        $envios = Envio::all();
+        return view('envios.envi', compact('envios'));
+ 
+    }
+
     public function envioguardarp(Request $request)
     {
         $envio = new Envio();
@@ -68,7 +76,7 @@ class EnvioController extends Controller
         $envio->pago = $request->get('estado_pagop');
         $envio->tipo = $request->get('tipo_enviop');
         $envio->fecha_entrega = $request->get('fecha_entregap');
-        $envio->nota = $request->get('notap');
+        $envio->nota = $request->get('nota');
         
         $envio->save();
         $vendedores = Vendedor::all();

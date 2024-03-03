@@ -33,11 +33,11 @@ Route::get('/empleados/crear', function () {
 Route::get('/comercio/crearcomercio', function () {
     return view('comercio.crearcomercio');
 });
-
+/*
 Route::get('/envios/envi', function () {
     return view('envios.envi');
 });
-
+*/
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
@@ -51,7 +51,7 @@ Route::get('envioguardarpd', [App\Http\Controllers\EnvioController::class, 'envi
 Route::get('enviopf', [App\Http\Controllers\EnvioController::class, 'enviopf'] )->name('enviopf') ;
 Route::get('envioguardarpf', [App\Http\Controllers\EnvioController::class, 'envioguardarpf'] )->name('envioguardarpf') ;
 Route::get('envioca', [App\Http\Controllers\EnvioController::class, 'envioca'] )->name('envioca') ;
-
+Route::get('envios/lista', [App\Http\Controllers\EnvioController::class, 'envioli'] )->name('envioli') ;
 
 Route::get('empleado', [App\Http\Controllers\EmpleadoController::class, 'empleado'] )->name('empleado') ;
 Route::get('empleados/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadover'] )->name('empleadover') ;
