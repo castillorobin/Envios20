@@ -12,10 +12,10 @@
         .table-row-gray {
             background-color: #f9f9f9;
         }
+
         .table-row-white {
             background-color: #ffffff;
         }
-        
     </style>
 
 </head>
@@ -186,7 +186,7 @@
                                     <div id="kt_ecommerce_report_customer_orders_export" class="d-none"></div>
                                     <!--end::Export buttons-->
                                 </div>
-                               
+
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_customer_orders_daterangepicker" />
@@ -245,7 +245,7 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
-                                
+
                                 <table class="table align-middle table-row-dashed fs-6 gy-4" id="kt_docs_datatable_subtable" style="min-width: 800px;">
                                     <!--begin::Table head-->
                                     <thead>
@@ -275,7 +275,9 @@
                                             <td class="text-center">{{ $envio->comercio }}</td>
                                             <td class="text-center">{{ $envio->destinatario }}</td>
                                             <td class="text-center">{{ $envio->direccion }}</td>
-                                            <td class="text-center">{{ $envio->estado }}</td>
+                                            <td class="text-center">
+                                                <span class="badge badge-light-warning">{{ $envio->estado }}</span>
+                                            </td>
                                             <td class="text-center">{{ $envio->precio }}</td>
                                             <td class="text-center">{{ $envio->envio }}</td>
                                             <td class="text-center">{{ $envio->total }}</td>
@@ -375,23 +377,6 @@
         });
     });
 </script>
-<script>
-   document.addEventListener('DOMContentLoaded', function() {
-    const estados = document.querySelectorAll('td:nth-child(5)');
 
-    estados.forEach(estado => {
-        estado.style.backgroundColor = '#F8F9FA'; 
-        const text = estado.innerText.trim();
-        if (text === 'Creado') {
-            estado.innerHTML = `<span style="background-color: #D9E9DA; color: #50cd89; padding: 6px; border-radius: 5px;">${text}</span>`;
-        } else if (text === 'Sin crear') {
-            estado.innerHTML = `<span style="background-color: #E9DCDC; color: #f14c87; padding: 6px; border-radius: 5px;">${text}</span>`;
-        }
-    });
-});
-
-
-
-</script>
 
 </html>
