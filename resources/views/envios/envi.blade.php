@@ -8,12 +8,21 @@
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <style>
+        .table-row-gray {
+            background-color: #f9f9f9;
+        }
+        .table-row-white {
+            background-color: #ffffff;
+        }
+        
+    </style>
+
 </head>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
     <!--begin::Theme mode setup on page load-->
     <script>
-        
         var defaultThemeMode = "light";
         var themeMode;
         if (document.documentElement) {
@@ -155,7 +164,7 @@
                 <!--end::Toolbar-->
 
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid">
+                <div id="kt_app_content" class="app-content flex-column-fluid" style="min-width: 1050px;">
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container container-xxl">
                         <!--begin::Products-->
@@ -238,86 +247,91 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
+                                <table class="table align-middle table-row-dashed fs-6 gy-4" id="kt_docs_datatable_subtable" style="width: 100%;">
+                                    <!--begin::Table head-->
+                                    <thead>
+                                        <!--begin::Table row-->
+                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+                                            <th class="text-center min-w-100px"># de guía</th>
+                                            <th class="text-center min-w-100px">Comercio</th>
+                                            <th class="text-center min-w-100px">Destinatario</th>
+                                            <th class="text-center min-w-100px">Dirección</th>
+                                            <th class="text-center min-w-100px">Estado</th>
+                                            <th class="text-center min-w-100px">Precio</th>
+                                            <th class="text-center min-w-100px">Envío</th>
+                                            <th class="text-center min-w-100px">Total</th>
+                                            <th class="text-center min-w-100px">Estado del pago</th>
+                                            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
+                                            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
+                                        </tr>
+                                        <!--end::Table row-->
+                                    </thead>
+                                    <!--end::Table head-->
 
-                                <table class="table align-middle table-row-dashed fs-6 gy-4" id="kt_docs_datatable_subtable">
-    <!--begin::Table head-->
-    <thead>
-        <!--begin::Table row-->
-        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-            <th class="min-w-100px"># de guía</th>
-            <th class="text-centar min-w-100px">Comercio</th>
-            <th class="text-Center min-w-100px">Destinatario</th>
-            <th class="text-center min-w-100px">Dirección</th>
-            <th class="text-end min-w-100px">Estado</th>
-            <th class="text-end min-w-50px">Precio</th>
-            <th class="text-end min-w-50px">Envío</th>
-            <th class="text-end min-w-50px">Total</th>
-            <th class="text-center min-w-50px">Estado del pago</th>
-            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
-            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
-        </tr>
-        <!--end::Table row-->
-    </thead>
-    <!--end::Table head-->
+                                    <!--begin::Table body-->
+                                    <tbody class="fw-bold text-gray-600">
+                                        @foreach ($envios as $index => $envio)
+                                        <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
+                                            <td class="text-center">{{ $envio->guia }}</td>
+                                            <td class="text-center">{{ $envio->comercio }}</td>
+                                            <td class="text-center">{{ $envio->destinatario }}</td>
+                                            <td class="text-center">{{ $envio->direccion }}</td>
+                                            <td class="text-center">{{ $envio->estado }}</td>
+                                            <td class="text-center">{{ $envio->precio }}</td>
+                                            <td class="text-center">{{ $envio->envio }}</td>
+                                            <td class="text-center">{{ $envio->total }}</td>
+                                            <td class="text-center">{{ $envio->pago }}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px" data-kt-docs-datatable-subtable="expand_row">
+                                                    <span class="svg-icon fs-3 m-0 toggle-off">+</span>
+                                                    <span class="svg-icon fs-3 m-0 toggle-on">-</span>
+                                                </button>
+                                            </td>
+                                            <td></td> <!-- Celda vacía para simetría -->
+                                            <td></td> <!-- Celda vacía para simetría -->
+                                        </tr>
+                                        <tr data-kt-docs-datatable-subtable="subtable_template" class="d-none">
+                                            <td colspan="12">
+                                                <div class="row my-1 mx-1">
+                                                    <div class="col-6 col-lg-2">
+                                                        <div class="text-gray-900 fs-7">Fecha de creación:</div>
+                                                        <div class="text-muted fs-7 fw-bold">20/4/2020</div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-2">
+                                                        <div class="text-gray-900 fs-7">Fecha de entrega:</div>
+                                                        <div class="text-muted fs-7 fw-bold">{{ $envio->fecha_entrega }}</div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-2">
+                                                        <div class="text-gray-900 fs-7">Tipo de envío:</div>
+                                                        <div class="text-muted fs-7 fw-bold">{{ $envio->tipo }}</div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-2">
+                                                        <div class="text-gray-900 fs-7">Recepción:</div>
+                                                        <div class="text-muted fs-7 fw-bold">Entregado</div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-2">
+                                                        <div class="text-gray-900 fs-7">Repartidor:</div>
+                                                        <div class="text-muted fs-7 fw-bold">Erick</div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-2">
+                                                        <div class="text-gray-900 fs-7">Ruta:</div>
+                                                        <div class="text-muted fs-7 fw-bold">1</div>
+                                                    </div>
+                                                    <div class="col-6 col-lg-2"></div> <!-- Celda vacía para simetría -->
+                                                    <div class="col-6 col-lg-2"></div> <!-- Celda vacía para simetría -->
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <!--end::Table body-->
+                                </table>
 
-    <!--begin::Table body-->
-    <tbody class="fw-bold text-gray-600">
-    @foreach ($envios as $envio)
-        <tr>
-            <td >{{ $envio->guia }} </td>
-            <td class="text-center" >{{ $envio->comercio }} </td>
-            <td>{{ $envio->destinatario }} </td>
-            <td>{{ $envio->direccion }} </td>
-            <td>{{ $envio->estado }} </td>
-            <td>{{ $envio->precio }} </td>
-            <td>{{ $envio->envio }} </td>
-            <td>{{ $envio->total }} </td>
-            <td>{{ $envio->pago }} </td>
-            <td>
-                <button type="button" class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px" data-kt-docs-datatable-subtable="expand_row">
-                    <span class="svg-icon fs-3 m-0 toggle-off">...</span>
-                    <span class="svg-icon fs-3 m-0 toggle-on">...</span>
-                </button>
-            </td>
-            <td></td> <!-- Celda vacía para simetría -->
-            <td></td> <!-- Celda vacía para simetría -->
-        </tr>
-        <tr data-kt-docs-datatable-subtable="subtable_template" class="d-none">
-            <td colspan="12">
-                <div class="row">
-                    <div class="col-6 col-lg-2">
-                        <div class="text-gray-900 fs-7">Fecha de creación:</div>
-                        <div class="text-muted fs-7 fw-bold"> 20/4/2020</div>
-                    </div>
-                    <div class="col-6 col-lg-2">
-                        <div class="text-gray-900 fs-7">Fecha de entrega:</div>
-                        <div class="text-muted fs-7 fw-bold">{{ $envio->fecha_entrega }} </div>
-                    </div>
-                    <div class="col-6 col-lg-2">
-                        <div class="text-gray-900 fs-7">Tipo de envío:</div>
-                        <div class="text-muted fs-7 fw-bold">{{ $envio->tipo }} </div>
-                    </div>
-                    <div class="col-6 col-lg-2">
-                        <div class="text-gray-900 fs-7">Recepción:</div>
-                        <div class="text-muted fs-7 fw-bold">Entregado</div>
-                    </div>
-                    <div class="col-6 col-lg-2">
-                        <div class="text-gray-900 fs-7">Repartidor:</div>
-                        <div class="text-muted fs-7 fw-bold">Erick</div>
-                    </div>
-                    <div class="col-6 col-lg-2">
-                        <div class="text-gray-900 fs-7">Ruta:</div>
-                        <div class="text-muted fs-7 fw-bold">1</div>
-                    </div>
-                </div>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
-    <!--end::Table body-->
-</table>
+
                                 <!--end::Table -->
                             </div>
+
+
                             <!--end::Card body-->
                         </div>
                         <!--end::Products-->
@@ -329,26 +343,7 @@
             <!--end::Content wrapper-->
 
 
-            <!--begin::Footer-->
-            <div id="kt_app_footer" class="app-footer">
-                <div class="app-container container-fluid d-flex flex-column flex-md-row flex-center flex-md-stack py-3">
-                    <div class="text-dark order-2 order-md-1">
-                        <span class="text-muted fw-semibold me-1">2023&copy;</span>
-                        <a href="https://keenthemes.com" target="_blank" class="text-gray-800 text-hover-primary">Keenthemes</a>
-                    </div>
-                    <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
-                        <li class="menu-item">
-                            <a href="https://keenthemes.com" target="_blank" class="menu-link px-2">About</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="https://devs.keenthemes.com" target="_blank" class="menu-link px-2">Support</a>
-                        </li>
-                        <li class="menu-item">
-                            <a href="https://1.envato.market/EA4JP" target="_blank" class="menu-link px-2">Purchase</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+
         </div>
         </div>
         </div>
@@ -365,10 +360,8 @@
 
 </body>
 <script>
-    "use strict";
     document.addEventListener('DOMContentLoaded', function() {
         const buttons = document.querySelectorAll('[data-kt-docs-datatable-subtable="expand_row"]');
-        const subtable = document.querySelector('[data-kt-docs-datatable-subtable="subtable_template"]');
 
         buttons.forEach(button => {
             button.addEventListener('click', function() {
@@ -377,14 +370,26 @@
 
                 if (subtableRow && subtableRow.getAttribute('data-kt-docs-datatable-subtable') === 'subtable_template') {
                     subtableRow.classList.toggle('d-none');
+                    subtableRow.classList.toggle('expanded-row'); // Agregar o quitar la clase de fila expandida
                 }
             });
         });
     });
 </script>
-
 <script>
-    
+    document.addEventListener('DOMContentLoaded', function() {
+    const estados = document.querySelectorAll('td:nth-child(5)');
+
+    estados.forEach(estado => {
+        const text = estado.innerText.trim();
+        if (text === 'Creado') {
+            estado.style.color = '#198754'; // Verde claro
+        } else if (text === 'Sin crear') {
+            estado.style.color = '#dc3545'; // Rojo claro
+        }
+    });
+});
+
 </script>
 
 </html>
