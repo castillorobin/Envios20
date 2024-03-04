@@ -164,7 +164,7 @@
                 <!--end::Toolbar-->
 
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid" style="min-width: 1050px;">
+                <div id="kt_app_content" class="app-content flex-column-fluid" style="min-width: 1100px;">
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container container-xxl">
                         <!--begin::Products-->
@@ -186,9 +186,7 @@
                                     <div id="kt_ecommerce_report_customer_orders_export" class="d-none"></div>
                                     <!--end::Export buttons-->
                                 </div>
-                                <!--end::Card title==
-
-        <!==begin::Card toolbar-->
+                               
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_customer_orders_daterangepicker" />
@@ -247,7 +245,8 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
-                                <table class="table align-middle table-row-dashed fs-6 gy-4" id="kt_docs_datatable_subtable" style="width: 100%;">
+                                
+                                <table class="table align-middle table-row-dashed fs-6 gy-4" id="kt_docs_datatable_subtable" style="min-width: 800px;">
                                     <!--begin::Table head-->
                                     <thead>
                                         <!--begin::Table row-->
@@ -377,18 +376,21 @@
     });
 </script>
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+   document.addEventListener('DOMContentLoaded', function() {
     const estados = document.querySelectorAll('td:nth-child(5)');
 
     estados.forEach(estado => {
+        estado.style.backgroundColor = '#F8F9FA'; 
         const text = estado.innerText.trim();
         if (text === 'Creado') {
-            estado.style.color = '#198754'; // Verde claro
+            estado.innerHTML = `<span style="background-color: #D9E9DA; color: #50cd89; padding: 6px; border-radius: 5px;">${text}</span>`;
         } else if (text === 'Sin crear') {
-            estado.style.color = '#dc3545'; // Rojo claro
+            estado.innerHTML = `<span style="background-color: #E9DCDC; color: #f14c87; padding: 6px; border-radius: 5px;">${text}</span>`;
         }
     });
 });
+
+
 
 </script>
 
