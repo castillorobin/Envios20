@@ -257,15 +257,15 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-50px"># de guía</th>
+                                                <th class="min-w-100px"># de guía</th>
                                                 <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-50px">Destinatario</th>
+                                                <th class="min-w-150px">Destinatario</th>
                                                 <th class="min-w-50px">Dirección</th>
-                                                <th class="min-w-50px">Estado</th>
+                                                <th class="text-center min-w-50px">Status</th>
                                                 <th class="min-w-50px">Precio</th>
                                                 <th class="min-w-50px">Envío</th>
                                                 <th class="min-w-50px">Total</th>
-                                                <th class="min-w-50px">Estado del pago</th>
+                                                <th class="text-center min-w-80px">Estado del pago</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
@@ -278,10 +278,10 @@
                                                 <td>
                                                     <span class="badge badge-light-success">{{ $envio->estado }}</span>
                                                 </td>
-                                                <td >{{ $envio->precio }}</td>
-                                                <td>{{ $envio->envio }}</td>
-                                                <td>{{ $envio->total }}</td>
-                                                <td>{{ $envio->pago }}</td>
+                                                <td  class="text-end">{{ $envio->precio }}</td>
+                                                <td class="text-end">{{ $envio->envio }}</td>
+                                                <td class="text-end">{{ $envio->total }}</td>
+                                                <td class="text-center">{{ $envio->pago }}</td>
 
                                             </tr>
                                             @endforeach
