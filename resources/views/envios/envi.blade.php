@@ -278,11 +278,12 @@
                                                 <td>
                                                     <span class="badge badge-light-success">{{ $envio->estado }}</span>
                                                 </td>
-                                                <td  class="text-end">{{ $envio->precio }}</td>
+                                                <td class="text-end">{{ $envio->precio }}</td>
                                                 <td class="text-end">{{ $envio->envio }}</td>
                                                 <td class="text-end">{{ $envio->total }}</td>
-                                                <td class="text-center">{{ $envio->pago }}</td>
-
+                                                <td class="text-center">
+                                                    <span class="badge badge-light-success">{{ $envio->pago }}</span>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
