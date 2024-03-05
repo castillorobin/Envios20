@@ -1,65 +1,67 @@
-<!DOCTYPE html>
 <html lang="en">
+<!--begin::Head-->
 
 <head>
     <base href="../../../" />
-    <title>Metronic - The World's #1 Selling Bootstrap Admin Template by Keenthemes</title>
+    <title>Melo Express</title>
     <meta charset="utf-8" />
+    <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
+    <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
+    <meta property="og:url" content="https://keenthemes.com/metronic" />
+    <meta property="og:site_name" content="Keenthemes | Metronic" />
+    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
+    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
+    <!--begin::Fonts(mandatory for all pages)-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
+    <!--end::Fonts-->
+    <!--begin::Vendor Stylesheets(used for this page only)-->
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+    <!--end::Vendor Stylesheets-->
+    <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <style>
-        .table-row-gray {
-            background-color: #f9f9f9;
-        }
-
-        .table-row-white {
-            background-color: #ffffff;
-        }
-    </style>
-
+    <!--end::Global Stylesheets Bundle-->
 </head>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
-    <!--begin::Theme mode setup on page load-->
-    <script>
-        var defaultThemeMode = "light";
-        var themeMode;
-        if (document.documentElement) {
-            if (document.documentElement.hasAttribute("data-bs-theme-mode")) {
-                themeMode = document.documentElement.getAttribute("data-bs-theme-mode");
-            } else {
-                if (localStorage.getItem("data-bs-theme") !== null) {
-                    themeMode = localStorage.getItem("data-bs-theme");
-                } else {
-                    themeMode = defaultThemeMode;
-                }
-            }
-            if (themeMode === "system") {
-                themeMode = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-            }
-            document.documentElement.setAttribute("data-bs-theme", themeMode);
-        }
-    </script>
-    <!--end::Theme mode setup on page load-->
-    <x-default-layout>
 
+    <x-default-layout>
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+            <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
+                <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                    <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
+                        <!--begin::Page title-->
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                            <!--begin::Title-->
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Shipping Report</h1>
+                            <!--end::Title-->
+                            <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="/" class="text-muted text-hover-primary">Inicio</a>
+                                    <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
                                 </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
-                                <li class="breadcrumb-item text-muted">Envios</li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-muted">Listado de envios</li>
+                                <!--end::Item-->
                             </ul>
+                            <!--end::Breadcrumb-->
                         </div>
+                        <!--end::Page title-->
+
 
 
                         <!--begin::Actions-->
@@ -74,7 +76,7 @@
                                     </i>Filter</a>
                                 <!--end::Menu toggle-->
                                 <!--begin::Menu 1-->
-                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_641ac417384b2">
+                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_641ac417f0d97">
                                     <!--begin::Header-->
                                     <div class="px-7 py-5">
                                         <div class="fs-5 text-dark fw-bold">Filter Options</div>
@@ -92,7 +94,7 @@
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <div>
-                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_641ac417384b2" data-allow-clear="true">
+                                                <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_641ac417f0d97" data-allow-clear="true">
                                                     <option></option>
                                                     <option value="1">Approved</option>
                                                     <option value="2">Pending</option>
@@ -162,9 +164,8 @@
                     <!--end::Toolbar container-->
                 </div>
                 <!--end::Toolbar-->
-
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid" style="min-width: 1100px;">
+                <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container container-xxl">
                         <!--begin::Products-->
@@ -179,28 +180,29 @@
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Search Report" />
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
-                                    <div id="kt_ecommerce_report_customer_orders_export" class="d-none"></div>
+                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
                                     <!--end::Export buttons-->
                                 </div>
-
+                                <!--end::Card title-->
+                                <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_customer_orders_daterangepicker" />
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Pick date range" id="kt_ecommerce_report_shipping_daterangepicker" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
+                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
                                             <option></option>
                                             <option value="all">All</option>
-                                            <option value="active">Active</option>
-                                            <option value="locked">Locked</option>
-                                            <option value="disabled">Disabled</option>
-                                            <option value="banned">Banned</option>
+                                            <option value="Completed">Completed</option>
+                                            <option value="In Transit">In Transit</option>
+                                            <option value="Pending">Pending</option>
+                                            <option value="Cancelled">Cancelled</option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>
@@ -212,7 +214,7 @@
                                             <span class="path2"></span>
                                         </i>Export Report</button>
                                     <!--begin::Menu-->
-                                    <div id="kt_ecommerce_report_customer_orders_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
                                             <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
@@ -240,143 +242,99 @@
                                 <!--end::Card toolbar-->
                             </div>
                             <!--end::Card header-->
-
-
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
+
+
                                 <!--begin::Table-->
-
-                                <table class="table align-middle table-row-dashed fs-6 gy-4" id="kt_docs_datatable_subtable" style="min-width: 800px;">
-                                    <!--begin::Table head-->
-                                    <thead>
-                                        <!--begin::Table row-->
-                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-                                            <th class="text-center min-w-100px"># de guía</th>
-                                            <th class="text-center min-w-100px">Comercio</th>
-                                            <th class="text-center min-w-100px">Destinatario</th>
-                                            <th class="text-center min-w-100px">Dirección</th>
-                                            <th class="text-center min-w-100px">Estado</th>
-                                            <th class="text-center min-w-100px">Precio</th>
-                                            <th class="text-center min-w-100px">Envío</th>
-                                            <th class="text-center min-w-100px">Total</th>
-                                            <th class="text-center min-w-100px">Estado del pago</th>
-                                            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
-                                            <th class="text-end min-w-25px"></th> <!-- Celda vacía para simetría -->
-                                        </tr>
-                                        <!--end::Table row-->
-                                    </thead>
-                                    <!--end::Table head-->
-
-                                    <!--begin::Table body-->
-                                    <tbody class="fw-bold text-gray-600">
-                                        @foreach ($envios as $index => $envio)
-                                        <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
-                                            <td class="text-center">{{ $envio->guia }}</td>
-                                            <td class="text-center">{{ $envio->comercio }}</td>
-                                            <td class="text-center">{{ $envio->destinatario }}</td>
-                                            <td class="text-center">{{ $envio->direccion }}</td>
-                                            <td class="text-center">
-                                                <span class="badge badge-light-warning">{{ $envio->estado }}</span>
-                                            </td>
-                                            <td class="text-center">{{ $envio->precio }}</td>
-                                            <td class="text-center">{{ $envio->envio }}</td>
-                                            <td class="text-center">{{ $envio->total }}</td>
-                                            <td class="text-center">{{ $envio->pago }}</td>
-                                            <td>
-                                                <button type="button" class="btn btn-sm btn-icon btn-light btn-active-light-primary toggle h-25px w-25px" data-kt-docs-datatable-subtable="expand_row">
-                                                    <span class="svg-icon fs-3 m-0 toggle-off">+</span>
-                                                    <span class="svg-icon fs-3 m-0 toggle-on">-</span>
-                                                </button>
-                                            </td>
-                                            <td></td> <!-- Celda vacía para simetría -->
-                                            <td></td> <!-- Celda vacía para simetría -->
-                                        </tr>
-                                        <tr data-kt-docs-datatable-subtable="subtable_template" class="d-none">
-                                            <td colspan="12">
-                                                <div class="row my-1 mx-1">
-                                                    <div class="col-6 col-lg-2">
-                                                        <div class="text-gray-900 fs-7">Fecha de creación:</div>
-                                                        <div class="text-muted fs-7 fw-bold">20/4/2020</div>
-                                                    </div>
-                                                    <div class="col-6 col-lg-2">
-                                                        <div class="text-gray-900 fs-7">Fecha de entrega:</div>
-                                                        <div class="text-muted fs-7 fw-bold">{{ $envio->fecha_entrega }}</div>
-                                                    </div>
-                                                    <div class="col-6 col-lg-2">
-                                                        <div class="text-gray-900 fs-7">Tipo de envío:</div>
-                                                        <div class="text-muted fs-7 fw-bold">{{ $envio->tipo }}</div>
-                                                    </div>
-                                                    <div class="col-6 col-lg-2">
-                                                        <div class="text-gray-900 fs-7">Recepción:</div>
-                                                        <div class="text-muted fs-7 fw-bold">Entregado</div>
-                                                    </div>
-                                                    <div class="col-6 col-lg-2">
-                                                        <div class="text-gray-900 fs-7">Repartidor:</div>
-                                                        <div class="text-muted fs-7 fw-bold">Erick</div>
-                                                    </div>
-                                                    <div class="col-6 col-lg-2">
-                                                        <div class="text-gray-900 fs-7">Ruta:</div>
-                                                        <div class="text-muted fs-7 fw-bold">1</div>
-                                                    </div>
-                                                    <div class="col-6 col-lg-2"></div> <!-- Celda vacía para simetría -->
-                                                    <div class="col-6 col-lg-2"></div> <!-- Celda vacía para simetría -->
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        @endforeach
-                                    </tbody>
-                                    <!--end::Table body-->
-                                </table>
-
-
-                                <!--end::Table -->
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                        <thead>
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th class="min-w-100px"># de guía</th>
+                                                <th class="min-w-100px">Comercio</th>
+                                                <th class="min-w-100px">Destinatario</th>
+                                                <th class="min-w-100px">Dirección</th>
+                                                <th class="min-w-100px">Estado</th>
+                                                <th class="min-w-100px">Precio</th>
+                                                <th class="min-w-100px">Envío</th>
+                                                <th class="min-w-100px">Total</th>
+                                                <th class="min-w-100px">Estado del pago</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fw-semibold text-gray-600">
+                                            <tr>
+                                                <td>#12345</td>
+                                                <td>Tienda de ejemplo</td>
+                                                <td>Juan Pérez</td>
+                                                <td>Calle 123, Ciudad</td>
+                                                <td>
+                                                    <!--begin::Badges-->
+                                                    <div class="badge badge-light-success">Creado</div>
+                                                    <!--end::Badges-->
+                                                </td>
+                                                <td>$50.00</td>
+                                                <td>$10.00</td>
+                                                <td>$60.00</td>
+                                                <td>Pagado</td>
+                                            </tr>
+                                            <tr>
+                                                <td>#54321</td>
+                                                <td>Otra tienda</td>
+                                                <td>María González</td>
+                                                <td>Avenida 456, Ciudad</td>
+                                                <td>
+                                                    <!--begin::Badges-->
+                                                    <div class="badge badge-light-danger">Sin crear</div>
+                                                    <!--end::Badges-->
+                                                </td>
+                                                <td>$80.00</td>
+                                                <td>$15.00</td>
+                                                <td>$95.00</td>
+                                                <td>Pagado</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!--end::Table-->
                             </div>
-
-
-                            <!--end::Card body-->
+                            <!--end::Table-->
                         </div>
-                        <!--end::Products-->
+                        <!--end::Card body-->
                     </div>
-                    <!--end::Content container-->
+                    <!--end::Products-->
                 </div>
-                <!--end::Content-->
+                <!--end::Content container-->
             </div>
-            <!--end::Content wrapper-->
+            <!--end::Content-->
+        </div>
+        <!--end::Content wrapper-->
 
 
 
-        </div>
-        </div>
-        </div>
-        </div>
     </x-default-layout>
+    <!--begin::Javascript-->
     <script>
         var hostUrl = "assets/";
     </script>
+    <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Vendors Javascript(used for this page only)-->
     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
-
-    <script src="assets/js/custom/apps/ecommerce/reports/customer-orders/customer-orders.js"></script>
-
+    <!--end::Vendors Javascript-->
+    <!--begin::Custom Javascript(used for this page only)-->
+    <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
+    <script src="assets/js/widgets.bundle.js"></script>
+    <script src="assets/js/custom/widgets.js"></script>
+    <script src="assets/js/custom/apps/chat/chat.js"></script>
+    <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+    <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+    <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+    <!--end::Custom Javascript-->
+    <!--end::Javascript-->
 </body>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const buttons = document.querySelectorAll('[data-kt-docs-datatable-subtable="expand_row"]');
-
-        buttons.forEach(button => {
-            button.addEventListener('click', function() {
-                const row = this.closest('tr');
-                const subtableRow = row.nextElementSibling;
-
-                if (subtableRow && subtableRow.getAttribute('data-kt-docs-datatable-subtable') === 'subtable_template') {
-                    subtableRow.classList.toggle('d-none');
-                    subtableRow.classList.toggle('expanded-row'); // Agregar o quitar la clase de fila expandida
-                }
-            });
-        });
-    });
-</script>
-
+<!--end::Body-->
 
 </html>
