@@ -25,6 +25,14 @@
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+    <style>
+        .table th,
+        .table td {
+            padding: 0.10rem;
+            /* Ajusta el valor según sea necesario */
+        }
+    </style>
+
 </head>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -40,7 +48,7 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Shipping Report</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Listado de envios</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -61,8 +69,6 @@
                             <!--end::Breadcrumb-->
                         </div>
                         <!--end::Page title-->
-
-
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
@@ -251,48 +257,34 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px"># de guía</th>
-                                                <th class="min-w-100px">Comercio</th>
-                                                <th class="min-w-100px">Destinatario</th>
-                                                <th class="min-w-100px">Dirección</th>
-                                                <th class="min-w-100px">Estado</th>
-                                                <th class="min-w-100px">Precio</th>
-                                                <th class="min-w-100px">Envío</th>
-                                                <th class="min-w-100px">Total</th>
-                                                <th class="min-w-100px">Estado del pago</th>
+                                                <th class="text-center min-w-50px"># de guía</th>
+                                                <th class="text-center min-w-50px">Comercio</th>
+                                                <th class="text-center min-w-50px">Destinatario</th>
+                                                <th class="text-center min-w-50px">Dirección</th>
+                                                <th class="text-center min-w-50px">Estado</th>
+                                                <th class="text-center min-w-50px">Precio</th>
+                                                <th class="text-center min-w-50px">Envío</th>
+                                                <th class="text-center min-w-50px">Total</th>
+                                                <th class="text-center min-w-50px">Estado del pago</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fw-semibold text-gray-600">
-                                            <tr>
-                                                <td>#12345</td>
-                                                <td>Tienda de ejemplo</td>
-                                                <td>Juan Pérez</td>
-                                                <td>Calle 123, Ciudad</td>
-                                                <td>
-                                                    <!--begin::Badges-->
-                                                    <div class="badge badge-light-success">Creado</div>
-                                                    <!--end::Badges-->
+                                        <tbody class="fw-semibold  text-gray-400">
+                                            @foreach ($envios as $index => $envio)
+                                            <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
+                                                <td class="text-center">{{ $envio->guia }}</td>
+                                                <td class="text-center">{{ $envio->comercio }}</td>
+                                                <td class="text-center">{{ $envio->destinatario }}</td>
+                                                <td class="text-center">{{ $envio->direccion }}</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-light-success">{{ $envio->estado }}</span>
                                                 </td>
-                                                <td>$50.00</td>
-                                                <td>$10.00</td>
-                                                <td>$60.00</td>
-                                                <td>Pagado</td>
+                                                <td class="text-center">{{ $envio->precio }}</td>
+                                                <td class="text-center">{{ $envio->envio }}</td>
+                                                <td class="text-center">{{ $envio->total }}</td>
+                                                <td class="text-center">{{ $envio->pago }}</td>
+
                                             </tr>
-                                            <tr>
-                                                <td>#54321</td>
-                                                <td>Otra tienda</td>
-                                                <td>María González</td>
-                                                <td>Avenida 456, Ciudad</td>
-                                                <td>
-                                                    <!--begin::Badges-->
-                                                    <div class="badge badge-light-danger">Sin crear</div>
-                                                    <!--end::Badges-->
-                                                </td>
-                                                <td>$80.00</td>
-                                                <td>$15.00</td>
-                                                <td>$95.00</td>
-                                                <td>Pagado</td>
-                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
