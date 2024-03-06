@@ -1,18 +1,12 @@
 <x-default-layout>
-    
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-    
-
     <style>
         label.required::after {
             content: none;
         }
     </style>
-
-
-
-
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
@@ -74,13 +68,13 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-control="select2" name="comercio"> 
-                                      
-                                        @foreach ($vendedores as $vendedor)
-                                        
-                                        <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
-                                        @endforeach
-   
+                                        <select class="form-select form-select-solid" data-control="select2" name="comercio">
+
+                                            @foreach ($vendedores as $vendedor)
+
+                                            <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                            @endforeach
+
                                         </select>
                                         <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
@@ -139,7 +133,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio" id="cenvio" aria-label="Floating label select example" required>
-                    
+
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -150,7 +144,7 @@
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="estado_pagop" id="estado_pagop" aria-label="Floating label select example" required>
-                                            
+
                                             <option value="Por pagar">Por pagar</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -163,7 +157,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="tipo_enviop" id="tipo_enviop" aria-label="Floating label select example" required>
-                                           
+
                                             <option value="Personalizado">Personalizado </option>
                                             <option value="Normal">Normal</option>
                                         </select>
@@ -174,7 +168,7 @@
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="estado_enviop" id="estado_enviop" aria-label="Floating label select example" required>
-                                            
+
                                             <option value="Creado">Creado</option>
                                             <option value="sin_entregar">Sin entregar</option>
                                         </select>
@@ -272,7 +266,7 @@
             n_guiaValidationFeedback.style.display = 'none';
             return true;
         }
-    } 
+    }
 
     // Función para validar el campo de destinatario
     function validarDestinatario() {
@@ -464,7 +458,6 @@
     document.getElementById('fecha_entregap').addEventListener('change', validarFechaEntrega);
 
 
-
     // Evento para validar el formulario antes de enviar
     document.getElementById('kt_ecommerce_settings_general_form').addEventListener('submit', function(event) {
         var comercioValido = validarComercio();
@@ -481,8 +474,11 @@
         var estadoEnvioValido = validarEstadoEnvio();
         var fechaEntregaValida = validarFechaEntrega();
 
-        if (!comercioValido || !guiaValida) {
+        if (!comercioValido || !guiaValida || !destinatarioValido || !direccionValida || !telefonoValido || !precioPaqueteValido || !precioEnvioValido || !totalPagarValido || !cobroEnvioValido || !estadoPagoValido || !tipoEnvioValido || !estadoEnvioValido || !fechaEntregaValida) {
             event.preventDefault(); // Detener el envío del formulario
+
+            // Mostrar alerta indicando los campos que faltan
+            alert("Por favor complete todos los campos antes de guardar.");
         }
 
         // Validar campos vacíos

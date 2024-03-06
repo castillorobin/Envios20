@@ -30,6 +30,9 @@ Route::get('/empleados', function () {
 Route::get('/empleados/crear', function () {
     return view('empleados.crear');
 });
+Route::get('/envios/detalle', function () {
+    return view('envios.detalle');
+});
 Route::get('/comercio/crearcomercio', function () {
     return view('comercio.crearcomercio');
 });
