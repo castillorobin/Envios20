@@ -276,7 +276,31 @@
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
                                                 <td>
-                                                    <span class="badge badge-light-success">{{ $envio->estado }}</span>
+                                                @if( $envio->estado  == 'Fallida')
+                                                <span class="badge badge-danger">{{ $envio->estado }}</span>
+
+                                                
+                                                @elseif( $envio->estado  == 'Creado')
+                                                <span class="badge badge-warning">{{ $envio->estado }}</span>
+                                               
+                                                @elseif( $envio->estado  == 'Entregado')
+                                                <span class="badge badge-success">{{ $envio->estado }}</span>
+
+                                                
+                                                @elseif( $envio->estado  == 'En transito')
+                                                <span class="badge badge-info">{{ $envio->estado }}</span>
+                                                @elseif( $envio->estado  == 'En transito')
+                                                <span class="badge badge-dark">{{ $envio->estado }}</span>
+                                                @elseif( $envio->estado  == 'Reenvio')
+                                                <span class="badge badge-primary">{{ $envio->estado }}</span>
+                                                @else
+                                                <span class="badge badge-light">{{ $envio->estado }}</span>
+
+
+                                                @endif
+
+
+                                                   
                                                 </td>
                                                 <td class="text-end">{{ $envio->precio }}</td>
                                                 <td class="text-end">{{ $envio->envio }}</td>
