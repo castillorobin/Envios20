@@ -183,11 +183,6 @@
                                         <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_ecommerce_sales_order_summary">Order Summary</a>
                                     </li>
                                     <!--end:::Tab item-->
-                                    <!--begin:::Tab item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link text-active-primary pb-4" data-bs-toggle="tab" href="#kt_ecommerce_sales_order_history">Order History</a>
-                                    </li>
-                                    <!--end:::Tab item-->
                                 </ul>
                                 <!--end:::Tabs-->
                                 <!--begin::Button-->
