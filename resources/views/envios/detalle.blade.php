@@ -704,34 +704,23 @@
                                                             <!--end::Col-->
                                                             <!--begin::Col-->
                                                             <div class="flex-equal">
-                                                                <table class="table table-flush fw-semibold gy-1">
+                                                            <table class="table table-flush fw-semibold gy-1" style="line-height: 1.8;">
+                                                                    <h4>Pagos</h4>
                                                                     <tr>
-                                                                        <td class="text-muted min-w-125px w-125px">Billing address</td>
-                                                                        <td class="text-gray-800">UK</td>
+                                                                        <td class="text-muted min-w-150px w-150px">quien pago:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">Salomon</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="text-muted min-w-125px w-125px">Phone</td>
-                                                                        <td class="text-gray-800">No phone provided</td>
+                                                                        <td class="text-muted min-w-180px w-180px">Cuando pago:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">25/03/2024</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="text-muted min-w-125px w-125px">Email</td>
-                                                                        <td class="text-gray-800">
-                                                                            <a href="#" class="text-gray-900 text-hover-primary">melody@altbox.com</a>
-                                                                        </td>
+                                                                        <td class="text-muted min-w-150px w-150px">cajero:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">estela</td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td class="text-muted min-w-125px w-125px">Origin</td>
-                                                                        <td class="text-gray-800">United Kingdom
-                                                                            <div class="symbol symbol-20px symbol-circle ms-2">
-                                                                                <img src="assets/media/flags/united-kingdom.svg" />
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td class="text-muted min-w-125px w-125px">CVC check</td>
-                                                                        <td class="text-gray-800">Passed
-                                                                            <i class="ki-duotone ki-check fs-2 text-success"></i>
-                                                                        </td>
+                                                                        <td class="text-muted min-w-150px w-150px">Ubicacion:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">Santa ana</td>
                                                                     </tr>
                                                                 </table>
                                                             </div>
