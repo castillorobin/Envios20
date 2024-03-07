@@ -288,7 +288,7 @@
 
                                                 
                                                 @elseif( $envio->estado  == 'En transito')
-                                                <span class="badge badge-warning">{{ $envio->estado }}</span>
+                                                <span class="badge badge-info">{{ $envio->estado }}</span>
                                                 @elseif( $envio->estado  == 'En transito')
                                                 <span class="badge badge-dark">{{ $envio->estado }}</span>
                                                 @elseif( $envio->estado  == 'Reenvio')
