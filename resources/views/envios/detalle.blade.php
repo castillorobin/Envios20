@@ -453,228 +453,305 @@
                             </div>
                             <!--end::Order summary-->
 
-
-
-
-
-
-
                             <!--begin::Tab content-->
                             <div class="tab-content">
                                 <!--begin::Tab pane-->
                                 <div class="tab-pane fade show active" id="kt_ecommerce_sales_order_summary" role="tab-panel">
                                     <!--begin::Orders-->
                                     <div class="d-flex flex-column gap-7 gap-lg-10">
-                                        <div class="d-flex flex-column flex-xl-row gap-7 gap-lg-10">
-                                            <!--begin::Payment address-->
-                                            <div class="card card-flush py-4 flex-row-fluid position-relative">
-                                                <!--begin::Card header-->
-                                                <div class="card-header">
-                                                    <div class="card-title">
-                                                        <h2>UBICACION - CENTRO DE DISTRIBUCION</h2>
-                                                    </div>
-                                                </div>
 
-                                                <!--end::Card header-->
-                                                <!--begin::Card body-->
-                                                <div>
-                                                    <div class="card-body pt-0">
-                                                        <div style="display: inline-block; width: 27%;"> 
-                                                            <div>
-                                                                <h4>Datos del paquete</h4>
-                                                            </div>
-                                                            <table>
-                                                                <tr>
-                                                                    <td>Estado del pago:</td>
-                                                                    <td><span class="badge badge-light-success">Entregado</span></td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Precio del paquete:</td>
-                                                                    <td>$25.50</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Precio del envio:</td>
-                                                                    <td>$2.50</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Total a pagar:</td>
-                                                                    <td>$23.00</td>
-                                                                </tr>
-                                                            </table>
-                                                        </div>
-                                                        <div style="display: inline-block; width: 35%;"> 
-                                                            <div>
-                                                                <h4>Otros datos</h4>
-                                                            </div>
-                                                            <table>
-                                                                <tr>
-                                                                    <td>Envio cobrado:</td>
-                                                                    <td>Cobrado</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Usuario de registro:</td>
-                                                                    <td>Joaquin polanco</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Repartidor:</td>
-                                                                    <td>kevin ocotan</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Ruta:</td>
-                                                                    <td>1</td>
-                                                                </tr>
-                                                            </table>
-                                                        </div>
-
-                                                        <div style="display: inline-block; width: 35%;"> 
-                                                            <div>
-                                                                <h4>Ubicacion</h4>
-                                                            </div>
-                                                            <table>
-                                                                <tr>
-                                                                    <td>Rack:</td>
-                                                                    <td>1</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Nivel:</td>
-                                                                    <td>4</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>Tarima:</td>
-                                                                    <td>2</td>
-                                                                </tr>
-                                                                <tr>
-                                                                    <td>caja:</td>
-                                                                    <td>1</td>
-                                                                </tr>
-                                                            </table>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                                <!--end::Card body-->
-                                            </div>
-                                            <!--end::Payment address-->
-
-                                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                        <!--begin::Product List-->
-                                        <div class="card card-flush py-4 flex-row-fluid overflow-hidden">
+                                        <div class="card pt-4 mb-6 mb-xl-9">
                                             <!--begin::Card header-->
-                                            <div class="card-header">
+                                            <div class="card-header border-0">
+                                                <!--begin::Card title-->
                                                 <div class="card-title">
-                                                    <h2>Order #14534</h2>
+                                                    <h2 class="fw-bold mb-0">UBICACION - CENTRO DE DISTRIBUCION</h2>
                                                 </div>
+                                                <!--end::Card title-->
+                                                <!--begin::Card toolbar-->
+                                                <div class="card-toolbar">
+                                                    <a href="#" class="btn btn-sm btn-flex btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">
+                                                        <i class="ki-duotone ki-plus-square fs-3">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                            <span class="path3"></span>
+                                                        </i>Add new method</a>
+                                                </div>
+                                                <!--end::Card toolbar-->
                                             </div>
                                             <!--end::Card header-->
                                             <!--begin::Card body-->
-                                            <div class="card-body pt-0">
-                                                <div class="table-responsive">
-                                                    <!--begin::Table-->
-                                                    <table class="table align-middle table-row-dashed fs-6 gy-5 mb-0">
-                                                        <thead>
-                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                <th class="min-w-175px">Product</th>
-                                                                <th class="min-w-100px text-end">SKU</th>
-                                                                <th class="min-w-70px text-end">Qty</th>
-                                                                <th class="min-w-100px text-end">Unit Price</th>
-                                                                <th class="min-w-100px text-end">Total</th>
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody class="fw-semibold text-gray-600">
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <!--begin::Thumbnail-->
-                                                                        <a href="../../demo1/dist/apps/ecommerce/catalog/edit-product.html" class="symbol symbol-50px">
-                                                                            <span class="symbol-label" style="background-image:url(assets/media//stock/ecommerce/1.gif);"></span>
-                                                                        </a>
-                                                                        <!--end::Thumbnail-->
-                                                                        <!--begin::Title-->
-                                                                        <div class="ms-5">
-                                                                            <a href="../../demo1/dist/apps/ecommerce/catalog/edit-product.html" class="fw-bold text-gray-600 text-hover-primary">Product 1</a>
-                                                                            <div class="fs-7 text-muted">Delivery Date: 22/03/2023</div>
-                                                                        </div>
-                                                                        <!--end::Title-->
-                                                                    </div>
-                                                                </td>
-                                                                <td class="text-end">04726008</td>
-                                                                <td class="text-end">2</td>
-                                                                <td class="text-end">$120.00</td>
-                                                                <td class="text-end">$240.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>
-                                                                    <div class="d-flex align-items-center">
-                                                                        <!--begin::Thumbnail-->
-                                                                        <a href="../../demo1/dist/apps/ecommerce/catalog/edit-product.html" class="symbol symbol-50px">
-                                                                            <span class="symbol-label" style="background-image:url(assets/media//stock/ecommerce/100.gif);"></span>
-                                                                        </a>
-                                                                        <!--end::Thumbnail-->
-                                                                        <!--begin::Title-->
-                                                                        <div class="ms-5">
-                                                                            <a href="../../demo1/dist/apps/ecommerce/catalog/edit-product.html" class="fw-bold text-gray-600 text-hover-primary">Footwear</a>
-                                                                            <div class="fs-7 text-muted">Delivery Date: 22/03/2023</div>
-                                                                        </div>
-                                                                        <!--end::Title-->
-                                                                    </div>
-                                                                </td>
-                                                                <td class="text-end">03745004</td>
-                                                                <td class="text-end">1</td>
-                                                                <td class="text-end">$24.00</td>
-                                                                <td class="text-end">$24.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4" class="text-end">Subtotal</td>
-                                                                <td class="text-end">$264.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4" class="text-end">VAT (0%)</td>
-                                                                <td class="text-end">$0.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4" class="text-end">Shipping Rate</td>
-                                                                <td class="text-end">$5.00</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td colspan="4" class="fs-3 text-dark text-end">Grand Total</td>
-                                                                <td class="text-dark fs-3 fw-bolder text-end">$269.00</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <!--end::Table-->
+                                            <div id="kt_customer_view_payment_method" class="card-body pt-0">
+                                                <!--begin::Option-->
+                                                <div class="py-0" data-kt-customer-payment-method="row">
+                                                    <!--begin::Header-->
+                                                    <div class="py-3 d-flex flex-stack flex-wrap">
+                                                        <!--begin::Toggle-->
+                                                        <div class="d-flex align-items-center collapsible rotate" data-bs-toggle="collapse" href="#kt_customer_view_payment_method_1" role="button" aria-expanded="false" aria-controls="kt_customer_view_payment_method_1">
+                                                            <!--begin::Arrow-->
+                                                            <div class="me-3 rotate-90">
+                                                                <i class="ki-duotone ki-right fs-3"></i>
+                                                            </div>
+                                                            <!--end::Arrow-->
+                                                            <!--begin::Summary-->
+                                                            <div class="me-3">
+                                                                <div class="d-flex align-items-center">
+                                                                    <h4>UBICACION - CENTRO DE DISTRIBUCION</h4>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Summary-->
+                                                        </div>
+                                                        <!--end::Toggle-->
+                                                        <!--begin::Toolbar-->
+                                                        <div class="d-flex my-3 ms-9">
+                                                            <!--begin::Edit-->
+                                                            <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">
+                                                                <span data-bs-toggle="tooltip" data-bs-trigger="hover" title="Edit">
+                                                                    <i class="ki-duotone ki-pencil fs-3">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </a>
+                                                            <!--end::Edit-->
+                                                            <!--begin::Delete-->
+                                                            <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-customer-payment-method="delete">
+                                                                <i class="ki-duotone ki-trash fs-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                    <span class="path5"></span>
+                                                                </i>
+                                                            </a>
+                                                            <!--end::Delete-->
+                                                            <!--begin::More-->
+                                                            <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px" data-bs-toggle="tooltip" title="More Options" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                                                <i class="ki-duotone ki-setting-3 fs-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                    <span class="path5"></span>
+                                                                </i>
+                                                            </a>
+                                                            <!--begin::Menu-->
+                                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-150px py-3" data-kt-menu="true">
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="#" class="menu-link px-3" data-kt-payment-mehtod-action="set_as_primary">Set as Primary</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                            </div>
+                                                            <!--end::Menu-->
+                                                            <!--end::More-->
+                                                        </div>
+                                                        <!--end::Toolbar-->
+                                                    </div>
+                                                    <!--end::Header-->
+
+                                                    <!--begin::Body-->
+                                                    <div id="kt_customer_view_payment_method_1" class="collapse show fs-6 ps-10" data-bs-parent="#kt_customer_view_payment_method">
+                                                        <!--begin::Details-->
+                                                        <div class="d-flex flex-wrap py-4">
+                                                            <!--begin::Col-->
+                                                            <div class="flex-equal me-5">
+                                                                <table class="table table-flush fw-semibold gy-1" style="line-height: 1.8;">
+                                                                    <h4>Datos del paquete</h4>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Estado del pago:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;"><span class="badge badge-light-success">Entregado</span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Precio del paquete:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">$25.00</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Costo de envio:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">$2.50</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Total a cobrar:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">$23.00</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--end::Col-->
+
+                                                            <!--begin::Col-->
+                                                            <div class="flex-equal">
+                                                                <table class="table table-flush fw-semibold gy-1" style="line-height: 1.8;">
+                                                                    <h4>Otros datos</h4>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Envio cobrado :</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">$1</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-180px w-180px">Usuario registrado:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">Joaquin Polanco</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Repartidor:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">kevin ocotan</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Ruta:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">2</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--end::Col-->
+                                                        </div>
+                                                        <!--end::Details-->
+                                                    </div>
+                                                    <!--end::Body-->
                                                 </div>
+                                                <!--end::Option-->
+                                                <div class="separator separator-dashed"></div>
+                                                <!--begin::Option-->
+                                                <div class="py-0" data-kt-customer-payment-method="row">
+                                                    <!--begin::Header-->
+                                                    <div class="py-3 d-flex flex-stack flex-wrap">
+                                                        <!--begin::Toggle-->
+                                                        <div class="d-flex align-items-center collapsible collapsed rotate" data-bs-toggle="collapse" href="#kt_customer_view_payment_method_2" role="button" aria-expanded="false" aria-controls="kt_customer_view_payment_method_2">
+                                                            <!--begin::Arrow-->
+                                                            <div class="me-3 rotate-90">
+                                                                <i class="ki-duotone ki-right fs-3"></i>
+                                                            </div>
+                                                            <!--end::Arrow-->
+                                                            <!--begin::Summary-->
+                                                            <div class="me-3">
+                                                                <div class="d-flex align-items-center">
+                                                                    <h4>UBICACION - CENTRO DE DISTRIBUCION</h4>
+                                                                </div>
+                                                            </div>
+                                                            <!--end::Summary-->
+                                                        </div>
+                                                        <!--end::Toggle-->
+                                                        <!--begin::Toolbar-->
+                                                        <div class="d-flex my-3 ms-9">
+                                                            <!--begin::Edit-->
+                                                            <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">
+                                                                <span data-bs-toggle="tooltip" data-bs-trigger="hover" title="Edit">
+                                                                    <i class="ki-duotone ki-pencil fs-3">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                </span>
+                                                            </a>
+                                                            <!--end::Edit-->
+                                                            <!--begin::Delete-->
+                                                            <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-customer-payment-method="delete">
+                                                                <i class="ki-duotone ki-trash fs-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                    <span class="path5"></span>
+                                                                </i>
+                                                            </a>
+                                                            <!--end::Delete-->
+                                                            <!--begin::More-->
+                                                            <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px" data-bs-toggle="tooltip" title="More Options" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                                                <i class="ki-duotone ki-setting-3 fs-3">
+                                                                    <span class="path1"></span>
+                                                                    <span class="path2"></span>
+                                                                    <span class="path3"></span>
+                                                                    <span class="path4"></span>
+                                                                    <span class="path5"></span>
+                                                                </i>
+                                                            </a>
+                                                            <!--begin::Menu-->
+                                                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-150px py-3" data-kt-menu="true">
+                                                                <!--begin::Menu item-->
+                                                                <div class="menu-item px-3">
+                                                                    <a href="#" class="menu-link px-3" data-kt-payment-mehtod-action="set_as_primary">Set as Primary</a>
+                                                                </div>
+                                                                <!--end::Menu item-->
+                                                            </div>
+                                                            <!--end::Menu-->
+                                                            <!--end::More-->
+                                                        </div>
+                                                        <!--end::Toolbar-->
+                                                    </div>
+                                                    <!--end::Header-->
+                                                    <!--begin::Body-->
+                                                    <div id="kt_customer_view_payment_method_2" class="collapse fs-6 ps-10" data-bs-parent="#kt_customer_view_payment_method">
+                                                        <!--begin::Details-->
+                                                        <div class="d-flex flex-wrap py-5">
+                                                            <!--begin::Col-->
+                                                            <div class="flex-equal me-5">
+                                                                <table class="table table-flush fw-semibold gy-1" style="line-height: 1.8;">
+                                                                    <h4>Otros datos</h4>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Rack:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">1</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-180px w-180px">Nivel:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">4</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">Tarima:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">2</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-150px w-150px">caja:</td>
+                                                                        <td class="text-gray-800" style="padding-left: 10px;">2</td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--end::Col-->
+                                                            <!--begin::Col-->
+                                                            <div class="flex-equal">
+                                                                <table class="table table-flush fw-semibold gy-1">
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-125px w-125px">Billing address</td>
+                                                                        <td class="text-gray-800">UK</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-125px w-125px">Phone</td>
+                                                                        <td class="text-gray-800">No phone provided</td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-125px w-125px">Email</td>
+                                                                        <td class="text-gray-800">
+                                                                            <a href="#" class="text-gray-900 text-hover-primary">melody@altbox.com</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-125px w-125px">Origin</td>
+                                                                        <td class="text-gray-800">United Kingdom
+                                                                            <div class="symbol symbol-20px symbol-circle ms-2">
+                                                                                <img src="assets/media/flags/united-kingdom.svg" />
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <td class="text-muted min-w-125px w-125px">CVC check</td>
+                                                                        <td class="text-gray-800">Passed
+                                                                            <i class="ki-duotone ki-check fs-2 text-success"></i>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </div>
+                                                            <!--end::Col-->
+                                                        </div>
+                                                        <!--end::Details-->
+                                                    </div>
+                                                    <!--end::Body-->
+                                                </div>
+                                                <!--end::Option-->
+
                                             </div>
                                             <!--end::Card body-->
                                         </div>
-                                        <!--end::Product List-->
-                                    </div>
-                                    <!--end::Orders-->
-                                </div>
-                                <!--end::Tab pane-->
-                                <!--begin::Tab pane-->
-                                <div class="tab-pane fade" id="kt_ecommerce_sales_order_history" role="tab-panel">
-                                    <!--begin::Orders-->
-                                    <div class="d-flex flex-column gap-7 gap-lg-10">
-                                        <!--begin::Order history-->
-                                        <div class="card card-flush py-4 flex-row-fluid">
+
+                                        <div class="card card-flush py-1 flex-row-fluid">
                                             <!--begin::Card header-->
                                             <div class="card-header">
                                                 <div class="card-title">
-                                                    <h2>Order History</h2>
+                                                    <h2>Historial del pedido</h2>
                                                 </div>
                                             </div>
                                             <!--end::Card header-->
@@ -685,102 +762,50 @@
                                                     <table class="table align-middle table-row-dashed fs-6 gy-5 mb-0">
                                                         <thead>
                                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                <th class="min-w-100px">Date Added</th>
-                                                                <th class="min-w-175px">Comment</th>
-                                                                <th class="min-w-70px">Order Status</th>
-                                                                <th class="min-w-100px">Customer Notifed</th>
+                                                                <th class="min-w-100px">IMAGEN </th>
+                                                                <th class="min-w-175px">FECHA</th>
+                                                                <th class="min-w-70px">Status</th>
+                                                                <th class="min-w-100px">NOTA</th>
+                                                                <th class="min-w-100px">CLIENTE NOTIFICADO </th>
+                                                                <th class="min-w-100px">USUARIO</th>
                                                             </tr>
                                                         </thead>
                                                         <tbody class="fw-semibold text-gray-600">
                                                             <tr>
-                                                                <td>22/03/2023</td>
-                                                                <td>Order completed</td>
+                                                                <td><img src="https://media.istockphoto.com/id/1186665850/es/vector/cami%C3%B3n-de-entrega-de-env%C3%ADo-r%C3%A1pido-dise%C3%B1o-de-icono-de-l%C3%ADnea-ilustraci%C3%B3n-vectorial-para.jpg?s=1024x1024&w=is&k=20&c=LSTplYguUmkr40p1FeuSYnmTUiD7PtvElGNd5k3sHKA=" alt="Fecha de entrega" width="50" height="50"></td>
+                                                                <td>25/03/2024</td>
                                                                 <td>
                                                                     <!--begin::Badges-->
                                                                     <div class="badge badge-light-success">Completed</div>
                                                                     <!--end::Badges-->
                                                                 </td>
                                                                 <td>No</td>
+                                                                <td>No</td>
+                                                                <td>No</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>21/03/2023</td>
-                                                                <td>Order received by customer</td>
+                                                                <td><img src="https://media.istockphoto.com/id/1186665850/es/vector/cami%C3%B3n-de-entrega-de-env%C3%ADo-r%C3%A1pido-dise%C3%B1o-de-icono-de-l%C3%ADnea-ilustraci%C3%B3n-vectorial-para.jpg?s=1024x1024&w=is&k=20&c=LSTplYguUmkr40p1FeuSYnmTUiD7PtvElGNd5k3sHKA=" alt="Fecha de entrega" width="50" height="50"></td>
+                                                                <td>25/03/2024</td>
                                                                 <td>
                                                                     <!--begin::Badges-->
                                                                     <div class="badge badge-light-success">Delivered</div>
                                                                     <!--end::Badges-->
                                                                 </td>
                                                                 <td>Yes</td>
+                                                                <td>No</td>
+                                                                <td>No</td>
                                                             </tr>
                                                             <tr>
-                                                                <td>20/03/2023</td>
-                                                                <td>Order shipped from warehouse</td>
+                                                                <td><img src="https://media.istockphoto.com/id/1186665850/es/vector/cami%C3%B3n-de-entrega-de-env%C3%ADo-r%C3%A1pido-dise%C3%B1o-de-icono-de-l%C3%ADnea-ilustraci%C3%B3n-vectorial-para.jpg?s=1024x1024&w=is&k=20&c=LSTplYguUmkr40p1FeuSYnmTUiD7PtvElGNd5k3sHKA=" alt="Fecha de entrega" width="50" height="50"></td>
+                                                                <td>25/03/2024</td>
                                                                 <td>
                                                                     <!--begin::Badges-->
                                                                     <div class="badge badge-light-primary">Delivering</div>
                                                                     <!--end::Badges-->
                                                                 </td>
                                                                 <td>Yes</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>19/03/2023</td>
-                                                                <td>Payment received</td>
-                                                                <td>
-                                                                    <!--begin::Badges-->
-                                                                    <div class="badge badge-light-primary">Processing</div>
-                                                                    <!--end::Badges-->
-                                                                </td>
                                                                 <td>No</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>18/03/2023</td>
-                                                                <td>Pending payment</td>
-                                                                <td>
-                                                                    <!--begin::Badges-->
-                                                                    <div class="badge badge-light-warning">Pending</div>
-                                                                    <!--end::Badges-->
-                                                                </td>
                                                                 <td>No</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>17/03/2023</td>
-                                                                <td>Payment method updated</td>
-                                                                <td>
-                                                                    <!--begin::Badges-->
-                                                                    <div class="badge badge-light-warning">Pending</div>
-                                                                    <!--end::Badges-->
-                                                                </td>
-                                                                <td>No</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>16/03/2023</td>
-                                                                <td>Payment method expired</td>
-                                                                <td>
-                                                                    <!--begin::Badges-->
-                                                                    <div class="badge badge-light-danger">Failed</div>
-                                                                    <!--end::Badges-->
-                                                                </td>
-                                                                <td>Yes</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>15/03/2023</td>
-                                                                <td>Pending payment</td>
-                                                                <td>
-                                                                    <!--begin::Badges-->
-                                                                    <div class="badge badge-light-warning">Pending</div>
-                                                                    <!--end::Badges-->
-                                                                </td>
-                                                                <td>No</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>14/03/2023</td>
-                                                                <td>Order received</td>
-                                                                <td>
-                                                                    <!--begin::Badges-->
-                                                                    <div class="badge badge-light-warning">Pending</div>
-                                                                    <!--end::Badges-->
-                                                                </td>
-                                                                <td>Yes</td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -789,46 +814,6 @@
                                             </div>
                                             <!--end::Card body-->
                                         </div>
-                                        <!--end::Order history-->
-                                        <!--begin::Order data-->
-                                        <div class="card card-flush py-4 flex-row-fluid">
-                                            <!--begin::Card header-->
-                                            <div class="card-header">
-                                                <div class="card-title">
-                                                    <h2>Order Data</h2>
-                                                </div>
-                                            </div>
-                                            <!--end::Card header-->
-                                            <!--begin::Card body-->
-                                            <div class="card-body pt-0">
-                                                <div class="table-responsive">
-                                                    <!--begin::Table-->
-                                                    <table class="table align-middle table-row-bordered mb-0 fs-6 gy-5">
-                                                        <tbody class="fw-semibold text-gray-600">
-                                                            <tr>
-                                                                <td class="text-muted">IP Address</td>
-                                                                <td class="fw-bold text-end">172.68.221.26</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-muted">Forwarded IP</td>
-                                                                <td class="fw-bold text-end">89.201.163.49</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-muted">User Agent</td>
-                                                                <td class="fw-bold text-end">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/96.0.4664.110 Safari/537.36</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td class="text-muted">Accept Language</td>
-                                                                <td class="fw-bold text-end">en-GB,en-US;q=0.9,en;q=0.8</td>
-                                                            </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <!--end::Table-->
-                                                </div>
-                                            </div>
-                                            <!--end::Card body-->
-                                        </div>
-                                        <!--end::Order data-->
                                     </div>
                                     <!--end::Orders-->
                                 </div>
@@ -843,7 +828,6 @@
                 <!--end::Content-->
             </div>
             <!--end::Content wrapper-->
-
         </div>
 
     </x-default-layout>
