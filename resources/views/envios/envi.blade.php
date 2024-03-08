@@ -271,7 +271,11 @@
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
-                                                <td >{{ $envio->guia }}</td>
+                                                <td >
+                                                <a href="/envios/detalle" >
+                                                    {{ $envio->guia }}
+                                                    </a>
+                                                </td>
                                                 <td>{{ $envio->comercio }}</td>
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
@@ -309,9 +313,7 @@
                                                     <span class="badge badge-light-success">{{ $envio->pago }}</span>
                                                 </td>
 
-                                                <td class="text-center">
-                                                <a href="/envios/detalle" class="btn btn-primary"><i class="bi bi-chat-square-text-fill fs-4 me-2"></i>Detalle</a>
-                                                </td>
+                                               
                                             </tr>
                                             @endforeach
                                         </tbody>
