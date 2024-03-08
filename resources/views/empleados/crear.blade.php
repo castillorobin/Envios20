@@ -136,6 +136,16 @@
                                         <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="N de AFP" />
                                     </div>
                                 </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de baja</label>
+                                    <div class="col-lg-3">
+                                        <input type="date" name="fecha_baja" class="form-control form-control-lg form-control-solid" />
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Motivo</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" placeholder="Motivo" />
+                                    </div>
+                                </div>
 
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nota</label>
