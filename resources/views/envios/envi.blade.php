@@ -308,6 +308,10 @@
                                                 <td class="text-center">
                                                     <span class="badge badge-light-success">{{ $envio->pago }}</span>
                                                 </td>
+
+                                                <td class="text-center">
+                                                <a href="/envios/detalle" class="btn btn-primary"><i class="bi bi-chat-square-text-fill fs-4 me-2"></i>Detalle</a>
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
