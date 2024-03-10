@@ -2,48 +2,156 @@
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
     <style>
         label.required::after {
             content: none;
         }
+
+        /* Estilos para resaltar el campo cuando hay un error */
+        .precio-moneda.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .precio-moneda.is-invalid+label {
+            color: #dc3545;
+        }
+
+        .precio-moneda.is-invalid~.invalid-feedback {
+            display: block;
+            color: #dc3545;
+        }
+
+        .precio-moneda.is-valid {
+            border-color: #28a745;
+        }
+
+        .precio-moneda.is-valid+label {
+            color: #28a745;
+        }
     </style>
 
-        
-<script>
-  $(document).ready(function() {
-  $("input").focusout(function() {
-    var value = $(this).val();
-    if (value.length == 0) {
-      $(this).addClass("is-invalid");
-      $(this).removeClass("is-valid");
-    } else {
-      $(this).removeClass("is-invalid");
-      $(this).addClass("is-valid");
-    }
-    /*
-           
-    */
-    console.log('Este campo es obligatorio');
-  });
-});
+    <script>
+        $(document).ready(function() {
+            // Validación solo para el campo "Número de Guía" y permitir solo números
+            $("#n_guia").focusout(function() {
+                var value = $(this).val();
+                if (value.length == 0 || !$.isNumeric(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo debe contener solo números');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+                console.log('Este campo es obligatorio');
+            });
 
-$(document).ready(function() {
-  $("select").focusout(function() {
-    var value = $(this).val();
-    if (value.length == 0) {
-      $(this).addClass("is-invalid");
-      $(this).removeClass("is-valid");
-    } else {
-      $(this).removeClass("is-invalid");
-      $(this).addClass("is-valid");
-    }
-    /*
-           
-    */
-    console.log('Este campo es obligatorio');
-  });
-});
-</script>
+            $(document).ready(function() {
+                // Validación para el campo "Destinatario"
+                $("#destinatariop").focusout(function() {
+                    var value = $(this).val();
+                    if (value.trim() === "") {
+                        $(this).addClass("is-invalid");
+                        $(this).removeClass("is-valid");
+                        console.log('El campo "Destinatario" es obligatorio');
+                    } else {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                    }
+                });
+            });
+
+            // Validación para campos de tipo select
+            $("select").focusout(function() {
+                var value = $(this).val();
+                if (value.length == 0) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+                console.log('Este campo es obligatorio');
+            });
+        });
+
+        $(document).ready(function() {
+            // Función para validar el número de teléfono
+            function validarTelefono(telefono) {
+                // Expresión regular para validar números de teléfono de 10 dígitos
+                var telefonoRegex = /^(?:2|7)\d{7}$/;
+                return telefonoRegex.test(telefono);
+            }
+
+            // Validación para el campo de teléfono
+            $("#telefonop").focusout(function() {
+                var value = $(this).val().trim();
+                if (value === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Teléfono" es obligatorio');
+                } else if (!validarTelefono(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un número de teléfono válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+
+            // Modificación para manejar el envío del formulario
+            $("#kt_ecommerce_settings_general_form").submit(function(e) {
+                // Validar el campo de teléfono antes de enviar el formulario
+                var telefonoValue = $("#telefonop").val().trim();
+                if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
+                    e.preventDefault(); // Evitar que el formulario se envíe
+                    $("#telefonop").addClass("is-invalid");
+                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                }
+                // Puedes agregar más lógica de validación aquí si es necesario
+            });
+        });
+
+        $(document).ready(function() {
+            // Función para validar valor monetario
+            function validarValorMoneda(valor) {
+                // Expresión regular para validar números o formatos de moneda válidos
+                var valorMonedaRegex = /^\d+(\.\d{1,2})?$/; // Acepta números con hasta 2 decimales
+                return valorMonedaRegex.test(valor);
+            }
+
+            // Validación para campos de valor monetario
+            $(".precio-moneda").focusout(function() {
+                var value = $(this).val().trim();
+                if (value !== "" && !validarValorMoneda(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un valor monetario válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo de fecha de entrega al enviar el formulario
+            $("form").submit(function(event) {
+                var value = $("#fecha_entregap").val().trim();
+                if (value === "") {
+                    $("#fecha_entregap").addClass("is-invalid");
+                    $("#fecha_entregap").removeClass("is-valid");
+                    $("#fechaEntregapValidationFeedback").addClass("invalid-feedback");
+                    event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+                } else {
+                    $("#fecha_entregap").removeClass("is-invalid");
+                    $("#fecha_entregap").addClass("is-valid");
+                }
+            });
+        });
+    </script>
+
 
 
     <div class="app-content flex-column-fluid">
@@ -98,12 +206,11 @@ $(document).ready(function() {
 
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-3 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" required/>
-                                        <label for="n_guia" style="padding-left: 25px;"># de guia</label>
-                                        
-                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
-        <div class="valid-feedback"><i class="fas fa-check-circle"></i>&nbsp;Correcto</div>   
+                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
+                                        <label for="n_guia" style="padding-left: 25px;"># de guía</label>
+                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
+
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
@@ -123,20 +230,18 @@ $(document).ready(function() {
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Destinatario" />
+                                        <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Destinatario" required />
                                         <label for="destinatariop" style="padding-left: 25px;">Destinatario</label>
                                         <div id="destinatarioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese el destinatario.
                                         </div>
                                     </div>
+
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-7 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="direccionp" id="direccionp" placeholder="Dirección" />
                                         <label for="direccionp" style="padding-left: 25px;">Dirección</label>
-                                        <div id="direccionValidationFeedback" class="invalid-feedback">
-                                            Por favor ingrese una dirección.
-                                        </div>
                                     </div>
                                     <div class="form-floating col-lg-5 mb-4">
                                         <input type="tel" class="form-control form-control-solid" name="telefonop" id="telefonop" placeholder="Teléfono" />
@@ -148,27 +253,28 @@ $(document).ready(function() {
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4">
-                                        <input type="text" class="form-control form-control-solid" name="precio" id="precio" placeholder="Precio del paquete" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" placeholder="Precio del paquete" />
                                         <label for="precio" style="padding-left: 25px;">Precio del paquete</label>
                                         <div id="precioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el paquete.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="envio" id="envio" placeholder="Precio del envío" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" placeholder="Precio del envío" />
                                         <label for="envio" style="padding-left: 25px;">Precio del envío</label>
                                         <div id="envioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el envío.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="total" id="total" placeholder="Total a pagar" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" placeholder="Total a pagar" />
                                         <label for="total" style="padding-left: 25px;">Total a pagar</label>
                                         <div id="totalValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un total válido a pagar.
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio" id="cenvio" aria-label="Floating label select example" required>
@@ -223,6 +329,8 @@ $(document).ready(function() {
                                             Por favor seleccione una fecha de entrega.
                                         </div>
                                     </div>
+
+
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating mb-4">
