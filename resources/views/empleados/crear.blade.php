@@ -6,6 +6,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/perfil.css') }}">
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <style>
         label.required::after {
             content: none;
@@ -75,30 +78,24 @@
                                         <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
                                     </div>
                                 </div>
-                                <!-- Campo de nombre -->
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre</label>
-                                    <div class="col-lg-8">
-                                        <div class="col-lg-10 fv-row">
-                                            <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id="fname" placeholder="Nombre completo" value="{{ old('fname') }}" />
-                                            @error('fname')
-                                            <div class="alert alert-danger mt-2">{{ $message }}</div>
-                                            @enderror
-                                        </div>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">ID de empleado</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="id" class="form-control form-control-lg form-control-solid" placeholder="ID de empleado" />
                                     </div>
                                 </div>
-
-                                <!-- Campo de correo electrónico -->
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
+                                    <div class="col-lg-8">
+                                        <input type="fname" name="fname" class="form-control form-control-lg form-control-solid" id="fname" placeholder="Nombre completo" value="{{ old('fname') }}" />
+                                    </div>
+                                </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="email">Correo Electrónico</label>
                                     <div class="col-lg-8">
                                         <input type="email" name="email" class="form-control form-control-lg form-control-solid" id="email" placeholder="Email" value="{{ old('email') }}" />
-                                        @error('email')
-                                        <div class="alert alert-danger mt-2">{{ $message }}</div>
-                                        @enderror
                                     </div>
                                 </div>
-
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-3">
@@ -110,19 +107,53 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Nacimiento</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
                                     <div class="col-lg-3">
-                                        <input type="date" name="fecha_nacimiento" class="form-control form-control-lg form-control-solid" />
+                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">DUI</label>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha nacimiento</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
+                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control form-control-lg form-control-solid" placeholder="Fecha de nacimiento" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
-                                    <div class="col-lg-8">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">DUI</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Licencia</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre de referencia</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="referencia" class="form-control form-control-lg form-control-solid" placeholder="Nombre de referencia" />
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
+                                    <div class="col-lg-3">
+                                        <input type="tel" name="Telefono1" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre de referencia</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="referencia2" class="form-control form-control-lg form-control-solid" placeholder="Nombre de referencia" />
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
+                                    <div class="col-lg-3">
+                                        <input type="tel" name="Telefono2" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Contacto de emergencia 1</label>
+                                    <div class="col-lg-3">
+                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Numero de emergencia" />
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Contacto de emergencia 2</label>
+                                    <div class="col-lg-3">
+                                        <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="Numero de emergencia" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
@@ -132,7 +163,7 @@
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
                                     <div class="col-lg-3">
-                                        <input type="date" name="fecha_alta" class="form-control form-control-lg form-control-solid" />
+                                        <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" />
                                     </div>
                                 </div>
 
@@ -149,7 +180,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de baja</label>
                                     <div class="col-lg-3">
-                                        <input type="date" name="fecha_baja" class="form-control form-control-lg form-control-solid" />
+                                        <input type="date" name="fecha_baja" id="fecha_baja" class="form-control form-control-lg form-control-solid" placeholder="Fecha de baja" />
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Motivo</label>
                                     <div class="col-lg-3">
@@ -160,7 +191,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nota</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
+                                        <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota"></textarea>
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-end py-6 px-9">
@@ -176,6 +207,23 @@
     </x-default-layout>
     <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script>
+        flatpickr("#fecha_nacimiento", {
+            dateFormat: 'Y-m-d',
+        });
+    </script>
+    <script>
+        flatpickr("#fecha_alta", {
+            dateFormat: 'Y-m-d',
+        });
+    </script>
+    <script>
+        flatpickr("#fecha_baja", {
+            dateFormat: 'Y-m-d',
+        });
+    </script>
+
+
 </body>
 
 </html>
