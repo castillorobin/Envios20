@@ -43,8 +43,8 @@
                     </div>
                     <div id="kt_account_settings_profile_details" class="collapse show">
                         <form action="/empleadoguardar" method="POST" id="kt_account_profile_details_form" class="form">
-                        @csrf
-                         @method('GET')
+                            @csrf
+                            @method('GET')
                             <div class="card-body border-top p-9">
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label fw-semibold fs-6">Foto</label>
@@ -75,20 +75,30 @@
                                         <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
                                     </div>
                                 </div>
+                                <!-- Campo de nombre -->
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre</label>
                                     <div class="col-lg-8">
                                         <div class="col-lg-10 fv-row">
-                                            <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre completo" value="Max" />
+                                            <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id="fname" placeholder="Nombre completo" value="{{ old('fname') }}" />
+                                            @error('fname')
+                                            <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                            @enderror
                                         </div>
                                     </div>
                                 </div>
+
+                                <!-- Campo de correo electrónico -->
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Correo Electrónico</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="email">Correo Electrónico</label>
                                     <div class="col-lg-8">
-                                        <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
+                                        <input type="email" name="email" class="form-control form-control-lg form-control-solid" id="email" placeholder="Email" value="{{ old('email') }}" />
+                                        @error('email')
+                                        <div class="alert alert-danger mt-2">{{ $message }}</div>
+                                        @enderror
                                     </div>
                                 </div>
+
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-3">
@@ -134,6 +144,16 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Número de AFP</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="N de AFP" />
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de baja</label>
+                                    <div class="col-lg-3">
+                                        <input type="date" name="fecha_baja" class="form-control form-control-lg form-control-solid" />
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Motivo</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" placeholder="Motivo" />
                                     </div>
                                 </div>
 
