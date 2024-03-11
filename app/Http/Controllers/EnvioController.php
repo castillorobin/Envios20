@@ -136,6 +136,31 @@ class EnvioController extends Controller
 
 
     }
+    public function envioguardarca(Request $request)
+    {
+        $envio = new Envio();
+
+       $envio->guia = $request->get('n_guia');
+        $envio->destinatario = $request->get('destinatario');
+        $envio->comercio = $request->get('comercio');
+        $envio->direccion = $request->get('direccion');
+        $envio->telefono = $request->get('telefono');
+        $envio->cobro = $request->get('cenvio4');
+        $envio->precio = $request->get('precio4');
+        $envio->envio = $request->get('envio4');
+        $envio->total = $request->get('total4');
+        $envio->estado = $request->get('estado_envio');
+        $envio->pago = $request->get('estado_pago');
+        $envio->tipo = $request->get('tipo_envio');
+        $envio->fecha_entrega = $request->get('fecha_entrega');
+        $envio->nota = $request->get('nota');
+        
+        $envio->save();
+        $vendedores = Vendedor::all();
+        return view('envios.crearenvioca', compact('vendedores'));
+
+
+    }
     
 
     /**
