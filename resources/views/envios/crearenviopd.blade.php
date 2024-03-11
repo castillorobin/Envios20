@@ -8,7 +8,29 @@
         label.required::after {
             content: none;
         }
-    </style> 
+
+        /* Estilos para resaltar el campo cuando hay un error */
+        .precio-moneda2.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .precio-moneda2.is-invalid+label {
+            color: #dc3545;
+        }
+
+        .precio-moneda2.is-invalid~.invalid-feedback {
+            display: block;
+            color: #dc3545;
+        }
+
+        .precio-moneda2.is-valid {
+            border-color: #28a745;
+        }
+
+        .precio-moneda2.is-valid+label {
+            color: #28a745;
+        }
+    </style>
 
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
@@ -61,26 +83,24 @@
 
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_store" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarpd" method="POST">
-                            @csrf
-                            @method('GET')
+                                @csrf
+                                @method('GET')
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-3 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" />
-                                        <label for="n_guia" style="padding-left: 25px;"># de guia</label>
-                                        <div id="n_guiaValidationFeedback" class="invalid-feedback">
-                                            Por favor ingrese solo números para la guía.
-                                        </div>
+                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
+                                        <label for="n_guia" style="padding-left: 25px;"># de guía</label>
+                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
                                 </div>
+                                
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-control="select2" name="comercio" id="comercio" aria-label="Floating label select example">
-                                            <option selected>selecione el comercio</option>
+                                        <select class="form-select form-select-solid" data-control="select2" name="comercio" >
                                             @foreach ($vendedores as $vendedor)
                                             <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
                                             @endforeach
                                         </select>
-                                        <label for="comercio" style="padding-left: 25px;">Comercio</label>
+                                        <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione un comercio.
                                         </div>
@@ -88,8 +108,8 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="destinatario" id="destinatario" placeholder="Destinatario" />
-                                        <label for="Destinatario" style="padding-left: 25px;">Destinatario</label>
+                                        <input type="text" class="form-control form-control-solid" name="destinatario" id="destinatario" placeholder="Destinatario" required />
+                                        <label for="destinatario" style="padding-left: 25px;">Destinatario</label>
                                         <div id="destinatarioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese el destinatario.
                                         </div>
@@ -99,9 +119,6 @@
                                     <div class="form-floating col-lg-7 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="direccion" id="direccion" placeholder="Dirección" />
                                         <label for="direccion" style="padding-left: 25px;">Dirección</label>
-                                        <div id="direccionValidationFeedback" class="invalid-feedback">
-                                            Por favor ingrese una dirección.
-                                        </div>
                                     </div>
                                     <div class="form-floating col-lg-5 mb-4">
                                         <input type="tel" class="form-control form-control-solid" name="telefono" id="telefono" placeholder="Teléfono" />
@@ -112,33 +129,32 @@
                                     </div>
                                 </div>
                                 <div class="row my-4 mx-4">
-                                    <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="precio2" id="precio2" placeholder="Precio del paquete" />
+                                    <div class="form-floating col-lg-4">
+                                        <input type="text" class="form-control form-control-solid precio-moneda2" name="precio2" id="precio2" placeholder="Precio del paquete" />
                                         <label for="precio2" style="padding-left: 25px;">Precio del paquete</label>
                                         <div id="precio2ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el paquete.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="envio2" id="envio2" placeholder="Precio del envío" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda2" name="envio2" id="envio2" placeholder="Precio del envío" />
                                         <label for="envio2" style="padding-left: 25px;">Precio del envío</label>
                                         <div id="envio2ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el envío.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="total2" id="total2" placeholder="Total a pagar" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda2" name="total2" id="total2" placeholder="Total a pagar" />
                                         <label for="total2" style="padding-left: 25px;">Total a pagar</label>
                                         <div id="total2ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un total válido a pagar.
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio2" id="cenvio2" aria-label="Floating label select example" required>
-                                           
+
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -149,7 +165,6 @@
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>
-                                            
                                             <option value="Por pagar">Por pagar</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -162,7 +177,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="tipo_envio" id="tipo_envio" aria-label="Floating label select example" required>
-                                           
+
                                             <option value="Personalizado departamental">Personalizado departamental</option>
                                             <option value="Normal">Normal</option>
                                         </select>
@@ -173,7 +188,7 @@
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="estado_envio" id="estado_envio" aria-label="Floating label select example" required>
-                                            
+
                                             <option value="Creado">Creado</option>
                                             <option value="Sin entregar">Sin entregar</option>
                                         </select>

@@ -2,7 +2,6 @@
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
     <style>
         label.required::after {
             content: none;
@@ -30,7 +29,6 @@
             color: #28a745;
         }
     </style>
-
     <script>
         $(document).ready(function() {
             // Validación solo para el campo "Número de Guía" y permitir solo números
@@ -210,7 +208,6 @@
                                         <label for="n_guia" style="padding-left: 25px;"># de guía</label>
                                         <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
-
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
@@ -236,7 +233,6 @@
                                             Por favor ingrese el destinatario.
                                         </div>
                                     </div>
-
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-7 mb-4">
@@ -274,7 +270,6 @@
                                         </div>
                                     </div>
                                 </div>
-
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio" id="cenvio" aria-label="Floating label select example" required>
@@ -302,7 +297,6 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="tipo_enviop" id="tipo_enviop" aria-label="Floating label select example" required>
-
                                             <option value="Personalizado">Personalizado </option>
                                             <option value="Normal">Normal</option>
                                         </select>
@@ -329,8 +323,6 @@
                                             Por favor seleccione una fecha de entrega.
                                         </div>
                                     </div>
-
-
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating mb-4">
@@ -356,18 +348,13 @@
                                     </div>
                                 </div>
                             </form>
-                            <!-- Termina form de envio personalizado -->
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </x-default-layout>
-
-
 <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 <script src="assets/plugins/global/plugins.bundle.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -376,7 +363,6 @@
         dateFormat: 'Y-m-d',
     });
 </script>
-
 <script>
     $(document).ready(function() {
 
