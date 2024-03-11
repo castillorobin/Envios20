@@ -1,15 +1,35 @@
 <x-default-layout>
-
-
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-
-
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
     <style>
         label.required::after {
             content: none;
         }
-    </style>
 
+        /* Estilos para resaltar el campo cuando hay un error */
+        .precio-moneda3.is-invalid {
+            border-color: #dc3545;
+        }
+
+        .precio-moneda3.is-invalid+label {
+            color: #dc3545;
+        }
+
+        .precio-moneda3.is-invalid~.invalid-feedback {
+            display: block;
+            color: #dc3545;
+        }
+
+        .precio-moneda3.is-valid {
+            border-color: #28a745;
+        }
+
+        .precio-moneda3.is-valid+label {
+            color: #28a745;
+        }
+    </style>
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
@@ -58,26 +78,23 @@
 
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_localization" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_localization" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarpf" method="POST">
-                            @csrf
-                            @method('GET')
+                                @csrf
+                                @method('GET')
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-3 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" />
-                                        <label for="n_guia" style="padding-left: 25px;"># de guia</label>
-                                        <div id="n_guiaValidationFeedback" class="invalid-feedback">
-                                            Por favor ingrese solo números para la guía.
-                                        </div>
+                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
+                                        <label for="n_guia" style="padding-left: 25px;"># de guía</label>
+                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-control="select2" name="comercio" id="comercio" aria-label="Floating label select example">
-                                            <option selected>selecione el comercio</option>
+                                        <select class="form-select form-select-solid" data-control="select2" name="comercio" >
                                             @foreach ($vendedores as $vendedor)
-                                            <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                            <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }}</option>
                                             @endforeach
                                         </select>
-                                        <label for="comercio" style="padding-left: 25px;">Comercio</label>
+                                        <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione un comercio.
                                         </div>
@@ -85,8 +102,8 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="destinatario" id="destinatario" placeholder="Destinatario" />
-                                        <label for="Destinatario" style="padding-left: 25px;">Destinatario</label>
+                                        <input type="text" class="form-control form-control-solid" name="destinatario" id="destinatario" placeholder="Destinatario" required />
+                                        <label for="destinatario" style="padding-left: 25px;">Destinatario</label>
                                         <div id="destinatarioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese el destinatario.
                                         </div>
@@ -108,23 +125,24 @@
                                         </div>
                                     </div>
                                 </div>
+
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="precio3" id="precio3" placeholder="Precio del paquete" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda3" name="precio3" id="precio3" placeholder="Precio del paquete" />
                                         <label for="precio3" style="padding-left: 25px;">Precio del paquete</label>
                                         <div id="precio3ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el paquete.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="envio3" id="envio3" placeholder="Precio del envío" />
+                                    <input type="text" class="form-control form-control-solid precio-moneda3" name="envio3" id="envio3" placeholder="Precio del envío" />
                                         <label for="envio3" style="padding-left: 25px;">Precio del envío</label>
                                         <div id="envio3ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el envío.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="total3" id="total3" placeholder="Total a pagar" />
+                                    <input type="text" class="form-control form-control-solid precio-moneda3" name="total3" id="total3" placeholder="Total a pagar" />
                                         <label for="total3" style="padding-left: 25px;">Total a pagar</label>
                                         <div id="total3ValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un total válido a pagar.
@@ -134,7 +152,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="cenvio3" id="cenvio3" aria-label="Floating label select example" required>
-                                           
+
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -145,7 +163,7 @@
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
                                         <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>
-                                          
+
                                             <option value="Por pagar">Por pagar</option>
                                             <option value="pagado">Pagado</option>
                                         </select>
@@ -158,7 +176,7 @@
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="tipo_envio" id="tipo_envio" aria-label="Floating label select example" required>
-                                            
+
                                             <option value="Punto fijo">Punto Fijo</option>
                                             <option value="Normal">Normal</option>
                                         </select>
@@ -169,7 +187,7 @@
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
                                         <select class="form-select form-select-solid" name="estado_envio" id="estado_envio" aria-label="Floating label select example" required>
-                                            
+
                                             <option value="Creado">Creado</option>
                                             <option value="sin_entregar">Sin entregar</option>
                                         </select>
@@ -224,8 +242,6 @@
         </div>
     </div>
 </x-default-layout>
-<link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
-<script src="assets/plugins/global/plugins.bundle.js"></script>
 <script>
     flatpickr("#fecha_entrega", {
         dateFormat: 'Y-m-d',
