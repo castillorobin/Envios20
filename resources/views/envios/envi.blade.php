@@ -18,8 +18,11 @@
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
-    <!--begin::Vendor Stylesheets(used for this page only)-->
+    <!--begin::Vendor Stylesheets(used for this page only) 
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
+   -->
+   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
@@ -188,7 +191,8 @@
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                        
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
@@ -259,7 +263,7 @@
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-100px"># de guía</th>
@@ -354,11 +358,50 @@
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
     <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+    <!--
     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
   
-    <!--end::Custom Javascript-->
+    end::Custom Javascript-->
 
+    <script>
+         
+         $(document).ready(function () {
+     $('#tenvios').DataTable(
+         {
+            
+             language: {
+         "decimal": "",
+         "emptyTable": "No hay información",
+         "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+         "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+         "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+         "infoPostFix": "",
+         "thousands": ",",
+         "lengthMenu": "Mostrar _MENU_ Entradas",
+         "loadingRecords": "Cargando...",
+         "processing": "Procesando...",
+         "search": "Buscar:",
+         "zeroRecords": "Sin resultados encontrados",
+         "paginate": {
+             "first": "Primero",
+             "last": "Ultimo",
+             "next": "Siguiente",
+             "previous": "Anterior"
+         }
+     },
+ 
+         dom: 'tri<"pagina1" p>',
+         
+         
         
+        
+ 
+         } 
+     );
+ }); 
+     </script>
    
 
 
