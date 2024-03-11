@@ -80,6 +80,7 @@
 
                             <!-- Termina form de envio personalizado -->
                         </div>
+
                         <div class="tab-pane fade active show" id="kt_ecommerce_settings_store" role="tabpanel">
                             <form id="kt_ecommerce_settings_general_store" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarpd" method="POST">
                                 @csrf
