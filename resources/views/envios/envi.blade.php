@@ -24,6 +24,8 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    
+
     <!--end::Global Stylesheets Bundle-->
     <style>
         .table th,
@@ -205,10 +207,10 @@
                                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
                                             <option></option>
                                             <option value="all">Todo</option>
-                                            <option value="Completed">Completed</option>
-                                            <option value="In Transit">In Transit</option>
-                                            <option value="Pending">Pending</option>
-                                            <option value="Cancelled">Cancelled</option>
+                                            <option value="Creado">Creado</option>
+                                            <option value="Entregado">Entregado</option>
+                                            <option value="Fallido">Fallido</option>
+                                            <option value="En transito">En transito</option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>
@@ -341,19 +343,25 @@
     </x-default-layout>
     <!--begin::Javascript-->
     <script>
-        var hostUrl = "assets/";
+       
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
-    <script src="assets/js/scripts.bundle.js"></script>¿
+    <script src="assets/js/scripts.bundle.js"></script>
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
     <script src="assets/js/widgets.bundle.js"></script>
     <script src="assets/js/custom/widgets.js"></script>
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
     <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
   
     <!--end::Custom Javascript-->
+
+        
+   
+
+
     <!--end::Javascript-->
 </body>
 <!--end::Body-->
