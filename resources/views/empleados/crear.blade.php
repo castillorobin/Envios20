@@ -96,6 +96,16 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registo</label>
+                                    <div class="col-lg-8">
+                                        <select name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar agencia" required>
+                                            <option value="CEO">Santa ana</option>
+                                            <option value="Director general">San Miguel</option>
+                                            <option value="Gerente general">San salvador </option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-3">
                                         <input type="tel" name="telefono" id="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
