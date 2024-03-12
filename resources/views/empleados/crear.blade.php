@@ -9,12 +9,7 @@
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <style>
-        label.required::after {
-            content: none;
 
-        }
-    </style>
 </head>
 
 <body>
@@ -37,7 +32,6 @@
                         <li class="breadcrumb-item text-muted">Crear</li>
                     </ul>
                 </div>
-
                 <div class="card mb-5 mb-xl-10">
                     <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_profile_details" aria-expanded="true" aria-controls="kt_account_profile_details">
                         <div class="card-title m-0">
@@ -59,7 +53,7 @@
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>
-                                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
                                                 <input type="hidden" name="avatar_remove" />
                                             </label>
                                             <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
@@ -78,118 +72,156 @@
                                         <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
                                     </div>
                                 </div>
+
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">ID de empleado</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="id" class="form-control form-control-lg form-control-solid" placeholder="ID de empleado" />
+                                        <input type="text" name="id" id="id" class="form-control form-control-lg form-control-solid" placeholder="ID de empleado" required pattern="[0-9]+" />
+                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
                                     <div class="col-lg-8">
-                                        <input type="fname" name="fname" class="form-control form-control-lg form-control-solid" id="fname" placeholder="Nombre completo" value="{{ old('fname') }}" />
+                                        <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
+
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="email">Correo Electrónico</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
                                     <div class="col-lg-8">
-                                        <input type="email" name="email" class="form-control form-control-lg form-control-solid" id="email" placeholder="Email" value="{{ old('email') }}" />
+                                        <input type="text" name="direccion" id="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input type="tel" name="telefono" id="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">WhatsApp</label>
+                                    <label class="col-lg-2 col-form-label">WhatsApp</label>
                                     <div class="col-lg-3">
                                         <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="email">Correo Electrónico</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" />
+                                        <input type="email" name="email" id="email" class="form-control form-control-lg form-control-solid" placeholder="Email" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio y debe ser una dirección de correo electrónico válida.</div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha nacimiento</label>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de nacimiento</label>
                                     <div class="col-lg-3">
-                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control form-control-lg form-control-solid" placeholder="Fecha de nacimiento" />
+                                        <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control form-control-lg form-control-solid" placeholder="Fecha de nacimiento" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">DUI</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
+                                        <input type="text" name="dui" id="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Licencia</label>
+                                    <label class="col-lg-2 col-form-label">Licencia</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre de referencia</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="referencia_personal">Referencia Personal</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="referencia" class="form-control form-control-lg form-control-solid" placeholder="Nombre de referencia" />
+                                        <input type="text" name="referencia" id="referencia_personal" class="form-control form-control-lg form-control-solid" placeholder="Referencia Personal" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="Telefono1" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input type="tel" name="telefono1" id="telefono1" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre de referencia</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="referencia_familiar">Referencia Familiar</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="referencia2" class="form-control form-control-lg form-control-solid" placeholder="Nombre de referencia" />
+                                        <input type="text" name="referencia2" id="referencia_familiar" class="form-control form-control-lg form-control-solid" placeholder="Referencia Familiar " required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="Telefono2" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input type="tel" name="telefono2" id="telefono2" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Contacto de emergencia 1</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="contacto_emergencia">Contacto de emergencia</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Numero de emergencia" />
+                                        <input type="text" name="contacto_emergencia" id="contacto_emergencia" class="form-control form-control-lg form-control-solid" placeholder="Nombre de Contacto" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Contacto de emergencia 2</label>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="Numero de emergencia" />
+                                        <input type="tel" name="telefono3" id="telefono3" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Cargo</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="cargo" class="form-control form-control-lg form-control-solid" placeholder="Cargo" />
+                                        <select name="cargo" id="cargo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar cargo" required>
+                                            <option></option>
+                                            <option value="CEO">CEO</option>
+                                            <option value="Director general">Director general</option>
+                                            <option value="Gerente general">Gerente general</option>
+                                            <option value="Gerente de recursos humanos">Gerente de recursos humanos</option>
+                                            <option value="Gerente financiero">Gerente financiero</option>
+                                            <option value="Gerente de ventas">Gerente de ventas</option>
+                                            <option value="Gerente de procesos">Gerente de procesos</option>
+                                            <option value="Gerente de agencia">Gerente de agencia</option>
+                                            <option value="Jefe de atencion al cliente">Jefe de atención al cliente</option>
+                                            <option value="Jefe de digitado">Jefe de digitado</option>
+                                            <option value="Jefe de almacen">Jefe de almacén</option>
+                                            <option value="Jefe de reparto domicilios">Jefe de reparto domicilios</option>
+                                            <option value="Jefe de reparto departamental">Jefe de reparto departamental</option>
+                                            <option value="Ejecutivo de atencion al cliente">Ejecutivo de atención al cliente</option>
+                                            <option value="Ejecutivo de digitacion">Ejecutivo de digitación</option>
+                                            <option value="Profesional de reparto de domicilios">Profesional de reparto de domicilios</option>
+                                            <option value="Profesional de reparto en ruta">Profesional de reparto en ruta</option>
+                                            <option value="Auxiliar de reparto">Auxiliar de reparto</option>
+                                            <option value="Encargado de limpieza">Encargado de limpieza</option>
+                                        </select>
+                                        <div class="invalid-feedback">Por favor, seleccione un cargo.</div>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
                                     <div class="col-lg-3">
-                                        <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" />
+                                        <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
 
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6 ">Número de ISSS</label>
+                                    <label class="col-lg-3 col-form-label">Número de ISSS</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="n_isss" class="form-control form-control-lg form-control-solid" placeholder="N de ISSS" />
+                                        <input type="text" name="n_isss" class="form-control form-control-lg form-control-solid" placeholder="# de ISSS" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Número de AFP</label>
+                                    <label class="col-lg-2 col-form-label">Número de AFP</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="N de AFP" />
+                                        <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="# de AFP" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de baja</label>
+                                    <label class="col-lg-3 col-form-label">Fecha de baja</label>
                                     <div class="col-lg-3">
                                         <input type="date" name="fecha_baja" id="fecha_baja" class="form-control form-control-lg form-control-solid" placeholder="Fecha de baja" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Motivo</label>
+                                    <label class="col-lg-2 col-form-label">Motivo</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" placeholder="Motivo" />
                                     </div>
                                 </div>
 
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nota</label>
+                                    <label class="col-lg-3 col-form-label">Nota</label>
                                     <div class="col-lg-8">
                                         <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota"></textarea>
                                     </div>
@@ -220,6 +252,312 @@
     <script>
         flatpickr("#fecha_baja", {
             dateFormat: 'Y-m-d',
+        });
+    </script>
+    <script>
+        $(document).ready(function() {
+            // Validación solo para el campo "Número de Guía" y permitir solo números
+            $("#id").focusout(function() {
+                var value = $("#id").val();
+                if (value.length == 0 || !$.isNumeric(value)) {
+                    $("#id").addClass("is-invalid");
+                    $("#id").removeClass("is-valid");
+                    console.log('El campo debe contener solo números');
+                } else {
+                    $("#id").removeClass("is-invalid");
+                    $("#id").addClass("is-valid");
+                }
+                console.log('Este campo es obligatorio');
+            });
+
+        });
+        $(document).ready(function() {
+            // Validación para el campo "Destinatario"
+            $("#fname").focusout(function() {
+                var value = $(this).val();
+                if (value.trim() === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Nombre completo" es obligatorio');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo "Destinatario"
+            $("#direccion").focusout(function() {
+                var value = $(this).val();
+                if (value.trim() === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Direccion" es obligatorio');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+
+        $(document).ready(function() {
+            // Función para validar el número de teléfono
+            function validarTelefono(telefono) {
+                // Expresión regular para validar números de teléfono de 10 dígitos
+                var telefonoRegex = /^[267]\d{7}$/;
+                return telefonoRegex.test(telefono);
+            }
+
+            // Validación para el campo de teléfono
+            $("#telefono").focusout(function() {
+                var value = $(this).val().trim();
+                if (value === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Teléfono" es obligatorio');
+                } else if (!validarTelefono(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un número de teléfono válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+
+            // Modificación para manejar el envío del formulario
+            $("#kt_account_profile_details_form").submit(function(e) {
+                // Validar el campo de teléfono antes de enviar el formulario
+                var telefonoValue = $("#telefono").val().trim();
+                if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
+                    e.preventDefault(); // Evitar que el formulario se envíe
+                    $("#telefono").addClass("is-invalid");
+                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                }
+                // Puedes agregar más lógica de validación aquí si es necesario
+            });
+        });
+        $(document).ready(function() {
+            // Función para validar el número de teléfono
+            function validarTelefono(telefono) {
+                // Expresión regular para validar números de teléfono de 10 dígitos
+                var telefonoRegex = /^[267]\d{7}$/;
+                return telefonoRegex.test(telefono);
+            }
+
+            // Validación para el campo de teléfono
+            $("#telefono1").focusout(function() {
+                var value = $(this).val().trim();
+                if (value === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Teléfono" es obligatorio');
+                } else if (!validarTelefono(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un número de teléfono válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+
+            // Modificación para manejar el envío del formulario
+            $("#kt_account_profile_details_form").submit(function(e) {
+                // Validar el campo de teléfono antes de enviar el formulario
+                var telefonoValue = $("#telefono1").val().trim();
+                if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
+                    e.preventDefault(); // Evitar que el formulario se envíe
+                    $("#telefono1").addClass("is-invalid");
+                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                }
+                // Puedes agregar más lógica de validación aquí si es necesario
+            });
+        });
+        $(document).ready(function() {
+            // Función para validar el número de teléfono
+            function validarTelefono(telefono) {
+                // Expresión regular para validar números de teléfono de 10 dígitos
+                var telefonoRegex = /^[267]\d{7}$/;
+                return telefonoRegex.test(telefono);
+            }
+
+            // Validación para el campo de teléfono
+            $("#telefono2").focusout(function() {
+                var value = $(this).val().trim();
+                if (value === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Teléfono" es obligatorio');
+                } else if (!validarTelefono(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un número de teléfono válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+
+            // Modificación para manejar el envío del formulario
+            $("#kt_account_profile_details_form").submit(function(e) {
+                // Validar el campo de teléfono antes de enviar el formulario
+                var telefonoValue = $("#telefono2").val().trim();
+                if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
+                    e.preventDefault(); // Evitar que el formulario se envíe
+                    $("#telefono2").addClass("is-invalid");
+                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                }
+                // Puedes agregar más lógica de validación aquí si es necesario
+            });
+        });
+        $(document).ready(function() {
+            // Función para validar el número de teléfono
+            function validarTelefono(telefono) {
+                // Expresión regular para validar números de teléfono de 10 dígitos
+                var telefonoRegex = /^[267]\d{7}$/;
+                return telefonoRegex.test(telefono);
+            }
+
+            // Validación para el campo de teléfono
+            $("#telefono3").focusout(function() {
+                var value = $(this).val().trim();
+                if (value === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Teléfono" es obligatorio');
+                } else if (!validarTelefono(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un número de teléfono válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+
+            // Modificación para manejar el envío del formulario
+            $("#kt_account_profile_details_form").submit(function(e) {
+                // Validar el campo de teléfono antes de enviar el formulario
+                var telefonoValue = $("#telefono3").val().trim();
+                if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
+                    e.preventDefault(); // Evitar que el formulario se envíe
+                    $("#telefono3").addClass("is-invalid");
+                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                }
+                // Puedes agregar más lógica de validación aquí si es necesario
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo "Destinatario"
+            $("#email").focusout(function() {
+                var value = $(this).val();
+                if (value.trim() === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Email" es obligatorio');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo de fecha de entrega al enviar el formulario
+            $("form").submit(function(event) {
+                var value = $("#fecha_nacimiento").val().trim();
+                if (value === "") {
+                    $("#fecha_nacimiento").addClass("is-invalid");
+                    $("#fecha_nacimiento").removeClass("is-valid");
+                    $("#fechaEntregapValidationFeedback").addClass("invalid-feedback");
+                    event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+                } else {
+                    $("#fecha_nacimiento").removeClass("is-invalid");
+                    $("#fecha_nacimiento").addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo "dui"
+            $("#dui").focusout(function() {
+                var value = $(this).val();
+                if (value.trim() === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "dui" es obligatorio');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo "dui"
+            $("#referencia_personal").focusout(function() {
+                var value = $(this).val();
+                if (value.trim() === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "referencia" es obligatorio');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo "dui"
+            $("#referencia_familiar").focusout(function() {
+                var value = $(this).val();
+                if (value.trim() === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "referencia" es obligatorio');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo "dui"
+            $("#contacto_emergencia").focusout(function() {
+                var value = $("#contacto_emergencia").val();
+                if (value.trim() === "") {
+                    $("#contacto_emergencia").addClass("is-invalid");
+                    $("#contacto_emergencia").removeClass("is-valid");
+                    console.log('El campo "contacto emergencia" es obligatorio');
+                } else {
+                    $("#contacto_emergencia").removeClass("is-invalid");
+                    $("#contacto_emergencia").addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo de fecha de entrega al enviar el formulario
+            $("form").submit(function(event) {
+                var value = $("#fecha_alta").val().trim();
+                if (value === "") {
+                    $("#fecha_alta").addClass("is-invalid");
+                    $("#fecha_alta").removeClass("is-valid");
+                    $("#fechaEntregapValidationFeedback").addClass("invalid-feedback");
+                    event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+                } else {
+                    $("#fecha_alta").removeClass("is-invalid");
+                    $("#fecha_alta").addClass("is-valid");
+                }
+            });
+        });
+        $("cargo").focusout(function() {
+            var value = $("cargo").val();
+            if (value.length == 0) {
+                $("cargo").addClass("is-invalid");
+                $("cargo").removeClass("is-valid");
+            } else {
+                $("cargo").removeClass("is-invalid");
+                $("cargo").addClass("is-valid");
+            }
+            console.log('Este campo es obligatorio');
         });
     </script>
 

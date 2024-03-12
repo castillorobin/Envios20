@@ -214,10 +214,8 @@
                                         <select class="form-select form-select-solid" data-control="select2" name="comercio">
 
                                             @foreach ($vendedores as $vendedor)
-
                                             <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
                                             @endforeach
-
                                         </select>
                                         <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">

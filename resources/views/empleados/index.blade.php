@@ -162,7 +162,7 @@
                             <!--begin::Secondary button-->
                             <!--end::Secondary button-->
                             <!--begin::Primary button-->
-                            <a href="/empleados/crear" class="btn btn-sm fw-bold btn-primary" >Agregar</a>
+                            <a href="/empleados/crear" class="btn btn-sm fw-bold btn-primary">Agregar</a>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -260,38 +260,28 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px">ID</th>
-                                                <th class="min-w-50px">Nombre de empleado </th>
-                                                <th class="min-w-150px">Numero </th>
-                                                <th class="min-w-50px">Whatsapp</th>
-                                                <th class="min-w-50px">Dirección</th>
-                                                <th class="min-w-50px">Status</th>
-                                                <th class="min-w-50px">Sesion </th>
+                                                <th style="min-width: 120px;">ID Empleado</th>
+                                                <th style="min-width: 120px;">Nombre de empleado</th>
+                                                <th style="min-width: 120px;">Numero</th>
+                                                <th style="min-width: 120px;">Whatsapp</th>
+                                                <th style="min-width: 120px;">Dirección</th>
+                                                <th style="min-width: 120px;">Estado</th>
+                                                <th style="min-width: 120px;">Sesión</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fw-semibold  text-black-400">
-                                            <tr class="'table-row-black'">
-                                                <td >
-                                                <a href="/envios/detalle" >
-                                                    254
-                                                    </a>
-                                                </td>
-                                                <td>Joakin polanco</td>
+                                        <tbody class="fw-semibold text-black-400">
+                                            <tr class="table-row-black">
+                                                <td><a href="/empleados/1" class="text-gray-900 text-hover-primary">#XGT-346</a></td>
+                                                <td>Joakin Polanco</td>
                                                 <td>5</td>
                                                 <td>74576258</td>
-                                                <td >Santa ana</td>
-                                                <td class="text-center">
-                                                <span class="badge badge-danger">Contratado</span>
-                                                </td>
-                                                <td class="text-center">
-                                                    <span class="badge badge-light-success">activa</span>
-                                                </td>
-
-                                               
+                                                <td>Santa Ana</td>
+                                                <td class="text-star"><span class="badge badge-light-success">Alta</span></td>
+                                                <td class="text-star"><span class="badge badge-light-success">Activa</span></td>
                                             </tr>
-
                                         </tbody>
                                     </table>
+
                                 </div>
                                 <!--end::Table-->
                             </div>
@@ -323,7 +313,7 @@
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
     <script src="assets/js/custom/utilities/modals/create-app.js"></script>
-  
+
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>
