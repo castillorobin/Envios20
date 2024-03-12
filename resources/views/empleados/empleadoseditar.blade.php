@@ -114,7 +114,7 @@
                             </li>
 
                             <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="../../demo1/dist/account/logs.html">Logs</a>
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Logs</a>
                             </li>
                         </ul>
                     </div>
@@ -162,56 +162,54 @@
                                     <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
                                 </div>
                             </div>
-
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">ID de empleado</label>
-                                <div class="col-lg-3">
-                                    <input type="text" name="id" id="id" class="form-control form-control-lg form-control-solid" placeholder="ID de empleado" required pattern="[0-9]+" />
-                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                </div>
-                            </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
                                 <div class="col-lg-8">
-                                    <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required />
-                                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                    <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required value="{{$empleado[0]->nombre}}" />
                                 </div>
                             </div>
 
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
                                 <div class="col-lg-8">
-                                    <input type="text" name="direccion" id="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" required />
+                                    <input type="text" name="direccion" id="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" required value="{{$empleado[0]->direccion}}" />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                             </div>
                             <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
+                                <div class="col-lg-8">
+                                    <input type="text" id="agencia" class="form-control form-control-lg form-control-solid" placeholder="Agencia de registro" value="{{$empleado[0]->agencia_registro}}">
+                                </div>
+                            </div>
+
+                            <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
                                 <div class="col-lg-3">
-                                    <input type="tel" name="telefono" id="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                    <input type="tel" name="telefono" id="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required value="{{$empleado[0]->telefono}}" />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                                 <label class="col-lg-2 col-form-label">WhatsApp</label>
                                 <div class="col-lg-3">
-                                    <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
+                                    <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" redonly value="{{$empleado[0]->whatsapp}}" />
                                 </div>
                             </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="email">Correo Electrónico</label>
                                 <div class="col-lg-3">
-                                    <input type="email" name="email" id="email" class="form-control form-control-lg form-control-solid" placeholder="Email" required />
+                                    <input type="email" name="email" id="email" class="form-control form-control-lg form-control-solid" placeholder="Email" required value="{{$empleado[0]->correo}}" />
                                     <div class="invalid-feedback">Este campo es obligatorio y debe ser una dirección de correo electrónico válida.</div>
                                 </div>
                                 <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de nacimiento</label>
                                 <div class="col-lg-3">
-                                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control form-control-lg form-control-solid" placeholder="Fecha de nacimiento" required />
+                                    <input type="date" name="fecha_nacimiento" id="fecha_nacimiento" class="form-control form-control-lg form-control-solid" placeholder="Fecha de nacimiento" value="{{$empleado[0]->fecha_nacimiento}}" />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                             </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6">DUI</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="dui" id="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" required />
+                                    <input type="text" name="dui" id="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" value="{{$empleado[0]->dui}}" />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                                 <label class="col-lg-2 col-form-label">Licencia</label>
@@ -284,7 +282,7 @@
                                 </div>
                                 <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
                                 <div class="col-lg-3">
-                                    <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" required />
+                                    <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" value="{{$empleado[0]->fecha_alta}}" />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                             </div>
@@ -292,11 +290,11 @@
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label">Número de ISSS</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="n_isss" class="form-control form-control-lg form-control-solid" placeholder="# de ISSS" />
+                                    <input type="text" name="n_isss" class="form-control form-control-lg form-control-solid" placeholder="# de ISSS" value="{{$empleado[0]->n_isss}}" />
                                 </div>
                                 <label class="col-lg-2 col-form-label">Número de AFP</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="# de AFP" />
+                                    <input type="text" name="n_afp" class="form-control form-control-lg form-control-solid" placeholder="# de AFP" value="{{$empleado[0]->n_afp}}" />
                                 </div>
                             </div>
                             <div class="row mb-6">
@@ -313,11 +311,12 @@
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label">Nota</label>
                                 <div class="col-lg-8">
-                                    <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota"></textarea>
+                                    <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota">{{$empleado[0]->nota}}</textarea>
                                 </div>
                             </div>
+
                             <div class="card-footer d-flex justify-content-end py-6 px-9">
-                                <button type="reset" class="btn btn-primary btn-active-light-primary me-2">Descartar</button>
+                                <a href="/empleado" class="btn btn-primary btn-active-light-primary me-2">Regresar a listado</a>
                                 <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Guardar Cambios</button>
                             </div>
                         </div>
