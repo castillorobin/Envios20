@@ -13,7 +13,7 @@ var defaults = {
 		"lengthMenu": "_MENU_",
 		"processing": '<span class="spinner-border w-15px h-15px text-muted align-middle me-2"></span> <span class="text-gray-600">Loading...</span>',
 		"paginate": {
-			"first": '<i class="first"></i>',
+			"primero": '<i class="first"></i>',
 			"last": '<i class="last"></i>',
 			"next": '<i class="next"></i>',
 			"previous": '<i class="previous"></i>'
@@ -125,7 +125,7 @@ DataTable.ext.renderer.pageButton.bootstrap = function ( settings, host, idx, bu
 						btnClass = 'disabled';
 						break;
 
-					case 'first':
+					case 'primero':
 						btnDisplay = lang.sFirst;
 						btnClass = button + (page > 0 ?
 							'' : ' disabled');
