@@ -97,6 +97,7 @@ if($request->hasFile('foto')){
         $empleado->n_afp = $request->input('n_afp');
         $empleado->fecha_baja = $request->input('fecha_baja');
         $empleado->motivo = $request->input('Motivo');
+        $empleado->salario = $request->input('salario');
         
         
         $empleado->nota = $request->input('nota');

@@ -232,6 +232,14 @@
                                 </div>
 
                                 <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Salario</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" name="salario" id="salario" class="form-control form-control-lg form-control-solid" placeholder="$" required />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nota</label>
                                     <div class="col-lg-8">
                                         <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota"></textarea>
