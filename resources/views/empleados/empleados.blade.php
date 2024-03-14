@@ -33,7 +33,7 @@
                         <div class="d-flex flex-wrap flex-sm-nowrap">
                             <div class="me-7 mb-4">
                                 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                    <img src="/fotos/{{$empleado[0]->foto}}" alt="image" />
+                                    <img src="/assets/media/avatars/300-1.jpg" alt="image" />
                                     <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                 </div>
                             </div>
@@ -132,7 +132,7 @@
                             <label class="col-lg-3 col-form-label fw-semibold fs-6">Foto</label>
                             <div class="col-lg-8">
                                 <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$empleado[0]->foto}})"></div>
+                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/assets/media/avatars/300-1.jpg)"></div>
                                     <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                                         <i class="ki-duotone ki-pencil fs-7">
                                             <span class="path1"></span>
@@ -163,25 +163,10 @@
                                 <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required readonly value="{{$empleado[0]->nombre}}" />
                             </div>
                         </div>
-
                         <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
-                            <div class="col-lg-8">
-                                <input type="text" name="direccion" id="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" required readonly value="{{$empleado[0]->direccion}}" />
-                                <div class="invalid-feedback">Este campo es obligatorio.</div>
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
-                            <div class="col-lg-8">
-                                <input type="text" id="agencia" class="form-control form-control-lg form-control-solid" placeholder="Agencia de registro" readonly value="{{$empleado[0]->agencia_registro}}">
-                            </div>
-                        </div>
-
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
                             <div class="col-lg-3">
-                                <input type="tel" name="telefono" id="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required readonly value="{{$empleado[0]->telefono}}" />
+                                <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" readonly value="{{$empleado[0]->fecha_alta}}" />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                             <label class="col-lg-2 col-form-label">WhatsApp</label>
@@ -248,40 +233,6 @@
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Cargo</label>
-                            <div class="col-lg-3">
-                                <select name="cargo" id="cargo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar cargo" required readonly>
-                                    <option></option>
-                                    <option value="CEO">CEO</option>
-                                    <option value="Director general">Director general</option>
-                                    <option value="Gerente general">Gerente general</option>
-                                    <option value="Gerente de recursos humanos">Gerente de recursos humanos</option>
-                                    <option value="Gerente financiero">Gerente financiero</option>
-                                    <option value="Gerente de ventas">Gerente de ventas</option>
-                                    <option value="Gerente de procesos">Gerente de procesos</option>
-                                    <option value="Gerente de agencia">Gerente de agencia</option>
-                                    <option value="Jefe de atencion al cliente">Jefe de atención al cliente</option>
-                                    <option value="Jefe de digitado">Jefe de digitado</option>
-                                    <option value="Jefe de almacen">Jefe de almacén</option>
-                                    <option value="Jefe de reparto domicilios">Jefe de reparto domicilios</option>
-                                    <option value="Jefe de reparto departamental">Jefe de reparto departamental</option>
-                                    <option value="Ejecutivo de atencion al cliente">Ejecutivo de atención al cliente</option>
-                                    <option value="Ejecutivo de digitacion">Ejecutivo de digitación</option>
-                                    <option value="Profesional de reparto de domicilios">Profesional de reparto de domicilios</option>
-                                    <option value="Profesional de reparto en ruta">Profesional de reparto en ruta</option>
-                                    <option value="Auxiliar de reparto">Auxiliar de reparto</option>
-                                    <option value="Encargado de limpieza">Encargado de limpieza</option>
-                                </select>
-                                <div class="invalid-feedback">Por favor, seleccione un cargo.</div>
-                            </div>
-                            <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
-                            <div class="col-lg-3">
-                                <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" readonly value="{{$empleado[0]->fecha_alta}}" />
-                                <div class="invalid-feedback">Este campo es obligatorio.</div>
-                            </div>
-                        </div>
-
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label">Número de ISSS</label>
                             <div class="col-lg-3">

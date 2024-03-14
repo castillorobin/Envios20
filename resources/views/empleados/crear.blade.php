@@ -199,6 +199,7 @@
                                             <option value="Profesional de reparto en ruta">Profesional de reparto en ruta</option>
                                             <option value="Auxiliar de reparto">Auxiliar de reparto</option>
                                             <option value="Encargado de limpieza">Encargado de limpieza</option>
+                                            <option value="Operario de almacen">Operario de almacen</option>
                                         </select>
                                         <div class="invalid-feedback">Por favor, seleccione un cargo.</div>
                                     </div>
