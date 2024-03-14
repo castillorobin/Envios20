@@ -260,7 +260,7 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th style="min-width: 120px;">ID/th>
+                                                <th style="min-width: 120px;">ID</th>
                                                 <th style="min-width: 120px;">Nombre de empleado</th>
                                                 <th style="min-width: 120px;">Numero</th>
                                                 <th style="min-width: 120px;">Whatsapp</th>
