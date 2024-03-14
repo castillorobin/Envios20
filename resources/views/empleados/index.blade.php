@@ -260,7 +260,7 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th style="min-width: 120px;">ID Empleado</th>
+                                                <th style="min-width: 120px;">ID/th>
                                                 <th style="min-width: 120px;">Nombre de empleado</th>
                                                 <th style="min-width: 120px;">Numero</th>
                                                 <th style="min-width: 120px;">Whatsapp</th>
@@ -270,15 +270,22 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-                                            <tr class="table-row-black">
-                                                <td><a href="/empleados/1" class="text-gray-900 text-hover-primary">#XGT-346</a></td>
-                                                <td>Joakin Polanco</td>
-                                                <td>5</td>
-                                                <td>74576258</td>
-                                                <td>Santa Ana</td>
-                                                <td class="text-star"><span class="badge badge-light-success">Alta</span></td>
-                                                <td class="text-star"><span class="badge badge-light-success">Activa</span></td>
-                                            </tr>
+                                         
+                                            @for ($i=0; $i< count($vendedores ); $i++)
+    <tr>
+    <td><a href="/empleados/{{ $vendedores[$i]->id }}" class="text-gray-900 text-hover-primary">{{ $vendedores[$i]->id }}</a></td>
+    <td>{{ $vendedores[$i]->nombre }}</td> 
+    <td>{{ $vendedores[$i]->telefono }}</td>
+    <td>{{ $vendedores[$i]->whatsapp }}</td>
+    <td>{{ $vendedores[$i]->direccion }}</td>
+    <td class="text-star"><span class="badge badge-light-success">Alta</span></td>
+    <td class="text-star"><span class="badge badge-light-success">Activa</span></td>
+
+
+    
+    </tr>
+    @endfor
+
                                         </tbody>
                                     </table>
 

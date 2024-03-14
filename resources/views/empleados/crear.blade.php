@@ -39,7 +39,7 @@
                         </div>
                     </div>
                     <div id="kt_account_settings_profile_details" class="collapse show">
-                        <form action="/empleadoguardar" method="POST" id="kt_account_profile_details_form" class="form">
+                        <form action="/empleadoguardar" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                             @csrf
                             @method('GET')
                             <div class="card-body border-top p-9">
@@ -53,7 +53,7 @@
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>
-                                                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                                <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
                                                 <input type="hidden" name="avatar_remove" />
                                             </label>
                                             <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">

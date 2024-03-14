@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Vendedor;
 use App\Models\Empleado;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 
 
 class EmpleadoController extends Controller
@@ -40,25 +41,72 @@ class EmpleadoController extends Controller
 
     public function empleadoguardar(Request $request)
     {
-        
+         
         $empleado = new Empleado();
         $empleado->nombre = $request->input('fname');
-        $empleado->correo = $request->input('email');
+
+        //$empleado->foto = $request->input('foto');
+        /*
+        if($request->foto){
+            $imagen = $request->foto;
+           // $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+            $nombreimagen = uniqid() . '.png';
+            $empleado->foto = $nombreimagen;
+            $ruta = "/public/";
+            $image_parts = explode(";base64,", $imagen);
+            $image_type_aux = explode("image/", $image_parts[0]);
+            //$image_type = $image_type_aux[1];
+            
+            $image_base64 = base64_decode($image_parts[1]);
+           // $fileName = uniqid() . '.png';
+            
+            $file = $ruta . $nombreimagen;
+            Storage::put($file, $image_base64);
+
+            //$imagen->move($ruta,$nombreimagen);
+
+        }
+*/
+if($request->hasFile('foto')){
+            
+    $imagen = $request->file("foto");
+    $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+    $empleado->foto = $nombreimagen;
+    $ruta = public_path("/fotos");
+    $imagen->move($ruta,$nombreimagen);
+
+}
+
+        $empleado->direccion = $request->input('direccion');
+        $empleado->agencia = $request->input('agencia');
         $empleado->telefono = $request->input('telefono');
         $empleado->whatsapp = $request->input('whatsapp');
+        $empleado->correo = $request->input('email');
         $empleado->fecha_nacimiento = $request->input('fecha_nacimiento');
         $empleado->dui = $request->input('dui');
-        $empleado->direccion = $request->input('direccion');
+        $empleado->licencia = $request->input('licencia');
+        $empleado->referenciap = $request->input('referencia');
+        $empleado->telefonop = $request->input('telefono1');
+        $empleado->referenciaf = $request->input('referencia2');
+        $empleado->telefonof = $request->input('telefono2');
+        $empleado->contactonombre = $request->input('contacto_emergencia');
+        $empleado->contactotel = $request->input('telefono3');
         $empleado->cargo = $request->input('cargo');
         $empleado->fecha_alta = $request->input('fecha_alta');
         $empleado->n_isss = $request->input('n_isss');
         $empleado->n_afp = $request->input('n_afp');
+        $empleado->fecha_baja = $request->input('fecha_baja');
+        $empleado->motivo = $request->input('Motivo');
+        
+        
         $empleado->nota = $request->input('nota');
     
         $empleado->save();
     
         // Redirigir a la vista de empleados con un mensaje de éxito
-        return redirect()->route('empleados.index')->with('success', 'Empleado guardado exitosamente.');
+       // return redirect()->view('empleados.index')->with('success', 'Empleado guardado exitosamente.');
+       $vendedores = Empleado::all();
+       return view('empleados.index', compact('vendedores'));
     }
     
 
