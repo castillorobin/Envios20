@@ -31,20 +31,22 @@
                 <div class="card mb-5 mb-xl-10">
                     <div class="card-body pt-9 pb-0">
                         <div class="d-flex flex-wrap flex-sm-nowrap">
-                            <div class="me-7 mb-4">
-                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                    <img src="/fotos/{{$empleado[0]->foto}}" alt="image" />
-                                    <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
+                            <div class="me-7 mb-2">
+                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative" >
+                                    <img class="img-thumbnail" src="/fotos/{{$empleado[0]->foto}}" alt="image" />
+                                    <div class="position-absolute translate-middle bottom-0 start-100 mb-1 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                 </div>
                             </div>
                             <div class="flex-grow-1">
                                 <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
                                     <div class="d-flex flex-column">
                                         <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1"># {{$empleado[0]->id}}</a>
+                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">ID #000{{$empleado[0]->id}}</a>
+                                          
                                         </div>
+
                                         <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">{{$empleado[0]->nombre}}</a>
+                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">{{$empleado[0]->nombre}}</a>
                                             <a href="#">
                                                 <i class="ki-duotone ki-verify fs-1 text-primary">
                                                     <span class="path1"></span>
@@ -52,7 +54,7 @@
                                                 </i>
                                             </a>
                                         </div>
-                                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                        <div class="d-flex flex-wrap fw-semibold">
                                             <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
                                                 <i class="ki-duotone ki-profile-circle fs-4 me-1">
                                                     <span class="path1"></span>
@@ -60,31 +62,26 @@
                                                     <span class="path3"></span>
                                                 </i>{{$empleado[0]->cargo}}</a>
                                             <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
-                                                <i class="ki-duotone ki-geolocation fs-4 me-1">
+                                                <i class="ki-duotone ki-geolocation fs-5 me-1">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
-                                                </i>{{$empleado[0]->agencia_registro}}</a>
+                                                </i>{{$empleado[0]->agencia}}</a>
                                             <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
-                                                <i class="ki-duotone ki-sms fs-4 me-1">
+                                                <i class="ki-duotone ki-sms fs-5 me-1">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
                                                 </i>{{$empleado[0]->telefono}}</a>
                                         </div>
                                     </div>
-                                    <div class="d-flex my-4">
-                                        <a href="#" class="btn btn-sm btn-light me-2" id="kt_user_follow_button">
-                                            <i class="ki-duotone ki-check fs-3 d-none"></i>
-                                            <span class="indicator-label">Follow</span>
-                                            <span class="indicator-progress">Please wait...
-                                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                        </a>
+                                    <div class="d-flex my-1">
+                                    <a href="#" class="btn btn-sm btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_">Alta</a>
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">Eliminar</a>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-wrap flex-stack">
-                                    <div class="d-flex flex-column flex-grow-1 pe-8">
-                                        <div class="fw-semibold fs-2 text-black-800">Dirección</div>
-                                        <div class="fw-semibold fs-2 text-black-400">{{$empleado[0]->direccion}}</div>
+                                <div class="d-flex flex-wrap flex-stack " >
+                                    <div class="d-flex flex-column flex-grow-1 mt-6">
+                                        <div class="fw-semibold fs-6 text-black-500" >Dirección</div>
+                                        <div class="fw-semibold fs-5 text-black-100">{{$empleado[0]->direccion}}</div>
                                     </div>
 
                                     <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
@@ -92,17 +89,12 @@
                                             <span class="fw-semibold fs-6 text-gray-400">Profile Compleation</span>
                                             <span class="fw-bold fs-6">50%</span>
                                         </div>
-                                        <div class="h-5px mx-3 w-100 bg-light mb-3">
+                                        <div class="h-5px mx-3 w-100 bg-light mb-1">
                                             <div class="bg-success rounded h-5px" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-wrap flex-stack">
-                                    <div class="d-flex flex-column flex-grow-1 pe-8">
-                                        <div class="fw-semibold"><span class="badge badge-light-success fs-2">Alta</span></div>
-                                    </div>
-                                </div>
-
+    
                             </div>
 
                         </div>

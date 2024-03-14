@@ -99,9 +99,9 @@
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registo</label>
                                     <div class="col-lg-8">
                                         <select name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar agencia" required>
-                                            <option value="CEO">Santa ana</option>
-                                            <option value="Director general">San Miguel</option>
-                                            <option value="Gerente general">San salvador </option>
+                                            <option value="Santa Ana">Santa ana</option>
+                                            <option value="San Miguel">San Miguel</option>
+                                            <option value="San Salvador">San salvador </option>
                                         </select>
                                     </div>
                                 </div>
