@@ -83,8 +83,8 @@
                                 </div>
                                 <div class="d-flex flex-wrap flex-stack">
                                     <div class="d-flex flex-column flex-grow-1 pe-8">
-                                        <div class="fw-semibold fs-6 text-black-400">Dirección</div>
-                                        <div class="fw-semibold fs-6 text-black-400">{{$empleado[0]->direccion}}</div>
+                                        <div class="fw-semibold fs-2 text-black-800">Dirección</div>
+                                        <div class="fw-semibold fs-2 text-black-400">{{$empleado[0]->direccion}}</div>
                                     </div>
 
                                     <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
@@ -99,9 +99,10 @@
                                 </div>
                                 <div class="d-flex flex-wrap flex-stack">
                                     <div class="d-flex flex-column flex-grow-1 pe-8">
-                                        <div class="fw-semibold fs-6"><span class="badge badge-light-success">Alta</span></div>
+                                        <div class="fw-semibold"><span class="badge badge-light-success fs-2">Alta</span></div>
                                     </div>
                                 </div>
+
                             </div>
 
                         </div>
