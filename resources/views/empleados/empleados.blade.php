@@ -33,7 +33,7 @@
                         <div class="d-flex flex-wrap flex-sm-nowrap">
                             <div class="me-7 mb-4">
                                 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                    <img src="/assets/media/avatars/300-1.jpg" alt="image" />
+                                    <img src="/fotos/{{$empleado[0]->foto}}" alt="image" />
                                     <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                 </div>
                             </div>
@@ -133,7 +133,7 @@
                             <label class="col-lg-3 col-form-label fw-semibold fs-6">Foto</label>
                             <div class="col-lg-8">
                                 <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/assets/media/avatars/300-1.jpg)"></div>
+                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$empleado[0]->foto}})"></div>
                                     <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                                         <i class="ki-duotone ki-pencil fs-7">
                                             <span class="path1"></span>
