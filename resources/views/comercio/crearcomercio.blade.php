@@ -81,14 +81,17 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Tipo de comercio</label>
                                     <div class="col-lg-3">
-                                        <select name="estado_pagop" class="form-select form-select-solid" id="estado_pagop" required>
-                                            <option value="Pequeño">Pequeño</option>
-                                            <option value="grande">grande</option>
+                                        <select name="Tipo" id="Tipo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de comercio" required>
+                                            <option></option>
+                                            <option value="Emprendedor">Emprendedor</option>
+                                            <option value="Comercio Mediano">Comercio Mediano</option>
+                                            <option value="Empresa">Empresa</option>
                                         </select>
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado de comercio</label>
                                     <div class="col-lg-3">
-                                        <select name="estado_pagop" class="form-select form-select-solid" id="estado_pagop" required>
+                                        <select name="Estado_comercio" id="Estado_comercio" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
+                                            <option></option>
                                             <option value="Alta">Alta</option>
                                             <option value="baja">baja</option>
                                         </select>
@@ -97,9 +100,12 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
                                     <div class="col-lg-8">
-                                        <select name="estado_pagop" class="form-select form-select-solid" id="estado_pagop" required>
-                                            <option value="Santa_ana">Santa ana</option>
+                                        <select name="Agencia_registro" id="Agencia_registro" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Agencia de registro" required>
+                                            <option></option>
                                             <option value="San_Salvador">San Salvador</option>
+                                            <option value="San_Miguel">San Miguel</option>
+                                            <option value="Santa_ana">Santa Ana</option>
+                                            <option value="Centro de distribucion">Centro de distribucion</option>
                                         </select>
                                     </div>
                                 </div>
@@ -115,7 +121,11 @@
                                         <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
                                     </div>
                                 </div>
-
+                                <div class="separator my-10"></div>
+                                <h4 class="text-center">
+                                    Datos Bancarios
+                                </h4>
+                                <br>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del titular de la cuenta</label>
                                     <div class="col-lg-8">
@@ -133,11 +143,16 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Tipo de cuenta</label>
-                                    <div class="col-lg-8">
-                                        <select name="estado_pagop" class="form-select form-select-solid" id="estado_pagop" required>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Numero de DUI</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo de cuenta</label>
+                                    <div class="col-lg-3">
+                                        <select name="Tipo_cuenta" id="Tipo_cuenta" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de cuenta" required>
+                                            <option></option>
                                             <option value="Ahorros">Ahorros</option>
-                                            <option value="natural">natural</option>
+                                            <option value="Corriente">Corriente</option>
                                         </select>
                                     </div>
                                 </div>
@@ -151,9 +166,11 @@
                                         <input type="text" name="tigo" class="form-control form-control-lg form-control-solid" placeholder="# de tigo money" />
                                     </div>
                                 </div>
-
-
-
+                                <div class="separator my-10"></div>
+                                <h4 class="text-center">
+                                    Datos de la empresa
+                                </h4>
+                                <br>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre de la empresa</label>
                                     <div class="col-lg-8">
@@ -161,35 +178,30 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Giro</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Tipo de contribuyente</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="giro" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el giro de la empresa" />
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo de contribuyente</label>
-                                    <div class="col-lg-3">
-                                        <select name="contribuyente" class="form-select form-select-solid" id="contribuyente" required>
-                                            <option value="Ahorros">pequeña</option>
+                                        <select name="Tipo_contribuyente" id="Tipo_contribuyente" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de contribuyente" required>
+                                            <option></option>
+                                            <option value="pequeño">pequeño</option>
                                             <option value="natural">natural</option>
                                         </select>
                                     </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Giro</label>
+                                    <div class="col-lg-3">
+                                        <input type="text" name="giro" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el giro de la empresa" />
+                                    </div>
+
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Numero de DUI</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
-                                    </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de IVA</label>
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Numero de IVA</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="nit" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el NIT de la empresa" />
                                     </div>
-                                </div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Numero de regristro (NCR)</label>
-                                    <div class="col-lg-8">
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de regristro (NCR)</label>
+                                    <div class="col-lg-3">
                                         <input type="text" name="NCR" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el numero de NCR" />
                                     </div>
                                 </div>
-
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección Fisical</label>
                                     <div class="col-lg-8">
