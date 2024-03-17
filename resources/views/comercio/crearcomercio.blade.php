@@ -6,12 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/perfil.css') }}">
-    <style>
-        label.required::after {
-            content: none;
-
-        }
-    </style>
 </head>
 
 <body>
@@ -49,40 +43,43 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" />
+                                        <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
                                 </div>
+
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección del comercio</label>
+                                    <label class="col-lg-3 col-form-label">Dirección del comercio</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección del comercio" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
+                                    <label class="col-lg-3 col-form-label">Telefono</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input id="kt_inputmask_2" type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">WhatsApp</label>
+
+                                    <label class="col-lg-2 col-form-label">WhatsApp</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
+                                        <input id="kt_inputmask_3" type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
                                     <div class="col-lg-3">
-                                        <input type="date" name="fecha_alta" class="form-control form-control-lg form-control-solid" id="fecha_alta" placeholder="Fecha de alta" />
+                                        <input type="text" name="fecha_alta" class="form-control form-control-lg form-control-solid" id="fecha_alta" placeholder="Fecha de alta" readonly />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Fecha de baja</label>
+
+                                    <label class="col-lg-2 col-form-label">Fecha de baja</label>
                                     <div class="col-lg-3">
                                         <input type="date" name="fecha_baja" class="form-control form-control-lg form-control-solid" id="fecha_baja" placeholder="Fecha de baja" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Tipo de comercio</label>
+                                    <label class="col-lg-3 col-form-label">Tipo de comercio</label>
                                     <div class="col-lg-3">
                                         <select name="Tipo" id="Tipo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de comercio" required>
-                                            <option></option>
                                             <option value="Emprendedor">Emprendedor</option>
                                             <option value="Comercio Mediano">Comercio Mediano</option>
                                             <option value="Empresa">Empresa</option>
@@ -91,7 +88,6 @@
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado de comercio</label>
                                     <div class="col-lg-3">
                                         <select name="Estado_comercio" id="Estado_comercio" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
-                                            <option></option>
                                             <option value="Alta">Alta</option>
                                             <option value="baja">baja</option>
                                         </select>
@@ -101,7 +97,6 @@
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
                                     <div class="col-lg-8">
                                         <select name="Agencia_registro" id="Agencia_registro" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Agencia de registro" required>
-                                            <option></option>
                                             <option value="San_Salvador">San Salvador</option>
                                             <option value="San_Miguel">San Miguel</option>
                                             <option value="Santa_ana">Santa Ana</option>
@@ -110,13 +105,13 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Correo Electrónico</label>
+                                    <label class="col-lg-3 col-form-label">Correo Electrónico</label>
                                     <div class="col-lg-8">
                                         <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nota</label>
+                                    <label class="col-lg-3 col-form-label">Nota</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
                                     </div>
@@ -127,27 +122,27 @@
                                 </h4>
                                 <br>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del titular de la cuenta</label>
+                                    <label class="col-lg-3 col-form-label">Nombre del titular de la cuenta</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre del titular de la cuenta" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del banco</label>
+                                    <label class="col-lg-3 col-form-label">Nombre del banco</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre del banco" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de cuenta</label>
+                                    <label class="col-lg-2 col-form-label">Numero de cuenta</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="cuenta" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el numero de cuenta" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Numero de DUI</label>
+                                    <label class="col-lg-3 col-form-label">Numero de DUI</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="dui" class="form-control form-control-lg form-control-solid" placeholder="DUI" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Tipo de cuenta</label>
+                                    <label class="col-lg-2 col-form-label">Tipo de cuenta</label>
                                     <div class="col-lg-3">
                                         <select name="Tipo_cuenta" id="Tipo_cuenta" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de cuenta" required>
                                             <option></option>
@@ -157,11 +152,11 @@
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Cuenta de chivo</label>
+                                    <label class="col-lg-3 col-form-label">Cuenta de chivo</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="chivo" class="form-control form-control-lg form-control-solid" placeholder="# de chivo" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Cuenta tigo money</label>
+                                    <label class="col-lg-2 col-form-label">Cuenta tigo money</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="tigo" class="form-control form-control-lg form-control-solid" placeholder="# de tigo money" />
                                     </div>
@@ -172,13 +167,13 @@
                                 </h4>
                                 <br>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre de la empresa</label>
+                                    <label class="col-lg-3 col-form-label">Nombre de la empresa</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre de la empresa o persona natural" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Tipo de contribuyente</label>
+                                    <label class="col-lg-3 col-form-label">Tipo de contribuyente</label>
                                     <div class="col-lg-3">
                                         <select name="Tipo_contribuyente" id="Tipo_contribuyente" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de contribuyente" required>
                                             <option></option>
@@ -186,24 +181,24 @@
                                             <option value="natural">natural</option>
                                         </select>
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Giro</label>
+                                    <label class="col-lg-2 col-form-label">Giro</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="giro" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el giro de la empresa" />
                                     </div>
 
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Numero de IVA</label>
+                                    <label class="col-lg-3 col-form-label">Numero de IVA</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="nit" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el NIT de la empresa" />
                                     </div>
-                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Numero de regristro (NCR)</label>
+                                    <label class="col-lg-2 col-form-label">Numero de regristro (NCR)</label>
                                     <div class="col-lg-3">
                                         <input type="text" name="NCR" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el numero de NCR" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección Fisical</label>
+                                    <label class="col-lg-3 col-form-label">Dirección Fisical</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Ingrese la dirección fiscal de la empresa" />
                                     </div>
@@ -223,11 +218,50 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     <script>
         flatpickr("#fecha_alta", {
-            dateFormat: 'Y-m-d',
+            defaultDate: "today",
+            clickOpens: false,
+            allowInput: false,
+            showClose: false,
+            showClear: false,
+            disableMobile: true
         });
         flatpickr("#fecha_baja", {
             dateFormat: 'Y-m-d',
         });
+    </script>
+    <script>
+        $(document).ready(function() {
+            $("#fname").focusout(function() {
+                var value = $(this).val();
+                if (value.trim() === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Nombre del comercio" es obligatorio');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+            $("#kt_account_profile_details_submit").click(function() {
+                var nombreValue = $("#fname").val().trim();
+                if (nombreValue === "") {
+                    $(".invalid-feedback").show();
+                } else {
+                    $(".invalid-feedback").hide();
+                    $("#kt_account_profile_details_form").submit();
+                }
+            });
+
+        });
+
+
+        Inputmask({
+            "mask": "(+999) 9999-9999"
+        }).mask("#kt_inputmask_2");
+
+        Inputmask({
+            "mask": "(+999) 9999-9999"
+        }).mask("#kt_inputmask_3");
     </script>
 
 </body>
