@@ -206,7 +206,7 @@
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-end py-6 px-9">
-                                    <button type="reset" class="btn btn-primary btn-active-light-primary me-2">Descartar</button>
+                                    <a href="/comercio" class="btn btn-primary btn-active-light-primary me-2">Descartar</a>
                                     <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Guardar Cambios</button>
                                 </div>
                             </div>

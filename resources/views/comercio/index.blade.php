@@ -162,7 +162,7 @@
                             <!--begin::Secondary button-->
                             <!--end::Secondary button-->
                             <!--begin::Primary button-->
-                            <a href="/empleados/crear" class="btn btn-sm fw-bold btn-primary">Agregar</a>
+                            <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary">Agregar</a>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
