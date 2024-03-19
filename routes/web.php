@@ -61,3 +61,7 @@ Route::get('empleado', [App\Http\Controllers\EmpleadoController::class, 'emplead
 Route::get('empleados/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadover'] )->name('empleadover') ;
 Route::get('empleados/editar/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadoeditar'] )->name('empleadoeditar') ;
 Route::get('empleadoguardar', [App\Http\Controllers\EmpleadoController::class, 'empleadoguardar'] )->name('empleadoguardar') ;
+
+Route::get('/comercio', function () {
+    return view('comercio.index');
+});

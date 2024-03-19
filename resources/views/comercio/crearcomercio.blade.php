@@ -89,7 +89,8 @@
                                     <div class="col-lg-3">
                                         <select name="Estado_comercio" id="Estado_comercio" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
                                             <option value="Alta">Alta</option>
-                                            <option value="baja">baja</option>
+                                            <option value="baja">Baja</option>
+                                            <option value="Lista_negra">Lista negra</option>
                                         </select>
                                     </div>
                                 </div>
@@ -177,8 +178,9 @@
                                     <div class="col-lg-3">
                                         <select name="Tipo_contribuyente" id="Tipo_contribuyente" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de contribuyente" required>
                                             <option></option>
-                                            <option value="pequeño">pequeño</option>
-                                            <option value="natural">natural</option>
+                                            <option value="pequeño">Pequeño</option>
+                                            <option value="Mediano">Mediano</option>
+                                            <option value="Grande">Grande</option>
                                         </select>
                                     </div>
                                     <label class="col-lg-2 col-form-label">Giro</label>
