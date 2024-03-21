@@ -65,3 +65,12 @@ Route::get('empleadoguardar', [App\Http\Controllers\EmpleadoController::class, '
 Route::get('/comercio', function () {
     return view('comercio.index');
 });
+Route::get('/usuarios/lista', function () {
+    return view('usuarios.usuariolista');
+});
+Route::get('/usuarios/view', function () {
+    return view('usuarios.usuerview');
+});
+
+
+

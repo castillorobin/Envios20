@@ -1,4 +1,3 @@
-
 <div class="app-sidebar-menu overflow-hidden flex-column-fluid">
 	<div id="kt_app_sidebar_menu_wrapper" class="app-sidebar-wrapper hover-scroll-overlay-y my-5" data-kt-scroll="true" data-kt-scroll-activate="true" data-kt-scroll-height="auto" data-kt-scroll-dependencies="#kt_app_sidebar_logo, #kt_app_sidebar_footer" data-kt-scroll-wrappers="#kt_app_sidebar_menu" data-kt-scroll-offset="5px" data-kt-scroll-save-state="true">
 		<div class="menu menu-column menu-rounded menu-sub-indention px-3" id="#kt_app_sidebar_menu" data-kt-menu="true" data-kt-menu-expand="false">
@@ -82,6 +81,21 @@
 								<span class="bullet bullet-dot"></span>
 							</span>
 							<span class="menu-title">Listado</span>
+						</a>
+					</div>
+				</div>
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-title">Gestión de Usuarios</span>
+					<span class="menu-arrow"></span>
+				</span>
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/usuarios/lista">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Lista de usuarios</span>
 						</a>
 					</div>
 				</div>
