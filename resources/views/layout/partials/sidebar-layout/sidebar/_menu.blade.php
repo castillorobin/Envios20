@@ -98,6 +98,14 @@
 							<span class="menu-title">Lista de usuarios</span>
 						</a>
 					</div>
+					<div class="menu-item">
+						<a class="menu-link" href="/usuarios/role">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Lista de roles</span>
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

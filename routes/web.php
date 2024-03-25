@@ -71,6 +71,11 @@ Route::get('/usuarios/lista', function () {
 Route::get('/usuarios/view', function () {
     return view('usuarios.usuerview');
 });
-
+Route::get('/usuarios/role', function () {
+    return view('usuarios.rolelist');
+});
+Route::get('/usuarios/roleview', function () {
+    return view('usuarios.roleview');
+});
 
 
