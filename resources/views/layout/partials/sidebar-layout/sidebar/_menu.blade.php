@@ -13,33 +13,226 @@
 					<span class="menu-heading fw-bold text-uppercase fs-7">Pages</span>
 				</div>
 			</div>
-			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+
+			<div class="menu-item menu-sub-indention menu-accordion" data-kt-menu-trigger="click">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
-					<span class="menu-title">Empleados</span>
+					<span class="menu-title">Recursos Humanos</span>
+					<span class="menu-arrow"></span>
+				</span>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
+						<a href="#" class="menu-link py-3" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Gestion de empleado</span>
+							<span class="menu-arrow"></span>
+						</a>
+
+						<div class="menu-sub menu-sub-accordion">
+							<div class="menu-item">
+								<a href="/empleados/crear" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Crear empleado</span>
+								</a>
+							</div>
+
+							<div class="menu-item">
+								<a href="/empleado" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Lista de empleados</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
+						<a href="#" class="menu-link py-3" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Gestion de Usuarios</span>
+							<span class="menu-arrow"></span>
+						</a>
+						<div class="menu-sub menu-sub-accordion">
+							<div class="menu-item">
+								<a href="/usuarios/lista" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Lista de usuarios</span>
+								</a>
+							</div>
+
+							<div class="menu-item">
+								<a href="/usuarios/role" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Lista de roles</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
+						<a href="#" class="menu-link py-3" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Control de permisos y faltas</span>
+							<span class="menu-arrow"></span>
+						</a>
+						<div class="menu-sub menu-sub-accordion">
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Crear permisos y faltas</span>
+								</a>
+							</div>
+
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Lista de permisos y faltas</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
+						<a href="#" class="menu-link py-3" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Control de entradas y salidas</span>
+							<span class="menu-arrow"></span>
+						</a>
+						<div class="menu-sub menu-sub-accordion">
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Crear entradas y salidas</span>
+								</a>
+							</div>
+
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Lista de entradas y salidas</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="menu-item menu-sub-indention menu-accordion" data-kt-menu-trigger="click">
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-title">Gestion financiera</span>
 					<span class="menu-arrow"></span>
 				</span>
 				<div class="menu-sub menu-sub-accordion">
-					<div class="menu-item">
-						<a class="menu-link" href="/empleado">
+					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
+						<a href="#" class="menu-link py-3" style="background-color: transparent;">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Lista</span>
+							<span class="menu-title">Nominas</span>
+							<span class="menu-arrow"></span>
 						</a>
-					</div>
-					<div class="menu-item">
-						<a class="menu-link" href="/empleados/crear">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Crear empleado</span>
-						</a>
+						<div class="menu-sub menu-sub-accordion">
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Lista de empleados</span>
+								</a>
+							</div>
+						</div>
 					</div>
 				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
+						<a href="#" class="menu-link py-3" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Gastos e ingresos</span>
+							<span class="menu-arrow"></span>
+						</a>
+						<div class="menu-sub menu-sub-accordion">
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Crear</span>
+								</a>
+							</div>
+
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Listado</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
+						<a href="#" class="menu-link py-3" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Reportes</span>
+							<span class="menu-arrow"></span>
+						</a>
+						<div class="menu-sub menu-sub-accordion">
+							<div class="menu-item">
+								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">listado de reportes</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
-					<span class="menu-title">Gestión de envios</span>
+					<span class="menu-title">Gestion de ordenes</span>
 					<span class="menu-arrow"></span>
 				</span>
 				<div class="menu-sub menu-sub-accordion">
@@ -48,7 +241,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Crear envios</span>
+							<span class="menu-title">Crear orden</span>
 						</a>
 					</div>
 					<div class="menu-item">
@@ -56,14 +249,16 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Lista de envios</span>
+							<span class="menu-title">Lista de ordenes </span>
 						</a>
 					</div>
 				</div>
+			</div>
 
+			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
-					<span class="menu-title">Gestión de Comercios</span>
+					<span class="menu-title">Gestion de comercios</span>
 					<span class="menu-arrow"></span>
 				</span>
 				<div class="menu-sub menu-sub-accordion">
@@ -80,33 +275,70 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Listado</span>
+							<span class="menu-title">Lista de comercio </span>
 						</a>
 					</div>
 				</div>
+			</div>
+
+			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
-					<span class="menu-title">Gestión de Usuarios</span>
+					<span class="menu-title">Facturacion</span>
 					<span class="menu-arrow"></span>
 				</span>
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
-						<a class="menu-link" href="/usuarios/lista">
+						<a class="menu-link" href="#">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Lista de usuarios</span>
+							<span class="menu-title">Cobrar</span>
 						</a>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link" href="/usuarios/role">
+						<a class="menu-link" href="#">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Lista de roles</span>
+							<span class="menu-title">Pagar</span>
 						</a>
 					</div>
 				</div>
+			</div>
+
+			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-title">Control de ubicaciones</span>
+					<span class="menu-arrow"></span>
+				</span>
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="#">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Asignar ubicaciones</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a class="menu-link" href="#">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">ver ubicacion</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-title">Configuraciones</span>
+					<span class="menu-arrow"></span>
+				</span>
 			</div>
 		</div>
 	</div>
