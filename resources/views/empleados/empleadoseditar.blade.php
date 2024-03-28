@@ -33,7 +33,7 @@
                         <div class="d-flex flex-wrap flex-sm-nowrap">
                             <div class="me-7 mb-4">
                                 <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                    <img src="/assets/media/avatars/300-1.jpg" alt="image" />
+                                    <img src="/fotos/{{$empleado[0]->foto}}" alt="image" />
                                     <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                 </div>
                             </div>
@@ -130,7 +130,7 @@
                         </div>
                     </div>
 
-                    <form action="/empleadoguardar" method="POST" id="kt_account_profile_details_form" class="form">
+                    <form action="/empleado/update/{{$empleado[0]->id}}" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                         @csrf
                         @method('GET')
                         <div class="card-body border-top p-9">
@@ -138,13 +138,13 @@
                                 <label class="col-lg-3 col-form-label fw-semibold fs-6">Foto</label>
                                 <div class="col-lg-8">
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/assets/media/avatars/300-1.jpg)"></div>
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$empleado[0]->foto}})"></div>
                                         <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
                                             <i class="ki-duotone ki-pencil fs-7">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
-                                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
                                             <input type="hidden" name="avatar_remove" />
                                         </label>
                                         <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
@@ -152,7 +152,7 @@
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
-                                        </span>
+                                        </span> 
                                         <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
                                             <i class="ki-duotone ki-cross fs-2">
                                                 <span class="path1"></span>
@@ -180,7 +180,7 @@
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
                                 <div class="col-lg-8">
-                                    <input type="text" id="agencia" class="form-control form-control-lg form-control-solid" placeholder="Agencia de registro" value="{{$empleado[0]->agencia_registro}}">
+                                    <input type="text" name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" placeholder="Agencia de registro" value="{{$empleado[0]->agencia}}">
                                 </div>
                             </div>
 
@@ -215,50 +215,50 @@
                                 </div>
                                 <label class="col-lg-2 col-form-label">Licencia</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" />
+                                    <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" value="{{$empleado[0]->licencia}}"/>
                                 </div>
                             </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="referencia_personal">Referencia Personal</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="referencia" id="referencia_personal" class="form-control form-control-lg form-control-solid" placeholder="Referencia Personal" required />
+                                    <input type="text" name="referencia" id="referencia_personal" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->referenciap}}" required />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                                 <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                 <div class="col-lg-3">
-                                    <input type="tel" name="telefono1" id="telefono1" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                    <input type="tel" name="telefono1" id="telefono1" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->telefonop}}" required />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                             </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="referencia_familiar">Referencia Familiar</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="referencia2" id="referencia_familiar" class="form-control form-control-lg form-control-solid" placeholder="Referencia Familiar " required />
+                                    <input type="text" name="referencia2" id="referencia_familiar" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->referenciaf}} " required />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                                 <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                 <div class="col-lg-3">
-                                    <input type="tel" name="telefono2" id="telefono2" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                    <input type="tel" name="telefono2" id="telefono2" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->telefonof}}" required />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                             </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="contacto_emergencia">Contacto de emergencia</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="contacto_emergencia" id="contacto_emergencia" class="form-control form-control-lg form-control-solid" placeholder="Nombre de Contacto" required />
+                                    <input type="text" name="contacto_emergencia" id="contacto_emergencia" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->contactonombre}}" required />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                                 <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                                 <div class="col-lg-3">
-                                    <input type="tel" name="telefono3" id="telefono3" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
+                                    <input type="tel" name="telefono3" id="telefono3" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->contactotel}}" required />
                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
                             </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6">Cargo</label>
                                 <div class="col-lg-3">
-                                    <select name="cargo" id="cargo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar cargo" required>
-                                        <option></option>
+                                    <select name="cargo" id="cargo" class="form-control form-control-lg form-control-solid" data-control="select2" required>
+                                        <option>{{$empleado[0]->cargo}}</option>
                                         <option value="CEO">CEO</option>
                                         <option value="Director general">Director general</option>
                                         <option value="Gerente general">Gerente general</option>
@@ -301,18 +301,18 @@
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label">Fecha de baja</label>
                                 <div class="col-lg-3">
-                                    <input type="date" name="fecha_baja" id="fecha_baja" class="form-control form-control-lg form-control-solid" placeholder="Fecha de baja" />
+                                    <input type="date" name="fecha_baja" id="fecha_baja" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->fecha_baja}}" />
                                 </div>
                                 <label class="col-lg-2 col-form-label">Motivo</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" placeholder="Motivo" />
+                                    <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->motivo}}" />
                                 </div>
                             </div>
 
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label">Nota</label>
                                 <div class="col-lg-8">
-                                    <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota">{{$empleado[0]->nota}}</textarea>
+                                    <textarea name="nota" class="form-control form-control-lg form-control-solid" >{{$empleado[0]->nota}}</textarea>
                                 </div>
                             </div>
 

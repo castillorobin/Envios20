@@ -187,42 +187,42 @@
                             </div>
                             <label class="col-lg-2 col-form-label">Licencia</label>
                             <div class="col-lg-3">
-                                <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" readonly />
+                                <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" value="{{$empleado[0]->licencia}}" readonly />
                             </div>
                         </div>
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="referencia_personal">Referencia Personal</label>
                             <div class="col-lg-3">
-                                <input type="text" name="referencia" id="referencia_personal" class="form-control form-control-lg form-control-solid" placeholder="Referencia Personal" required readonly />
+                                <input type="text" name="referencia" id="referencia_personal" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->referenciap}}" required readonly />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                             <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                             <div class="col-lg-3">
-                                <input type="tel" name="telefono1" id="telefono1" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required readonly />
+                                <input type="tel" name="telefono1" id="telefono1" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->telefonop}}" required readonly />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="referencia_familiar">Referencia Familiar</label>
                             <div class="col-lg-3">
-                                <input type="text" name="referencia2" id="referencia_familiar" class="form-control form-control-lg form-control-solid" placeholder="Referencia Familiar " required readonly />
+                                <input type="text" name="referencia2" id="referencia_familiar" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->referenciaf}}"required readonly />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                             <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                             <div class="col-lg-3">
-                                <input type="tel" name="telefono2" id="telefono2" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required readonly />
+                                <input type="tel" name="telefono2" id="telefono2" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->telefonof}}" required readonly />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="contacto_emergencia">Contacto de emergencia</label>
                             <div class="col-lg-3">
-                                <input type="text" name="contacto_emergencia" id="contacto_emergencia" class="form-control form-control-lg form-control-solid" placeholder="Nombre de Contacto" required readonly />
+                                <input type="text" name="contacto_emergencia" id="contacto_emergencia" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->contactonombre}}" required readonly />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                             <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
                             <div class="col-lg-3">
-                                <input type="tel" name="telefono3" id="telefono3" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required readonly />
+                                <input type="tel" name="telefono3" id="telefono3" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->contactotel}}" required readonly />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
@@ -239,11 +239,11 @@
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label">Fecha de baja</label>
                             <div class="col-lg-3">
-                                <input type="date" name="fecha_baja" id="fecha_baja" class="form-control form-control-lg form-control-solid" placeholder="Fecha de baja" readonly />
+                                <input type="date" name="fecha_baja" id="fecha_baja" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->fecha_baja}}" readonly />
                             </div>
                             <label class="col-lg-2 col-form-label">Motivo</label>
                             <div class="col-lg-3">
-                                <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" placeholder="Motivo" readonly />
+                                <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->motivo}}" readonly />
                             </div>
                         </div>
 

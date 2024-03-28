@@ -39,6 +39,63 @@ class EmpleadoController extends Controller
         return view('empleados.empleadoseditar', compact('empleado'));
     }
 
+    public function empleadoupdate(Request $request, $id)
+    {
+        //$empleado = Empleado::where('id', $id)->get();
+
+        $empleado = Empleado::find($id);
+
+        $empleado->nombre = $request->input('fname');
+
+        
+if($request->hasFile('foto')){
+            
+    $imagen = $request->file("foto");
+    $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
+    $empleado->foto = $nombreimagen;
+    $ruta = public_path("/fotos");
+    $imagen->move($ruta,$nombreimagen);
+
+}
+
+        $empleado->direccion = $request->input('direccion');
+        $empleado->agencia = $request->input('agencia');
+        $empleado->telefono = $request->input('telefono');
+        $empleado->whatsapp = $request->input('whatsapp');
+        $empleado->correo = $request->input('email');
+        $empleado->fecha_nacimiento = $request->input('fecha_nacimiento');
+        $empleado->dui = $request->input('dui');
+        $empleado->licencia = $request->input('licencia');
+        $empleado->referenciap = $request->input('referencia');
+        $empleado->telefonop = $request->input('telefono1');
+        $empleado->referenciaf = $request->input('referencia2');
+        $empleado->telefonof = $request->input('telefono2');
+        $empleado->contactonombre = $request->input('contacto_emergencia');
+        $empleado->contactotel = $request->input('telefono3');
+        $empleado->cargo = $request->input('cargo');
+        $empleado->fecha_alta = $request->input('fecha_alta');
+        $empleado->n_isss = $request->input('n_isss');
+        $empleado->n_afp = $request->input('n_afp');
+        $empleado->fecha_baja = $request->input('fecha_baja');
+        $empleado->motivo = $request->input('Motivo');
+        $empleado->salario = $request->input('salario');
+        
+        
+        $empleado->nota = $request->input('nota');
+    
+        $empleado->save();
+
+
+
+        $empleado = Empleado::where('id', $id)->get();
+
+
+        return view('empleados.empleados', compact('empleado'));
+    }
+
+
+
+
     public function crear()
     {
         ///$empleado = Empleado::where('id', $id)->get();
