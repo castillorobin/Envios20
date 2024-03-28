@@ -33,7 +33,7 @@
 
 						<div class="menu-sub menu-sub-accordion">
 							<div class="menu-item">
-								<a href="/empleados/crear" class="menu-link py-3" style="background-color: transparent;">
+								<a href="/empleado/crear" class="menu-link py-3" style="background-color: transparent;">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
