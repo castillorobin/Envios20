@@ -211,7 +211,10 @@
                                             <span class="bullet bg-primary me-3"></span>Gestion de comercios
                                         </div>
                                         <div class="d-flex align-items-center py-2">
-                                            <span class="bullet bg-primary me-3"></span>Control de ubicaciones
+                                            <span class="bullet bg-primary me-3"></span>Control de stock
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Configuraciones
                                         </div>
                                     </div>
                                     <!--end::Permissions-->
@@ -262,6 +265,9 @@
                                         </div>
                                         <div class="d-flex align-items-center py-2">
                                             <span class="bullet bg-primary me-3"></span>Gestion de comercios
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Control de stock  
                                         </div>
                                     </div>
                                     <!--end::Permissions-->

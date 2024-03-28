@@ -310,7 +310,7 @@
 			<div data-kt-menu-trigger="click" id="menu-item-6" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
-					<span class="menu-title">Control de ubicaciones</span>
+					<span class="menu-title">Control de stock</span>
 					<span class="menu-arrow"></span>
 				</span>
 				<div class="menu-sub menu-sub-accordion">
