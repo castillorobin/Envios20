@@ -39,6 +39,16 @@ class EmpleadoController extends Controller
         return view('empleados.empleadoseditar', compact('empleado'));
     }
 
+    public function crear()
+    {
+        ///$empleado = Empleado::where('id', $id)->get();
+        $ultimoemp = Empleado::latest('id')->first();
+
+        $ultimo = $ultimoemp->id + 1;
+
+        return view('empleados.crear', compact('ultimo'));
+    }
+
     public function empleadoguardar(Request $request)
     {
          

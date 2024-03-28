@@ -27,9 +27,12 @@ Route::get('/empleados', function () {
     return view('empleados.empleados');
 });
 */
+/*
 Route::get('/empleados/crear', function () {
     return view('empleados.crear');
 });
+*/
+
 Route::get('/envios/detalle', function () {
     return view('envios.detalle');
 });
@@ -61,6 +64,7 @@ Route::get('empleado', [App\Http\Controllers\EmpleadoController::class, 'emplead
 Route::get('empleados/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadover'] )->name('empleadover') ;
 Route::get('empleados/editar/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadoeditar'] )->name('empleadoeditar') ;
 Route::get('empleadoguardar', [App\Http\Controllers\EmpleadoController::class, 'empleadoguardar'] )->name('empleadoguardar') ;
+Route::get('empleado/crear', [App\Http\Controllers\EmpleadoController::class, 'crear'] )->name('crear') ;
 
 Route::get('/comercio', function () {
     return view('comercio.index');
