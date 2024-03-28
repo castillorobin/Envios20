@@ -14,7 +14,7 @@
 				</div>
 			</div>
 
-			<div class="menu-item menu-sub-indention menu-accordion" data-kt-menu-trigger="click">
+			<div class="menu-item menu-sub-indention menu-accordion" id="menu-item-1" data-kt-menu-trigger="click">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
 					<span class="menu-title">Recursos Humanos</span>
@@ -147,7 +147,7 @@
 				</div>
 			</div>
 
-			<div class="menu-item menu-sub-indention menu-accordion" data-kt-menu-trigger="click">
+			<div class="menu-item menu-sub-indention menu-accordion" id="menu-item-2" data-kt-menu-trigger="click">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
 					<span class="menu-title">Gestion financiera</span>
@@ -229,7 +229,7 @@
 				</div>
 			</div>
 
-			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+			<div data-kt-menu-trigger="click" id="menu-item-3" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
 					<span class="menu-title">Gestion de ordenes</span>
@@ -255,7 +255,7 @@
 				</div>
 			</div>
 
-			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+			<div data-kt-menu-trigger="click" id="menu-item-4" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
 					<span class="menu-title">Gestion de comercios</span>
@@ -281,7 +281,7 @@
 				</div>
 			</div>
 
-			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+			<div data-kt-menu-trigger="click" id="menu-item-5" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
 					<span class="menu-title">Facturacion</span>
@@ -307,7 +307,7 @@
 				</div>
 			</div>
 
-			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+			<div data-kt-menu-trigger="click" id="menu-item-6" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
 					<span class="menu-title">Control de ubicaciones</span>
@@ -333,7 +333,7 @@
 				</div>
 			</div>
 
-			<div data-kt-menu-trigger="click" class="menu-item menu-accordion">
+			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
 					<span class="menu-title">Configuraciones</span>
