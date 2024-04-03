@@ -48,7 +48,7 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Listado de Empleados</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Listado de faltas</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -63,7 +63,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Listado de emplados</li>
+                                <li class="breadcrumb-item text-muted">Listado de faltas</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -252,7 +252,6 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
 
-
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
@@ -268,23 +267,6 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-
-                                            @for ($i = 0; $i < count($vendedores); $i++) <tr>
-                                                <td><a href="/empleados/{{ $vendedores[$i]->id }}" class="text-gray-900 text-hover-primary">{{ ($vendedores[$i]->id < 10) ? '#000' . $vendedores[$i]->id : '#00' . $vendedores[$i]->id }}</a></td>
-                                                <td>{{ $vendedores[$i]->nombre }}</td>
-                                                <td>{{ $vendedores[$i]->telefono }}</td>
-                                                <td>{{ $vendedores[$i]->whatsapp }}</td>
-                                                <td>{{ $vendedores[$i]->direccion }}</td>
-
-                                                @if($vendedores[$i]->estado == 'Alta')
-                                                <td class="text-star"><span class="badge badge-light-success">{{ $vendedores[$i]->estado }}</span></td>
-                                                @elseif($vendedores[$i]->estado == 'Baja')
-                                                <td class="text-star"><span class="badge badge-light-danger">{{ $vendedores[$i]->estado }}</span></td>
-                                                @endif
-                                                <td class="text-star"><span class="badge badge-light-success">Activa</span></td>
-                                                </tr>
-                                                @endfor
-
 
                                         </tbody>
                                     </table>

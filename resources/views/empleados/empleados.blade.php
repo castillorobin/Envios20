@@ -32,7 +32,7 @@
                     <div class="card-body pt-9 pb-0">
                         <div class="d-flex flex-wrap flex-sm-nowrap">
                             <div class="me-7 mb-2">
-                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative" >
+                                <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
                                     <img class="img-thumbnail" src="/fotos/{{$empleado[0]->foto}}" alt="image" />
                                     <div class="position-absolute translate-middle bottom-0 start-100 mb-1 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                 </div>
@@ -41,8 +41,9 @@
                                 <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
                                     <div class="d-flex flex-column">
                                         <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">ID #000{{$empleado[0]->id}}</a>
-                                          
+                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">
+                                                ID {{ ($empleado[0]->id < 10) ? '#000' . $empleado[0]->id : '#00' . $empleado[0]->id }}
+                                            </a>
                                         </div>
 
                                         <div class="d-flex align-items-center mb-2">
@@ -74,13 +75,13 @@
                                         </div>
                                     </div>
                                     <div class="d-flex my-1">
-                                    <a href="#" class="btn btn-sm btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_">Alta</a>
+                                        <a href="#" class="btn btn-sm btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_">Alta</a>
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">Eliminar</a>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-wrap flex-stack " >
+                                <div class="d-flex flex-wrap flex-stack ">
                                     <div class="d-flex flex-column flex-grow-1 mt-6">
-                                        <div class="fw-semibold fs-6 text-black-500" >Dirección</div>
+                                        <div class="fw-semibold fs-6 text-black-500">Dirección</div>
                                         <div class="fw-semibold fs-5 text-black-100">{{$empleado[0]->direccion}}</div>
                                     </div>
 
@@ -94,7 +95,7 @@
                                         </div>
                                     </div>
                                 </div>
-    
+
                             </div>
 
                         </div>
@@ -108,6 +109,9 @@
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Logs</a>
                             </li>
+                            <li class="nav-item mt-2">
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/faltas/listafaltas">Historial de faltas</a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -117,7 +121,7 @@
                             <h3 class="fw-bold m-0">Información detallada del empleado</h3>
                         </div>
                         <div class="card-toolbar">
-                            <a href="#" class="btn btn-sm btn-primary">Editar</a>
+                            <a href="/empleados/editar/{{$empleado[0]->id}}" class="btn btn-sm btn-primary">Editar</a>
                         </div>
                     </div>
                     <div class="card-body border-top p-9">
@@ -126,28 +130,7 @@
                             <div class="col-lg-8">
                                 <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                     <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$empleado[0]->foto}})"></div>
-                                    <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                                        <i class="ki-duotone ki-pencil fs-7">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                        <input type="file" name="avatar" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
-                                        <input type="hidden" name="avatar_remove" />
-                                    </label>
-                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                                        <i class="ki-duotone ki-cross fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </span>
-                                    <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                                        <i class="ki-duotone ki-cross fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                    </span>
                                 </div>
-                                <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
                             </div>
                         </div>
                         <div class="row mb-6">
@@ -205,7 +188,7 @@
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="referencia_familiar">Referencia Familiar</label>
                             <div class="col-lg-3">
-                                <input type="text" name="referencia2" id="referencia_familiar" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->referenciaf}}"required readonly />
+                                <input type="text" name="referencia2" id="referencia_familiar" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->referenciaf}}" required readonly />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                             <label class="col-lg-2 col-form-label required fw-semibold fs-6">Telefono</label>
@@ -244,6 +227,18 @@
                             <label class="col-lg-2 col-form-label">Motivo</label>
                             <div class="col-lg-3">
                                 <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->motivo}}" readonly />
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label ">Salario</label>
+                            <div class="col-lg-3">
+                                <input type="text" name="salario" id="salario" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->salario}}" readonly />
+                                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                            </div>
+                            <label class="col-lg-2 col-form-label ">Estado</label>
+                            <div class="col-lg-3">
+                                <input type="text" name="estado" id="estado" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->estado}}" readonly />
+                                <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
 

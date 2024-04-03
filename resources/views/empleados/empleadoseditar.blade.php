@@ -41,10 +41,12 @@
                                 <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
                                     <div class="d-flex flex-column">
                                         <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1"># {{$empleado[0]->id}}</a>
+                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">ID #000{{$empleado[0]->id}}</a>
+
                                         </div>
+
                                         <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-2 fw-bold me-1">{{$empleado[0]->nombre}}</a>
+                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">{{$empleado[0]->nombre}}</a>
                                             <a href="#">
                                                 <i class="ki-duotone ki-verify fs-1 text-primary">
                                                     <span class="path1"></span>
@@ -52,7 +54,7 @@
                                                 </i>
                                             </a>
                                         </div>
-                                        <div class="d-flex flex-wrap fw-semibold fs-6 mb-4 pe-2">
+                                        <div class="d-flex flex-wrap fw-semibold">
                                             <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
                                                 <i class="ki-duotone ki-profile-circle fs-4 me-1">
                                                     <span class="path1"></span>
@@ -60,32 +62,26 @@
                                                     <span class="path3"></span>
                                                 </i>{{$empleado[0]->cargo}}</a>
                                             <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
-                                                <i class="ki-duotone ki-geolocation fs-4 me-1">
+                                                <i class="ki-duotone ki-geolocation fs-5 me-1">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
-                                                </i>{{$empleado[0]->agencia_registro}}</a>
+                                                </i>{{$empleado[0]->agencia}}</a>
                                             <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
-                                                <i class="ki-duotone ki-sms fs-4 me-1">
+                                                <i class="ki-duotone ki-sms fs-5 me-1">
                                                     <span class="path1"></span>
                                                     <span class="path2"></span>
-                                                </i>{{$empleado[0]->telefono}}
-                                            </a>
+                                                </i>{{$empleado[0]->telefono}}</a>
                                         </div>
                                     </div>
-                                    <div class="d-flex my-4">
-                                        <a href="#" class="btn btn-sm btn-light me-2" id="kt_user_follow_button">
-                                            <i class="ki-duotone ki-check fs-3 d-none"></i>
-                                            <span class="indicator-label">Follow</span>
-                                            <span class="indicator-progress">Please wait...
-                                                <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                        </a>
+                                    <div class="d-flex my-1">
+                                        <a href="#" class="btn btn-sm btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_">Alta</a>
                                         <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">Eliminar</a>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-wrap flex-stack">
-                                    <div class="d-flex flex-column flex-grow-1 pe-8">
-                                        <div class="fw-semibold fs-2 text-black-800">Dirección</div>
-                                        <div class="fw-semibold fs-2 text-black-400">{{$empleado[0]->direccion}}</div>
+                                <div class="d-flex flex-wrap flex-stack ">
+                                    <div class="d-flex flex-column flex-grow-1 mt-6">
+                                        <div class="fw-semibold fs-6 text-black-500">Dirección</div>
+                                        <div class="fw-semibold fs-5 text-black-100">{{$empleado[0]->direccion}}</div>
                                     </div>
 
                                     <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
@@ -93,22 +89,19 @@
                                             <span class="fw-semibold fs-6 text-gray-400">Profile Compleation</span>
                                             <span class="fw-bold fs-6">50%</span>
                                         </div>
-                                        <div class="h-5px mx-3 w-100 bg-light mb-3">
+                                        <div class="h-5px mx-3 w-100 bg-light mb-1">
                                             <div class="bg-success rounded h-5px" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="d-flex flex-wrap flex-stack">
-                                    <div class="d-flex flex-column flex-grow-1 pe-8">
-                                        <div class="fw-semibold"><span class="badge badge-light-success fs-2">Alta</span></div>
-                                    </div>
-                                </div>
+
                             </div>
+
 
                         </div>
                         <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
                             <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-10 py-5 " href="/empleados/1">Detalles</a>
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5 " href="/empleados/{{$empleado[0]->id}}">Detalles</a>
                             </li>
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/empleados/editar/{{$empleado[0]->id}}">Editar</a>
@@ -116,6 +109,9 @@
 
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Logs</a>
+                            </li>
+                            <li class="nav-item mt-2">
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/faltas/listafaltas">Historial de faltas</a>
                             </li>
                         </ul>
                     </div>
@@ -152,7 +148,7 @@
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>
-                                        </span> 
+                                        </span>
                                         <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
                                             <i class="ki-duotone ki-cross fs-2">
                                                 <span class="path1"></span>
@@ -215,7 +211,7 @@
                                 </div>
                                 <label class="col-lg-2 col-form-label">Licencia</label>
                                 <div class="col-lg-3">
-                                    <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" value="{{$empleado[0]->licencia}}"/>
+                                    <input type="text" name="licencia" class="form-control form-control-lg form-control-solid" placeholder="Licencia" value="{{$empleado[0]->licencia}}" />
                                 </div>
                             </div>
                             <div class="row mb-6">
@@ -308,11 +304,25 @@
                                     <input type="text" name="Motivo" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->motivo}}" />
                                 </div>
                             </div>
-
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Salario</label>
+                                <div class="col-lg-3">
+                                    <input type="text" name="salario" id="salario" class="form-control form-control-lg form-control-solid" value="{{$empleado[0]->salario}}" />
+                                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                </div>
+                                <label class="col-lg-2 col-form-label">Estado</label>
+                                <div class="col-lg-3">
+                                    <select name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar estado" required>
+                                        <option>{{$empleado[0]->estado}}</option>
+                                        <option value="Alta">Alta</option>
+                                        <option value="Baja">Baja</option>¿
+                                    </select>
+                                </div>
+                            </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label">Nota</label>
                                 <div class="col-lg-8">
-                                    <textarea name="nota" class="form-control form-control-lg form-control-solid" >{{$empleado[0]->nota}}</textarea>
+                                    <textarea name="nota" class="form-control form-control-lg form-control-solid">{{$empleado[0]->nota}}</textarea>
                                 </div>
                             </div>
 

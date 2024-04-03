@@ -17,7 +17,7 @@ class EmpleadoController extends Controller
     public function index()
     {
         //
-    } 
+    }
 
     public function empleado()
     {
@@ -47,16 +47,15 @@ class EmpleadoController extends Controller
 
         $empleado->nombre = $request->input('fname');
 
-        
-if($request->hasFile('foto')){
-            
-    $imagen = $request->file("foto");
-    $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
-    $empleado->foto = $nombreimagen;
-    $ruta = public_path("/fotos");
-    $imagen->move($ruta,$nombreimagen);
 
-}
+        if ($request->hasFile('foto')) {
+
+            $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
+            $empleado->foto = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+        }
 
         $empleado->direccion = $request->input('direccion');
         $empleado->agencia = $request->input('agencia');
@@ -79,10 +78,12 @@ if($request->hasFile('foto')){
         $empleado->fecha_baja = $request->input('fecha_baja');
         $empleado->motivo = $request->input('Motivo');
         $empleado->salario = $request->input('salario');
-        
-        
+        $empleado->estado = $request->input('estado');
+
+
+
         $empleado->nota = $request->input('nota');
-    
+
         $empleado->save();
 
 
@@ -108,7 +109,7 @@ if($request->hasFile('foto')){
 
     public function empleadoguardar(Request $request)
     {
-         
+
         $empleado = new Empleado();
         $empleado->nombre = $request->input('fname');
 
@@ -134,15 +135,14 @@ if($request->hasFile('foto')){
 
         }
 */
-if($request->hasFile('foto')){
-            
-    $imagen = $request->file("foto");
-    $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
-    $empleado->foto = $nombreimagen;
-    $ruta = public_path("/fotos");
-    $imagen->move($ruta,$nombreimagen);
+        if ($request->hasFile('foto')) {
 
-}
+            $imagen = $request->file("foto");
+            $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
+            $empleado->foto = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+        }
 
         $empleado->direccion = $request->input('direccion');
         $empleado->agencia = $request->input('agencia');
@@ -165,65 +165,16 @@ if($request->hasFile('foto')){
         $empleado->fecha_baja = $request->input('fecha_baja');
         $empleado->motivo = $request->input('Motivo');
         $empleado->salario = $request->input('salario');
-        
-        
+        $empleado->estado = $request->input('estado');
+
+
+
         $empleado->nota = $request->input('nota');
-    
+
         $empleado->save();
-    
+
         // Redirigir a la vista de empleados con un mensaje de éxito
-       // return redirect()->view('empleados.index')->with('success', 'Empleado guardado exitosamente.');
-       $vendedores = Empleado::all();
-       return view('empleados.index', compact('vendedores'));
-    }
-    
-
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        // return redirect()->view('empleados.index')->with('success', 'Empleado guardado exitosamente.');
+        return redirect('/empleado');
     }
 }

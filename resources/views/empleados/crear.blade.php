@@ -72,14 +72,6 @@
                                         <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
                                     </div>
                                 </div>
-
-                                <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">ID de empleado</label>
-                                    <div class="col-lg-3">
-                                        <input type="text" name="id" id="id" class="form-control form-control-lg form-control-solid" placeholder="{{$ultimo}}" readonly>
-                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                    </div>
-                                </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
                                     <div class="col-lg-8">
@@ -233,9 +225,16 @@
 
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Salario</label>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-3">
                                         <input type="text" name="salario" id="salario" class="form-control form-control-lg form-control-solid" placeholder="$" required />
                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado</label>
+                                    <div class="col-lg-3">
+                                        <select name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar estado" required>
+                                            <option value="Alta">Alta</option>
+                                            <option value="Baja">Baja</option>¿
+                                        </select>
                                     </div>
                                 </div>
 

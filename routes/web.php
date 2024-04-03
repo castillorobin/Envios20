@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\SocialiteController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -67,6 +68,9 @@ Route::get('empleadoguardar', [App\Http\Controllers\EmpleadoController::class, '
 Route::get('empleado/crear', [App\Http\Controllers\EmpleadoController::class, 'crear'] )->name('crear') ;
 Route::get('empleado/update/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadoupdate'] )->name('empleadoupdate') ;
 
+Route::get('/faltas/listafaltas', function () {
+    return view('faltas.listafaltas');
+});
 Route::get('/comercio', function () {
     return view('comercio.index');
 });
