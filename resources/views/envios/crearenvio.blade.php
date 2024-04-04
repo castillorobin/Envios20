@@ -1,4 +1,5 @@
 <x-default-layout>
+    
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>

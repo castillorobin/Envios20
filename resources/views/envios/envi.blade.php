@@ -3,6 +3,7 @@
 
 <head>
     <base href="../../../" />
+    <link rel="icon" type="image/png" href="{{ asset('fotos/logo.png') }}">
     <title>Melo Express</title>
     <meta charset="utf-8" />
     <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -14,20 +15,19 @@
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
     <!--begin::Vendor Stylesheets(used for this page only) 
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
    -->
-   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
 
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    
+
 
     <!--end::Global Stylesheets Bundle-->
     <style>
@@ -191,7 +191,7 @@
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
-                                        
+
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                     </div>
                                     <!--end::Search-->
@@ -280,40 +280,40 @@
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
-                                                <td >
-                                                <a href="/envios/detalle" >
-                                                    {{ $envio->guia }}
+                                                <td>
+                                                    <a href="/envios/detalle">
+                                                        {{ $envio->guia }}
                                                     </a>
                                                 </td>
                                                 <td>{{ $envio->comercio }}</td>
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
                                                 <td>
-                                                @if( $envio->estado  == 'Fallida')
-                                                <span class="badge badge-danger">{{ $envio->estado }}</span>
-
-                                                
-                                                @elseif( $envio->estado  == 'Creado')
-                                                <span class="badge badge-warning">{{ $envio->estado }}</span>
-                                               
-                                                @elseif( $envio->estado  == 'Entregado')
-                                                <span class="badge badge-success">{{ $envio->estado }}</span>
-
-                                                
-                                                @elseif( $envio->estado  == 'En transito')
-                                                <span class="badge badge-info">{{ $envio->estado }}</span>
-                                                @elseif( $envio->estado  == 'En transito')
-                                                <span class="badge badge-dark">{{ $envio->estado }}</span>
-                                                @elseif( $envio->estado  == 'Reenvio')
-                                                <span class="badge badge-primary">{{ $envio->estado }}</span>
-                                                @else
-                                                <span class="badge badge-light">{{ $envio->estado }}</span>
+                                                    @if( $envio->estado == 'Fallida')
+                                                    <span class="badge badge-danger">{{ $envio->estado }}</span>
 
 
-                                                @endif
+                                                    @elseif( $envio->estado == 'Creado')
+                                                    <span class="badge badge-warning">{{ $envio->estado }}</span>
+
+                                                    @elseif( $envio->estado == 'Entregado')
+                                                    <span class="badge badge-success">{{ $envio->estado }}</span>
 
 
-                                                   
+                                                    @elseif( $envio->estado == 'En transito')
+                                                    <span class="badge badge-info">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'En transito')
+                                                    <span class="badge badge-dark">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Reenvio')
+                                                    <span class="badge badge-primary">{{ $envio->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-light">{{ $envio->estado }}</span>
+
+
+                                                    @endif
+
+
+
                                                 </td>
                                                 <td class="text-end">{{ $envio->precio }}</td>
                                                 <td class="text-end">{{ $envio->envio }}</td>
@@ -322,7 +322,7 @@
                                                     <span class="badge badge-light-success">{{ $envio->pago }}</span>
                                                 </td>
 
-                                               
+
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -347,7 +347,7 @@
     </x-default-layout>
     <!--begin::Javascript-->
     <script>
-       
+
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
@@ -366,43 +366,40 @@
     end::Custom Javascript-->
 
     <script>
-         
-         $(document).ready(function () {
-     $('#tenvios').DataTable(
-         {
-            
-             language: {
-         "decimal": "",
-         "emptyTable": "No hay información",
-         "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-         "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-         "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-         "infoPostFix": "",
-         "thousands": ",",
-         "lengthMenu": "Mostrar _MENU_ Entradas",
-         "loadingRecords": "Cargando...",
-         "processing": "Procesando...",
-         "search": "Buscar:",
-         "zeroRecords": "Sin resultados encontrados",
-         "paginate": {
-             "first": "Primero",
-             "last": "Ultimo",
-             "next": "Siguiente",
-             "previous": "Anterior"
-         }
-     },
- 
-         dom: 'tri<"pagina1" p>',
-         
-         
-        
-        
- 
-         } 
-     );
- }); 
-     </script>
-   
+        $(document).ready(function() {
+            $('#tenvios').DataTable({
+
+                language: {
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "infoPostFix": "",
+                    "thousands": ",",
+                    "lengthMenu": "Mostrar _MENU_ Entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "first": "Primero",
+                        "last": "Ultimo",
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                },
+
+                dom: 'tri<"pagina1" p>',
+
+
+
+
+
+            });
+        });
+    </script>
+
 
 
     <!--end::Javascript-->

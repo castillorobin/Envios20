@@ -149,13 +149,13 @@
 
 			<div class="menu-item menu-sub-indention menu-accordion" id="menu-item-2" data-kt-menu-trigger="click">
 				<span class="menu-link">
-					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-icon">{!! getIcon('dollar', 'fs-2') !!}</span>
 					<span class="menu-title">Gestion financiera</span>
 					<span class="menu-arrow"></span>
 				</span>
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
-						<a href="#" class="menu-link py-3" style="background-color: transparent;">
+						<a href="#" class="menu-link py-3" >
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -231,7 +231,7 @@
 
 			<div data-kt-menu-trigger="click" id="menu-item-3" class="menu-item menu-accordion">
 				<span class="menu-link">
-					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-icon">{!! getIcon('scooter-2', 'fs-2') !!}</span>
 					<span class="menu-title">Gestion de ordenes</span>
 					<span class="menu-arrow"></span>
 				</span>
@@ -257,7 +257,7 @@
 
 			<div data-kt-menu-trigger="click" id="menu-item-4" class="menu-item menu-accordion">
 				<span class="menu-link">
-					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-icon">{!! getIcon('home', 'fs-2') !!}</span>
 					<span class="menu-title">Gestion de comercios</span>
 					<span class="menu-arrow"></span>
 				</span>
@@ -283,7 +283,7 @@
 
 			<div data-kt-menu-trigger="click" id="menu-item-5" class="menu-item menu-accordion">
 				<span class="menu-link">
-					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-icon">{!! getIcon('document', 'fs-2') !!}</span>
 					<span class="menu-title">Facturacion</span>
 					<span class="menu-arrow"></span>
 				</span>
@@ -335,7 +335,7 @@
 
 			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
 				<span class="menu-link">
-					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
+					<span class="menu-icon">{!! getIcon('setting-3', 'fs-2') !!}</span>
 					<span class="menu-title">Configuraciones</span>
 					<span class="menu-arrow"></span>
 				</span>

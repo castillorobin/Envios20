@@ -3,7 +3,8 @@
 
 <head>
     <base href="../../../" />
-    <title>Melo express</title>
+    <link rel="icon" type="image/png" href="{{ asset('fotos/logo.png') }}">
+    <title>Melo Express</title>
     <meta charset="utf-8" />
     <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
     <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -14,7 +15,6 @@
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
     <!--end::Fonts-->
@@ -699,7 +699,7 @@
                                                             <!--end::Col-->
                                                             <!--begin::Col-->
                                                             <div class="flex-equal">
-                                                            <table class="table table-flush fw-semibold gy-1" style="line-height: 1.8;">
+                                                                <table class="table table-flush fw-semibold gy-1" style="line-height: 1.8;">
                                                                     <h4>Pagos</h4>
                                                                     <tr>
                                                                         <td class="text-muted min-w-150px w-150px">quien pago:</td>
