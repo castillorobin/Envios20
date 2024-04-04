@@ -41,20 +41,29 @@
                             <div class="flex-grow-1">
                                 <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
                                     <div class="d-flex flex-column">
-                                        <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">ID #000{{$empleado[0]->id}}</a>
-
+                                        <div class="row">
+                                            <!-- Primer bloque -->
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="d-flex align-items-center">
+                                                    <a href="#" class="text-gray-900 text-hover-primary fs-3 fw-bold me-1">{{$empleado[0]->nombre}}</a>
+                                                    <a href="#">
+                                                        <i class="ki-duotone ki-verify fs-1 text-primary">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                        </i>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <!-- Segundo bloque -->
+                                            <div class="col-lg-6 mb-2">
+                                                <div class="d-flex align-items-center">
+                                                    <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">
+                                                        ID {{ ($empleado[0]->id < 10) ? '#000' . $empleado[0]->id : '#00' . $empleado[0]->id }}
+                                                    </a>
+                                                </div>
+                                            </div>
                                         </div>
 
-                                        <div class="d-flex align-items-center mb-2">
-                                            <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">{{$empleado[0]->nombre}}</a>
-                                            <a href="#">
-                                                <i class="ki-duotone ki-verify fs-1 text-primary">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                            </a>
-                                        </div>
                                         <div class="d-flex flex-wrap fw-semibold">
                                             <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
                                                 <i class="ki-duotone ki-profile-circle fs-4 me-1">
@@ -81,8 +90,8 @@
                                 </div>
                                 <div class="d-flex flex-wrap flex-stack ">
                                     <div class="d-flex flex-column flex-grow-1 mt-6">
-                                        <div class="fw-semibold fs-6 text-black-500">Dirección</div>
-                                        <div class="fw-semibold fs-5 text-black-100">{{$empleado[0]->direccion}}</div>
+                                        <div class="fw-semibold fs-6 text-black-500"></div>
+                                        <div class="fw-semibold fs-5 text-black-100"></div>
                                     </div>
 
                                     <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
@@ -166,7 +175,13 @@
                                     <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required value="{{$empleado[0]->nombre}}" />
                                 </div>
                             </div>
-
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
+                                <div class="col-lg-8">
+                                    <input type="text" name="direccion" id="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" required value="{{$empleado[0]->direccion}}" />
+                                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                </div>
+                            </div>
                             <div class="row mb-6">
                                 <label class="col-lg-3 col-form-label required fw-semibold fs-6">Dirección</label>
                                 <div class="col-lg-8">
