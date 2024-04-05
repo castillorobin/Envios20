@@ -6,13 +6,7 @@
     <link rel="icon" type="image/png" href="{{ asset('fotos/logo.png') }}">
     <title>Melo Express</title>
     <meta charset="utf-8" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <!--begin::Fonts(mandatory for all pages)-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
-    <!--end::Fonts-->
-    <!--begin::Vendor Stylesheets(used for this page only)-->
-    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-    <!--end::Vendor Stylesheets-->
+
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
@@ -194,12 +188,12 @@
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select id="estadoFilter" class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
+                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
                                             <option></option>
+                                            <option value="Todos">Todos</option>
                                             <option value="Alta">Alta</option>
                                             <option value="Baja">Baja</option>
                                         </select>
-
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -306,15 +300,13 @@
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
-    <script src="assets/js/scripts.bundle.js"></script>¿
+    <script src="assets/js/scripts.bundle.js"></script>
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+ 
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
-    <script src="assets/js/widgets.bundle.js"></script>
-    <script src="assets/js/custom/widgets.js"></script>
-    <script src="assets/js/custom/apps/chat/chat.js"></script>
-    <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-    <script src="assets/js/custom/utilities/modals/create-app.js"></script>
-
-
+   
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>
