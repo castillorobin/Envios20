@@ -13,8 +13,8 @@
     <x-default-layout>
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <div id="kt_app_content_container" class="app-container container-xxl">
-                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Melo Express</h1>
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Informacion del empleado </h1>
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <li class="breadcrumb-item text-muted">
                             <a href="/" class="text-muted text-hover-primary">Inicio</a>
@@ -54,14 +54,6 @@
                                                     </a>
                                                 </div>
                                             </div>
-                                            <!-- Segundo bloque -->
-                                            <div class="col-lg-6 mb-2">
-                                                <div class="d-flex align-items-center">
-                                                    <a href="#" class="text-gray-900 text-hover-primary fs-4 fw-bold me-1">
-                                                        ID {{ ($empleado[0]->id < 10) ? '#000' . $empleado[0]->id : '#00' . $empleado[0]->id }}
-                                                    </a>
-                                                </div>
-                                            </div>
                                         </div>
 
                                         <div class="d-flex flex-wrap fw-semibold">
@@ -90,8 +82,8 @@
                                 </div>
                                 <div class="d-flex flex-wrap flex-stack ">
                                     <div class="d-flex flex-column flex-grow-1 mt-6">
-                                        <div class="fw-semibold fs-6 text-black-500"></div>
-                                        <div class="fw-semibold fs-5 text-black-100"></div>
+                                        <div class="fw-semibold fs-6 text-black-500">Direccion</div>
+                                        <div class="fw-semibold fs-5 text-black-100">{{ $empleado[0]->direccion }}</div>
                                     </div>
 
                                     <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
