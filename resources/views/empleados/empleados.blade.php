@@ -135,8 +135,12 @@
                             </div>
                         </div>
                         <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
-                            <div class="col-lg-8">
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="id">ID empleado</label>
+                            <div class="col-lg-3">
+                                <input type="text" name="id" id="id" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required readonly value="{{ ($empleado[0]->id < 10) ? '#000' . $empleado[0]->id : '#00' . $empleado[0]->id }}" />
+                            </div>
+                            <label class="col-lg-2 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
+                            <div class="col-lg-3">
                                 <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required readonly value="{{$empleado[0]->nombre}}" />
                             </div>
                         </div>
