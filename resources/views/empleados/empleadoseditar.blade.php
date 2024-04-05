@@ -82,8 +82,8 @@
                                 </div>
                                 <div class="d-flex flex-wrap flex-stack ">
                                     <div class="d-flex flex-column flex-grow-1 mt-6">
-                                        <div class="fw-semibold fs-6 text-black-500">Direccion</div>
-                                        <div class="fw-semibold fs-5 text-black-100">{{ $empleado[0]->direccion }}</div>
+                                        <div class="fw-semibold fs-6 text-black-500 text-center">Direccion</div>
+                                        <div class="fw-semibold fs-5 text-black-100 text-center">{{ $empleado[0]->direccion }}</div>
                                     </div>
 
                                     <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
