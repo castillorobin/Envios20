@@ -253,11 +253,216 @@
                         </form>
                     </div>
                 </div>
+                <!--begin::Sign-in Method-->
+                <div class="card mb-5 mb-xl-10">
+                    <!--begin::Card header-->
+                    <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_signin_method">
+                        <div class="card-title m-0">
+                            <h3 class="fw-bold m-0">Crear usuario</h3>
+                        </div>
+                    </div>
+                    <!--end::Card header-->
+                    <!--begin::Content-->
+                    <div id="kt_account_settings_signin_method" class="collapse show">
+                        <!--begin::Card body-->
+                        <div class="card-body border-top p-9">
+                            <!--begin::Email Address-->
+                            <div class="row mb-6">
+                                <!--begin::Label-->
+                                <div id="kt_signin_email ">
+                                    <div class="fs-6 fw-bold mb-1">Email</div>
+                                    <input type="text" name="user_name" class="form-control form-control-solid mb-3 mb-lg-0 " placeholder="Full name" value="Emma Smith" />
+                                </div>
+                            </div>
+                            <!--end::Email Address-->
+                            <!--begin::Separator-->
+                            <div class="separator separator-dashed my-6"></div>
+                            <!--end::Separator-->
+                            <!--begin::Password-->
+                            <div class="row mb-6">
+                                <!--begin::Input group-->
+                                <div class="mb-10 fv-row" data-kt-password-meter="true">
+                                    <!--begin::Wrapper-->
+                                    <div class="mb-1">
+                                        <!--begin::Label-->
+                                        <label class="form-label fw-semibold fs-6 mb-2">Password</label>
+                                        <!--end::Label-->
+                                        <!--begin::Input wrapper-->
+                                        <div class="position-relative mb-3">
+                                            <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="new_password" autocomplete="off" />
+                                            <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
+                                                <i class="ki-duotone ki-eye-slash fs-1">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                    <span class="path4"></span>
+                                                </i>
+                                                <i class="ki-duotone ki-eye d-none fs-1">
+                                                    <span class="path1"></span>
+                                                    <span class="path2"></span>
+                                                    <span class="path3"></span>
+                                                </i>
+                                            </span>
+                                        </div>
+                                        <!--end::Input wrapper-->
+                                        <!--begin::Meter-->
+                                        <div class="d-flex align-items-center mb-3" data-kt-password-meter-control="highlight">
+                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px me-2"></div>
+                                            <div class="flex-grow-1 bg-secondary bg-active-success rounded h-5px"></div>
+                                        </div>
+                                        <!--end::Meter-->
+                                    </div>
+                                    <!--end::Wrapper-->
+                                    <!--begin::Hint-->
+                                    <div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+                                    <!--end::Hint-->
+                                </div>
+                                <!--end::Input group=-->
+                                <!--begin::Input group=-->
+                                <div class="fv-row mb-10">
+                                    <label class="form-label fw-semibold fs-6 mb-2">Confirm Password</label>
+                                    <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm_password" autocomplete="off" />
+                                </div>
+                                <!--begin::Input group-->
+                            </div>
+                            <!--end::Password-->
+                            <!--begin::Input group-->
+                            <div class="mb-7">
+                                <!--begin::Label-->
+                                <label class="required fw-semibold fs-6 mb-5">Role</label>
+                                <!--end::Label-->
+                                <!--begin::Roles-->
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="0" id="kt_modal_update_role_option_0" checked='checked' />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_0">
+                                            <div class="fw-bold text-gray-800">Administrator</div>
+                                            <div class="text-gray-600">Best for business owners and company administrators</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="1" id="kt_modal_update_role_option_1" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_1">
+                                            <div class="fw-bold text-gray-800">Developer</div>
+                                            <div class="text-gray-600">Best for developers or people primarily using the API</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="2" id="kt_modal_update_role_option_2" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_2">
+                                            <div class="fw-bold text-gray-800">Analyst</div>
+                                            <div class="text-gray-600">Best for people who need full access to analytics data, but don't need to update business settings</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="3" id="kt_modal_update_role_option_3" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_3">
+                                            <div class="fw-bold text-gray-800">Support</div>
+                                            <div class="text-gray-600">Best for employees who regularly refund payments and respond to disputes</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_4">
+                                            <div class="fw-bold text-gray-800">Trial</div>
+                                            <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <!--end::Roles-->
+                            </div>
+                            <!--end::Input group-->
+                            <!--begin::Notice-->
+                            <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed p-6">
+                                <!--begin::Icon-->
+                                <i class="ki-duotone ki-shield-tick fs-2tx text-primary me-4">
+                                    <span class="path1"></span>
+                                    <span class="path2"></span>
+                                </i>
+                                <!--end::Icon-->
+                                <!--begin::Wrapper-->
+                                <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
+                                    <!--begin::Content-->
+                                    <div class="mb-3 mb-md-0 fw-semibold">
+                                        <h4 class="text-gray-900 fw-bold">Secure Your Account</h4>
+                                        <div class="fs-6 text-gray-700 pe-7">Two-factor authentication adds an extra layer of security to your account. To log in, in addition you'll need to provide a 6 digit code</div>
+                                    </div>
+                                    <!--end::Content-->
+                                    <!--begin::Action-->
+                                    <a href="#" class="btn btn-primary px-6 align-self-center text-nowrap" data-bs-toggle="modal" data-bs-target="#kt_modal_two_factor_authentication">Crear usuario</a>
+                                    <!--end::Action-->
+                                </div>
+                                <!--end::Wrapper-->
+                            </div>
+                            <!--end::Notice-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Content-->
+                </div>
+                <!--end::Sign-in Method-->
             </div>
         </div>
+
     </x-default-layout>
     <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="assets/js/custom/account/settings/signin-methods.js"></script>
+
     <script>
         flatpickr("#fecha_nacimiento", {
             dateFormat: 'Y-m-d',

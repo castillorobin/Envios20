@@ -370,62 +370,14 @@
                                                 <form id="kt_modal_add_user_form" class="form" action="#">
                                                     <!--begin::Scroll-->
                                                     <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
-                                                        <!--begin::Input group-->
                                                         <div class="fv-row mb-7">
-                                                            <!--begin::Label-->
-                                                            <label class="d-block fw-semibold fs-6 mb-5">Avatar</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Image placeholder-->
-                                                            <style>
-                                                                .image-input-placeholder {
-                                                                    background-image: url('assets/media/svg/files/blank-image.svg');
-                                                                }
-
-                                                                [data-bs-theme="dark"] .image-input-placeholder {
-                                                                    background-image: url('assets/media/svg/files/blank-image-dark.svg');
-                                                                }
-                                                            </style>
-                                                            <!--end::Image placeholder-->
-                                                            <!--begin::Image input-->
-                                                            <div class="image-input image-input-outline image-input-placeholder" data-kt-image-input="true">
-                                                                <!--begin::Preview existing avatar-->
-                                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/300-6.jpg);"></div>
-                                                                <!--end::Preview existing avatar-->
-                                                                <!--begin::Label-->
-                                                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
-                                                                    <i class="ki-duotone ki-pencil fs-7">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                    </i>
-                                                                    <!--begin::Inputs-->
-                                                                    <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                                                                    <input type="hidden" name="avatar_remove" />
-                                                                    <!--end::Inputs-->
-                                                                </label>
-                                                                <!--end::Label-->
-                                                                <!--begin::Cancel-->
-                                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
-                                                                    <i class="ki-duotone ki-cross fs-2">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                    </i>
-                                                                </span>
-                                                                <!--end::Cancel-->
-                                                                <!--begin::Remove-->
-                                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
-                                                                    <i class="ki-duotone ki-cross fs-2">
-                                                                        <span class="path1"></span>
-                                                                        <span class="path2"></span>
-                                                                    </i>
-                                                                </span>
-                                                                <!--end::Remove-->
-                                                            </div>
-                                                            <!--end::Image input-->
-                                                            <!--begin::Hint-->
-                                                            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
-                                                            <!--end::Hint-->
+                                                            <label class="required fw-semibold fs-6 mb-2">Selecione a un empleado </label>
+                                                            <select id="kt_docs_select2_rich_content" class="form-select form-select-transparent" name="..." data-placeholder="...">
+                                                                <option value="0" data-kt-rich-content-subcontent="..." data-kt-rich-content-icon="assets/media/avatars/300-6.jpg">Option Label 1</option>
+                                                                <option value="1" data-kt-rich-content-subcontent="..." data-kt-rich-content-icon="assets/media/avatars/300-6.jpg">Option Label 1</option>
+                                                                ...
+                                                            </select>
                                                         </div>
-                                                        <!--end::Input group-->
                                                         <!--begin::Input group-->
                                                         <div class="fv-row mb-7">
                                                             <!--begin::Label-->
@@ -798,5 +750,36 @@
         <!--end::Content wrapper-->
     </x-default-layout>
 </body>
+<script>
+    // Format options
+    const optionFormat = (item) => {
+        if (!item.id) {
+            return item.text;
+        }
+
+        var span = document.createElement('span');
+        var template = '';
+
+        template += '<div class="d-flex align-items-center">';
+        template += '<img src="' + item.element.getAttribute('data-kt-rich-content-icon') + '" class="rounded-circle h-40px me-3" alt="' + item.text + '"/>';
+        template += '<div class="d-flex flex-column">'
+        template += '<span class="fs-4 fw-bold lh-1">' + item.text + '</span>';
+        template += '<span class="text-muted fs-5">' + item.element.getAttribute('data-kt-rich-content-subcontent') + '</span>';
+        template += '</div>';
+        template += '</div>';
+
+        span.innerHTML = template;
+
+        return $(span);
+    }
+
+    // Init Select2 --- more info: https://select2.org/
+    $('#kt_docs_select2_rich_content').select2({
+        placeholder: "Select an option",
+        minimumResultsForSearch: Infinity,
+        templateSelection: optionFormat,
+        templateResult: optionFormat
+    });
+</script>
 
 </html>
