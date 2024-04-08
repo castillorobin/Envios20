@@ -350,25 +350,6 @@
                                     </div>
                                     <!--end::Radio-->
                                 </div>
-                                <!--end::Input row-->
-                                <div class='separator separator-dashed my-5'></div>
-                                <!--begin::Input row-->
-                                <div class="d-flex fv-row">
-                                    <!--begin::Radio-->
-                                    <div class="form-check form-check-custom form-check-solid">
-                                        <!--begin::Input-->
-                                        <input class="form-check-input me-3" name="user_role" type="radio" value="1" id="kt_modal_update_role_option_1" />
-                                        <!--end::Input-->
-                                        <!--begin::Label-->
-                                        <label class="form-check-label" for="kt_modal_update_role_option_1">
-                                            <div class="fw-bold text-gray-800">Developer</div>
-                                            <div class="text-gray-600">Best for developers or people primarily using the API</div>
-                                        </label>
-                                        <!--end::Label-->
-                                    </div>
-                                    <!--end::Radio-->
-                                </div>
-                                <!--end::Input row-->
                                 <div class='separator separator-dashed my-5'></div>
                                 <!--begin::Input row-->
                                 <div class="d-flex fv-row">
@@ -379,7 +360,7 @@
                                         <!--end::Input-->
                                         <!--begin::Label-->
                                         <label class="form-check-label" for="kt_modal_update_role_option_2">
-                                            <div class="fw-bold text-gray-800">Analyst</div>
+                                            <div class="fw-bold text-gray-800">Gerente general</div>
                                             <div class="text-gray-600">Best for people who need full access to analytics data, but don't need to update business settings</div>
                                         </label>
                                         <!--end::Label-->
@@ -397,7 +378,7 @@
                                         <!--end::Input-->
                                         <!--begin::Label-->
                                         <label class="form-check-label" for="kt_modal_update_role_option_3">
-                                            <div class="fw-bold text-gray-800">Support</div>
+                                            <div class="fw-bold text-gray-800">Gerente financiero</div>
                                             <div class="text-gray-600">Best for employees who regularly refund payments and respond to disputes</div>
                                         </label>
                                         <!--end::Label-->
@@ -415,7 +396,115 @@
                                         <!--end::Input-->
                                         <!--begin::Label-->
                                         <label class="form-check-label" for="kt_modal_update_role_option_4">
-                                            <div class="fw-bold text-gray-800">Trial</div>
+                                            <div class="fw-bold text-gray-800">jefe de digitado </div>
+                                            <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_4">
+                                            <div class="fw-bold text-gray-800">Jefe de atencion al cliente</div>
+                                            <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_4">
+                                            <div class="fw-bold text-gray-800">Cajero</div>
+                                            <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_4">
+                                            <div class="fw-bold text-gray-800">Digitador</div>
+                                            <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_4">
+                                            <div class="fw-bold text-gray-800">Atencion al cliente</div>
+                                            <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_4">
+                                            <div class="fw-bold text-gray-800">Operario</div>
+                                            <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
+                                        </label>
+                                        <!--end::Label-->
+                                    </div>
+                                    <!--end::Radio-->
+                                </div>
+                                <!--end::Input row-->
+                                <div class='separator separator-dashed my-5'></div>
+                                <!--begin::Input row-->
+                                <div class="d-flex fv-row">
+                                    <!--begin::Radio-->
+                                    <div class="form-check form-check-custom form-check-solid">
+                                        <!--begin::Input-->
+                                        <input class="form-check-input me-3" name="user_role" type="radio" value="4" id="kt_modal_update_role_option_4" />
+                                        <!--end::Input-->
+                                        <!--begin::Label-->
+                                        <label class="form-check-label" for="kt_modal_update_role_option_4">
+                                            <div class="fw-bold text-gray-800">Repartidor</div>
                                             <div class="text-gray-600">Best for people who need to preview content data, but don't need to make any updates</div>
                                         </label>
                                         <!--end::Label-->
@@ -427,27 +516,18 @@
                             </div>
                             <!--end::Input group-->
                             <!--begin::Notice-->
-                            <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed p-6">
-                                <!--begin::Icon-->
-                                <i class="ki-duotone ki-shield-tick fs-2tx text-primary me-4">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>
-                                <!--end::Icon-->
-                                <!--begin::Wrapper-->
-                                <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
-                                    <!--begin::Content-->
-                                    <div class="mb-3 mb-md-0 fw-semibold">
-                                        <h4 class="text-gray-900 fw-bold">Secure Your Account</h4>
-                                        <div class="fs-6 text-gray-700 pe-7">Two-factor authentication adds an extra layer of security to your account. To log in, in addition you'll need to provide a 6 digit code</div>
-                                    </div>
-                                    <!--end::Content-->
-                                    <!--begin::Action-->
-                                    <a href="#" class="btn btn-primary px-6 align-self-center text-nowrap" data-bs-toggle="modal" data-bs-target="#kt_modal_two_factor_authentication">Crear usuario</a>
-                                    <!--end::Action-->
+                            <!--begin::Wrapper-->
+                            <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
+                                <!--begin::Content-->
+                                <div class="mb-3 mb-md-0 fw-semibold">
                                 </div>
-                                <!--end::Wrapper-->
+                                <!--end::Content-->
+                                <!--begin::Action-->
+                                <a href="#" class="btn btn-primary px-6 align-self-center text-nowrap" data-bs-toggle="modal" data-bs-target="#kt_modal_two_factor_authentication">Crear usuario</a>
+                                <!--end::Action-->
                             </div>
+                            <!--end::Wrapper-->
+
                             <!--end::Notice-->
                         </div>
                         <!--end::Card body-->

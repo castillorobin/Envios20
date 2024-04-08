@@ -6,7 +6,7 @@
     <base href="../" />
     <title>Metronic - The World's #1 Selling Bootstrap Admin Template by Keenthemes</title>
     <meta charset="utf-8" />
-  
+
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
@@ -110,9 +110,6 @@
                             </li>
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/empleados/editar/{{$empleado[0]->id}}">Editar</a>
-                            </li>
-                            <li class="nav-item mt-2">
-                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Logs</a>
                             </li>
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/faltas/listafaltas">Historial de faltas</a>
@@ -274,14 +271,14 @@
                 <!--begin::Sign-in Method-->
                 <div class="card mb-5 mb-xl-10">
                     <!--begin::Card header-->
-                    <div class="card-header border-0 cursor-pointer"  >
+                    <div class="card-header border-0 cursor-pointer">
                         <div class="card-title m-0">
                             <h3 class="fw-bold m-0">Informacion del usuario</h3>
                         </div>
                     </div>
                     <!--end::Card header-->
                     <!--begin::Content-->
-                    <div >
+                    <div>
                         <!--begin::Card body-->
                         <div class="card-body border-top p-9">
                             <!--begin::Email Address-->
@@ -307,6 +304,19 @@
                                 <!--end::Label-->
                             </div>
                             <!--end::Password-->
+                            <!--begin::Separator-->
+                            <div class="separator separator-dashed my-6"></div>
+                            <!--end::Separator-->
+                            <!--begin::Password-->
+                            <div class="d-flex flex-wrap align-items-center mb-10">
+                                <!--begin::Label-->
+                                <div id="kt_signin_password">
+                                    <div class="fs-6 fw-bold mb-1">Role</div>
+                                    <div class="fw-semibold text-gray-600">Administrator</div>
+                                </div>
+                                <!--end::Label-->
+                            </div>
+                            <!--end::Password-->
                         </div>
                         <!--end::Card body-->
                     </div>
@@ -322,7 +332,7 @@
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
 
- 
+
 </body>
 
 </html>
