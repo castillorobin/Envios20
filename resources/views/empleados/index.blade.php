@@ -264,6 +264,8 @@
                                                 <td class="text-star"><span class="badge badge-light-success">{{ $vendedores[$i]->estado }}</span></td>
                                                 @elseif($vendedores[$i]->estado == 'Baja')
                                                 <td class="text-star"><span class="badge badge-light-danger">{{ $vendedores[$i]->estado }}</span></td>
+                                                @elseif($vendedores[$i]->estado == '')
+                                                <td class="text-star"><span class="badge badge-light-danger"></span></td>
                                                 @endif
                                                 <td class="text-star"><span class="badge badge-light-success">Activa</span></td>
                                                 </tr>
