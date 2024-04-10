@@ -50,7 +50,9 @@
                                         <div class="row">
                                             <div class="col-lg-6 mb-2">
                                                 <div class="d-flex align-items-center">
-                                                    <a href="#" class="text-gray-900 text-hover-primary fs-3 fw-bold me-1">{{$empleado[0]->nombre}}</a>
+                                                    <a href="#" class="text-gray-900 text-hover-primary fs-3 fw-bold me-1" style="white-space: nowrap;">
+                                                        {{$empleado[0]->nombre}}
+                                                    </a>
                                                     <a href="#">
                                                         <i class="ki-duotone ki-verify fs-1 text-primary">
                                                             <span class="path1"></span>
