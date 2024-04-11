@@ -4,7 +4,8 @@
 
 <head>
     <base href="../" />
-    <title>Metronic - The World's #1 Selling Bootstrap Admin Template by Keenthemes</title>
+    <link rel="icon" type="image/png" href="{{ asset('fotos/logo.png') }}">
+    <title>Melo Express</title>
     <meta charset="utf-8" />
 
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
