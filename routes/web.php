@@ -25,7 +25,7 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('usuario', UsuarioController::class);
 });
 
-
+Route::get('usuarios/lista', [App\Http\Controllers\UsuarioController::class, 'index'] )->name('indexuser') ;
 
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
 
@@ -85,9 +85,11 @@ Route::get('/faltas/listafaltas', function () {
 Route::get('/comercio', function () {
     return view('comercio.index');
 });
+/*
 Route::get('/usuarios/lista', function () {
     return view('usuarios.usuariolista');
 });
+*/
 Route::get('/usuarios/view', function () {
     return view('usuarios.usuerview');
 });

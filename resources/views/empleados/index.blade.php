@@ -168,7 +168,7 @@
                                             @for ($i = 0; $i < count($vendedores); $i++) <tr>
                                                 <td><a href="/empleados/{{ $vendedores[$i]->id }}" class="text-gray-900 text-hover-primary">{{ ($vendedores[$i]->id < 10) ? '#000' . $vendedores[$i]->id : '#00' . $vendedores[$i]->id }}</a></td>
                                                 <td>{{ $vendedores[$i]->nombre }}</td>
-                                                <td>{{ $vendedores[$i]->telefono }}</td>
+                                                <td>{{ $vendedores[$i]->telefono }}</td> 
                                                 <td>{{ $vendedores[$i]->whatsapp }}</td>
                                                 <td>{{ $vendedores[$i]->direccion }}</td>
 

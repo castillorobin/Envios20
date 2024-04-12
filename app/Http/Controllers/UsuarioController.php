@@ -5,6 +5,14 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+//viene de Spatie
+//use App\Http\Controllers\Controller;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Arr;
+
 class UsuarioController extends Controller
 {
     /**
@@ -12,7 +20,10 @@ class UsuarioController extends Controller
      */
     public function index()
     {
-        //
+        
+        $usuarios = User::all();
+        return view('usuarios.usuariolista',compact('usuarios')); 
+
     }
 
     /**
