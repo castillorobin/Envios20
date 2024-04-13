@@ -85,7 +85,7 @@ class RolController extends Controller
     
         $role->syncPermissions($request->input('permission'));
     
-        return redirect()->route('roles.index');
+        return redirect()->route('usuarios.roleview');
     }
 
     /**
@@ -94,6 +94,6 @@ class RolController extends Controller
     public function destroy(string $id)
     {
         DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('roles.index');      
+        return redirect()->route('usuarios.roleview');      
     }
 }
