@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Empleado;
 
 //viene de Spatie
 //use App\Http\Controllers\Controller;
@@ -22,7 +23,8 @@ class UsuarioController extends Controller
     {
         $roles = Role::pluck('name','name')->all();
         $usuarios = User::all();
-        return view('usuarios.usuariolista',compact('usuarios', 'roles')); 
+        $empleados = Empleado::all();
+        return view('usuarios.usuariolista',compact('usuarios', 'roles', 'empleados')); 
 
     }
 
