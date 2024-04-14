@@ -290,7 +290,9 @@
                                             <!--begin::Modal body-->
                                             <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                                 <!--begin::Form-->
-                                                <form id="kt_modal_add_user_form" class="form" action="#">
+                                                <form id="kt_modal_add_user_form" class="form" action="/guardaruser" method="POST" >
+                                                @csrf
+                                                @method('GET')
                                                     <!--begin::Scroll-->
 
                                                     <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
@@ -331,7 +333,7 @@
                                                                 <!--end::Label-->
                                                                 <!--begin::Input wrapper-->
                                                                 <div class="position-relative mb-3">
-                                                                    <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="new_password" autocomplete="off" />
+                                                                    <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="password" autocomplete="off" />
                                                                     <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                                                         <i class="ki-duotone ki-eye-slash fs-1">
                                                                             <span class="path1"></span>
@@ -407,10 +409,12 @@
                                                     <!--begin::Actions-->
                                                     <div class="text-center pt-15">
                                                         <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancerlar</button>
-                                                        <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+                                                        <button type="submit" class="btn btn-primary" >
                                                             <span class="indicator-label">Crear</span>
+                                                            <!--
                                                             <span class="indicator-progress">Porfavor espere...
                                                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                                -->
                                                         </button>
                                                     </div>
                                                     <!--end::Actions-->

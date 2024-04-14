@@ -21,9 +21,11 @@ class RolController extends Controller
      * Display a listing of the resource.
      */
     public function index()
+
     {
+        $permission = Permission::get();
         $roles = Role::all();
-        return view('usuarios.roleview', compact('roles'));
+        return view('usuarios.rolelist', compact('roles', 'permission'));
     }
 
     /**
@@ -41,6 +43,15 @@ class RolController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, ['name' => 'required', 'permission' => 'required']);
+        $role = Role::create(['name' => $request->input('name')]);
+        $role->syncPermissions($request->input('permission'));
+
+        return redirect()->route('roles.index');
+    }
+
+    public function guardarol(Request $request)
+    {
+        //$this->validate($request, ['name' => 'required', 'permission' => 'required']);
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
@@ -94,6 +105,6 @@ class RolController extends Controller
     public function destroy(string $id)
     {
         DB::table("roles")->where('id',$id)->delete();
-        return redirect()->route('usuarios.roleview');      
+        return redirect()->route('usuarios.roleview');       
     }
 }

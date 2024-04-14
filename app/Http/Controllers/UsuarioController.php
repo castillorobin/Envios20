@@ -42,13 +42,14 @@ class UsuarioController extends Controller
      */
     public function store(Request $request)
     {
+        /*
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
-    
+    */
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
@@ -56,6 +57,26 @@ class UsuarioController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('usuarios.usuariolista');
+    }
+
+
+    public function guardaru(Request $request)
+    {
+        /*
+        $this->validate($request, [
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|same:confirm-password',
+            'roles' => 'required'
+        ]);
+    */
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+    
+        $user = User::create($input);
+        $user->assignRole($request->input('roles'));
+    
+        return redirect()->route('usuario.index');
     }
 
     /**

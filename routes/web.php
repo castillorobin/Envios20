@@ -25,7 +25,13 @@ Route::group(['middleware' => ['auth']], function(){
     Route::resource('usuario', UsuarioController::class);
 });
 
+Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
+Route::get('/guardarol', [App\Http\Controllers\RolController::class, 'guardarol'] )->name('guardarol') ;
+
 Route::get('usuarios/lista', [App\Http\Controllers\UsuarioController::class, 'index'] )->name('indexuser') ;
+
+
+Route::get('/usuarios/role', [App\Http\Controllers\RolController::class, 'index'] )->name('indexrol') ;
 
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
 
@@ -93,9 +99,7 @@ Route::get('/usuarios/lista', function () {
 Route::get('/usuarios/view', function () {
     return view('usuarios.usuerview');
 });
-Route::get('/usuarios/role', function () {
-    return view('usuarios.rolelist');
-});
+
 Route::get('/usuarios/roleview', function () {
     return view('usuarios.roleview');
 });
