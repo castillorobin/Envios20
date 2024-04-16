@@ -670,7 +670,7 @@
                                         <!--end::Scroll-->
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
-                                            <button type="reset" class="btn btn-light me-3" data-kt-roles-modal-action="cancel">Discard</button>
+                                            <button type="reset" class="btn btn-light me-3" data-kt-roles-modal-action="cancel">Cancelar</button>
                                             <button type="submit" class="btn btn-primary">
                                                 <span class="indicator-label">Crear</span>
                                                 
@@ -698,7 +698,7 @@
                                 <!--begin::Modal header-->
                                 <div class="modal-header">
                                     <!--begin::Modal title-->
-                                    <h2 class="fw-bold">Update Role</h2>
+                                    <h2 class="fw-bold">Actualizar rol</h2>
                                     <!--end::Modal title-->
                                     <!--begin::Close-->
                                     <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-roles-modal-action="close">
@@ -720,18 +720,18 @@
                                             <div class="fv-row mb-10">
                                                 <!--begin::Label-->
                                                 <label class="fs-5 fw-bold form-label mb-2">
-                                                    <span class="required">Role name</span>
+                                                    <span class="required">Nombre del rol</span>
                                                 </label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <input class="form-control form-control-solid" placeholder="Enter a role name" name="role_name" value="Developer" />
+                                                <input class="form-control form-control-solid" placeholder="Introduzca un nombre de función" name="role_name" value="Developer" />
                                                 <!--end::Input-->
                                             </div>
                                             <!--end::Input group-->
                                             <!--begin::Permissions-->
                                             <div class="fv-row">
                                                 <!--begin::Label-->
-                                                <label class="fs-5 fw-bold form-label mb-2">Role Permissions</label>
+                                                <label class="fs-5 fw-bold form-label mb-2">Permisos de rol</label>
                                                 <!--end::Label-->
                                                 <!--begin::Table wrapper-->
                                                 <div class="table-responsive">
@@ -970,10 +970,10 @@
                                         <!--end::Scroll-->
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
-                                            <button type="reset" class="btn btn-light me-3" data-kt-roles-modal-action="cancel">Discard</button>
+                                            <button type="reset" class="btn btn-light me-3" data-kt-roles-modal-action="cancel">Cancelar</button>
                                             <button type="submit" class="btn btn-primary" data-kt-roles-modal-action="submit">
-                                                <span class="indicator-label">Submit</span>
-                                                <span class="indicator-progress">Please wait...
+                                                <span class="indicator-label">Aplicar</span>
+                                                <span class="indicator-progress">Espere por favor...
                                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                             </button>
                                         </div>

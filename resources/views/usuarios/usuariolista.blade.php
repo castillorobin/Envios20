@@ -290,16 +290,75 @@
                                             <!--begin::Modal body-->
                                             <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                                 <!--begin::Form-->
-                                                <form id="kt_modal_add_user_form" class="form" action="/guardaruser" method="POST" >
-                                                @csrf
-                                                @method('GET')
+                                                <form id="kt_modal_add_user_form" class="form" action="/guardaruser" method="POST">
+
+                                                    @csrf
+                                                    @method('GET')
                                                     <!--begin::Scroll-->
 
+
                                                     <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_add_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_add_user_header" data-kt-scroll-wrappers="#kt_modal_add_user_scroll" data-kt-scroll-offset="300px">
+
+                                                        <!--begin::Input group-->
+                                                        <div class="fv-row mb-7">
+                                                            <!--begin::Label-->
+                                                            <label class="d-block fw-semibold fs-6 mb-5">Avatar</label>
+                                                            <!--end::Label-->
+                                                            <!--begin::Image placeholder-->
+                                                            <style>
+                                                                .image-input-placeholder {
+                                                                    background-image: url('assets/media/svg/files/blank-image.svg');
+                                                                }
+
+                                                                [data-bs-theme="dark"] .image-input-placeholder {
+                                                                    background-image: url('assets/media/svg/files/blank-image-dark.svg');
+                                                                }
+                                                            </style>
+                                                            <!--end::Image placeholder-->
+                                                            <!--begin::Image input-->
+                                                            <div class="image-input image-input-outline image-input-placeholder" data-kt-image-input="true">
+                                                                <!--begin::Preview existing avatar-->
+                                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/300-6.jpg);"></div>
+                                                                <!--end::Preview existing avatar-->
+                                                                <!--begin::Label-->
+                                                                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                                                    <i class="ki-duotone ki-pencil fs-7">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                    <!--begin::Inputs-->
+                                                                    <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                                                    <input type="hidden" name="avatar_remove" />
+                                                                    <!--end::Inputs-->
+                                                                </label>
+                                                                <!--end::Label-->
+                                                                <!--begin::Cancel-->
+                                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                                                    <i class="ki-duotone ki-cross fs-2">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                </span>
+                                                                <!--end::Cancel-->
+                                                                <!--begin::Remove-->
+                                                                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                                                    <i class="ki-duotone ki-cross fs-2">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                </span>
+                                                                <!--end::Remove-->
+                                                            </div>
+                                                            <!--end::Image input-->
+                                                            <!--begin::Hint-->
+                                                            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                                            <!--end::Hint-->
+                                                        </div>
+
                                                         <div class="fv-row mb-7">
                                                             <label class="required fw-semibold fs-6 mb-2">Selecione un empleado</label>
                                                             <select class="form-select form-select-transparent" name="name" onchange="valor()" id="name" data-placeholder="...">
-                                                                
+
                                                                 @foreach ($empleados as $empleado)
                                                                 <option value="{{$empleado->nombre}}">{{ $empleado->nombre }} </option>
                                                                 @endforeach
@@ -307,13 +366,14 @@
 
                                                             @foreach ($empleados as $empleado)
                                                             <input hidden id="ema{{$empleado->nombre}}" value="{{ $empleado->correo }} ">
-                                                                
-                                                                    @endforeach        
+
+                                                            @endforeach
 
                                                         </div>
                                                         <!--begin::Input group-->
-                                                        
+
                                                         <!--end::Input group-->
+
                                                         <!--begin::Input group-->
                                                         <div class="fv-row mb-7">
                                                             <!--begin::Label-->
@@ -378,7 +438,7 @@
                                                             <!--begin::Input row-->
 
                                                             @foreach ($roles as $rol)
-                                                            
+
                                                             <div class="d-flex fv-row">
                                                                 <!--begin::Radio-->
                                                                 <div class="form-check form-check-custom form-check-solid">
@@ -388,7 +448,7 @@
                                                                     <!--begin::Label-->
                                                                     <label class="form-check-label" for="kt_modal_update_role_option_0">
                                                                         <div class="fw-bold text-gray-800">{{ $rol}}</div>
-                                                                        
+
                                                                     </label>
                                                                     <!--end::Label-->
                                                                 </div>
@@ -397,7 +457,7 @@
                                                             <!--end::Input row-->
                                                             <div class='separator separator-dashed my-5'></div>
 
-                                                            @endforeach 
+                                                            @endforeach
 
 
 
@@ -409,7 +469,7 @@
                                                     <!--begin::Actions-->
                                                     <div class="text-center pt-15">
                                                         <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancerlar</button>
-                                                        <button type="submit" class="btn btn-primary" >
+                                                        <button type="submit" class="btn btn-primary">
                                                             <span class="indicator-label">Crear</span>
                                                             <!--
                                                             <span class="indicator-progress">Porfavor espere...
@@ -444,16 +504,15 @@
                                             </div>
                                         </th>
                                         <th class="min-w-100px">Usuario</th>
-                                        <th class="min-w-100px">Rol</th>
-                                        <th class="min-w-100px">Ultimo acceso</th>
-                                        <th class="min-w-100px">Sesion</th>
-                                        <th class="min-w-100px">Fecha De Incorporación</th>
-                                        <th class="text-center min-w-100px">Acciones</th>
+                                        <th class="min-w-50px">Rol</th>
+                                        <th class="min-w-50p0px">Ultimo acceso</th>
+                                        <th class="min-w-50p0px">Sesion</th>
+                                        <th class="min-w-50p0px">Fecha De Incorporación</th>
+                                        <th class="text-center min-w-50p0px">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody class="text-gray-600 fw-semibold">
-                                @for ($i = 0; $i < count($usuarios); $i++) 
-                                    <tr>
+                                    @for ($i = 0; $i < count($usuarios); $i++) <tr>
                                         <td>
                                             <div class="form-check form-check-sm form-check-custom form-check-solid">
                                                 <input class="form-check-input" type="checkbox" value="1" />
@@ -476,12 +535,12 @@
                                             </div>
                                             <!--begin::User details-->
                                         </td>
-                                        <td>  
+                                        <td>
                                             @if(!empty($usuarios[$i]->getRoleNames()))
-                                        @foreach($usuarios[$i]->getRoleNames() as $rolNombre)                                       
-                                          <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
-                                        @endforeach
-                                      @endif
+                                            @foreach($usuarios[$i]->getRoleNames() as $rolNombre)
+                                            <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
+                                            @endforeach
+                                            @endif
                                         </td>
                                         <td>
                                             <div class="badge badge-light fw-bold">Yesterday</div>
@@ -508,8 +567,8 @@
                                             </div>
                                             <!--end::Menu-->
                                         </td>
-                                    </tr>
-                                    @endfor
+                                        </tr>
+                                        @endfor
                                 </tbody>
                             </table>
                             <!--end::Table-->
@@ -532,16 +591,15 @@
 
 <script>
     function valor() {
-       
-        nombre =  document.getElementById("name").value;
-    
-        nom=document.getElementById("ema" + nombre).value;
-    
+
+        nombre = document.getElementById("name").value;
+
+        nom = document.getElementById("ema" + nombre).value;
+
         document.getElementById("email").value = nom;
-       
+
     }
-    
-    </script>
+</script>
 
 <!--begin::Global Javascript Bundle(mandatory for all pages)-->
 <script src="assets/plugins/global/plugins.bundle.js"></script>

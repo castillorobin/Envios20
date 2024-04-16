@@ -40,7 +40,7 @@
                     <!--begin::Page title-->
                     <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                         <!--begin::Title-->
-                        <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">View User Details</h1>
+                        <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Detalles del usuario</h1>
                         <!--end::Title-->
                         <!--begin::Breadcrumb-->
                         <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -55,7 +55,7 @@
                             </li>
                             <!--end::Item-->
                             <!--begin::Item-->
-                            <li class="breadcrumb-item text-muted">User Management</li>
+                            <li class="breadcrumb-item text-muted">Gestión de usuarios</li>
                             <!--end::Item-->
                             <!--begin::Item-->
                             <li class="breadcrumb-item">
@@ -63,108 +63,13 @@
                             </li>
                             <!--end::Item-->
                             <!--begin::Item-->
-                            <li class="breadcrumb-item text-muted">Users</li>
+                            <li class="breadcrumb-item text-muted">Usuarios</li>
                             <!--end::Item-->
                         </ul>
                         <!--end::Breadcrumb-->
                     </div>
                     <!--end::Page title-->
-                    <!--begin::Actions-->
-                    <div class="d-flex align-items-center gap-2 gap-lg-3">
-                        <!--begin::Filter menu-->
-                        <div class="m-0">
-                            <!--begin::Menu toggle-->
-                            <a href="#" class="btn btn-sm btn-flex bg-body btn-color-gray-700 btn-active-color-primary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                <i class="ki-duotone ki-filter fs-6 text-muted me-1">
-                                    <span class="path1"></span>
-                                    <span class="path2"></span>
-                                </i>Filter</a>
-                            <!--end::Menu toggle-->
-                            <!--begin::Menu 1-->
-                            <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_641ac41f2381a">
-                                <!--begin::Header-->
-                                <div class="px-7 py-5">
-                                    <div class="fs-5 text-dark fw-bold">Filter Options</div>
-                                </div>
-                                <!--end::Header-->
-                                <!--begin::Menu separator-->
-                                <div class="separator border-gray-200"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Form-->
-                                <div class="px-7 py-5">
-                                    <!--begin::Input group-->
-                                    <div class="mb-10">
-                                        <!--begin::Label-->
-                                        <label class="form-label fw-semibold">Status:</label>
-                                        <!--end::Label-->
-                                        <!--begin::Input-->
-                                        <div>
-                                            <select class="form-select form-select-solid" data-kt-select2="true" data-placeholder="Select option" data-dropdown-parent="#kt_menu_641ac41f2381a" data-allow-clear="true">
-                                                <option></option>
-                                                <option value="1">Approved</option>
-                                                <option value="2">Pending</option>
-                                                <option value="2">In Process</option>
-                                                <option value="2">Rejected</option>
-                                            </select>
-                                        </div>
-                                        <!--end::Input-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Input group-->
-                                    <div class="mb-10">
-                                        <!--begin::Label-->
-                                        <label class="form-label fw-semibold">Member Type:</label>
-                                        <!--end::Label-->
-                                        <!--begin::Options-->
-                                        <div class="d-flex">
-                                            <!--begin::Options-->
-                                            <label class="form-check form-check-sm form-check-custom form-check-solid me-5">
-                                                <input class="form-check-input" type="checkbox" value="1" />
-                                                <span class="form-check-label">Author</span>
-                                            </label>
-                                            <!--end::Options-->
-                                            <!--begin::Options-->
-                                            <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                <input class="form-check-input" type="checkbox" value="2" checked="checked" />
-                                                <span class="form-check-label">Customer</span>
-                                            </label>
-                                            <!--end::Options-->
-                                        </div>
-                                        <!--end::Options-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Input group-->
-                                    <div class="mb-10">
-                                        <!--begin::Label-->
-                                        <label class="form-label fw-semibold">Notifications:</label>
-                                        <!--end::Label-->
-                                        <!--begin::Switch-->
-                                        <div class="form-check form-switch form-switch-sm form-check-custom form-check-solid">
-                                            <input class="form-check-input" type="checkbox" value="" name="notifications" checked="checked" />
-                                            <label class="form-check-label">Enabled</label>
-                                        </div>
-                                        <!--end::Switch-->
-                                    </div>
-                                    <!--end::Input group-->
-                                    <!--begin::Actions-->
-                                    <div class="d-flex justify-content-end">
-                                        <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-menu-dismiss="true">Reset</button>
-                                        <button type="submit" class="btn btn-sm btn-primary" data-kt-menu-dismiss="true">Apply</button>
-                                    </div>
-                                    <!--end::Actions-->
-                                </div>
-                                <!--end::Form-->
-                            </div>
-                            <!--end::Menu 1-->
-                        </div>
-                        <!--end::Filter menu-->
-                        <!--begin::Secondary button-->
-                        <!--end::Secondary button-->
-                        <!--begin::Primary button-->
-                        <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">Create</a>
-                        <!--end::Primary button-->
-                    </div>
-                    <!--end::Actions-->
+
                 </div>
                 <!--end::Toolbar container-->
             </div>
@@ -199,63 +104,13 @@
                                             <!--begin::Badge-->
                                         </div>
                                         <!--end::Position-->
-                                        <!--begin::Info-->
-                                        <!--begin::Info heading-->
-                                        <div class="fw-bold mb-3">Assigned Tickets
-                                            <span class="ms-2" ddata-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="Number of support tickets assigned, closed and pending this week.">
-                                                <i class="ki-duotone ki-information fs-7">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                    <span class="path3"></span>
-                                                </i>
-                                            </span>
-                                        </div>
-                                        <!--end::Info heading-->
-                                        <div class="d-flex flex-wrap flex-center">
-                                            <!--begin::Stats-->
-                                            <div class="border border-gray-300 border-dashed rounded py-3 px-3 mb-3">
-                                                <div class="fs-4 fw-bold text-gray-700">
-                                                    <span class="w-75px">243</span>
-                                                    <i class="ki-duotone ki-arrow-up fs-3 text-success">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>
-                                                </div>
-                                                <div class="fw-semibold text-muted">Total</div>
-                                            </div>
-                                            <!--end::Stats-->
-                                            <!--begin::Stats-->
-                                            <div class="border border-gray-300 border-dashed rounded py-3 px-3 mx-4 mb-3">
-                                                <div class="fs-4 fw-bold text-gray-700">
-                                                    <span class="w-50px">56</span>
-                                                    <i class="ki-duotone ki-arrow-down fs-3 text-danger">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>
-                                                </div>
-                                                <div class="fw-semibold text-muted">Solved</div>
-                                            </div>
-                                            <!--end::Stats-->
-                                            <!--begin::Stats-->
-                                            <div class="border border-gray-300 border-dashed rounded py-3 px-3 mb-3">
-                                                <div class="fs-4 fw-bold text-gray-700">
-                                                    <span class="w-50px">188</span>
-                                                    <i class="ki-duotone ki-arrow-up fs-3 text-success">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                    </i>
-                                                </div>
-                                                <div class="fw-semibold text-muted">Open</div>
-                                            </div>
-                                            <!--end::Stats-->
-                                        </div>
-                                        <!--end::Info-->
+
                                     </div>
                                     <!--end::User Info-->
                                     <!--end::Summary-->
                                     <!--begin::Details toggle-->
                                     <div class="d-flex flex-stack fs-4 py-3">
-                                        <div class="fw-bold rotate collapsible" data-bs-toggle="collapse" href="#kt_user_view_details" role="button" aria-expanded="false" aria-controls="kt_user_view_details">Details
+                                        <div class="fw-bold rotate collapsible" data-bs-toggle="collapse" href="#kt_user_view_details" role="button" aria-expanded="false" aria-controls="kt_user_view_details">Detalles
                                             <span class="ms-2 rotate-180">
                                                 <i class="ki-duotone ki-down fs-3"></i>
                                             </span>
@@ -309,12 +164,12 @@
                             <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8">
                                 <!--begin:::Tab item-->
                                 <li class="nav-item">
-                                    <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Overview</a>
+                                    <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">actividades</a>
                                 </li>
                                 <!--end:::Tab item-->
                                 <!--begin:::Tab item-->
                                 <li class="nav-item">
-                                    <a class="nav-link text-active-primary pb-4" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_user_view_overview_security">Security</a>
+                                    <a class="nav-link text-active-primary pb-4" data-kt-countup-tabs="true" data-bs-toggle="tab" href="#kt_user_view_overview_security">Seguridad</a>
                                 </li>
                                 <!--end:::Tab item-->
                                 <!--begin:::Tab item-->
@@ -325,7 +180,7 @@
                                 <!--begin:::Tab item-->
                                 <li class="nav-item ms-auto">
                                     <!--begin::Action menu-->
-                                    <a href="#" class="btn btn-primary ps-7" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">Actions
+                                    <a href="#" class="btn btn-primary ps-7" data-kt-menu-trigger="click" data-kt-menu-attach="parent" data-kt-menu-placement="bottom-end">Acciones
                                         <i class="ki-duotone ki-down fs-2 me-0"></i></a>
                                     <!--begin::Menu-->
                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-semibold py-4 w-250px fs-6" data-kt-menu="true">
@@ -435,8 +290,8 @@
                                         <div class="card-header mt-6">
                                             <!--begin::Card title-->
                                             <div class="card-title flex-column">
-                                                <h2 class="mb-1">User's Schedule</h2>
-                                                <div class="fs-6 fw-semibold text-muted">2 upcoming meetings</div>
+                                                <h2 class="mb-1">Horario del usuario</h2>
+                                                <div class="fs-6 fw-semibold text-muted">2 próximas reuniones</div>
                                             </div>
                                             <!--end::Card title-->
                                             <!--begin::Card toolbar-->
@@ -445,7 +300,7 @@
                                                     <i class="ki-duotone ki-brush fs-3">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
-                                                    </i>Add Schedule</button>
+                                                    </i>Agregar horario </button>
                                             </div>
                                             <!--end::Card toolbar-->
                                         </div>
@@ -1703,14 +1558,19 @@
                                         <!--end::Card body-->
                                     </div>
                                     <!--end::Card-->
+
+
+
+
+
                                     <!--begin::Tasks-->
                                     <div class="card card-flush mb-6 mb-xl-9">
                                         <!--begin::Card header-->
                                         <div class="card-header mt-6">
                                             <!--begin::Card title-->
                                             <div class="card-title flex-column">
-                                                <h2 class="mb-1">User's Tasks</h2>
-                                                <div class="fs-6 fw-semibold text-muted">Total 25 tasks in backlog</div>
+                                                <h2 class="mb-1">Tarea del usuario</h2>
+                                                <div class="fs-6 fw-semibold text-muted">Total de 25 tareas pendientes</div>
                                             </div>
                                             <!--end::Card title-->
                                             <!--begin::Card toolbar-->
@@ -1720,13 +1580,14 @@
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
                                                         <span class="path3"></span>
-                                                    </i>Add Task</button>
+                                                    </i>Agregar tarea</button>
                                             </div>
                                             <!--end::Card toolbar-->
                                         </div>
                                         <!--end::Card header-->
                                         <!--begin::Card body-->
                                         <div class="card-body d-flex flex-column">
+
                                             <!--begin::Item-->
                                             <div class="d-flex align-items-center position-relative mb-7">
                                                 <!--begin::Label-->
@@ -1734,10 +1595,10 @@
                                                 <!--end::Label-->
                                                 <!--begin::Details-->
                                                 <div class="fw-semibold ms-5">
-                                                    <a href="#" class="fs-5 fw-bold text-dark text-hover-primary">Create FureStibe branding logo</a>
+                                                    <a href="#" class="fs-5 fw-bold text-dark text-hover-primary">compra de materiales</a>
                                                     <!--begin::Info-->
-                                                    <div class="fs-7 text-muted">Due in 1 day
-                                                        <a href="#">Karina Clark</a>
+                                                    <div class="fs-7 text-muted">Vencimiento en 1 semana
+                                                        <a href="#">joakin polanco </a>
                                                     </div>
                                                     <!--end::Info-->
                                                 </div>
@@ -1756,7 +1617,7 @@
                                                 <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" data-kt-menu-id="kt-users-tasks">
                                                     <!--begin::Header-->
                                                     <div class="px-7 py-5">
-                                                        <div class="fs-5 text-dark fw-bold">Update Status</div>
+                                                        <div class="fs-5 text-dark fw-bold">ACtualizar Status</div>
                                                     </div>
                                                     <!--end::Header-->
                                                     <!--begin::Menu separator-->
@@ -1772,230 +1633,20 @@
                                                             <!--begin::Input-->
                                                             <select class="form-select form-select-solid" name="task_status" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-hide-search="true">
                                                                 <option></option>
-                                                                <option value="1">Approved</option>
-                                                                <option value="2">Pending</option>
-                                                                <option value="3">In Process</option>
-                                                                <option value="4">Rejected</option>
+                                                                <option value="1">Aprobado</option>
+                                                                <option value="2">Pendiente</option>
+                                                                <option value="3">En proceso</option>
+                                                                <option value="4">Rechazado</option>
                                                             </select>
                                                             <!--end::Input-->
                                                         </div>
                                                         <!--end::Input group-->
                                                         <!--begin::Actions-->
                                                         <div class="d-flex justify-content-end">
-                                                            <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-users-update-task-status="reset">Reset</button>
+                                                            <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-users-update-task-status="reset">reiniciar</button>
                                                             <button type="submit" class="btn btn-sm btn-primary" data-kt-users-update-task-status="submit">
-                                                                <span class="indicator-label">Apply</span>
-                                                                <span class="indicator-progress">Please wait...
-                                                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                            </button>
-                                                        </div>
-                                                        <!--end::Actions-->
-                                                    </form>
-                                                    <!--end::Form-->
-                                                </div>
-                                                <!--end::Task menu-->
-                                                <!--end::Menu-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex align-items-center position-relative mb-7">
-                                                <!--begin::Label-->
-                                                <div class="position-absolute top-0 start-0 rounded h-100 bg-secondary w-4px"></div>
-                                                <!--end::Label-->
-                                                <!--begin::Details-->
-                                                <div class="fw-semibold ms-5">
-                                                    <a href="#" class="fs-5 fw-bold text-dark text-hover-primary">Schedule a meeting with FireBear CTO John</a>
-                                                    <!--begin::Info-->
-                                                    <div class="fs-7 text-muted">Due in 3 days
-                                                        <a href="#">Rober Doe</a>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::Details-->
-                                                <!--begin::Menu-->
-                                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                                    <i class="ki-duotone ki-setting-3 fs-3">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                        <span class="path4"></span>
-                                                        <span class="path5"></span>
-                                                    </i>
-                                                </button>
-                                                <!--begin::Task menu-->
-                                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" data-kt-menu-id="kt-users-tasks">
-                                                    <!--begin::Header-->
-                                                    <div class="px-7 py-5">
-                                                        <div class="fs-5 text-dark fw-bold">Update Status</div>
-                                                    </div>
-                                                    <!--end::Header-->
-                                                    <!--begin::Menu separator-->
-                                                    <div class="separator border-gray-200"></div>
-                                                    <!--end::Menu separator-->
-                                                    <!--begin::Form-->
-                                                    <form class="form px-7 py-5" data-kt-menu-id="kt-users-tasks-form">
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-10">
-                                                            <!--begin::Label-->
-                                                            <label class="form-label fs-6 fw-semibold">Status:</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select class="form-select form-select-solid" name="task_status" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-hide-search="true">
-                                                                <option></option>
-                                                                <option value="1">Approved</option>
-                                                                <option value="2">Pending</option>
-                                                                <option value="3">In Process</option>
-                                                                <option value="4">Rejected</option>
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--end::Input group-->
-                                                        <!--begin::Actions-->
-                                                        <div class="d-flex justify-content-end">
-                                                            <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-users-update-task-status="reset">Reset</button>
-                                                            <button type="submit" class="btn btn-sm btn-primary" data-kt-users-update-task-status="submit">
-                                                                <span class="indicator-label">Apply</span>
-                                                                <span class="indicator-progress">Please wait...
-                                                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                            </button>
-                                                        </div>
-                                                        <!--end::Actions-->
-                                                    </form>
-                                                    <!--end::Form-->
-                                                </div>
-                                                <!--end::Task menu-->
-                                                <!--end::Menu-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex align-items-center position-relative mb-7">
-                                                <!--begin::Label-->
-                                                <div class="position-absolute top-0 start-0 rounded h-100 bg-secondary w-4px"></div>
-                                                <!--end::Label-->
-                                                <!--begin::Details-->
-                                                <div class="fw-semibold ms-5">
-                                                    <a href="#" class="fs-5 fw-bold text-dark text-hover-primary">9 Degree Project Estimation</a>
-                                                    <!--begin::Info-->
-                                                    <div class="fs-7 text-muted">Due in 1 week
-                                                        <a href="#">Neil Owen</a>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::Details-->
-                                                <!--begin::Menu-->
-                                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                                    <i class="ki-duotone ki-setting-3 fs-3">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                        <span class="path4"></span>
-                                                        <span class="path5"></span>
-                                                    </i>
-                                                </button>
-                                                <!--begin::Task menu-->
-                                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" data-kt-menu-id="kt-users-tasks">
-                                                    <!--begin::Header-->
-                                                    <div class="px-7 py-5">
-                                                        <div class="fs-5 text-dark fw-bold">Update Status</div>
-                                                    </div>
-                                                    <!--end::Header-->
-                                                    <!--begin::Menu separator-->
-                                                    <div class="separator border-gray-200"></div>
-                                                    <!--end::Menu separator-->
-                                                    <!--begin::Form-->
-                                                    <form class="form px-7 py-5" data-kt-menu-id="kt-users-tasks-form">
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-10">
-                                                            <!--begin::Label-->
-                                                            <label class="form-label fs-6 fw-semibold">Status:</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select class="form-select form-select-solid" name="task_status" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-hide-search="true">
-                                                                <option></option>
-                                                                <option value="1">Approved</option>
-                                                                <option value="2">Pending</option>
-                                                                <option value="3">In Process</option>
-                                                                <option value="4">Rejected</option>
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--end::Input group-->
-                                                        <!--begin::Actions-->
-                                                        <div class="d-flex justify-content-end">
-                                                            <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-users-update-task-status="reset">Reset</button>
-                                                            <button type="submit" class="btn btn-sm btn-primary" data-kt-users-update-task-status="submit">
-                                                                <span class="indicator-label">Apply</span>
-                                                                <span class="indicator-progress">Please wait...
-                                                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
-                                                            </button>
-                                                        </div>
-                                                        <!--end::Actions-->
-                                                    </form>
-                                                    <!--end::Form-->
-                                                </div>
-                                                <!--end::Task menu-->
-                                                <!--end::Menu-->
-                                            </div>
-                                            <!--end::Item-->
-                                            <!--begin::Item-->
-                                            <div class="d-flex align-items-center position-relative mb-7">
-                                                <!--begin::Label-->
-                                                <div class="position-absolute top-0 start-0 rounded h-100 bg-secondary w-4px"></div>
-                                                <!--end::Label-->
-                                                <!--begin::Details-->
-                                                <div class="fw-semibold ms-5">
-                                                    <a href="#" class="fs-5 fw-bold text-dark text-hover-primary">Dashboard UI & UX for Leafr CRM</a>
-                                                    <!--begin::Info-->
-                                                    <div class="fs-7 text-muted">Due in 1 week
-                                                        <a href="#">Olivia Wild</a>
-                                                    </div>
-                                                    <!--end::Info-->
-                                                </div>
-                                                <!--end::Details-->
-                                                <!--begin::Menu-->
-                                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                                    <i class="ki-duotone ki-setting-3 fs-3">
-                                                        <span class="path1"></span>
-                                                        <span class="path2"></span>
-                                                        <span class="path3"></span>
-                                                        <span class="path4"></span>
-                                                        <span class="path5"></span>
-                                                    </i>
-                                                </button>
-                                                <!--begin::Task menu-->
-                                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" data-kt-menu-id="kt-users-tasks">
-                                                    <!--begin::Header-->
-                                                    <div class="px-7 py-5">
-                                                        <div class="fs-5 text-dark fw-bold">Update Status</div>
-                                                    </div>
-                                                    <!--end::Header-->
-                                                    <!--begin::Menu separator-->
-                                                    <div class="separator border-gray-200"></div>
-                                                    <!--end::Menu separator-->
-                                                    <!--begin::Form-->
-                                                    <form class="form px-7 py-5" data-kt-menu-id="kt-users-tasks-form">
-                                                        <!--begin::Input group-->
-                                                        <div class="fv-row mb-10">
-                                                            <!--begin::Label-->
-                                                            <label class="form-label fs-6 fw-semibold">Status:</label>
-                                                            <!--end::Label-->
-                                                            <!--begin::Input-->
-                                                            <select class="form-select form-select-solid" name="task_status" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-hide-search="true">
-                                                                <option></option>
-                                                                <option value="1">Approved</option>
-                                                                <option value="2">Pending</option>
-                                                                <option value="3">In Process</option>
-                                                                <option value="4">Rejected</option>
-                                                            </select>
-                                                            <!--end::Input-->
-                                                        </div>
-                                                        <!--end::Input group-->
-                                                        <!--begin::Actions-->
-                                                        <div class="d-flex justify-content-end">
-                                                            <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-users-update-task-status="reset">Reset</button>
-                                                            <button type="submit" class="btn btn-sm btn-primary" data-kt-users-update-task-status="submit">
-                                                                <span class="indicator-label">Apply</span>
-                                                                <span class="indicator-progress">Please wait...
+                                                                <span class="indicator-label">Aplicar</span>
+                                                                <span class="indicator-progress">]Porfavor espere...
                                                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                                             </button>
                                                         </div>
@@ -2036,7 +1687,7 @@
                                                 <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" data-kt-menu-id="kt-users-tasks">
                                                     <!--begin::Header-->
                                                     <div class="px-7 py-5">
-                                                        <div class="fs-5 text-dark fw-bold">Update Status</div>
+                                                        <div class="fs-5 text-dark fw-bold">ACtualizar Status</div>
                                                     </div>
                                                     <!--end::Header-->
                                                     <!--begin::Menu separator-->
@@ -2052,20 +1703,20 @@
                                                             <!--begin::Input-->
                                                             <select class="form-select form-select-solid" name="task_status" data-kt-select2="true" data-placeholder="Select option" data-allow-clear="true" data-hide-search="true">
                                                                 <option></option>
-                                                                <option value="1">Approved</option>
-                                                                <option value="2">Pending</option>
-                                                                <option value="3">In Process</option>
-                                                                <option value="4">Rejected</option>
+                                                                <option value="1">Aprobado</option>
+                                                                <option value="2">Pendiente</option>
+                                                                <option value="3">En proceso</option>
+                                                                <option value="4">Rechazado</option>
                                                             </select>
                                                             <!--end::Input-->
                                                         </div>
                                                         <!--end::Input group-->
                                                         <!--begin::Actions-->
                                                         <div class="d-flex justify-content-end">
-                                                            <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-users-update-task-status="reset">Reset</button>
+                                                            <button type="button" class="btn btn-sm btn-light btn-active-light-primary me-2" data-kt-users-update-task-status="reset">reiniciar</button>
                                                             <button type="submit" class="btn btn-sm btn-primary" data-kt-users-update-task-status="submit">
-                                                                <span class="indicator-label">Apply</span>
-                                                                <span class="indicator-progress">Please wait...
+                                                                <span class="indicator-label">Aplicar</span>
+                                                                <span class="indicator-progress">Porfavor espere...
                                                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                                             </button>
                                                         </div>
@@ -2096,7 +1747,7 @@
                                         <div class="card-header border-0">
                                             <!--begin::Card title-->
                                             <div class="card-title">
-                                                <h2>Profile</h2>
+                                                <h2>Perfil</h2>
                                             </div>
                                             <!--end::Card title-->
                                         </div>
@@ -2109,7 +1760,7 @@
                                                 <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
                                                     <tbody class="fs-6 fw-semibold text-gray-600">
                                                         <tr>
-                                                            <td>Email</td>
+                                                            <td>Correo electronico</td>
                                                             <td>smith@kpmg.com</td>
                                                             <td class="text-end">
                                                                 <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_email">
@@ -2121,7 +1772,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Password</td>
+                                                            <td>Contraseña</td>
                                                             <td>******</td>
                                                             <td class="text-end">
                                                                 <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_password">
@@ -2133,7 +1784,7 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td>Role</td>
+                                                            <td>Rol</td>
                                                             <td>Administrator</td>
                                                             <td class="text-end">
                                                                 <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">
@@ -2160,7 +1811,7 @@
                                         <div class="card-header border-0">
                                             <!--begin::Card title-->
                                             <div class="card-title flex-column">
-                                                <h2>Email Notifications</h2>
+                                                <h2>Notificationes de correo</h2>
                                                 <div class="fs-6 fw-semibold text-muted">Choose what messages you’d like to receive for each of your accounts.</div>
                                             </div>
                                             <!--end::Card title-->
@@ -2187,159 +1838,15 @@
                                                     <!--end::Checkbox-->
                                                 </div>
                                                 <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_1" type="checkbox" value="1" id="kt_modal_update_email_notification_1" />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_1">
-                                                            <div class="fw-bold">Payouts</div>
-                                                            <div class="text-gray-600">Receive a notification for every initiated payout.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_2" type="checkbox" value="2" id="kt_modal_update_email_notification_2" />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_2">
-                                                            <div class="fw-bold">Application fees</div>
-                                                            <div class="text-gray-600">Receive a notification each time you collect a fee from an account.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_3" type="checkbox" value="3" id="kt_modal_update_email_notification_3" checked='checked' />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_3">
-                                                            <div class="fw-bold">Disputes</div>
-                                                            <div class="text-gray-600">Receive a notification if a payment is disputed by a customer and for dispute resolutions.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_4" type="checkbox" value="4" id="kt_modal_update_email_notification_4" checked='checked' />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_4">
-                                                            <div class="fw-bold">Payment reviews</div>
-                                                            <div class="text-gray-600">Receive a notification if a payment is marked as an elevated risk.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_5" type="checkbox" value="5" id="kt_modal_update_email_notification_5" />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_5">
-                                                            <div class="fw-bold">Mentions</div>
-                                                            <div class="text-gray-600">Receive a notification if a teammate mentions you in a note.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_6" type="checkbox" value="6" id="kt_modal_update_email_notification_6" />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_6">
-                                                            <div class="fw-bold">Invoice Mispayments</div>
-                                                            <div class="text-gray-600">Receive a notification if a customer sends an incorrect amount to pay their invoice.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_7" type="checkbox" value="7" id="kt_modal_update_email_notification_7" />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_7">
-                                                            <div class="fw-bold">Webhooks</div>
-                                                            <div class="text-gray-600">Receive notifications about consistently failing webhook endpoints.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
-                                                <div class='separator separator-dashed my-5'></div>
-                                                <!--begin::Item-->
-                                                <div class="d-flex">
-                                                    <!--begin::Checkbox-->
-                                                    <div class="form-check form-check-custom form-check-solid">
-                                                        <!--begin::Input-->
-                                                        <input class="form-check-input me-3" name="email_notification_8" type="checkbox" value="8" id="kt_modal_update_email_notification_8" />
-                                                        <!--end::Input-->
-                                                        <!--begin::Label-->
-                                                        <label class="form-check-label" for="kt_modal_update_email_notification_8">
-                                                            <div class="fw-bold">Trial</div>
-                                                            <div class="text-gray-600">Receive helpful tips when you try out our products.</div>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Checkbox-->
-                                                </div>
-                                                <!--end::Item-->
                                                 <!--begin::Action buttons-->
                                                 <div class="d-flex justify-content-end align-items-center mt-12">
                                                     <!--begin::Button-->
-                                                    <button type="button" class="btn btn-light me-5" id="kt_users_email_notification_cancel">Cancel</button>
+                                                    <button type="button" class="btn btn-light me-5" id="kt_users_email_notification_cancel">cancelar</button>
                                                     <!--end::Button-->
                                                     <!--begin::Button-->
                                                     <button type="button" class="btn btn-primary" id="kt_users_email_notification_submit">
-                                                        <span class="indicator-label">Save</span>
-                                                        <span class="indicator-progress">Please wait...
+                                                        <span class="indicator-label">Guardar</span>
+                                                        <span class="indicator-progress">Porfavor espere...
                                                             <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                                     </button>
                                                     <!--end::Button-->
@@ -2631,7 +2138,7 @@
                                     <!--begin::Modal header-->
                                     <div class="modal-header" id="kt_modal_update_user_header">
                                         <!--begin::Modal title-->
-                                        <h2 class="fw-bold">Update User Details</h2>
+                                        <h2 class="fw-bold">Actualizar detalles del usuario</h2>
                                         <!--end::Modal title-->
                                         <!--begin::Close-->
                                         <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -2656,7 +2163,61 @@
                                             <!--end::User toggle-->
                                             <!--begin::User form-->
                                             <div id="kt_modal_update_user_user_info" class="collapse show">
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7">
+                                                    <!--begin::Label-->
+                                                    <label class="d-block fw-semibold fs-6 mb-5">Avatar</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Image placeholder-->
+                                                    <style>
+                                                        .image-input-placeholder {
+                                                            background-image: url('assets/media/svg/files/blank-image.svg');
+                                                        }
 
+                                                        [data-bs-theme="dark"] .image-input-placeholder {
+                                                            background-image: url('assets/media/svg/files/blank-image-dark.svg');
+                                                        }
+                                                    </style>
+                                                    <!--end::Image placeholder-->
+                                                    <!--begin::Image input-->
+                                                    <div class="image-input image-input-outline image-input-placeholder" data-kt-image-input="true">
+                                                        <!--begin::Preview existing avatar-->
+                                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(assets/media/avatars/300-6.jpg);"></div>
+                                                        <!--end::Preview existing avatar-->
+                                                        <!--begin::Label-->
+                                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                                            <i class="ki-duotone ki-pencil fs-7">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <!--begin::Inputs-->
+                                                            <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
+                                                            <input type="hidden" name="avatar_remove" />
+                                                            <!--end::Inputs-->
+                                                        </label>
+                                                        <!--end::Label-->
+                                                        <!--begin::Cancel-->
+                                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                                            <i class="ki-duotone ki-cross fs-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                        </span>
+                                                        <!--end::Cancel-->
+                                                        <!--begin::Remove-->
+                                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                                            <i class="ki-duotone ki-cross fs-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                        </span>
+                                                        <!--end::Remove-->
+                                                    </div>
+                                                    <!--end::Image input-->
+                                                    <!--begin::Hint-->
+                                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                                    <!--end::Hint-->
+                                                </div>
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7">
                                                     <!--begin::Label-->
@@ -2780,7 +2341,7 @@
                                 <!--begin::Modal header-->
                                 <div class="modal-header">
                                     <!--begin::Modal title-->
-                                    <h2 class="fw-bold">Add an Event</h2>
+                                    <h2 class="fw-bold">Añadir evento</h2>
                                     <!--end::Modal title-->
                                     <!--begin::Close-->
                                     <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -2799,7 +2360,7 @@
                                         <!--begin::Input group-->
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Event Name</label>
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Nombre del evento</label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input type="text" class="form-control form-control-solid" name="event_name" value="" />
@@ -2810,8 +2371,8 @@
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mb-2">
-                                                <span class="required">Date & Time</span>
-                                                <span class="ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="Select a date & time.">
+                                                <span class="required">Fecha y hora</span>
+                                                <span class="ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="Seleccione la Fecha y hora">
                                                     <i class="ki-duotone ki-information fs-7">
                                                         <span class="path1"></span>
                                                         <span class="path2"></span>
@@ -2821,14 +2382,14 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input class="form-control form-control-solid" placeholder="Pick date & time" name="event_datetime" id="kt_modal_add_schedule_datepicker" />
+                                            <input class="form-control form-control-solid" placeholder="Seleccione la Fecha y hora" name="event_datetime" id="kt_modal_add_schedule_datepicker" />
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
                                         <!--begin::Input group-->
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Event Organiser</label>
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Organizador de eventos</label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input type="text" class="form-control form-control-solid" name="event_org" value="" />
@@ -2838,7 +2399,7 @@
                                         <!--begin::Input group-->
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Send Event Details To</label>
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Enviar detalles del evento a</label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input id="kt_modal_add_schedule_tagify" type="text" class="form-control form-control-solid" name="event_invitees" value="smith@kpmg.com, melody@altbox.com" />
@@ -2847,10 +2408,10 @@
                                         <!--end::Input group-->
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
-                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
+                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Descartar</button>
                                             <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                                                <span class="indicator-label">Submit</span>
-                                                <span class="indicator-progress">Please wait...
+                                                <span class="indicator-label">aplicar</span>
+                                                <span class="indicator-progress">Espere por favor...
                                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                             </button>
                                         </div>
@@ -2875,7 +2436,7 @@
                                 <!--begin::Modal header-->
                                 <div class="modal-header">
                                     <!--begin::Modal title-->
-                                    <h2 class="fw-bold">Add a Task</h2>
+                                    <h2 class="fw-bold">Agregar una tarea</h2>
                                     <!--end::Modal title-->
                                     <!--begin::Close-->
                                     <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -2894,7 +2455,7 @@
                                         <!--begin::Input group-->
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
-                                            <label class="required fs-6 fw-semibold form-label mb-2">Task Name</label>
+                                            <label class="required fs-6 fw-semibold form-label mb-2">Nombre de la tarea</label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <input type="text" class="form-control form-control-solid" name="task_name" value="" />
@@ -2905,7 +2466,7 @@
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mb-2">
-                                                <span class="required">Task Due Date</span>
+                                                <span class="required">Fecha de vencimiento de la tarea</span>
                                                 <span class="ms-2" data-bs-toggle="popover" data-bs-trigger="hover" data-bs-html="true" data-bs-content="Select a due date.">
                                                     <i class="ki-duotone ki-information fs-7">
                                                         <span class="path1"></span>
@@ -2916,14 +2477,14 @@
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input class="form-control form-control-solid" placeholder="Pick date" name="task_duedate" id="kt_modal_add_task_datepicker" />
+                                            <input class="form-control form-control-solid" placeholder="Seleccione la fecha" name="task_duedate" id="kt_modal_add_task_datepicker" />
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
                                         <!--begin::Input group-->
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
-                                            <label class="fs-6 fw-semibold form-label mb-2">Task Description</label>
+                                            <label class="fs-6 fw-semibold form-label mb-2">Descripción de la tarea</label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
                                             <textarea class="form-control form-control-solid rounded-3"></textarea>
@@ -2960,7 +2521,7 @@
                                 <!--begin::Modal header-->
                                 <div class="modal-header">
                                     <!--begin::Modal title-->
-                                    <h2 class="fw-bold">Update Email Address</h2>
+                                    <h2 class="fw-bold">Actualización de la dirección de correo electrónico  </h2>
                                     <!--end::Modal title-->
                                     <!--begin::Close-->
                                     <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -2990,7 +2551,7 @@
                                             <div class="d-flex flex-stack flex-grow-1">
                                                 <!--begin::Content-->
                                                 <div class="fw-semibold">
-                                                    <div class="fs-6 text-gray-700">Please note that a valid email address is required to complete the email verification.</div>
+                                                    <div class="fs-6 text-gray-700">Tenga en cuenta que se requiere una dirección de correo electrónico válida para completar la verificación por correo electrónico.</div>
                                                 </div>
                                                 <!--end::Content-->
                                             </div>
@@ -3002,7 +2563,7 @@
                                         <div class="fv-row mb-7">
                                             <!--begin::Label-->
                                             <label class="fs-6 fw-semibold form-label mb-2">
-                                                <span class="required">Email Address</span>
+                                                <span class="required">Correo Electrónico</span>
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
@@ -3012,10 +2573,10 @@
                                         <!--end::Input group-->
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
-                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
+                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
                                             <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                                                <span class="indicator-label">Submit</span>
-                                                <span class="indicator-progress">Please wait...
+                                                <span class="indicator-label">Aplicar</span>
+                                                <span class="indicator-progress">Espere por favor...
                                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                             </button>
                                         </div>
@@ -3040,7 +2601,7 @@
                                 <!--begin::Modal header-->
                                 <div class="modal-header">
                                     <!--begin::Modal title-->
-                                    <h2 class="fw-bold">Update Password</h2>
+                                    <h2 class="fw-bold">Actualizar contraseña</h2>
                                     <!--end::Modal title-->
                                     <!--begin::Close-->
                                     <div class="btn btn-icon btn-sm btn-active-icon-primary" data-kt-users-modal-action="close">
@@ -3059,7 +2620,7 @@
                                     <form id="kt_modal_update_password_form" class="form" action="#">
                                         <!--begin::Input group=-->
                                         <div class="fv-row mb-10">
-                                            <label class="required form-label fs-6 mb-2">Current Password</label>
+                                            <label class="required form-label fs-6 mb-2">Contraseña actual</label>
                                             <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="current_password" autocomplete="off" />
                                         </div>
                                         <!--end::Input group=-->
@@ -3068,7 +2629,7 @@
                                             <!--begin::Wrapper-->
                                             <div class="mb-1">
                                                 <!--begin::Label-->
-                                                <label class="form-label fw-semibold fs-6 mb-2">New Password</label>
+                                                <label class="form-label fw-semibold fs-6 mb-2">Nueva contraseña</label>
                                                 <!--end::Label-->
                                                 <!--begin::Input wrapper-->
                                                 <div class="position-relative mb-3">
@@ -3099,22 +2660,21 @@
                                             </div>
                                             <!--end::Wrapper-->
                                             <!--begin::Hint-->
-                                            <div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+                                            <div class="text-muted">Utilice 8 o más caracteres con una combinación de letras, números y símbolos.</div>
                                             <!--end::Hint-->
                                         </div>
                                         <!--end::Input group=-->
                                         <!--begin::Input group=-->
-                                        <div class="fv-row mb-10">
-                                            <label class="form-label fw-semibold fs-6 mb-2">Confirm New Password</label>
+                                        <div class="fv-row mb-10">Confirme nueva contraseña</label>
                                             <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm_password" autocomplete="off" />
                                         </div>
                                         <!--end::Input group=-->
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
-                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
+                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
                                             <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                                                <span class="indicator-label">Submit</span>
-                                                <span class="indicator-progress">Please wait...
+                                                <span class="indicator-label">Aplicar</span>
+                                                <span class="indicator-progress">Porfavor espere ...
                                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                             </button>
                                         </div>
@@ -3169,7 +2729,7 @@
                                             <div class="d-flex flex-stack flex-grow-1">
                                                 <!--begin::Content-->
                                                 <div class="fw-semibold">
-                                                    <div class="fs-6 text-gray-700">Please note that reducing a user role rank, that user will lose all priviledges that was assigned to the previous role.</div>
+                                                    <div class="fs-6 text-gray-700">Tenga en cuenta que al reducir el rango de función de un usuario, ese usuario perderá todos los privilegios asignados a la función anterior.</div>
                                                 </div>
                                                 <!--end::Content-->
                                             </div>
@@ -3368,10 +2928,10 @@
                                         <!--end::Input group-->
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
-                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Discard</button>
+                                            <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
                                             <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
-                                                <span class="indicator-label">Submit</span>
-                                                <span class="indicator-progress">Please wait...
+                                                <span class="indicator-label">Aplicar</span>
+                                                <span class="indicator-progress">Espere por favor...
                                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                             </button>
                                         </div>
