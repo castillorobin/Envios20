@@ -495,7 +495,7 @@
                         <!--begin::Card body-->
                         <div class="card-body py-4">
                             <!--begin::Table-->
-                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="usuarios">
                                 <thead>
                                     <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                                         <th class="w-10px pe-2">
@@ -620,6 +620,44 @@
 <script src="assets/js/custom/utilities/modals/users-search.js"></script>
 <!--end::Custom Javascript-->
 <!--end::Javascript-->
+
+<script>
+         
+        $(document).ready(function () {
+    $('#usuarios').DataTable(
+        {
+           
+            language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+        dom: 'tri<"pagina1" p>',
+        
+        
+       
+       
+
+        } 
+    );
+}); 
+    </script>
 
 
 </html>
