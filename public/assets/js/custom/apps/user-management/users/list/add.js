@@ -18,14 +18,14 @@ var KTUsersAddUser = function () {
                     'user_name': {
                         validators: {
                             notEmpty: {
-                                message: 'Se requiere nombre completo'
+                                message: 'Full name is required'
                             }
                         }
                     },
                     'user_email': {
                         validators: {
                             notEmpty: {
-                                message: 'Es necesaria una dirección de correo electrónico válida'
+                                message: 'Valid email address is required'
                             }
                         }
                     },
@@ -69,10 +69,10 @@ var KTUsersAddUser = function () {
 
                             // Show popup confirmation 
                             Swal.fire({
-                                text: "¡El usuario se ha creado correctamente!",
-                                icon: "éxito",
+                                text: "Form has been successfully submitted!",
+                                icon: "success",
                                 buttonsStyling: false,
-                                confirmButtonText: "¡Ok lo tengo!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -87,10 +87,10 @@ var KTUsersAddUser = function () {
                     } else {
                         // Show popup warning. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                         Swal.fire({
-                            text: "Lo sentimos, parece que se han detectado algunos errores. Inténtalo de nuevo.",
+                            text: "Sorry, looks like there are some errors detected, please try again.",
                             icon: "error",
                             buttonsStyling: false,
-                            confirmButtonText: "¡Ok lo tengo!",
+                            confirmButtonText: "Ok, got it!",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -106,12 +106,12 @@ var KTUsersAddUser = function () {
             e.preventDefault();
 
             Swal.fire({
-                text: "¿Estás seguro de que te gustaría cancelar?",
+                text: "Are you sure you would like to cancel?",
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "¡Sí, cancélalo!",
-                cancelButtonText: "no, retorna",
+                confirmButtonText: "Yes, cancel it!",
+                cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
                     cancelButton: "btn btn-active-light"
@@ -122,10 +122,10 @@ var KTUsersAddUser = function () {
                     modal.hide();	
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
-                        text: "¡Tu formulario no ha sido cancelado!",
+                        text: "Your form has not been cancelled!.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "¡Ok lo tengo!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary",
                         }
@@ -140,12 +140,12 @@ var KTUsersAddUser = function () {
             e.preventDefault();
 
             Swal.fire({
-                text: "¿Estás seguro de que te gustaría cancelar?",
+                text: "Are you sure you would like to cancel?",
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "¡Sí, cancélalo!",
-                cancelButtonText: "No, regresa",
+                confirmButtonText: "Yes, cancel it!",
+                cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
                     cancelButton: "btn btn-active-light"
@@ -156,10 +156,10 @@ var KTUsersAddUser = function () {
                     modal.hide();	
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
-                        text: "¡Tu formulario no ha sido cancelado!.",
+                        text: "Your form has not been cancelled!.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "¡Ok lo tengo!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary",
                         }

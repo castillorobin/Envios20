@@ -28,8 +28,9 @@ Route::group(['middleware' => ['auth']], function(){
 Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
 Route::get('/guardarol', [App\Http\Controllers\RolController::class, 'guardarol'] )->name('guardarol') ;
 
-Route::get('usuarios/lista', [App\Http\Controllers\UsuarioController::class, 'index'] )->name('indexuser') ;
+Route::get('/usuarios/view/{id}', [App\Http\Controllers\UsuarioController::class, 'vista'] )->name('vista') ;
 
+Route::get('usuarios/lista', [App\Http\Controllers\UsuarioController::class, 'index'] )->name('indexuser') ;
 
 Route::get('/usuarios/role', [App\Http\Controllers\RolController::class, 'index'] )->name('indexrol') ;
 
@@ -95,11 +96,11 @@ Route::get('/comercio', function () {
 Route::get('/usuarios/lista', function () {
     return view('usuarios.usuariolista');
 });
-*/
+
 Route::get('/usuarios/view', function () {
     return view('usuarios.usuerview');
 });
-
+*/
 Route::get('/usuarios/roleview', function () {
     return view('usuarios.roleview');
 });

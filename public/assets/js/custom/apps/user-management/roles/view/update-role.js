@@ -1,16 +1,16 @@
 "use strict";
 
-// Definición de la clase
+// Class definition
 var KTUsersUpdatePermissions = function () {
-    // Variables compartidas
+    // Shared variables
     const element = document.getElementById('kt_modal_update_role');
     const form = element.querySelector('#kt_modal_update_role_form');
     const modal = new bootstrap.Modal(element);
 
-    // Inicialización del modal para actualizar permisos
+    // Init add schedule modal
     var initUpdatePermissions = () => {
 
-        // Inicializar reglas de validación del formulario. Para obtener más información, consulta la documentación oficial del plugin FormValidation: https://formvalidation.io/
+        // Init form validation rules. For more info check the FormValidation plugin's official documentation:https://formvalidation.io/
         var validator = FormValidation.formValidation(
             form,
             {
@@ -18,7 +18,7 @@ var KTUsersUpdatePermissions = function () {
                     'role_name': {
                         validators: {
                             notEmpty: {
-                                message: 'El nombre del rol es obligatorio'
+                                message: 'Role name is required'
                             }
                         }
                     },
@@ -35,55 +35,55 @@ var KTUsersUpdatePermissions = function () {
             }
         );
 
-        // Controlador del botón de cierre
+        // Close button handler
         const closeButton = element.querySelector('[data-kt-roles-modal-action="close"]');
         closeButton.addEventListener('click', e => {
             e.preventDefault();
 
             Swal.fire({
-                text: "¿Estás seguro de que deseas cerrar?",
+                text: "Are you sure you would like to close?",
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "Sí, ¡ciérralo!",
-                cancelButtonText: "No, regresar",
+                confirmButtonText: "Yes, close it!",
+                cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
                     cancelButton: "btn btn-active-light"
                 }
             }).then(function (result) {
                 if (result.value) {
-                    modal.hide(); // Ocultar modal				
+                    modal.hide(); // Hide modal				
                 }
             });
         });
 
-        // Controlador del botón de cancelar
+        // Cancel button handler
         const cancelButton = element.querySelector('[data-kt-roles-modal-action="cancel"]');
         cancelButton.addEventListener('click', e => {
             e.preventDefault();
 
             Swal.fire({
-                text: "¿Estás seguro de que deseas cancelar?",
+                text: "Are you sure you would like to cancel?",
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "Sí, ¡cáncelalo!",
-                cancelButtonText: "No, regresar",
+                confirmButtonText: "Yes, cancel it!",
+                cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
                     cancelButton: "btn btn-active-light"
                 }
             }).then(function (result) {
                 if (result.value) {
-                    form.reset(); // Reiniciar formulario
-                    modal.hide(); // Ocultar modal				
+                    form.reset(); // Reset form	
+                    modal.hide(); // Hide modal				
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
-                        text: "¡Tu formulario no ha sido cancelado!",
+                        text: "Your form has not been cancelled!.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "Ok, ¡entendido!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary",
                         }
@@ -92,38 +92,38 @@ var KTUsersUpdatePermissions = function () {
             });
         });
 
-        // Controlador del botón de enviar
+        // Submit button handler
         const submitButton = element.querySelector('[data-kt-roles-modal-action="submit"]');
         submitButton.addEventListener('click', function (e) {
-            // Evitar la acción predeterminada del botón
+            // Prevent default button action
             e.preventDefault();
 
-            // Validar el formulario antes de enviar
+            // Validate form before submit
             if (validator) {
                 validator.validate().then(function (status) {
-                    console.log('¡Validado!');
+                    console.log('validated!');
 
                     if (status == 'Valid') {
-                        // Mostrar indicación de carga
+                        // Show loading indication
                         submitButton.setAttribute('data-kt-indicator', 'on');
 
-                        // Deshabilitar el botón para evitar clics múltiples
+                        // Disable button to avoid multiple click 
                         submitButton.disabled = true;
 
-                        // Simular el envío del formulario. Para más información, consulta la documentación oficial del plugin: https://sweetalert2.github.io/
+                        // Simulate form submission. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                         setTimeout(function () {
-                            // Quitar indicación de carga
+                            // Remove loading indication
                             submitButton.removeAttribute('data-kt-indicator');
 
-                            // Habilitar botón
+                            // Enable button
                             submitButton.disabled = false;
 
-                            // Mostrar confirmación emergente
+                            // Show popup confirmation 
                             Swal.fire({
-                                text: "¡El formulario se ha enviado correctamente!",
+                                text: "Form has been successfully submitted!",
                                 icon: "success",
                                 buttonsStyling: false,
-                                confirmButtonText: "Ok, ¡entendido!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -133,15 +133,15 @@ var KTUsersUpdatePermissions = function () {
                                 }
                             });
 
-                            //form.submit(); // Enviar formulario
+                            //form.submit(); // Submit form
                         }, 2000);
                     } else {
-                        // Mostrar advertencia emergente. Para más información, consulta la documentación oficial del plugin: https://sweetalert2.github.io/
+                        // Show popup warning. For more info check the plugin's official documentation: https://sweetalert2.github.io/
                         Swal.fire({
-                            text: "Lo siento, parece que se han detectado algunos errores, por favor, inténtalo de nuevo.",
+                            text: "Sorry, looks like there are some errors detected, please try again.",
                             icon: "error",
                             buttonsStyling: false,
-                            confirmButtonText: "Ok, ¡entendido!",
+                            confirmButtonText: "Ok, got it!",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -152,16 +152,16 @@ var KTUsersUpdatePermissions = function () {
         });
     }
 
-    // Controlador de "Seleccionar todo"
+    // Select all handler
     const handleSelectAll = () => {
-        // Definir variables
+        // Define variables
         const selectAll = form.querySelector('#kt_roles_select_all');
         const allCheckboxes = form.querySelectorAll('[type="checkbox"]');
 
-        // Manejar estado de selección
+        // Handle check state
         selectAll.addEventListener('change', e => {
 
-            // Aplicar estado de selección a todas las casillas de verificación
+            // Apply check state to all checkboxes
             allCheckboxes.forEach(c => {
                 c.checked = e.target.checked;
             });
@@ -169,7 +169,7 @@ var KTUsersUpdatePermissions = function () {
     }
 
     return {
-        // Funciones públicas
+        // Public functions
         init: function () {
             initUpdatePermissions();
             handleSelectAll();
@@ -177,7 +177,7 @@ var KTUsersUpdatePermissions = function () {
     };
 }();
 
-// Cuando el documento esté listo
+// On document ready
 KTUtil.onDOMContentLoaded(function () {
     KTUsersUpdatePermissions.init();
 });

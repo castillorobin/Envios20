@@ -57,7 +57,7 @@
                             <!--begin::Item-->
                             <li class="breadcrumb-item text-muted">Gestion de usuarios</li>
                             <!--end::Item-->
-                            <!--begin::Item-->
+                            <!--begin::Item--> 
                             <li class="breadcrumb-item">
                                 <span class="bullet bg-gray-400 w-5px h-2px"></span>
                             </li>
@@ -524,13 +524,13 @@
                                                 <a href="{{ url('/usuarios/view') }}">
                                                     <div class="symbol-label">
                                                         <img src="assets/media/avatars/300.jpg" alt="Emma Smith" class="w-100" />
-                                                    </div>
+                                                    </div> 
                                                 </a>
                                             </div>
                                             <!--end::Avatar-->
                                             <!--begin::User details-->
                                             <div class="d-flex flex-column">
-                                                <a href="{{ url('/usuarios/view') }}" class="text-gray-800 text-hover-primary mb-1">{{ $usuarios[$i]->name }}</a>
+                                                <a href="/usuarios/view/{{ $usuarios[$i]->id }}" class="text-gray-800 text-hover-primary mb-1">{{ $usuarios[$i]->name }}</a>
                                                 <span>{{ $usuarios[$i]->email }}</span>
                                             </div>
                                             <!--begin::User details-->

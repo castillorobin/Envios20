@@ -1,67 +1,67 @@
 "use strict";
 
-// Definición de la clase
+// Class definition
 var KTUsersViewRole = function () {
-    // Variables compartidas
+    // Shared variables
     var datatable;
     var table;
 
-    // Inicialización del modal para ver roles
+    // Init add schedule modal
     var initViewRole = () => {
-        // Establecer el orden de los datos de fecha
-        const filasTabla = table.querySelectorAll('tbody tr');
+        // Set date data order
+        const tableRows = table.querySelectorAll('tbody tr');
 
-        filasTabla.forEach(fila => {
-            const columnasFecha = fila.querySelectorAll('td');
-            const fechaReal = moment(columnasFecha[3].innerHTML, "DD MMM YYYY, LT").format(); // seleccionar la fecha de la quinta columna en la tabla
-            columnasFecha[3].setAttribute('data-order', fechaReal);
+        tableRows.forEach(row => {
+            const dateRow = row.querySelectorAll('td');
+            const realDate = moment(dateRow[3].innerHTML, "DD MMM YYYY, LT").format(); // select date from 5th column in table
+            dateRow[3].setAttribute('data-order', realDate);
         });
 
-         // Inicializar datatable --- más información sobre datatables: https://datatables.net/manual/
+         // Init datatable --- more info on datatables: https://datatables.net/manual/
          datatable = $(table).DataTable({
             "info": false,
             'order': [],
             "pageLength": 5,
             "lengthChange": false,
             'columnDefs': [
-                { orderable: false, targets: 0 }, // Deshabilitar ordenamiento en la columna 0 (checkbox)
-                { orderable: false, targets: 4 }, // Deshabilitar ordenamiento en la columna 4 (acciones)
+                { orderable: false, targets: 0 }, // Disable ordering on column 0 (checkbox)
+                { orderable: false, targets: 4 }, // Disable ordering on column 4 (actions)
             ]
         });        
     }
 
-    // Buscar en Datatable --- referencia oficial de los docs: https://datatables.net/reference/api/search()
+    // Search Datatable --- official docs reference: https://datatables.net/reference/api/search()
     var handleSearchDatatable = () => {
-        const filtroBusqueda = document.querySelector('[data-kt-roles-table-filter="search"]');
-        filtroBusqueda.addEventListener('keyup', function (e) {
+        const filterSearch = document.querySelector('[data-kt-roles-table-filter="search"]');
+        filterSearch.addEventListener('keyup', function (e) {
             datatable.search(e.target.value).draw();
         });
     }
 
-    // Eliminar fila
+    // Delete user
     var handleDeleteRows = () => {
-        // Seleccionar todos los botones de eliminar
-        const botonesEliminar = table.querySelectorAll('[data-kt-roles-table-filter="delete_row"]');
+        // Select all delete buttons
+        const deleteButtons = table.querySelectorAll('[data-kt-roles-table-filter="delete_row"]');
 
-        botonesEliminar.forEach(b => {
-            // Evento de clic en el botón de eliminar
-            b.addEventListener('click', function (e) {
+        deleteButtons.forEach(d => {
+            // Delete button on click
+            d.addEventListener('click', function (e) {
                 e.preventDefault();
 
-                // Seleccionar la fila padre
-                const padre = e.target.closest('tr');
+                // Select parent row
+                const parent = e.target.closest('tr');
 
-                // Obtener el nombre del usuario
-                const nombreUsuario = padre.querySelectorAll('td')[1].innerText;
+                // Get customer name
+                const userName = parent.querySelectorAll('td')[1].innerText;
 
-                // Popup de SweetAlert2 --- referencia oficial de los docs: https://sweetalert2.github.io/
+                // SweetAlert2 pop up --- official docs reference: https://sweetalert2.github.io/
                 Swal.fire({
-                    text: "¿Seguro que quieres eliminar a " + nombreUsuario + "?",
+                    text: "Are you sure you want to delete " + userName + "?",
                     icon: "warning",
                     showCancelButton: true,
                     buttonsStyling: false,
-                    confirmButtonText: "Sí, eliminar!",
-                    cancelButtonText: "No, cancelar",
+                    confirmButtonText: "Yes, delete!",
+                    cancelButtonText: "No, cancel",
                     customClass: {
                         confirmButton: "btn fw-bold btn-danger",
                         cancelButton: "btn fw-bold btn-active-light-primary"
@@ -69,23 +69,23 @@ var KTUsersViewRole = function () {
                 }).then(function (result) {
                     if (result.value) {
                         Swal.fire({
-                            text: "¡Has eliminado a " + nombreUsuario + "!",
+                            text: "You have deleted " + userName + "!.",
                             icon: "success",
                             buttonsStyling: false,
-                            confirmButtonText: "Ok, entendido!",
+                            confirmButtonText: "Ok, got it!",
                             customClass: {
                                 confirmButton: "btn fw-bold btn-primary",
                             }
                         }).then(function () {
-                            // Eliminar la fila actual
-                            datatable.row($(padre)).remove().draw();
+                            // Remove current row
+                            datatable.row($(parent)).remove().draw();
                         });
                     } else if (result.dismiss === 'cancel') {
                         Swal.fire({
-                            text: nombreUsuario + " no ha sido eliminado.",
+                            text: customerName + " was not deleted.",
                             icon: "error",
                             buttonsStyling: false,
-                            confirmButtonText: "Ok, entendido!",
+                            confirmButtonText: "Ok, got it!",
                             customClass: {
                                 confirmButton: "btn fw-bold btn-primary",
                             }
@@ -96,35 +96,35 @@ var KTUsersViewRole = function () {
         });
     }
 
-    // Inicializar el alternar la barra de herramientas
+    // Init toggle toolbar
     var initToggleToolbar = () => {
-        // Alternar la barra de herramientas de acción seleccionada
-        // Seleccionar todas las casillas de verificación
-        const casillasVerificacion = table.querySelectorAll('[type="checkbox"]');
+        // Toggle selected action toolbar
+        // Select all checkboxes
+        const checkboxes = table.querySelectorAll('[type="checkbox"]');
 
-        // Seleccionar elementos
-        const eliminarSeleccionados = document.querySelector('[data-kt-view-roles-table-select="delete_selected"]');
+        // Select elements
+        const deleteSelected = document.querySelector('[data-kt-view-roles-table-select="delete_selected"]');
 
-        // Alternar la barra de herramientas de eliminación seleccionada
-        casillasVerificacion.forEach(c => {
-            // Evento de clic en la casilla de verificación
+        // Toggle delete selected toolbar
+        checkboxes.forEach(c => {
+            // Checkbox on click event
             c.addEventListener('click', function () {
                 setTimeout(function () {
-                    toggleHerramientas();
+                    toggleToolbars();
                 }, 50);
             });
         });
 
-        // Eliminar filas seleccionadas
-        eliminarSeleccionados.addEventListener('click', function () {
-            // Popup de SweetAlert2 --- referencia oficial de los docs: https://sweetalert2.github.io/
+        // Deleted selected rows
+        deleteSelected.addEventListener('click', function () {
+            // SweetAlert2 pop up --- official docs reference: https://sweetalert2.github.io/
             Swal.fire({
-                text: "¿Seguro que quieres eliminar a los clientes seleccionados?",
+                text: "Are you sure you want to delete selected customers?",
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "Sí, eliminar!",
-                cancelButtonText: "No, cancelar",
+                confirmButtonText: "Yes, delete!",
+                cancelButtonText: "No, cancel",
                 customClass: {
                     confirmButton: "btn fw-bold btn-danger",
                     cancelButton: "btn fw-bold btn-active-light-primary"
@@ -132,34 +132,34 @@ var KTUsersViewRole = function () {
             }).then(function (result) {
                 if (result.value) {
                     Swal.fire({
-                        text: "¡Has eliminado a todos los clientes seleccionados!",
+                        text: "You have deleted all selected customers!.",
                         icon: "success",
                         buttonsStyling: false,
-                        confirmButtonText: "Ok, entendido!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn fw-bold btn-primary",
                         }
                     }).then(function () {
-                        // Eliminar todos los clientes seleccionados
-                        casillasVerificacion.forEach(c => {
+                        // Remove all selected customers
+                        checkboxes.forEach(c => {
                             if (c.checked) {
                                 datatable.row($(c.closest('tbody tr'))).remove().draw();
                             }
                         });
 
-                        // Eliminar casilla de verificación del encabezado
-                        const casillaVerificacionEncabezado = table.querySelectorAll('[type="checkbox"]')[0];
-                        casillaVerificacionEncabezado.checked = false;
+                        // Remove header checked box
+                        const headerCheckbox = table.querySelectorAll('[type="checkbox"]')[0];
+                        headerCheckbox.checked = false;
                     }).then(function(){
-                        toggleHerramientas(); // Detectar casillas de verificación marcadas
-                        initToggleToolbar(); // Volver a inicializar la barra de herramientas para recalcular las casillas de verificación
+                        toggleToolbars(); // Detect checked checkboxes
+                        initToggleToolbar(); // Re-init toolbar to recalculate checkboxes
                     });
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
-                        text: "No se han eliminado los clientes seleccionados.",
+                        text: "Selected customers was not deleted.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "Ok, entendido!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn fw-bold btn-primary",
                         }
@@ -169,41 +169,41 @@ var KTUsersViewRole = function () {
         });
     }
 
-    // Alternar herramientas
-    const toggleHerramientas = () => {
-        // Definir variables
-        const barraBase = document.querySelector('[data-kt-view-roles-table-toolbar="base"]');
-        const barraSeleccionada = document.querySelector('[data-kt-view-roles-table-toolbar="selected"]');
-        const contadorSeleccionado = document.querySelector('[data-kt-view-roles-table-select="selected_count"]');
+    // Toggle toolbars
+    const toggleToolbars = () => {
+        // Define variables
+        const toolbarBase = document.querySelector('[data-kt-view-roles-table-toolbar="base"]');
+        const toolbarSelected = document.querySelector('[data-kt-view-roles-table-toolbar="selected"]');
+        const selectedCount = document.querySelector('[data-kt-view-roles-table-select="selected_count"]');
 
-        // Seleccionar elementos DOM de casillas de verificación actualizadas
-        const todasCasillas = table.querySelectorAll('tbody [type="checkbox"]');
+        // Select refreshed checkbox DOM elements 
+        const allCheckboxes = table.querySelectorAll('tbody [type="checkbox"]');
 
-        // Detectar estado y contar las casillas de verificación
-        let estadoMarcado = false;
-        let contador = 0;
+        // Detect checkboxes state & count
+        let checkedState = false;
+        let count = 0;
 
-        // Contar casillas de verificación marcadas
-        todasCasillas.forEach(c => {
+        // Count checked boxes
+        allCheckboxes.forEach(c => {
             if (c.checked) {
-                estadoMarcado = true;
-                contador++;
+                checkedState = true;
+                count++;
             }
         });
 
-        // Alternar barras de herramientas
-        if (estadoMarcado) {
-            contadorSeleccionado.innerHTML = contador;
-            barraBase.classList.add('d-none');
-            barraSeleccionada.classList.remove('d-none');
+        // Toggle toolbars
+        if (checkedState) {
+            selectedCount.innerHTML = count;
+            toolbarBase.classList.add('d-none');
+            toolbarSelected.classList.remove('d-none');
         } else {
-            barraBase.classList.remove('d-none');
-            barraSeleccionada.classList.add('d-none');
+            toolbarBase.classList.remove('d-none');
+            toolbarSelected.classList.add('d-none');
         }
     }
 
     return {
-        // Funciones públicas
+        // Public functions
         init: function () {
             table = document.querySelector('#kt_roles_view_table');
             
@@ -219,7 +219,7 @@ var KTUsersViewRole = function () {
     };
 }();
 
-// Cuando el documento esté listo
+// On document ready
 KTUtil.onDOMContentLoaded(function () {
     KTUsersViewRole.init();
 });

@@ -95,16 +95,22 @@
                                         </div>
                                         <!--end::Avatar-->
                                         <!--begin::Name-->
-                                        <a href="#" class="fs-3 text-gray-800 text-hover-primary fw-bold mb-3">Emma Smith</a>
+                                        <a href="#" class="fs-3 text-gray-800 text-hover-primary fw-bold mb-3">{{ $user->name }}</a>
                                         <!--end::Name-->
                                         <!--begin::Position-->
                                         <div class="mb-9">
                                             <!--begin::Badge-->
-                                            <div class="badge badge-lg badge-light-primary d-inline">Administrator</div>
+                                            <div class="badge badge-lg badge-light-primary d-inline">
+                                            @if(!empty($user->getRoleNames()))
+                                        @foreach($user->getRoleNames() as $rolNombre)                                       
+                                          <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
+                                        @endforeach
+                                      @endif
+                                            </div>
                                             <!--begin::Badge-->
                                         </div>
                                         <!--end::Position-->
-
+ 
                                     </div>
                                     <!--end::User Info-->
                                     <!--end::Summary-->
@@ -126,12 +132,12 @@
                                         <div class="pb-5 fs-6">
                                             <!--begin::Details item-->
                                             <div class="fw-bold mt-5">ID Usuario</div>
-                                            <div class="text-gray-600">ID-45453423</div>
+                                            <div class="text-gray-600">000{{ $user->id }}</div>
                                             <!--begin::Details item-->
                                             <!--begin::Details item-->
                                             <div class="fw-bold mt-5">Email</div>
                                             <div class="text-gray-600">
-                                                <a href="#" class="text-gray-600 text-hover-primary">info@keenthemes.com</a>
+                                                <a href="#" class="text-gray-600 text-hover-primary">{{ $user->email }}</a>
                                             </div>
                                             <!--begin::Details item-->
                                             <!--begin::Details item-->
@@ -139,13 +145,11 @@
                                             <div class="text-gray-600">*********</div>
                                             <!--begin::Details item-->
                                             <!--begin::Details item-->
-                                            <div class="fw-bold mt-5">Direcion</div>
-                                            <div class="text-gray-600">Santa Ana, el salvador
-                                            </div>
+                                            
                                             <!--begin::Details item-->
                                             <!--begin::Details item-->
-                                            <div class="fw-bold mt-5">Last Login</div>
-                                            <div class="text-gray-600">20 Dec 2023, 11:30 am</div>
+                                            <div class="fw-bold mt-5">Último Login</div>
+                                            <div class="text-gray-600">{{ $user->updated_at }}</div>
                                             <!--begin::Details item-->
                                         </div>
                                     </div>

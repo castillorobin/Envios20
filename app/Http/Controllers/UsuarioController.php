@@ -16,7 +16,7 @@ use Illuminate\Support\Arr;
 
 class UsuarioController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()
@@ -82,9 +82,11 @@ class UsuarioController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function vista(string $id)
     {
-        //
+        $user = User::find($id);
+        return view('usuarios.usuerview',compact('user'));
+
     }
 
     /**

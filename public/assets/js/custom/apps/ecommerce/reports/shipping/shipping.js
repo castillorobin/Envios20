@@ -51,21 +51,18 @@ var KTAppEcommerceReportShipping = function () {
 
         cb(start, end);
     }
+
     // Handle status filter dropdown
     var handleStatusFilter = () => {
         const filterStatus = document.querySelector('[data-kt-ecommerce-order-filter="status"]');
         $(filterStatus).on('change', e => {
             let value = e.target.value;
-            if (value === 'Todos') {
-                // Si se selecciona "Todos", borrar el filtro
-                datatable.column(5).search('').draw(); // Borrar el filtro y volver a dibujar la tabla
-            } else {
-                datatable.column(5).search(value).draw(); // Columna de estado es la sexta (índice 5)
+            if (value === 'all') {
+                value = '';
             }
+            datatable.column(3).search(value).draw();
         });
     }
-
-
 
     // Hook export buttons
     var exportButtons = () => {

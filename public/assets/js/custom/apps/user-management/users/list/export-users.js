@@ -18,7 +18,7 @@ var KTModalExportUsers = function () {
                     'format': {
                         validators: {
                             notEmpty: {
-                                message: 'Se requiere formato de archivo'
+                                message: 'File format is required'
                             }
                         }
                     },
@@ -54,10 +54,10 @@ var KTModalExportUsers = function () {
                             submitButton.removeAttribute('data-kt-indicator');
 
                             Swal.fire({
-                                text: "¡La lista de usuarios se ha exportado correctamente!",
+                                text: "User list has been successfully exported!",
                                 icon: "success",
                                 buttonsStyling: false,
-                                confirmButtonText: "¡Ok lo tengo!",
+                                confirmButtonText: "Ok, got it!",
                                 customClass: {
                                     confirmButton: "btn btn-primary"
                                 }
@@ -74,10 +74,10 @@ var KTModalExportUsers = function () {
                         }, 2000);
                     } else {
                         Swal.fire({
-                            text: "Lo sentimos, parece que se han detectado algunos errores. Inténtalo de nuevo.",
+                            text: "Sorry, looks like there are some errors detected, please try again.",
                             icon: "error",
                             buttonsStyling: false,
-                            confirmButtonText: "¡Ok lo tengo!",
+                            confirmButtonText: "Ok, got it!",
                             customClass: {
                                 confirmButton: "btn btn-primary"
                             }
@@ -93,12 +93,12 @@ var KTModalExportUsers = function () {
             e.preventDefault();
 
             Swal.fire({
-                text: "¿Estás seguro de que te gustaría cancelar?",
+                text: "Are you sure you would like to cancel?",
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "¡Sí, cancélalo!",
-                cancelButtonText: "No, regresa",
+                confirmButtonText: "Yes, cancel it!",
+                cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
                     cancelButton: "btn btn-active-light"
@@ -109,10 +109,10 @@ var KTModalExportUsers = function () {
                     modal.hide(); // Hide modal				
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
-                        text: "¡Tu formulario no ha sido cancelado!.",
+                        text: "Your form has not been cancelled!.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "¡Ok lo tengo!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary",
                         }
@@ -127,12 +127,12 @@ var KTModalExportUsers = function () {
             e.preventDefault();
 
             Swal.fire({
-                text: "¿Estás seguro de que te gustaría cancelar?",
+                text: "Are you sure you would like to cancel?",
                 icon: "warning",
                 showCancelButton: true,
                 buttonsStyling: false,
-                confirmButtonText: "¡Sí, cancélalo!",
-                cancelButtonText: "No, regresa",
+                confirmButtonText: "Yes, cancel it!",
+                cancelButtonText: "No, return",
                 customClass: {
                     confirmButton: "btn btn-primary",
                     cancelButton: "btn btn-active-light"
@@ -143,10 +143,10 @@ var KTModalExportUsers = function () {
                     modal.hide(); // Hide modal				
                 } else if (result.dismiss === 'cancel') {
                     Swal.fire({
-                        text: "¡Tu formulario no ha sido cancelado!.",
+                        text: "Your form has not been cancelled!.",
                         icon: "error",
                         buttonsStyling: false,
-                        confirmButtonText: "¡Ok lo tengo!",
+                        confirmButtonText: "Ok, got it!",
                         customClass: {
                             confirmButton: "btn btn-primary",
                         }
