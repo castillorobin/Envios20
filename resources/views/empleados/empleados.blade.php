@@ -143,8 +143,10 @@
                             <div class="col-lg-3">
                                 <input type="text" name="id" id="id" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required readonly value="{{ ($empleado[0]->id < 10) ? '#000' . $empleado[0]->id : '#00' . $empleado[0]->id }}" />
                             </div>
-                            <label class="col-lg-2 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
-                            <div class="col-lg-3">
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="fname">Nombre completo</label>
+                            <div class="col-lg-8">
                                 <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required readonly value="{{$empleado[0]->nombre}}" />
                             </div>
                         </div>
@@ -264,15 +266,8 @@
                                 <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" readonly>{{$empleado[0]->nota}}</textarea>
                             </div>
                         </div>
-
-                        <div class="card-footer d-flex justify-content-end py-6 px-9">
-                            <a href="/empleado" class="btn btn-primary btn-active-light-primary me-2">Regresar a listado</a>
-                        </div>
                     </div>
-                </div>
-
-                <!--begin::Sign-in Method-->
-                <div class="card mb-5 mb-xl-10">
+                    <!--begin::Sign-in Method-->
                     <!--begin::Card header-->
                     <div class="card-header border-0 cursor-pointer">
                         <div class="card-title m-0">
@@ -324,6 +319,9 @@
                         <!--end::Card body-->
                     </div>
                     <!--end::Content-->
+                    <div class="card-footer d-flex justify-content-end py-6 px-9">
+                        <a href="/empleado" class="btn btn-primary btn-active-light-primary me-2">Regresar a listado</a>
+                    </div>
                 </div>
                 <!--end::Sign-in Method-->
     </x-default-layout>
