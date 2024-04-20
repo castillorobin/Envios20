@@ -84,7 +84,7 @@
                     <div class="card">
                         <!--begin::Card header-->
                         <div class="card-header border-0 pt-6">
-                            <!--begin::Card title-->
+                            <!--begin::Card title--> 
                             <div class="card-title">
                                 <!--begin::Search-->
                                 <div class="d-flex align-items-center position-relative my-1">
@@ -290,7 +290,7 @@
                                             <!--begin::Modal body-->
                                             <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                                 <!--begin::Form-->
-                                                <form id="kt_modal_add_user_form" class="form" action="/guardaruser" method="POST">
+                                                <form id="kt_modal_add_user_form" class="form" action="/guardaruser" method="POST" enctype="multipart/form-data">
 
                                                     @csrf
                                                     @method('GET')
@@ -328,7 +328,7 @@
                                                                     </i>
                                                                     <!--begin::Inputs-->
                                                                     <input type="file" name="avatar" accept=".png, .jpg, .jpeg" />
-                                                                    <input type="hidden" name="avatar_remove" />
+                                                                    <input type="hidden" name="avatar" />
                                                                     <!--end::Inputs-->
                                                                 </label>
                                                                 <!--end::Label-->
@@ -443,7 +443,7 @@
                                                                 <!--begin::Radio-->
                                                                 <div class="form-check form-check-custom form-check-solid">
                                                                     <!--begin::Input-->
-                                                                    <input class="form-check-input me-3" name="user_role" type="radio" value="0" id="kt_modal_update_role_option_0" checked='checked' />
+                                                                    <input class="form-check-input me-3" name="roles" type="radio" value="{{ $rol}}" id="kt_modal_update_role_option_0" checked='checked' />
                                                                     <!--end::Input-->
                                                                     <!--begin::Label-->
                                                                     <label class="form-check-label" for="kt_modal_update_role_option_0">
@@ -523,7 +523,7 @@
                                             <div class="symbol symbol-circle symbol-50px overflow-hidden me-3">
                                                 <a href="{{ url('/usuarios/view') }}">
                                                     <div class="symbol-label">
-                                                        <img src="assets/media/avatars/300.jpg" alt="Emma Smith" class="w-100" />
+                                                        <img src="/fotos/{{$usuarios[$i]->avatar}}" alt="" class="w-100" />
                                                     </div> 
                                                 </a>
                                             </div>

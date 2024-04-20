@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Empleado;
+use Illuminate\Support\Str;
 
 //viene de Spatie
 //use App\Http\Controllers\Controller;
@@ -70,11 +71,30 @@ class UsuarioController extends Controller
             'roles' => 'required'
         ]);
     */
-        $input = $request->all();
-        $input['password'] = Hash::make($input['password']);
-    
+    $usuario = new User();
+        //$input = $request->all();
+        $usuario->password = Hash::make($usuario['password']);
+
+/*          
         $user = User::create($input);
-        $user->assignRole($request->input('roles'));
+*/
+
+if ($request->hasFile('avatar')) {
+
+    $imagen = $request->file("avatar");
+    $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
+    $usuario->avatar = $nombreimagen;
+    $ruta = public_path("/fotos");
+    $imagen->move($ruta, $nombreimagen);
+}
+
+
+$usuario->name = $request->input("name");
+$usuario->email = $request->input("email");
+
+ $usuario->save();
+
+        $usuario->assignRole($request->input('roles'));
     
         return redirect()->route('usuario.index');
     }
