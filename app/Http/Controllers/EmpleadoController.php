@@ -112,29 +112,6 @@ class EmpleadoController extends Controller
 
         $empleado = new Empleado();
         $empleado->nombre = $request->input('fname');
-
-        //$empleado->foto = $request->input('foto');
-        /*
-        if($request->foto){
-            $imagen = $request->foto;
-           // $nombreimagen = Str::slug(time()).".".$imagen->guessExtension();
-            $nombreimagen = uniqid() . '.png';
-            $empleado->foto = $nombreimagen;
-            $ruta = "/public/";
-            $image_parts = explode(";base64,", $imagen);
-            $image_type_aux = explode("image/", $image_parts[0]);
-            //$image_type = $image_type_aux[1];
-            
-            $image_base64 = base64_decode($image_parts[1]);
-           // $fileName = uniqid() . '.png';
-            
-            $file = $ruta . $nombreimagen;
-            Storage::put($file, $image_base64);
-
-            //$imagen->move($ruta,$nombreimagen);
-
-        }
-*/
         if ($request->hasFile('foto')) {
 
             $imagen = $request->file("foto");
@@ -166,9 +143,6 @@ class EmpleadoController extends Controller
         $empleado->motivo = $request->input('Motivo');
         $empleado->salario = $request->input('salario');
         $empleado->estado = $request->input('estado');
-
-
-
         $empleado->nota = $request->input('nota');
 
         $empleado->save();
@@ -177,4 +151,25 @@ class EmpleadoController extends Controller
         // return redirect()->view('empleados.index')->with('success', 'Empleado guardado exitosamente.');
         return redirect('/empleado');
     }
+
+    public function eliminar($id)
+    {
+        // Encuentra el empleado por su ID
+        $empleado = Empleado::findOrFail($id);
+    
+        // Elimina la foto asociada si existe
+        if (!empty($empleado->foto)) {
+            $rutaImagen = public_path('/fotos/' . $empleado->foto);
+            if (file_exists($rutaImagen)) {
+                unlink($rutaImagen);
+            }
+        }
+    
+        // Elimina el empleado
+        $empleado->delete();
+    
+        // Redirige a la vista de empleados con un mensaje de éxito
+        return redirect('/empleado');
+    }
+    
 }

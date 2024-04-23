@@ -106,7 +106,7 @@
                                     </div>
                                     <label class="col-lg-2 col-form-label">WhatsApp</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
+                                        <input type="tel" name="whatsapp" id="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
@@ -155,6 +155,7 @@
                                         <input type="tel" name="telefono2" id="telefono2" class="form-control form-control-lg form-control-solid" placeholder="Telefono" required />
                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                     </div>
+
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="contacto_emergencia">Contacto de emergencia</label>
@@ -234,7 +235,7 @@
                                     <div class="col-lg-3">
                                         <select name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar estado" required>
                                             <option value="Alta">Alta</option>
-                                            <option value="Baja">Baja</option>¿
+                                            <option value="Baja">Baja</option>
                                         </select>
                                     </div>
                                 </div>
@@ -246,12 +247,6 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-
-                    
-                            <!--end::Input group-->
-                            <!--begin::Notice-->
                             <!--begin::Wrapper-->
                             <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
                                 <!--begin::Content-->
@@ -265,21 +260,18 @@
                                 </div> <!--end::Action-->
                             </div>
                             <!--end::Wrapper-->
-
-                            <!--end::Notice-->
-                        </div>
-                        <!--end::Card body-->
+                        </form>
                     </div>
-                    <!--end::Content-->
                 </div>
-                <!--end::Sign-in Method-->
+                <!--end::Content-->
             </div>
+            <!--end::Sign-in Method-->
+        </div>
         </div>
 
     </x-default-layout>
     <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
-    <script src="assets/js/custom/account/settings/signin-methods.js"></script>
 
     <script>
         flatpickr("#fecha_nacimiento", {
@@ -289,13 +281,21 @@
     <script>
         flatpickr("#fecha_alta", {
             dateFormat: 'Y-m-d',
+            defaultDate: new Date().toISOString().split('T')[0] // Esto establece la fecha predeterminada como la fecha actual
         });
     </script>
+
     <script>
         flatpickr("#fecha_baja", {
             dateFormat: 'Y-m-d',
         });
     </script>
+    <script>
+        Inputmask({
+            "mask": "(+999) 9999-9999"
+        }).mask("#whatsapp");
+    </script>
+
     <script>
         $(document).ready(function() {
             // Validación solo para el campo "Número de Guía" y permitir solo números
@@ -343,153 +343,165 @@
         });
 
         $(document).ready(function() {
-            // Función para validar el número de teléfono
+            // Máscara y validación para el campo de teléfono
+            Inputmask({
+                mask: "(+999) 9999-9999",
+                clearIncomplete: true
+            }).mask("#telefono");
+
+            // Función para validar el número de teléfono de El Salvador
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de 10 dígitos
-                var telefonoRegex = /^[267]\d{7}$/;
+                // Expresión regular para validar números de teléfono de El Salvador
+                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
                 return telefonoRegex.test(telefono);
             }
 
-            // Validación para el campo de teléfono
+            // Validación al perder el foco
             $("#telefono").focusout(function() {
-                var value = $(this).val().trim();
-                if (value === "") {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('El campo "Teléfono" es obligatorio');
-                } else if (!validarTelefono(value)) {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('Por favor ingrese un número de teléfono válido');
+                var telefonoValue = $(this).val().trim();
+                if (telefonoValue === "") {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Este campo es obligatorio.").show();
+                } else if (!validarTelefono(telefonoValue)) {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Por favor ingrese un número de teléfono válido.").show();
                 } else {
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    $(this).next(".invalid-feedback").hide();
                 }
             });
 
             // Modificación para manejar el envío del formulario
             $("#kt_account_profile_details_form").submit(function(e) {
-                // Validar el campo de teléfono antes de enviar el formulario
                 var telefonoValue = $("#telefono").val().trim();
                 if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
-                    e.preventDefault(); // Evitar que el formulario se envíe
-                    $("#telefono").addClass("is-invalid");
-                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                    e.preventDefault();
+                    $("#telefono").removeClass("is-valid").addClass("is-invalid");
+                    $("#telefono").next(".invalid-feedback").text("Por favor, corrija los errores en el formulario antes de enviar.").show();
                 }
-                // Puedes agregar más lógica de validación aquí si es necesario
             });
         });
+
         $(document).ready(function() {
-            // Función para validar el número de teléfono
+            // Máscara y validación para el campo de teléfono
+            Inputmask({
+                mask: "(+999) 9999-9999",
+                clearIncomplete: true
+            }).mask("#telefono1");
+
+            // Función para validar el número de teléfono de El Salvador
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de 10 dígitos
-                var telefonoRegex = /^[267]\d{7}$/;
+                // Expresión regular para validar números de teléfono de El Salvador
+                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
                 return telefonoRegex.test(telefono);
             }
 
-            // Validación para el campo de teléfono
+            // Validación al perder el foco
             $("#telefono1").focusout(function() {
-                var value = $(this).val().trim();
-                if (value === "") {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('El campo "Teléfono" es obligatorio');
-                } else if (!validarTelefono(value)) {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('Por favor ingrese un número de teléfono válido');
+                var telefonoValue = $(this).val().trim();
+                if (telefonoValue === "") {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Este campo es obligatorio.").show();
+                } else if (!validarTelefono(telefonoValue)) {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Por favor ingrese un número de teléfono válido.").show();
                 } else {
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    $(this).next(".invalid-feedback").hide();
                 }
             });
 
             // Modificación para manejar el envío del formulario
             $("#kt_account_profile_details_form").submit(function(e) {
-                // Validar el campo de teléfono antes de enviar el formulario
                 var telefonoValue = $("#telefono1").val().trim();
                 if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
-                    e.preventDefault(); // Evitar que el formulario se envíe
-                    $("#telefono1").addClass("is-invalid");
-                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                    e.preventDefault();
+                    $("#telefono1").removeClass("is-valid").addClass("is-invalid");
+                    $("#telefono1").next(".invalid-feedback").text("Por favor, corrija los errores en el formulario antes de enviar.").show();
                 }
-                // Puedes agregar más lógica de validación aquí si es necesario
             });
         });
+
         $(document).ready(function() {
-            // Función para validar el número de teléfono
+            // Máscara y validación para el campo de teléfono
+            Inputmask({
+                mask: "(+999) 9999-9999",
+                clearIncomplete: true
+            }).mask("#telefono2");
+
+            // Función para validar el número de teléfono de El Salvador
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de 10 dígitos
-                var telefonoRegex = /^[267]\d{7}$/;
+                // Expresión regular para validar números de teléfono de El Salvador
+                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
                 return telefonoRegex.test(telefono);
             }
 
-            // Validación para el campo de teléfono
+            // Validación al perder el foco
             $("#telefono2").focusout(function() {
-                var value = $(this).val().trim();
-                if (value === "") {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('El campo "Teléfono" es obligatorio');
-                } else if (!validarTelefono(value)) {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('Por favor ingrese un número de teléfono válido');
+                var telefonoValue = $(this).val().trim();
+                if (telefonoValue === "") {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Este campo es obligatorio.").show();
+                } else if (!validarTelefono(telefonoValue)) {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Por favor ingrese un número de teléfono válido.").show();
                 } else {
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    $(this).next(".invalid-feedback").hide();
                 }
             });
 
             // Modificación para manejar el envío del formulario
             $("#kt_account_profile_details_form").submit(function(e) {
-                // Validar el campo de teléfono antes de enviar el formulario
                 var telefonoValue = $("#telefono2").val().trim();
                 if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
-                    e.preventDefault(); // Evitar que el formulario se envíe
-                    $("#telefono2").addClass("is-invalid");
-                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                    e.preventDefault();
+                    $("#telefono2").removeClass("is-valid").addClass("is-invalid");
+                    $("#telefono2").next(".invalid-feedback").text("Por favor, corrija los errores en el formulario antes de enviar.").show();
                 }
-                // Puedes agregar más lógica de validación aquí si es necesario
             });
         });
+
         $(document).ready(function() {
-            // Función para validar el número de teléfono
+            // Máscara y validación para el campo de teléfono
+            Inputmask({
+                mask: "(+999) 9999-9999",
+                clearIncomplete: true
+            }).mask("#telefono3");
+
+            // Función para validar el número de teléfono de El Salvador
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de 10 dígitos
-                var telefonoRegex = /^[267]\d{7}$/;
+                // Expresión regular para validar números de teléfono de El Salvador
+                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
                 return telefonoRegex.test(telefono);
             }
 
-            // Validación para el campo de teléfono
+            // Validación al perder el foco
             $("#telefono3").focusout(function() {
-                var value = $(this).val().trim();
-                if (value === "") {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('El campo "Teléfono" es obligatorio');
-                } else if (!validarTelefono(value)) {
-                    $(this).addClass("is-invalid");
-                    $(this).removeClass("is-valid");
-                    console.log('Por favor ingrese un número de teléfono válido');
+                var telefonoValue = $(this).val().trim();
+                if (telefonoValue === "") {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Este campo es obligatorio.").show();
+                } else if (!validarTelefono(telefonoValue)) {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Por favor ingrese un número de teléfono válido.").show();
                 } else {
-                    $(this).removeClass("is-invalid");
-                    $(this).addClass("is-valid");
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    $(this).next(".invalid-feedback").hide();
                 }
             });
 
             // Modificación para manejar el envío del formulario
             $("#kt_account_profile_details_form").submit(function(e) {
-                // Validar el campo de teléfono antes de enviar el formulario
                 var telefonoValue = $("#telefono3").val().trim();
                 if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
-                    e.preventDefault(); // Evitar que el formulario se envíe
-                    $("#telefono3").addClass("is-invalid");
-                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                    e.preventDefault();
+                    $("#telefono3").removeClass("is-valid").addClass("is-invalid");
+                    $("#telefono3").next(".invalid-feedback").text("Por favor, corrija los errores en el formulario antes de enviar.").show();
                 }
-                // Puedes agregar más lógica de validación aquí si es necesario
             });
         });
+
         $(document).ready(function() {
             // Validación para el campo "Destinatario"
             $("#email").focusout(function() {
@@ -532,6 +544,10 @@
                     $(this).addClass("is-valid");
                 }
             });
+            Inputmask({
+                "mask": "99999999-9",
+                "clearIncomplete": true // Permite que el usuario borre el contenido incompleto
+            }).mask("#dui");
         });
         $(document).ready(function() {
             // Validación para el campo "dui"
@@ -590,6 +606,7 @@
                 }
             });
         });
+
         $("cargo").focusout(function() {
             var value = $("cargo").val();
             if (value.length == 0) {
@@ -602,8 +619,6 @@
             console.log('Este campo es obligatorio');
         });
     </script>
-
-
 </body>
 
 </html>

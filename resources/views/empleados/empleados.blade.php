@@ -84,8 +84,10 @@
                                     </div>
                                     <div class="d-flex my-1">
                                         <a href="#" class="btn btn-sm btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_">Alta</a>
-                                        <a href="#" class="btn btn-sm btn-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_offer_a_deal">Eliminar</a>
+                                        <button class="btn btn-sm btn-danger me-3" onclick="confirmDelete('{{ route('empleado.eliminar', $empleado[0]->id) }}')">Eliminar</button>
                                     </div>
+
+
                                 </div>
                                 <div class="d-flex flex-wrap flex-stack ">
                                     <div class="d-flex flex-column flex-grow-1 mt-6">
@@ -333,7 +335,25 @@
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script>
+        function confirmDelete(url) {
+            Swal.fire({
+                title: '¿Estás seguro?',
+                text: "¡No podrás revertir esto!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#d33',
+                cancelButtonColor: '#3085d6',
+                confirmButtonText: 'Sí, eliminarlo!',
+                cancelButtonText: 'Cancelar'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    window.location.href = url;
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>

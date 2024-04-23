@@ -85,6 +85,8 @@ Route::get('empleados/editar/{id}', [App\Http\Controllers\EmpleadoController::cl
 Route::get('empleadoguardar', [App\Http\Controllers\EmpleadoController::class, 'empleadoguardar'] )->name('empleadoguardar') ;
 Route::get('empleado/crear', [App\Http\Controllers\EmpleadoController::class, 'crear'] )->name('crear') ;
 Route::get('empleado/update/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadoupdate'] )->name('empleadoupdate') ;
+Route::get('empleado/eliminar/{id}', [App\Http\Controllers\EmpleadoController::class, 'eliminar'])->name('empleado.eliminar');
+
 
 Route::get('/faltas/listafaltas', function () {
     return view('faltas.listafaltas');
