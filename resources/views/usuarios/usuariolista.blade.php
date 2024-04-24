@@ -26,10 +26,19 @@
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
+   
 </head>
 <!--end::Head-->
 
 <body>
+
+<style>
+        .dataTables_filter{
+            display:none;
+            
+        }
+    </style>
+
     <x-default-layout>
         <!--begin::Content wrapper-->
         <div class="d-flex flex-column flex-column-fluid">
@@ -495,7 +504,7 @@
                         <!--begin::Card body-->
                         <div class="card-body py-4">
                             <!--begin::Table-->
-                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="usuarios">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
                                 <thead>
                                     <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                                         <th class="w-10px pe-2">
@@ -527,7 +536,7 @@
                                                     </div> 
                                                 </a>
                                             </div>
-                                            <!--end::Avatar-->
+                                            <!--end::Avatar--> 
                                             <!--begin::User details-->
                                             <div class="d-flex flex-column">
                                                 <a href="/usuarios/view/{{ $usuarios[$i]->id }}" class="text-gray-800 text-hover-primary mb-1">{{ $usuarios[$i]->name }}</a>

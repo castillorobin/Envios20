@@ -17,6 +17,18 @@
             padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
         }
+
+        
+        .dataTables_filter{
+            display:none;
+            
+        }
+
+        .dataTables_length{
+            display:none;
+            
+        }
+    
     </style>
 
 </head>
