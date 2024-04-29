@@ -92,15 +92,15 @@
                                         <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-control="select2" name="comercio" >
-                                            @foreach ($vendedores as $vendedor)
-                                            <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                        <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
+                                            @foreach ($comercios as $comercio)
+                                            <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
                                             @endforeach
                                         </select>
-                                        <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
+                                        <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione un comercio.
                                         </div>
@@ -215,12 +215,11 @@
                                 <div class="row py-5">
                                     <div class="col-md-12 text-end">
                                         <div class="d-flex justify-content-end">
-                                            <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancelar
-                                            </button>
+                                            <a href="/envios/lista" class="btn btn-light me-3">Cancelar</a>
+
                                             <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
                                                 <span class="indicator-label">
-                                                    Guardar
+                                                    Guardar envio
                                                 </span>
                                                 <span class="indicator-progress">
                                                     Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
@@ -285,4 +284,10 @@
         $("#envio2").keyup(calcularTotal);
 
     });
+</script>
+<script>
+    Inputmask({
+        mask: "(+999) 9999-9999",
+        clearIncomplete: true
+    }).mask("#telefono");
 </script>

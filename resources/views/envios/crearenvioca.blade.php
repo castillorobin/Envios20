@@ -87,13 +87,13 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-control="select2" name="comercio">
-                                            @foreach ($vendedores as $vendedor)
-                                            <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                        <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
+                                            @foreach ($comercios as $comercio)
+                                            <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
                                             @endforeach
                                         </select>
-                                        <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
-                                        <div id="comercioValidationFeedback" class="invalid-feedback">
+                                        <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
+                                        <div id="comercioValidationFeedback" class="invalid-feedback ">
                                             Por favor seleccione un comercio.
                                         </div>
                                     </div>
@@ -149,7 +149,8 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <select class="form-select form-select-solid" name="cenvio4" id="cenvio4" aria-label="Floating label select example" required>                                            <option value="Pendiente">Pendiente</option>
+                                        <select class="form-select form-select-solid" name="cenvio4" id="cenvio4" aria-label="Floating label select example" required>
+                                            <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
                                         <label for="cenvio4" style="padding-left: 25px;">Cobro del envío</label>
@@ -158,7 +159,8 @@
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>                                            <option value="por_pagar">Por pagar</option>
+                                        <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>
+                                            <option value="por_pagar">Por pagar</option>
                                             <option value="pagado">Pagado</option>
                                         </select>
                                         <label for="estado_pago" style="padding-left: 25px;">Estado del pago</label>
@@ -169,7 +171,8 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <select class="form-select form-select-solid" name="tipo_envio" id="tipo_envio" aria-label="Floating label select example" required>                                            <option value="Casillero">Casillero</option>
+                                        <select class="form-select form-select-solid" name="tipo_envio" id="tipo_envio" aria-label="Floating label select example" required>
+                                            <option value="Casillero">Casillero</option>
                                             <option value="Normal">Normal</option>
                                         </select>
                                         <label for="tipo_envio" style="padding-left: 25px;">Tipo de envío</label>
@@ -178,7 +181,8 @@
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <select class="form-select form-select-solid" name="estado_envio" id="estado_envio" aria-label="Floating label select example" required>                                            <option value="Creado">Creado</option>
+                                        <select class="form-select form-select-solid" name="estado_envio" id="estado_envio" aria-label="Floating label select example" required>
+                                            <option value="Creado">Creado</option>
                                             <option value="sin_entregar">Sin entregar</option>
                                         </select>
                                         <label for="estado_envio" style="padding-left: 25px;">Estado del envío</label>
@@ -203,12 +207,11 @@
                                 <div class="row py-5">
                                     <div class="col-md-12 text-end">
                                         <div class="d-flex justify-content-end">
-                                            <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancel
-                                            </button>
+                                            <a href="/envios/lista" class="btn btn-light me-3">Cancelar</a>
+
                                             <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
                                                 <span class="indicator-label">
-                                                    Save
+                                                    Guardar envio
                                                 </span>
                                                 <span class="indicator-progress">
                                                     Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
@@ -274,4 +277,10 @@
         $("#envio4").keyup(calcularTotal);
 
     });
+</script>
+<script>
+    Inputmask({
+        mask: "(+999) 9999-9999",
+        clearIncomplete: true
+    }).mask("#telefono");
 </script>

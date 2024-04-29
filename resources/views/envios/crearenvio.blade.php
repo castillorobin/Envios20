@@ -1,8 +1,12 @@
 <x-default-layout>
-    
+
+    <link rel="icon" type="image/png" href="{{ asset('fotos/logo.png') }}">
+    <title>Melo Express</title>
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+    <script src="../assets/plugins/global/plugins.bundle.js"></script>
     <style>
         label.required::after {
             content: none;
@@ -77,11 +81,10 @@
 
         $(document).ready(function() {
             // Función para validar el número de teléfono
-            function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de 10 dígitos
-                var telefonoRegex = /^(?:2|7)\d{7}$/;
-                return telefonoRegex.test(telefono);
-            }
+            Inputmask({
+                mask: "(+999) 9999-9999",
+                clearIncomplete: true
+            }).mask("#telefonop");
 
             // Validación para el campo de teléfono
             $("#telefonop").focusout(function() {
@@ -151,8 +154,6 @@
         });
     </script>
 
-
-
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
@@ -212,13 +213,12 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" data-control="select2" name="comercio">
-
-                                            @foreach ($vendedores as $vendedor)
-                                            <option value="{{$vendedor->nombre}}">{{ $vendedor->nombre }} </option>
+                                        <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
+                                            @foreach ($comercios as $comercio)
+                                            <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
                                             @endforeach
                                         </select>
-                                        <label for="comer" style="padding-left: 25px;">Buscar Comercio</label>
+                                        <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione un comercio.
                                         </div>
@@ -332,15 +332,14 @@
                                 <div class="row py-5">
                                     <div class="col-md-12 text-end">
                                         <div class="d-flex justify-content-end">
-                                            <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">
-                                                Cancelar
-                                            </button>
+                                            <a href="/envios/lista" class="btn btn-light me-3">Cancelar</a>
+
                                             <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
                                                 <span class="indicator-label">
-                                                    Guardar
+                                                    Guardar envio
                                                 </span>
                                                 <span class="indicator-progress">
-                                                    Por favor espere... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
+                                                    Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
                                                 </span>
                                             </button>
                                         </div>
@@ -356,7 +355,7 @@
 </x-default-layout>
 <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 <script src="assets/plugins/global/plugins.bundle.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 <script>
     flatpickr("#fecha_entregap", {

@@ -6,6 +6,7 @@ use App\Models\Envio;
 use Illuminate\Http\Request;
 use App\Models\Vendedor;
 use App\Models\Empleado;
+use App\Models\Comercio;
 
 class EnvioController extends Controller
 {
@@ -17,38 +18,33 @@ class EnvioController extends Controller
 
         $vendedores = Vendedor::all();
         return view('envios.index', compact('vendedores'));
-
     }
     public function crearenvio()
     {
-
-        $vendedores = Vendedor::select('nombre')->get();
-        return view('envios.crearenvio', compact('vendedores'));
- 
+        $comercios = Comercio::all();
+        return view('envios.crearenvio', compact('comercios'));
     }
+
 
     public function enviopd()
     {
 
-        $vendedores = Vendedor::all();
-        return view('envios.crearenviopd', compact('vendedores'));
- 
+        $comercios = Comercio::all();
+        return view('envios.crearenviopd', compact('comercios'));
     }
 
     public function enviopf()
     {
 
-        $vendedores = Vendedor::all();
-        return view('envios.crearenviopf', compact('vendedores'));
- 
+        $comercios = Comercio::all();
+        return view('envios.crearenviopf', compact('comercios'));
     }
 
     public function envioca()
     {
 
-        $vendedores = Vendedor::all();
-        return view('envios.crearenvioca', compact('vendedores'));
- 
+        $comercios = Comercio::all();
+        return view('envios.crearenvioca', compact('comercios'));
     }
 
     public function envioli()
@@ -56,14 +52,13 @@ class EnvioController extends Controller
 
         $envios = Envio::all();
         return view('envios.envi', compact('envios'));
- 
     }
 
     public function envioguardarp(Request $request)
     {
         $envio = new Envio();
 
-       $envio->guia = $request->get('n_guia');
+        $envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatariop');
         $envio->comercio = $request->get('comercio');
         $envio->direccion = $request->get('direccionp');
@@ -77,19 +72,16 @@ class EnvioController extends Controller
         $envio->tipo = $request->get('tipo_enviop');
         $envio->fecha_entrega = $request->get('fecha_entregap');
         $envio->nota = $request->get('nota');
-        
+
         $envio->save();
-        $vendedores = Vendedor::all();
-        return view('envios.crearenvio', compact('vendedores'));
-
-
+        return redirect('/envios/lista');
     }
 
     public function envioguardarpd(Request $request)
     {
         $envio = new Envio();
 
-       $envio->guia = $request->get('n_guia');
+        $envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatario');
         $envio->comercio = $request->get('comercio');
         $envio->direccion = $request->get('direccion');
@@ -103,19 +95,16 @@ class EnvioController extends Controller
         $envio->tipo = $request->get('tipo_envio');
         $envio->fecha_entrega = $request->get('fecha_entrega');
         $envio->nota = $request->get('nota');
-        
+
         $envio->save();
-        $vendedores = Vendedor::all();
-        return view('envios.crearenviopd', compact('vendedores'));
-
-
+        return redirect('/envios/lista');
     }
 
     public function envioguardarpf(Request $request)
     {
         $envio = new Envio();
 
-       $envio->guia = $request->get('n_guia');
+        $envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatario');
         $envio->comercio = $request->get('comercio');
         $envio->direccion = $request->get('direccion');
@@ -129,18 +118,15 @@ class EnvioController extends Controller
         $envio->tipo = $request->get('tipo_envio');
         $envio->fecha_entrega = $request->get('fecha_entrega');
         $envio->nota = $request->get('nota');
-        
+
         $envio->save();
-        $vendedores = Vendedor::all();
-        return view('envios.crearenviopf', compact('vendedores'));
-
-
+        return redirect('/envios/lista');
     }
     public function envioguardarca(Request $request)
     {
         $envio = new Envio();
 
-       $envio->guia = $request->get('n_guia');
+        $envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatario');
         $envio->comercio = $request->get('comercio');
         $envio->direccion = $request->get('direccion');
@@ -154,14 +140,11 @@ class EnvioController extends Controller
         $envio->tipo = $request->get('tipo_envio');
         $envio->fecha_entrega = $request->get('fecha_entrega');
         $envio->nota = $request->get('nota');
-        
+
         $envio->save();
-        $vendedores = Vendedor::all();
-        return view('envios.crearenvioca', compact('vendedores'));
-
-
+        return redirect('/envios/lista');
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -172,78 +155,31 @@ class EnvioController extends Controller
         //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
         $pedidos = Envio::where('vendedor', $comercio)->get();
         $vendedores = Vendedor::all();
-        
-        $nota= ' ';
+
+        $nota = ' ';
         $entrega = 0;
         $reprogra = 0;
         $noentrega = 0;
         $creado = 0;
         $ruta = 0;
-        foreach($pedidos as $pedido) {
-           if ($pedido->estado == 'Entregado') {
-            $entrega+=1;
-           }
-           if ($pedido->estado == 'Reprogramado') {
-            $reprogra+=1;
-           }
-           if ($pedido->estado == 'No retirado') {
-            $noentrega+=1;
-           }
-           if ($pedido->estado == 'Creado') {
-            $creado+=1;
-           }
-           if ($pedido->estado == 'En ruta') {
-            $ruta+=1;
-           }
+        foreach ($pedidos as $pedido) {
+            if ($pedido->estado == 'Entregado') {
+                $entrega += 1;
+            }
+            if ($pedido->estado == 'Reprogramado') {
+                $reprogra += 1;
+            }
+            if ($pedido->estado == 'No retirado') {
+                $noentrega += 1;
+            }
+            if ($pedido->estado == 'Creado') {
+                $creado += 1;
+            }
+            if ($pedido->estado == 'En ruta') {
+                $ruta += 1;
+            }
         }
 
-        return view('envios.indexdigitadofiltro', compact('pedidos','vendedores','nota','entrega','reprogra','noentrega','creado', 'comercio', 'ruta' ));
-
-
-    }
-
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Envio $envio)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Envio $envio)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Envio $envio)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Envio $envio)
-    {
-        //
+        return view('envios.indexdigitadofiltro', compact('pedidos', 'vendedores', 'nota', 'entrega', 'reprogra', 'noentrega', 'creado', 'comercio', 'ruta'));
     }
 }
