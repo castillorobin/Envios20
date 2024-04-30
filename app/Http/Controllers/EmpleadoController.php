@@ -20,7 +20,7 @@ class EmpleadoController extends Controller
     }
 
     public function empleado()
-    {
+    { 
         $vendedores = Empleado::all();
         return view('empleados.index', compact('vendedores'));
     }

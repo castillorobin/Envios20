@@ -55,10 +55,11 @@ Route::get('/empleados/crear', function () {
 Route::get('/envios/detalle', function () {
     return view('envios.detalle');
 });
+
+/*
 Route::get('/comercio/crearcomercio', function () {
     return view('comercio.crearcomercio');
 });
-/*
 Route::get('/envios/envi', function () {
     return view('envios.envi');
 });
@@ -91,10 +92,22 @@ Route::get('empleado/eliminar/{id}', [App\Http\Controllers\EmpleadoController::c
 Route::get('/faltas/listafaltas', function () {
     return view('faltas.listafaltas');
 });
+
+
+//Comercios
+Route::get('comercio', [App\Http\Controllers\ComercioController::class, 'index'] )->name('indexco') ;
+Route::get('comercio/crearcomercio', [App\Http\Controllers\ComercioController::class, 'create'] )->name('createco') ;
+Route::get('comercio/guardar', [App\Http\Controllers\ComercioController::class, 'store'] )->name('storeco') ;
+
+
+
+
+
+/*
+
 Route::get('/comercio', function () {
     return view('comercio.index');
 });
-/*
 Route::get('/usuarios/lista', function () {
     return view('usuarios.usuariolista');
 });

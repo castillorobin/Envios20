@@ -42,7 +42,7 @@
                     <div id="kt_account_settings_profile_details" class="collapse show">
                         <form action="/empleadoguardar" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                             @csrf
-                            @method('GET')
+                            @method('GET') 
                             <div class="card-body border-top p-9">
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label fw-semibold fs-6">Foto</label>

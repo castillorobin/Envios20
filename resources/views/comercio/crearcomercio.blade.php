@@ -18,7 +18,7 @@
                     <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                         <li class="breadcrumb-item text-muted">
                             <a href="/" class="text-muted text-hover-primary">Inicio</a>
-                        </li>
+                        </li> 
                         <li class="breadcrumb-item">
                             <span class="bullet bg-gray-400 w-5px h-2px"></span>
                         </li>
@@ -37,7 +37,7 @@
                         </div>
                     </div>
                     <div id="kt_account_settings_profile_details" class="collapse show">
-                        <form action="#" method="POST" id="kt_account_profile_details_form" class="form">
+                        <form action="/comercio/guardar" method="POST" id="kt_account_profile_details_form" class="form">
                             @csrf
                             @method('GET')
                             <div class="card-body border-top p-9">
@@ -80,7 +80,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Tipo de comercio</label>
                                     <div class="col-lg-3">
-                                        <select name="Tipo" id="Tipo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de comercio" required>
+                                        <select name="tipo" id="Tipo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de comercio" required>
                                             <option value="Emprendedor">Emprendedor</option>
                                             <option value="Comercio Mediano">Comercio Mediano</option>
                                             <option value="Empresa">Empresa</option>
@@ -98,7 +98,7 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
                                     <div class="col-lg-8">
-                                        <select name="Agencia_registro" id="Agencia_registro" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Agencia de registro" required>
+                                        <select name="agencia_registro" id="Agencia_registro" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Agencia de registro" required>
                                             <option value="San_Salvador">San Salvador</option>
                                             <option value="San_Miguel">San Miguel</option>
                                             <option value="Santa_ana">Santa Ana</option>
@@ -126,13 +126,13 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nombre del titular de la cuenta</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre del titular de la cuenta" />
+                                        <input type="text" name="titular" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre del titular de la cuenta" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nombre del banco</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre del banco" />
+                                        <input type="text" name="banco" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre del banco" />
                                     </div>
                                     <label class="col-lg-2 col-form-label">Numero de cuenta</label>
                                     <div class="col-lg-3">
@@ -146,7 +146,7 @@
                                     </div>
                                     <label class="col-lg-2 col-form-label">Tipo de cuenta</label>
                                     <div class="col-lg-3">
-                                        <select name="Tipo_cuenta" id="Tipo_cuenta" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de cuenta" required>
+                                        <select name="tipo_cuenta" id="tipo_cuenta" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de cuenta" required>
                                             <option></option>
                                             <option value="Ahorros">Ahorros</option>
                                             <option value="Corriente">Corriente</option>
@@ -171,13 +171,13 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nombre de la empresa</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre de la empresa o persona natural" />
+                                        <input type="text" name="empresa" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Ingrese el nombre de la empresa o persona natural" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Tipo de contribuyente</label>
                                     <div class="col-lg-3">
-                                        <select name="Tipo_contribuyente" id="Tipo_contribuyente" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de contribuyente" required>
+                                        <select name="tipo_contribuyente" id="Tipo_contribuyente" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de contribuyente" required>
                                             <option></option>
                                             <option value="pequeño">Pequeño</option>
                                             <option value="Mediano">Mediano</option>
@@ -197,13 +197,13 @@
                                     </div>
                                     <label class="col-lg-2 col-form-label">Numero de regristro (NCR)</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="NCR" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el numero de NCR" />
+                                        <input type="text" name="ncr" class="form-control form-control-lg form-control-solid" placeholder="Ingrese el numero de NCR" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Dirección Fisical</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Ingrese la dirección fiscal de la empresa" />
+                                        <input type="text" name="direccionf" class="form-control form-control-lg form-control-solid" placeholder="Ingrese la dirección fiscal de la empresa" />
                                     </div>
                                 </div>
                                 <div class="card-footer d-flex justify-content-end py-6 px-9">

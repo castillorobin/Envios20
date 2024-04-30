@@ -270,15 +270,19 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-
-                                            <td><a href="#" class="text-gray-900 text-hover-primary">52478</a></td>
-                                            <td>MODA SV</td>
-                                            <td>25256981</td>
-                                            <td>75554548</td>
-                                            <td>Santa Ana</td>
-                                            <td>25/12/2020</td>
+                                            @foreach ($comercios as $comercio)
+                                                
+                                           
+                                            <tr>
+                                            <td><a href="#" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
+                                          <td>{{$comercio->comercio}}</td>
+                                          <td>{{$comercio->telefono}}</td>
+                                          <td>{{$comercio->whatsapp}}</td>
+                                          <td>{{$comercio->agencia}}</td>
+                                          <td>{{$comercio->f_alta}}</td>
                                             <td class="text-star"><span class="badge badge-light-success">Lista negra</span></td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
 
