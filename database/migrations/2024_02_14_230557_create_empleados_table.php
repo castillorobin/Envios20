@@ -11,15 +11,15 @@ class CreateEmpleadosTable extends Migration
         Schema::create('empleados', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('foto');
+            $table->string('foto')->nullable();
             $table->string('direccion');
             $table->string('agencia');
             $table->string('telefono');
-            $table->string('whatsapp');
+            $table->string('whatsapp')->nullable();
             $table->string('correo');
             $table->date('fecha_nacimiento');
             $table->string('dui');
-            $table->string('licencia');
+            $table->string('licencia')->nullable();
             $table->string('referenciap');
             $table->string('telefonop');
             $table->string('referenciaf');
@@ -28,11 +28,13 @@ class CreateEmpleadosTable extends Migration
             $table->string('contactotel');
             $table->string('cargo');
             $table->date('fecha_alta');
-            $table->string('n_isss');
-            $table->string('n_afp');
-            $table->date('fecha_baja');
-            $table->string('motivo');
-            $table->text('nota');
+            $table->string('n_isss')->nullable();
+            $table->string('n_afp')->nullable();
+            $table->date('fecha_baja')->nullable();
+            $table->string('motivo')->nullable();
+            $table->string('salario')->nullable();
+            $table->string('estado');
+            $table->text('nota')->nullable();
             $table->timestamps();
         });
     }

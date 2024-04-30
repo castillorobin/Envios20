@@ -26,8 +26,7 @@ return new class extends Migration
             $table->string('pago');
             $table->string('tipo');
             $table->date('fecha_entrega');
-            $table->string('nota');
-            
+            $table->string('nota')->nullable();
             $table->timestamps();
         });
     }
