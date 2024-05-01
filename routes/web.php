@@ -93,6 +93,10 @@ Route::get('/faltas/listafaltas', function () {
     return view('faltas.listafaltas');
 });
 
+Route::get('/registro-orden', function () {
+    return view('envios.registroorden');
+});
+
 
 //Comercios
 Route::get('comercio', [App\Http\Controllers\ComercioController::class, 'index'] )->name('indexco') ;
