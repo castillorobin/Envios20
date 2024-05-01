@@ -76,10 +76,10 @@ License: For each use you must have a valid license purchased only from above li
                     <!--begin::Actions-->
                     <div class="d-flex align-items-center gap-2 gap-lg-3">
                         <!--begin::Secondary button-->
-                        <a href="#" class="btn btn-sm fw-bold bg-body btn-color-gray-700 btn-active-color-primary">listado de paquetes</a>
+                        <a href="#" id="openAgregarComerciosModal" class="btn btn-sm fw-bold bg-body btn-color-gray-700 btn-active-color-primary" data-bs-toggle="modal" data-bs-target="#agregarComercioModal">Crear Comercio</a>
                         <!--end::Secondary button-->
                         <!--begin::Primary button-->
-                        <a href="#" class="btn btn-sm fw-bold btn-primary">agregar comercios</a>
+                        <a href="#" id="openModal" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#seleccionarComercioModal">Agregar Comercios</a>
                         <!--end::Primary button-->
                     </div>
                     <!--end::Actions-->
@@ -88,8 +88,108 @@ License: For each use you must have a valid license purchased only from above li
             </div>
             <!--end::Toolbar-->
 
+            <!-- Modal comercio-->
+            <div class="modal fade" id="seleccionarComercioModal" tabindex="-1" aria-labelledby="seleccionarComercioModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="seleccionarComercioModalLabel">Seleccionar Comercio</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row my-4 mx-4">
+                                <div class="form-floating col-lg-12 mb-4">
+                                    <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio" id="comercio">
+                                        <!-- Aquí van las opciones de los comercios -->
+                                    </select>
+                                    <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
+                                    <div id="comercioValidationFeedback" class="invalid-feedback">
+                                        Por favor seleccione un comercio.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" id="seleccionarBtn">Seleccionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-
+            <!-- Modal de Agregar Comercio -->
+            <div class="modal fade" id="agregarComercioModal" tabindex="-1" aria-labelledby="agregarComercioModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="agregarComercioModalLabel">Agregar Comercio</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
+                                <div class="col-lg-8">
+                                    <input type="text" name="nombre_comercio" id="nombre_comercio" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" required />
+                                    <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label">Teléfono</label>
+                                <div class="col-lg-8">
+                                    <input id="telefono" type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Teléfono" />
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
+                                <div class="col-lg-8">
+                                    <input type="text" name="fecha_alta" class="form-control form-control-lg form-control-solid" id="fecha_alta" placeholder="Fecha de alta" readonly required />
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label">Tipo de comercio</label>
+                                <div class="col-lg-8">
+                                    <select name="tipo_comercio" id="tipo_comercio" class="form-control form-control-lg form-control-solid" required>
+                                        <option value="Emprendedor">Emprendedor</option>
+                                        <option value="Comercio Mediano">Comercio Mediano</option>
+                                        <option value="Empresa">Empresa</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Estado de comercio</label>
+                                <div class="col-lg-8">
+                                    <select name="estado_comercio" id="estado_comercio" class="form-control form-control-lg form-control-solid" required>
+                                        <option value="Alta">Alta</option>
+                                        <option value="Baja">Baja</option>
+                                        <option value="Lista negra">Lista negra</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
+                                <div class="col-lg-8">
+                                    <select name="agencia_registro" id="agencia_registro" class="form-control form-control-lg form-control-solid" required>
+                                        <option value="San Salvador">San Salvador</option>
+                                        <option value="San Miguel">San Miguel</option>
+                                        <option value="Santa Ana">Santa Ana</option>
+                                        <option value="Centro de distribución">Centro de distribución</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label">Correo Electrónico</label>
+                                <div class="col-lg-8">
+                                    <input type="email" name="correo_electronico" id="correo_electronico" class="form-control form-control-lg form-control-solid" placeholder="Correo Electrónico" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-primary" id="guardarComercioBtn">Guardar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
             <!--begin::Content-->
             <div id="kt_app_content" class="app-content flex-column-fluid">
@@ -198,242 +298,210 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade show active" id="kt_pos_food_content_1">
                                             <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxl-9">
-                                                <div class="tab-content" id="myTabContent">
-                                                    <div class="tab-pane fade active show" id="kt_ecommerce_settings_general" role="tabpanel">
-
-                                                        <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarp" method="POST">
-                                                            @csrf
-                                                            @method('GET')
-
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-3 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
-                                                                    <label for="n_guia" style="padding-left: 25px;"># de guía</label>
-                                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-12 mb-4">
-                                                                    <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
-                                                                        <option value="comer">comer</option>
-                                                                    </select>
-                                                                    <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
-                                                                    <div id="comercioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor seleccione un comercio.
+                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
+                                                <!--begin::Content-->
+                                                <div id="kt_app_content" class="app-content flex-column-fluid">
+                                                    <!--begin::Content container-->
+                                                    <div class="col col-xxl-12">
+                                                        <!--begin::Products-->
+                                                        <div class="card card-flush">
+                                                            <!--begin::Card header-->
+                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                                <!--begin::Card title-->
+                                                                <div class="card-title">
+                                                                    <!--begin::Search-->
+                                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                                     </div>
+                                                                    <!--end::Search-->
+                                                                    <!--begin::Export buttons-->
+                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                                    <!--end::Export buttons-->
                                                                 </div>
+                                                                <!--end::Card title-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" placeholder="Precio del paquete" />
-                                                                    <label for="precio" style="padding-left: 25px;">Precio del paquete</label>
-                                                                    <div id="precioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el paquete.
-                                                                    </div>
+                                                            <!--end::Card header-->
+                                                            <!--begin::Card body-->
+                                                            <div class="card-body pt-0">
+                                                                <!--begin::Table-->
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                                        <thead>
+                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                                <th class="min-w-50px"># de guía</th>
+                                                                                <th class="min-w-100px">Nombre de comercio</th>
+                                                                                <th class="min-w-100px">Tipo de envío</th>
+                                                                                <th class="min-w-100px">Fecha de recepción </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody class="fw-semibold text-gray-400">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                                </td>
+                                                                                <td>Moda SV</td>
+                                                                                <td>Departamental</td>
+                                                                                <td>20/06/2023</td>
+                                                                            </tr>
+                                                                            <!-- Add more rows as needed -->
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" placeholder="Precio del envío" />
-                                                                    <label for="envio" style="padding-left: 25px;">Precio del envío</label>
-                                                                    <div id="envioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el envío.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" placeholder="Total a pagar" />
-                                                                    <label for="total" style="padding-left: 25px;">Total a pagar</label>
-                                                                    <div id="totalValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un total válido a pagar.
-                                                                    </div>
-                                                                </div>
+                                                                <!--end::Table-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating mb-4">
-                                                                    <textarea name="nota" class="form-control form-control-solid" placeholder="Nota" id="nota" style="height: 80px"></textarea>
-                                                                    <label for="nota" style="padding-left: 25px;">Nota</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-5">
-                                                                <div class="col-md-12 text-end">
-                                                                    <div class="d-flex justify-content-end">
-                                                                        <a href="/envios/lista" class="btn btn-light me-3">Cancelar</a>
-
-                                                                        <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
-                                                                            <span class="indicator-label">
-                                                                                Guardar envio
-                                                                            </span>
-                                                                            <span class="indicator-progress">
-                                                                                Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                                            </span>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                                                            <!--end::Card body-->
+                                                        </div>
+                                                        <!--end::Card-->
                                                     </div>
+                                                    <!--end::Products-->
                                                 </div>
+                                                <!--end::Content container-->
                                             </div>
                                             <!--end::Wrapper-->
                                         </div>
+                                        <!--end::Tap pane-->
+
+
                                         <!--end::Tap pane-->
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade" id="kt_pos_food_content_2">
                                             <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxl-9">
-                                                <div class="tab-content" id="myTabContent">
-                                                    <div class="tab-pane fade active show" id="kt_ecommerce_settings_general" role="tabpanel">
-
-                                                        <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarpd" method="POST">
-                                                            @csrf
-                                                            @method('GET')
-
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-3 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
-                                                                    <label for="n_guia" style="padding-left: 25px;"># de guía</label>
-                                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-12 mb-4">
-                                                                    <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
-                                                                        <option value="comer">comer</option>
-                                                                    </select>
-                                                                    <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
-                                                                    <div id="comercioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor seleccione un comercio.
+                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
+                                                <!--begin::Content-->
+                                                <div id="kt_app_content" class="app-content flex-column-fluid">
+                                                    <!--begin::Content container-->
+                                                    <div class="col col-xxl-12">
+                                                        <!--begin::Products-->
+                                                        <div class="card card-flush">
+                                                            <!--begin::Card header-->
+                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                                <!--begin::Card title-->
+                                                                <div class="card-title">
+                                                                    <!--begin::Search-->
+                                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                                     </div>
+                                                                    <!--end::Search-->
+                                                                    <!--begin::Export buttons-->
+                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                                    <!--end::Export buttons-->
                                                                 </div>
+                                                                <!--end::Card title-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" placeholder="Precio del paquete" />
-                                                                    <label for="precio" style="padding-left: 25px;">Precio del paquete</label>
-                                                                    <div id="precioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el paquete.
-                                                                    </div>
+                                                            <!--end::Card header-->
+                                                            <!--begin::Card body-->
+                                                            <div class="card-body pt-0">
+                                                                <!--begin::Table-->
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                                        <thead>
+                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                                <th class="min-w-50px"># de guía</th>
+                                                                                <th class="min-w-100px">Nombre de comercio</th>
+                                                                                <th class="min-w-100px">Tipo de envío</th>
+                                                                                <th class="min-w-100px">Fecha de recepción </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody class="fw-semibold text-gray-400">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                                </td>
+                                                                                <td>Moda SV</td>
+                                                                                <td>Departamental</td>
+                                                                                <td>20/06/2023</td>
+                                                                            </tr>
+                                                                            <!-- Add more rows as needed -->
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" placeholder="Precio del envío" />
-                                                                    <label for="envio" style="padding-left: 25px;">Precio del envío</label>
-                                                                    <div id="envioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el envío.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" placeholder="Total a pagar" />
-                                                                    <label for="total" style="padding-left: 25px;">Total a pagar</label>
-                                                                    <div id="totalValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un total válido a pagar.
-                                                                    </div>
-                                                                </div>
+                                                                <!--end::Table-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating mb-4">
-                                                                    <textarea name="nota" class="form-control form-control-solid" placeholder="Nota" id="nota" style="height: 80px"></textarea>
-                                                                    <label for="nota" style="padding-left: 25px;">Nota</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-5">
-                                                                <div class="col-md-12 text-end">
-                                                                    <div class="d-flex justify-content-end">
-                                                                        <a href="/envios/lista" class="btn btn-light me-3">Cancelar</a>
-
-                                                                        <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
-                                                                            <span class="indicator-label">
-                                                                                Guardar envio
-                                                                            </span>
-                                                                            <span class="indicator-progress">
-                                                                                Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                                            </span>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                                                            <!--end::Card body-->
+                                                        </div>
+                                                        <!--end::Card-->
                                                     </div>
+                                                    <!--end::Products-->
                                                 </div>
+                                                <!--end::Content container-->
                                             </div>
                                             <!--end::Wrapper-->
                                         </div>
                                         <!--end::Tap pane-->
+
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade" id="kt_pos_food_content_3">
                                             <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxl-9">
-                                                <div class="tab-content" id="myTabContent">
-                                                    <div class="tab-pane fade active show" id="kt_ecommerce_settings_general" role="tabpanel">
-
-                                                        <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarpf" method="POST">
-                                                            @csrf
-                                                            @method('GET')
-
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-3 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
-                                                                    <label for="n_guia" style="padding-left: 25px;"># de guía</label>
-                                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-12 mb-4">
-                                                                    <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
-                                                                        <option value="comer">comer</option>
-                                                                    </select>
-                                                                    <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
-                                                                    <div id="comercioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor seleccione un comercio.
+                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
+                                                <!--begin::Content-->
+                                                <div id="kt_app_content" class="app-content flex-column-fluid">
+                                                    <!--begin::Content container-->
+                                                    <div class="col col-xxl-12">
+                                                        <!--begin::Products-->
+                                                        <div class="card card-flush">
+                                                            <!--begin::Card header-->
+                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                                <!--begin::Card title-->
+                                                                <div class="card-title">
+                                                                    <!--begin::Search-->
+                                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                                     </div>
+                                                                    <!--end::Search-->
+                                                                    <!--begin::Export buttons-->
+                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                                    <!--end::Export buttons-->
                                                                 </div>
+                                                                <!--end::Card title-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" placeholder="Precio del paquete" />
-                                                                    <label for="precio" style="padding-left: 25px;">Precio del paquete</label>
-                                                                    <div id="precioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el paquete.
-                                                                    </div>
+                                                            <!--end::Card header-->
+                                                            <!--begin::Card body-->
+                                                            <div class="card-body pt-0">
+                                                                <!--begin::Table-->
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                                        <thead>
+                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                                <th class="min-w-50px"># de guía</th>
+                                                                                <th class="min-w-100px">Nombre de comercio</th>
+                                                                                <th class="min-w-100px">Tipo de envío</th>
+                                                                                <th class="min-w-100px">Fecha de recepción </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody class="fw-semibold text-gray-400">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                                </td>
+                                                                                <td>Moda SV</td>
+                                                                                <td>Departamental</td>
+                                                                                <td>20/06/2023</td>
+                                                                            </tr>
+                                                                            <!-- Add more rows as needed -->
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" placeholder="Precio del envío" />
-                                                                    <label for="envio" style="padding-left: 25px;">Precio del envío</label>
-                                                                    <div id="envioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el envío.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" placeholder="Total a pagar" />
-                                                                    <label for="total" style="padding-left: 25px;">Total a pagar</label>
-                                                                    <div id="totalValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un total válido a pagar.
-                                                                    </div>
-                                                                </div>
+                                                                <!--end::Table-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating mb-4">
-                                                                    <textarea name="nota" class="form-control form-control-solid" placeholder="Nota" id="nota" style="height: 80px"></textarea>
-                                                                    <label for="nota" style="padding-left: 25px;">Nota</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-5">
-                                                                <div class="col-md-12 text-end">
-                                                                    <div class="d-flex justify-content-end">
-                                                                        <a href="/envios/lista" class="btn btn-light me-3">Cancelar</a>
-
-                                                                        <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
-                                                                            <span class="indicator-label">
-                                                                                Guardar envio
-                                                                            </span>
-                                                                            <span class="indicator-progress">
-                                                                                Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                                            </span>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                                                            <!--end::Card body-->
+                                                        </div>
+                                                        <!--end::Card-->
                                                     </div>
+                                                    <!--end::Products-->
                                                 </div>
+                                                <!--end::Content container-->
                                             </div>
                                             <!--end::Wrapper-->
                                         </div>
@@ -441,80 +509,68 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade" id="kt_pos_food_content_4">
                                             <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxl-9">
-                                                <div class="tab-content" id="myTabContent">
-                                                    <div class="tab-pane fade active show" id="kt_ecommerce_settings_general" role="tabpanel">
-
-                                                        <form id="kt_ecommerce_settings_general_form" class="form fv-plugins-bootstrap5 fv-plugins-framework" action="/envioguardarca" method="POST">
-                                                            @csrf
-                                                            @method('GET')
-
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-3 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
-                                                                    <label for="n_guia" style="padding-left: 25px;"># de guía</label>
-                                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-12 mb-4">
-                                                                    <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
-                                                                        <option value="comer">comer</option>
-                                                                    </select>
-                                                                    <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
-                                                                    <div id="comercioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor seleccione un comercio.
+                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
+                                                <!--begin::Content-->
+                                                <div id="kt_app_content" class="app-content flex-column-fluid">
+                                                    <!--begin::Content container-->
+                                                    <div class="col col-xxl-12">
+                                                        <!--begin::Products-->
+                                                        <div class="card card-flush">
+                                                            <!--begin::Card header-->
+                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                                <!--begin::Card title-->
+                                                                <div class="card-title">
+                                                                    <!--begin::Search-->
+                                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                            <span class="path1"></span>
+                                                                            <span class="path2"></span>
+                                                                        </i>
+                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                                     </div>
+                                                                    <!--end::Search-->
+                                                                    <!--begin::Export buttons-->
+                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                                    <!--end::Export buttons-->
                                                                 </div>
+                                                                <!--end::Card title-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating col-lg-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" placeholder="Precio del paquete" />
-                                                                    <label for="precio" style="padding-left: 25px;">Precio del paquete</label>
-                                                                    <div id="precioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el paquete.
-                                                                    </div>
+                                                            <!--end::Card header-->
+                                                            <!--begin::Card body-->
+                                                            <div class="card-body pt-0">
+                                                                <!--begin::Table-->
+                                                                <div class="table-responsive">
+                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                                        <thead>
+                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                                <th class="min-w-50px"># de guía</th>
+                                                                                <th class="min-w-100px">Nombre de comercio</th>
+                                                                                <th class="min-w-100px">Tipo de envío</th>
+                                                                                <th class="min-w-100px">Fecha de recepción </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody class="fw-semibold text-gray-400">
+                                                                            <tr>
+                                                                                <td>
+                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                                </td>
+                                                                                <td>Moda SV</td>
+                                                                                <td>Departamental</td>
+                                                                                <td>20/06/2023</td>
+                                                                            </tr>
+                                                                            <!-- Add more rows as needed -->
+                                                                        </tbody>
+                                                                    </table>
                                                                 </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" placeholder="Precio del envío" />
-                                                                    <label for="envio" style="padding-left: 25px;">Precio del envío</label>
-                                                                    <div id="envioValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un precio válido para el envío.
-                                                                    </div>
-                                                                </div>
-                                                                <div class="form-floating col-lg-4 mb-4">
-                                                                    <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" placeholder="Total a pagar" />
-                                                                    <label for="total" style="padding-left: 25px;">Total a pagar</label>
-                                                                    <div id="totalValidationFeedback" class="invalid-feedback">
-                                                                        Por favor ingrese un total válido a pagar.
-                                                                    </div>
-                                                                </div>
+                                                                <!--end::Table-->
                                                             </div>
-                                                            <div class="row my-4 mx-4">
-                                                                <div class="form-floating mb-4">
-                                                                    <textarea name="nota" class="form-control form-control-solid" placeholder="Nota" id="nota" style="height: 80px"></textarea>
-                                                                    <label for="nota" style="padding-left: 25px;">Nota</label>
-                                                                </div>
-                                                            </div>
-                                                            <div class="row py-5">
-                                                                <div class="col-md-12 text-end">
-                                                                    <div class="d-flex justify-content-end">
-                                                                        <a href="/envios/lista" class="btn btn-light me-3">Cancelar</a>
-
-                                                                        <button type="submit" id="saveButton" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
-                                                                            <span class="indicator-label">
-                                                                                Guardar envio
-                                                                            </span>
-                                                                            <span class="indicator-progress">
-                                                                                Please wait... <span class="spinner-border spinner-border-sm align-middle ms-2"></span>
-                                                                            </span>
-                                                                        </button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
+                                                            <!--end::Card body-->
+                                                        </div>
+                                                        <!--end::Card-->
                                                     </div>
+                                                    <!--end::Products-->
                                                 </div>
+                                                <!--end::Content container-->
                                             </div>
                                             <!--end::Wrapper-->
                                         </div>
@@ -696,8 +752,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Content-->
                                         <div class="fs-6 fw-bold text-white">
                                             <span class="d-block lh-1 mb-2">Subtotal</span>
-                                            <span class="d-block mb-2">Discounts</span>
-                                            <span class="d-block mb-9">Tax(12%)</span>
+                                            <span class="d-block mb-2">Descuento</span>
                                             <span class="d-block fs-2qx lh-1">Total</span>
                                         </div>
                                         <!--end::Content-->
@@ -705,7 +760,6 @@ License: For each use you must have a valid license purchased only from above li
                                         <div class="fs-6 fw-bold text-white text-end">
                                             <span class="d-block lh-1 mb-2" data-kt-pos-element="total">$100.50</span>
                                             <span class="d-block mb-2" data-kt-pos-element="discount">-$8.00</span>
-                                            <span class="d-block mb-9" data-kt-pos-element="tax">$11.20</span>
                                             <span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$93.46</span>
                                         </div>
                                         <!--end::Content-->
@@ -713,62 +767,6 @@ License: For each use you must have a valid license purchased only from above li
                                     <!--end::Summary-->
                                     <!--begin::Payment Method-->
                                     <div class="m-0">
-                                        <!--begin::Title-->
-                                        <h1 class="fw-bold text-gray-800 mb-5">Payment Method</h1>
-                                        <!--end::Title-->
-                                        <!--begin::Radio group-->
-                                        <div class="d-flex flex-equal gap-5 gap-xxl-9 px-0 mb-12" data-kt-buttons="true" data-kt-buttons-target="[data-kt-button]">
-                                            <!--begin::Radio-->
-                                            <label class="btn bg-light btn-color-gray-600 btn-active-text-gray-800 border border-3 border-gray-100 border-active-primary btn-active-light-primary w-100 px-4" data-kt-button="true">
-                                                <!--begin::Input-->
-                                                <input class="btn-check" type="radio" name="method" value="0" />
-                                                <!--end::Input-->
-                                                <!--begin::Icon-->
-                                                <i class="ki-duotone ki-dollar fs-2hx mb-2 pe-0">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                    <span class="path3"></span>
-                                                </i>
-                                                <!--end::Icon-->
-                                                <!--begin::Title-->
-                                                <span class="fs-7 fw-bold d-block">Cash</span>
-                                                <!--end::Title-->
-                                            </label>
-                                            <!--end::Radio-->
-                                            <!--begin::Radio-->
-                                            <label class="btn bg-light btn-color-gray-600 btn-active-text-gray-800 border border-3 border-gray-100 border-active-primary btn-active-light-primary w-100 px-4 active" data-kt-button="true">
-                                                <!--begin::Input-->
-                                                <input class="btn-check" type="radio" name="method" value="1" />
-                                                <!--end::Input-->
-                                                <!--begin::Icon-->
-                                                <i class="ki-duotone ki-credit-cart fs-2hx mb-2 pe-0">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                                <!--end::Icon-->
-                                                <!--begin::Title-->
-                                                <span class="fs-7 fw-bold d-block">Card</span>
-                                                <!--end::Title-->
-                                            </label>
-                                            <!--end::Radio-->
-                                            <!--begin::Radio-->
-                                            <label class="btn bg-light btn-color-gray-600 btn-active-text-gray-800 border border-3 border-gray-100 border-active-primary btn-active-light-primary w-100 px-4" data-kt-button="true">
-                                                <!--begin::Input-->
-                                                <input class="btn-check" type="radio" name="method" value="2" />
-                                                <!--end::Input-->
-                                                <!--begin::Icon-->
-                                                <i class="ki-duotone ki-paypal fs-2hx mb-2 pe-0">
-                                                    <span class="path1"></span>
-                                                    <span class="path2"></span>
-                                                </i>
-                                                <!--end::Icon-->
-                                                <!--begin::Title-->
-                                                <span class="fs-7 fw-bold d-block">E-Wallet</span>
-                                                <!--end::Title-->
-                                            </label>
-                                            <!--end::Radio-->
-                                        </div>
-                                        <!--end::Radio group-->
                                         <!--begin::Actions-->
                                         <button class="btn btn-primary fs-1 w-100 py-4">imprimir comprobante</button>
                                         <!--end::Actions-->
@@ -813,6 +811,97 @@ License: For each use you must have a valid license purchased only from above li
     <script src="assets/js/custom/apps/chat/chat.js"></script>
     <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
     <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Evento para cargar los comercios cuando se abra el modal
+            $('#seleccionarComercioModal').on('show.bs.modal', function(e) {
+                // Aquí deberías cargar los comercios desde tu base de datos o de donde sea que los tengas
+                var comercios = ["Comercio 1", "Comercio 2", "Comercio 3"]; // Aquí pongo ejemplos
+
+                // Vaciamos el select
+                $('#comercio').empty();
+
+                // Iteramos sobre los comercios y los agregamos al select
+                $.each(comercios, function(index, comercio) {
+                    $('#comercio').append($('<option>', {
+                        value: comercio,
+                        text: comercio
+                    }));
+                });
+            });
+
+            // Evento para manejar la selección del comercio
+            $('#seleccionarBtn').on('click', function() {
+                var comercioSeleccionado = $('#comercio').val();
+
+                // Aquí puedes hacer lo que quieras con el comercio seleccionado, como enviarlo a través de un formulario, etc.
+                alert("Comercio seleccionado: " + comercioSeleccionado);
+
+                // Cerrar el modal
+                $('#seleccionarComercioModal').modal('hide');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Evento para abrir el modal de agregar comercio cuando se hace clic en el enlace
+            $('#openAgregarComerciosModal').on('click', function() {
+                $('#agregarComercioModal').modal('show');
+            });
+
+            // Evento para guardar la información del comercio cuando se hace clic en el botón Guardar
+            $('#guardarComercioBtn').on('click', function() {
+                // Obtener los valores de los campos del formulario
+                var nombreComercio = $('#nombre_comercio').val();
+                var telefono = $('#telefono').val();
+                var fechaAlta = $('#fecha_alta').val();
+                var tipoComercio = $('#tipo_comercio').val();
+                var estadoComercio = $('#estado_comercio').val();
+                var agenciaRegistro = $('#agencia_registro').val();
+                var correoElectronico = $('#correo_electronico').val();
+
+                // Aquí puedes hacer validaciones adicionales si es necesario
+
+                // Crear un objeto con la información del comercio
+                var comercio = {
+                    nombre: nombreComercio,
+                    telefono: telefono,
+                    fecha_alta: fechaAlta,
+                    tipo: tipoComercio,
+                    estado: estadoComercio,
+                    agencia_registro: agenciaRegistro,
+                    correo: correoElectronico
+                };
+
+                // Aquí podrías hacer una petición AJAX para guardar el comercio en la base de datos
+                // Por ejemplo, si estás utilizando jQuery:
+                /*
+                $.ajax({
+                  type: 'POST',
+                  url: '/guardar_comercio',
+                  data: comercio,
+                  success: function(response) {
+                    // Manejar la respuesta del servidor
+                    alert('Comercio guardado correctamente');
+                    $('#agregarComercioModal').modal('hide');
+                  },
+                  error: function(error) {
+                    // Manejar errores
+                    alert('Error al guardar el comercio');
+                  }
+                });
+                */
+
+                // Simplemente mostraremos los datos en la consola como ejemplo
+                console.log('Información del comercio:', comercio);
+
+                // Cerrar el modal después de guardar
+                $('#agregarComercioModal').modal('hide');
+            });
+        });
+    </script>
+
+
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 </body>
