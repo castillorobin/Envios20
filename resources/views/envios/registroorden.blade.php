@@ -271,7 +271,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 138px;height: 180px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 138px;height: 185px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -298,69 +298,63 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade show active" id="kt_pos_food_content_1">
                                             <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
-                                                <!--begin::Content-->
-                                                <div id="kt_app_content" class="app-content flex-column-fluid">
-                                                    <!--begin::Content container-->
-                                                    <div class="col col-xxl-12">
-                                                        <!--begin::Products-->
-                                                        <div class="card card-flush">
-                                                            <!--begin::Card header-->
-                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                                <!--begin::Card title-->
-                                                                <div class="card-title">
-                                                                    <!--begin::Search-->
-                                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                            <span class="path1"></span>
-                                                                            <span class="path2"></span>
-                                                                        </i>
-                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                                    </div>
-                                                                    <!--end::Search-->
-                                                                    <!--begin::Export buttons-->
-                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                                    <!--end::Export buttons-->
-                                                                </div>
-                                                                <!--end::Card title-->
-                                                            </div>
-                                                            <!--end::Card header-->
-                                                            <!--begin::Card body-->
-                                                            <div class="card-body pt-0">
-                                                                <!--begin::Table-->
-                                                                <div class="table-responsive">
-                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
-                                                                        <thead>
-                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                                <th class="min-w-50px"># de guía</th>
-                                                                                <th class="min-w-100px">Nombre de comercio</th>
-                                                                                <th class="min-w-100px">Tipo de envío</th>
-                                                                                <th class="min-w-100px">Fecha de recepción </th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody class="fw-semibold text-gray-400">
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                                </td>
-                                                                                <td>Moda SV</td>
-                                                                                <td>Departamental</td>
-                                                                                <td>20/06/2023</td>
-                                                                            </tr>
-                                                                            <!-- Add more rows as needed -->
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                                <!--end::Table-->
-                                                            </div>
-                                                            <!--end::Card body-->
+                                            <!--begin::Content-->
+                                            <!--begin::Content container-->
+                                            <!--begin::Products-->
+                                            <div class="card card-flush col-lg-12">
+                                                <!--begin::Card header-->
+                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                    <!--begin::Card title-->
+                                                    <div class="card-title">
+                                                        <!--begin::Search-->
+                                                        <div class="d-flex align-items-center position-relative my-1">
+                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                         </div>
-                                                        <!--end::Card-->
+                                                        <!--end::Search-->
+                                                        <!--begin::Export buttons-->
+                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                        <!--end::Export buttons-->
                                                     </div>
-                                                    <!--end::Products-->
+                                                    <!--end::Card title-->
                                                 </div>
-                                                <!--end::Content container-->
+                                                <!--end::Card header-->
+                                                <!--begin::Card body-->
+                                                <div class="card-body pt-0 align-items-end">
+                                                    <!--begin::Table-->
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                    <th class="min-w-50px"># de guía</th>
+                                                                    <th class="min-w-100px">Comercio</th>
+                                                                    <th class="min-w-100px">Tipo de envío</th>
+                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="fw-semibold text-gray-400">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                    </td>
+                                                                    <td>Moda SV</td>
+                                                                    <td>Departamental</td>
+                                                                    <td>20/06/2023</td>
+                                                                </tr>
+                                                                <!-- Add more rows as needed -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!--end::Table-->
+                                                </div>
+                                                <!--end::Card body-->
                                             </div>
+                                            <!--end::Card-->
+
+
                                             <!--end::Wrapper-->
                                         </div>
                                         <!--end::Tap pane-->
@@ -369,67 +363,122 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade" id="kt_pos_food_content_2">
                                             <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
-                                                <!--begin::Content-->
-                                                <div id="kt_app_content" class="app-content flex-column-fluid">
-                                                    <!--begin::Content container-->
-                                                    <div class="col col-xxl-12">
-                                                        <!--begin::Products-->
-                                                        <div class="card card-flush">
-                                                            <!--begin::Card header-->
-                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                                <!--begin::Card title-->
-                                                                <div class="card-title">
-                                                                    <!--begin::Search-->
-                                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                            <span class="path1"></span>
-                                                                            <span class="path2"></span>
-                                                                        </i>
-                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                                    </div>
-                                                                    <!--end::Search-->
-                                                                    <!--begin::Export buttons-->
-                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                                    <!--end::Export buttons-->
-                                                                </div>
-                                                                <!--end::Card title-->
-                                                            </div>
-                                                            <!--end::Card header-->
-                                                            <!--begin::Card body-->
-                                                            <div class="card-body pt-0">
-                                                                <!--begin::Table-->
-                                                                <div class="table-responsive">
-                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
-                                                                        <thead>
-                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                                <th class="min-w-50px"># de guía</th>
-                                                                                <th class="min-w-100px">Nombre de comercio</th>
-                                                                                <th class="min-w-100px">Tipo de envío</th>
-                                                                                <th class="min-w-100px">Fecha de recepción </th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody class="fw-semibold text-gray-400">
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                                </td>
-                                                                                <td>Moda SV</td>
-                                                                                <td>Departamental</td>
-                                                                                <td>20/06/2023</td>
-                                                                            </tr>
-                                                                            <!-- Add more rows as needed -->
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                                <!--end::Table-->
-                                                            </div>
-                                                            <!--end::Card body-->
+
+                                            <!--begin::Content container-->
+                                            <div class="card card-flush col-lg-12">
+                                                <!--begin::Products-->
+                                                <!--begin::Card header-->
+                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                    <!--begin::Card title-->
+                                                    <div class="card-title">
+                                                        <!--begin::Search-->
+                                                        <div class="d-flex align-items-center position-relative my-1">
+                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                         </div>
-                                                        <!--end::Card-->
+                                                        <!--end::Search-->
+                                                        <!--begin::Export buttons-->
+                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                        <!--end::Export buttons-->
                                                     </div>
-                                                    <!--end::Products-->
+                                                    <!--end::Card title-->
                                                 </div>
+                                                <!--end::Card header-->
+                                                <!--begin::Card body-->
+                                                <div class="card-body pt-0">
+                                                    <!--begin::Table-->
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                    <th class="min-w-50px"># de guía</th>
+                                                                    <th class="min-w-100px">Comercio</th>
+                                                                    <th class="min-w-100px">Tipo de envío</th>
+                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="fw-semibold text-gray-400">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                    </td>
+                                                                    <td>Moda SV</td>
+                                                                    <td>Personalizado Departamental</td>
+                                                                    <td>20/06/2023</td>
+                                                                </tr>
+                                                                <!-- Add more rows as needed -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!--end::Table-->
+                                                </div>
+                                                <!--end::Card body-->
+
+                                                <!--end::Card-->
+                                            </div>
+
+                                            <!--end::Wrapper-->
+                                        </div>
+                                        <!--end::Tap pane-->
+
+                                        <!--begin::Tap pane-->
+                                        <div class="tab-pane fade" id="kt_pos_food_content_3">
+
+                                            <!--begin::Products-->
+                                            <div class="card card-flush col-lg-12">
+                                                <!--begin::Card header-->
+                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                    <!--begin::Card title-->
+                                                    <div class="card-title">
+                                                        <!--begin::Search-->
+                                                        <div class="d-flex align-items-center position-relative my-1">
+                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                        </div>
+                                                        <!--end::Search-->
+                                                        <!--begin::Export buttons-->
+                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                        <!--end::Export buttons-->
+                                                    </div>
+                                                    <!--end::Card title-->
+                                                </div>
+                                                <!--end::Card header-->
+                                                <!--begin::Card body-->
+                                                <div class="card-body pt-0">
+                                                    <!--begin::Table-->
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                    <th class="min-w-50px"># de guía</th>
+                                                                    <th class="min-w-100px">Comercio</th>
+                                                                    <th class="min-w-100px">Tipo de envío</th>
+                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="fw-semibold text-gray-400">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                    </td>
+                                                                    <td>Moda SV</td>
+                                                                    <td>¨Punto fijo</td>
+                                                                    <td>20/06/2023</td>
+                                                                </tr>
+                                                                <!-- Add more rows as needed -->
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <!--end::Table-->
+                                                </div>
+                                                <!--end::Card body-->
+
                                                 <!--end::Content container-->
                                             </div>
                                             <!--end::Wrapper-->
@@ -437,138 +486,61 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--end::Tap pane-->
 
                                         <!--begin::Tap pane-->
-                                        <div class="tab-pane fade" id="kt_pos_food_content_3">
+                                        <div class="tab-pane fade w-100" id="kt_pos_food_content_4">
                                             <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
-                                                <!--begin::Content-->
-                                                <div id="kt_app_content" class="app-content flex-column-fluid">
-                                                    <!--begin::Content container-->
-                                                    <div class="col col-xxl-12">
-                                                        <!--begin::Products-->
-                                                        <div class="card card-flush">
-                                                            <!--begin::Card header-->
-                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                                <!--begin::Card title-->
-                                                                <div class="card-title">
-                                                                    <!--begin::Search-->
-                                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                            <span class="path1"></span>
-                                                                            <span class="path2"></span>
-                                                                        </i>
-                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                                    </div>
-                                                                    <!--end::Search-->
-                                                                    <!--begin::Export buttons-->
-                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                                    <!--end::Export buttons-->
-                                                                </div>
-                                                                <!--end::Card title-->
-                                                            </div>
-                                                            <!--end::Card header-->
-                                                            <!--begin::Card body-->
-                                                            <div class="card-body pt-0">
-                                                                <!--begin::Table-->
-                                                                <div class="table-responsive">
-                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
-                                                                        <thead>
-                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                                <th class="min-w-50px"># de guía</th>
-                                                                                <th class="min-w-100px">Nombre de comercio</th>
-                                                                                <th class="min-w-100px">Tipo de envío</th>
-                                                                                <th class="min-w-100px">Fecha de recepción </th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody class="fw-semibold text-gray-400">
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                                </td>
-                                                                                <td>Moda SV</td>
-                                                                                <td>Departamental</td>
-                                                                                <td>20/06/2023</td>
-                                                                            </tr>
-                                                                            <!-- Add more rows as needed -->
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                                <!--end::Table-->
-                                                            </div>
-                                                            <!--end::Card body-->
+
+                                            <!--begin::Products-->
+                                            <div class="card card-flush col-lg-12">
+                                                <!--begin::Card header-->
+                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                    <!--begin::Card title-->
+                                                    <div class="card-title">
+                                                        <!--begin::Search-->
+                                                        <div class="d-flex align-items-center position-relative my-1">
+                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                         </div>
-                                                        <!--end::Card-->
+                                                        <!--end::Search-->
+                                                        <!--begin::Export buttons-->
+                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                        <!--end::Export buttons-->
                                                     </div>
-                                                    <!--end::Products-->
+                                                    <!--end::Card title-->
                                                 </div>
-                                                <!--end::Content container-->
-                                            </div>
-                                            <!--end::Wrapper-->
-                                        </div>
-                                        <!--end::Tap pane-->
-                                        <!--begin::Tap pane-->
-                                        <div class="tab-pane fade" id="kt_pos_food_content_4">
-                                            <!--begin::Wrapper-->
-                                            <div class="d-flex flex-wrap d-grid gap-5 gap-xxxl-9">
-                                                <!--begin::Content-->
-                                                <div id="kt_app_content" class="app-content flex-column-fluid">
-                                                    <!--begin::Content container-->
-                                                    <div class="col col-xxl-12">
-                                                        <!--begin::Products-->
-                                                        <div class="card card-flush">
-                                                            <!--begin::Card header-->
-                                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                                <!--begin::Card title-->
-                                                                <div class="card-title">
-                                                                    <!--begin::Search-->
-                                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                            <span class="path1"></span>
-                                                                            <span class="path2"></span>
-                                                                        </i>
-                                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                                    </div>
-                                                                    <!--end::Search-->
-                                                                    <!--begin::Export buttons-->
-                                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                                    <!--end::Export buttons-->
-                                                                </div>
-                                                                <!--end::Card title-->
-                                                            </div>
-                                                            <!--end::Card header-->
-                                                            <!--begin::Card body-->
-                                                            <div class="card-body pt-0">
-                                                                <!--begin::Table-->
-                                                                <div class="table-responsive">
-                                                                    <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
-                                                                        <thead>
-                                                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                                <th class="min-w-50px"># de guía</th>
-                                                                                <th class="min-w-100px">Nombre de comercio</th>
-                                                                                <th class="min-w-100px">Tipo de envío</th>
-                                                                                <th class="min-w-100px">Fecha de recepción </th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <tbody class="fw-semibold text-gray-400">
-                                                                            <tr>
-                                                                                <td>
-                                                                                    <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                                </td>
-                                                                                <td>Moda SV</td>
-                                                                                <td>Departamental</td>
-                                                                                <td>20/06/2023</td>
-                                                                            </tr>
-                                                                            <!-- Add more rows as needed -->
-                                                                        </tbody>
-                                                                    </table>
-                                                                </div>
-                                                                <!--end::Table-->
-                                                            </div>
-                                                            <!--end::Card body-->
-                                                        </div>
-                                                        <!--end::Card-->
+                                                <!--end::Card header-->
+                                                <!--begin::Card body-->
+                                                <div class="card-body pt-0">
+                                                    <!--begin::Table-->
+                                                    <div class="table-responsive">
+                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                            <thead>
+                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                                    <th class="min-w-50px"># de guía</th>
+                                                                    <th class="min-w-100px">Comercio</th>
+                                                                    <th class="min-w-100px">Tipo de envío</th>
+                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody class="fw-semibold text-gray-400">
+                                                                <tr>
+                                                                    <td>
+                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
+                                                                    </td>
+                                                                    <td>Moda SV</td>
+                                                                    <td>Casillero</td>
+                                                                    <td>20/06/2023</td>
+                                                                </tr>
+                                                                <!-- Add more rows as needed -->
+                                                            </tbody>
+                                                        </table>
                                                     </div>
-                                                    <!--end::Products-->
+                                                    <!--end::Table-->
                                                 </div>
+                                                <!--end::Card body-->
+
                                                 <!--end::Content container-->
                                             </div>
                                             <!--end::Wrapper-->
@@ -626,11 +598,11 @@ License: For each use you must have a valid license purchased only from above li
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-                                                           
+
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-30px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
+                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w-100px text-center" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
                                                             <!--end::Input control-->
-                                                          
+
                                                         </div>
                                                         <!--end::Dialer-->
                                                     </td>
@@ -649,19 +621,11 @@ License: For each use you must have a valid license purchased only from above li
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-                                                            <!--begin::Decrease control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="decrease">
-                                                                <i class="ki-duotone ki-minus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Decrease control-->
+
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-30px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="1" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="1" />
                                                             <!--end::Input control-->
-                                                            <!--begin::Increase control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="increase">
-                                                                <i class="ki-duotone ki-plus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Increase control-->
+
                                                         </div>
                                                         <!--end::Dialer-->
                                                     </td>
@@ -680,19 +644,11 @@ License: For each use you must have a valid license purchased only from above li
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-                                                            <!--begin::Decrease control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="decrease">
-                                                                <i class="ki-duotone ki-minus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Decrease control-->
+
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-30px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
                                                             <!--end::Input control-->
-                                                            <!--begin::Increase control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="increase">
-                                                                <i class="ki-duotone ki-plus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Increase control-->
+
                                                         </div>
                                                         <!--end::Dialer-->
                                                     </td>
@@ -705,25 +661,17 @@ License: For each use you must have a valid license purchased only from above li
                                                     <td class="pe-0">
                                                         <div class="d-flex align-items-center">
                                                             <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Casillero</span>
+                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1 ">Casillero</span>
                                                         </div>
                                                     </td>
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-                                                            <!--begin::Decrease control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="decrease">
-                                                                <i class="ki-duotone ki-minus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Decrease control-->
+
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-30px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
                                                             <!--end::Input control-->
-                                                            <!--begin::Increase control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="increase">
-                                                                <i class="ki-duotone ki-plus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Increase control-->
+
                                                         </div>
                                                         <!--end::Dialer-->
                                                     </td>
@@ -737,7 +685,24 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--end::Table-->
                                     </div>
                                     <!--end::Table container-->
-
+                                    <!-- Campo para la cantidad de descuento -->
+                                    <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
+                                        <td class="pe-0">
+                                            <div class="form-floating col-lg-5 mb-4">
+                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
+                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                            </div>
+                                        </td>
+                                        <!-- Campo para el IVA -->
+                                        <td class="pe-2">
+                                            <div class="form-floating col-lg-5 mb-4">
+                                                <input type="text" class="form-control form-control-solid" name="iva" id="iva" placeholder="iva" />
+                                                <label for="iva" style="padding-left: 25px;">IVA</label>
+                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                            </div>
+                                        </td>
+                                    </div>
                                     <!--begin::Summary-->
                                     <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
                                         <!--begin::Content-->
