@@ -208,7 +208,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg show active" data-bs-toggle="pill" href="#kt_pos_food_content_1" style="width: 138px;height: 180px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg show active" data-bs-toggle="pill" href="#kt_pos_food_content_1" style="width: 150px;height: 200px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -229,7 +229,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_2" style="width: 138px;height: 180px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_2" style="width: 150px;height: 200px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -250,7 +250,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_3" style="width: 138px;height: 180px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_3" style="width: 150px;height: 200px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -271,7 +271,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 138px;height: 185px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 150px;height: 200px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
