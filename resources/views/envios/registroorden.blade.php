@@ -689,18 +689,27 @@ License: For each use you must have a valid license purchased only from above li
                                     <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
                                         <td class="pe-0">
                                             <div class="form-floating col-lg-5 mb-4">
-                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
-                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
+                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento"  />
+                                                <label for="descuento" style="padding-left: 25px;" >Descuento</label>
                                                 <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                             </div>
                                         </td>
                                         <!-- Campo para el IVA -->
                                         <td class="pe-2">
-                                            <div class="form-floating col-lg-5 mb-4">
-                                                <input type="text" class="form-control form-control-solid" name="iva" id="iva" placeholder="iva" />
-                                                <label for="iva" style="padding-left: 25px;">IVA</label>
-                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                            </div>
+                                            <!--begin::Option-->
+                                            <label class="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6" data-kt-button="true">
+                                                <!--begin::Radio-->
+                                                <span class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
+                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                </span>
+                                                <!--end::Radio-->
+                                                <!--begin::Info-->
+                                                <span class="ms-5">
+                                                    <span class="fs-5 fw-bold text-gray-800 d-block">Aplicar iva</span>
+                                                </span>
+                                                <!--end::Info-->
+                                            </label>
+                                            <!--end::Option-->
                                         </td>
                                     </div>
                                     <!--begin::Summary-->
