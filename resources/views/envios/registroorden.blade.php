@@ -212,7 +212,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
-                                                    <img src="assets/media/svg/food-icons/spaghetti.svg" class="w-50px" alt="" />
+                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
                                                     <!--end::Food icon-->
                                                 </div>
                                                 <!--end::Icon-->
@@ -233,7 +233,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
-                                                    <img src="assets/media/svg/food-icons/salad.svg" class="w-50px" alt="" />
+                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
                                                     <!--end::Food icon-->
                                                 </div>
                                                 <!--end::Icon-->
@@ -254,7 +254,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
-                                                    <img src="assets/media/svg/food-icons/cheeseburger.svg" class="w-50px" alt="" />
+                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
                                                     <!--end::Food icon-->
                                                 </div>
                                                 <!--end::Icon-->
@@ -275,7 +275,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
-                                                    <img src="assets/media/svg/food-icons/coffee.svg" class="w-50px" alt="" />
+                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
                                                     <!--end::Food icon-->
                                                 </div>
                                                 <!--end::Icon-->
@@ -620,26 +620,18 @@ License: For each use you must have a valid license purchased only from above li
                                                 <tr data-kt-pos-element="item" data-kt-pos-item-price="33">
                                                     <td class="pe-0">
                                                         <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/img-2.jpg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
                                                             <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Departamental</span>
                                                         </div>
                                                     </td>
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-                                                            <!--begin::Decrease control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="decrease">
-                                                                <i class="ki-duotone ki-minus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Decrease control-->
+                                                           
                                                             <!--begin::Input control-->
                                                             <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-30px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
                                                             <!--end::Input control-->
-                                                            <!--begin::Increase control-->
-                                                            <button type="button" class="btn btn-icon btn-sm btn-light btn-icon-gray-400" data-kt-dialer-control="increase">
-                                                                <i class="ki-duotone ki-plus fs-3x"></i>
-                                                            </button>
-                                                            <!--end::Increase control-->
+                                                          
                                                         </div>
                                                         <!--end::Dialer-->
                                                     </td>
@@ -651,7 +643,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <tr data-kt-pos-element="item" data-kt-pos-item-price="7.5">
                                                     <td class="pe-0">
                                                         <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/img-9.jpg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
                                                             <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado Departamental</span>
                                                         </div>
                                                     </td>
@@ -682,7 +674,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
                                                     <td class="pe-0">
                                                         <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/img-3.jpg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
                                                             <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Punto fijo</span>
                                                         </div>
                                                     </td>
@@ -713,7 +705,7 @@ License: For each use you must have a valid license purchased only from above li
                                                 <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
                                                     <td class="pe-0">
                                                         <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/img-3.jpg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
                                                             <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Casillero</span>
                                                         </div>
                                                     </td>

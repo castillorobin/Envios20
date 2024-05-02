@@ -62,7 +62,7 @@
 							<span class="menu-title">Gestion de Usuarios</span>
 							<span class="menu-arrow"></span>
 						</a>
-						<div class="menu-sub menu-sub-accordion"> 
+						<div class="menu-sub menu-sub-accordion">
 							<div class="menu-item">
 								<a href="/usuarios/lista" class="menu-link py-3" style="background-color: transparent;">
 									<span class="menu-bullet">
@@ -155,7 +155,7 @@
 				</span>
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
-						<a href="#" class="menu-link py-3" >
+						<a href="#" class="menu-link py-3">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -289,7 +289,7 @@
 				</span>
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
-						<a class="menu-link" href="#">
+						<a class="menu-link" href="/registro-orden">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
