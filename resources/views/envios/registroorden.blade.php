@@ -204,7 +204,7 @@ License: For each use you must have a valid license purchased only from above li
                                 <!--begin::Body-->
                                 <div class="card-body">
                                     <!--begin::Nav-->
-                                    <ul class="nav nav-pills d-flex justify-content-between nav-pills-custom gap-5 mb-6">
+                                    <ul class="nav nav-pills d-flex justify-content-between nav-pills-custom gap-3 mb-6">
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
