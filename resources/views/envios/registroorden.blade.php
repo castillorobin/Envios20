@@ -365,7 +365,6 @@ License: For each use you must have a valid license purchased only from above li
                                         </div>
                                         <!--end::Tap pane-->
 
-
                                         <!--end::Tap pane-->
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade" id="kt_pos_food_content_2">
