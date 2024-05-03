@@ -1,32 +1,10 @@
 <!DOCTYPE html>
-<!--
-Author: Keenthemes
-Product Name: Metronic
-Product Version: 8.1.8
-Purchase: https://1.envato.market/EA4JP
-Website: http://www.keenthemes.com
-Contact: support@keenthemes.com
-Follow: www.twitter.com/keenthemes
-Dribbble: www.dribbble.com/keenthemes
-Like: www.facebook.com/keenthemes
-License: For each use you must have a valid license purchased only from above link in order to legally use the theme for your project.
--->
 <html lang="en">
-<!--begin::Head-->
 
 <head>
     <base href="../" />
     <title>Metronic - The World's #1 Selling Bootstrap Admin Template by Keenthemes</title>
     <meta charset="utf-8" />
-    <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
-    <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
@@ -85,6 +63,32 @@ License: For each use you must have a valid license purchased only from above li
                     <!--end::Actions-->
                 </div>
                 <!--end::Toolbar container-->
+                <!--begin::Menu-->
+                <div class="menu">
+                    
+                    <!--begin::Menu item-->
+                    <div class="menu-item">
+                        <a href="/registro-orden" class="menu-link">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
+                            </span>
+                            <span class="menu-title">Cobro</span>
+                        </a>
+                    </div>
+                    <!--end::Menu item-->
+                     <!--begin::Menu item-->
+                     <div class="menu-item">
+                        <a href="/entregas" class="menu-link">
+                            <span class="menu-icon">
+                                <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
+                            </span>
+                            <span class="menu-title">Entregar</span>
+                        </a>
+                    </div>
+                    <!--end::Menu item-->
+                </div>
+                </div>
+                <!--end::Menu-->
             </div>
             <!--end::Toolbar-->
 
@@ -208,7 +212,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg show active" data-bs-toggle="pill" href="#kt_pos_food_content_1" style="width: 145px;height: 190px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg show active" data-bs-toggle="pill" href="#kt_pos_food_content_1" style="width: 150px;height: 190px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -229,7 +233,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_2" style="width: 145px;height: 190px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_2" style="width: 150px;height: 190px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -250,7 +254,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_3" style="width: 145px;height: 190px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_3" style="width: 150px;height: 190px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -271,7 +275,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Item-->
                                         <li class="nav-item mb-3 me-0">
                                             <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 145px;height: 190px">
+                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 150px;height: 190px">
                                                 <!--begin::Icon-->
                                                 <div class="nav-icon mb-3">
                                                     <!--begin::Food icon-->
@@ -297,13 +301,10 @@ License: For each use you must have a valid license purchased only from above li
                                     <div class="tab-content">
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade show active" id="kt_pos_food_content_1">
-                                            <!--begin::Wrapper-->
-                                            <!--begin::Content-->
-                                            <!--begin::Content container-->
                                             <!--begin::Products-->
                                             <div class="card card-flush col-lg-12">
                                                 <!--begin::Card header-->
-                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                <div class="card-header align-items-end py-5 gap-2 gap-md-5">
                                                     <!--begin::Card title-->
                                                     <div class="card-title">
                                                         <!--begin::Search-->
@@ -315,9 +316,6 @@ License: For each use you must have a valid license purchased only from above li
                                                             <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
                                                         </div>
                                                         <!--end::Search-->
-                                                        <!--begin::Export buttons-->
-                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                        <!--end::Export buttons-->
                                                     </div>
                                                     <!--end::Card title-->
                                                 </div>
@@ -326,25 +324,25 @@ License: For each use you must have a valid license purchased only from above li
                                                 <div class="card-body pt-0 align-items-end">
                                                     <!--begin::Table-->
                                                     <div class="table-responsive">
-                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                             <thead>
-                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                    <th class="min-w-50px"># de guía</th>
-                                                                    <th class="min-w-100px">Comercio</th>
-                                                                    <th class="min-w-100px">Tipo de envío</th>
-                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                    <th># DE GUÍA</th>
+                                                                    <th>COMERCIO</th>
+                                                                    <th>TIPO DE ENVÍO </th>
+                                                                    <th>FECHA DE RECEPCIÓN</th>
+
                                                                 </tr>
                                                             </thead>
-                                                            <tbody class="fw-semibold text-gray-400">
+                                                            <tbody>
                                                                 <tr>
-                                                                    <td>
-                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                    </td>
-                                                                    <td>Moda SV</td>
-                                                                    <td>Departamental</td>
-                                                                    <td>20/06/2023</td>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>System Architect</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>2011/04/25</td>
+
                                                                 </tr>
-                                                                <!-- Add more rows as needed -->
+
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -353,8 +351,6 @@ License: For each use you must have a valid license purchased only from above li
                                                 <!--end::Card body-->
                                             </div>
                                             <!--end::Card-->
-
-
                                             <!--end::Wrapper-->
                                         </div>
                                         <!--end::Tap pane-->
@@ -363,7 +359,6 @@ License: For each use you must have a valid license purchased only from above li
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade" id="kt_pos_food_content_2">
                                             <!--begin::Wrapper-->
-
                                             <!--begin::Content container-->
                                             <div class="card card-flush col-lg-12">
                                                 <!--begin::Products-->
@@ -391,39 +386,33 @@ License: For each use you must have a valid license purchased only from above li
                                                 <div class="card-body pt-0">
                                                     <!--begin::Table-->
                                                     <div class="table-responsive">
-                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                             <thead>
-                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                    <th class="min-w-50px"># de guía</th>
-                                                                    <th class="min-w-100px">Comercio</th>
-                                                                    <th class="min-w-100px">Tipo de envío</th>
-                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                    <th># DE GUÍA</th>
+                                                                    <th>COMERCIO</th>
+                                                                    <th>TIPO DE ENVÍO </th>
+                                                                    <th>FECHA DE RECEPCIÓN</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody class="fw-semibold text-gray-400">
+                                                            <tbody>
                                                                 <tr>
-                                                                    <td>
-                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                    </td>
-                                                                    <td>Moda SV</td>
-                                                                    <td>Personalizado Departamental</td>
-                                                                    <td>20/06/2023</td>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>System Architect</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>2011/04/25</td>
                                                                 </tr>
-                                                                <!-- Add more rows as needed -->
                                                             </tbody>
                                                         </table>
                                                     </div>
                                                     <!--end::Table-->
                                                 </div>
                                                 <!--end::Card body-->
-
                                                 <!--end::Card-->
                                             </div>
-
                                             <!--end::Wrapper-->
                                         </div>
                                         <!--end::Tap pane-->
-
                                         <!--begin::Tap pane-->
                                         <div class="tab-pane fade" id="kt_pos_food_content_3">
 
@@ -453,25 +442,22 @@ License: For each use you must have a valid license purchased only from above li
                                                 <div class="card-body pt-0">
                                                     <!--begin::Table-->
                                                     <div class="table-responsive">
-                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                             <thead>
-                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                    <th class="min-w-50px"># de guía</th>
-                                                                    <th class="min-w-100px">Comercio</th>
-                                                                    <th class="min-w-100px">Tipo de envío</th>
-                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                    <th># DE GUÍA</th>
+                                                                    <th>COMERCIO</th>
+                                                                    <th>TIPO DE ENVÍO </th>
+                                                                    <th>FECHA DE RECEPCIÓN</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody class="fw-semibold text-gray-400">
+                                                            <tbody>
                                                                 <tr>
-                                                                    <td>
-                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                    </td>
-                                                                    <td>Moda SV</td>
-                                                                    <td>¨Punto fijo</td>
-                                                                    <td>20/06/2023</td>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>System Architect</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>2011/04/25</td>
                                                                 </tr>
-                                                                <!-- Add more rows as needed -->
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -515,25 +501,22 @@ License: For each use you must have a valid license purchased only from above li
                                                 <div class="card-body pt-0">
                                                     <!--begin::Table-->
                                                     <div class="table-responsive">
-                                                        <table class="table table-striped table-hover align-middle fs-6 gy-5" id="tenvios">
+                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                             <thead>
-                                                                <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                                    <th class="min-w-50px"># de guía</th>
-                                                                    <th class="min-w-100px">Comercio</th>
-                                                                    <th class="min-w-100px">Tipo de envío</th>
-                                                                    <th class="min-w-100px">Fecha de recepción </th>
+                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                    <th># DE GUÍA</th>
+                                                                    <th>COMERCIO</th>
+                                                                    <th>TIPO DE ENVÍO </th>
+                                                                    <th>FECHA DE RECEPCIÓN</th>
                                                                 </tr>
                                                             </thead>
-                                                            <tbody class="fw-semibold text-gray-400">
+                                                            <tbody>
                                                                 <tr>
-                                                                    <td>
-                                                                        <a href="#" class="text-gray-900 text-hover-primary">123</a>
-                                                                    </td>
-                                                                    <td>Moda SV</td>
-                                                                    <td>Casillero</td>
-                                                                    <td>20/06/2023</td>
+                                                                    <td>Tiger Nixon</td>
+                                                                    <td>System Architect</td>
+                                                                    <td>Edinburgh</td>
+                                                                    <td>2011/04/25</td>
                                                                 </tr>
-                                                                <!-- Add more rows as needed -->
                                                             </tbody>
                                                         </table>
                                                     </div>
@@ -554,8 +537,6 @@ License: For each use you must have a valid license purchased only from above li
                             <!--end::Pos food-->
                         </div>
                         <!--end::Content-->
-
-
 
                         <!--begin::Sidebar-->
                         <div class="flex-row-auto w-xl-425px">
@@ -607,7 +588,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <span class="fw-bold text-primary fs-2" data-kt-pos-element="item-total">$00.00</span>
+                                                        <input type="number" class="form-control border-0 px-0 fs-2 fw-bold text-primary w-75px text-end" data-kt-pos-element="item-total" value="00.00" />
                                                     </td>
                                                 </tr>
 
@@ -630,7 +611,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <span class="fw-bold text-primary fs-2" data-kt-pos-element="item-total">$00.00</span>
+                                                        <input type="number" class="form-control border-0 px-0 fs-2 fw-bold text-primary w-75px text-end" data-kt-pos-element="item-total" value="00.00" />
                                                     </td>
                                                 </tr>
 
@@ -653,7 +634,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <span class="fw-bold text-primary fs-2" data-kt-pos-element="item-total">$00.00</span>
+                                                        <input type="number" class="form-control border-0 px-0 fs-2 fw-bold text-primary w-75px text-end" data-kt-pos-element="item-total" value="00.00" />
                                                     </td>
                                                 </tr>
 
@@ -676,7 +657,7 @@ License: For each use you must have a valid license purchased only from above li
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <span class="fw-bold text-primary fs-2" data-kt-pos-element="item-total">$00.00</span>
+                                                        <input type="number" class="form-control border-0 px-0 fs-2 fw-bold text-primary w-75px text-end" data-kt-pos-element="item-total" value="00.00" />
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -689,8 +670,8 @@ License: For each use you must have a valid license purchased only from above li
                                     <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
                                         <td class="pe-0">
                                             <div class="form-floating col-lg-5 mb-4">
-                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento"  />
-                                                <label for="descuento" style="padding-left: 25px;" >Descuento</label>
+                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
                                                 <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                             </div>
                                         </td>
@@ -718,6 +699,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <div class="fs-6 fw-bold text-white">
                                             <span class="d-block lh-1 mb-2">Subtotal</span>
                                             <span class="d-block mb-2">Descuento</span>
+                                            <span class="d-block mb-2">IVA</span>
                                             <span class="d-block fs-2qx lh-1">Total</span>
                                         </div>
                                         <!--end::Content-->
@@ -725,6 +707,7 @@ License: For each use you must have a valid license purchased only from above li
                                         <div class="fs-6 fw-bold text-white text-end">
                                             <span class="d-block lh-1 mb-2" data-kt-pos-element="total">$100.50</span>
                                             <span class="d-block mb-2" data-kt-pos-element="discount">-$8.00</span>
+                                            <span class="d-block mb-2" data-kt-pos-element="IVA">+%13</span>
                                             <span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$93.46</span>
                                         </div>
                                         <!--end::Content-->
@@ -769,13 +752,8 @@ License: For each use you must have a valid license purchased only from above li
     <!--begin::Vendors Javascript(used for this page only)-->
     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
     <!--end::Vendors Javascript-->
-    <!--begin::Custom Javascript(used for this page only)-->
-    <script src="assets/js/custom/pages/general/pos.js"></script>
-    <script src="assets/js/widgets.bundle.js"></script>
-    <script src="assets/js/custom/widgets.js"></script>
-    <script src="assets/js/custom/apps/chat/chat.js"></script>
-    <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-    <script src="assets/js/custom/utilities/modals/users-search.js"></script>
+
+
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             // Evento para cargar los comercios cuando se abra el modal

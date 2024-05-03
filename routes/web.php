@@ -93,6 +93,9 @@ Route::get('/faltas/listafaltas', function () {
     return view('faltas.listafaltas');
 });
 
+Route::get('/entregas', function () {
+    return view('envios.entregas');
+});
 Route::get('/registro-orden', function () {
     return view('envios.registroorden');
 });
