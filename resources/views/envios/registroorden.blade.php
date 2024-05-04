@@ -104,6 +104,7 @@
                             <div class="row my-4 mx-4">
                                 <div class="form-floating col-lg-12 mb-4">
                                     <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio" id="comercio">
+                                        <option value=" ">Buscar comercio</option>
                                         @foreach ($comercios as $comercio)
                                         <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
                                         @endforeach
@@ -117,7 +118,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" id="seleccionarBtn">Seleccionar</button>
+                            <button type="button" class="btn btn-primary" id="seleccionarBtn" data-bs-dismiss="modal">Seleccionar</button>
                         </div>
                     </div>
                 </div>
