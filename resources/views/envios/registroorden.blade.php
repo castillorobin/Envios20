@@ -3,7 +3,7 @@
 
 <head>
     <base href="../" />
-    <title>Metronic - The World's #1 Selling Bootstrap Admin Template by Keenthemes</title>
+    <title>Melo Express - Cobros</title>
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="assets/media/logos/favicon.ico" />
     <!--begin::Fonts(mandatory for all pages)-->
@@ -104,9 +104,11 @@
                             <div class="row my-4 mx-4">
                                 <div class="form-floating col-lg-12 mb-4">
                                     <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio" id="comercio">
-                                        <!-- Aquí van las opciones de los comercios -->
+                                        @foreach ($comercios as $comercio)
+                                        <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
+                                        @endforeach
                                     </select>
-                                    <label for="comercio" style="padding-left: 25px;">Buscar Comercio</label>
+                                    
                                     <div id="comercioValidationFeedback" class="invalid-feedback">
                                         Por favor seleccione un comercio.
                                     </div>
@@ -755,6 +757,7 @@
 
 
     <script>
+        /*
         document.addEventListener("DOMContentLoaded", function() {
             // Evento para cargar los comercios cuando se abra el modal
             $('#seleccionarComercioModal').on('show.bs.modal', function(e) {
@@ -784,6 +787,8 @@
                 $('#seleccionarComercioModal').modal('hide');
             });
         });
+
+        */
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {

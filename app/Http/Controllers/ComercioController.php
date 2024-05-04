@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Comercio;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 
 class ComercioController extends Controller
 {
