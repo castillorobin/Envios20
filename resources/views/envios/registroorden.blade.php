@@ -680,7 +680,7 @@
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <input type="number" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
+                                                        <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
                                                     </td>
                                                 </tr>
                                             </tbody>
