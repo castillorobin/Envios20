@@ -323,7 +323,7 @@
                                                             <label for="guia" class="visually-hidden">Guía</label>
                                                             <input type="text" class="form-control" id="guia" name="guia" placeholder="Ingrese guía">
                                                             <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
-                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" >
+                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
                                                           </div>
                                                           <div class="col-auto">
                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
@@ -571,7 +571,7 @@
                                     <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar">
-                                        <a href="#" class="btn btn-light-primary fs-4 fw-bold py-4">Limpiar cuenta</a>
+                                        <a href="/cobro/limpiar" class="btn btn-light-primary fs-4 fw-bold py-4">Limpiar cuenta</a>
                                     </div>
                                     <!--end::Toolbar-->
                                 </div>
@@ -602,7 +602,7 @@
                                                     </td>
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
+                                                        <div class="position-relative d-flex align-items-center" >
 
                                                             <!--begin::Input control-->
                                                             <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w-100px text-center" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
@@ -625,10 +625,10 @@
                                                     </td>
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
+                                                        <div class="position-relative d-flex align-items-center">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="1" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
                                                             <!--end::Input control-->
 
                                                         </div>
@@ -648,10 +648,10 @@
                                                     </td>
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
+                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
                                                             <!--end::Input control-->
 
                                                         </div>
@@ -671,10 +671,10 @@
                                                     </td>
                                                     <td class="pe-0">
                                                         <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
+                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
                                                             <!--end::Input control-->
 
                                                         </div>

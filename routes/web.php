@@ -105,6 +105,7 @@ Route::get('/registro-orden', function () {
 //facturacion - Cobro
 Route::get('registro-orden', [App\Http\Controllers\CobroController::class, 'index'] )->name('indexcobro') ;
 Route::get('cobro/agregar/', [App\Http\Controllers\CobroController::class, 'agregar'] )->name('agregarco') ;
+Route::get('cobro/limpiar', [App\Http\Controllers\CobroController::class, 'limpiar'] )->name('limpiarco') ;
 
 //Comercios
 Route::get('comercio', [App\Http\Controllers\ComercioController::class, 'index'] )->name('indexco') ;

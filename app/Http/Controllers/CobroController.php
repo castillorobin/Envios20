@@ -17,9 +17,10 @@ class CobroController extends Controller
         $pedidos = Cobro::all();
         $comercios = Comercio::all();
         $nota=" ";
+        $comer=" ";
         $cobrodepa = Cobro::where('tipo', "Departamental")->get();
         $cobrodepa = $cobrodepa->count();
-        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos', 'cobrodepa'));
+        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos', 'cobrodepa', 'comer'));
     }
 
     public function agregar(Request $request)
@@ -35,8 +36,9 @@ class CobroController extends Controller
             $comercios = Comercio::all();
             $cobrodepa = Cobro::where('tipo', "Departamental")->get();
             $cobrodepa = $cobrodepa->count();
+            $comer = $request->get('comerci');
 
-            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa'));
+            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer'));
 
 
         }else{
@@ -45,11 +47,13 @@ class CobroController extends Controller
             $pedidoadd->comercio = $request->get('comerci');
             $pedidoadd->tipo = $request->get('tipo');
             $pedidoadd->save();
-
+            $cobrodepa = Cobro::where('tipo', "Departamental")->get();
+            $cobrodepa = $cobrodepa->count();
             $nota=" ";
             $pedidos = Cobro::all();
             $comercios = Comercio::all();
-            return view('envios.registroorden', compact('pedidos', 'nota','comercios'));
+            $comer = $request->get('comerci');
+            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer'));
 
 
         }
@@ -57,6 +61,15 @@ class CobroController extends Controller
 
 
 
+    }
+
+    public function limpiar()
+    {
+        $marca=Cobro::all();
+        foreach($marca as $mar){
+        $mar->delete();
+     }
+     return redirect('/registro-orden');
     }
 
     /**
