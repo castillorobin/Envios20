@@ -17,7 +17,9 @@ class CobroController extends Controller
         $pedidos = Cobro::all();
         $comercios = Comercio::all();
         $nota=" ";
-        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos'));
+        $cobrodepa = Cobro::where('tipo', "Departamental")->get();
+        $cobrodepa = $cobrodepa->count();
+        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos', 'cobrodepa'));
     }
 
     public function agregar(Request $request)
@@ -31,7 +33,11 @@ class CobroController extends Controller
             $nota="Guía Duplicada";
             $pedidos = Cobro::all();
             $comercios = Comercio::all();
-            return view('envios.registroorden', compact('pedidos', 'nota','comercios'));
+            $cobrodepa = Cobro::where('tipo', "Departamental")->get();
+            $cobrodepa = $cobrodepa->count();
+
+            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa'));
+
 
         }else{
 

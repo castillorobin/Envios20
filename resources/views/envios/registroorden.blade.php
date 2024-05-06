@@ -605,7 +605,7 @@
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="1" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w-100px text-center" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="2" />
+                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w-100px text-center" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
                                                             <!--end::Input control-->
 
                                                         </div>
