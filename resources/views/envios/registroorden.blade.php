@@ -311,12 +311,28 @@
                                                     <!--begin::Card title-->
                                                     <div class="card-title">
                                                         <!--begin::Search-->
-                                                        <div class="d-flex align-items-center position-relative my-1">
-                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                <span class="path1"></span>
-                                                                <span class="path2"></span>
-                                                            </i>
-                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                        <div class="">
+                                                           
+                                                            <form action="/cobro/agregar/" class="row g-2" method="get">
+                                                               
+
+
+
+                                                        <div class="col-auto">
+                                                            
+                                                            <label for="guia" class="visually-hidden">Guía</label>
+                                                            <input type="text" class="form-control" id="guia" name="guia" placeholder="Ingrese guía">
+                                                            <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
+                                                          </div>
+                                                          <div class="col-auto">
+                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                          </div>
+
+                                                        </form>
+
+
+
                                                         </div>
                                                         <!--end::Search-->
                                                     </div>
@@ -338,14 +354,18 @@
                                                                 </tr>
                                                             </thead>
                                                             <tbody>
+                                                                @foreach ($pedidos as $pedido)
                                                                 <tr>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>System Architect</td>
-                                                                    <td>Edinburgh</td>
-                                                                    <td>2011/04/25</td>
+                                                                   
+                                                                        
+                                                                    
+                                                                    <td>{{$pedido->guia}}</td>
+                                                                    <td>{{$pedido->comercio}}</td>
+                                                                    <td>{{$pedido->tipo}}</td>
+                                                                    <td>{{$pedido->created_at->format('d/m/Y')}}</td>
 
                                                                 </tr>
-
+                                                                @endforeach
                                                             </tbody>
                                                         </table>
                                                     </div>

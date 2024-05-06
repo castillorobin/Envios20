@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comercio;
+use App\Models\Cobro;
 
 class CobroController extends Controller
 {
@@ -13,8 +14,43 @@ class CobroController extends Controller
      */
     public function index()
     {
+        $pedidos = Cobro::all();
         $comercios = Comercio::all();
-        return view('envios.registroorden', compact('comercios'));
+        $nota=" ";
+        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos'));
+    }
+
+    public function agregar(Request $request)
+    {
+        $guia = $request->get('guia') ;
+        $pedidoesta = Cobro::find($guia);
+        $pedidos = new Cobro();
+        $pedidoadd = new Cobro(); 
+
+        if(Cobro::where('guia', $guia )->exists()){
+            $nota="Guía Duplicada";
+            $pedidos = Cobro::all();
+            $comercios = Comercio::all();
+            return view('envios.registroorden', compact('pedidos', 'nota','comercios'));
+
+        }else{
+
+            $pedidoadd->guia = $request->get('guia');
+            $pedidoadd->comercio = "comercio prueba";
+            $pedidoadd->tipo = $request->get('tipo');
+            $pedidoadd->save();
+
+            $nota=" ";
+            $pedidos = Cobro::all();
+            $comercios = Comercio::all();
+            return view('envios.registroorden', compact('pedidos', 'nota','comercios'));
+
+
+        }
+
+
+
+
     }
 
     /**
@@ -22,7 +58,7 @@ class CobroController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**
