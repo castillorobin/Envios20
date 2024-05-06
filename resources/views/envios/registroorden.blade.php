@@ -118,7 +118,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" id="seleccionarBtn" data-bs-dismiss="modal">Seleccionar</button>
+                            <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()" data-bs-dismiss="modal">Seleccionar</button>
                         </div>
                     </div>
                 </div>
@@ -323,6 +323,7 @@
                                                             <label for="guia" class="visually-hidden">Guía</label>
                                                             <input type="text" class="form-control" id="guia" name="guia" placeholder="Ingrese guía">
                                                             <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" >
                                                           </div>
                                                           <div class="col-auto">
                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
@@ -868,6 +869,19 @@
                 $('#agregarComercioModal').modal('hide');
             });
         });
+    </script>
+
+    <script>
+
+function comerciosel()
+{
+    const comer = document.getElementById("comercio").value;
+    document.getElementById("comerci").value = comer;
+
+}
+
+
+       
     </script>
 
 

@@ -36,7 +36,7 @@ class CobroController extends Controller
         }else{
 
             $pedidoadd->guia = $request->get('guia');
-            $pedidoadd->comercio = "comercio prueba";
+            $pedidoadd->comercio = $request->get('comerci');
             $pedidoadd->tipo = $request->get('tipo');
             $pedidoadd->save();
 
