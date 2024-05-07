@@ -64,698 +64,700 @@
                 </div>
                 <!--end::Toolbar container-->
                 <!--begin::Menu-->
-                <div class="menu">
-                    
-                    <!--begin::Menu item-->
-                    <div class="menu-item">
-                        <a href="/registro-orden" class="menu-link">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
-                            </span>
-                            <span class="menu-title">Cobro</span>
-                        </a>
-                    </div>
-                    <!--end::Menu item-->
-                     <!--begin::Menu item-->
-                     <div class="menu-item">
-                        <a href="/entregas" class="menu-link">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
-                            </span>
-                            <span class="menu-title">Entregar</span>
-                        </a>
-                    </div>
-                    <!--end::Menu item-->
-                </div>
-                </div>
-                <!--end::Menu-->
-            </div>
-            <!--end::Toolbar-->
 
-            <!-- Modal comercio-->
-            <div class="modal fade" id="seleccionarComercioModal" tabindex="-1" aria-labelledby="seleccionarComercioModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="seleccionarComercioModalLabel">Seleccionar Comercio</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row my-4 mx-4">
-                                <div class="form-floating col-lg-12 mb-4">
-                                    <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio" id="comercio">
-                                        <option value=" ">Buscar comercio</option>
-                                        @foreach ($comercios as $comercio)
-                                        <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
-                                        @endforeach
-                                    </select>
-                                    
-                                    <div id="comercioValidationFeedback" class="invalid-feedback">
-                                        Por favor seleccione un comercio.
-                                    </div>
+            </div>
+            <!--end::Menu-->
+        </div>
+        <!--end::Toolbar-->
+
+        <!-- Modal comercio-->
+        <div class="modal fade" id="seleccionarComercioModal" tabindex="-1" aria-labelledby="seleccionarComercioModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="seleccionarComercioModalLabel">Seleccionar Comercio</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row my-4 mx-4">
+                            <div class="form-floating col-lg-12 mb-4">
+                                <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio" id="comercio">
+                                    <option value=" ">Buscar comercio</option>
+                                    @foreach ($comercios as $comercio)
+                                    <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
+                                    @endforeach
+                                </select>
+
+                                <div id="comercioValidationFeedback" class="invalid-feedback">
+                                    Por favor seleccione un comercio.
                                 </div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()" data-bs-dismiss="modal">Seleccionar</button>
-                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()" data-bs-dismiss="modal">Seleccionar</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Modal de Agregar Comercio -->
-            <div class="modal fade" id="agregarComercioModal" tabindex="-1" aria-labelledby="agregarComercioModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="agregarComercioModalLabel">Agregar Comercio</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
-                                <div class="col-lg-8">
-                                    <input type="text" name="nombre_comercio" id="nombre_comercio" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" required />
-                                    <div class="invalid-feedback">Este campo es obligatorio.</div>
-                                </div>
-                            </div>
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label">Teléfono</label>
-                                <div class="col-lg-8">
-                                    <input id="telefono" type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Teléfono" />
-                                </div>
-                            </div>
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
-                                <div class="col-lg-8">
-                                    <input type="text" name="fecha_alta" class="form-control form-control-lg form-control-solid" id="fecha_alta" placeholder="Fecha de alta" readonly required />
-                                </div>
-                            </div>
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label">Tipo de comercio</label>
-                                <div class="col-lg-8">
-                                    <select name="tipo_comercio" id="tipo_comercio" class="form-control form-control-lg form-control-solid" required>
-                                        <option value="Emprendedor">Emprendedor</option>
-                                        <option value="Comercio Mediano">Comercio Mediano</option>
-                                        <option value="Empresa">Empresa</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Estado de comercio</label>
-                                <div class="col-lg-8">
-                                    <select name="estado_comercio" id="estado_comercio" class="form-control form-control-lg form-control-solid" required>
-                                        <option value="Alta">Alta</option>
-                                        <option value="Baja">Baja</option>
-                                        <option value="Lista negra">Lista negra</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
-                                <div class="col-lg-8">
-                                    <select name="agencia_registro" id="agencia_registro" class="form-control form-control-lg form-control-solid" required>
-                                        <option value="San Salvador">San Salvador</option>
-                                        <option value="San Miguel">San Miguel</option>
-                                        <option value="Santa Ana">Santa Ana</option>
-                                        <option value="Centro de distribución">Centro de distribución</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label">Correo Electrónico</label>
-                                <div class="col-lg-8">
-                                    <input type="email" name="correo_electronico" id="correo_electronico" class="form-control form-control-lg form-control-solid" placeholder="Correo Electrónico" />
-                                </div>
+        <!-- Modal de Agregar Comercio -->
+        <div class="modal fade" id="agregarComercioModal" tabindex="-1" aria-labelledby="agregarComercioModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="agregarComercioModalLabel">Agregar Comercio</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
+                            <div class="col-lg-8">
+                                <input type="text" name="nombre_comercio" id="nombre_comercio" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" required />
+                                <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                            <button type="button" class="btn btn-primary" id="guardarComercioBtn">Guardar</button>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label">Teléfono</label>
+                            <div class="col-lg-8">
+                                <input id="telefono" type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Teléfono" />
+                            </div>
                         </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
+                            <div class="col-lg-8">
+                                <input type="text" name="fecha_alta" class="form-control form-control-lg form-control-solid" id="fecha_alta" placeholder="Fecha de alta" readonly required />
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label">Tipo de comercio</label>
+                            <div class="col-lg-8">
+                                <select name="tipo_comercio" id="tipo_comercio" class="form-control form-control-lg form-control-solid" required>
+                                    <option value="Emprendedor">Emprendedor</option>
+                                    <option value="Comercio Mediano">Comercio Mediano</option>
+                                    <option value="Empresa">Empresa</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Estado de comercio</label>
+                            <div class="col-lg-8">
+                                <select name="estado_comercio" id="estado_comercio" class="form-control form-control-lg form-control-solid" required>
+                                    <option value="Alta">Alta</option>
+                                    <option value="Baja">Baja</option>
+                                    <option value="Lista negra">Lista negra</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
+                            <div class="col-lg-8">
+                                <select name="agencia_registro" id="agencia_registro" class="form-control form-control-lg form-control-solid" required>
+                                    <option value="San Salvador">San Salvador</option>
+                                    <option value="San Miguel">San Miguel</option>
+                                    <option value="Santa Ana">Santa Ana</option>
+                                    <option value="Centro de distribución">Centro de distribución</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label">Correo Electrónico</label>
+                            <div class="col-lg-8">
+                                <input type="email" name="correo_electronico" id="correo_electronico" class="form-control form-control-lg form-control-solid" placeholder="Correo Electrónico" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary" id="guardarComercioBtn">Guardar</button>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <!--begin::Content-->
-            <div id="kt_app_content" class="app-content flex-column-fluid">
-                <!--begin::Content container-->
-                <div id="kt_app_content_container" class="app-container container-xxl">
-                    <!--begin::Layout-->
-                    <div class="d-flex flex-column flex-xl-row">
-                        <!--begin::Content-->
-                        <div class="d-flex flex-row-fluid me-xl-9 mb-10 mb-xl-0">
-                            <!--begin::Pos food-->
-                            <div class="card card-flush card-p-0 bg-transparent border-0">
-                                <!--begin::Body-->
-                                <div class="card-body">
-                                    <!--begin::Nav-->
-                                    <ul class="nav nav-pills d-flex justify-content-between nav-pills-custom gap-3 mb-6">
-                                        <!--begin::Item-->
-                                        <li class="nav-item mb-3 me-0">
-                                            <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg show active" data-bs-toggle="pill" href="#kt_pos_food_content_1" style="width: 150px;height: 190px">
-                                                <!--begin::Icon-->
-                                                <div class="nav-icon mb-3">
-                                                    <!--begin::Food icon-->
-                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                    <!--end::Food icon-->
-                                                </div>
-                                                <!--end::Icon-->
-                                                <!--begin::Info-->
-                                                <div class="">
-                                                    <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                    <span class="text-gray-400 fw-semibold fs-7">Departamental</span>
-                                                </div>
-                                                <!--end::Info-->
-                                            </a>
-                                            <!--end::Nav link-->
-                                        </li>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <li class="nav-item mb-3 me-0">
-                                            <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_2" style="width: 150px;height: 190px">
-                                                <!--begin::Icon-->
-                                                <div class="nav-icon mb-3">
-                                                    <!--begin::Food icon-->
-                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                    <!--end::Food icon-->
-                                                </div>
-                                                <!--end::Icon-->
-                                                <!--begin::Info-->
-                                                <div class="">
-                                                    <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                    <span class="text-gray-400 fw-semibold fs-7">Personalizado Departamental</span>
-                                                </div>
-                                                <!--end::Info-->
-                                            </a>
-                                            <!--end::Nav link-->
-                                        </li>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <li class="nav-item mb-3 me-0">
-                                            <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_3" style="width: 150px;height: 190px">
-                                                <!--begin::Icon-->
-                                                <div class="nav-icon mb-3">
-                                                    <!--begin::Food icon-->
-                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                    <!--end::Food icon-->
-                                                </div>
-                                                <!--end::Icon-->
-                                                <!--begin::Info-->
-                                                <div class="">
-                                                    <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                    <span class="text-gray-400 fw-semibold fs-7">Punto fijo</span>
-                                                </div>
-                                                <!--end::Info-->
-                                            </a>
-                                            <!--end::Nav link-->
-                                        </li>
-                                        <!--end::Item-->
-                                        <!--begin::Item-->
-                                        <li class="nav-item mb-3 me-0">
-                                            <!--begin::Nav link-->
-                                            <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 150px;height: 190px">
-                                                <!--begin::Icon-->
-                                                <div class="nav-icon mb-3">
-                                                    <!--begin::Food icon-->
-                                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                    <!--end::Food icon-->
-                                                </div>
-                                                <!--end::Icon-->
-                                                <!--begin::Info-->
-                                                <div class="">
-                                                    <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                    <span class="text-gray-400 fw-semibold fs-7">Casillero</span>
-                                                </div>
-                                                <!--end::Info-->
-                                            </a>
-                                            <!--end::Nav link-->
-                                        </li>
-                                        <!--end::Item-->
-                                    </ul>
-                                    <!--end::Nav-->
+        <div style="background-color: white; padding: 20px;">
+            <!--begin::Menu-->
+            <div class="menu">
+                <!--begin::Menu item-->
+                <div class="menu-item" style="margin-bottom: 10px;">
+                    <a href="/registro-orden" class="btn btn-primary menu-link" style="width: 150px; margin-right: 10px;">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
+                        </span>
+                        <span class="menu-title">Cobro</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-item" style="margin-bottom: 10px;">
+                    <a href="/entregas" class="btn btn-primary menu-link" style="width: 150px; margin-right: 10px;">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
+                        </span>
+                        <span class="menu-title">Entregar</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+            </div>
+            <!--end::Menu-->
+        </div>
+        <br>
+        <!--begin::Content-->
+        <div id="kt_app_content" class="app-content flex-column-fluid">
+            <!--begin::Content container-->
+            <div id="kt_app_content_container" class="app-container container-xxl">
+                <!--begin::Layout-->
+                <div class="d-flex flex-column flex-xl-row">
+                    <!--begin::Content-->
+                    <div class="d-flex flex-row-fluid me-xl-9 mb-10 mb-xl-0">
+                        <!--begin::Pos food-->
+                        <div class="card card-flush card-p-0 bg-transparent border-0">
+
+                            <!--begin::Body-->
+                            <div class="card-body">
+                                <!--begin::Nav-->
+                                <ul class="nav nav-pills d-flex justify-content-between nav-pills-custom gap-3 mb-6">
+                                    <!--begin::Item-->
+                                    <li class="nav-item mb-3 me-0">
+                                        <!--begin::Nav link-->
+                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg show active" data-bs-toggle="pill" href="#kt_pos_food_content_1" style="width: 150px;height: 190px">
+                                            <!--begin::Icon-->
+                                            <div class="nav-icon mb-3">
+                                                <!--begin::Food icon-->
+                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                                <!--end::Food icon-->
+                                            </div>
+                                            <!--end::Icon-->
+                                            <!--begin::Info-->
+                                            <div class="">
+                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
+                                                <span class="text-gray-400 fw-semibold fs-7">Departamental</span>
+                                            </div>
+                                            <!--end::Info-->
+                                        </a>
+                                        <!--end::Nav link-->
+                                    </li>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <li class="nav-item mb-3 me-0">
+                                        <!--begin::Nav link-->
+                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_2" style="width: 150px;height: 190px">
+                                            <!--begin::Icon-->
+                                            <div class="nav-icon mb-3">
+                                                <!--begin::Food icon-->
+                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                                <!--end::Food icon-->
+                                            </div>
+                                            <!--end::Icon-->
+                                            <!--begin::Info-->
+                                            <div class="">
+                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
+                                                <span class="text-gray-400 fw-semibold fs-7">Personalizado Departamental</span>
+                                            </div>
+                                            <!--end::Info-->
+                                        </a>
+                                        <!--end::Nav link-->
+                                    </li>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <li class="nav-item mb-3 me-0">
+                                        <!--begin::Nav link-->
+                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_3" style="width: 150px;height: 190px">
+                                            <!--begin::Icon-->
+                                            <div class="nav-icon mb-3">
+                                                <!--begin::Food icon-->
+                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                                <!--end::Food icon-->
+                                            </div>
+                                            <!--end::Icon-->
+                                            <!--begin::Info-->
+                                            <div class="">
+                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
+                                                <span class="text-gray-400 fw-semibold fs-7">Punto fijo</span>
+                                            </div>
+                                            <!--end::Info-->
+                                        </a>
+                                        <!--end::Nav link-->
+                                    </li>
+                                    <!--end::Item-->
+                                    <!--begin::Item-->
+                                    <li class="nav-item mb-3 me-0">
+                                        <!--begin::Nav link-->
+                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 150px;height: 190px">
+                                            <!--begin::Icon-->
+                                            <div class="nav-icon mb-3">
+                                                <!--begin::Food icon-->
+                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                                <!--end::Food icon-->
+                                            </div>
+                                            <!--end::Icon-->
+                                            <!--begin::Info-->
+                                            <div class="">
+                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
+                                                <span class="text-gray-400 fw-semibold fs-7">Casillero</span>
+                                            </div>
+                                            <!--end::Info-->
+                                        </a>
+                                        <!--end::Nav link-->
+                                    </li>
+                                    <!--end::Item-->
+                                </ul>
+                                <!--end::Nav-->
 
 
-                                    <!--begin::Tab Content-->
-                                    <div class="tab-content">
-                                        <!--begin::Tap pane-->
-                                        <div class="tab-pane fade show active" id="kt_pos_food_content_1">
-                                            <!--begin::Products-->
-                                            <div class="card card-flush col-lg-12">
-                                                <!--begin::Card header-->
-                                                <div class="card-header align-items-end py-5 gap-2 gap-md-5">
-                                                    <!--begin::Card title-->
-                                                    <div class="card-title">
-                                                        <!--begin::Search-->
-                                                        <div class="">
-                                                           
-                                                            <form action="/cobro/agregar/" class="row g-2" method="get">
-                                                               
+                                <!--begin::Tab Content-->
+                                <div class="tab-content">
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade show active" id="kt_pos_food_content_1">
+                                        <!--begin::Products-->
+                                        <div class="card card-flush col-lg-12">
+                                            <!--begin::Card header-->
+                                            <div class="card-header align-items-end py-5 gap-2 gap-md-5">
+                                                <!--begin::Card title-->
+                                                <div class="card-title ">
+                                                    <!--begin::Search-->
+                                                    <div>
 
+                                                        <form action="/cobro/agregar/" class="row g-2" method="get">
 
-
-                                                        <div class="col-auto">
-                                                            
-                                                            <label for="guia" class="visually-hidden">Guía</label>
-                                                            <input type="text" class="form-control" id="guia" name="guia" placeholder="Ingrese guía">
-                                                            <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
-                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                          </div>
-                                                          <div class="col-auto">
-                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                          </div>
+                                                            <div class="col-auto">
+                                                                <label for="guia" class="visually-hidden">Guía</label>
+                                                                <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
+                                                                <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
+                                                                <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            </div>
 
                                                         </form>
 
 
 
-                                                        </div>
-                                                        <!--end::Search-->
                                                     </div>
-                                                    <!--end::Card title-->
+                                                    <!--end::Search-->
                                                 </div>
-                                                <!--end::Card header-->
-                                                <!--begin::Card body-->
-                                                <div class="card-body pt-0 align-items-end">
-                                                    <!--begin::Table-->
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                            <thead>
-                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
-                                                                    <th># DE GUÍA</th>
-                                                                    <th>COMERCIO</th>
-                                                                    <th>TIPO DE ENVÍO </th>
-                                                                    <th>FECHA DE RECEPCIÓN</th>
-
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                @foreach ($pedidos as $pedido)
-                                                                <tr>
-                                                                   
-                                                                        
-                                                                    
-                                                                    <td>{{$pedido->guia}}</td>
-                                                                    <td>{{$pedido->comercio}}</td>
-                                                                    <td>{{$pedido->tipo}}</td>
-                                                                    <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-
-                                                                </tr>
-                                                                @endforeach
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <!--end::Table-->
-                                                </div>
-                                                <!--end::Card body-->
+                                                <!--end::Card title-->
                                             </div>
+                                            <!--end::Card header-->
+                                            <!--begin::Card body-->
+                                            <div class="card-body pt-0 align-items-end">
+                                                <!--begin::Table-->
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                        <thead>
+                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                <th># DE GUÍA</th>
+                                                                <th>COMERCIO</th>
+                                                                <th>TIPO DE ENVÍO </th>
+                                                                <th>FECHA DE RECEPCIÓN</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @foreach ($pedidos as $pedido)
+                                                            <tr>
+
+
+
+                                                                <td>{{$pedido->guia}}</td>
+                                                                <td>{{$pedido->comercio}}</td>
+                                                                <td>{{$pedido->tipo}}</td>
+                                                                <td>{{$pedido->created_at->format('d/m/Y')}}</td>
+
+                                                            </tr>
+                                                            @endforeach
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!--end::Table-->
+                                            </div>
+                                            <!--end::Card body-->
+                                        </div>
+                                        <!--end::Card-->
+                                        <!--end::Wrapper-->
+                                    </div>
+                                    <!--end::Tap pane-->
+
+                                    <!--end::Tap pane-->
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade" id="kt_pos_food_content_2">
+                                        <!--begin::Wrapper-->
+                                        <!--begin::Content container-->
+                                        <div class="card card-flush col-lg-12">
+                                            <!--begin::Products-->
+                                            <!--begin::Card header-->
+                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                <!--begin::Card title-->
+                                                <div class="card-title">
+                                                    <!--begin::Search-->
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                        </i>
+                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                    </div>
+                                                    <!--end::Search-->
+                                                    <!--begin::Export buttons-->
+                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                    <!--end::Export buttons-->
+                                                </div>
+                                                <!--end::Card title-->
+                                            </div>
+                                            <!--end::Card header-->
+                                            <!--begin::Card body-->
+                                            <div class="card-body pt-0">
+                                                <!--begin::Table-->
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                        <thead>
+                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                <th># DE GUÍA</th>
+                                                                <th>COMERCIO</th>
+                                                                <th>TIPO DE ENVÍO </th>
+                                                                <th>FECHA DE RECEPCIÓN</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Tiger Nixon</td>
+                                                                <td>System Architect</td>
+                                                                <td>Edinburgh</td>
+                                                                <td>2011/04/25</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!--end::Table-->
+                                            </div>
+                                            <!--end::Card body-->
                                             <!--end::Card-->
-                                            <!--end::Wrapper-->
                                         </div>
-                                        <!--end::Tap pane-->
-
-                                        <!--end::Tap pane-->
-                                        <!--begin::Tap pane-->
-                                        <div class="tab-pane fade" id="kt_pos_food_content_2">
-                                            <!--begin::Wrapper-->
-                                            <!--begin::Content container-->
-                                            <div class="card card-flush col-lg-12">
-                                                <!--begin::Products-->
-                                                <!--begin::Card header-->
-                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                    <!--begin::Card title-->
-                                                    <div class="card-title">
-                                                        <!--begin::Search-->
-                                                        <div class="d-flex align-items-center position-relative my-1">
-                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                <span class="path1"></span>
-                                                                <span class="path2"></span>
-                                                            </i>
-                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                        </div>
-                                                        <!--end::Search-->
-                                                        <!--begin::Export buttons-->
-                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                        <!--end::Export buttons-->
-                                                    </div>
-                                                    <!--end::Card title-->
-                                                </div>
-                                                <!--end::Card header-->
-                                                <!--begin::Card body-->
-                                                <div class="card-body pt-0">
-                                                    <!--begin::Table-->
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                            <thead>
-                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
-                                                                    <th># DE GUÍA</th>
-                                                                    <th>COMERCIO</th>
-                                                                    <th>TIPO DE ENVÍO </th>
-                                                                    <th>FECHA DE RECEPCIÓN</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>System Architect</td>
-                                                                    <td>Edinburgh</td>
-                                                                    <td>2011/04/25</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <!--end::Table-->
-                                                </div>
-                                                <!--end::Card body-->
-                                                <!--end::Card-->
-                                            </div>
-                                            <!--end::Wrapper-->
-                                        </div>
-                                        <!--end::Tap pane-->
-                                        <!--begin::Tap pane-->
-                                        <div class="tab-pane fade" id="kt_pos_food_content_3">
-
-                                            <!--begin::Products-->
-                                            <div class="card card-flush col-lg-12">
-                                                <!--begin::Card header-->
-                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                    <!--begin::Card title-->
-                                                    <div class="card-title">
-                                                        <!--begin::Search-->
-                                                        <div class="d-flex align-items-center position-relative my-1">
-                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                <span class="path1"></span>
-                                                                <span class="path2"></span>
-                                                            </i>
-                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                        </div>
-                                                        <!--end::Search-->
-                                                        <!--begin::Export buttons-->
-                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                        <!--end::Export buttons-->
-                                                    </div>
-                                                    <!--end::Card title-->
-                                                </div>
-                                                <!--end::Card header-->
-                                                <!--begin::Card body-->
-                                                <div class="card-body pt-0">
-                                                    <!--begin::Table-->
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                            <thead>
-                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
-                                                                    <th># DE GUÍA</th>
-                                                                    <th>COMERCIO</th>
-                                                                    <th>TIPO DE ENVÍO </th>
-                                                                    <th>FECHA DE RECEPCIÓN</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>System Architect</td>
-                                                                    <td>Edinburgh</td>
-                                                                    <td>2011/04/25</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <!--end::Table-->
-                                                </div>
-                                                <!--end::Card body-->
-
-                                                <!--end::Content container-->
-                                            </div>
-                                            <!--end::Wrapper-->
-                                        </div>
-                                        <!--end::Tap pane-->
-
-                                        <!--begin::Tap pane-->
-                                        <div class="tab-pane fade w-100" id="kt_pos_food_content_4">
-                                            <!--begin::Wrapper-->
-
-                                            <!--begin::Products-->
-                                            <div class="card card-flush col-lg-12">
-                                                <!--begin::Card header-->
-                                                <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                    <!--begin::Card title-->
-                                                    <div class="card-title">
-                                                        <!--begin::Search-->
-                                                        <div class="d-flex align-items-center position-relative my-1">
-                                                            <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                                <span class="path1"></span>
-                                                                <span class="path2"></span>
-                                                            </i>
-                                                            <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                        </div>
-                                                        <!--end::Search-->
-                                                        <!--begin::Export buttons-->
-                                                        <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                        <!--end::Export buttons-->
-                                                    </div>
-                                                    <!--end::Card title-->
-                                                </div>
-                                                <!--end::Card header-->
-                                                <!--begin::Card body-->
-                                                <div class="card-body pt-0">
-                                                    <!--begin::Table-->
-                                                    <div class="table-responsive">
-                                                        <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                            <thead>
-                                                                <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
-                                                                    <th># DE GUÍA</th>
-                                                                    <th>COMERCIO</th>
-                                                                    <th>TIPO DE ENVÍO </th>
-                                                                    <th>FECHA DE RECEPCIÓN</th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>Tiger Nixon</td>
-                                                                    <td>System Architect</td>
-                                                                    <td>Edinburgh</td>
-                                                                    <td>2011/04/25</td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <!--end::Table-->
-                                                </div>
-                                                <!--end::Card body-->
-
-                                                <!--end::Content container-->
-                                            </div>
-                                            <!--end::Wrapper-->
-                                        </div>
-                                        <!--end::Tap pane-->
+                                        <!--end::Wrapper-->
                                     </div>
-                                    <!--end::Tab Content-->
+                                    <!--end::Tap pane-->
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade" id="kt_pos_food_content_3">
+
+                                        <!--begin::Products-->
+                                        <div class="card card-flush col-lg-12">
+                                            <!--begin::Card header-->
+                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                <!--begin::Card title-->
+                                                <div class="card-title">
+                                                    <!--begin::Search-->
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                        </i>
+                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                    </div>
+                                                    <!--end::Search-->
+                                                    <!--begin::Export buttons-->
+                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                    <!--end::Export buttons-->
+                                                </div>
+                                                <!--end::Card title-->
+                                            </div>
+                                            <!--end::Card header-->
+                                            <!--begin::Card body-->
+                                            <div class="card-body pt-0">
+                                                <!--begin::Table-->
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                        <thead>
+                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                <th># DE GUÍA</th>
+                                                                <th>COMERCIO</th>
+                                                                <th>TIPO DE ENVÍO </th>
+                                                                <th>FECHA DE RECEPCIÓN</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Tiger Nixon</td>
+                                                                <td>System Architect</td>
+                                                                <td>Edinburgh</td>
+                                                                <td>2011/04/25</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!--end::Table-->
+                                            </div>
+                                            <!--end::Card body-->
+
+                                            <!--end::Content container-->
+                                        </div>
+                                        <!--end::Wrapper-->
+                                    </div>
+                                    <!--end::Tap pane-->
+
+                                    <!--begin::Tap pane-->
+                                    <div class="tab-pane fade w-100" id="kt_pos_food_content_4">
+                                        <!--begin::Wrapper-->
+
+                                        <!--begin::Products-->
+                                        <div class="card card-flush col-lg-12">
+                                            <!--begin::Card header-->
+                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                                                <!--begin::Card title-->
+                                                <div class="card-title">
+                                                    <!--begin::Search-->
+                                                    <div class="d-flex align-items-center position-relative my-1">
+                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                        </i>
+                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                    </div>
+                                                    <!--end::Search-->
+                                                    <!--begin::Export buttons-->
+                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                                    <!--end::Export buttons-->
+                                                </div>
+                                                <!--end::Card title-->
+                                            </div>
+                                            <!--end::Card header-->
+                                            <!--begin::Card body-->
+                                            <div class="card-body pt-0">
+                                                <!--begin::Table-->
+                                                <div class="table-responsive">
+                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                        <thead>
+                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                                <th># DE GUÍA</th>
+                                                                <th>COMERCIO</th>
+                                                                <th>TIPO DE ENVÍO </th>
+                                                                <th>FECHA DE RECEPCIÓN</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Tiger Nixon</td>
+                                                                <td>System Architect</td>
+                                                                <td>Edinburgh</td>
+                                                                <td>2011/04/25</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                                <!--end::Table-->
+                                            </div>
+                                            <!--end::Card body-->
+
+                                            <!--end::Content container-->
+                                        </div>
+                                        <!--end::Wrapper-->
+                                    </div>
+                                    <!--end::Tap pane-->
                                 </div>
-                                <!--end: Card Body-->
+                                <!--end::Tab Content-->
                             </div>
-                            <!--end::Pos food-->
+                            <!--end: Card Body-->
                         </div>
-                        <!--end::Content-->
-
-                        <!--begin::Sidebar-->
-                        <div class="flex-row-auto w-xl-425px">
-                            <!--begin::Pos order-->
-                            <div class="card card-flush bg-body" id="kt_pos_form">
-                                <!--begin::Header-->
-                                <div class="card-header pt-5">
-                                    <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
-                                    <!--begin::Toolbar-->
-                                    <div class="card-toolbar">
-                                        <a href="/cobro/limpiar" class="btn btn-light-primary fs-4 fw-bold py-4">Limpiar cuenta</a>
-                                    </div>
-                                    <!--end::Toolbar-->
-                                </div>
-                                <!--end::Header-->
-                                <!--begin::Body-->
-                                <div class="card-body pt-0">
-                                    <!--begin::Table container-->
-                                    <div class="table-responsive mb-8">
-                                        <!--begin::Table-->
-                                        <table class="table align-middle gs-0 gy-4 my-0">
-                                            <!--begin::Table head-->
-                                            <thead>
-                                                <tr>
-                                                    <th class="min-w-175px"></th>
-                                                    <th class="w-125px"></th>
-                                                    <th class="w-60px"></th>
-                                                </tr>
-                                            </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
-                                            <tbody>
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="33">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Departamental</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" >
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w-100px text-center" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
-                                                    </td>
-                                                </tr>
-
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="7.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado Departamental</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
-                                                    </td>
-                                                </tr>
-
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Punto fijo</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" placeholder="0.00"/>
-                                                    </td>
-                                                </tr>
-
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1 ">Casillero</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <!--end::Table body-->
-                                        </table>
-                                        <!--end::Table-->
-                                    </div>
-                                    <!--end::Table container-->
-                                    <!-- Campo para la cantidad de descuento -->
-                                    <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
-                                        <td class="pe-0">
-                                            <div class="form-floating col-lg-5 mb-4">
-                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
-                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
-                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                            </div>
-                                        </td>
-                                        <!-- Campo para el IVA -->
-                                        <td class="pe-2">
-                                            <!--begin::Option-->
-                                            <label class="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6" data-kt-button="true">
-                                                <!--begin::Radio-->
-                                                <span class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
-                                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                                                </span>
-                                                <!--end::Radio-->
-                                                <!--begin::Info-->
-                                                <span class="ms-5">
-                                                    <span class="fs-5 fw-bold text-gray-800 d-block">Aplicar iva</span>
-                                                </span>
-                                                <!--end::Info-->
-                                            </label>
-                                            <!--end::Option-->
-                                        </td>
-                                    </div>
-                                    <!--begin::Summary-->
-                                    <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
-                                        <!--begin::Content-->
-                                        <div class="fs-6 fw-bold text-white">
-                                            <span class="d-block lh-1 mb-2">Subtotal</span>
-                                            <span class="d-block mb-2">Descuento</span>
-                                            <span class="d-block mb-2">IVA</span>
-                                            <span class="d-block fs-2qx lh-1">Total</span>
-                                        </div>
-                                        <!--end::Content-->
-                                        <!--begin::Content-->
-                                        <div class="fs-6 fw-bold text-white text-end">
-                                            <span class="d-block lh-1 mb-2" data-kt-pos-element="total">$100.50</span>
-                                            <span class="d-block mb-2" data-kt-pos-element="discount">-$8.00</span>
-                                            <span class="d-block mb-2" data-kt-pos-element="IVA">+%13</span>
-                                            <span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$93.46</span>
-                                        </div>
-                                        <!--end::Content-->
-                                    </div>
-                                    <!--end::Summary-->
-                                    <!--begin::Payment Method-->
-                                    <div class="m-0">
-                                        <!--begin::Actions-->
-                                        <button class="btn btn-primary fs-1 w-100 py-4">imprimir comprobante</button>
-                                        <!--end::Actions-->
-                                    </div>
-                                    <!--end::Payment Method-->
-                                </div>
-                                <!--end: Card Body-->
-                            </div>
-                            <!--end::Pos order-->
-                        </div>
-                        <!--end::Sidebar-->
+                        <!--end::Pos food-->
                     </div>
-                    <!--end::Layout-->
+                    <!--end::Content-->
+
+                    <!--begin::Sidebar-->
+                    <div class="flex-row-auto w-xl-425px">
+                        <!--begin::Pos order-->
+                        <div class="card card-flush bg-body" id="kt_pos_form">
+                            <!--begin::Header-->
+                            <div class="card-header pt-5">
+                                <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
+                                <!--begin::Toolbar-->
+                                <div class="card-toolbar">
+                                    <a href="/cobro/limpiar" class="btn btn-light-primary fs-4 fw-bold py-4">Limpiar cuenta</a>
+                                </div>
+                                <!--end::Toolbar-->
+                            </div>
+                            <!--end::Header-->
+                            <!--begin::Body-->
+                            <div class="card-body pt-0">
+                                <!--begin::Table container-->
+                                <div class="table-responsive mb-8">
+                                    <!--begin::Table-->
+                                    <table class="table align-middle gs-0 gy-4 my-0">
+                                        <!--begin::Table head-->
+                                        <thead>
+                                            <tr>
+                                                <th class="min-w-175px"></th>
+                                                <th class="w-125px"></th>
+                                                <th class="w-60px"></th>
+                                            </tr>
+                                        </thead>
+                                        <!--end::Table head-->
+                                        <!--begin::Table body-->
+                                        <tbody>
+                                            <tr data-kt-pos-element="item" data-kt-pos-item-price="33">
+                                                <td class="pe-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                        <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Departamental</span>
+                                                    </div>
+                                                </td>
+                                                <td class="pe-0">
+                                                    <!--begin::Dialer-->
+                                                    <div class="position-relative d-flex align-items-center">
+
+                                                        <!--begin::Input control-->
+                                                        <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w-100px text-center" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
+                                                        <!--end::Input control-->
+
+                                                    </div>
+                                                    <!--end::Dialer-->
+                                                </td>
+                                                <td class="text-end">
+                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
+                                                </td>
+                                            </tr>
+
+                                            <tr data-kt-pos-element="item" data-kt-pos-item-price="7.5">
+                                                <td class="pe-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                        <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado Departamental</span>
+                                                    </div>
+                                                </td>
+                                                <td class="pe-0">
+                                                    <!--begin::Dialer-->
+                                                    <div class="position-relative d-flex align-items-center">
+
+                                                        <!--begin::Input control-->
+                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
+                                                        <!--end::Input control-->
+
+                                                    </div>
+                                                    <!--end::Dialer-->
+                                                </td>
+                                                <td class="text-end">
+                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
+                                                </td>
+                                            </tr>
+
+                                            <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
+                                                <td class="pe-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                        <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Punto fijo</span>
+                                                    </div>
+                                                </td>
+                                                <td class="pe-0">
+                                                    <!--begin::Dialer-->
+                                                    <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
+
+                                                        <!--begin::Input control-->
+                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
+                                                        <!--end::Input control-->
+
+                                                    </div>
+                                                    <!--end::Dialer-->
+                                                </td>
+                                                <td class="text-end">
+                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" placeholder="0.00" />
+                                                </td>
+                                            </tr>
+
+                                            <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
+                                                <td class="pe-0">
+                                                    <div class="d-flex align-items-center">
+                                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
+                                                        <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1 ">Casillero</span>
+                                                    </div>
+                                                </td>
+                                                <td class="pe-0">
+                                                    <!--begin::Dialer-->
+                                                    <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
+
+                                                        <!--begin::Input control-->
+                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
+                                                        <!--end::Input control-->
+
+                                                    </div>
+                                                    <!--end::Dialer-->
+                                                </td>
+                                                <td class="text-end">
+                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                        <!--end::Table body-->
+                                    </table>
+                                    <!--end::Table-->
+                                </div>
+                                <!--end::Table container-->
+                                <!-- Campo para la cantidad de descuento -->
+                                <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
+                                    <td class="pe-0">
+                                        <div class="form-floating col-lg-5 mb-4">
+                                            <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                            <label for="descuento" style="padding-left: 25px;">Descuento</label>
+                                            <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                        </div>
+                                    </td>
+                                    <!-- Campo para el IVA -->
+                                    <td class="pe-2">
+                                        <!--begin::Option-->
+                                        <label class="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6" data-kt-button="true">
+                                            <!--begin::Radio-->
+                                            <span class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
+                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                            </span>
+                                            <!--end::Radio-->
+                                            <!--begin::Info-->
+                                            <span class="ms-5">
+                                                <span class="fs-5 fw-bold text-gray-800 d-block">Aplicar iva</span>
+                                            </span>
+                                            <!--end::Info-->
+                                        </label>
+                                        <!--end::Option-->
+                                    </td>
+                                </div>
+                                <!--begin::Summary-->
+                                <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
+                                    <!--begin::Content-->
+                                    <div class="fs-6 fw-bold text-white">
+                                        <span class="d-block lh-1 mb-2">Subtotal</span>
+                                        <span class="d-block mb-2">Descuento</span>
+                                        <span class="d-block mb-2">IVA</span>
+                                        <span class="d-block fs-2qx lh-1">Total</span>
+                                    </div>
+                                    <!--end::Content-->
+                                    <!--begin::Content-->
+                                    <div class="fs-6 fw-bold text-white text-end">
+                                        <span class="d-block lh-1 mb-2" data-kt-pos-element="total">$100.50</span>
+                                        <span class="d-block mb-2" data-kt-pos-element="discount">-$8.00</span>
+                                        <span class="d-block mb-2" data-kt-pos-element="IVA">+%13</span>
+                                        <span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$93.46</span>
+                                    </div>
+                                    <!--end::Content-->
+                                </div>
+                                <!--end::Summary-->
+                                <!--begin::Payment Method-->
+                                <div class="m-0">
+                                    <!--begin::Actions-->
+                                    <button class="btn btn-primary fs-1 w-100 py-4">imprimir comprobante</button>
+                                    <!--end::Actions-->
+                                </div>
+                                <!--end::Payment Method-->
+                            </div>
+                            <!--end: Card Body-->
+                        </div>
+                        <!--end::Pos order-->
+                    </div>
+                    <!--end::Sidebar-->
                 </div>
-                <!--end::Content container-->
+                <!--end::Layout-->
             </div>
-            <!--end::Content-->
+            <!--end::Content container-->
+        </div>
+        <!--end::Content-->
         </div>
 
 
@@ -872,16 +874,11 @@
     </script>
 
     <script>
+        function comerciosel() {
+            const comer = document.getElementById("comercio").value;
+            document.getElementById("comerci").value = comer;
 
-function comerciosel()
-{
-    const comer = document.getElementById("comercio").value;
-    document.getElementById("comerci").value = comer;
-
-}
-
-
-       
+        }
     </script>
 
 

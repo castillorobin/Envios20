@@ -63,30 +63,7 @@
                     <!--end::Actions-->
                 </div>
                 <!--end::Toolbar container-->
-                <!--begin::Menu-->
-                <div class="menu">
 
-                    <!--begin::Menu item-->
-                    <div class="menu-item">
-                        <a href="/registro-orden" class="menu-link">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
-                            </span>
-                            <span class="menu-title">Cobro</span>
-                        </a>
-                    </div>
-                    <!--end::Menu item-->
-                    <!--begin::Menu item-->
-                    <div class="menu-item">
-                        <a href="#" class="menu-link">
-                            <span class="menu-icon">
-                                <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
-                            </span>
-                            <span class="menu-title">Entregar</span>
-                        </a>
-                    </div>
-                    <!--end::Menu item-->
-                </div>
             </div>
             <!--end::Menu-->
         </div>
@@ -195,6 +172,34 @@
             </div>
         </div>
 
+        <div style="background-color: white; padding: 20px;">
+            <!--begin::Menu-->
+            <div class="menu">
+                <!--begin::Menu item-->
+                <div class="menu-item" style="margin-bottom: 10px;">
+                    <a href="/registro-orden" class="btn btn-primary menu-link" style="width: 150px; margin-right: 10px;">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
+                        </span>
+                        <span class="menu-title">Cobro</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+                <!--begin::Menu item-->
+                <div class="menu-item" style="margin-bottom: 10px;">
+                    <a href="/entregas" class="btn btn-primary menu-link" style="width: 150px; margin-right: 10px;">
+                        <span class="menu-icon">
+                            <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
+                        </span>
+                        <span class="menu-title">Entregar</span>
+                    </a>
+                </div>
+                <!--end::Menu item-->
+            </div>
+            <!--end::Menu-->
+        </div>
+        <br>
+
         <!--begin::Content-->
         <div id="kt_app_content" class="app-content flex-column-fluid">
             <!--begin::Content container-->
@@ -254,23 +259,11 @@
                                                         </i>Exportar Reporte</button>
                                                     <!--begin::Menu-->
                                                     <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                        </div>
 
-                                        -->
-                                                        <!--end::Menu item-->
                                                         <!--begin::Menu item-->
                                                         <div class="menu-item px-3">
                                                             <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
                                                         </div>
-                                                        <!--end::Menu item-->
-                                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                        </div>
-                                        -->
                                                         <!--end::Menu item-->
                                                         <!--begin::Menu item-->
                                                         <div class="menu-item px-3">
@@ -286,7 +279,6 @@
                                             <!--end::Card header-->
                                             <!--begin::Card body-->
                                             <div class="card-body pt-0">
-
 
                                                 <!--begin::Table-->
                                                 <div class="table-responsive">
