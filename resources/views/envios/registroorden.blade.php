@@ -358,6 +358,9 @@
                                                         </thead>
                                                         <tbody>
                                                             @foreach ($pedidos as $pedido)
+                                                            @if ($pedido->tipo == "Departamental")
+                                                                
+                                                           
                                                             <tr>
 
 
@@ -368,6 +371,7 @@
                                                                 <td>{{$pedido->created_at->format('d/m/Y')}}</td>
 
                                                             </tr>
+                                                            @endif
                                                             @endforeach
                                                         </tbody>
                                                     </table>
@@ -393,23 +397,33 @@
                                                 <!--begin::Card title-->
                                                 <div class="card-title">
                                                     <!--begin::Search-->
-                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                            <span class="path1"></span>
-                                                            <span class="path2"></span>
-                                                        </i>
-                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                    <div>
+
+                                                        <form action="/cobro/agregar/" class="row g-2" method="get">
+
+                                                            <div class="col-auto">
+                                                                <label for="guia" class="visually-hidden">Guía</label>
+                                                                <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
+                                                                <input type="text" value="Personalizado Departamental" class="visually-hidden" name="tipo" id="tipo">
+                                                                <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            </div>
+
+                                                        </form>
+
+
+
                                                     </div>
                                                     <!--end::Search-->
-                                                    <!--begin::Export buttons-->
-                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                    <!--end::Export buttons-->
                                                 </div>
                                                 <!--end::Card title-->
                                             </div>
                                             <!--end::Card header-->
                                             <!--begin::Card body-->
-                                            <div class="card-body pt-0">
+                                            <div class="card-body pt-0 align-items-end">
                                                 <!--begin::Table-->
                                                 <div class="table-responsive">
                                                     <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
@@ -419,15 +433,24 @@
                                                                 <th>COMERCIO</th>
                                                                 <th>TIPO DE ENVÍO </th>
                                                                 <th>FECHA DE RECEPCIÓN</th>
+
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach ($pedidos as $pedido)
+                                                            @if ($pedido->tipo == "Personalizado Departamental")
                                                             <tr>
-                                                                <td>Tiger Nixon</td>
-                                                                <td>System Architect</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>2011/04/25</td>
+
+
+
+                                                                <td>{{$pedido->guia}}</td>
+                                                                <td>{{$pedido->comercio}}</td>
+                                                                <td>{{$pedido->tipo}}</td>
+                                                                <td>{{$pedido->created_at->format('d/m/Y')}}</td>
+
                                                             </tr>
+                                                            @endif
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -449,23 +472,33 @@
                                                 <!--begin::Card title-->
                                                 <div class="card-title">
                                                     <!--begin::Search-->
-                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                            <span class="path1"></span>
-                                                            <span class="path2"></span>
-                                                        </i>
-                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                    <div>
+
+                                                        <form action="/cobro/agregar/" class="row g-2" method="get">
+
+                                                            <div class="col-auto">
+                                                                <label for="guia" class="visually-hidden">Guía</label>
+                                                                <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
+                                                                <input type="text" value="Punto Fijo" class="visually-hidden" name="tipo" id="tipo">
+                                                                <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            </div>
+
+                                                        </form>
+
+
+
                                                     </div>
                                                     <!--end::Search-->
-                                                    <!--begin::Export buttons-->
-                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                    <!--end::Export buttons-->
                                                 </div>
                                                 <!--end::Card title-->
                                             </div>
                                             <!--end::Card header-->
                                             <!--begin::Card body-->
-                                            <div class="card-body pt-0">
+                                            <div class="card-body pt-0 align-items-end">
                                                 <!--begin::Table-->
                                                 <div class="table-responsive">
                                                     <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
@@ -475,15 +508,24 @@
                                                                 <th>COMERCIO</th>
                                                                 <th>TIPO DE ENVÍO </th>
                                                                 <th>FECHA DE RECEPCIÓN</th>
+
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach ($pedidos as $pedido)
+                                                            @if ($pedido->tipo == "Punto Fijo")
                                                             <tr>
-                                                                <td>Tiger Nixon</td>
-                                                                <td>System Architect</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>2011/04/25</td>
+
+
+
+                                                                <td>{{$pedido->guia}}</td>
+                                                                <td>{{$pedido->comercio}}</td>
+                                                                <td>{{$pedido->tipo}}</td>
+                                                                <td>{{$pedido->created_at->format('d/m/Y')}}</td>
+
                                                             </tr>
+                                                            @endif
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -508,23 +550,33 @@
                                                 <!--begin::Card title-->
                                                 <div class="card-title">
                                                     <!--begin::Search-->
-                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                            <span class="path1"></span>
-                                                            <span class="path2"></span>
-                                                        </i>
-                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                                    <div>
+
+                                                        <form action="/cobro/agregar/" class="row g-2" method="get">
+
+                                                            <div class="col-auto">
+                                                                <label for="guia" class="visually-hidden">Guía</label>
+                                                                <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
+                                                                <input type="text" value="Casillero" class="visually-hidden" name="tipo" id="tipo">
+                                                                <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            </div>
+
+                                                        </form>
+
+
+
                                                     </div>
                                                     <!--end::Search-->
-                                                    <!--begin::Export buttons-->
-                                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                                    <!--end::Export buttons-->
                                                 </div>
                                                 <!--end::Card title-->
                                             </div>
                                             <!--end::Card header-->
                                             <!--begin::Card body-->
-                                            <div class="card-body pt-0">
+                                            <div class="card-body pt-0 align-items-end">
                                                 <!--begin::Table-->
                                                 <div class="table-responsive">
                                                     <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
@@ -534,15 +586,24 @@
                                                                 <th>COMERCIO</th>
                                                                 <th>TIPO DE ENVÍO </th>
                                                                 <th>FECHA DE RECEPCIÓN</th>
+
                                                             </tr>
                                                         </thead>
                                                         <tbody>
+                                                            @foreach ($pedidos as $pedido)
+                                                            @if ($pedido->tipo == "Casillero")
                                                             <tr>
-                                                                <td>Tiger Nixon</td>
-                                                                <td>System Architect</td>
-                                                                <td>Edinburgh</td>
-                                                                <td>2011/04/25</td>
+
+
+
+                                                                <td>{{$pedido->guia}}</td>
+                                                                <td>{{$pedido->comercio}}</td>
+                                                                <td>{{$pedido->tipo}}</td>
+                                                                <td>{{$pedido->created_at->format('d/m/Y')}}</td>
+
                                                             </tr>
+                                                            @endif
+                                                            @endforeach
                                                         </tbody>
                                                     </table>
                                                 </div>
@@ -630,7 +691,7 @@
                                                     <div class="position-relative d-flex align-items-center">
 
                                                         <!--begin::Input control-->
-                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
+                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobroperdepa }}" />
                                                         <!--end::Input control-->
 
                                                     </div>
@@ -653,7 +714,7 @@
                                                     <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
 
                                                         <!--begin::Input control-->
-                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
+                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobropfijo }}" />
                                                         <!--end::Input control-->
 
                                                     </div>
@@ -676,7 +737,7 @@
                                                     <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
 
                                                         <!--begin::Input control-->
-                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value="0" />
+                                                        <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrocasi }}" />
                                                         <!--end::Input control-->
 
                                                     </div>

@@ -20,7 +20,13 @@ class CobroController extends Controller
         $comer=" ";
         $cobrodepa = Cobro::where('tipo', "Departamental")->get();
         $cobrodepa = $cobrodepa->count();
-        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos', 'cobrodepa', 'comer'));
+        $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
+            $cobroperdepa = $cobroperdepa->count();
+            $cobropfijo = Cobro::where('tipo', "Punto fijo")->get();
+            $cobropfijo = $cobropfijo->count();
+            $cobrocasi = Cobro::where('tipo', "Casillero")->get();
+            $cobrocasi = $cobrocasi->count();
+        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
 
     public function agregar(Request $request)
@@ -36,9 +42,15 @@ class CobroController extends Controller
             $comercios = Comercio::all();
             $cobrodepa = Cobro::where('tipo', "Departamental")->get();
             $cobrodepa = $cobrodepa->count();
+            $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
+            $cobroperdepa = $cobroperdepa->count();
+            $cobropfijo = Cobro::where('tipo', "Punto fijo")->get();
+            $cobropfijo = $cobropfijo->count();
+            $cobrocasi = Cobro::where('tipo', "Casillero")->get();
+            $cobrocasi = $cobrocasi->count();
             $comer = $request->get('comerci');
 
-            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer'));
+            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
 
         }else{
@@ -49,11 +61,17 @@ class CobroController extends Controller
             $pedidoadd->save();
             $cobrodepa = Cobro::where('tipo', "Departamental")->get();
             $cobrodepa = $cobrodepa->count();
+            $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
+            $cobroperdepa = $cobroperdepa->count();
+            $cobropfijo = Cobro::where('tipo', "Punto fijo")->get();
+            $cobropfijo = $cobropfijo->count();
+            $cobrocasi = Cobro::where('tipo', "Casillero")->get();
+            $cobrocasi = $cobrocasi->count();
             $nota=" ";
             $pedidos = Cobro::all();
             $comercios = Comercio::all();
             $comer = $request->get('comerci');
-            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer'));
+            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
 
         }
