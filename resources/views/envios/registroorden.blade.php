@@ -18,300 +18,77 @@
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
-<!--begin::Body-->
+<!--begin::Body
+<style>
+.app-header{
+    display: none;
+}
+</style>
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-minimize="on" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+-->
+<body  id="kt_body"  class="" >
+
+
     <x-default-layout>
-        <div class="d-flex flex-column flex-column-fluid">
-            <!--begin::Toolbar-->
-            <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
-                <!--begin::Toolbar container-->
-                <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
-                    <!--begin::Page title-->
-                    <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
-                        <!--begin::Title-->
-                        <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Registrar paquete</h1>
-                        <!--end::Title-->
-                        <!--begin::Breadcrumb-->
-                        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-                            <!--begin::Item-->
-                            <li class="breadcrumb-item text-muted">
-                                <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
-                            </li>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <li class="breadcrumb-item">
-                                <span class="bullet bg-gray-400 w-5px h-2px"></span>
-                            </li>
-                            <!--end::Item-->
-                            <!--begin::Item-->
-                            <li class="breadcrumb-item text-muted">Registrar paquete</li>
-                            <!--end::Item-->
-                        </ul>
-                        <!--end::Breadcrumb-->
-                    </div>
-                    <!--end::Page title-->
-                    <!--begin::Actions-->
-                    <div class="d-flex align-items-center gap-2 gap-lg-3">
-                        <!--begin::Secondary button-->
-                        <a href="#" id="openAgregarComerciosModal" class="btn btn-sm fw-bold bg-body btn-color-gray-700 btn-active-color-primary" data-bs-toggle="modal" data-bs-target="#agregarComercioModal">Crear Comercio</a>
-                        <!--end::Secondary button-->
-                        <!--begin::Primary button-->
-                        <a href="#" id="openModal" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#seleccionarComercioModal">Agregar Comercios</a>
-                        <!--end::Primary button-->
-                    </div>
-                    <!--end::Actions-->
-                </div>
-                <!--end::Toolbar container-->
-                <!--begin::Menu-->
-
-            </div>
-            <!--end::Menu-->
-        </div>
-        <!--end::Toolbar-->
-
-        <!-- Modal comercio-->
-        <div class="modal fade" id="seleccionarComercioModal" tabindex="-1" aria-labelledby="seleccionarComercioModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="seleccionarComercioModalLabel">Seleccionar Comercio</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row my-4 mx-4">
-                            <div class="form-floating col-lg-12 mb-4">
-                                <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio" id="comercio">
-                                    <option value=" ">Buscar comercio</option>
-                                    @foreach ($comercios as $comercio)
-                                    <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
-                                    @endforeach
-                                </select>
-
-                                <div id="comercioValidationFeedback" class="invalid-feedback">
-                                    Por favor seleccione un comercio.
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()" data-bs-dismiss="modal">Seleccionar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Modal de Agregar Comercio -->
-        <div class="modal fade" id="agregarComercioModal" tabindex="-1" aria-labelledby="agregarComercioModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="agregarComercioModalLabel">Agregar Comercio</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
-                            <div class="col-lg-8">
-                                <input type="text" name="nombre_comercio" id="nombre_comercio" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" required />
-                                <div class="invalid-feedback">Este campo es obligatorio.</div>
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label">Teléfono</label>
-                            <div class="col-lg-8">
-                                <input id="telefono" type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Teléfono" />
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
-                            <div class="col-lg-8">
-                                <input type="text" name="fecha_alta" class="form-control form-control-lg form-control-solid" id="fecha_alta" placeholder="Fecha de alta" readonly required />
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label">Tipo de comercio</label>
-                            <div class="col-lg-8">
-                                <select name="tipo_comercio" id="tipo_comercio" class="form-control form-control-lg form-control-solid" required>
-                                    <option value="Emprendedor">Emprendedor</option>
-                                    <option value="Comercio Mediano">Comercio Mediano</option>
-                                    <option value="Empresa">Empresa</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Estado de comercio</label>
-                            <div class="col-lg-8">
-                                <select name="estado_comercio" id="estado_comercio" class="form-control form-control-lg form-control-solid" required>
-                                    <option value="Alta">Alta</option>
-                                    <option value="Baja">Baja</option>
-                                    <option value="Lista negra">Lista negra</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
-                            <div class="col-lg-8">
-                                <select name="agencia_registro" id="agencia_registro" class="form-control form-control-lg form-control-solid" required>
-                                    <option value="San Salvador">San Salvador</option>
-                                    <option value="San Miguel">San Miguel</option>
-                                    <option value="Santa Ana">Santa Ana</option>
-                                    <option value="Centro de distribución">Centro de distribución</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label">Correo Electrónico</label>
-                            <div class="col-lg-8">
-                                <input type="email" name="correo_electronico" id="correo_electronico" class="form-control form-control-lg form-control-solid" placeholder="Correo Electrónico" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary" id="guardarComercioBtn">Guardar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div style="background-color: white; padding: 20px;">
-            <!--begin::Menu-->
-            <div class="menu">
-                <!--begin::Menu item-->
-                <div class="menu-item" style="margin-bottom: 10px;">
-                    <a href="/registro-orden" class="btn btn-primary menu-link" style="width: 150px; margin-right: 10px;">
-                        <span class="menu-icon">
-                            <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
-                        </span>
-                        <span class="menu-title">Cobro</span>
-                    </a>
-                </div>
-                <!--end::Menu item-->
-                <!--begin::Menu item-->
-                <div class="menu-item" style="margin-bottom: 10px;">
-                    <a href="/entregas" class="btn btn-primary menu-link" style="width: 150px; margin-right: 10px;">
-                        <span class="menu-icon">
-                            <i class="ki-duotone ki-calendar fs-3"><span class="path1"></span><span class="path2"></span></i>
-                        </span>
-                        <span class="menu-title">Entregar</span>
-                    </a>
-                </div>
-                <!--end::Menu item-->
-            </div>
-            <!--end::Menu-->
-        </div>
         <br>
-        <!--begin::Content-->
-        <div id="kt_app_content" class="app-content flex-column-fluid">
-            <!--begin::Content container-->
-            <div id="kt_app_content_container" class="app-container container-xxl">
-                <!--begin::Layout-->
-                <div class="d-flex flex-column flex-xl-row">
-                    <!--begin::Content-->
-                    <div class="d-flex flex-row-fluid me-xl-9 mb-10 mb-xl-0">
-                        <!--begin::Pos food-->
-                        <div class="card card-flush card-p-0 bg-transparent border-0">
+        	<!--begin::Container-->
+				<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start  container-xxl">
+					<!--begin::Post-->
+					<div class="content flex-row-fluid" id="kt_content">
+						<!--begin::Row-->
+<div class="row gy-0 gx-10">
+    <!--begin::Col-->
+    <div class="col-xl-8">
+        
+<!--begin::General Widget 1-->
+<div class="mb-5 mb-lg-10">
+    <!--begin::Tabs-->
+    <ul class="nav row mb-lg-10">
+                    <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px active" 
+                    data-bs-toggle="tab" href="#kt_general_widget_1_1">
 
-                            <!--begin::Body-->
-                            <div class="card-body">
-                                <!--begin::Nav-->
-                                <ul class="nav nav-pills d-flex justify-content-between nav-pills-custom gap-3 mb-6">
-                                    <!--begin::Item-->
-                                    <li class="nav-item mb-3 me-0">
-                                        <!--begin::Nav link-->
-                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg show active" data-bs-toggle="pill" href="#kt_pos_food_content_1" style="width: 150px;height: 190px">
-                                            <!--begin::Icon-->
-                                            <div class="nav-icon mb-3">
-                                                <!--begin::Food icon-->
-                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                <!--end::Food icon-->
-                                            </div>
-                                            <!--end::Icon-->
-                                            <!--begin::Info-->
-                                            <div class="">
-                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                <span class="text-gray-400 fw-semibold fs-7">Departamental</span>
-                                            </div>
-                                            <!--end::Info-->
-                                        </a>
-                                        <!--end::Nav link-->
-                                    </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
-                                    <li class="nav-item mb-3 me-0">
-                                        <!--begin::Nav link-->
-                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_2" style="width: 150px;height: 190px">
-                                            <!--begin::Icon-->
-                                            <div class="nav-icon mb-3">
-                                                <!--begin::Food icon-->
-                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                <!--end::Food icon-->
-                                            </div>
-                                            <!--end::Icon-->
-                                            <!--begin::Info-->
-                                            <div class="">
-                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                <span class="text-gray-400 fw-semibold fs-7">Personalizado Departamental</span>
-                                            </div>
-                                            <!--end::Info-->
-                                        </a>
-                                        <!--end::Nav link-->
-                                    </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
-                                    <li class="nav-item mb-3 me-0">
-                                        <!--begin::Nav link-->
-                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_3" style="width: 150px;height: 190px">
-                                            <!--begin::Icon-->
-                                            <div class="nav-icon mb-3">
-                                                <!--begin::Food icon-->
-                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                <!--end::Food icon-->
-                                            </div>
-                                            <!--end::Icon-->
-                                            <!--begin::Info-->
-                                            <div class="">
-                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                <span class="text-gray-400 fw-semibold fs-7">Punto fijo</span>
-                                            </div>
-                                            <!--end::Info-->
-                                        </a>
-                                        <!--end::Nav link-->
-                                    </li>
-                                    <!--end::Item-->
-                                    <!--begin::Item-->
-                                    <li class="nav-item mb-3 me-0">
-                                        <!--begin::Nav link-->
-                                        <a class="nav-link nav-link-border-solid btn btn-outline btn-flex btn-active-color-primary flex-column flex-stack pt-9 pb-7 page-bg" data-bs-toggle="pill" href="#kt_pos_food_content_4" style="width: 150px;height: 190px">
-                                            <!--begin::Icon-->
-                                            <div class="nav-icon mb-3">
-                                                <!--begin::Food icon-->
-                                                <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                                <!--end::Food icon-->
-                                            </div>
-                                            <!--end::Icon-->
-                                            <!--begin::Info-->
-                                            <div class="">
-                                                <span class="text-gray-800 fw-bold fs-2 d-block">Envio</span>
-                                                <span class="text-gray-400 fw-semibold fs-7">Casillero</span>
-                                            </div>
-                                            <!--end::Info-->
-                                        </a>
-                                        <!--end::Nav link-->
-                                    </li>
-                                    <!--end::Item-->
-                                </ul>
-                                <!--end::Nav-->
+                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                    <span class="fs-6 fw-bold">
+                        Envio <br/>Personalizado                    </span>
+                </a>
+            </li>
+                    <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px " 
+                    data-bs-toggle="tab" href="#kt_general_widget_1_2">
 
+                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                    <span class="fs-6 fw-bold">
+                        Envio <br/>Departamental                   </span>
+                </a>
+            </li>
+                    <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px" 
+                    data-bs-toggle="tab" href="#kt_general_widget_1_3">
 
-                                <!--begin::Tab Content-->
-                                <div class="tab-content">
-                                    <!--begin::Tap pane-->
-                                    <div class="tab-pane fade show active" id="kt_pos_food_content_1">
-                                        <!--begin::Products-->
-                                        <div class="card card-flush col-lg-12">
+                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                    <span class="fs-6 fw-bold">
+                        Envio <br/>Punto fijo                  </span>
+                </a>
+            </li>
+                    <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px " 
+                    data-bs-toggle="tab" href="#kt_general_widget_1_4">
+
+                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                    <span class="fs-6 fw-bold">
+                        Envio <br/>Casillero                  </span>
+                </a>
+            </li>
+                 
+            </ul>
+
+    <!--begin::Tab content-->
+    <div class="tab-content">
+                    <div class="tab-pane fade show active" id="kt_general_widget_1_1">
+                
+<!--begin::Tables Widget 2-->
+<div class="card card-flush col-lg-12">
                                             <!--begin::Card header-->
                                             <div class="card-header align-items-end py-5 gap-2 gap-md-5">
                                                 <!--begin::Card title-->
@@ -380,255 +157,138 @@
                                             </div>
                                             <!--end::Card body-->
                                         </div>
-                                        <!--end::Card-->
-                                        <!--end::Wrapper-->
-                                    </div>
-                                    <!--end::Tap pane-->
-
-                                    <!--end::Tap pane-->
-                                    <!--begin::Tap pane-->
-                                    <div class="tab-pane fade" id="kt_pos_food_content_2">
-                                        <!--begin::Wrapper-->
-                                        <!--begin::Content container-->
-                                        <div class="card card-flush col-lg-12">
-                                            <!--begin::Products-->
-                                            <!--begin::Card header-->
-                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                <!--begin::Card title-->
-                                                <div class="card-title">
-                                                    <!--begin::Search-->
-                                                    <div>
-
-                                                        <form action="/cobro/agregar/" class="row g-2" method="get">
-
-                                                            <div class="col-auto">
-                                                                <label for="guia" class="visually-hidden">Guía</label>
-                                                                <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
-                                                                <input type="text" value="Personalizado Departamental" class="visually-hidden" name="tipo" id="tipo">
-                                                                <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                            </div>
-
-                                                        </form>
 
 
 
-                                                    </div>
-                                                    <!--end::Search-->
-                                                </div>
-                                                <!--end::Card title-->
-                                            </div>
-                                            <!--end::Card header-->
-                                            <!--begin::Card body-->
-                                            <div class="card-body pt-0 align-items-end">
-                                                <!--begin::Table-->
-                                                <div class="table-responsive">
-                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                        <thead>
-                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
-                                                                <th># DE GUÍA</th>
-                                                                <th>COMERCIO</th>
-                                                                <th>TIPO DE ENVÍO </th>
-                                                                <th>FECHA DE RECEPCIÓN</th>
 
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @foreach ($pedidos as $pedido)
-                                                            @if ($pedido->tipo == "Personalizado Departamental")
-                                                            <tr>
-
-
-
-                                                                <td>{{$pedido->guia}}</td>
-                                                                <td>{{$pedido->comercio}}</td>
-                                                                <td>{{$pedido->tipo}}</td>
-                                                                <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-
-                                                            </tr>
-                                                            @endif
-                                                            @endforeach
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!--end::Table-->
-                                            </div>
-                                            <!--end::Card body-->
-                                            <!--end::Card-->
-                                        </div>
-                                        <!--end::Wrapper-->
-                                    </div>
-                                    <!--end::Tap pane-->
-                                    <!--begin::Tap pane-->
-                                    <div class="tab-pane fade" id="kt_pos_food_content_3">
-
-                                        <!--begin::Products-->
-                                        <div class="card card-flush col-lg-12">
-                                            <!--begin::Card header-->
-                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                <!--begin::Card title-->
-                                                <div class="card-title">
-                                                    <!--begin::Search-->
-                                                    <div>
-
-                                                        <form action="/cobro/agregar/" class="row g-2" method="get">
-
-                                                            <div class="col-auto">
-                                                                <label for="guia" class="visually-hidden">Guía</label>
-                                                                <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
-                                                                <input type="text" value="Punto Fijo" class="visually-hidden" name="tipo" id="tipo">
-                                                                <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                            </div>
-
-                                                        </form>
-
-
-
-                                                    </div>
-                                                    <!--end::Search-->
-                                                </div>
-                                                <!--end::Card title-->
-                                            </div>
-                                            <!--end::Card header-->
-                                            <!--begin::Card body-->
-                                            <div class="card-body pt-0 align-items-end">
-                                                <!--begin::Table-->
-                                                <div class="table-responsive">
-                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                        <thead>
-                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
-                                                                <th># DE GUÍA</th>
-                                                                <th>COMERCIO</th>
-                                                                <th>TIPO DE ENVÍO </th>
-                                                                <th>FECHA DE RECEPCIÓN</th>
-
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @foreach ($pedidos as $pedido)
-                                                            @if ($pedido->tipo == "Punto Fijo")
-                                                            <tr>
-
-
-
-                                                                <td>{{$pedido->guia}}</td>
-                                                                <td>{{$pedido->comercio}}</td>
-                                                                <td>{{$pedido->tipo}}</td>
-                                                                <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-
-                                                            </tr>
-                                                            @endif
-                                                            @endforeach
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!--end::Table-->
-                                            </div>
-                                            <!--end::Card body-->
-
-                                            <!--end::Content container-->
-                                        </div>
-                                        <!--end::Wrapper-->
-                                    </div>
-                                    <!--end::Tap pane-->
-
-                                    <!--begin::Tap pane-->
-                                    <div class="tab-pane fade w-100" id="kt_pos_food_content_4">
-                                        <!--begin::Wrapper-->
-
-                                        <!--begin::Products-->
-                                        <div class="card card-flush col-lg-12">
-                                            <!--begin::Card header-->
-                                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                                <!--begin::Card title-->
-                                                <div class="card-title">
-                                                    <!--begin::Search-->
-                                                    <div>
-
-                                                        <form action="/cobro/agregar/" class="row g-2" method="get">
-
-                                                            <div class="col-auto">
-                                                                <label for="guia" class="visually-hidden">Guía</label>
-                                                                <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
-                                                                <input type="text" value="Casillero" class="visually-hidden" name="tipo" id="tipo">
-                                                                <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                            </div>
-                                                            <div class="col-auto">
-                                                                <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                            </div>
-
-                                                        </form>
-
-
-
-                                                    </div>
-                                                    <!--end::Search-->
-                                                </div>
-                                                <!--end::Card title-->
-                                            </div>
-                                            <!--end::Card header-->
-                                            <!--begin::Card body-->
-                                            <div class="card-body pt-0 align-items-end">
-                                                <!--begin::Table-->
-                                                <div class="table-responsive">
-                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                        <thead>
-                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
-                                                                <th># DE GUÍA</th>
-                                                                <th>COMERCIO</th>
-                                                                <th>TIPO DE ENVÍO </th>
-                                                                <th>FECHA DE RECEPCIÓN</th>
-
-                                                            </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                            @foreach ($pedidos as $pedido)
-                                                            @if ($pedido->tipo == "Casillero")
-                                                            <tr>
-
-
-
-                                                                <td>{{$pedido->guia}}</td>
-                                                                <td>{{$pedido->comercio}}</td>
-                                                                <td>{{$pedido->tipo}}</td>
-                                                                <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-
-                                                            </tr>
-                                                            @endif
-                                                            @endforeach
-                                                        </tbody>
-                                                    </table>
-                                                </div>
-                                                <!--end::Table-->
-                                            </div>
-                                            <!--end::Card body-->
-
-                                            <!--end::Content container-->
-                                        </div>
-                                        <!--end::Wrapper-->
-                                    </div>
-                                    <!--end::Tap pane-->
-                                </div>
-                                <!--end::Tab Content-->
-                            </div>
-                            <!--end: Card Body-->
+<!--end::Tables Widget 2-->
+            </div>
+            <div class="tab-pane fade " id="kt_general_widget_1_2">
+                
+                <!--begin::Tables Widget 2-->
+                <div class="card ">
+                    <!--begin::Header-->
+                    <div class="card-header border-0 pt-5">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bold fs-3 mb-1">Departamental</span>
+                
+                            
+                        </h3>
+                        <div class="card-toolbar">
+                            <!--begin::Menu-->
+                           
+                <!--begin::Menu 1-->
+                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_663da81c2980d">
+                    <!--begin::Header-->
+                   
+                    <!--end::Form-->
+                </div>
+                <!--end::Menu 1-->            <!--end::Menu-->
                         </div>
-                        <!--end::Pos food-->
                     </div>
-                    <!--end::Content-->
+                    <!--end::Header-->
+                
+                    <!--begin::Body-->
+                    <div class="card-body py-3">
+                        <!--begin::Table container-->
+                       
+                        <!--end::Table container-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Tables Widget 2-->
+                            </div>
+                            <div class="tab-pane fade " id="kt_general_widget_1_3">
+                
+                <!--begin::Tables Widget 2-->
+                <div class="card ">
+                    <!--begin::Header-->
+                    <div class="card-header border-0 pt-5">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bold fs-3 mb-1">Punto Fijo</span>
+                
+                            
+                        </h3>
+                        <div class="card-toolbar">
+                            <!--begin::Menu-->
+                           
+                <!--begin::Menu 1-->
+                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_663da81c2980d">
+                    <!--begin::Header-->
+                   
+                    <!--end::Form-->
+                </div>
+                <!--end::Menu 1-->            <!--end::Menu-->
+                        </div>
+                    </div>
+                    <!--end::Header-->
+                
+                    <!--begin::Body-->
+                    <div class="card-body py-3">
+                        <!--begin::Table container-->
+                       
+                        <!--end::Table container-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Tables Widget 2-->
+                            </div>
+                            <div class="tab-pane fade " id="kt_general_widget_1_4">
+                
+                <!--begin::Tables Widget 2-->
+                <div class="card ">
+                    <!--begin::Header-->
+                    <div class="card-header border-0 pt-5">
+                        <h3 class="card-title align-items-start flex-column">
+                            <span class="card-label fw-bold fs-3 mb-1">Casillero</span>
+                
+                            
+                        </h3>
+                    <div class="card-toolbar">
+                            <!--begin::Menu-->
+                           
+                <!--begin::Menu 1-->
+                        <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_663da81c2980d">
+                    <!--begin::Header-->
+                   
+                    <!--end::Form-->
+                        </div>
+                <!--end::Menu 1-->            <!--end::Menu-->
+                    </div>
+                    </div>
+                    <!--end::Header-->
+                
+                    <!--begin::Body-->
+                    <div class="card-body py-3">
+                        <!--begin::Table container-->
+                       
+                        <!--end::Table container-->
+                    </div>
+                    <!--end::Body-->
+                </div>
+                <!--end::Tables Widget 2-->
+                            </div>
+           
+                  
+            </div>
+    <!--end::Tab content-->
+</div>
 
-                    <!--begin::Sidebar-->
-                    <div class="flex-row-auto w-xl-425px">
-                        <!--begin::Pos order-->
-                        <div class="card card-flush bg-body" id="kt_pos_form">
+        
+
+ 
+    </div>
+    <!--end::Col-->
+    
+    <!--begin::Col-->
+    <div class="col-xl-4">
+        
+<!--begin::Mixed Widget 12-->
+<div class="card mb-5 mb-lg-10">
+    <!--begin::Header-->
+    
+         
+    <div class="card card-flush bg-body" id="kt_pos_form">
                             <!--begin::Header-->
                             <div class="card-header pt-5">
                                 <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
@@ -638,9 +298,9 @@
                                 </div>
                                 <!--end::Toolbar-->
                             </div>
-                            <!--end::Header-->
-                            <!--begin::Body-->
-                            <div class="card-body pt-0">
+                            
+                    <!--begin::Body-->
+                    <div class="card-body pt-0">
                                 <!--begin::Table container-->
                                 <div class="table-responsive mb-8">
                                     <!--begin::Table-->
@@ -809,17 +469,28 @@
                                 <!--end::Payment Method-->
                             </div>
                             <!--end: Card Body-->
-                        </div>
-                        <!--end::Pos order-->
-                    </div>
-                    <!--end::Sidebar-->
-                </div>
-                <!--end::Layout-->
-            </div>
-            <!--end::Content container-->
-        </div>
-        <!--end::Content-->
-        </div>
+
+
+      
+    </div>
+    <!--end::Header-->
+
+    <!--begin::Body-->
+    
+    <!--end::Body-->
+</div>
+<!--end::Mixed Widget 12-->            
+        
+
+
+<!--end: List Widget 5-->
+    </div>
+    <!--end::Col-->
+</div>
+<!--end::Row-->					</div>
+					<!--end::Post-->	
+				</div>
+				<!--end::Container-->
 
 
 
@@ -842,38 +513,7 @@
 
 
     <script>
-        /*
-        document.addEventListener("DOMContentLoaded", function() {
-            // Evento para cargar los comercios cuando se abra el modal
-            $('#seleccionarComercioModal').on('show.bs.modal', function(e) {
-                // Aquí deberías cargar los comercios desde tu base de datos o de donde sea que los tengas
-                var comercios = ["Comercio 1", "Comercio 2", "Comercio 3"]; // Aquí pongo ejemplos
-
-                // Vaciamos el select
-                $('#comercio').empty();
-
-                // Iteramos sobre los comercios y los agregamos al select
-                $.each(comercios, function(index, comercio) {
-                    $('#comercio').append($('<option>', {
-                        value: comercio,
-                        text: comercio
-                    }));
-                });
-            });
-
-            // Evento para manejar la selección del comercio
-            $('#seleccionarBtn').on('click', function() {
-                var comercioSeleccionado = $('#comercio').val();
-
-                // Aquí puedes hacer lo que quieras con el comercio seleccionado, como enviarlo a través de un formulario, etc.
-                alert("Comercio seleccionado: " + comercioSeleccionado);
-
-                // Cerrar el modal
-                $('#seleccionarComercioModal').modal('hide');
-            });
-        });
-
-        */
+       
     </script>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
@@ -906,25 +546,7 @@
                     correo: correoElectronico
                 };
 
-                // Aquí podrías hacer una petición AJAX para guardar el comercio en la base de datos
-                // Por ejemplo, si estás utilizando jQuery:
-                /*
-                $.ajax({
-                  type: 'POST',
-                  url: '/guardar_comercio',
-                  data: comercio,
-                  success: function(response) {
-                    // Manejar la respuesta del servidor
-                    alert('Comercio guardado correctamente');
-                    $('#agregarComercioModal').modal('hide');
-                  },
-                  error: function(error) {
-                    // Manejar errores
-                    alert('Error al guardar el comercio');
-                  }
-                });
-                */
-
+               
                 // Simplemente mostraremos los datos en la consola como ejemplo
                 console.log('Información del comercio:', comercio);
 
