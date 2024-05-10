@@ -43,7 +43,7 @@
 <!--begin::General Widget 1-->
 <div class="mb-5 mb-lg-10">
     <!--begin::Tabs-->
-    <ul class="nav row mb-lg-10">
+    <ul class="nav row mb-lg-5">
                     <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
                 <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px active" 
                     data-bs-toggle="tab" href="#kt_general_widget_1_1">
@@ -125,11 +125,13 @@
                                                 <div class="table-responsive">
                                                     <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                         <thead>
-                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
+                                                            <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
                                                                 <th># DE GUÍA</th>
                                                                 <th>COMERCIO</th>
                                                                 <th>TIPO DE ENVÍO </th>
+                                                                <th>AGENCIA</th>
                                                                 <th>FECHA DE RECEPCIÓN</th>
+                                                                <th>BORRAR</th>
 
                                                             </tr>
                                                         </thead>
@@ -144,9 +146,10 @@
 
                                                                 <td>{{$pedido->guia}}</td>
                                                                 <td>{{$pedido->comercio}}</td>
-                                                                <td>{{$pedido->tipo}}</td>
+                                                                <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
+                                                                <th>Santa Ana</th>
                                                                 <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-
+                                                                <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
                                                             </tr>
                                                             @endif
                                                             @endforeach

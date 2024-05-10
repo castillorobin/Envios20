@@ -346,13 +346,14 @@
                                             <div class="card-body pt-0 align-items-end">
                                                 <!--begin::Table-->
                                                 <div class="table-responsive">
-                                                    <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                    <table class="table align-middle gs-0 gy-5">
                                                         <thead>
                                                             <tr class="fw-semibold fs-6 text-gray-400 fw-bold border-bottom-2 border-gray-200">
                                                                 <th># DE GUÍA</th>
                                                                 <th>COMERCIO</th>
                                                                 <th>TIPO DE ENVÍO </th>
                                                                 <th>FECHA DE RECEPCIÓN</th>
+                                                                <th>ACCION</th>
 
                                                             </tr>
                                                         </thead>
@@ -369,7 +370,7 @@
                                                                 <td>{{$pedido->comercio}}</td>
                                                                 <td>{{$pedido->tipo}}</td>
                                                                 <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-
+                                                                <td><button type="button" class="btn btn-danger">Borrar</button></td>
                                                             </tr>
                                                             @endif
                                                             @endforeach
