@@ -26,24 +26,50 @@
 </style>
 
 -->
+
 <body  id="kt_body"  class="" >
+<x-default-layout>
 
-
-    <x-default-layout>
+    
         <br>
+
         	<!--begin::Container-->
-				<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start  container-xxl">
+				<div id="kt_content_container" class="d-flex flex-column-fluid align-items-start">
 					<!--begin::Post-->
 					<div class="content flex-row-fluid" id="kt_content">
+
+                    <div class="row m-1" style="background-color:white; ">
+                    <div class="col-4 m-2" >
+                    <select class="form-control form-control-lg " data-control="select2" name="comercio" id="comercio">
+                                    <option value=" ">Buscar comercio</option>
+                                    @foreach ($comercios as $comercio)
+                                    <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
+                                    @endforeach
+                                </select>
+                    </div>
+                    <div class="col-2 m-2">
+                    <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()" >Seleccionar</button>
+                    </div>
+
+                    <div class="col-4 m-2 " >
+                    <button type="button" class="btn btn-success" id="seleccionarBtn" style="float:right; ">Agregar Comercio</button>
+                    </div>
+
+
+                    </div>
+                    
+                    
+
+                    <br>
 						<!--begin::Row-->
-<div class="row gy-0 gx-10">
+<div class="row gy-0 gx-10 ">
     <!--begin::Col-->
-    <div class="col-xl-8">
+    <div class="col-xl-8 ">
         
 <!--begin::General Widget 1-->
-<div class="mb-5 mb-lg-10">
+<div class="mb-5 mb-lg-10 ">
     <!--begin::Tabs-->
-    <ul class="nav row mb-lg-5">
+    <ul class="nav row mb-lg-5 m-1 py-3" style="background-color:white; ">
                     <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
                 <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px active" 
                     data-bs-toggle="tab" href="#kt_general_widget_1_1">
