@@ -15,7 +15,7 @@ class CobroController extends Controller
     public function index()
     {
         $pedidos = Cobro::all();
-        $comercios = Comercio::all();
+        $comercios = Comercio::all(); 
         $nota=" ";
         $comer=" ";
         $cobrodepa = Cobro::where('tipo', "Departamental")->get();

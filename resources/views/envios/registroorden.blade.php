@@ -26,6 +26,105 @@
 </style>
 
 -->
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+
+ $(document).ready(function() {
+  
+   					$("#depasub").change(function() {
+       												              
+          const subtotal =parseFloat($(this).val());
+          const subtotal2 = parseFloat(document.getElementById("persosub").value); 
+          const subtotal3 = parseFloat(document.getElementById("fijosub").value); 
+          const subtotal4 = parseFloat(document.getElementById("casisub").value); 
+
+          const total = subtotal + subtotal2 + subtotal3 + subtotal4 ;
+
+          $('#stotal').text("$" + total);
+
+    				});
+
+
+                    $("#persosub").change(function() {
+       												              
+                    const subtotal =parseFloat($(this).val());
+                    const subtotal2 = parseFloat(document.getElementById("depasub").value); 
+                    const subtotal3 = parseFloat(document.getElementById("fijosub").value); 
+                    const subtotal4 = parseFloat(document.getElementById("casisub").value); 
+                                                           
+                    const total = subtotal + subtotal2 + subtotal3 + subtotal4 ;
+                                                           
+                    $('#stotal').text("$" + total);
+                                                           
+                    });
+
+
+                    $("#fijosub").change(function() {
+       												              
+                    const subtotal =parseFloat($(this).val());
+                    const subtotal2 = parseFloat(document.getElementById("depasub").value); 
+                    const subtotal3 = parseFloat(document.getElementById("persosub").value); 
+                    const subtotal4 = parseFloat(document.getElementById("casisub").value); 
+                                                                                                            
+                    const total = subtotal + subtotal2 + subtotal3 + subtotal4 ;
+                                                                                                            
+                    $('#stotal').text("$" + total);
+                                                                                                            
+                    });
+
+
+
+                    $("#casisub").change(function() {
+       												              
+                    const subtotal =parseFloat($(this).val());
+                    const subtotal2 = parseFloat(document.getElementById("depasub").value); 
+                    const subtotal3 = parseFloat(document.getElementById("persosub").value); 
+                    const subtotal4 = parseFloat(document.getElementById("fijosub").value); 
+                                                                                                                                                             
+                    const total = subtotal + subtotal2 + subtotal3 + subtotal4 ;
+                                                                                                                                                             
+                    $('#stotal').text("$" + total);
+                                                                                                                                                             
+                    });
+
+
+                    $("#descuento").change(function() {
+       												              
+                    const descu =parseFloat($(this).val());
+                    //var sutotal=$('#stotal').text();
+                   
+                                                                                                                                                                                                              
+                   
+                                                                                                                                                                                                              
+                    $('#sdescuento').text("-$" + descu);
+                                                                                                                                                                                                              
+                    });
+              
+                                            });
+
+                function aplicariva(){
+                    
+                    
+                    var checkbox = document.getElementById('chkiva');
+                    if(checkbox.checked != true){
+                        const subtotal = parseFloat(document.getElementById('fijosub').value);
+                        
+                    const subtotal2 = parseFloat(document.getElementById("depasub").value); 
+                    const subtotal3 = parseFloat(document.getElementById("persosub").value); 
+                    const subtotal4 = parseFloat(document.getElementById("casisub").value); 
+                                                                                                            
+                    const total = subtotal + subtotal2 + subtotal3 + subtotal4 ;
+                    const coniva = total * 0.13 ;
+
+                        $('#siva').text("+$" + coniva);
+
+                    }else{
+                        $('#siva').text("+$0.00"); 
+                    }
+
+                        };
+
+</script>
 
 <body  id="kt_body"  class="" >
 <x-default-layout>
@@ -349,7 +448,7 @@
                                                 <td class="pe-0">
                                                     <div class="d-flex align-items-center">
                                                         <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                        <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Departamental</span>
+                                                        <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado</span>
                                                     </div>
                                                 </td>
                                                 <td class="pe-0">
@@ -364,7 +463,7 @@
                                                     <!--end::Dialer-->
                                                 </td>
                                                 <td class="text-end">
-                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
+                                                    <input type="text" name="depasub" id="depasub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" />
                                                 </td>
                                             </tr>
 
@@ -387,7 +486,7 @@
                                                     <!--end::Dialer-->
                                                 </td>
                                                 <td class="text-end">
-                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
+                                                    <input type="text" name="persosub" id="persosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" />
                                                 </td>
                                             </tr>
 
@@ -410,7 +509,7 @@
                                                     <!--end::Dialer-->
                                                 </td>
                                                 <td class="text-end">
-                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" placeholder="0.00" />
+                                                    <input type="text" name="fijosub" id="fijosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" value="0" />
                                                 </td>
                                             </tr>
 
@@ -433,7 +532,7 @@
                                                     <!--end::Dialer-->
                                                 </td>
                                                 <td class="text-end">
-                                                    <input type="text" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" placeholder="0.00" />
+                                                    <input type="text" name="casisub" id="casisub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" />
                                                 </td>
                                             </tr>
                                         </tbody>
@@ -446,7 +545,7 @@
                                 <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
                                     <td class="pe-0">
                                         <div class="form-floating col-lg-5 mb-4">
-                                            <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                            <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0"/>
                                             <label for="descuento" style="padding-left: 25px;">Descuento</label>
                                             <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                         </div>
@@ -457,12 +556,12 @@
                                         <label class="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6" data-kt-button="true">
                                             <!--begin::Radio-->
                                             <span class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
-                                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
+                                                <input class="form-check-input" type="checkbox" value="" name="chkiva" id="chkiva"  />
                                             </span>
                                             <!--end::Radio-->
                                             <!--begin::Info-->
                                             <span class="ms-5">
-                                                <span class="fs-5 fw-bold text-gray-800 d-block">Aplicar iva</span>
+                                                <span class="fs-5 fw-bold text-gray-800 d-block"  Onclick="aplicariva();">Aplicar iva</span>
                                             </span>
                                             <!--end::Info-->
                                         </label>
@@ -481,10 +580,10 @@
                                     <!--end::Content-->
                                     <!--begin::Content-->
                                     <div class="fs-6 fw-bold text-white text-end">
-                                        <span class="d-block lh-1 mb-2" data-kt-pos-element="total">$100.50</span>
-                                        <span class="d-block mb-2" data-kt-pos-element="discount">-$8.00</span>
-                                        <span class="d-block mb-2" data-kt-pos-element="IVA">+%13</span>
-                                        <span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$93.46</span>
+                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
+                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
+                                        <span id="siva" name="siva" class="d-block mb-2" data-kt-pos-element="IVA">+$0.00</span>
+                                        <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                     </div>
                                     <!--end::Content-->
                                 </div>
