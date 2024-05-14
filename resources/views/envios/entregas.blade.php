@@ -49,14 +49,19 @@
 
 
 
-                                                    <!--begin::Search-->
-                                                    <div class="d-flex align-items-center position-relative my-1">
-                                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                                            <span class="path1"></span>
-                                                            <span class="path2"></span>
-                                                        </i>
-                                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                                    </div>
+                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
+
+                                                        <div class="col-auto">
+                                                            <label for="guia" class="visually-hidden">Guía</label>
+                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar envio">
+                                                            <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar envio">
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                                                        </div>
+
+                                                    </form>
 
                                                 </div>
                                                 <!--end::Search-->
@@ -86,7 +91,9 @@
                                                             <td>J0akin Polanco</td>
                                                             <td>Departamental</td>
                                                             <td>$20.00</td>
-                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
+                                                            <td style="text-align: center;">
+                                                                <button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button>
+                                                            </td>
                                                         </tr>
 
                                                     </tbody>
@@ -120,13 +127,12 @@
                                 <!--begin::Body-->
                                 <div class="card-body pt-0">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" name="cajero" id="cajero" required>
-                                            <option value="Joaquin">Joaquin Polanco</option>
-                                            <option value="Robin">Robin castillo</option>
-                                        </select>
-                                        <label for="estado_envio">Cajero</label>
-                                        <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
-                                            Por favor seleccione el estado del envío.
+                                        <div class="form-floating col-lg-12 mb-4">
+                                            <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="Joakin Polanco" required readonly />
+                                            <label for="Cajero">Cajero</label>
+                                            <div id="CajeroValidationFeedback" class="invalid-feedback">
+                                                Por favor ingrese el destinatario.
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-12 mb-4">
@@ -143,7 +149,7 @@
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="datetime-local" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" />
+                                        <input type="datetime-local" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
                                         <label for="fecha_entrega">Fecha de entrega</label>
                                         <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione una fecha de entrega.
@@ -163,11 +169,9 @@
                                         <label for="nota" style="padding-left: 25px;">Nota</label>
                                     </div>
 
-
-
                                 </div>
                                 <!--begin::Summary-->
-                                <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
+                                <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11 ">
                                     <!--begin::Content-->
                                     <div class="fs-6 fw-bold text-white">
                                         <span class="d-block lh-1 mb-2">Subtotal</span>
@@ -185,9 +189,9 @@
                                 </div>
                                 <!--end::Summary-->
                                 <!--begin::Payment Method-->
-                                <div class="m-0">
+                                <div class="m-0" >
                                     <!--begin::Actions-->
-                                    <button class="btn btn-primary fs-1 w-100 py-3">imprimir comprobante</button>
+                                    <button class="btn btn-primary fs-1 w-80 py-3">imprimir comprobante</button>
                                     <!--end::Actions-->
                                 </div>
                                 <!--end::Payment Method-->
