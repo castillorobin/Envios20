@@ -203,7 +203,7 @@
                                     <!--begin::Payment Method-->
                                     <div class="m-0">
                                         <!--begin::Actions-->
-                                        <button class="btn btn-primary fs-1 w-100 py-4">imprimir comprobante</button>
+                                        <button class="btn btn-primary fs-1 w-100 py-3 px-3">imprimir comprobante</button>
                                         <!--end::Actions-->
                                     </div>
                                     <!--end::Payment Method-->
