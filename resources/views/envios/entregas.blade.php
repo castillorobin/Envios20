@@ -78,19 +78,19 @@
                                                         <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
                                                             <th># DE GUÍA</th>
                                                             <th>COMERCIO</th>
-                                                            <th>DESTINATARIO</th>
-                                                            <th>TIPO DE ENVÍO</th>
-                                                            <th>TOTAL A PAGAR </th>
-                                                            <th>BORRAR</th>
+                                                            <th class="text-center">DESTINATARIO</th>
+                                                            <th class="text-center">TIPO DE ENVÍO</th>
+                                                            <th class="text-center">TOTAL A PAGAR</th>
+                                                            <th class="text-center">BORRAR</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
                                                         <tr>
-                                                            <td>#0002</td>
-                                                            <td>MODA SV</td>
+                                                            <td><a href="#" class="text-gray-900 text-hover-primary">#000</a></td>
+                                                            <td><a href="#" class="text-gray-900 text-hover-primary">MODA SV</a></td>
                                                             <td>J0akin Polanco</td>
-                                                            <td>Departamental</td>
-                                                            <td>$20.00</td>
+                                                            <td class="text-center"><span class="badge badge-light-success">Personalizado</span></td>
+                                                            <td class="text-center">$20.00</td>
                                                             <td style="text-align: center;">
                                                                 <button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button>
                                                             </td>
@@ -110,10 +110,8 @@
                         </div>
                     </div>
                     <!--end::Col-->
-
                     <!--begin::Col-->
                     <div class="col-xl-4">
-
                         <!--begin::Mixed Widget 12-->
                         <div class="card mb-5 mb-lg-10">
                             <!--begin::Header-->
@@ -121,92 +119,113 @@
                                 <!--begin::Header-->
                                 <div class="card-header pt-5">
                                     <h3 class="card-title fw-bold text-gray-800 fs-2qx">Entregas</h3>
-
                                 </div>
-
                                 <!--begin::Body-->
                                 <div class="card-body pt-0">
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <div class="form-floating col-lg-12 mb-4">
-                                            <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="Joakin Polanco" required readonly />
-                                            <label for="Cajero">Cajero</label>
-                                            <div id="CajeroValidationFeedback" class="invalid-feedback">
-                                                Por favor ingrese el destinatario.
-                                            </div>
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive mb-8">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4 my-0">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                                <tr>
+                                                    <th class="min-w-175px"></th>
+                                                    <th class="w-125px"></th>
+                                                    <th class="w-60px"></th>
+                                                </tr>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <div class="form-floating col-lg-12 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="Joakin Polanco" required readonly />
+                                                        <label for="Cajero">Cajero</label>
+                                                        <div id="CajeroValidationFeedback" class="invalid-feedback">
+                                                            Por favor ingrese el destinatario.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <select class="form-select form-select-solid" name="metodo" id="metodo" required>
+                                                        <option value="Efectivo">Efectivo</option>
+                                                        <option value="Transferencia_empresa">Transferencia a la empresa</option>
+                                                        <option value="Transferencia_comercio">Transferencia al comercio</option>
+                                                        <option value="Tigo_money">Tigo money</option>
+                                                        <option value="Chivo">Chivo</option>
+                                                    </select>
+                                                    <label for="estado_envio">Metodo de pago</label>
+                                                    <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione el estado del envío.
+                                                    </div>
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
+                                                    <label for="fecha_entrega">Fecha de entrega</label>
+                                                    <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione una fecha de entrega.
+                                                    </div>
+                                                </div>
+                                                <!-- Campo para la cantidad de descuento -->
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                                    <label for="descuento" style="padding-left: 25px;">Descuento</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
+                                                    <label for="nota" style="padding-left: 25px;">Nota</label>
+                                                </div>
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                    <!--begin::Summary-->
+                                    <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
+                                        <!--begin::Content-->
+                                        <div class="fs-6 fw-bold text-white">
+                                            <span class="d-block lh-1 mb-2">Subtotal</span>
+                                            <span class="d-block mb-2">Descuento</span>
+                                            <span class="d-block fs-2qx lh-1">Total</span>
                                         </div>
-                                    </div>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" name="metodo" id="metodo" required>
-                                            <option value="Efectivo">Efectivo</option>
-                                            <option value="Transferencia_empresa">Transferencia a la empresa</option>
-                                            <option value="Transferencia_comercio">Transferencia al comercio</option>
-                                            <option value="Tigo_money">Tigo money</option>
-                                            <option value="Chivo">Chivo</option>
-                                        </select>
-                                        <label for="estado_envio">Metodo de pago</label>
-                                        <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
-                                            Por favor seleccione el estado del envío.
+                                        <!--end::Content-->
+                                        <!--begin::Content-->
+                                        <div class="fs-6 fw-bold text-white text-end">
+                                            <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
+                                            <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
+                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                         </div>
+                                        <!--end::Content-->
                                     </div>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="datetime-local" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
-                                        <label for="fecha_entrega">Fecha de entrega</label>
-                                        <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
-                                            Por favor seleccione una fecha de entrega.
-                                        </div>
+                                    <!--end::Summary-->
+                                    <!--begin::Payment Method-->
+                                    <div class="m-0">
+                                        <!--begin::Actions-->
+                                        <button class="btn btn-primary fs-1 w-100 py-4">imprimir comprobante</button>
+                                        <!--end::Actions-->
                                     </div>
-
-                                    <!-- Campo para la cantidad de descuento -->
-
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
-                                        <label for="descuento" style="padding-left: 25px;">Descuento</label>
-                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                    </div>
-
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
-                                        <label for="nota" style="padding-left: 25px;">Nota</label>
-                                    </div>
-
+                                    <!--end::Payment Method-->
                                 </div>
-                                <!--begin::Summary-->
-                                <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11 ">
-                                    <!--begin::Content-->
-                                    <div class="fs-6 fw-bold text-white">
-                                        <span class="d-block lh-1 mb-2">Subtotal</span>
-                                        <span class="d-block mb-2">Descuento</span>
-                                        <span class="d-block fs-2qx lh-1">Total</span>
-                                    </div>
-                                    <!--end::Content-->
-                                    <!--begin::Content-->
-                                    <div class="fs-6 fw-bold text-white text-end">
-                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                        <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
-                                    </div>
-                                    <!--end::Content-->
-                                </div>
-                                <!--end::Summary-->
-                                <!--begin::Payment Method-->
-                                <div class="m-0" >
-                                    <!--begin::Actions-->
-                                    <button class="btn btn-primary fs-1 w-80 py-3">imprimir comprobante</button>
-                                    <!--end::Actions-->
-                                </div>
-                                <!--end::Payment Method-->
+                                <!--end: Card Body-->
+
+
+
                             </div>
-                            <!--end: Card Body-->
+                            <!--end::Header-->
 
+                            <!--begin::Body-->
+
+                            <!--end::Body-->
                         </div>
-                        <!--end::Header-->
+                        <!--end::Mixed Widget 12-->
 
-                        <!--begin::Body-->
 
-                        <!--end::Body-->
+
+                        <!--end: List Widget 5-->
                     </div>
-                    <!--end::Mixed Widget 12-->
-
+                    <!--end::Col-->
 
 
                     <!--end: List Widget 5-->
@@ -247,11 +266,26 @@
             return ahora;
         }
 
+        // Función para formatear la fecha
+        function formatearFecha(fecha) {
+            var meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
+            var dia = fecha.getDate();
+            var mes = meses[fecha.getMonth()];
+            var año = fecha.getFullYear();
+            var horas = fecha.getHours();
+            var minutos = fecha.getMinutes();
+            var am_pm = horas >= 12 ? 'AM' : 'PM';
+            horas = horas % 12;
+            horas = horas ? horas : 12;
+            minutos = minutos < 10 ? '0' + minutos : minutos;
+            return dia + '/' + mes + '/' + año + ' ' + horas + ':' + minutos + ' ' + am_pm;
+        }
+
         // Función para establecer la fecha y hora actual en el campo de fecha de entrega
         function establecerFechaEntrega() {
             var fechaHoraActual = obtenerFechaHoraElSalvador();
-            var fechaHoraFormateada = fechaHoraActual.toISOString().slice(0, 16);
-            document.getElementById('fecha_entrega').value = fechaHoraFormateada;
+            var fechaFormateada = formatearFecha(fechaHoraActual);
+            document.getElementById('fecha_entrega').value = fechaFormateada;
         }
 
         // Llamar a la función para establecer la fecha y hora actual al cargar la página
