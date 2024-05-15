@@ -96,6 +96,12 @@ Route::get('/faltas/listafaltas', function () {
 Route::get('/entregas', function () {
     return view('envios.entregas');
 });
+
+
+Route::get('/listapagos', function () {
+    return view('envios.pagoslista');
+});
+
 /*
 Route::get('/registro-orden', function () {
     return view('envios.registroorden');

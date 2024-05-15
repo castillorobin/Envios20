@@ -22,22 +22,22 @@
         <div id="kt_ecommerce_products_table_wrapper" class="dataTables_wrapper dt-bootstrap4 no-footer">
           <div class="table-responsive">
             <table id="tpedido" class="table align-middle table-row-dashed fs-6 gy-5 dataTable no-footer">
-              <thead style="">
+              <thead >
                 <th class="white-space-nowrap fs--1 align-middle ps-0" style="width:26px;">
                   <div class="form-check mb-0 fs-0">
                     <input class="form-check-input" id="checkbox-bulk-order-select" type="checkbox" data-bulk-select="{&quot;body&quot;:&quot;order-table-body&quot;}">
                   </div>
                 </th>
-                <th style="">ID</th>
-                <th style="">COMERCIO</th>
-                <th style="">CLIENTE</th>
-                <th style="">TIPO DE ORDEN</th>
-                <th style="">TOTAL</th>
-                <th style="">ENVIO</th>
-                <th style="">PRECIO</th>
-                <th style="">ESTADO DE LA ORDEN</th>
-                <th style="">ESTADO DEL PAGO</th>
-                <th style="">FECHA DE ENTREGA</th>
+                <th >ID</th>
+                <th >COMERCIO</th>
+                <th >CLIENTE</th>
+                <th >TIPO DE ORDEN</th>
+                <th >TOTAL</th>
+                <th >ENVIO</th>
+                <th >PRECIO</th>
+                <th >ESTADO DE LA ORDEN</th>
+                <th >ESTADO DEL PAGO</th>
+                <th >FECHA DE ENTREGA</th>
                 </tr>
               </thead>
               <tbody>
