@@ -495,7 +495,7 @@
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-secondary px-2" style="height:100px; position:absolute; width:230px;">Enter</button>
+            <button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:230px;">Enter</button>
                 
             </div>
            
