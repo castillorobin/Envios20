@@ -137,48 +137,7 @@
             <div class="content flex-row-fluid" id="kt_content">
 
                 <div class="row m-1" style="background-color:white; ">
-                
-
-                <div class="col-6 m-2">    
-
-                <ul class="nav row " style="background-color:white; ">
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
-
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                       
-                                            Personalizado 
-                                    </a>
-                                </li>
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_2">
-
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                        <span class="fs-6 fw-bold">
-                                           Departamental </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px" data-bs-toggle="tab" href="#kt_general_widget_1_3">
-
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                        <span class="fs-6 fw-bold">
-                                            Punto fijo </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_4">
-
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                        <span class="fs-6 fw-bold">
-                                            Casillero </span>
-                                    </a>
-                                </li>
-                </ul>
-
-                </div>
-
-                    <div class="col-2 m-2">
+                    <div class="col-4 m-2">
                         <select class="form-control form-control-lg " data-control="select2" name="comercio" id="comercio">
                             <option value=" ">Buscar comercio</option>
                             @foreach ($comercios as $comercio)
@@ -186,12 +145,12 @@
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-1 m-2">
+                    <div class="col-2 m-2">
                         <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()">Seleccionar</button>
                     </div>
 
-                    <div class="col-2 m-2 ">
-                        <button type="button" class="btn btn-success" id="seleccionarBtn" >Agregar Comercio</button>
+                    <div class="col-4 m-2 ">
+                        <button type="button" class="btn btn-success" id="seleccionarBtn" style="float:right; ">Agregar Comercio</button>
                     </div>
 
 
@@ -208,7 +167,41 @@
                         <!--begin::General Widget 1-->
                         <div class="mb-5 mb-lg-10 ">
                             <!--begin::Tabs-->
-                            
+                            <ul class="nav row mb-lg-5 m-1 py-3" style="background-color:white; ">
+                                <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
+
+                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                        <span class="fs-6 fw-bold">
+                                            Envio <br />Personalizado </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px " data-bs-toggle="tab" href="#kt_general_widget_1_2">
+
+                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                        <span class="fs-6 fw-bold">
+                                            Envio <br />Departamental </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px" data-bs-toggle="tab" href="#kt_general_widget_1_3">
+
+                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                        <span class="fs-6 fw-bold">
+                                            Envio <br />Punto fijo </span>
+                                    </a>
+                                </li>
+                                <li class="nav-item col-12 col-lg mb-5 mb-lg-0">
+                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-5 h-1250px h-lg-175px " data-bs-toggle="tab" href="#kt_general_widget_1_4">
+
+                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                        <span class="fs-6 fw-bold">
+                                            Envio <br />Casillero </span>
+                                    </a>
+                                </li>
+
+                            </ul>
 
                             <!--begin::Tab content-->
                             <div class="tab-content">
@@ -398,149 +391,11 @@
                                     </div>
                                     <!--end::Tables Widget 2-->
                                 </div>
-                                
+
 
                             </div>
-
-                            
                             <!--end::Tab content-->
                         </div>
-
-
-
-
-
-
-
-
-
-                        <div class="card mb-5 mb-lg-10">
-    <!--begin::Header-->
-    <div class="card-header border-0 pt-5">
-        
-            <div class="col-12 mb-3">
-                
-            <input type="text" class="form-control">
-                
-            </div>
-            
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-info w-100 ">1</button>
-                
-            </div>
-
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2">2</button>
-                
-            </div>
-
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2">3</button>
-                
-            </div>
-
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-secondary w-100 px-2">C</button>
-                
-            </div>
-            
-
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 ">4</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2">5</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2">6</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-secondary w-100 px-2">Borrar</button>
-                
-            </div>
-
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 ">7</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2">8</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2">9</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-secondary px-2" style="height:100px; position:absolute; width:230px;">Enter</button>
-                
-            </div>
-           
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 ">0</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2">00</button>
-                
-            </div>
-
-            <div class="col-3 px-2 mt-2" >
-                
-            <button type="button" class="btn btn-info w-100 px-2">.</button>
-                
-            </div>
-            <div class="col-3 px-2 mt-2">
-                
-            
-                
-            </div>
-        
-    </div>
-    <!--end::Header-->
-
-    <!--begin::Body-->
-    <div class="card-body py-3">
-   
-    </div>
-    <!--end::Body-->
-</div>
-
-
-
-
-
-
-
-
-
 
 
 
@@ -562,7 +417,7 @@
                                     <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar">
-                                        
+                                        <a href="/cobro/limpiar" class="btn btn-light-primary fs-4 fw-bold py-4">Limpiar cuenta</a>
                                     </div>
                                     <!--end::Toolbar-->
                                 </div>
@@ -596,7 +451,7 @@
                                                         <div class="position-relative d-flex align-items-center">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
+                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w-100px text-center" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
                                                             <!--end::Input control-->
 
                                                         </div>
@@ -619,7 +474,7 @@
                                                         <div class="position-relative d-flex align-items-center">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 " data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobroperdepa }}" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobroperdepa }}" />
                                                             <!--end::Input control-->
 
                                                         </div>
@@ -642,7 +497,7 @@
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobropfijo }}" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobropfijo }}" />
                                                             <!--end::Input control-->
 
                                                         </div>
@@ -665,7 +520,7 @@
                                                         <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
 
                                                             <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrocasi }}" />
+                                                            <input type="text" class="form-control border-0 text-center px-0 fs-3 fw-bold text-gray-800 w-100px" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrocasi }}" />
                                                             <!--end::Input control-->
 
                                                         </div>
@@ -729,12 +584,9 @@
                                     </div>
                                     <!--end::Summary-->
                                     <!--begin::Payment Method-->
-                                    <div class="m-0 text-center">
+                                    <div class="m-0">
                                         <!--begin::Actions-->
-                                        <button class="btn btn-primary fs-1 py-4">Guardar e imprimir</button>
-                                        <a href="/cobro/limpiar">
-                                        <button class="btn btn-primary fs-1 py-4">Limpiar</button>
-                                        </a>
+                                        <button class="btn btn-primary fs-1 w-100 py-4">imprimir comprobante</button>
                                         <!--end::Actions-->
                                     </div>
                                     <!--end::Payment Method-->
