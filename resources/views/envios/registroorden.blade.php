@@ -420,31 +420,31 @@
         
             <div class="col-12 mb-3">
                 
-            <input type="text" class="form-control">
+            <input type="text" class="form-control" id="calculo">
                 
             </div>
             
             <div class="col-3 px-2">
                 
-            <button type="button" class="btn btn-info w-100 ">1</button>
+            <button type="button" class="btn btn-info w-100 " id="uno" onclick="calcu()" value="1">1</button>
                 
             </div>
 
             <div class="col-3 px-2">
                 
-            <button type="button" class="btn btn-info w-100 px-2">2</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="dos" onclick="calcu2()" value="2">2</button>
                 
             </div>
 
             <div class="col-3 px-2">
                 
-            <button type="button" class="btn btn-info w-100 px-2">3</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="tres" onclick="calcu3()" value="3">3</button>
                 
             </div>
 
             <div class="col-3 px-2">
                 
-            <button type="button" class="btn btn-secondary w-100 px-2">C</button>
+            <button type="button" class="btn btn-secondary w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
                 
             </div>
             
@@ -452,69 +452,69 @@
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 ">4</button>
+            <button type="button" class="btn btn-info w-100 " id="cuatro" onclick="calcu4()" value="4">4</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 px-2">5</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="cinco" onclick="calcu5()" value="5">5</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 px-2">6</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="seis" onclick="calcu6()" value="6">6</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-secondary w-100 px-2">Borrar</button>
+            <button type="button" class="btn btn-secondary w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
                 
             </div>
 
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 ">7</button>
+            <button type="button" class="btn btn-info w-100 " id="siete" onclick="calcu7()" value="7">7</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 px-2">8</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="ocho" onclick="calcu8()" value="8">8</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 px-2">9</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="nueve" onclick="calcu9()" value="9">9</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:230px;">Enter</button>
+            <button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:230px;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
                 
             </div>
            
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 ">0</button>
+            <button type="button" class="btn btn-info w-100 " id="cero" onclick="calcu0()" value="0">0</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2">
                 
-            <button type="button" class="btn btn-info w-100 px-2">00</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="cerocero" onclick="calcu00()" value="00">00</button>
                 
             </div>
 
             <div class="col-3 px-2 mt-2" >
                 
-            <button type="button" class="btn btn-info w-100 px-2">.</button>
+            <button type="button" class="btn btn-info w-100 px-2" id="punto" onclick="calcupunto()" value=".">.</button>
                 
             </div>
             <div class="col-3 px-2 mt-2">
@@ -769,7 +769,85 @@
 
     </x-default-layout>
 
+    <script>
+        function calcu() {
+                
 
+            
+            var calculo = document.getElementById("calculo").value;
+            var uno = document.getElementById("uno").value;
+            document.getElementById("calculo").value = calculo + uno;         
+//            alert(calculo);
+
+            //document.getElementById("comerci").value = comer;
+        }
+        function calcu2() {     
+                var calculo = document.getElementById("calculo").value;
+                var uno = document.getElementById("dos").value;
+                document.getElementById("calculo").value = calculo + uno;         
+            }
+            function calcu3() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("tres").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu4() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("cuatro").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu5() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("cinco").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu6() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("seis").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu7() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("siete").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu8() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("ocho").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu9() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("nueve").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu0() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("cero").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcu00() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("cerocero").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcupunto() {     
+                var calculo = document.getElementById("calculo").value;
+                var num = document.getElementById("punto").value;
+                document.getElementById("calculo").value = calculo + num;         
+            }
+            function calcuborrar() {     
+                //var calculo = document.getElementById("calculo").value;
+                //var num = document.getElementById("borrar").value;
+                document.getElementById("calculo").value = " ";         
+            }
+            function calcuc() {     
+                //var calculo = document.getElementById("calculo").value;
+                //var num = document.getElementById("borrar").value;
+                document.getElementById("calculo").value = " ";         
+            }
+            
+    </script>
 
     <!--begin::Javascript-->
     <script>
