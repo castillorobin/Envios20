@@ -276,23 +276,43 @@
                                                 <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-bold text-white">
+                                                        <span class="d-block lh-1 mb-2">Subtotal</span>
                                                         <span class="d-block mb-2">Descuento</span>
-                                                        <span class="d-block mb-2">Pago</span>
-                                                        <span class="d-block mb-2">Cambio</span>
                                                         <span class="d-block fs-2qx lh-1">Total</span>
                                                     </div>
                                                     <!--end::Content-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-bold text-white text-end">
+                                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
                                                         <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                                        <span id="Pago" name="Pago" class="d-block lh-1 mb-2" data-kt-pos-element="Pago">$0.00</span>
-                                                        <span id="Cambio" name="Cambio" class="d-block lh-1 mb-2" data-kt-pos-element="Cambio">$0.00</span>
                                                         <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                                     </div>
                                                     <!--end::Content-->
                                                 </div>
                                                 <!--end::Summary-->
+                                                <div class="row justify-content-end">
+                                                    <!-- Campo para la cantidad de descuento -->
+                                                    <div class="form-floating col-lg-4 mb-4 text-end">
+                                                        <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                                        <label for="descuento" style="padding-left: 25px;">Pago</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row justify-content-end">
+                                                    <!-- Campo para la cantidad de descuento -->
+                                                    <div class="form-floating col-lg-4 mb-4 text-end">
+                                                        <input type="text" class="form-control form-control-solid" name="cambio" value="$5.00" id="cambio" placeholder="cambio" readonly/>
+                                                        <label for="cambio" style="padding-left: 25px;">Cambio</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                </div>
                                             </div>
+
+
+
+
+
+
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                                                 <button type="button" class="btn btn-primary">Imprimir comprobante</button>
