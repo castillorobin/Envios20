@@ -18,15 +18,12 @@
             /* Ajusta el valor según sea necesario */
         }
 
-
         .dataTables_filter {
             display: none;
-
         }
 
         .dataTables_length {
             display: none;
-
         }
     </style>
 
@@ -37,39 +34,48 @@
     <x-default-layout>
         <br>
 
-        <div class="row m-1 d-flex justify-evenly" style="background-color:white;">
-            <div class="col-lg-3 col-md-3">
-                <select class="form-control form-control-lg" data-control="select2" name="comercio" id="comercio">
-                    <option value=" ">Buscar comercio</option>
-                    <option value="MODA">MODA Sv</option>
-                    <option value="MELO">MELO EXPRESS</option>
-                </select>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                <button type="button" class="btn btn-primary w-100" id="seleccionarBtn1" onclick="comerciosel()">Pago con nombre</button>
-            </div>
-            <div class="col-lg-3 col-md-3">
-                <button type="button" class="btn btn-primary w-100" id="seleccionarBtn2" onclick="comerciosel()">Pago con tickets</button>
-            </div>
-            <!-- Botón -->
-            <div class="col-lg-2 col-md-3">
-                <button type="button" class="btn btn-dark w-100" id="pago" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar</button>
-            </div>
-            
-        </div>
-
-        <br>
-
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
 
-
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container container-xxl">
+
+                        <div class="row m-1" style="background-color:white;">
+                            <div class="col-3 m-2">
+                                <select class="form-control form-control-lg" data-control="select2" name="comercio" id="comercio">
+                                    <option value=" ">Buscar comercio</option>
+                                    <option value="MODA">MODA SV</option>
+                                </select>
+                            </div>
+                            <div class="col-auto align-self-center"> <!-- Alineando verticalmente al centro -->
+                                <button type="submit" class="btn btn-primary btn-sm mb-3">Pago con nombre</button>
+                            </div>
+                            <div class="col-auto align-self-center"> <!-- Alineando verticalmente al centro -->
+                                <button type="submit" class="btn btn-primary btn-sm mb-3">Pago general</button>
+                            </div>
+                            <div class="col-5 m-2">
+                                <div class="d-flex flex-stack bg-success rounded-4 p-3"> <!-- Reducción del padding a p-1 -->
+                                    <!--begin::Content-->
+                                    <div class="fs-6 fw-bold text-white">
+                                        <span class="d-block fs-1 lh-1">Total</span> <!-- Reduciendo el tamaño de la fuente a fs-1 -->
+                                    </div>
+                                    <!--end::Content-->
+                                    <!--begin::Content-->
+                                    <div class="fs-6 fw-bold text-white text-end">
+                                        <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">$0.00</span> <!-- Reduciendo el tamaño de la fuente a fs-1 -->
+                                    </div>
+                                    <!--end::Content-->
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <br>
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -119,7 +125,6 @@
                                         <div class="menu-item px-3">
                                             <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
                                         </div>
-
                                         -->
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
@@ -147,8 +152,6 @@
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
-
-
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
@@ -171,7 +174,7 @@
                                         <tbody class="fw-semibold text-black-400">
 
                                             <td><a href="#" class="text-gray-900 text-hover-primary">#000</a></td>
-                                            <td>MODA SV </td>
+                                            <td><a href="#" class="text-gray-900 text-hover-primary">MODA SV </a></td>
                                             <td>JOAKIN POLANCO</td>
                                             <td>SANTA ANA</td>
                                             <td class="text-star"><span class="badge badge-light-success">Personalizado</span></td>
@@ -189,7 +192,13 @@
                                     </table>
 
                                 </div>
+                                <br>
                                 <!--end::Table-->
+                                <div class="row justify-content-end">
+                                    <div class="col-auto align-self-end text-end">
+                                        <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#exampleModal">Pagar</button>
+                                    </div>
+                                </div>
 
 
                                 <!-- Modal -->
@@ -251,6 +260,11 @@
                                                                 <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                             </div>
                                                             <div class="form-floating col-lg-12 mb-4">
+                                                                <input type="text" class="form-control form-control-solid" name="Pago" id="Pago" placeholder="Pago" />
+                                                                <label for="Pago" style="padding-left: 25px;">Pago</label>
+                                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                            </div>
+                                                            <div class="form-floating col-lg-12 mb-4">
                                                                 <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
                                                                 <label for="nota" style="padding-left: 25px;">Nota</label>
                                                             </div>
@@ -262,15 +276,17 @@
                                                 <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-bold text-white">
-                                                        <span class="d-block lh-1 mb-2">Subtotal</span>
                                                         <span class="d-block mb-2">Descuento</span>
+                                                        <span class="d-block mb-2">Pago</span>
+                                                        <span class="d-block mb-2">Cambio</span>
                                                         <span class="d-block fs-2qx lh-1">Total</span>
                                                     </div>
                                                     <!--end::Content-->
                                                     <!--begin::Content-->
                                                     <div class="fs-6 fw-bold text-white text-end">
-                                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
                                                         <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
+                                                        <span id="Pago" name="Pago" class="d-block lh-1 mb-2" data-kt-pos-element="Pago">$0.00</span>
+                                                        <span id="Cambio" name="Cambio" class="d-block lh-1 mb-2" data-kt-pos-element="Cambio">$0.00</span>
                                                         <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                                     </div>
                                                     <!--end::Content-->
@@ -326,7 +342,6 @@
             ahora.setMinutes(ahora.getMinutes() - (offset - timeZoneOffset));
             return ahora;
         }
-
         // Función para formatear la fecha
         function formatearFecha(fecha) {
             var meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
@@ -341,14 +356,12 @@
             minutos = minutos < 10 ? '0' + minutos : minutos;
             return dia + '/' + mes + '/' + año + ' ' + horas + ':' + minutos + ' ' + am_pm;
         }
-
         // Función para establecer la fecha y hora actual en el campo de fecha de entrega
         function establecerFechaEntrega() {
             var fechaHoraActual = obtenerFechaHoraElSalvador();
             var fechaFormateada = formatearFecha(fechaHoraActual);
             document.getElementById('fecha_entrega').value = fechaFormateada;
         }
-
         // Llamar a la función para establecer la fecha y hora actual al cargar la página
         establecerFechaEntrega();
     </script>
