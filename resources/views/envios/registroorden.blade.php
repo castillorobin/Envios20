@@ -132,51 +132,51 @@
 
         <!--begin::Container-->
         <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start">
-            
+
             <!--begin::Post-->
             <div class="content flex-row-fluid" id="kt_content">
 
                 <div class="row m-1" style="background-color:white; ">
-                
 
-                <div class="col-6 m-2">    
 
-                <ul class="nav row " style="background-color:white; ">
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
+                    <div class="col-6 m-2">
 
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                       
-                                            Personalizado 
-                                    </a>
-                                </li>
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_2">
+                        <ul class="nav row " style="background-color:white; ">
+                            <li class="nav-item col-12 col-lg mb-lg-0">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
 
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                        <span class="fs-6 fw-bold">
-                                           Departamental </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px" data-bs-toggle="tab" href="#kt_general_widget_1_3">
+                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
 
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                        <span class="fs-6 fw-bold">
-                                            Punto fijo </span>
-                                    </a>
-                                </li>
-                                <li class="nav-item col-12 col-lg mb-lg-0">
-                                    <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_4">
+                                    Personalizado
+                                </a>
+                            </li>
+                            <li class="nav-item col-12 col-lg mb-lg-0">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_2">
 
-                                        <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                        <span class="fs-6 fw-bold">
-                                            Casillero </span>
-                                    </a>
-                                </li>
-                </ul>
+                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                    <span class="fs-6 fw-bold">
+                                        Departamental </span>
+                                </a>
+                            </li>
+                            <li class="nav-item col-12 col-lg mb-lg-0">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px" data-bs-toggle="tab" href="#kt_general_widget_1_3">
 
-                </div>
+                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                    <span class="fs-6 fw-bold">
+                                        Punto fijo </span>
+                                </a>
+                            </li>
+                            <li class="nav-item col-12 col-lg mb-lg-0">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_4">
+
+                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
+                                    <span class="fs-6 fw-bold">
+                                        Casillero </span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </div>
 
                     <div class="col-2 m-2">
                         <select class="form-control form-control-lg " data-control="select2" name="comercio" id="comercio">
@@ -191,14 +191,11 @@
                     </div>
 
                     <div class="col-2 m-2 ">
-                        <button type="button" class="btn btn-success" id="seleccionarBtn" >Agregar Comercio</button>
+                        <button type="button" class="btn btn-success" id="seleccionarBtn">Agregar Comercio</button>
                     </div>
 
 
                 </div>
-
-
-
                 <br>
                 <!--begin::Row-->
                 <div class="row gy-0 gx-10 ">
@@ -208,7 +205,7 @@
                         <!--begin::General Widget 1-->
                         <div class="mb-5 mb-lg-10 ">
                             <!--begin::Tabs-->
-                            
+
 
                             <!--begin::Tab content-->
                             <div class="tab-content">
@@ -398,11 +395,11 @@
                                     </div>
                                     <!--end::Tables Widget 2-->
                                 </div>
-                                
+
 
                             </div>
 
-                            
+
                             <!--end::Tab content-->
                         </div>
 
@@ -415,123 +412,123 @@
 
 
                         <div class="card mb-5 mb-lg-10">
-    <!--begin::Header-->
-    <div class="card-header border-0 pt-5">
-        
-            <div class="col-12 mb-3">
-                
-            <input type="text" class="form-control" id="calculo">
-                
-            </div>
-            
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-info w-100 " id="uno" onclick="calcu()" value="1">1</button>
-                
-            </div>
+                            <!--begin::Header-->
+                            <div class="card-header border-0 pt-5">
 
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="dos" onclick="calcu2()" value="2">2</button>
-                
-            </div>
+                                <div class="col-12 mb-3">
 
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="tres" onclick="calcu3()" value="3">3</button>
-                
-            </div>
+                                    <input type="text" class="form-control" id="calculo">
 
-            <div class="col-3 px-2">
-                
-            <button type="button" class="btn btn-secondary w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
-                
-            </div>
-            
+                                </div>
 
+                                <div class="col-3 px-2">
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 " id="cuatro" onclick="calcu4()" value="4">4</button>
-                
-            </div>
+                                    <button type="button" class="btn btn-info w-100 " id="uno" onclick="calcu()" value="1">1</button>
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="cinco" onclick="calcu5()" value="5">5</button>
-                
-            </div>
+                                </div>
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="seis" onclick="calcu6()" value="6">6</button>
-                
-            </div>
+                                <div class="col-3 px-2">
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-secondary w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
-                
-            </div>
+                                    <button type="button" class="btn btn-info w-100 px-2" id="dos" onclick="calcu2()" value="2">2</button>
+
+                                </div>
+
+                                <div class="col-3 px-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="tres" onclick="calcu3()" value="3">3</button>
+
+                                </div>
+
+                                <div class="col-3 px-2">
+
+                                    <button type="button" class="btn btn-secondary w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
+
+                                </div>
 
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 " id="siete" onclick="calcu7()" value="7">7</button>
-                
-            </div>
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="ocho" onclick="calcu8()" value="8">8</button>
-                
-            </div>
+                                <div class="col-3 px-2 mt-2">
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="nueve" onclick="calcu9()" value="9">9</button>
-                
-            </div>
+                                    <button type="button" class="btn btn-info w-100 " id="cuatro" onclick="calcu4()" value="4">4</button>
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:230px;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
-                
-            </div>
-           
+                                </div>
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 " id="cero" onclick="calcu0()" value="0">0</button>
-                
-            </div>
+                                <div class="col-3 px-2 mt-2">
 
-            <div class="col-3 px-2 mt-2">
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="cerocero" onclick="calcu00()" value="00">00</button>
-                
-            </div>
+                                    <button type="button" class="btn btn-info w-100 px-2" id="cinco" onclick="calcu5()" value="5">5</button>
 
-            <div class="col-3 px-2 mt-2" >
-                
-            <button type="button" class="btn btn-info w-100 px-2" id="punto" onclick="calcupunto()" value=".">.</button>
-                
-            </div>
-            <div class="col-3 px-2 mt-2">
-                
-            
-                
-            </div>
-        
-    </div>
-    <!--end::Header-->
+                                </div>
 
-    <!--begin::Body-->
-    <div class="card-body py-3">
-   
-    </div>
-    <!--end::Body-->
-</div>
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="seis" onclick="calcu6()" value="6">6</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-secondary w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
+
+                                </div>
+
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 " id="siete" onclick="calcu7()" value="7">7</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="ocho" onclick="calcu8()" value="8">8</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="nueve" onclick="calcu9()" value="9">9</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:230px;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
+
+                                </div>
+
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 " id="cero" onclick="calcu0()" value="0">0</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="cerocero" onclick="calcu00()" value="00">00</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="punto" onclick="calcupunto()" value=".">.</button>
+
+                                </div>
+                                <div class="col-3 px-2 mt-2">
+
+
+
+                                </div>
+
+                            </div>
+                            <!--end::Header-->
+
+                            <!--begin::Body-->
+                            <div class="card-body py-3">
+
+                            </div>
+                            <!--end::Body-->
+                        </div>
 
 
 
@@ -562,7 +559,7 @@
                                     <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar">
-                                        
+
                                     </div>
                                     <!--end::Toolbar-->
                                 </div>
@@ -733,7 +730,7 @@
                                         <!--begin::Actions-->
                                         <button class="btn btn-primary fs-1 py-4">Guardar e imprimir</button>
                                         <a href="/cobro/limpiar">
-                                        <button class="btn btn-primary fs-1 py-4">Limpiar</button>
+                                            <button class="btn btn-primary fs-1 py-4">Limpiar</button>
                                         </a>
                                         <!--end::Actions-->
                                     </div>
@@ -771,82 +768,94 @@
 
     <script>
         function calcu() {
-                
 
-            
+
+
             var calculo = document.getElementById("calculo").value;
             var uno = document.getElementById("uno").value;
-            document.getElementById("calculo").value = calculo + uno;         
-//            alert(calculo);
+            document.getElementById("calculo").value = calculo + uno;
+            //            alert(calculo);
 
             //document.getElementById("comerci").value = comer;
         }
-        function calcu2() {     
-                var calculo = document.getElementById("calculo").value;
-                var uno = document.getElementById("dos").value;
-                document.getElementById("calculo").value = calculo + uno;         
-            }
-            function calcu3() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("tres").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu4() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cuatro").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu5() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cinco").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu6() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("seis").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu7() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("siete").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu8() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("ocho").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu9() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("nueve").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu0() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cero").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu00() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cerocero").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcupunto() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("punto").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcuborrar() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("calculo").value = " ";         
-            }
-            function calcuc() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("calculo").value = " ";         
-            }
-            
+
+        function calcu2() {
+            var calculo = document.getElementById("calculo").value;
+            var uno = document.getElementById("dos").value;
+            document.getElementById("calculo").value = calculo + uno;
+        }
+
+        function calcu3() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("tres").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu4() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cuatro").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu5() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cinco").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu6() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("seis").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu7() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("siete").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu8() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("ocho").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu9() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("nueve").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu0() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cero").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu00() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cerocero").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcupunto() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("punto").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcuborrar() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("calculo").value = " ";
+        }
+
+        function calcuc() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("calculo").value = " ";
+        }
     </script>
 
     <!--begin::Javascript-->
