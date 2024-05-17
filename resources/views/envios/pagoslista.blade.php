@@ -292,18 +292,19 @@
                                                 <!--end::Summary-->
                                                 <div class="row justify-content-end">
                                                     <!-- Campo para la cantidad de descuento -->
-                                                    <div class="form-floating col-lg-4 mb-4 text-end">
-                                                        <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
-                                                        <label for="descuento" style="padding-left: 25px;">Pago</label>
-                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    <label class="col-lg-2 col-form-label ">Pago</label>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" class="form-control form-control-solid" name="Pago" id="Pago" />
+                                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                     </div>
                                                 </div>
+
                                                 <div class="row justify-content-end">
                                                     <!-- Campo para la cantidad de descuento -->
-                                                    <div class="form-floating col-lg-4 mb-4 text-end">
-                                                        <input type="text" class="form-control form-control-solid" name="cambio" value="$5.00" id="cambio" placeholder="cambio" readonly/>
-                                                        <label for="cambio" style="padding-left: 25px;">Cambio</label>
-                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    <label class="col-lg-2 col-form-label ">Cambio</label>
+                                                    <div class="col-lg-3">
+                                                        <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$5.00" />
+                                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                     </div>
                                                 </div>
                                             </div>
