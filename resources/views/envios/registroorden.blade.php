@@ -126,21 +126,31 @@
 
 <body id="kt_body" class="">
     <x-default-layout>
-
-
-        <br>
-
         <!--begin::Container-->
         <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start">
 
             <!--begin::Post-->
             <div class="content flex-row-fluid" id="kt_content">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Cobro de envios </h1>
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                        <li class="breadcrumb-item text-muted">
+                            <a href="/" class="text-muted text-hover-primary">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                        </li>
+                        <li class="breadcrumb-item text-muted">Facturacion</li>
+                        <li class="breadcrumb-item">
+                            <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                        </li>
+                        <li class="breadcrumb-item text-muted">Cobro</li>
+                    </ul>
+                </div>
+
 
                 <div class="row m-1" style="background-color:white; ">
-
-
                     <div class="col-6 m-2">
-
                         <ul class="nav row " style="background-color:white; ">
                             <li class="nav-item col-12 col-lg mb-lg-0">
                                 <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
@@ -175,7 +185,6 @@
                                 </a>
                             </li>
                         </ul>
-
                     </div>
 
                     <div class="col-2 m-2">
@@ -600,7 +609,7 @@
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <input type="text" name="depasub" id="depasub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcuperso()"/>
+                                                        <input type="text" name="depasub" id="depasub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcuperso()" />
                                                     </td>
                                                 </tr>
 
@@ -623,7 +632,7 @@
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <input type="text" name="persosub" id="persosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcudepa()"/>
+                                                        <input type="text" name="persosub" id="persosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcudepa()" />
                                                     </td>
                                                 </tr>
 
@@ -646,7 +655,7 @@
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <input type="text" name="fijosub" id="fijosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" value="0" onfocus="calcupf()"/>
+                                                        <input type="text" name="fijosub" id="fijosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" value="0" onfocus="calcupf()" />
                                                     </td>
                                                 </tr>
 
@@ -669,7 +678,7 @@
                                                         <!--end::Dialer-->
                                                     </td>
                                                     <td class="text-end">
-                                                        <input type="text" name="casisub" id="casisub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcucasi()"/>
+                                                        <input type="text" name="casisub" id="casisub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcucasi()" />
                                                     </td>
                                                 </tr>
                                             </tbody>
@@ -778,118 +787,129 @@
 
             //document.getElementById("comerci").value = comer;
         }
-        function calcu2() {     
-                var calculo = document.getElementById("calculo").value;
-                var uno = document.getElementById("dos").value;
-                document.getElementById("calculo").value = calculo + uno;         
-            }
-            function calcu3() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("tres").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu4() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cuatro").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu5() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cinco").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu6() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("seis").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu7() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("siete").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu8() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("ocho").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu9() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("nueve").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu0() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cero").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcu00() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("cerocero").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcupunto() {     
-                var calculo = document.getElementById("calculo").value;
-                var num = document.getElementById("punto").value;
-                document.getElementById("calculo").value = calculo + num;         
-            }
-            function calcuborrar() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("calculo").value = " ";         
-            }
-            function calcuc() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("calculo").value = " ";         
-            }
 
-            function calcuenter() {     
-                var orden = document.getElementById("ordenpre").value;
-                var calc = document.getElementById("calculo").value;
-                if (orden == "0") {
+        function calcu2() {
+            var calculo = document.getElementById("calculo").value;
+            var uno = document.getElementById("dos").value;
+            document.getElementById("calculo").value = calculo + uno;
+        }
 
-                    document.getElementById("depasub").value = calc;
+        function calcu3() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("tres").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
 
-                   
-                }
-                if (orden == "1") {
-                    document.getElementById("persosub").value = calc;
-                }
-                if (orden == "2") {
-                    document.getElementById("fijosub").value = calc;
-                }
-                if (orden == "3") {
-                    document.getElementById("casisub").value = calc;
-                }
-                        
-            }
+        function calcu4() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cuatro").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
 
-            function calcuperso() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("ordenpre").value = 0;         
-            }
-            function calcudepa() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("ordenpre").value = 1;         
-            }
+        function calcu5() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cinco").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
 
-            function calcupf() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("ordenpre").value = 2;         
-            }
-            function calcucasi() {     
-                //var calculo = document.getElementById("calculo").value;
-                //var num = document.getElementById("borrar").value;
-                document.getElementById("ordenpre").value = 3;         
-            }
+        function calcu6() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("seis").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu7() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("siete").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu8() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("ocho").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu9() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("nueve").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu0() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cero").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcu00() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("cerocero").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcupunto() {
+            var calculo = document.getElementById("calculo").value;
+            var num = document.getElementById("punto").value;
+            document.getElementById("calculo").value = calculo + num;
+        }
+
+        function calcuborrar() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("calculo").value = " ";
+        }
+
+        function calcuc() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("calculo").value = " ";
+        }
+
+        function calcuenter() {
+            var orden = document.getElementById("ordenpre").value;
+            var calc = document.getElementById("calculo").value;
+            if (orden == "0") {
+
+                document.getElementById("depasub").value = calc;
 
 
-            
-            
+            }
+            if (orden == "1") {
+                document.getElementById("persosub").value = calc;
+            }
+            if (orden == "2") {
+                document.getElementById("fijosub").value = calc;
+            }
+            if (orden == "3") {
+                document.getElementById("casisub").value = calc;
+            }
+
+        }
+
+        function calcuperso() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("ordenpre").value = 0;
+        }
+
+        function calcudepa() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("ordenpre").value = 1;
+        }
+
+        function calcupf() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("ordenpre").value = 2;
+        }
+
+        function calcucasi() {
+            //var calculo = document.getElementById("calculo").value;
+            //var num = document.getElementById("borrar").value;
+            document.getElementById("ordenpre").value = 3;
+        }
     </script>
 
     <!--begin::Javascript-->

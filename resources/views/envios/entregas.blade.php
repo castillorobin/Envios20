@@ -26,6 +26,23 @@
         <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start">
             <!--begin::Post-->
             <div class="content flex-row-fluid" id="kt_content">
+                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Entrega de paquetes </h1>
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                        <li class="breadcrumb-item text-muted">
+                            <a href="/" class="text-muted text-hover-primary">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                        </li>
+                        <li class="breadcrumb-item text-muted">Facturacion</li>
+                        <li class="breadcrumb-item">
+                            <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                        </li>
+                        <li class="breadcrumb-item text-muted">Entregas</li>
+                    </ul>
+                </div>
+
                 <!--begin::Row-->
                 <div class="row gy-0 gx-10 ">
                     <!--begin::Col-->

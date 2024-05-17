@@ -32,8 +32,7 @@
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <br>
-
+        
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 
             <!--begin::Content wrapper-->
@@ -43,21 +42,38 @@
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container container-xxl">
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes </h1>
+                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                                <li class="breadcrumb-item text-muted">
+                                    <a href="/" class="text-muted text-hover-primary">Inicio</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                </li>
+                                <li class="breadcrumb-item text-muted">Facturacion</li>
+                                <li class="breadcrumb-item">
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                </li>
+                                <li class="breadcrumb-item text-muted">Pagar</li>
+                            </ul>
+                        </div>
 
-                        <div class="row m-1" style="background-color:white;">
-                            <div class="col-3 m-2">
+
+                        <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;"> <!-- Utilizando flexbox para alinear verticalmente y mantener la altura mínima -->
+                            <div class="col-3 m-2 mb-4 ">
                                 <select class="form-control form-control-lg" data-control="select2" name="comercio" id="comercio">
                                     <option value=" ">Buscar comercio</option>
                                     <option value="MODA">MODA SV</option>
                                 </select>
                             </div>
                             <div class="col-auto align-self-center"> <!-- Alineando verticalmente al centro -->
-                                <button type="submit" class="btn btn-primary btn-sm mb-3">Pago con nombre</button>
+                                <button type="submit" class="btn btn-primary btn-kg mb-3">Pago con nombre</button>
                             </div>
-                            <div class="col-auto align-self-center"> <!-- Alineando verticalmente al centro -->
-                                <button type="submit" class="btn btn-primary btn-sm mb-3">Pago general</button>
+                            <div class="col-auto align-self-center" > <!-- Alineando verticalmente al centro -->
+                                <button type="submit" class="btn btn-primary mb-3">Pago general</button>
                             </div>
-                            <div class="col-5 m-2">
+                            <div class="col-3 m-2 mb-4">
                                 <div class="d-flex flex-stack bg-success rounded-4 p-3"> <!-- Reducción del padding a p-1 -->
                                     <!--begin::Content-->
                                     <div class="fs-6 fw-bold text-white">
@@ -72,9 +88,6 @@
                                 </div>
                             </div>
                         </div>
-
-
-
                         <br>
                         <!--begin::Products-->
                         <div class="card card-flush">
