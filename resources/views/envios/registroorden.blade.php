@@ -884,6 +884,25 @@
             if (orden == "3") {
                 document.getElementById("casisub").value = calc;
             }
+            desdeenter();
+            calcuborrar();
+
+        }
+        function desdeenter() {
+            
+            const subtotal = parseFloat(document.getElementById("depasub").value);
+            const subtotal2 = parseFloat(document.getElementById("persosub").value);
+            const subtotal3 = parseFloat(document.getElementById("fijosub").value);
+            const subtotal4 = parseFloat(document.getElementById("casisub").value);
+
+            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
+
+            $('#stotal').text("$" + total);
+
+            //alert('hola');
+
+
+
 
         }
 
