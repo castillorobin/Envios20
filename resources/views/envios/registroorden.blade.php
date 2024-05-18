@@ -234,6 +234,87 @@
                                                         <div class="col-auto">
                                                             <label for="guia" class="visually-hidden">Guía</label>
                                                             <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                    </form>
+
+
+
+                                                </div>
+                                                <!--end::Search-->
+                                            </div>
+                                            <!--end::Card title-->
+                                        </div>
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-0 align-items-end">
+                                            <!--begin::Table-->
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                    <thead>
+                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
+                                                            <th># DE GUÍA</th>
+                                                            <th>COMERCIO</th>
+                                                            <th>TIPO DE ENVÍO </th>
+                                                            <th>AGENCIA</th>
+                                                            <th>FECHA DE RECEPCIÓN</th>
+                                                            <th>BORRAR</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($pedidos as $pedido)
+                                                        @if ($pedido->tipo == "Personalizado")
+
+
+                                                        <tr>
+
+
+
+                                                            <td>{{$pedido->guia}}</td>
+                                                            <td>{{$pedido->comercio}}</td>
+                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
+                                                            <th>Santa Ana</th>
+                                                            <td>{{$pedido->created_at->format('d/m/Y')}}</td>
+                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
+                                                        </tr>
+                                                        @endif
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--end::Table-->
+                                        </div>
+                                        <!--end::Card body-->
+                                    </div>
+
+
+
+
+                                    <!--end::Tables Widget 2-->
+                                </div>
+                                <div class="tab-pane fade " id="kt_general_widget_1_2">
+
+                                    <!--begin::Tables Widget 2-->
+                                    <div class="card card-flush col-lg-12">
+                                        <!--begin::Card header-->
+                                        <div class="card-header align-items-end py-5 gap-2 gap-md-5">
+                                            <!--begin::Card title-->
+                                            <div class="card-title ">
+                                                <!--begin::Search-->
+                                                <div>
+
+                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
+
+                                                        <div class="col-auto">
+                                                            <label for="guia" class="visually-hidden">Guía</label>
+                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
                                                             <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
                                                             <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
                                                         </div>
@@ -293,116 +374,175 @@
                                         </div>
                                         <!--end::Card body-->
                                     </div>
-
-
-
-
-                                    <!--end::Tables Widget 2-->
-                                </div>
-                                <div class="tab-pane fade " id="kt_general_widget_1_2">
-
-                                    <!--begin::Tables Widget 2-->
-                                    <div class="card ">
-                                        <!--begin::Header-->
-                                        <div class="card-header border-0 pt-5">
-                                            <h3 class="card-title align-items-start flex-column">
-                                                <span class="card-label fw-bold fs-3 mb-1">Departamental</span>
-
-
-                                            </h3>
-                                            <div class="card-toolbar">
-                                                <!--begin::Menu-->
-
-                                                <!--begin::Menu 1-->
-                                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_663da81c2980d">
-                                                    <!--begin::Header-->
-
-                                                    <!--end::Form-->
-                                                </div>
-                                                <!--end::Menu 1--> <!--end::Menu-->
-                                            </div>
-                                        </div>
-                                        <!--end::Header-->
-
-                                        <!--begin::Body-->
-                                        <div class="card-body py-3">
-                                            <!--begin::Table container-->
-
-                                            <!--end::Table container-->
-                                        </div>
-                                        <!--end::Body-->
-                                    </div>
                                     <!--end::Tables Widget 2-->
                                 </div>
                                 <div class="tab-pane fade " id="kt_general_widget_1_3">
 
                                     <!--begin::Tables Widget 2-->
-                                    <div class="card ">
-                                        <!--begin::Header-->
-                                        <div class="card-header border-0 pt-5">
-                                            <h3 class="card-title align-items-start flex-column">
-                                                <span class="card-label fw-bold fs-3 mb-1">Punto Fijo</span>
+                                    <div class="card card-flush col-lg-12">
+                                        <!--begin::Card header-->
+                                        <div class="card-header align-items-end py-5 gap-2 gap-md-5">
+                                            <!--begin::Card title-->
+                                            <div class="card-title ">
+                                                <!--begin::Search-->
+                                                <div>
+
+                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
+
+                                                        <div class="col-auto">
+                                                            <label for="guia" class="visually-hidden">Guía</label>
+                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
+                                                            <input type="text" value="Punto fijo" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                    </form>
 
 
-                                            </h3>
-                                            <div class="card-toolbar">
-                                                <!--begin::Menu-->
 
-                                                <!--begin::Menu 1-->
-                                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_663da81c2980d">
-                                                    <!--begin::Header-->
-
-                                                    <!--end::Form-->
                                                 </div>
-                                                <!--end::Menu 1--> <!--end::Menu-->
+                                                <!--end::Search-->
                                             </div>
+                                            <!--end::Card title-->
                                         </div>
-                                        <!--end::Header-->
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-0 align-items-end">
+                                            <!--begin::Table-->
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                    <thead>
+                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
+                                                            <th># DE GUÍA</th>
+                                                            <th>COMERCIO</th>
+                                                            <th>TIPO DE ENVÍO </th>
+                                                            <th>AGENCIA</th>
+                                                            <th>FECHA DE RECEPCIÓN</th>
+                                                            <th>BORRAR</th>
 
-                                        <!--begin::Body-->
-                                        <div class="card-body py-3">
-                                            <!--begin::Table container-->
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($pedidos as $pedido)
+                                                        @if ($pedido->tipo == "Punto fijo")
 
-                                            <!--end::Table container-->
+
+                                                        <tr>
+
+
+
+                                                            <td>{{$pedido->guia}}</td>
+                                                            <td>{{$pedido->comercio}}</td>
+                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
+                                                            <th>Santa Ana</th>
+                                                            <td>{{$pedido->created_at->format('d/m/Y')}}</td>
+                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
+                                                        </tr>
+                                                        @endif
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--end::Table-->
                                         </div>
-                                        <!--end::Body-->
+                                        <!--end::Card body-->
                                     </div>
                                     <!--end::Tables Widget 2-->
+
+
+
+
+
+
+
                                 </div>
-                                <div class="tab-pane fade " id="kt_general_widget_1_4">
+<div class="tab-pane fade " id="kt_general_widget_1_4">
 
                                     <!--begin::Tables Widget 2-->
-                                    <div class="card ">
-                                        <!--begin::Header-->
-                                        <div class="card-header border-0 pt-5">
-                                            <h3 class="card-title align-items-start flex-column">
-                                                <span class="card-label fw-bold fs-3 mb-1">Casillero</span>
+                                    <div class="card card-flush col-lg-12">
+                                        <!--begin::Card header-->
+                                        <div class="card-header align-items-end py-5 gap-2 gap-md-5">
+                                            <!--begin::Card title-->
+                                            <div class="card-title ">
+                                                <!--begin::Search-->
+                                                <div>
+
+                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
+
+                                                        <div class="col-auto">
+                                                            <label for="guia" class="visually-hidden">Guía</label>
+                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
+                                                            <input type="text" value="Casillero" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
+                                                        </div>
+                                                        <div class="col-auto">
+                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                    </form>
 
 
-                                            </h3>
-                                            <div class="card-toolbar">
-                                                <!--begin::Menu-->
 
-                                                <!--begin::Menu 1-->
-                                                <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_663da81c2980d">
-                                                    <!--begin::Header-->
-
-                                                    <!--end::Form-->
                                                 </div>
-                                                <!--end::Menu 1--> <!--end::Menu-->
+                                                <!--end::Search-->
                                             </div>
+                                            <!--end::Card title-->
                                         </div>
-                                        <!--end::Header-->
+                                        <!--end::Card header-->
+                                        <!--begin::Card body-->
+                                        <div class="card-body pt-0 align-items-end">
+                                            <!--begin::Table-->
+                                            <div class="table-responsive">
+                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
+                                                    <thead>
+                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
+                                                            <th># DE GUÍA</th>
+                                                            <th>COMERCIO</th>
+                                                            <th>TIPO DE ENVÍO </th>
+                                                            <th>AGENCIA</th>
+                                                            <th>FECHA DE RECEPCIÓN</th>
+                                                            <th>BORRAR</th>
 
-                                        <!--begin::Body-->
-                                        <div class="card-body py-3">
-                                            <!--begin::Table container-->
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach ($pedidos as $pedido)
+                                                        @if ($pedido->tipo == "Casillero")
 
-                                            <!--end::Table container-->
+
+                                                        <tr>
+
+
+
+                                                            <td>{{$pedido->guia}}</td>
+                                                            <td>{{$pedido->comercio}}</td>
+                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
+                                                            <th>Santa Ana</th>
+                                                            <td>{{$pedido->created_at->format('d/m/Y')}}</td>
+                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
+                                                        </tr>
+                                                        @endif
+                                                        @endforeach
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <!--end::Table-->
                                         </div>
-                                        <!--end::Body-->
+                                        <!--end::Card body-->
                                     </div>
                                     <!--end::Tables Widget 2-->
+
+
+
+
+
+
+                                    
                                 </div>
 
 
