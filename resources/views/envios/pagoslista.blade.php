@@ -270,11 +270,6 @@
                                                             <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                         </div>
                                                         <div class="form-floating col-lg-12 mb-4">
-                                                            <input type="text" class="form-control form-control-solid" name="Pago" id="Pago" placeholder="Pago" />
-                                                            <label for="Pago" style="padding-left: 25px;">Pago</label>
-                                                            <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                        </div>
-                                                        <div class="form-floating col-lg-12 mb-4">
                                                             <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
                                                             <label for="nota" style="padding-left: 25px;">Nota</label>
                                                         </div>
