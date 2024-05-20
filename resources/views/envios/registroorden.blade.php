@@ -177,7 +177,7 @@
             
             
             $('#total1').text("$" + totalfin);
-            
+
             $('#siva').text("+$0.00");
         }
 
@@ -940,7 +940,9 @@
                                     <!--begin::Payment Method-->
                                     <div class="m-0 text-center">
                                         <!--begin::Actions-->
+                                        <a href="/cobro/limpiar">
                                         <button class="btn btn-primary fs-1 py-4">Guardar e imprimir</button>
+                                    </a>
                                         <a href="/cobro/limpiar">
                                             <button class="btn btn-primary fs-1 py-4">Limpiar</button>
                                         </a>
