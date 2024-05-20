@@ -209,9 +209,8 @@
                                     </div>
                                 </div>
 
-                                <!-- Modal -->
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                                    <div class="modal-dialog modal-dialog-centered modal-xl"> <!-- Cambia modal-xl por modal-lg o modal-xl-xxl según tu preferencia -->
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Detalles del cobro</h5>
@@ -219,9 +218,9 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="row">
-                                                    <div class="col-lg-8">
+                                                    <div class="col-lg-7">
 
-                                                        <div style="border: 2px solid black; border-radius: 10px; padding: 20px;">
+                                                        <div style="border: 2px solid black; border-radius: 30px; padding: 20px;">
                                                             <h3 style="margin-bottom: 20px;">Datos del comercio</h3>
 
                                                             <div class="row mb-1">
@@ -265,7 +264,7 @@
 
                                                         </div>
                                                         <br>
-                                                        <div style="border: 2px solid black; border-radius: 10px; padding: 20px;">
+                                                        <div style="border: 2px solid black; border-radius: 30px; padding: 20px;">
                                                             <!--begin::Card-->
                                                             <div class="card pt-2 mb-6 mb-xl-9">
                                                                 <!--begin::Card header-->
@@ -363,7 +362,7 @@
                                                                             <div class="d-flex flex-wrap py-5">
                                                                                 <!--begin::Col-->
                                                                                 <div class="flex-equal me-5">
-                                                                                    <table class="table table-flush fw-semibold gy-1">
+                                                                                    <table class="table table-flush fw-semibold gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
                                                                                         <tr>
                                                                                             <td class="text-muted min-w-125px w-120px">Titular</td>
                                                                                             <td class="text-gray-800">Robin castillo</td>
@@ -393,14 +392,10 @@
                                                                                 <!--end::Col-->
                                                                                 <!--begin::Col-->
                                                                                 <div class="flex-equal">
-                                                                                    <table class="table table-flush fw-semibold gy-1">
+                                                                                    <table class="table table-flush fw-semibold gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
                                                                                         <tr>
                                                                                             <td class="text-muted min-w-125px w-125px">Tipo de Contribuyente</td>
                                                                                             <td class="text-gray-800">Pequeño</td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td class="text-muted min-w-125px w-125px">Phone</td>
-                                                                                            <td class="text-gray-800">No phone provided</td>
                                                                                         </tr>
                                                                                         <tr>
                                                                                             <td class="text-muted min-w-125px w-125px">Giro</td>
@@ -420,8 +415,8 @@
                                                                                                 <a href="#" class="text-gray-900 text-hover-primary">col las violetas cl san luis la planta pje 1 casa 21</a>
                                                                                             </td>
                                                                                         </tr>
-                                                                                      
-                                                                                       
+
+
                                                                                     </table>
                                                                                 </div>
                                                                                 <!--end::Col-->
@@ -437,7 +432,7 @@
                                                             <!--end::Card-->
                                                         </div>
                                                         <br>
-                                                        <div style="border: 2px solid black; border-radius: 10px; padding: 20px;">
+                                                        <div style="border: 2px solid black; border-radius: 30px; padding: 20px;">
                                                             <h3 style="margin-bottom: 20px;">Otros metodos de pagos</h3>
 
                                                             <div class="row mb-1">
@@ -462,8 +457,8 @@
                                                         </div>
                                                     </div>
                                                     <br>
-                                                    <div class="col-lg-4">
-                                                        <div style="border: 2px solid black; border-radius: 10px; padding: 20px;">
+                                                    <div class="col-lg-5">
+                                                        <div style="border: 2px solid black; border-radius: 30px; padding: 20px;">
 
                                                             <div class="table-responsive mb-8">
                                                                 <!--begin::Table-->
@@ -491,6 +486,7 @@
                                                                         <div class="form-floating col-lg-12 mb-4">
                                                                             <select class="form-select form-select-solid" name="metodo" id="metodo" required>
                                                                                 <option value="Efectivo">Efectivo</option>
+                                                                                <option value="Deposito">Deposito</option>
                                                                                 <option value="Transferencia_empresa">Transferencia a la empresa</option>
                                                                                 <option value="Transferencia_comercio">Transferencia al comercio</option>
                                                                                 <option value="Tigo_money">Tigo money</option>
@@ -523,7 +519,7 @@
                                                                                 <option value="Pagado">Pagado</option>
                                                                                 <option value="sin_Pagar">Sin Pagar</option>
                                                                             </select>
-                                                                            <label for="estado_envio">Método de pago</label>
+                                                                            <label for="estado_envio">Estado del pago</label>
                                                                             <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
                                                                                 Por favor seleccione el método de pago.
                                                                             </div>
@@ -549,24 +545,24 @@
                                                                 </div>
                                                             </div>
                                                             <!-- End of Summary -->
-                                                            <br>
                                                             <!-- Payment and Change -->
                                                             <div class="row justify-content-end">
                                                                 <label class="col-lg-3 col-form-label ">Pago</label>
-                                                                <div class="col-lg-4">
+                                                                <div class="col-lg-5">
                                                                     <input type="text" class="form-control form-control-solid" name="Pago" id="Pago" />
                                                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                 </div>
                                                             </div>
+                                                            <br>
                                                             <div class="row justify-content-end">
                                                                 <label class="col-lg-3 col-form-label ">Cambio</label>
-                                                                <div class="col-lg-4">
+                                                                <div class="col-lg-5">
                                                                     <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$5.00" readonly />
                                                                     <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                 </div>
                                                             </div>
                                                             <!-- End of Payment and Change -->
-
+                                                            <br>
                                                             <div class="modal-footer">
                                                                 <div class="d-flex justify-content-between w-100">
                                                                     <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
@@ -575,7 +571,6 @@
                                                             </div>
                                                         </div>
                                                     </div>
-
                                                 </div>
 
                                             </div>
