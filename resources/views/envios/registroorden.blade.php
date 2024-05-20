@@ -97,15 +97,54 @@
 
             $('#sdescuento').text("-$" + descu);
 
+            var checkbox = document.getElementById('chkiva');
+            if (checkbox.checked != false) {
+            const subtotal = parseFloat(document.getElementById('fijosub').value);
+
+            const subtotal2 = parseFloat(document.getElementById("depasub").value);
+            const subtotal3 = parseFloat(document.getElementById("persosub").value);
+            const subtotal4 = parseFloat(document.getElementById("casisub").value);
+
+            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
+            const coniva = total * 0.13;
+            
+            const totalfin = (total + coniva) - descu;
+            
+            $('#total1').text("$" + totalfin);
+
+           
+
+        } else {
+            const subtotal = parseFloat(document.getElementById('fijosub').value);
+
+            const subtotal2 = parseFloat(document.getElementById("depasub").value);
+            const subtotal3 = parseFloat(document.getElementById("persosub").value);
+            const subtotal4 = parseFloat(document.getElementById("casisub").value);
+
+            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
+            //const coniva = total * 0.13;
+            
+            const totalfin = (total  - descu);
+
+            
+            
+            $('#total1').text("$" + totalfin);
+        }
+
+
+
+           
         });
 
     });
 
     function aplicariva() {
 
+        const descu = parseFloat(document.getElementById('descuento').value);
 
         var checkbox = document.getElementById('chkiva');
-        if (checkbox.checked != true) {
+
+        if (checkbox.checked != false) {
             const subtotal = parseFloat(document.getElementById('fijosub').value);
 
             const subtotal2 = parseFloat(document.getElementById("depasub").value);
@@ -115,13 +154,37 @@
             const total = subtotal + subtotal2 + subtotal3 + subtotal4;
             const coniva = total * 0.13;
 
+            const totalfin = (total + coniva) - descu;
+
+            $('#total1').text("$" + totalfin);
             $('#siva').text("+$" + coniva);
 
+            
+
         } else {
+
+            const subtotal = parseFloat(document.getElementById('fijosub').value);
+
+            const subtotal2 = parseFloat(document.getElementById("depasub").value);
+            const subtotal3 = parseFloat(document.getElementById("persosub").value);
+            const subtotal4 = parseFloat(document.getElementById("casisub").value);
+
+            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
+            //const coniva = total * 0.13;
+            
+            const totalfin = (total  - descu);
+
+            
+            
+            $('#total1').text("$" + totalfin);
+            
             $('#siva').text("+$0.00");
         }
 
     };
+
+        
+
 </script>
 
 <body id="kt_body" class="">
@@ -842,7 +905,7 @@
                                             <label class="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6" data-kt-button="true">
                                                 <!--begin::Radio-->
                                                 <span class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
-                                                    <input class="form-check-input" type="checkbox" value="" name="chkiva" id="chkiva" />
+                                                    <input class="form-check-input" type="checkbox" value="" name="chkiva" id="chkiva" Onclick="aplicariva();"/>
                                                 </span>
                                                 <!--end::Radio-->
                                                 <!--begin::Info-->
@@ -1038,6 +1101,7 @@
             const total = subtotal + subtotal2 + subtotal3 + subtotal4;
 
             $('#stotal').text("$" + total);
+            $('#total1').text("$" + total);
 
             //alert('hola');
 
