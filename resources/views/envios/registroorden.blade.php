@@ -211,9 +211,33 @@
                     </ul>
                 </div>
 
-
                 <div class="row m-1" style="background-color:white; ">
-                    <div class="col-6 m-2">
+                    
+
+                    <div class="col-2 m-2">
+                        <select class="form-control form-control-lg " data-control="select2" name="comercio" id="comercio">
+                            <option value=" ">Buscar comercio</option>
+                            @foreach ($comercios as $comercio)
+                            <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <div class="col-1 m-2">
+                        <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()">Seleccionar</button>
+                    </div>
+
+                    <div class="col-2 m-2 ">
+                        <button type="button" class="btn btn-success" id="seleccionarBtn">Agregar Comercio</button>
+                    </div>
+
+
+                </div>
+
+
+
+
+                <div class="row m-2 " style="background-color:white; ">
+                    <div class="col-10 m-2">
                         <ul class="nav row " style="background-color:white; ">
                             <li class="nav-item col-12 col-lg mb-lg-0">
                                 <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
@@ -250,27 +274,11 @@
                         </ul>
                     </div>
 
-                    <div class="col-2 m-2">
-                        <select class="form-control form-control-lg " data-control="select2" name="comercio" id="comercio">
-                            <option value=" ">Buscar comercio</option>
-                            @foreach ($comercios as $comercio)
-                            <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-1 m-2">
-                        <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()">Seleccionar</button>
-                    </div>
-
-                    <div class="col-2 m-2 ">
-                        <button type="button" class="btn btn-success" id="seleccionarBtn">Agregar Comercio</button>
-                    </div>
-
-
-                </div>
+                    
                 <br>
+                </div>
                 <!--begin::Row-->
-                <div class="row gy-0 gx-10 ">
+                <div class="row gy-0 gx-10 mt-8">
                     <!--begin::Col-->
                     <div class="col-xl-8 ">
 
@@ -280,7 +288,7 @@
 
 
                             <!--begin::Tab content-->
-                            <div class="tab-content">
+                            <div class="tab-content border">
                                 <div class="tab-pane fade show active" id="kt_general_widget_1_1">
 
                                     <!--begin::Tables Widget 2-->
@@ -625,149 +633,12 @@
 
                         <div class="card mb-5 mb-lg-10">
                             <!--begin::Header-->
-                            <div class="card-header border-0 pt-5">
+                            <div class="border-2 pt-5">
 
-                                <div class="col-12 mb-3">
-
-                                    <input type="text" class="form-control" id="calculo">
-
-                                </div>
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-info w-100 " id="uno" onclick="calcu()" value="1">1</button>
-
-                                </div>
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="dos" onclick="calcu2()" value="2">2</button>
-
-                                </div>
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="tres" onclick="calcu3()" value="3">3</button>
-
-                                </div>
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-secondary w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
-
-                                </div>
-
-
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 " id="cuatro" onclick="calcu4()" value="4">4</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="cinco" onclick="calcu5()" value="5">5</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="seis" onclick="calcu6()" value="6">6</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-secondary w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
-
-                                </div>
-
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 " id="siete" onclick="calcu7()" value="7">7</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="ocho" onclick="calcu8()" value="8">8</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="nueve" onclick="calcu9()" value="9">9</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:230px;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
-
-                                </div>
-
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 " id="cero" onclick="calcu0()" value="0">0</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="cerocero" onclick="calcu00()" value="00">00</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="punto" onclick="calcupunto()" value=".">.</button>
-
-                                </div>
-                                <div class="col-3 px-2 mt-2">
-
-
-
-                                </div>
-
-                            </div>
-                            <!--end::Header-->
-
-                            <!--begin::Body-->
-                            <div class="card-body py-3">
-
-                            </div>
-                            <!--end::Body-->
-                        </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </div>
-                    <!--end::Col-->
-
-                    <!--begin::Col-->
-                    <div class="col-xl-4">
-
-                        <!--begin::Mixed Widget 12-->
-                        <div class="card mb-5 mb-lg-10">
-                            <!--begin::Header-->
-
-
-                            <div class="card card-flush bg-body" id="kt_pos_form">
+                                                       
+                            <div class="bg-body border-2"  id="kt_pos_form">
                                 <!--begin::Header-->
-                                <div class="card-header pt-5">
+                                <div class="card-header pt-5 border-2">
                                     <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar">
@@ -811,7 +682,7 @@
                                                         </div>
                                                         <!--end::Dialer-->
                                                     </td>
-                                                    <td class="text-end">
+                                                    <td class="">
                                                         <input type="text" name="depasub" id="depasub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcuperso()" />
                                                     </td>
                                                 </tr>
@@ -892,46 +763,222 @@
                                     <!--end::Table container-->
                                     <!-- Campo para la cantidad de descuento -->
                                     <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
-                                        <td class="pe-0">
-                                            <div class="form-floating col-lg-5 mb-4">
-                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0" />
-                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
-                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                            </div>
-                                        </td>
-                                        <!-- Campo para el IVA -->
-                                        <td class="pe-2">
-                                            <!--begin::Option-->
-                                            <label class="btn btn-outline btn-outline-dashed btn-active-light-primary active d-flex text-start p-6" data-kt-button="true">
-                                                <!--begin::Radio-->
-                                                <span class="form-check form-check-custom form-check-solid form-check-sm align-items-start mt-1">
-                                                    <input class="form-check-input" type="checkbox" value="" name="chkiva" id="chkiva" Onclick="aplicariva();"/>
-                                                </span>
-                                                <!--end::Radio-->
-                                                <!--begin::Info-->
-                                                <span class="ms-5">
-                                                    <span class="fs-5 fw-bold text-gray-800 d-block" Onclick="aplicariva();">Aplicar iva</span>
-                                                </span>
-                                                <!--end::Info-->
-                                            </label>
-                                            <!--end::Option-->
-                                        </td>
+                                        
                                     </div>
+                                    <!--begin::Summary-->
+                                  
+                                    <!--end::Summary-->
+                                    <!--begin::Payment Method-->
+                                    
+                                    <!--end::Payment Method-->
+                                </div>
+                                <!--end: Card Body-->
+
+
+
+                            </div>
+
+                                
+
+                                
+
+                            </div>
+                            <!--end::Header-->
+
+                            <!--begin::Body-->
+                            <div class="card-body py-3">
+
+                            </div>
+                            <!--end::Body-->
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    </div>
+                    <!--end::Col-->
+
+                    <!--begin::Col-->
+                    <div class="col-xl-4 border-2">
+
+<!--begin::Calculadora-->
+
+                                <div class="col-12 mb-3">
+
+
+                                    <input type="text" class="form-control" id="calculo">
+
+                                </div>
+                                <div class="row">
+
+                                <div class="col-3 px-2">
+
+                                    <button type="button" class="btn btn-info w-100 " id="uno" onclick="calcu()" value="1">1</button>
+
+                                </div>
+
+                                <div class="col-3 px-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="dos" onclick="calcu2()" value="2">2</button>
+
+                                </div>
+
+                                <div class="col-3 px-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="tres" onclick="calcu3()" value="3">3</button>
+
+                                </div>
+
+                                <div class="col-3 px-2">
+
+                                    <button type="button" class="btn btn-secondary w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
+
+                                </div>
+
+                                </div>
+
+                                <div class="row">
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 " id="cuatro" onclick="calcu4()" value="4">4</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="cinco" onclick="calcu5()" value="5">5</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="seis" onclick="calcu6()" value="6">6</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-secondary w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
+
+                                </div>
+
+                                </div>
+
+
+                                <div class="row">
+                                <div class="col-3 px-2 mt-2">
+
+<button type="button" class="btn btn-info w-100 " id="siete" onclick="calcu7()" value="7">7</button>
+
+</div>
+
+<div class="col-3 px-2 mt-2">
+
+<button type="button" class="btn btn-info w-100 px-2" id="ocho" onclick="calcu8()" value="8">8</button>
+
+</div>
+
+<div class="col-3 px-2 mt-2">
+
+<button type="button" class="btn btn-info w-100 px-2" id="nueve" onclick="calcu9()" value="9">9</button>
+
+</div>
+
+<div class="col-3 px-2 mt-2">
+
+<button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:100px;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
+
+</div>
+                                </div>
+
+
+                                <div class="row">
+                                
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 " id="cero" onclick="calcu0()" value="0">0</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="cerocero" onclick="calcu00()" value="00">00</button>
+
+                                </div>
+
+                                <div class="col-3 px-2 mt-2">
+
+                                    <button type="button" class="btn btn-info w-100 px-2" id="punto" onclick="calcupunto()" value=".">.</button>
+
+                                </div>
+                                <div class="col-3 px-2 mt-2">
+
+
+
+                                </div>
+
+                                </div>
+
+
+
+
+
+
+<!--End::Calculadora-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<br>
+
+
+                        <!--begin::Mixed Widget 12-->
+                        <div class="card mb-5 mb-lg-10">
+                            <!--begin::Header-->
+
+
+                            <div class="card card-flush bg-body" id="kt_pos_form">
+                                <!--begin::Header-->
+                                
+
+                                <!--begin::Body-->
+                                <div class="card-body pt-0">
+                                    
+                                   
+                                    
                                     <!--begin::Summary-->
                                     <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
                                         <!--begin::Content-->
                                         <div class="fs-6 fw-bold text-white">
-                                            <span class="d-block lh-1 mb-2">Subtotal</span>
-                                            <span class="d-block mb-2">Descuento</span>
-                                            <span class="d-block mb-2">IVA</span>
+                                            
                                             <span class="d-block fs-2qx lh-1">Total</span>
                                         </div>
                                         <!--end::Content-->
                                         <!--begin::Content-->
                                         <div class="fs-6 fw-bold text-white text-end">
-                                            <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                            <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                            <span id="siva" name="siva" class="d-block mb-2" data-kt-pos-element="IVA">+$0.00</span>
+                                            
                                             <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                         </div>
                                         <!--end::Content-->
@@ -940,12 +987,18 @@
                                     <!--begin::Payment Method-->
                                     <div class="m-0 text-center">
                                         <!--begin::Actions-->
+                                        <div class="row">
+                                            <div class="col-8">
                                         <a href="/cobro/limpiar">
-                                        <button class="btn btn-primary fs-1 py-4">Guardar e imprimir</button>
+                                        <button class="btn btn-primary  py-3">Guardar e imprimir</button>
                                     </a>
+                                    </div>
+                                    <div class="col-4">
                                         <a href="/cobro/limpiar">
-                                            <button class="btn btn-primary fs-1 py-4">Limpiar</button>
+                                            <button class="btn btn-primary py-3">Limpiar</button>
                                         </a>
+
+                                        </div>
                                         <!--end::Actions-->
                                     </div>
                                     <!--end::Payment Method-->
