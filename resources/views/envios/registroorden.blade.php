@@ -223,11 +223,11 @@
                         </select>
                     </div>
                     <div class="col-1 m-2">
-                        <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()"><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button type="button" class="btn btn-info" id="seleccionarBtn" onclick="comerciosel()"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </div>
 
                     <div class="col-1 m-2 ">
-                        <button type="button" class="btn btn-success" id="seleccionarBtn"><i class="fa-solid fa-circle-plus"></i></button>
+                        <button type="button" class="btn btn-info" id="seleccionarBtn"><i class="fa-solid fa-circle-plus"></i></button>
                     </div>
 
 
@@ -239,8 +239,8 @@
                 <div class="row m-2 " style="background-color:white; ">
                     <div class="col-7 m-2">
                         <ul class="nav row " style="background-color:white; ">
-                            <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
+                            <li class="nav-item col-12 col-lg mb-lg-0 ">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-10 h-1250px h-lg-185px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
 
                                     <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
 
@@ -248,7 +248,7 @@
                                 </a>
                             </li>
                             <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_2">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-10 h-1250px h-lg-185px " data-bs-toggle="tab" href="#kt_general_widget_1_2">
 
                                     <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
                                     <span class="fs-6 fw-bold">
@@ -256,7 +256,7 @@
                                 </a>
                             </li>
                             <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px" data-bs-toggle="tab" href="#kt_general_widget_1_3">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-10 h-1250px h-lg-185px" data-bs-toggle="tab" href="#kt_general_widget_1_3">
 
                                     <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
                                     <span class="fs-6 fw-bold">
@@ -264,7 +264,7 @@
                                 </a>
                             </li>
                             <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_4">
+                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-10 h-1250px h-lg-185px " data-bs-toggle="tab" href="#kt_general_widget_1_4">
 
                                     <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
                                     <span class="fs-6 fw-bold">
@@ -327,9 +327,9 @@
                                         <div class="card-body pt-0 align-items-end">
                                             <!--begin::Table-->
                                             <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-3">
+                                                    <thead> 
+                                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
                                                             <th># DE GUÍA</th>
                                                             <th>COMERCIO</th>
                                                             <th>TIPO DE ENVÍO </th>
@@ -339,7 +339,7 @@
 
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody class="fw-bold text-gray-600">
                                                         @foreach ($pedidos as $pedido)
                                                         @if ($pedido->tipo == "Personalizado")
 
@@ -350,7 +350,7 @@
 
                                                             <td>{{$pedido->guia}}</td>
                                                             <td>{{$pedido->comercio}}</td>
-                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
+                                                            <td ><span class="badge py-3 px-4 fs-7 badge-light-danger">{{$pedido->tipo}}</span></td>
                                                             <th>Santa Ana</th>
                                                             <td>{{$pedido->created_at->format('d/m/Y')}}</td>
                                                             <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
@@ -408,9 +408,9 @@
                                         <div class="card-body pt-0 align-items-end">
                                             <!--begin::Table-->
                                             <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-3">
+                                                    <thead> 
+                                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
                                                             <th># DE GUÍA</th>
                                                             <th>COMERCIO</th>
                                                             <th>TIPO DE ENVÍO </th>
@@ -420,7 +420,7 @@
 
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody class="fw-bold text-gray-600">
                                                         @foreach ($pedidos as $pedido)
                                                         @if ($pedido->tipo == "Departamental")
 
@@ -485,9 +485,9 @@
                                         <div class="card-body pt-0 align-items-end">
                                             <!--begin::Table-->
                                             <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-3">
+                                                    <thead> 
+                                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
                                                             <th># DE GUÍA</th>
                                                             <th>COMERCIO</th>
                                                             <th>TIPO DE ENVÍO </th>
@@ -497,7 +497,7 @@
 
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody class="fw-bold text-gray-600">
                                                         @foreach ($pedidos as $pedido)
                                                         @if ($pedido->tipo == "Punto fijo")
 
@@ -569,9 +569,9 @@
                                         <div class="card-body pt-0 align-items-end">
                                             <!--begin::Table-->
                                             <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
+                                                <table class="table align-middle table-row-dashed fs-6 gy-3">
+                                                    <thead> 
+                                                        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
                                                             <th># DE GUÍA</th>
                                                             <th>COMERCIO</th>
                                                             <th>TIPO DE ENVÍO </th>
@@ -581,7 +581,7 @@
 
                                                         </tr>
                                                     </thead>
-                                                    <tbody>
+                                                    <tbody class="fw-bold text-gray-600">
                                                         @foreach ($pedidos as $pedido)
                                                         @if ($pedido->tipo == "Casillero")
 
@@ -631,15 +631,17 @@
 
 
 
-                        <div class="card mb-5 mb-lg-10 border shadow">
+                        <div class="card mb-5 mb-xl-10 border shadow">
                             <!--begin::Header-->
                             <div class=" pt-1">
 
                                                        
                             <div class="bg-body "  id="kt_pos_form">
                                 <!--begin::Header-->
-                                <div class="card-header pt-1 ">
-                                    <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
+                                <div class="card-header cursor-pointer pt-1 ">
+                                    <div class="card-title m-0">                                    <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
+                                    </div>
+
                                     <!--begin::Toolbar-->
                                     <div class="card-toolbar">
                                         <input type="text" value="0" id="ordenpre" hidden>
@@ -664,97 +666,94 @@
                                             <!--end::Table head-->
                                             <!--begin::Table body-->
                                             <tbody>
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="33">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado</span>
+                                                <div class="card-body p-9">
+                                                    <!--begin::Row-->
+                                                    <div class="row mb-7">
+                                                        <!--begin::Label-->
+                                                       
+
+                                                        
+                                                            <span class="fw-semibold text-muted col-lg-4">Personalizado</span>
+                                                        <!--end::Label-->
+                                            
+                                                        <!--begin::Col-->
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" class="border-0 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" /></span>                
                                                         </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
-                                                            <!--end::Input control-->
-
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" name="depasub" id="depasub" class="border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcuperso()" /></span>                
                                                         </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="">
-                                                        <input type="text" name="depasub" id="depasub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcuperso()" />
-                                                    </td>
-                                                </tr>
+                                                        <!--end::Col-->
+                                                    </div>
 
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="7.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado Departamental</span>
+                                                    <!--end::Row-->
+
+                                                     <!--begin::Row-->
+                                                     <div class="row mb-7">
+                                                        <!--begin::Label-->
+                                                       
+
+                                                        
+                                                            <span class="fw-semibold text-muted col-lg-4">Personalizado Departamental</span>
+                                                        <!--end::Label-->
+                                            
+                                                        <!--begin::Col-->
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" class="border-0 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobroperdepa }}" /></span>                
                                                         </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 " data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobroperdepa }}" />
-                                                            <!--end::Input control-->
-
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" name="persosub" id="persosub" class="border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcudepa()" /></span>                
                                                         </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" name="persosub" id="persosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcudepa()" />
-                                                    </td>
-                                                </tr>
+                                                        <!--end::Col-->
+                                                    </div>
+                                                    
+                                                    <!--end::Row-->
 
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Punto fijo</span>
+                                                     <!--begin::Row-->
+                                                     <div class="row mb-7">
+                                                        <!--begin::Label-->
+                                                      
+                                                            <span class="fw-semibold text-muted col-lg-4">Punto fijo</span>
+                                                        <!--end::Label-->
+                                            
+                                                        <!--begin::Col-->
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" class="border-0 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobropfijo }}" /></span>                
                                                         </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobropfijo }}" />
-                                                            <!--end::Input control-->
-
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" name="fijosub" id="fijosub" class="border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcupf()" /></span>                
                                                         </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" name="fijosub" id="fijosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" value="0" onfocus="calcupf()" />
-                                                    </td>
-                                                </tr>
+                                                        <!--end::Col-->
+                                                    </div>
+                                                    
+                                                    <!--end::Row-->
 
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1 ">Casillero</span>
+
+                                                    
+                                                     <!--begin::Row-->
+                                                     <div class="row mb-7">
+                                                        <!--begin::Label-->
+                                                      
+                                                            <span class="fw-semibold text-muted col-lg-4">Casillero</span>
+                                                        <!--end::Label-->
+                                            
+                                                        <!--begin::Col-->
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" class="border-0 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrocasi }}"  /></span>                
                                                         </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrocasi }}" />
-                                                            <!--end::Input control-->
-
+                                                        <div class="col-lg-4">                    
+                                                            <span class="fw-bold fs-6 text-gray-800"><input type="text" name="casisub" id="casisub" class="border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcucasi()" /></span>                
                                                         </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" name="casisub" id="casisub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcucasi()" />
-                                                    </td>
-                                                </tr>
+                                                        <!--end::Col-->
+                                                    </div>
+                                                    
+                                                    <!--end::Row-->
+                                                
+
+
+                                               
+
+                                               
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -762,9 +761,7 @@
                                     </div>
                                     <!--end::Table container-->
                                     <!-- Campo para la cantidad de descuento -->
-                                    <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
-                                        
-                                    </div>
+                                   
                                     <!--begin::Summary-->
                                   
                                     <!--end::Summary-->
@@ -786,9 +783,7 @@
                             <!--end::Header-->
 
                             <!--begin::Body-->
-                            <div class="card-body py-3">
-
-                            </div>
+                           
                             <!--end::Body-->
                         </div>
 
@@ -842,7 +837,7 @@
 
                                 <div class="col-3 px-2">
 
-                                    <button type="button" class="btn btn-secondary w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
+                                    <button type="button" class="btn btn-info w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
 
                                 </div>
 
@@ -869,7 +864,7 @@
 
                                 <div class="col-3 px-2 mt-2">
 
-                                    <button type="button" class="btn btn-secondary w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
+                                    <button type="button" class="btn btn-info w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
 
                                 </div>
 
@@ -897,7 +892,7 @@
 
 <div class="col-3 px-2 mt-2">
 
-<button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:78px;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
+<button type="button" class="btn btn-info px-2" style="height:100px; position:absolute; width:6%;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
 
 </div>
                                 </div>
