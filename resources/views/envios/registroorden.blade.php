@@ -288,7 +288,7 @@
 
 
                             <!--begin::Tab content-->
-                            <div class="tab-content border shadow">
+                            <div class="tab-content border shadow" style="height:480px;">
                                 <div class="tab-pane fade show active" id="kt_general_widget_1_1">
 
                                     <!--begin::Tables Widget 2-->
