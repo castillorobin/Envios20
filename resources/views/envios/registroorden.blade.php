@@ -283,8 +283,8 @@
                         <!--begin::Table head-->
                         <thead>
                             <tr class="border-bottom fs-7 fw-bold text-gray-700 text-uppercase">
-                                <th class="min-w-300px w-475px">Item</th>
-                                <th class="min-w-100px w-100px">QTY</th>
+                                <th class="min-w-300px w-475px">Tipo</th>
+                                <th class="min-w-100px w-100px">Cantidad</th>
                                 <th class="min-w-150px w-150px">Price</th>
                                 <th class="min-w-100px w-150px text-end">Total</th>
                                 <th class="min-w-75px w-75px text-end">Action</th>
@@ -296,17 +296,33 @@
                         <tbody>
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
                                 <td class="pe-7">                                            
-                                    <input type="text" class="form-control form-control-solid mb-2" name="name[]" placeholder="Item name"/>
+                                    
+                                    <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
+                                        <option value="Personalizado">Personalizado</option>
+                                        <option value="Personalizado departamental">Personalizado departamental</option>
+                                        <option value="Punto fijo">Punto fijo</option>
+                                        <option value="Casillero">Casillero</option>
+                                    </select>
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía">
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
 
-                                    <input type="text" class="form-control form-control-solid" name="description[]" placeholder="Description"/>     
+                                                        </div>
                                 </td>
 
                                 <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" type="number" min="1" name="quantity[]" placeholder="1" value="1" data-kt-element="quantity"/>
+                                    <input type="text" class="form-control form-control-solid" type="number" name="cantidad" placeholder="0" value="0" data-kt-element="quantity" readonly/>
                                 </td>
 
                                 <td>   
-                                    <input type="text" class="form-control form-control-solid text-end" name="price[]" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
                                 <td class="pt-8 text-end text-nowrap">
