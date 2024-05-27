@@ -67,6 +67,19 @@
         
        
     }
+
+    function aumentar() {
+
+// alert("hola");
+
+ nombre = parseFloat(document.getElementById("cantidad").value);
+ // alert(nombre);
+ nom= nombre + 1;
+ 
+ document.getElementById("cantidad").value = parseFloat(nom);
+ document.getElementById("guia").value = " ";
+
+}
     
     </script>
 
@@ -306,11 +319,11 @@
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía">
+                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
                                                             <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -318,7 +331,7 @@
                                 </td>
 
                                 <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" type="number" name="cantidad" placeholder="0" value="0" data-kt-element="quantity" readonly/>
+                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
                                 </td>
 
                                 <td>   
