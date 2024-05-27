@@ -286,8 +286,8 @@
                                 <th class="min-w-300px w-475px">Tipo</th>
                                 <th class="min-w-100px w-100px">Cantidad</th>
                                 <th class="min-w-150px w-150px">Price</th>
-                                <th class="min-w-100px w-150px text-end">Total</th>
-                                <th class="min-w-75px w-75px text-end">Action</th>
+                                
+                                <th class="min-w-75px w-75px text-end">Accion</th>
                             </tr>
                         </thead>
                         <!--end::Table head-->
@@ -325,9 +325,7 @@
                                     <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
-                                <td class="pt-8 text-end text-nowrap">
-                                    $<span data-kt-element="total">0.00</span>
-                                </td>
+                                
 
                                 <td class="pt-5 text-end">
                                     <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
@@ -341,16 +339,16 @@
                         <tfoot>
                             <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
                                 <th class="text-primary">
-                                    <button class="btn btn-link py-1" data-kt-element="add-item">Add item</button>
+                                    <button class="btn btn-link py-1" data-kt-element="add-item">Agregar item</button>
                                 </th>  
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed ps-0">
                                     <div class="d-flex flex-column align-items-start">
                                         <div class="fs-5">Subtotal</div> 
 
-                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Add tax</button>
+                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar IVA</button>
 
-                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Add discount</button>
+                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar descuento</button>
                                     </div>
                                 </th> 
 
@@ -378,28 +376,42 @@
                 <table class="table d-none" data-kt-element="item-template">
                     <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
                         <td class="pe-7">                                            
-                            <input type="text" class="form-control form-control-solid mb-2" name="name[]" placeholder="Item name"/>
+                            
+                            <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
+                                <option value="Personalizado">Personalizado</option>
+                                <option value="Personalizado departamental">Personalizado departamental</option>
+                                <option value="Punto fijo">Punto fijo</option>
+                                <option value="Casillero">Casillero</option>
+                            </select>
+                            <br>
+<div class="row">
+                                                        <div class="col-8">
+                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía">
+                                                    <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                </div>
+                                                <div class="col-4">
+                                                    <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                    <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                </div>
 
-                            <input type="text" class="form-control form-control-solid" name="description[]" placeholder="Description"/>     
+                                                </div>
                         </td>
 
                         <td class="ps-0">                                            
-                            <input type="text" class="form-control form-control-solid" type="number" min="1" name="quantity[]" placeholder="1" data-kt-element="quantity"/>
+                            <input type="text" class="form-control form-control-solid" type="number" name="cantidad" placeholder="0" value="0" data-kt-element="quantity" readonly/>
                         </td>
 
                         <td>   
-                            <input type="text" class="form-control form-control-solid text-end" name="price[]" placeholder="0.00" data-kt-element="price"/>
+                            <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
                         </td>
                         
-                        <td class="pt-8 text-end">
-                            $<span data-kt-element="total">0.00</span>
-                        </td>
+                        
 
                         <td class="pt-5 text-end">
                             <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
-                                <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                            </button>                             
+                                <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    </button>                             
                         </td>
-                    </tr>
+                    </tr>          
                 </table>
 
                 <table class="table d-none" data-kt-element="empty-template">
