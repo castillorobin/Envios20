@@ -82,7 +82,7 @@
         $(document).ready(function() {
             // Función para validar el número de teléfono
             Inputmask({
-                mask: "(+999) 9999-9999",
+                mask: "(+503) 9999-9999",
                 clearIncomplete: true
             }).mask("#telefonop");
 
@@ -212,7 +212,7 @@
                                     </div>
                                 </div>
                                 <div class="row my-4 mx-4">
-                                    <div class="form-floating col-lg-12 mb-4">
+                                    <div class="form-floating col-lg-7 mb-4">
                                         <select class="form-control form-control-lg form-control-solid" data-control="select2" name="comercio">
                                             @foreach ($comercios as $comercio)
                                             <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
@@ -222,6 +222,10 @@
                                         <div id="comercioValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione un comercio.
                                         </div>
+                                    </div>
+                                    <div class="form-floating col-lg-5 mb-4">
+                                        <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Direccion de recolecta" />
+                                        <label for="destinatariop" style="padding-left: 25px;">Direccion de recolecta</label>
                                     </div>
                                 </div>
                                 <div class="row my-4 mx-4">
