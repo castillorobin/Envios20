@@ -15,6 +15,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+   
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -233,13 +234,13 @@
                 <!--begin::Input group-->
                 <div class="d-flex align-items-center flex-equal fw-row me-4 order-2" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice date">
                     <!--begin::Date-->
-                    <div class="fs-6 fw-bold text-gray-700 text-nowrap">Date:</div>  
+                    <div class="fs-6 fw-bold text-gray-700 text-nowrap">Fecha:</div>  
                     <!--end::Date-->                    
 
                     <!--begin::Input-->
                     <div class="position-relative d-flex align-items-center w-150px">
                         <!--begin::Datepicker-->
-                        <input class="form-control form-control-transparent fw-bold pe-5" placeholder="Select date" name="invoice_date"/>
+                        <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="invoice_date"/>
                         <!--end::Datepicker-->
                         
                         <!--begin::Icon-->
@@ -251,26 +252,15 @@
 
                 <!--begin::Input group-->
                 <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
-                    <span class="fs-2x fw-bold text-gray-800">Invoice #</span> 
-                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="2021001" placehoder="..."/>
+                    
                 </div>                
                 <!--end::Input group--> 
 
                 <!--begin::Input group-->
                 <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice due date">
                     <!--begin::Date-->
-                    <div class="fs-6 fw-bold text-gray-700 text-nowrap">Due Date:</div>  
-                    <!--end::Date-->                    
-
-                    <!--begin::Input-->
-                    <div class="position-relative d-flex align-items-center w-150px">
-                        <!--begin::Datepicker-->
-                        <input class="form-control form-control-transparent fw-bold pe-5" placeholder="Select date" name="invoice_due_date"/>
-                        <!--end::Datepicker-->
-                        
-                        <!--begin::Icon-->
-                        <i class="ki-duotone ki-down fs-4 position-absolute end-0 ms-4"></i>                        <!--end::Icon-->
-                    </div>
+                    <span class="fs-2x fw-bold text-gray-800">Factura #</span> 
+                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="2024001" placehoder="..."/>
                     <!--end::Input-->                
                 </div>                
                 <!--end::Input group--> 
@@ -287,11 +277,16 @@
                 <div class="row gx-10 mb-5">
                     <!--begin::Col-->
                     <div class="col-lg-6">
-                        <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Bill From</label>
+                        <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Factura de</label>
 
                         <!--begin::Input group-->
                         <div class="mb-5">
-                            <input type="text" class="form-control form-control-solid" placeholder="Name"/>
+                            <select class="form-control form-control-solid " data-control="select2" name="comercio" id="comercio">
+                                <option value=" ">Buscar comercio</option>
+                                @foreach ($comercios as $comercio)
+                                <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <!--end::Input group-->
 
@@ -762,6 +757,20 @@
     <!--begin::Vendors Javascript(used for this page only)-->
     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
     <!--end::Vendors Javascript-->
+
+
+<!--begin::Vendors Javascript(used for this page only)-->
+     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+ <!--end::Vendors Javascript-->
+
+<!--begin::Custom Javascript(used for this page only)-->
+     <script src="assets/js/custom/apps/invoices/create.js"></script>
+     <script src="assets/js/widgets.bundle.js"></script>
+     <script src="assets/js/custom/widgets.js"></script>
+     <script src="assets/js/custom/apps/chat/chat.js"></script>
+     <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+     <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+     <script src="assets/js/custom/utilities/modals/users-search.js"></script>
 
 
     <script>
