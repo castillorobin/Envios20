@@ -15,6 +15,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+   
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
@@ -27,1008 +28,548 @@
 
 -->
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-<script>
-    $(document).ready(function() {
-
-        $("#depasub").change(function() {
-
-            const subtotal = parseFloat($(this).val());
-            const subtotal2 = parseFloat(document.getElementById("persosub").value);
-            const subtotal3 = parseFloat(document.getElementById("fijosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-
-            $('#stotal').text("$" + total);
-
-        });
 
 
-        $("#persosub").change(function() {
-
-            const subtotal = parseFloat($(this).val());
-            const subtotal2 = parseFloat(document.getElementById("depasub").value);
-            const subtotal3 = parseFloat(document.getElementById("fijosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-
-            $('#stotal').text("$" + total);
-
-        });
-
-
-        $("#fijosub").change(function() {
-
-            const subtotal = parseFloat($(this).val());
-            const subtotal2 = parseFloat(document.getElementById("depasub").value);
-            const subtotal3 = parseFloat(document.getElementById("persosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-
-            $('#stotal').text("$" + total);
-
-        });
-
-
-
-        $("#casisub").change(function() {
-
-            const subtotal = parseFloat($(this).val());
-            const subtotal2 = parseFloat(document.getElementById("depasub").value);
-            const subtotal3 = parseFloat(document.getElementById("persosub").value);
-            const subtotal4 = parseFloat(document.getElementById("fijosub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-
-            $('#stotal').text("$" + total);
-
-        });
-
-
-        $("#descuento").change(function() {
-
-            const descu = parseFloat($(this).val());
-            //var sutotal=$('#stotal').text();
-
-
-
-
-            $('#sdescuento').text("-$" + descu);
-
-            var checkbox = document.getElementById('chkiva');
-            if (checkbox.checked != false) {
-            const subtotal = parseFloat(document.getElementById('fijosub').value);
-
-            const subtotal2 = parseFloat(document.getElementById("depasub").value);
-            const subtotal3 = parseFloat(document.getElementById("persosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-            const coniva = total * 0.13;
-            
-            const totalfin = (total + coniva) - descu;
-            
-            $('#total1').text("$" + totalfin);
-
+<script>  
+/*
+    jQuery(document).ready(function($){
+        $(document).ready(function() {
+            $('.mi-selector').select2();
            
-
-        } else {
-            const subtotal = parseFloat(document.getElementById('fijosub').value);
-
-            const subtotal2 = parseFloat(document.getElementById("depasub").value);
-            const subtotal3 = parseFloat(document.getElementById("persosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-            //const coniva = total * 0.13;
-            
-            const totalfin = (total  - descu);
-
-            
-            
-            $('#total1').text("$" + totalfin);
-        }
-
-
-
-           
+            $('#comercio').on('select2:select', function (e) { 
+                
+              alert("Hola mundo");
+            });
+    
         });
-
+       
+       
     });
+    */
+    
+    
+    </script>
 
-    function aplicariva() {
+<script>
+    function valor() {
 
-        const descu = parseFloat(document.getElementById('descuento').value);
+       // alert("hola");
+       
+        nombre =  document.getElementById("comercio").value;
+        nom=document.getElementById("dir" + nombre).value;
+        document.getElementById("direccion").value = nom;
 
-        var checkbox = document.getElementById('chkiva');
+        corr=document.getElementById("cor" + nombre).value;
+        document.getElementById("correo").value = corr;
 
-        if (checkbox.checked != false) {
-            const subtotal = parseFloat(document.getElementById('fijosub').value);
+        tele=document.getElementById("tel" + nombre).value;
+        document.getElementById("telefono").value = tele;
+        
+       
+    }
 
-            const subtotal2 = parseFloat(document.getElementById("depasub").value);
-            const subtotal3 = parseFloat(document.getElementById("persosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
+    function aumentar() {
 
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-            const coniva = total * 0.13;
+// alert("hola");
 
-            const totalfin = (total + coniva) - descu;
+ nombre = parseFloat(document.getElementById("cantidad").value);
+ // alert(nombre);
+ nom= nombre + 1;
+ 
+ document.getElementById("cantidad").value = parseFloat(nom);
+ document.getElementById("guia").value = " ";
 
-            $('#total1').text("$" + totalfin);
-            $('#siva').text("+$" + coniva);
+}
+    
+    </script>
 
-            
+<body id="kt_body" class="" style="background-color:white; ">
+    <x-default-layout>
+       
 
-        } else {
 
-            const subtotal = parseFloat(document.getElementById('fijosub').value);
 
-            const subtotal2 = parseFloat(document.getElementById("depasub").value);
-            const subtotal3 = parseFloat(document.getElementById("persosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-            //const coniva = total * 0.13;
-            
-            const totalfin = (total  - descu);
-
-            
-            
-            $('#total1').text("$" + totalfin);
-
-            $('#siva').text("+$0.00");
-        }
-
-    };
 
         
 
-</script>
-
-<body id="kt_body" class="">
-    <x-default-layout>
-        <!--begin::Container-->
-        <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start"> 
-
-            <!--begin::Post-->
-            <div class="content flex-row-fluid p-4" id="kt_content" style="background-color:white; ">
-                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Cobro de envios </h1>
-                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
-                        <li class="breadcrumb-item text-muted">
-                            <a href="/" class="text-muted text-hover-primary">Inicio</a>
-                        </li>
-                        <li class="breadcrumb-item">
-                            <span class="bullet bg-gray-400 w-5px h-2px"></span>
-                        </li>
-                        <li class="breadcrumb-item text-muted">Facturacion</li>
-                        <li class="breadcrumb-item">
-                            <span class="bullet bg-gray-400 w-5px h-2px"></span>
-                        </li>
-                        <li class="breadcrumb-item text-muted">Cobro</li>
-                    </ul>
-                </div>
-
-                <div class="row m-1" style="background-color:white; ">
-                    
-
-                    <div class="col-4 m-2">
-                        <select class="form-control form-control-lg " data-control="select2" name="comercio" id="comercio">
-                            <option value=" ">Buscar comercio</option>
-                            @foreach ($comercios as $comercio)
-                            <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
-                            @endforeach
-                        </select>
-                    </div>
-                    <div class="col-1 m-2">
-                        <button type="button" class="btn btn-primary" id="seleccionarBtn" onclick="comerciosel()"><i class="fa-solid fa-magnifying-glass"></i></button>
-                    </div>
-
-                    <div class="col-1 m-2 ">
-                        <button type="button" class="btn btn-success" id="seleccionarBtn"><i class="fa-solid fa-circle-plus"></i></button>
-                    </div>
-
-
-                </div>
-
-
-
-
-                <div class="row m-2 " style="background-color:white; ">
-                    <div class="col-7 m-2">
-                        <ul class="nav row " style="background-color:white; ">
-                            <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px active" data-bs-toggle="tab" href="#kt_general_widget_1_1">
-
-                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-
-                                    Personalizado
-                                </a>
-                            </li>
-                            <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_2">
-
-                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                    <span class="fs-6 fw-bold">
-                                        Departamental </span>
-                                </a>
-                            </li>
-                            <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px" data-bs-toggle="tab" href="#kt_general_widget_1_3">
-
-                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                    <span class="fs-6 fw-bold">
-                                        Punto fijo </span>
-                                </a>
-                            </li>
-                            <li class="nav-item col-12 col-lg mb-lg-0">
-                                <a class="nav-link btn btn-flex btn-color-muted btn-outline btn-outline-default btn-active-danger d-flex flex-grow-1 flex-column flex-center py-1 h-1250px h-lg-85px " data-bs-toggle="tab" href="#kt_general_widget_1_4">
-
-                                    <img src="assets/media/stock/food/paque.jpeg" class="w-50px" alt="" />
-                                    <span class="fs-6 fw-bold">
-                                        Casillero </span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    
-                <br>
-                </div>
-                <!--begin::Row-->
-                <div class="row gy-0 gx-10 mt-8">
-                    <!--begin::Col-->
-                    <div class="col-xl-8 ">
-
-                        <!--begin::General Widget 1-->
-                        <div class="mb-5 mb-lg-10 ">
-                            <!--begin::Tabs-->
-
-
-                            <!--begin::Tab content-->
-                            <div class="tab-content border shadow">
-                                <div class="tab-pane fade show active" id="kt_general_widget_1_1">
-
-                                    <!--begin::Tables Widget 2-->
-                                    <div class="card card-flush col-lg-12">
-                                        <!--begin::Card header-->
-                                        <div class="card-header align-items-end py-5 gap-2 gap-md-5">
-                                            <!--begin::Card title-->
-                                            <div class="card-title ">
-                                                <!--begin::Search-->
-                                                <div>
-
-                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
-
-                                                        <div class="col-auto">
-                                                            <label for="guia" class="visually-hidden">Guía</label>
-                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
-                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                        </div>
-
-                                                    </form>
-
-
-
-                                                </div>
-                                                <!--end::Search-->
-                                            </div>
-                                            <!--end::Card title-->
-                                        </div>
-                                        <!--end::Card header-->
-                                        <!--begin::Card body-->
-                                        <div class="card-body pt-0 align-items-end">
-                                            <!--begin::Table-->
-                                            <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                            <th># DE GUÍA</th>
-                                                            <th>COMERCIO</th>
-                                                            <th>TIPO DE ENVÍO </th>
-                                                            <th>AGENCIA</th>
-                                                            <th>FECHA DE RECEPCIÓN</th>
-                                                            <th>BORRAR</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach ($pedidos as $pedido)
-                                                        @if ($pedido->tipo == "Personalizado")
-
-
-                                                        <tr>
-
-
-
-                                                            <td>{{$pedido->guia}}</td>
-                                                            <td>{{$pedido->comercio}}</td>
-                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
-                                                            <th>Santa Ana</th>
-                                                            <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
-                                                        </tr>
-                                                        @endif
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <!--end::Table-->
-                                        </div>
-                                        <!--end::Card body-->
-                                    </div>
-
-
-
-
-                                    <!--end::Tables Widget 2-->
-                                </div>
-                                <div class="tab-pane fade " id="kt_general_widget_1_2">
-
-                                    <!--begin::Tables Widget 2-->
-                                    <div class="card card-flush col-lg-12">
-                                        <!--begin::Card header-->
-                                        <div class="card-header align-items-end py-5 gap-2 gap-md-5">
-                                            <!--begin::Card title-->
-                                            <div class="card-title ">
-                                                <!--begin::Search-->
-                                                <div>
-
-                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
-
-                                                        <div class="col-auto">
-                                                            <label for="guia" class="visually-hidden">Guía</label>
-                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
-                                                            <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
-                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                        </div>
-
-                                                    </form>
-
-
-
-                                                </div>
-                                                <!--end::Search-->
-                                            </div>
-                                            <!--end::Card title-->
-                                        </div>
-                                        <!--end::Card header-->
-                                        <!--begin::Card body-->
-                                        <div class="card-body pt-0 align-items-end">
-                                            <!--begin::Table-->
-                                            <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                            <th># DE GUÍA</th>
-                                                            <th>COMERCIO</th>
-                                                            <th>TIPO DE ENVÍO </th>
-                                                            <th>AGENCIA</th>
-                                                            <th>FECHA DE RECEPCIÓN</th>
-                                                            <th>BORRAR</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach ($pedidos as $pedido)
-                                                        @if ($pedido->tipo == "Departamental")
-
-
-                                                        <tr>
-
-
-
-                                                            <td>{{$pedido->guia}}</td>
-                                                            <td>{{$pedido->comercio}}</td>
-                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
-                                                            <th>Santa Ana</th>
-                                                            <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
-                                                        </tr>
-                                                        @endif
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <!--end::Table-->
-                                        </div>
-                                        <!--end::Card body-->
-                                    </div>
-                                    <!--end::Tables Widget 2-->
-                                </div>
-                                <div class="tab-pane fade " id="kt_general_widget_1_3">
-
-                                    <!--begin::Tables Widget 2-->
-                                    <div class="card card-flush col-lg-12">
-                                        <!--begin::Card header-->
-                                        <div class="card-header align-items-end py-5 gap-2 gap-md-5">
-                                            <!--begin::Card title-->
-                                            <div class="card-title ">
-                                                <!--begin::Search-->
-                                                <div>
-
-                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
-
-                                                        <div class="col-auto">
-                                                            <label for="guia" class="visually-hidden">Guía</label>
-                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
-                                                            <input type="text" value="Punto fijo" class="visually-hidden" name="tipo" id="tipo">
-                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                        </div>
-
-                                                    </form>
-
-
-
-                                                </div>
-                                                <!--end::Search-->
-                                            </div>
-                                            <!--end::Card title-->
-                                        </div>
-                                        <!--end::Card header-->
-                                        <!--begin::Card body-->
-                                        <div class="card-body pt-0 align-items-end">
-                                            <!--begin::Table-->
-                                            <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                            <th># DE GUÍA</th>
-                                                            <th>COMERCIO</th>
-                                                            <th>TIPO DE ENVÍO </th>
-                                                            <th>AGENCIA</th>
-                                                            <th>FECHA DE RECEPCIÓN</th>
-                                                            <th>BORRAR</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach ($pedidos as $pedido)
-                                                        @if ($pedido->tipo == "Punto fijo")
-
-
-                                                        <tr>
-
-
-
-                                                            <td>{{$pedido->guia}}</td>
-                                                            <td>{{$pedido->comercio}}</td>
-                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
-                                                            <th>Santa Ana</th>
-                                                            <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
-                                                        </tr>
-                                                        @endif
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <!--end::Table-->
-                                        </div>
-                                        <!--end::Card body-->
-                                    </div>
-                                    <!--end::Tables Widget 2-->
-
-
-
-
-
-
-
-                                </div>
-<div class="tab-pane fade border" id="kt_general_widget_1_4">
-
-                                    <!--begin::Tables Widget 2-->
-                                    <div class="card card-flush col-lg-12">
-                                        <!--begin::Card header-->
-                                        <div class="card-header align-items-end py-5 gap-2 gap-md-5">
-                                            <!--begin::Card title-->
-                                            <div class="card-title ">
-                                                <!--begin::Search-->
-                                                <div>
-
-                                                    <form action="/cobro/agregar/" class="row g-2" method="get">
-
-                                                        <div class="col-auto">
-                                                            <label for="guia" class="visually-hidden">Guía</label>
-                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Ingrese guía">
-                                                            <input type="text" value="Casillero" class="visually-hidden" name="tipo" id="tipo">
-                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="{{ $comer }}">
-                                                        </div>
-                                                        <div class="col-auto">
-                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                        </div>
-
-                                                    </form>
-
-
-
-                                                </div>
-                                                <!--end::Search-->
-                                            </div>
-                                            <!--end::Card title-->
-                                        </div>
-                                        <!--end::Card header-->
-                                        <!--begin::Card body-->
-                                        <div class="card-body pt-0 align-items-end">
-                                            <!--begin::Table-->
-                                            <div class="table-responsive">
-                                                <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
-                                                    <thead>
-                                                        <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                            <th># DE GUÍA</th>
-                                                            <th>COMERCIO</th>
-                                                            <th>TIPO DE ENVÍO </th>
-                                                            <th>AGENCIA</th>
-                                                            <th>FECHA DE RECEPCIÓN</th>
-                                                            <th>BORRAR</th>
-
-                                                        </tr>
-                                                    </thead>
-                                                    <tbody>
-                                                        @foreach ($pedidos as $pedido)
-                                                        @if ($pedido->tipo == "Casillero")
-
-
-                                                        <tr>
-
-
-
-                                                            <td>{{$pedido->guia}}</td>
-                                                            <td>{{$pedido->comercio}}</td>
-                                                            <td><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
-                                                            <th>Santa Ana</th>
-                                                            <td>{{$pedido->created_at->format('d/m/Y')}}</td>
-                                                            <td><button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button></td>
-                                                        </tr>
-                                                        @endif
-                                                        @endforeach
-                                                    </tbody>
-                                                </table>
-                                            </div>
-                                            <!--end::Table-->
-                                        </div>
-                                        <!--end::Card body-->
-                                    </div>
-                                    <!--end::Tables Widget 2-->
-
-
-
-
-
-
-                                    
-                                </div>
-
-
-                            </div>
-
-
-                            <!--end::Tab content-->
-                        </div>
-
-
-
-
-
-
-
-
-
-                        <div class="card mb-5 mb-lg-10 border shadow">
-                            <!--begin::Header-->
-                            <div class=" pt-1">
-
-                                                       
-                            <div class="bg-body "  id="kt_pos_form">
-                                <!--begin::Header-->
-                                <div class="card-header pt-1 ">
-                                    <h3 class="card-title fw-bold text-gray-800 fs-2qx">Ordenes</h3>
-                                    <!--begin::Toolbar-->
-                                    <div class="card-toolbar">
-                                        <input type="text" value="0" id="ordenpre" hidden>
-                                    </div>
-                                    <!--end::Toolbar-->
-                                </div>
-
-                                <!--begin::Body-->
-                                <div class="card-body pt-0">
-                                    <!--begin::Table container-->
-                                    <div class="table-responsive mb-8">
-                                        <!--begin::Table-->
-                                        <table class="table align-middle gs-0 gy-4 my-0">
-                                            <!--begin::Table head-->
-                                            <thead>
-                                                <tr>
-                                                    <th class="min-w-175px"></th>
-                                                    <th class="w-125px"></th>
-                                                    <th class="w-60px"></th>
-                                                </tr>
-                                            </thead>
-                                            <!--end::Table head-->
-                                            <!--begin::Table body-->
-                                            <tbody>
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="33">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrodepa }}" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="">
-                                                        <input type="text" name="depasub" id="depasub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcuperso()" />
-                                                    </td>
-                                                </tr>
-
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="7.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Personalizado Departamental</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 " data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobroperdepa }}" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" name="persosub" id="persosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcudepa()" />
-                                                    </td>
-                                                </tr>
-
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1">Punto fijo</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800 w" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobropfijo }}" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" name="fijosub" id="fijosub" class="form-control border-0 px-0 fs-2 fw-bold text-primary" data-kt-pos-element="item-total" value="0" onfocus="calcupf()" />
-                                                    </td>
-                                                </tr>
-
-                                                <tr data-kt-pos-element="item" data-kt-pos-item-price="13.5">
-                                                    <td class="pe-0">
-                                                        <div class="d-flex align-items-center">
-                                                            <img src="assets/media/stock/food/paque.jpeg" class="w-50px h-50px rounded-3 me-3" alt="" />
-                                                            <span class="fw-bold text-gray-800 cursor-pointer text-hover-primary fs-6 me-1 ">Casillero</span>
-                                                        </div>
-                                                    </td>
-                                                    <td class="pe-0">
-                                                        <!--begin::Dialer-->
-                                                        <div class="position-relative d-flex align-items-center" data-kt-dialer="true" data-kt-dialer-min="0" data-kt-dialer-max="10" data-kt-dialer-step="1" data-kt-dialer-decimals="0">
-
-                                                            <!--begin::Input control-->
-                                                            <input type="text" class="form-control border-0 px-0 fs-3 fw-bold text-gray-800" data-kt-dialer-control="input" placeholder="Amount" name="manageBudget" readonly="readonly" value=" {{ $cobrocasi }}" />
-                                                            <!--end::Input control-->
-
-                                                        </div>
-                                                        <!--end::Dialer-->
-                                                    </td>
-                                                    <td class="text-end">
-                                                        <input type="text" name="casisub" id="casisub" class="form-control border-0 px-0 fs-2 fw-bold text-primary " data-kt-pos-element="item-total" value="0" onfocus="calcucasi()" />
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                            <!--end::Table body-->
-                                        </table>
-                                        <!--end::Table-->
-                                    </div>
-                                    <!--end::Table container-->
-                                    <!-- Campo para la cantidad de descuento -->
-                                    <div class="d-flex flex-stack  rounded-3 p-6 mb-4">
+<!--end::Footer-->    </div>
+<!--end::Sidebar-->                
+                            
+            
+            <!--begin::Main-->
+            <div class="app-main flex-column flex-row-fluid " id="kt_app_main">
+                <!--begin::Content wrapper-->
+                <div class="d-flex flex-column flex-column-fluid">
+                                            
+<!--begin::Toolbar-->
+<div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 " 
+     
+         >
+
+            <!--begin::Toolbar container-->
+        <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+            
+    
+
+<!--begin::Page title-->
+<div  class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
+    <!--begin::Title-->
+    <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
+        Crear
+            </h1>
+    <!--end::Title-->
+
+            
+        <!--begin::Breadcrumb-->
+        <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                            <!--begin::Item-->
+                                    <li class="breadcrumb-item text-muted">
+                                                    <a href="/metronic8/demo1/index.html" class="text-muted text-hover-primary">
+                                Inicio                            </a>
+                                            </li>
+                                <!--end::Item-->
+                                    <!--begin::Item-->
+                    <li class="breadcrumb-item">
+                        <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                    </li>
+                    <!--end::Item-->
                                         
-                                    </div>
-                                    <!--begin::Summary-->
-                                  
-                                    <!--end::Summary-->
-                                    <!--begin::Payment Method-->
-                                    
-                                    <!--end::Payment Method-->
-                                </div>
-                                <!--end: Card Body-->
+                            <!--begin::Item-->
+                                    <li class="breadcrumb-item text-muted">
+                                                    Cobros                                           </li>
+                                <!--end::Item-->
+                                        
+                    </ul>
+        <!--end::Breadcrumb-->
+    </div>
+<!--end::Page title-->
+<!--begin::Actions-->
+<div class="d-flex align-items-center gap-2 gap-lg-3">
+            <!--begin::Filter menu-->
+       
+        <!--end::Filter menu-->
+    
+    
+    <!--begin::Secondary button-->
+        <!--end::Secondary button-->
+    
+    <!--begin::Primary button-->
+            <a href="#" class="btn btn-sm fw-bold btn-primary"  data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
+            Crear     </a>
+        <!--end::Primary button-->
+</div>
+<!--end::Actions-->
+        </div>
+        <!--end::Toolbar container-->
+    </div>
+<!--end::Toolbar-->                                        
+                    
+<!--begin::Content-->
+<div id="kt_app_content" class="app-content  flex-column-fluid " >
+    
+           
+        <!--begin::Content container-->
+        <div id="kt_app_content_container" class="app-container  container-xxl ">
+            <!--begin::Layout-->
+<div class="d-flex flex-column flex-lg-row">
+    <!--begin::Content-->
+    <div class="flex-lg-row-fluid mb-10 mb-lg-0 me-lg-7 me-xl-10">
+        <!--begin::Card--> 
+<div class="card">     
+    <!--begin::Card body-->
+    <div class="card-body p-12">
+        <!--begin::Form-->
+        <form action="" action="" id="kt_invoice_form">
+            <!--begin::Wrapper-->
+            <div class="d-flex flex-column align-items-start flex-xxl-row">
+                <!--begin::Input group-->
+                <div class="d-flex align-items-center flex-equal fw-row me-4 order-2" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice date">
+                    <!--begin::Date-->
+                    <div class="fs-6 fw-bold text-gray-700 text-nowrap">Fecha:</div>  
+                    <!--end::Date-->                    
 
+                    <!--begin::Input-->
+                    <div class="position-relative d-flex align-items-center w-150px">
+                        <!--begin::Datepicker-->
+                        <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="invoice_date"/>
+                        <!--end::Datepicker-->
+                        
+                        <!--begin::Icon-->
+                        <i class="ki-duotone ki-down fs-4 position-absolute ms-4 end-0"></i>                        <!--end::Icon-->
+                    </div>
+                    <!--end::Input-->                
+                </div>                
+                <!--end::Input group--> 
 
+                <!--begin::Input group-->
+                <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
+                    
+                </div>                
+                <!--end::Input group--> 
 
-                            </div>
+                <!--begin::Input group-->
+                <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice due date">
+                    <!--begin::Date-->
+                    <span class="fs-2x fw-bold text-gray-800">Factura #</span> 
+                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="2024001" placehoder="..."/>
+                    <!--end::Input-->                
+                </div>                
+                <!--end::Input group--> 
+            </div>                
+            <!--end::Top-->       
 
-                                
+            <!--begin::Separator-->
+            <div class="separator separator-dashed my-10"></div>
+            <!--end::Separator-->         
 
-                                
+            <!--begin::Wrapper-->
+            <div class="mb-0">
+                <!--begin::Row-->
+                <div class="row gx-10 mb-5">
+                    <!--begin::Col-->
+                    <div class="col-lg-6">
+                        <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Factura de</label>
 
-                            </div>
-                            <!--end::Header-->
-
-                            <!--begin::Body-->
-                            <div class="card-body py-3">
-
-                            </div>
-                            <!--end::Body-->
+                        <!--begin::Input group-->
+                        <div class="mb-5">
+                            <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" onchange="valor()">
+                                <option value=" ">Buscar comercio</option>
+                                @foreach ($comercios as $comercio)
+                                <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
+                                @endforeach
+                            </select>
                         </div>
 
+                        @foreach ($comercios as $comercio)
+                        <input hidden id="dir{{$comercio->comercio}}" value="{{ $comercio->direccion }} ">
+                        <input hidden id="cor{{$comercio->comercio}}" value="{{ $comercio->correo }} ">
+                        <input hidden id="tel{{$comercio->comercio}}" value="{{ $comercio->telefono }} ">
+                            
+                                @endforeach
 
+                        <!--end::Input group-->
 
+                        <!--begin::Input group-->
+                        <div class="mb-5">
+                            <input type="text" class="form-control form-control-solid" placeholder="Correo" name="correo" id="correo" />
+                        </div>
+                        <!--end::Input group-->
 
-
-
-
-
-
-
-
-
-
-                    </div>
-                    <!--end::Col-->
+                        <!--begin::Input group-->
+                        <div class="mb-5">
+                           
+                        </div>
+                        <!--end::Input group-->
+                    </div>                
+                    <!--end::Col--> 
 
                     <!--begin::Col-->
-                    <div class="col-xl-4 ">
-
-<!--begin::Calculadora-->
-                                <div class="col-xl-12 border shadow p-4">
-
-
-                                <div class="col-12 mb-3 pt-4">
-
-
-                                    <input type="text" class="form-control" id="calculo">
-
-                                </div>
-                                <div class="row">
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-info w-100 " id="uno" onclick="calcu()" value="1">1</button>
-
-                                </div>
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="dos" onclick="calcu2()" value="2">2</button>
-
-                                </div>
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="tres" onclick="calcu3()" value="3">3</button>
-
-                                </div>
-
-                                <div class="col-3 px-2">
-
-                                    <button type="button" class="btn btn-secondary w-100 px-2" id="ce" onclick="calcuc()" value="C">C</button>
-
-                                </div>
-
-                                </div>
-
-                                <div class="row">
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 " id="cuatro" onclick="calcu4()" value="4">4</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="cinco" onclick="calcu5()" value="5">5</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="seis" onclick="calcu6()" value="6">6</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-secondary w-100 px-2" id="borrar" onclick="calcuborrar()" value="Borrar">Borrar</button>
-
-                                </div>
-
-                                </div>
-
-
-                                <div class="row">
-                                <div class="col-3 px-2 mt-2">
-
-<button type="button" class="btn btn-info w-100 " id="siete" onclick="calcu7()" value="7">7</button>
-
-</div>
-
-<div class="col-3 px-2 mt-2">
-
-<button type="button" class="btn btn-info w-100 px-2" id="ocho" onclick="calcu8()" value="8">8</button>
-
-</div>
-
-<div class="col-3 px-2 mt-2">
-
-<button type="button" class="btn btn-info w-100 px-2" id="nueve" onclick="calcu9()" value="9">9</button>
-
-</div>
-
-<div class="col-3 px-2 mt-2">
-
-<button type="button" class="btn btn-warning px-2" style="height:100px; position:absolute; width:78px;" id="enter" onclick="calcuenter()" value="Enter">Enter</button>
-
-</div>
-                                </div>
-
-
-                                <div class="row">
-                                
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 " id="cero" onclick="calcu0()" value="0">0</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="cerocero" onclick="calcu00()" value="00">00</button>
-
-                                </div>
-
-                                <div class="col-3 px-2 mt-2">
-
-                                    <button type="button" class="btn btn-info w-100 px-2" id="punto" onclick="calcupunto()" value=".">.</button>
-
-                                </div>
-                                <div class="col-3 px-2 mt-2">
-
-</div>
-
-                                </div>
-
-                                </div>
-
-
-
-
-
-
-<!--End::Calculadora-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<br>
-
-
-                        <!--begin::Mixed Widget 12-->
-                        <div class="card mb-5 mb-lg-10">
-                            <!--begin::Header-->
-
-
-                            <div class="card card-flush bg-body" id="kt_pos_form">
-                                <!--begin::Header-->
-                                
-
-                                <!--begin::Body-->
-                                <div class="card-body pt-0">
-                                    
-                                   
-                                    
-                                    <!--begin::Summary-->
-                                    <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
-                                        <!--begin::Content-->
-                                        <div class="fs-6 fw-bold text-white">
-                                            
-                                            <span class="d-block fs-2qx lh-1">Total</span>
-                                        </div>
-                                        <!--end::Content-->
-                                        <!--begin::Content-->
-                                        <div class="fs-6 fw-bold text-white text-end">
-                                            
-                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
-                                        </div>
-                                        <!--end::Content-->
-                                    </div>
-                                    <!--end::Summary-->
-                                    <!--begin::Payment Method-->
-                                    <div class="m-0 text-center">
-                                        <!--begin::Actions-->
-                                        <div class="row">
-                                            <div class="col-8">
-                                        <a href="/cobro/limpiar">
-                                        <button class="btn btn-primary  py-3">Guardar e imprimir</button>
-                                    </a>
-                                    </div>
-                                    <div class="col-4">
-                                        <a href="/cobro/limpiar">
-                                            <button class="btn btn-primary py-3">Limpiar</button>
-                                        </a>
-
-                                        </div>
-                                        <!--end::Actions-->
-                                    </div>
-                                    <!--end::Payment Method-->
-                                </div>
-                                <!--end: Card Body-->
-
-
-
-                            </div>
-                            <!--end::Header-->
-
-                            <!--begin::Body-->
-
-                            <!--end::Body-->
+                    <div class="col-lg-6">
+                        <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+
+                        <!--begin::Input group-->
+                        <div class="mb-5">
+                            <input type="text" class="form-control form-control-solid" placeholder="Direccion" name="direccion" id="direccion" />
                         </div>
-                        <!--end::Mixed Widget 12-->
+                        <!--end::Input group-->
 
+                        <!--begin::Input group-->
+                        <div class="mb-5">
+                            <input type="text" class="form-control form-control-solid" placeholder="Telefono" name="telefono" id="telefono" />
+                        </div>
+                        <!--end::Input group-->
 
+                        <!--begin::Input group-->
+                        <div class="mb-5">
+                           
+                        </div>
+                        <!--end::Input group-->
+                    </div>                
+                    <!--end::Col--> 
+                </div>                
+                <!--end::Row--> 
 
-                        <!--end: List Widget 5-->
-                    </div>
-                    <!--end::Col-->
-                </div>
-                <!--end::Row-->
-            </div>
-            <!--end::Post-->
+                <!--begin::Table wrapper-->
+                <div class="table-responsive mb-10">
+                     <!--begin::Table-->
+                    <table class="table g-5 gs-0 mb-0 fw-bold text-gray-700" data-kt-element="items">
+                        <!--begin::Table head-->
+                        <thead>
+                            <tr class="border-bottom fs-7 fw-bold text-gray-700 text-uppercase">
+                                <th class="min-w-300px w-475px">Tipo</th>
+                                <th class="min-w-100px w-100px">Cantidad</th>
+                                <th class="min-w-150px w-150px">Price</th>
+                                
+                                <th class="min-w-75px w-75px text-end">Accion</th>
+                            </tr>
+                        </thead>
+                        <!--end::Table head-->
+
+                        <!--begin::Table body-->
+                        <tbody>
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    
+                                    <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
+                                        <option value="Personalizado">Personalizado</option>
+                                        <option value="Personalizado departamental">Personalizado departamental</option>
+                                        <option value="Punto fijo">Punto fijo</option>
+                                        <option value="Casillero">Casillero</option>
+                                    </select>
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
+                                </td>
+
+                                <td class="ps-0">                                            
+                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                </td>
+
+                                <td>   
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+
+                                <td class="pt-5 text-end">
+                                    <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
+                                        <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    </button>                             
+                                </td>
+                            </tr>          
+                        </tbody>
+                        <!--end::Table body-->
+
+                        <!--begin::Table foot-->
+                        <tfoot>
+                            <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
+                                <th class="text-primary">
+                                    <button class="btn btn-link py-1" data-kt-element="add-item">Agregar item</button>
+                                </th>  
+
+                                <th colspan="2" class="border-bottom border-bottom-dashed ps-0">
+                                    <div class="d-flex flex-column align-items-start">
+                                        <div class="fs-5">Subtotal</div> 
+
+                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar IVA</button>
+
+                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar descuento</button>
+                                    </div>
+                                </th> 
+
+                                <th colspan="2" class="border-bottom border-bottom-dashed text-end">
+                                    $<span data-kt-element="sub-total">0.00</span>
+                                </th> 
+                            </tr>    
+                            
+                            <tr class="align-top fw-bold text-gray-700">
+                                <th></th>
+                                
+                                <th colspan="2" class="fs-4 ps-0">Total</th> 
+
+                                <th colspan="2" class="text-end fs-4 text-nowrap">
+                                    $<span data-kt-element="grand-total">0.00</span>
+                                </th> 
+                            </tr>          
+                        </tfoot>
+                        <!--end::Table foot-->
+                    </table>
+                </div>  
+                <!--end::Table-->
+
+                <!--begin::Item template-->
+                <table class="table d-none" data-kt-element="item-template">
+                    <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                        <td class="pe-7">                                            
+                            
+                            <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
+                                <option value="Personalizado">Personalizado</option>
+                                <option value="Personalizado departamental">Personalizado departamental</option>
+                                <option value="Punto fijo">Punto fijo</option>
+                                <option value="Casillero">Casillero</option>
+                            </select>
+                            <br>
+<div class="row">
+                                                        <div class="col-8">
+                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía">
+                                                    <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                </div>
+                                                <div class="col-4">
+                                                    <button type="submit" class="btn btn-primary mb-3">Agregar</button>
+                                                    <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                </div>
+
+                                                </div>
+                        </td>
+
+                        <td class="ps-0">                                            
+                            <input type="text" class="form-control form-control-solid" type="number" name="cantidad" placeholder="0" value="0" data-kt-element="quantity" readonly/>
+                        </td>
+
+                        <td>   
+                            <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                        </td>
+                        
+                        
+
+                        <td class="pt-5 text-end">
+                            <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
+                                <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    </button>                             
+                        </td>
+                    </tr>          
+                </table>
+
+                <table class="table d-none" data-kt-element="empty-template">
+                    <tr data-kt-element="empty">
+                        <th colspan="5" class="text-muted text-center py-10">
+                            No items
+                        </th>
+                    </tr>
+                </table>
+                <!--end::Item template-->
+
+                <!--begin::Notes-->            
+                <div class="mb-0">
+                    <label class="form-label fs-6 fw-bold text-gray-700">Notes</label>
+
+                    <textarea name="notes" class="form-control form-control-solid" rows="3" placeholder="Thanks for your business"></textarea>
+                </div>                        
+                <!--end::Notes--> 
+            </div>   
+            <!--end::Wrapper-->          
+        </form>
+        <!--end::Form-->
+    </div>
+    <!--end::Card body-->
+</div>     
+<!--end::Card-->         
+    </div>  
+    <!--end::Content-->
+
+    <!--begin::Sidebar-->
+    <div class="flex-lg-auto min-w-lg-300px">
+        <!--begin::Card-->
+<div class="card"
+    data-kt-sticky="true"
+    data-kt-sticky-name="invoice"
+    data-kt-sticky-offset="{default: false, lg: '200px'}"
+    data-kt-sticky-width="{lg: '250px', lg: '300px'}"
+    data-kt-sticky-left="auto"
+    data-kt-sticky-top="150px"
+    data-kt-sticky-animation="false"
+    data-kt-sticky-zindex="95">
+
+    <!--begin::Card body-->
+    <div class="card-body p-10">  
+        <!--begin::Input group-->
+        <div class="mb-10">
+            <!--begin::Label-->
+            <label class="form-label fw-bold fs-6 text-gray-700">Currency</label>
+            <!--end::Label-->
+
+            <!--begin::Select-->           
+            <select name="currnecy" aria-label="Select a Timezone" data-control="select2"  class="form-select form-select-solid">
+                <option value=""></option>
+
+                                    <option data-kt-flag="flags/united-states.svg" value="USD"><b>USD</b>&nbsp;-&nbsp;USA dollar</option>
+                                    <option data-kt-flag="flags/united-kingdom.svg" value="GBP"><b>GBP</b>&nbsp;-&nbsp;British pound</option>
+                                    <option data-kt-flag="flags/australia.svg" value="AUD"><b>AUD</b>&nbsp;-&nbsp;Australian dollar</option>
+                                    <option data-kt-flag="flags/japan.svg" value="JPY"><b>JPY</b>&nbsp;-&nbsp;Japanese yen</option>
+                                    <option data-kt-flag="flags/sweden.svg" value="SEK"><b>SEK</b>&nbsp;-&nbsp;Swedish krona</option>
+                                    <option data-kt-flag="flags/canada.svg" value="CAD"><b>CAD</b>&nbsp;-&nbsp;Canadian dollar</option>
+                                    <option data-kt-flag="flags/switzerland.svg" value="CHF"><b>CHF</b>&nbsp;-&nbsp;Swiss franc</option>
+                            </select>            
+            <!--end::Select-->
         </div>
-        <!--end::Container-->
+        <!--end::Input group-->
+
+        <!--begin::Separator-->
+        <div class="separator separator-dashed mb-8"></div>
+        <!--end::Separator--> 
+
+        <!--begin::Input group-->
+        <div class="mb-8">
+            <!--begin::Option-->
+            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack mb-5">
+                <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
+                    Payment method
+                </span>
+
+                <input class="form-check-input" type="checkbox" checked="checked" value=""/>               
+            </label>
+            <!--end::Option-->
+
+            <!--begin::Option-->
+            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack mb-5">
+                <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
+                    Late fees
+                </span>
+
+                <input class="form-check-input" type="checkbox" value=""/>               
+            </label>
+            <!--end::Option-->
+
+            <!--begin::Option-->
+            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
+                <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
+                    Notes
+                </span>
+
+                <input class="form-check-input" type="checkbox" value=""/>               
+            </label>
+            <!--end::Option-->
+        </div>
+        <!--end::Input group-->
+
+        <!--begin::Separator-->
+        <div class="separator separator-dashed mb-8"></div>
+        <!--end::Separator-->
+                              
+        <!--begin::Actions-->
+        <div class="mb-0">
+            <!--begin::Row-->
+            <div class="row mb-5">
+                <!--begin::Col-->
+                <div class="col">
+                    <a href="#" class="btn btn-light btn-active-light-primary w-100">Preview</a>                
+                </div>   
+                <!--end::Col-->
+
+                <!--begin::Col-->
+                <div class="col">
+                    <a href="#" class="btn btn-light btn-active-light-primary w-100">Download</a>
+                </div>  
+                <!--end::Col-->
+            </div>   
+            <!--end::Row-->
+            
+            <button type="submit" href="#" class="btn btn-primary w-100" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>                Send Invoice
+            </button>
+        </div>                
+        <!--end::Actions-->    
+    </div>
+    <!--end::Card body-->
+</div>     
+<!--end::Card-->         
+    </div>  
+    <!--end::Sidebar-->
+</div>
+<!--end::Layout-->              </div>
+        <!--end::Content container-->
+    </div>
+<!--end::Content-->	
+
+                                    </div>
+                <!--end::Content wrapper-->
+
 
 
 
@@ -1203,6 +744,20 @@
     <!--begin::Vendors Javascript(used for this page only)-->
     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
     <!--end::Vendors Javascript-->
+
+
+<!--begin::Vendors Javascript(used for this page only)-->
+     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+ <!--end::Vendors Javascript-->
+
+<!--begin::Custom Javascript(used for this page only)-->
+     <script src="assets/js/custom/apps/invoices/create.js"></script>
+     <script src="assets/js/widgets.bundle.js"></script>
+     <script src="assets/js/custom/widgets.js"></script>
+     <script src="assets/js/custom/apps/chat/chat.js"></script>
+     <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
+     <script src="assets/js/custom/utilities/modals/create-app.js"></script>
+     <script src="assets/js/custom/utilities/modals/users-search.js"></script>
 
 
     <script>
