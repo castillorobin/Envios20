@@ -298,9 +298,9 @@
                             <tr class="border-bottom fs-7 fw-bold text-gray-700 text-uppercase">
                                 <th class="min-w-300px w-475px">Tipo</th>
                                 <th class="min-w-100px w-100px">Cantidad</th>
-                                <th class="min-w-150px w-150px">Price</th>
+                                <th class="min-w-150px w-150px">Precio</th>
                                 
-                                <th class="min-w-75px w-75px text-end">Accion</th>
+                                
                             </tr>
                         </thead>
                         <!--end::Table head-->
@@ -309,13 +309,8 @@
                         <tbody>
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
                                 <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Personalizado</label>
                                     
-                                    <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
-                                        <option value="Personalizado">Personalizado</option>
-                                        <option value="Personalizado departamental">Personalizado departamental</option>
-                                        <option value="Punto fijo">Punto fijo</option>
-                                        <option value="Casillero">Casillero</option>
-                                    </select>
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
@@ -340,11 +335,128 @@
                                 
                                 
 
-                                <td class="pt-5 text-end">
-                                    <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
-                                        <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    </button>                             
+                                
+                            </tr>    
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Personalizado departamental</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
                                 </td>
-                            </tr>          
+
+                                <td class="ps-0">                                            
+                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                </td>
+
+                                <td>   
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+
+                                
+                            </tr>     
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Punto fijo</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
+                                </td>
+
+                                <td class="ps-0">                                            
+                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                </td>
+
+                                <td>   
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+
+                                
+                            </tr>    
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Casillero</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
+                                </td>
+
+                                <td class="ps-0">                                            
+                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                </td>
+
+                                <td>   
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+
+                                
+                            </tr>       
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Guias</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
+                                </td>
+
+                                <td class="ps-0">                                            
+                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                </td>
+
+                                <td>   
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+
+                                
+                            </tr>         
                         </tbody>
                         <!--end::Table body-->
 
@@ -352,7 +464,7 @@
                         <tfoot>
                             <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
                                 <th class="text-primary">
-                                    <button class="btn btn-link py-1" data-kt-element="add-item">Agregar item</button>
+                                   
                                 </th>  
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed ps-0">
@@ -385,62 +497,12 @@
                 </div>  
                 <!--end::Table-->
 
-                <!--begin::Item template-->
-                <table class="table d-none" data-kt-element="item-template">
-                    <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
-                        <td class="pe-7">                                            
-                            
-                            <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
-                                <option value="Personalizado">Personalizado</option>
-                                <option value="Personalizado departamental">Personalizado departamental</option>
-                                <option value="Punto fijo">Punto fijo</option>
-                                <option value="Casillero">Casillero</option>
-                            </select>
-                            <br>
-<div class="row">
-                                                        <div class="col-8">
-                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía">
-                                                    <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
-                                                </div>
-                                                <div class="col-4">
-                                                    <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                    <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                </div>
-
-                                                </div>
-                        </td>
-
-                        <td class="ps-0">                                            
-                            <input type="text" class="form-control form-control-solid" type="number" name="cantidad" placeholder="0" value="0" data-kt-element="quantity" readonly/>
-                        </td>
-
-                        <td>   
-                            <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
-                        </td>
-                        
-                        
-
-                        <td class="pt-5 text-end">
-                            <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
-                                <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    </button>                             
-                        </td>
-                    </tr>          
-                </table>
-
-                <table class="table d-none" data-kt-element="empty-template">
-                    <tr data-kt-element="empty">
-                        <th colspan="5" class="text-muted text-center py-10">
-                            No items
-                        </th>
-                    </tr>
-                </table>
-                <!--end::Item template-->
+               
 
                 <!--begin::Notes-->            
                 <div class="mb-0">
-                    <label class="form-label fs-6 fw-bold text-gray-700">Notes</label>
-
-                    <textarea name="notes" class="form-control form-control-solid" rows="3" placeholder="Thanks for your business"></textarea>
+                   
+                    <!--Donde estaba la nota hasta abajo--> 
                 </div>                        
                 <!--end::Notes--> 
             </div>   
