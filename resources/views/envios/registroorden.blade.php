@@ -244,7 +244,7 @@
 
                         <!--begin::Input group-->
                         <div class="mb-5">
-                            <textarea name="notes" class="form-control form-control-solid" rows="3" placeholder="Who is this invoice from?"></textarea>
+                           
                         </div>
                         <!--end::Input group-->
                     </div>                
@@ -268,7 +268,7 @@
 
                         <!--begin::Input group-->
                         <div class="mb-5">
-                            <textarea name="notes" class="form-control form-control-solid" rows="3" placeholder="What is this invoice for?"></textarea>
+                           
                         </div>
                         <!--end::Input group-->
                     </div>                
