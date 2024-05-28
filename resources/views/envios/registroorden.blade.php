@@ -68,17 +68,65 @@
        
     }
 
-    function aumentar() {
-
-// alert("hola");
-
- nombre = parseFloat(document.getElementById("cantidad").value);
- // alert(nombre);
+    function aumentar1() {
+ nombre = parseFloat(document.getElementById("cantidad1").value);
  nom= nombre + 1;
- 
- document.getElementById("cantidad").value = parseFloat(nom);
- document.getElementById("guia").value = " ";
+ document.getElementById("cantidad1").value = parseFloat(nom);
+ document.getElementById("guia1").value = " ";
 
+}
+function aumentar2() {
+ nombre = parseFloat(document.getElementById("cantidad2").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad2").value = parseFloat(nom);
+ document.getElementById("guia2").value = " ";
+}
+ function aumentar3() {
+ nombre = parseFloat(document.getElementById("cantidad3").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad3").value = parseFloat(nom);
+ document.getElementById("guia3").value = " ";
+
+}
+function aumentar4() {
+ nombre = parseFloat(document.getElementById("cantidad4").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad4").value = parseFloat(nom);
+ document.getElementById("guia4").value = " ";
+
+}
+function aumentar5() {
+ nombre = parseFloat(document.getElementById("cantidad5").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad5").value = parseFloat(nom);
+ document.getElementById("guia5").value = " ";
+
+}
+
+function limpiar1() {
+ document.getElementById("guia1").value = " ";
+ document.getElementById("cantidad1").value = " ";
+ document.getElementById("precio1").value = " ";
+}
+function limpiar2() {
+ document.getElementById("guia2").value = " ";
+ document.getElementById("cantidad2").value = " ";
+ document.getElementById("precio2").value = " ";
+}
+function limpiar3() {
+ document.getElementById("guia3").value = " ";
+ document.getElementById("cantidad3").value = " ";
+ document.getElementById("precio3").value = " ";
+}
+function limpiar4() {
+ document.getElementById("guia4").value = " ";
+ document.getElementById("cantidad4").value = " ";
+ document.getElementById("precio4").value = " ";
+}
+function limpiar5() {
+ document.getElementById("guia5").value = " ";
+ document.getElementById("cantidad5").value = " ";
+ document.getElementById("precio5").value = " ";
 }
     
     </script>
@@ -298,9 +346,10 @@
                             <tr class="border-bottom fs-7 fw-bold text-gray-700 text-uppercase">
                                 <th class="min-w-300px w-475px">Tipo</th>
                                 <th class="min-w-100px w-100px">Cantidad</th>
-                                <th class="min-w-150px w-150px">Price</th>
+                                <th class="min-w-150px w-150px">Precio</th>
+                                <th class="min-w-150px w-150px">Accion</th>
                                 
-                                <th class="min-w-75px w-75px text-end">Accion</th>
+                                
                             </tr>
                         </thead>
                         <!--end::Table head-->
@@ -309,42 +358,180 @@
                         <tbody>
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
                                 <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Personalizado</label>
                                     
-                                    <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
-                                        <option value="Personalizado">Personalizado</option>
-                                        <option value="Personalizado departamental">Personalizado departamental</option>
-                                        <option value="Punto fijo">Punto fijo</option>
-                                        <option value="Casillero">Casillero</option>
-                                    </select>
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="form-control form-control-solid " id="guia1" name="guia1" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese1" id="ingrese1">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar1()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
                                                         </div>
                                 </td>
 
-                                <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                <td class="ps-0">   
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                         
+                                    <input type="text" class="form-control form-control-solid" id="cantidad1" name="cantidad1"  value="0" />
                                 </td>
 
                                 <td>   
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar1()"><i class="fas fa-broom"></i></button>
+                                </td>
                                 
 
-                                <td class="pt-5 text-end">
-                                    <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
-                                        <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    </button>                             
+                                
+                            </tr>    
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Personalizado departamental</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia2" name="guia2" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese2" id="ingrese2">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar2()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
                                 </td>
-                            </tr>          
+
+                                <td class="ps-0">          
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                  
+                                    <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2"  value="0" />
+                                </td>
+
+                                <td>   
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar2()"><i class="fas fa-broom"></i></button>
+                                </td>
+                                
+                            </tr>     
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Punto fijo</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia3" name="guia3" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese3" id="ingrese3">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar3()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
+                                </td>
+
+                                <td class="ps-0">      
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                      
+                                    <input type="text" class="form-control form-control-solid" id="cantidad3" name="cantidad3"  value="0" />
+                                </td>
+
+                                <td>   
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar3()"><i class="fas fa-broom"></i></button>
+                                </td>
+
+                                
+                            </tr>    
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3">Casillero</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese4" id="ingrese4">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar4()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
+                                </td>
+
+                                <td class="ps-0">            
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                
+                                    <input type="text" class="form-control form-control-solid" id="cantidad4" name="cantidad4"  value="0" />
+                                </td>
+
+                                <td>   
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar4()"><i class="fas fa-broom"></i></button>
+                                </td>
+                                
+                            </tr>       
+                            <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <td class="pe-7">                                            
+                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Guias</label>
+                                    
+                                    <br>
+<div class="row">
+                                                                <div class="col-8">
+                                                            <input type="text" class="form-control form-control-solid " id="guia5" name="guia5" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese5" id="ingrese5">
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar5()">Agregar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                        </div>
+
+                                                        </div>
+                                </td>
+
+                                <td class="ps-0">       
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                     
+                                    <input type="text" class="form-control form-control-solid" id="cantidad5" name="cantidad5"  value="0" />
+                                </td>
+
+                                <td>   
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                </td>
+                                
+                                
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar5()"><i class="fas fa-broom"></i></button>
+                                </td>
+                                
+                            </tr>         
                         </tbody>
                         <!--end::Table body-->
 
@@ -352,7 +539,7 @@
                         <tfoot>
                             <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
                                 <th class="text-primary">
-                                    <button class="btn btn-link py-1" data-kt-element="add-item">Agregar item</button>
+                                   
                                 </th>  
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed ps-0">
@@ -385,62 +572,12 @@
                 </div>  
                 <!--end::Table-->
 
-                <!--begin::Item template-->
-                <table class="table d-none" data-kt-element="item-template">
-                    <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
-                        <td class="pe-7">                                            
-                            
-                            <select class="form-select form-select-solid mb-2 col-12" name="tipo" id="tipo">
-                                <option value="Personalizado">Personalizado</option>
-                                <option value="Personalizado departamental">Personalizado departamental</option>
-                                <option value="Punto fijo">Punto fijo</option>
-                                <option value="Casillero">Casillero</option>
-                            </select>
-                            <br>
-<div class="row">
-                                                        <div class="col-8">
-                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía">
-                                                    <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
-                                                </div>
-                                                <div class="col-4">
-                                                    <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                    <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
-                                                </div>
-
-                                                </div>
-                        </td>
-
-                        <td class="ps-0">                                            
-                            <input type="text" class="form-control form-control-solid" type="number" name="cantidad" placeholder="0" value="0" data-kt-element="quantity" readonly/>
-                        </td>
-
-                        <td>   
-                            <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
-                        </td>
-                        
-                        
-
-                        <td class="pt-5 text-end">
-                            <button type="button" class="btn btn-sm btn-icon btn-active-color-primary" data-kt-element="remove-item">
-                                <i class="ki-duotone ki-trash fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>                                    </button>                             
-                        </td>
-                    </tr>          
-                </table>
-
-                <table class="table d-none" data-kt-element="empty-template">
-                    <tr data-kt-element="empty">
-                        <th colspan="5" class="text-muted text-center py-10">
-                            No items
-                        </th>
-                    </tr>
-                </table>
-                <!--end::Item template-->
+               
 
                 <!--begin::Notes-->            
                 <div class="mb-0">
-                    <label class="form-label fs-6 fw-bold text-gray-700">Notes</label>
-
-                    <textarea name="notes" class="form-control form-control-solid" rows="3" placeholder="Thanks for your business"></textarea>
+                   
+                    <!--Donde estaba la nota hasta abajo--> 
                 </div>                        
                 <!--end::Notes--> 
             </div>   
