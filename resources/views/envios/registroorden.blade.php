@@ -68,16 +68,38 @@
        
     }
 
-    function aumentar() {
-
-// alert("hola");
-
- nombre = parseFloat(document.getElementById("cantidad").value);
- // alert(nombre);
+    function aumentar1() {
+ nombre = parseFloat(document.getElementById("cantidad1").value);
  nom= nombre + 1;
- 
- document.getElementById("cantidad").value = parseFloat(nom);
- document.getElementById("guia").value = " ";
+ document.getElementById("cantidad1").value = parseFloat(nom);
+ document.getElementById("guia1").value = " ";
+
+}
+function aumentar2() {
+ nombre = parseFloat(document.getElementById("cantidad2").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad2").value = parseFloat(nom);
+ document.getElementById("guia2").value = " ";
+}
+ function aumentar3() {
+ nombre = parseFloat(document.getElementById("cantidad3").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad3").value = parseFloat(nom);
+ document.getElementById("guia3").value = " ";
+
+}
+function aumentar4() {
+ nombre = parseFloat(document.getElementById("cantidad4").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad4").value = parseFloat(nom);
+ document.getElementById("guia4").value = " ";
+
+}
+function aumentar5() {
+ nombre = parseFloat(document.getElementById("cantidad5").value);
+ nom= nombre + 1;
+ document.getElementById("cantidad5").value = parseFloat(nom);
+ document.getElementById("guia5").value = " ";
 
 }
 
@@ -345,7 +367,7 @@ function limpiar5() {
                                                             <input type="text" value="Personalizado" class="visually-hidden" name="ingrese1" id="ingrese1">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar1()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -381,7 +403,7 @@ function limpiar5() {
                                                             <input type="text" value="Personalizado" class="visually-hidden" name="ingrese2" id="ingrese2">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar2()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -416,7 +438,7 @@ function limpiar5() {
                                                             <input type="text" value="Personalizado" class="visually-hidden" name="ingrese3" id="ingrese3">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar3()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -451,7 +473,7 @@ function limpiar5() {
                                                             <input type="text" value="Personalizado" class="visually-hidden" name="ingrese4" id="ingrese4">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar4()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -486,7 +508,7 @@ function limpiar5() {
                                                             <input type="text" value="Personalizado" class="visually-hidden" name="ingrese5" id="ingrese5">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
+                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar5()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
