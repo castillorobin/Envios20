@@ -52,9 +52,7 @@ Route::get('/empleados/crear', function () {
 });
 */
 
-Route::get('/envios/detalle', function () {
-    return view('envios.detalle');
-});
+
 
 /*
 Route::get('/comercio/crearcomercio', function () {
@@ -67,7 +65,12 @@ Route::get('/envios/envi', function () {
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
-
+Route::get('/envios/detalle', function () {
+    return view('envios.detalle');
+});
+Route::get('/envios/editardetalle', function () {
+    return view('envios.editardetalle');
+});
 Route::get('envio', [App\Http\Controllers\EnvioController::class, 'index'] )->name('index') ;
 Route::get('envio/indexdigitadofiltro/{id}', [App\Http\Controllers\EnvioController::class, 'indexdigitadofiltro'] )->name('indexdigitadofiltro') ;
 Route::get('envio/crear', [App\Http\Controllers\EnvioController::class, 'crearenvio'] )->name('crearenvio') ;
