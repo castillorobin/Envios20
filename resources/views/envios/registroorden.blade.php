@@ -80,6 +80,32 @@
  document.getElementById("guia").value = " ";
 
 }
+
+function limpiar1() {
+ document.getElementById("guia1").value = " ";
+ document.getElementById("cantidad1").value = " ";
+ document.getElementById("precio1").value = " ";
+}
+function limpiar2() {
+ document.getElementById("guia2").value = " ";
+ document.getElementById("cantidad2").value = " ";
+ document.getElementById("precio2").value = " ";
+}
+function limpiar3() {
+ document.getElementById("guia3").value = " ";
+ document.getElementById("cantidad3").value = " ";
+ document.getElementById("precio3").value = " ";
+}
+function limpiar4() {
+ document.getElementById("guia4").value = " ";
+ document.getElementById("cantidad4").value = " ";
+ document.getElementById("precio4").value = " ";
+}
+function limpiar5() {
+ document.getElementById("guia5").value = " ";
+ document.getElementById("cantidad5").value = " ";
+ document.getElementById("precio5").value = " ";
+}
     
     </script>
 
@@ -299,6 +325,7 @@
                                 <th class="min-w-300px w-475px">Tipo</th>
                                 <th class="min-w-100px w-100px">Cantidad</th>
                                 <th class="min-w-150px w-150px">Precio</th>
+                                <th class="min-w-150px w-150px">Accion</th>
                                 
                                 
                             </tr>
@@ -314,8 +341,8 @@
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="form-control form-control-solid " id="guia1" name="guia1" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese1" id="ingrese1">
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
@@ -325,14 +352,20 @@
                                                         </div>
                                 </td>
 
-                                <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                <td class="ps-0">   
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                         
+                                    <input type="text" class="form-control form-control-solid" id="cantidad1" name="cantidad1"  value="0" />
                                 </td>
 
                                 <td>   
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar1()"><i class="fas fa-broom"></i></button>
+                                </td>
                                 
 
                                 
@@ -344,8 +377,8 @@
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="form-control form-control-solid " id="guia2" name="guia2" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese2" id="ingrese2">
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
@@ -355,16 +388,21 @@
                                                         </div>
                                 </td>
 
-                                <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                <td class="ps-0">          
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                  
+                                    <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2"  value="0" />
                                 </td>
 
                                 <td>   
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
                                 
-
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar2()"><i class="fas fa-broom"></i></button>
+                                </td>
                                 
                             </tr>     
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
@@ -374,8 +412,8 @@
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="form-control form-control-solid " id="guia3" name="guia3" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese3" id="ingrese3">
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
@@ -385,15 +423,20 @@
                                                         </div>
                                 </td>
 
-                                <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                <td class="ps-0">      
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                      
+                                    <input type="text" class="form-control form-control-solid" id="cantidad3" name="cantidad3"  value="0" />
                                 </td>
 
                                 <td>   
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
-                                
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar3()"><i class="fas fa-broom"></i></button>
+                                </td>
 
                                 
                             </tr>    
@@ -404,8 +447,8 @@
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese4" id="ingrese4">
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
@@ -415,16 +458,21 @@
                                                         </div>
                                 </td>
 
-                                <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                <td class="ps-0">            
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                
+                                    <input type="text" class="form-control form-control-solid" id="cantidad4" name="cantidad4"  value="0" />
                                 </td>
 
                                 <td>   
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
                                 
-
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar4()"><i class="fas fa-broom"></i></button>
+                                </td>
                                 
                             </tr>       
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
@@ -434,8 +482,8 @@
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo" id="tipo">
+                                                            <input type="text" class="form-control form-control-solid " id="guia5" name="guia5" placeholder="Ingrese guía" >
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese5" id="ingrese5">
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="button" class="btn btn-primary mb-3" onclick="aumentar()">Agregar</button>
@@ -445,16 +493,21 @@
                                                         </div>
                                 </td>
 
-                                <td class="ps-0">                                            
-                                    <input type="text" class="form-control form-control-solid" id="cantidad" name="cantidad"  value="0" />
+                                <td class="ps-0">       
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                     
+                                    <input type="text" class="form-control form-control-solid" id="cantidad5" name="cantidad5"  value="0" />
                                 </td>
 
                                 <td>   
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0.00" value="0.00" data-kt-element="price"/>
                                 </td>
                                 
                                 
-
+                                <td >
+                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
+                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar5()"><i class="fas fa-broom"></i></button>
+                                </td>
                                 
                             </tr>         
                         </tbody>
