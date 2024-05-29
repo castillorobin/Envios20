@@ -104,31 +104,114 @@ function aumentar5() {
 }
 
 function limpiar1() {
- document.getElementById("guia1").value = " ";
- document.getElementById("cantidad1").value = " ";
- document.getElementById("precio1").value = " ";
+ document.getElementById("guia1").value = "";
+ document.getElementById("cantidad1").value = "0";
+ document.getElementById("precio1").value = "0";
 }
 function limpiar2() {
  document.getElementById("guia2").value = " ";
- document.getElementById("cantidad2").value = " ";
- document.getElementById("precio2").value = " ";
+ document.getElementById("cantidad2").value = "0";
+ document.getElementById("precio2").value = "0";
 }
 function limpiar3() {
  document.getElementById("guia3").value = " ";
- document.getElementById("cantidad3").value = " ";
- document.getElementById("precio3").value = " ";
+ document.getElementById("cantidad3").value = "0";
+ document.getElementById("precio3").value = "0";
 }
 function limpiar4() {
  document.getElementById("guia4").value = " ";
- document.getElementById("cantidad4").value = " ";
- document.getElementById("precio4").value = " ";
+ document.getElementById("cantidad4").value = "0";
+ document.getElementById("precio4").value = "0";
 }
 function limpiar5() {
  document.getElementById("guia5").value = " ";
- document.getElementById("cantidad5").value = " ";
- document.getElementById("precio5").value = " ";
+ document.getElementById("cantidad5").value = "0";
+ document.getElementById("precio5").value = "0";
 }
+
+
+
     
+    </script>
+
+    <script>
+        
+
+$(document).ready(function() {
+ 
+                      $("#precio1").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio2").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+
+                $("#precio2").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+
+                $("#precio3").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio2").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+                
+                   $("#precio4").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio2").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+                
+                   $("#precio5").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio2").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+
+
+
+                });
     </script>
 
 <body id="kt_body" class="" style="background-color:white; ">
@@ -381,7 +464,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 <td >
@@ -417,7 +500,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -452,7 +535,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 <td >
@@ -487,7 +570,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -522,7 +605,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -553,7 +636,7 @@ function limpiar5() {
                                 </th> 
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed text-end">
-                                    $<span data-kt-element="sub-total">0.00</span>
+                                    <span data-kt-element="sub-total" id="subto">$ 0.00</span>
                                 </th> 
                             </tr>    
                             
