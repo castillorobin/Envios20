@@ -114,7 +114,7 @@
                                                         <i class="ki-duotone ki-sms fs-5 me-1">
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
-                                                        </i>direccion de comercio</a>
+                                                        </i>Email comercio</a>
                                                 </div>
                                             </div>
                                             <div class="d-flex my-1">
@@ -173,7 +173,7 @@
                             <div class="card-header cursor-pointer">
                                 <!--begin::Card title-->
                                 <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">DESTINATARIO</h3>
+                                    <h3 class="fw-bold m-0">Detalles del envio</h3>
                                 </div>
                                 <!--end::Card title-->
                                 <!--begin::Action-->
@@ -183,6 +183,18 @@
                             <!--begin::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body p-9">
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-semibold text-muted">Estado
+                                    </label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8 d-flex align-items-center">
+                                        <span class="badge badge-success">Creado</span>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <!--end::Input group-->
                                 <!--begin::Row-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
@@ -207,6 +219,16 @@
                                     <!--end::Col-->
                                 </div>
                                 <!--end::Input group-->
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-semibold text-muted">Telefono Destinatario</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <span class="fw-bold fs-6 text-gray-800">7450-5041</span>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
