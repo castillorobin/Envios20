@@ -46,7 +46,7 @@ function agregariva() {
 
     const totalfin = (total + coniva);
 
-    $('#total1').text("$" + totalfin);
+    $('#total1').text(totalfin);
     //$('#siva').text("+$" + coniva);
     //checkbox.checked = false;
 
@@ -70,7 +70,7 @@ const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
 
 //const totalfin = (total + coniva);
 
-$('#total1').text("$" + total);
+$('#total1').text(total);
 //$('#siva').text("+$" + coniva);
 //checkbox.checked = false;
 
@@ -78,9 +78,34 @@ document.getElementById('siva').hidden = true;
 document.getElementById('aiva').hidden = false;
 
 };
+function descontar() {
 
-    
+/*
+
+const subtotal = parseFloat(document.getElementById('precio1').value);
+const subtotal2 = parseFloat(document.getElementById("precio2").value);
+const subtotal3 = parseFloat(document.getElementById("precio3").value);
+const subtotal4 = parseFloat(document.getElementById("precio4").value);
+const subtotal5 = parseFloat(document.getElementById("precio5").value);
+
+const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+//const coniva = total * 0.13;
+
+//const totalfin = (total + coniva);
+
+$('#total1').text("$" + total);
+//$('#siva').text("+$" + coniva);
+//checkbox.checked = false;
+*/
+//document.getElementById('siva').hidden = true;
+document.getElementById('descuent').hidden = false;
+
+};
+
+
     </script>
+
+
 
 <script>
     function valor() {
@@ -240,6 +265,25 @@ $(document).ready(function() {
          $('#subto').text("$ " + total);
 
                    });
+
+
+                  
+ 
+ $("#descuent").change(function() {
+    //alert("Hola");
+
+    const descu =parseFloat($(this).val());
+
+   const total =parseFloat($('#total1').text());
+
+    const totalsin = total - descu ;
+
+    $('#total1').text(totalsin);
+    
+
+    });
+
+
 
 
 
@@ -664,12 +708,13 @@ $(document).ready(function() {
                                         <button type="button" class="btn btn-link py-1" id="aiva" onclick="agregariva()">Agregar IVA</button>
                                         <button type="button" class="btn btn-link py-1" id="siva" onclick="quitariva()" hidden>Quitar IVA</button>
                                         
-                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar descuento</button>
+                                        <button type="button" class="btn btn-link py-1" onclick="descontar()" >Agregar descuento</button>
+                                        <input type="text" class="form-control form-control-solid" id="descuent" name="descuent"  value="0" hidden/>
                                     </div>
                                 </th> 
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed text-end">
-                                    <span data-kt-element="sub-total" id="subto">$ 0.00</span>
+                                    $ <span data-kt-element="sub-total" id="subto">$ 0.00</span>
                                 </th> 
                             </tr>    
                             
@@ -679,7 +724,7 @@ $(document).ready(function() {
                                 <th colspan="2" class="fs-4 ps-0" >Total</th> 
 
                                 <th colspan="2" class="text-end fs-4 text-nowrap">
-                                    <span data-kt-element="grand-total" id="total1">$0.00</span>
+                                   $ <span data-kt-element="grand-total" id="total1">0.00</span>
                                 </th> 
                             </tr>          
                         </tfoot>
