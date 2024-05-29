@@ -31,22 +31,54 @@
 
 
 <script>  
-/*
-    jQuery(document).ready(function($){
-        $(document).ready(function() {
-            $('.mi-selector').select2();
-           
-            $('#comercio').on('select2:select', function (e) { 
-                
-              alert("Hola mundo");
-            });
+function agregariva() {
+
+
+
+    const subtotal = parseFloat(document.getElementById('precio1').value);
+    const subtotal2 = parseFloat(document.getElementById("precio2").value);
+    const subtotal3 = parseFloat(document.getElementById("precio3").value);
+    const subtotal4 = parseFloat(document.getElementById("precio4").value);
+    const subtotal5 = parseFloat(document.getElementById("precio5").value);
+
+    const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+    const coniva = total * 0.13;
+
+    const totalfin = (total + coniva);
+
+    $('#total1').text("$" + totalfin);
+    //$('#siva').text("+$" + coniva);
+    //checkbox.checked = false;
+
+    document.getElementById('aiva').hidden = true;
+    document.getElementById('siva').hidden = false;
     
-        });
-       
-       
-    });
-    */
-    
+};
+
+function quitariva() {
+
+
+
+const subtotal = parseFloat(document.getElementById('precio1').value);
+const subtotal2 = parseFloat(document.getElementById("precio2").value);
+const subtotal3 = parseFloat(document.getElementById("precio3").value);
+const subtotal4 = parseFloat(document.getElementById("precio4").value);
+const subtotal5 = parseFloat(document.getElementById("precio5").value);
+
+const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+//const coniva = total * 0.13;
+
+//const totalfin = (total + coniva);
+
+$('#total1').text("$" + total);
+//$('#siva').text("+$" + coniva);
+//checkbox.checked = false;
+
+document.getElementById('siva').hidden = true;
+document.getElementById('aiva').hidden = false;
+
+};
+
     
     </script>
 
@@ -629,8 +661,9 @@ $(document).ready(function() {
                                     <div class="d-flex flex-column align-items-start">
                                         <div class="fs-5">Subtotal</div> 
 
-                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar IVA</button>
-
+                                        <button type="button" class="btn btn-link py-1" id="aiva" onclick="agregariva()">Agregar IVA</button>
+                                        <button type="button" class="btn btn-link py-1" id="siva" onclick="quitariva()" hidden>Quitar IVA</button>
+                                        
                                         <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar descuento</button>
                                     </div>
                                 </th> 
@@ -643,10 +676,10 @@ $(document).ready(function() {
                             <tr class="align-top fw-bold text-gray-700">
                                 <th></th>
                                 
-                                <th colspan="2" class="fs-4 ps-0">Total</th> 
+                                <th colspan="2" class="fs-4 ps-0" >Total</th> 
 
                                 <th colspan="2" class="text-end fs-4 text-nowrap">
-                                    $<span data-kt-element="grand-total">0.00</span>
+                                    <span data-kt-element="grand-total" id="total1">$0.00</span>
                                 </th> 
                             </tr>          
                         </tfoot>
