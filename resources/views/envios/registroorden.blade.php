@@ -166,22 +166,22 @@ function limpiar1() {
  document.getElementById("precio1").value = "0";
 }
 function limpiar2() {
- document.getElementById("guia2").value = " ";
+ document.getElementById("guia2").value = "";
  document.getElementById("cantidad2").value = "0";
  document.getElementById("precio2").value = "0";
 }
 function limpiar3() {
- document.getElementById("guia3").value = " ";
+ document.getElementById("guia3").value = "";
  document.getElementById("cantidad3").value = "0";
  document.getElementById("precio3").value = "0";
 }
 function limpiar4() {
- document.getElementById("guia4").value = " ";
+ document.getElementById("guia4").value = "";
  document.getElementById("cantidad4").value = "0";
  document.getElementById("precio4").value = "0";
 }
 function limpiar5() {
- document.getElementById("guia5").value = " ";
+ document.getElementById("guia5").value = "";
  document.getElementById("cantidad5").value = "0";
  document.getElementById("precio5").value = "0";
 }
@@ -206,7 +206,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
 
@@ -220,7 +220,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
 
@@ -234,7 +234,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
                 
@@ -248,7 +248,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
                 
@@ -262,7 +262,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
 
@@ -714,7 +714,7 @@ $(document).ready(function() {
                                 </th> 
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed text-end">
-                                    $ <span data-kt-element="sub-total" id="subto">$ 0.00</span>
+                                    $ <span data-kt-element="sub-total" id="subto">0.00</span>
                                 </th> 
                             </tr>    
                             
