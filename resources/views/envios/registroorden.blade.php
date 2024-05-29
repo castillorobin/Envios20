@@ -47,6 +47,7 @@ function agregariva() {
     const totalfin = (total + coniva);
 
     $('#total1').text(totalfin);
+    $('#ivam').text(coniva);
     //$('#siva').text("+$" + coniva);
     //checkbox.checked = false;
 
@@ -71,6 +72,7 @@ const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
 //const totalfin = (total + coniva);
 
 $('#total1').text(total);
+$('#ivam').text("0.00");
 //$('#siva').text("+$" + coniva);
 //checkbox.checked = false;
 
@@ -715,6 +717,8 @@ $(document).ready(function() {
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed text-end">
                                     $ <span data-kt-element="sub-total" id="subto">0.00</span>
+                                    <br>
+                                    $ <span data-kt-element="sub-total" id="ivam">0.00</span>
                                 </th> 
                             </tr>    
                             
