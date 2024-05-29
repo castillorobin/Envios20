@@ -345,7 +345,7 @@
                     <!--begin::Header-->
                    
                     <!--end::Form-->
-                </div>
+                </div> 
                 <!--end::Menu 1-->            <!--end::Menu-->
                         </div>
                     </div>

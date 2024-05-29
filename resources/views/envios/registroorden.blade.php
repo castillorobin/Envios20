@@ -31,24 +31,81 @@
 
 
 <script>  
+function agregariva() {
+
+
+
+    const subtotal = parseFloat(document.getElementById('precio1').value);
+    const subtotal2 = parseFloat(document.getElementById("precio2").value);
+    const subtotal3 = parseFloat(document.getElementById("precio3").value);
+    const subtotal4 = parseFloat(document.getElementById("precio4").value);
+    const subtotal5 = parseFloat(document.getElementById("precio5").value);
+
+    const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+    const coniva = total * 0.13;
+
+    const totalfin = (total + coniva);
+
+    $('#total1').text(totalfin);
+    //$('#siva').text("+$" + coniva);
+    //checkbox.checked = false;
+
+    document.getElementById('aiva').hidden = true;
+    document.getElementById('siva').hidden = false;
+    
+};
+
+function quitariva() {
+
+
+
+const subtotal = parseFloat(document.getElementById('precio1').value);
+const subtotal2 = parseFloat(document.getElementById("precio2").value);
+const subtotal3 = parseFloat(document.getElementById("precio3").value);
+const subtotal4 = parseFloat(document.getElementById("precio4").value);
+const subtotal5 = parseFloat(document.getElementById("precio5").value);
+
+const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+//const coniva = total * 0.13;
+
+//const totalfin = (total + coniva);
+
+$('#total1').text(total);
+//$('#siva').text("+$" + coniva);
+//checkbox.checked = false;
+
+document.getElementById('siva').hidden = true;
+document.getElementById('aiva').hidden = false;
+
+};
+function descontar() {
+
 /*
-    jQuery(document).ready(function($){
-        $(document).ready(function() {
-            $('.mi-selector').select2();
-           
-            $('#comercio').on('select2:select', function (e) { 
-                
-              alert("Hola mundo");
-            });
-    
-        });
-       
-       
-    });
-    */
-    
-    
+
+const subtotal = parseFloat(document.getElementById('precio1').value);
+const subtotal2 = parseFloat(document.getElementById("precio2").value);
+const subtotal3 = parseFloat(document.getElementById("precio3").value);
+const subtotal4 = parseFloat(document.getElementById("precio4").value);
+const subtotal5 = parseFloat(document.getElementById("precio5").value);
+
+const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+//const coniva = total * 0.13;
+
+//const totalfin = (total + coniva);
+
+$('#total1').text("$" + total);
+//$('#siva').text("+$" + coniva);
+//checkbox.checked = false;
+*/
+//document.getElementById('siva').hidden = true;
+document.getElementById('descuent').hidden = false;
+
+};
+
+
     </script>
+
+
 
 <script>
     function valor() {
@@ -104,31 +161,133 @@ function aumentar5() {
 }
 
 function limpiar1() {
- document.getElementById("guia1").value = " ";
- document.getElementById("cantidad1").value = " ";
- document.getElementById("precio1").value = " ";
+ document.getElementById("guia1").value = "";
+ document.getElementById("cantidad1").value = "0";
+ document.getElementById("precio1").value = "0";
 }
 function limpiar2() {
  document.getElementById("guia2").value = " ";
- document.getElementById("cantidad2").value = " ";
- document.getElementById("precio2").value = " ";
+ document.getElementById("cantidad2").value = "0";
+ document.getElementById("precio2").value = "0";
 }
 function limpiar3() {
  document.getElementById("guia3").value = " ";
- document.getElementById("cantidad3").value = " ";
- document.getElementById("precio3").value = " ";
+ document.getElementById("cantidad3").value = "0";
+ document.getElementById("precio3").value = "0";
 }
 function limpiar4() {
  document.getElementById("guia4").value = " ";
- document.getElementById("cantidad4").value = " ";
- document.getElementById("precio4").value = " ";
+ document.getElementById("cantidad4").value = "0";
+ document.getElementById("precio4").value = "0";
 }
 function limpiar5() {
  document.getElementById("guia5").value = " ";
- document.getElementById("cantidad5").value = " ";
- document.getElementById("precio5").value = " ";
+ document.getElementById("cantidad5").value = "0";
+ document.getElementById("precio5").value = "0";
 }
+
+
+
     
+    </script>
+
+    <script>
+        
+
+$(document).ready(function() {
+ 
+                      $("#precio1").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio2").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+
+                $("#precio2").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+
+                $("#precio3").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio2").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+                
+                   $("#precio4").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio2").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio5").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+                
+                   $("#precio5").change(function() {
+                                                                    
+         const subtotal =parseFloat($(this).val());
+         const subtotal2 = parseFloat(document.getElementById("precio1").value); 
+         const subtotal3 = parseFloat(document.getElementById("precio3").value); 
+         const subtotal4 = parseFloat(document.getElementById("precio4").value); 
+         const subtotal5 = parseFloat(document.getElementById("precio2").value); 
+
+         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
+         //const total = subtotal;               
+         $('#subto').text("$ " + total);
+
+                   });
+
+
+                  
+ 
+ $("#descuent").change(function() {
+    //alert("Hola");
+
+    const descu =parseFloat($(this).val());
+
+   const total =parseFloat($('#total1').text());
+
+    const totalsin = total - descu ;
+
+    $('#total1').text(totalsin);
+    
+
+    });
+
+
+
+
+
+                });
     </script>
 
 <body id="kt_body" class="" style="background-color:white; ">
@@ -381,7 +540,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 <td >
@@ -417,7 +576,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -452,7 +611,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 <td >
@@ -487,7 +646,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -522,7 +681,7 @@ function limpiar5() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0.00" value="0.00" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0" value="0" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -546,24 +705,26 @@ function limpiar5() {
                                     <div class="d-flex flex-column align-items-start">
                                         <div class="fs-5">Subtotal</div> 
 
-                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar IVA</button>
-
-                                        <button class="btn btn-link py-1" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Coming soon">Agregar descuento</button>
+                                        <button type="button" class="btn btn-link py-1" id="aiva" onclick="agregariva()">Agregar IVA</button>
+                                        <button type="button" class="btn btn-link py-1" id="siva" onclick="quitariva()" hidden>Quitar IVA</button>
+                                        
+                                        <button type="button" class="btn btn-link py-1" onclick="descontar()" >Agregar descuento</button>
+                                        <input type="text" class="form-control form-control-solid" id="descuent" name="descuent"  value="0" hidden/>
                                     </div>
                                 </th> 
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed text-end">
-                                    $<span data-kt-element="sub-total">0.00</span>
+                                    $ <span data-kt-element="sub-total" id="subto">$ 0.00</span>
                                 </th> 
                             </tr>    
                             
                             <tr class="align-top fw-bold text-gray-700">
                                 <th></th>
                                 
-                                <th colspan="2" class="fs-4 ps-0">Total</th> 
+                                <th colspan="2" class="fs-4 ps-0" >Total</th> 
 
                                 <th colspan="2" class="text-end fs-4 text-nowrap">
-                                    $<span data-kt-element="grand-total">0.00</span>
+                                   $ <span data-kt-element="grand-total" id="total1">0.00</span>
                                 </th> 
                             </tr>          
                         </tfoot>
