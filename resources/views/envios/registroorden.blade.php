@@ -47,6 +47,7 @@ function agregariva() {
     const totalfin = (total + coniva);
 
     $('#total1').text(totalfin);
+    $('#ivam').text(coniva);
     //$('#siva').text("+$" + coniva);
     //checkbox.checked = false;
 
@@ -71,6 +72,7 @@ const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
 //const totalfin = (total + coniva);
 
 $('#total1').text(total);
+$('#ivam').text("0.00");
 //$('#siva').text("+$" + coniva);
 //checkbox.checked = false;
 
@@ -99,6 +101,7 @@ $('#total1').text("$" + total);
 */
 //document.getElementById('siva').hidden = true;
 document.getElementById('descuent').hidden = false;
+document.getElementById('nota').hidden = false;
 
 };
 
@@ -166,22 +169,22 @@ function limpiar1() {
  document.getElementById("precio1").value = "0";
 }
 function limpiar2() {
- document.getElementById("guia2").value = " ";
+ document.getElementById("guia2").value = "";
  document.getElementById("cantidad2").value = "0";
  document.getElementById("precio2").value = "0";
 }
 function limpiar3() {
- document.getElementById("guia3").value = " ";
+ document.getElementById("guia3").value = "";
  document.getElementById("cantidad3").value = "0";
  document.getElementById("precio3").value = "0";
 }
 function limpiar4() {
- document.getElementById("guia4").value = " ";
+ document.getElementById("guia4").value = "";
  document.getElementById("cantidad4").value = "0";
  document.getElementById("precio4").value = "0";
 }
 function limpiar5() {
- document.getElementById("guia5").value = " ";
+ document.getElementById("guia5").value = "";
  document.getElementById("cantidad5").value = "0";
  document.getElementById("precio5").value = "0";
 }
@@ -206,7 +209,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
 
@@ -220,7 +223,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
 
@@ -234,7 +237,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
                 
@@ -248,7 +251,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
                 
@@ -262,7 +265,7 @@ $(document).ready(function() {
 
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
-         $('#subto').text("$ " + total);
+         $('#subto').text(total);
 
                    });
 
@@ -710,11 +713,14 @@ $(document).ready(function() {
                                         
                                         <button type="button" class="btn btn-link py-1" onclick="descontar()" >Agregar descuento</button>
                                         <input type="text" class="form-control form-control-solid" id="descuent" name="descuent"  value="0" hidden/>
+                                        <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" hidden/>Ingresar nota </textarea>
                                     </div>
                                 </th> 
 
                                 <th colspan="2" class="border-bottom border-bottom-dashed text-end">
-                                    $ <span data-kt-element="sub-total" id="subto">$ 0.00</span>
+                                    $ <span data-kt-element="sub-total" id="subto">0.00</span>
+                                    <br>
+                                    $ <span data-kt-element="sub-total" id="ivam">0.00</span>
                                 </th> 
                             </tr>    
                             
@@ -770,21 +776,11 @@ $(document).ready(function() {
         <!--begin::Input group-->
         <div class="mb-10">
             <!--begin::Label-->
-            <label class="form-label fw-bold fs-6 text-gray-700">Currency</label>
+            <label class="form-label fw-bold fs-6 text-gray-700">Cajero:</label><br>
+            <label class="form-label fw-bold fs-6 text-gray-400">Max Smith</label>
             <!--end::Label-->
 
-            <!--begin::Select-->           
-            <select name="currnecy" aria-label="Select a Timezone" data-control="select2"  class="form-select form-select-solid">
-                <option value=""></option>
-
-                                    <option data-kt-flag="flags/united-states.svg" value="USD"><b>USD</b>&nbsp;-&nbsp;USA dollar</option>
-                                    <option data-kt-flag="flags/united-kingdom.svg" value="GBP"><b>GBP</b>&nbsp;-&nbsp;British pound</option>
-                                    <option data-kt-flag="flags/australia.svg" value="AUD"><b>AUD</b>&nbsp;-&nbsp;Australian dollar</option>
-                                    <option data-kt-flag="flags/japan.svg" value="JPY"><b>JPY</b>&nbsp;-&nbsp;Japanese yen</option>
-                                    <option data-kt-flag="flags/sweden.svg" value="SEK"><b>SEK</b>&nbsp;-&nbsp;Swedish krona</option>
-                                    <option data-kt-flag="flags/canada.svg" value="CAD"><b>CAD</b>&nbsp;-&nbsp;Canadian dollar</option>
-                                    <option data-kt-flag="flags/switzerland.svg" value="CHF"><b>CHF</b>&nbsp;-&nbsp;Swiss franc</option>
-                            </select>            
+                
             <!--end::Select-->
         </div>
         <!--end::Input group-->
@@ -798,32 +794,17 @@ $(document).ready(function() {
             <!--begin::Option-->
             <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack mb-5">
                 <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
-                    Payment method
+                    Metodo de pago
                 </span>
-
-                <input class="form-check-input" type="checkbox" checked="checked" value=""/>               
+          
             </label>
+            
+            <select class="form-select form-select-solid" name="metodo" id="metodo">
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+            </select>  
             <!--end::Option-->
 
-            <!--begin::Option-->
-            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack mb-5">
-                <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
-                    Late fees
-                </span>
-
-                <input class="form-check-input" type="checkbox" value=""/>               
-            </label>
-            <!--end::Option-->
-
-            <!--begin::Option-->
-            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack">
-                <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
-                    Notes
-                </span>
-
-                <input class="form-check-input" type="checkbox" value=""/>               
-            </label>
-            <!--end::Option-->
         </div>
         <!--end::Input group-->
 
@@ -834,22 +815,10 @@ $(document).ready(function() {
         <!--begin::Actions-->
         <div class="mb-0">
             <!--begin::Row-->
-            <div class="row mb-5">
-                <!--begin::Col-->
-                <div class="col">
-                    <a href="#" class="btn btn-light btn-active-light-primary w-100">Preview</a>                
-                </div>   
-                <!--end::Col-->
-
-                <!--begin::Col-->
-                <div class="col">
-                    <a href="#" class="btn btn-light btn-active-light-primary w-100">Download</a>
-                </div>  
-                <!--end::Col-->
-            </div>   
+          
             <!--end::Row-->
             
-            <button type="submit" href="#" class="btn btn-primary w-100" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i>                Send Invoice
+            <button type="submit" href="#" class="btn btn-primary w-100" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
             </button>
         </div>                
         <!--end::Actions-->    
