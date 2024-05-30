@@ -161,8 +161,8 @@
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Historial</a>
                                     </li>
                                     <!--end::Nav item-->
-                                    <!--begin::Nav item-->
-                                    <li class="nav-item mt-2">
+                                     <!--begin::Nav item-->
+                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/detallefoto">Fotos</a>
                                     </li>
                                     <!--end::Nav item-->
@@ -171,224 +171,13 @@
                             </div>
                         </div>
                         <!--end::Navbar-->
-
                         <!--begin::details View-->
                         <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                             <!--begin::Card header-->
                             <div class="card-header cursor-pointer">
                                 <!--begin::Card title-->
                                 <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">Detalles del envio</h3>
-                                </div>
-                                <!--end::Card title-->
-                                <!--begin::Action-->
-                                <a href="../../demo1/dist/account/settings.html" class="btn btn-sm btn-primary align-self-center">Editar Destinatario</a>
-                                <!--end::Action-->
-                            </div>
-                            <!--begin::Card header-->
-                            <!--begin::Card body-->
-                            <div class="card-body p-9">
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Estado
-                                    </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-success">Creado</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Row-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Destinatario</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Juan Diego López</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Dirección</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">Calle la sultana av 2, casa 20 Usuluán</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Telefono Destinatario</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">7450-5041</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Tipo de envío
-                                    </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-primary">PERSONALIZADO</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de entrega </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">15-mayo-2024</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Precio del paquete </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$25.00</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Precio de envío</label>
-                                    <!--begin::Label-->
-                                    <!--begin::Label-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-semibold fs-6 text-gray-800">$2.00</span>
-                                    </div>
-                                    <!--begin::Label-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Precio total </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$27.00</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Cobro de envío</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Pendiente</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Estado del pago</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-danger">POR PAGAR</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Nota</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Solo contesta Whatsapp</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Repartidor </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Diego</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Ruta </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">2</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Nota del repartidor</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Cliente no contesta</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Ubicación</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Bodega</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                            </div>
-                            <!--end::Card body-->
-                        </div>
-                        <!--end::details View-->
-                        <!--begin::details View-->
-                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
-                            <!--begin::Card header-->
-                            <div class="card-header cursor-pointer">
-                                <!--begin::Card title-->
-                                <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">OTROS DATOS</h3>
+                                    <h3 class="fw-bold m-0">Fotos Del Paquete</h3>
                                 </div>
                                 <!--end::Card title-->
                             </div>
@@ -396,46 +185,82 @@
                             <!--begin::Card body-->
                             <div class="card-body p-9">
                                 <!--begin::Row-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de creación</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">14-mayo-2024</span>
+                                <div class="row mb-6">
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
                                     </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Usuario</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">Melvin</span>
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
                                     </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Agencia de registro</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">Santa Ana </span>
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
                                     </div>
-                                    <!--end::Col-->
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <!--end::Input group-->
                             </div>
-                            <!--end::Card body-->
+                            <!--end::Input group-->
                         </div>
-                        <!--end::details View-->
-                        
+                        <!--end::Card body-->
+                        <!--begin::details View-->
+                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                            <!--begin::Card header-->
+                            <div class="card-header cursor-pointer">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bold m-0">Fotos De entrega del paquete</h3>
+                                </div>
+                                <!--end::Card title-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body p-9">
+                                <!--begin::Row-->
+                                <div class="row mb-6">
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2">
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end::Input group-->
+                        </div>
+                        <!--end::Card body-->
                     </div>
                     <!--end::details View-->
                 </div>

@@ -84,7 +84,7 @@
                                     </div>
                                     <div class="d-flex my-1">
                                         <a href="#" class="btn btn-sm btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_">Creado</a>
-                                        <button class="btn btn-sm btn-danger me-3" >Eliminar</button>
+                                        <button class="btn btn-sm btn-danger me-3">Eliminar</button>
                                     </div>
 
 
@@ -92,7 +92,7 @@
                                 <div class="d-flex flex-wrap flex-stack ">
                                     <div class="d-flex flex-column flex-grow-1 mt-6">
                                         <div class="fw-semibold fs-6 text-black-500 text-right">Dirección de recolección</div>
-                                        <div class="fw-semibold fs-5 text-black-100 text-right">Punto de San Luis Talpa  </div>
+                                        <div class="fw-semibold fs-5 text-black-100 text-right">Punto de San Luis Talpa </div>
                                     </div>
 
                                     <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
@@ -118,6 +118,11 @@
                             </li>
                             <li class="nav-item mt-2">
                                 <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Historial</a>
+                                <!--begin::Nav item-->
+                            <li class="nav-item mt-2">
+                                <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/detallefoto">Fotos</a>
+                            </li>
+                            <!--end::Nav item-->
                             </li>
                         </ul>
                     </div>
@@ -134,6 +139,15 @@
                     </div>
                     <div class="card-body border-top p-9">
                         <div class="row mb-6">
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Estado</label>
+                            <div class="col-lg-8">
+                                <select name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar agencia" required>
+                                    <option value="Creado">Creado</option>
+                                    <option value="Sin_crear">Sin crear</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-6">
                             <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="id">Destinatario</label>
                             <div class="col-lg-8">
                                 <input type="text" name="id" id="id" class="form-control form-control-lg form-control-solid" placeholder="Nombre completo" required readonly value="Juan Diego López" />
@@ -146,16 +160,16 @@
                             </div>
                         </div>
                         <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Telefono</label>
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Tipo de envío</label>
                             <div class="col-lg-8">
-                                <input type="text" name="direccion" id="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección" required readonly value="7854-2514" />
+                                <input type="text" name="Tipo" id="Tipo" class="form-control form-control-lg form-control-solid" placeholder="Tipo" required readonly value="Personalizado" />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
                         <div class="row mb-6">
-                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Tipo de envío</label>
+                            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de entrega</label>
                             <div class="col-lg-8">
-                                <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" readonly value="Personalizado" />
+                                <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" value="Personalizado" />
                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                             </div>
                         </div>
@@ -165,7 +179,7 @@
                                 <input type="email" name="email" id="email" class="form-control form-control-lg form-control-solid" placeholder="Email" required readonly value="$25.00" />
                                 <div class="invalid-feedback">Este campo es obligatorio y debe ser una dirección de correo electrónico válida.</div>
                             </div>
-                            
+
                         </div>
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label required fw-semibold fs-6">Precio de envío</label>
@@ -204,7 +218,7 @@
                         <div class="row mb-6">
                             <label class="col-lg-3 col-form-label">Repartidor </label>
                             <div class="col-lg-8">
-                                <input type="date" name="fecha_baja" id="fecha_baja" class="form-control form-control-lg form-control-solid" value="DIEGO" readonly />
+                                <input type="text" name="Repartidor" id="Repartidor" class="form-control form-control-lg form-control-solid" value="Diego" required readonly />
                             </div>
                         </div>
                         <div class="row mb-6">
@@ -229,57 +243,350 @@
                         </div>
                     </div>
                     <!--begin::Sign-in Method-->
-                    <!--begin::Card header-->
-                    <div class="card-header border-0 cursor-pointer">
-                        <div class="card-title m-0">
-                            <h3 class="fw-bold m-0">OTROS DATOS</h3>
+                    <!--begin::details View-->
+                    <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                        <!--begin::Card header-->
+                        <div class="card-header cursor-pointer">
+                            <!--begin::Card title-->
+                            <div class="card-title m-0">
+                                <h3 class="fw-bold m-0">OTROS DATOS</h3>
+                            </div>
+                            <!--end::Card title-->
                         </div>
-                    </div>
-                    <!--end::Card header-->
-                    <!--begin::Content-->
-                    <div>
+                        <!--begin::Card header-->
                         <!--begin::Card body-->
-                        <div class="card-body border-top p-9">
-                            <!--begin::Email Address-->
-                            <div class="d-flex flex-wrap align-items-center">
-                                <!--begin::Label-->
-                                <div id="kt_signin_email">
-                                    <div class="fs-6 fw-bold mb-1">Fecha de creación</div>
-                                    <div class="fw-semibold text-gray-600">14-mayo-2024</div>
+                        <div class="card-body p-9">
+                            <!--begin::Row-->
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de creación</label>
+                                <div class="col-lg-8">
+                                    <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid" placeholder="Fecha de Alta" value="Personalizado" />
+                                    <div class="invalid-feedback">Este campo es obligatorio.</div>
                                 </div>
-                                <!--end::Label-->
                             </div>
-                            <!--end::Email Address-->
-                            <!--begin::Separator-->
-                            <div class="separator separator-dashed my-6"></div>
-                            <!--end::Separator-->
-                            <!--begin::Password-->
-                            <div class="d-flex flex-wrap align-items-center mb-10">
-                                <!--begin::Label-->
-                                <div id="kt_signin_password">
-                                    <div class="fs-6 fw-bold mb-1">Usuario</div>
-                                    <div class="fw-semibold text-gray-600">Melvin</div>
+                            <!--end::Row-->
+                            <!--begin::Input group-->
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label">Usuario </label>
+                                <div class="col-lg-8">
+                                    <input type="text" name="Usuario" id="Usuario" class="form-control form-control-lg form-control-solid" value="Diego" required readonly />
                                 </div>
-                                <!--end::Label-->
                             </div>
-                            <!--end::Password-->
-                            <!--begin::Separator-->
-                            <div class="separator separator-dashed my-6"></div>
-                            <!--end::Separator-->
-                            <!--begin::Password-->
-                            <div class="d-flex flex-wrap align-items-center mb-10">
-                                <!--begin::Label-->
-                                <div id="kt_signin_password">
-                                    <div class="fs-6 fw-bold mb-1">Agencia de registro</div>
-                                    <div class="fw-semibold text-gray-600">Santa Ana </div>
+                            <!--end::Input group-->
+                            <!--begin::Input group-->
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label">Agencia de registro</label>
+                                <div class="col-lg-8">
+                                    <input type="text" name="Usuario" id="Usuario" class="form-control form-control-lg form-control-solid" value="Santa Ana" required readonly />
                                 </div>
-                                <!--end::Label-->
                             </div>
-                            <!--end::Password-->
+                            <!--end::Input group-->
                         </div>
                         <!--end::Card body-->
                     </div>
-                    <!--end::Content-->
+                    <!--end::details View-->
+                    <!--begin::details View-->
+                    <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                        <!--begin::Card header-->
+                        <div class="card-header cursor-pointer">
+                            <!--begin::Card title-->
+                            <div class="card-title m-0">
+                                <h3 class="fw-bold m-0">Fotos Del Paquete</h3>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--begin::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body p-9">
+                            <!--begin::Row-->
+                            <div class="row mb-6">
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
+                     <!--begin::details View-->
+                     <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                        <!--begin::Card header-->
+                        <div class="card-header cursor-pointer">
+                            <!--begin::Card title-->
+                            <div class="card-title m-0">
+                                <h3 class="fw-bold m-0">Fotos De la entrega del paquete</h3>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--begin::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body p-9">
+                            <!--begin::Row-->
+                            <div class="row mb-6">
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Remove avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
                         <a href="/envios" class="btn btn-primary btn-active-light-primary me-2">Regresar a listado</a>
                     </div>
