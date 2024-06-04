@@ -801,10 +801,35 @@ $(document).ready(function() {
             
             <select class="form-select form-select-solid" name="metodo" id="metodo">
                 <option value="Efectivo">Efectivo</option>
-                <option value="Transferencia">Transferencia</option>
+                <option value="Deposito">Deposito</option>
+                <option value="Transferencia a la empresa">Transferencia a la empresa</option>
+                <option value="Transferencia al comercio">Transferencia al comercio</option>
+                <option value="Tigo Money ">Tigo money</option>
+                <option value="Chivo">Chivo</option>
+
+                
             </select>  
             <!--end::Option-->
 
+        </div>
+
+        <div class="mb-10">
+            <!--begin::Label-->
+            <label class="form-label fw-bold fs-6 text-gray-700">Pago:</label><br>
+            <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price"/>
+            <!--end::Label-->
+
+                
+            <!--end::Select-->
+        </div>
+        <div class="mb-10">
+            <!--begin::Label-->
+            <label class="form-label fw-bold fs-6 text-gray-700">Cambio:</label><br>
+            <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price"/>
+            <!--end::Label-->
+
+                
+            <!--end::Select-->
         </div>
         <!--end::Input group-->
 
