@@ -125,164 +125,208 @@
 
                                         </div>
                                         <div class="d-flex flex-wrap flex-stack ">
-                                            <div class="d-flex flex-column flex-grow-1 mt-6">
-                                                <div class="fw-semibold fs-6 text-black-500 text-right">Dirección de recolección</div>
-                                                <div class="fw-semibold fs-5 text-black-100 text-right">Punto de San Luis Talpa </div>
-                                            </div>
-
-                                            <div class="d-flex align-items-center w-200px w-sm-250px flex-column mt-3">
-                                                <div class="d-flex justify-content-between w-100 mt-auto mb-2">
-                                                    <span class="fw-semibold fs-6 text-gray-400">Profile Compleation</span>
-                                                    <span class="fw-bold fs-6">50%</span>
+                                            <!--begin::Wrapper-->
+                                            <div class="d-flex flex-column flex-grow-1 pe-8">
+                                                <!--begin::Stats-->
+                                                <div class="d-flex flex-wrap">
+                                                    <!--begin::Stat-->
+                                                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                        <!--begin::Number-->
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="4500">0</div>
+                                                        </div>
+                                                        <!--end::Number-->
+                                                        <!--begin::Label-->
+                                                        <div class="fw-semibold fs-6 text-gray-400">Paquetes totales</div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Stat-->
+                                                    <!--begin::Stat-->
+                                                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                        <!--begin::Number-->
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="ki-duotone ki-arrow-down fs-3 text-success me-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="80">0</div>
+                                                        </div>
+                                                        <!--end::Number-->
+                                                        <!--begin::Label-->
+                                                        <div class="fw-semibold fs-6 text-gray-400">Realizados con exito</div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Stat-->
+                                                    <!--begin::Stat-->
+                                                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                        <!--begin::Number-->
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="ki-duotone ki-arrow-up fs-3 text-danger me-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="60" >0</div>
+                                                        </div>
+                                                        <!--end::Number-->
+                                                        <!--begin::Label-->
+                                                        <div class="fw-semibold fs-6 text-gray-400">No retirados</div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Stat-->
                                                 </div>
-                                                <div class="h-5px mx-3 w-100 bg-light mb-1">
-                                                    <div class="bg-success rounded h-5px" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                                                </div>
+                                                <!--end::Stats-->
                                             </div>
-                                        </div>
-                                    </div>
-                                    <!--end::Info-->
-                                </div>
-                                <!--end::Details-->
-                                <!--begin::Navs-->
-                                <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
-                                    <!--begin::Nav item-->
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="#">Entrega</a>
-                                    </li>
-                                    <!--end::Nav item-->
-                                    <!--begin::Nav item-->
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/editardetalle">Editar Entrega</a>
-                                    </li>
-                                    <!--end::Nav item-->
-                                    <!--begin::Nav item-->
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Historial</a>
-                                    </li>
-                                    <!--end::Nav item-->
-                                    <!--begin::Nav item-->
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/detallefoto">Fotos</a>
-                                    </li>
-                                    <!--end::Nav item-->
-                                </ul>
-                                <!--begin::Navs-->
-                            </div>
-                        </div>
-                        <!--end::Navbar-->
-                        <!--begin::details View-->
-                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
-                            <!--begin::Card header-->
-                            <div class="card-header cursor-pointer">
-                                <!--begin::Card title-->
-                                <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">Fotos Del Paquete</h3>
-                                </div>
-                                <!--end::Card title-->
-                            </div>
-                            <!--begin::Card header-->
-                            <!--begin::Card body-->
-                            <div class="card-body p-9">
-                                <!--begin::Row-->
-                                <div class="row mb-6">
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--end::Input group-->
-                        </div>
-                        <!--end::Card body-->
-                        <!--begin::details View-->
-                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
-                            <!--begin::Card header-->
-                            <div class="card-header cursor-pointer">
-                                <!--begin::Card title-->
-                                <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">Fotos De entrega del paquete</h3>
-                                </div>
-                                <!--end::Card title-->
-                            </div>
-                            <!--begin::Card header-->
-                            <!--begin::Card body-->
-                            <div class="card-body p-9">
-                                <!--begin::Row-->
-                                <div class="row mb-6">
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2">
-                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
-                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="separator my-10"></div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label">Firma del receptor</label>
-                                    <div class="col-lg-8">
-                                        <canvas id="firmaCanvas" class="form-control form-control-lg form-control-solid" width="400" height="50"></canvas>
-                                        <button onclick="limpiarFirma()">Limpiar Firma</button>
-                                    </div>
-                                </div>
+                                            <!--end::Wrapper-->
 
-                                <div class="separator my-10"></div>
-                                <div class="row mb-6">
-                                    <label class="col-lg-3 col-form-label">Nota del repartidor </label>
-                                    <div class="col-lg-8">
-                                        <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" readonly>Cliente no contesta </textarea>
+                                        </div>
                                     </div>
                                 </div>
+                                <!--end::Info-->
                             </div>
-                            <!--end::Input group-->
+                            <!--end::Details-->
+                            <!--begin::Navs-->
+                            <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
+                                <!--begin::Nav item-->
+                                <li class="nav-item mt-2">
+                                    <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="#">Entrega</a>
+                                </li>
+                                <!--end::Nav item-->
+                                <!--begin::Nav item-->
+                                <li class="nav-item mt-2">
+                                    <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/editardetalle">Editar Entrega</a>
+                                </li>
+                                <!--end::Nav item-->
+                                <!--begin::Nav item-->
+                                <li class="nav-item mt-2">
+                                    <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Historial</a>
+                                </li>
+                                <!--end::Nav item-->
+                                <!--begin::Nav item-->
+                                <li class="nav-item mt-2">
+                                    <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/detallefoto">Fotos</a>
+                                </li>
+                                <!--end::Nav item-->
+                            </ul>
+                            <!--begin::Navs-->
                         </div>
-                        <!--end::Card body-->
                     </div>
-                    <!--end::details View-->
+                    <!--end::Navbar-->
+                    <!--begin::details View-->
+                    <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                        <!--begin::Card header-->
+                        <div class="card-header cursor-pointer">
+                            <!--begin::Card title-->
+                            <div class="card-title m-0">
+                                <h3 class="fw-bold m-0">Fotos Del Paquete</h3>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--begin::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body p-9">
+                            <!--begin::Row-->
+                            <div class="row mb-6">
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
+                    <!--begin::details View-->
+                    <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                        <!--begin::Card header-->
+                        <div class="card-header cursor-pointer">
+                            <!--begin::Card title-->
+                            <div class="card-title m-0">
+                                <h3 class="fw-bold m-0">Fotos De entrega del paquete</h3>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--begin::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body p-9">
+                            <!--begin::Row-->
+                            <div class="row mb-6">
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2">
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/avatars/300-1.jpg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url('assets/media/avatars/300-1.jpg')"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="separator my-10"></div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label">Firma del receptor</label>
+                                <div class="col-lg-8">
+                                    <canvas id="firmaCanvas" class="form-control form-control-lg form-control-solid" width="400" height="50"></canvas>
+                                    <button onclick="limpiarFirma()">Limpiar Firma</button>
+                                </div>
+                            </div>
+
+                            <div class="separator my-10"></div>
+                            <div class="row mb-6">
+                                <label class="col-lg-3 col-form-label">Nota del repartidor </label>
+                                <div class="col-lg-8">
+                                    <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" readonly>Cliente no contesta </textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Input group-->
+                    </div>
+                    <!--end::Card body-->
                 </div>
-                <!--end::Content container-->
+                <!--end::details View-->
             </div>
-            <!--end::Content-->
+            <!--end::Content container-->
+        </div>
+        <!--end::Content-->
         </div>
         <!--end::Content wrapper-->
 
