@@ -161,8 +161,8 @@
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Historial</a>
                                     </li>
                                     <!--end::Nav item-->
-                                     <!--begin::Nav item-->
-                                     <li class="nav-item mt-2">
+                                    <!--begin::Nav item-->
+                                    <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/detallefoto">Fotos</a>
                                     </li>
                                     <!--end::Nav item-->
@@ -257,6 +257,22 @@
                                         </div>
                                     </div>
                                 </div>
+                                <div class="separator my-10"></div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Firma del receptor</label>
+                                    <div class="col-lg-8">
+                                        <canvas id="firmaCanvas" class="form-control form-control-lg form-control-solid" width="400" height="50"></canvas>
+                                        <button onclick="limpiarFirma()">Limpiar Firma</button>
+                                    </div>
+                                </div>
+
+                                <div class="separator my-10"></div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Nota del repartidor </label>
+                                    <div class="col-lg-8">
+                                        <textarea name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" readonly>Cliente no contesta </textarea>
+                                    </div>
+                                </div>
                             </div>
                             <!--end::Input group-->
                         </div>
@@ -300,6 +316,13 @@
                     window.location.href = url;
                 }
             });
+        }
+    </script>
+    <script>
+        function limpiarFirma() {
+            var canvas = document.getElementById('firmaCanvas');
+            var context = canvas.getContext('2d');
+            context.clearRect(0, 0, canvas.width, canvas.height);
         }
     </script>
 </body>
