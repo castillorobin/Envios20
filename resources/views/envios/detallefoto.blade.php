@@ -170,7 +170,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <!--begin::details View-->
                 <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                     <!--begin::Card header-->

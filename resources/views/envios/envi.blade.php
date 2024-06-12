@@ -326,7 +326,14 @@
                                             </tr>
                                             @endforeach
                                         </tbody>
+
                                     </table>
+                                    <ul class="pagination">
+                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
+                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
+                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
+                                    </ul>
                                 </div>
                                 <!--end::Table-->
                             </div>
@@ -352,57 +359,8 @@
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
-    <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
-    <script src="assets/js/widgets.bundle.js"></script>
-    <script src="assets/js/custom/widgets.js"></script>
-    <script src="assets/js/custom/apps/chat/chat.js"></script>
-    <script src="assets/js/custom/utilities/modals/upgrade-plan.js"></script>
-    <script src="assets/js/custom/utilities/modals/create-app.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
 
-    <!--
-    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
-  
-    end::Custom Javascript-->
-
-    <script>
-        $(document).ready(function() {
-            $('#tenvios').DataTable({
-
-                language: {
-                    "decimal": "",
-                    "emptyTable": "No hay información",
-                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-                    "infoPostFix": "",
-                    "thousands": ",",
-                    "lengthMenu": "Mostrar _MENU_ Entradas",
-                    "loadingRecords": "Cargando...",
-                    "processing": "Procesando...",
-                    "search": "Buscar:",
-                    "zeroRecords": "Sin resultados encontrados",
-                    "paginate": {
-                        "first": "Primero",
-                        "last": "Ultimo",
-                        "next": "Siguiente",
-                        "previous": "Anterior"
-                    }
-                },
-
-                dom: 'tri<"pagina1" p>',
-
-
-
-
-
-            });
-        });
-    </script>
-
-
-
-    <!--end::Javascript-->
 </body>
 <!--end::Body-->
 
