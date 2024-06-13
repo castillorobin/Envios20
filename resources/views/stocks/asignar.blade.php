@@ -235,60 +235,28 @@
                                             <!--end::Close-->
                                         </div>
                                         <div class="modal-body">
-                                            <div class="row mb-4">
-                                                <div class="form-floating col-lg-4 mb-4">
-                                                    <select class="form-select form-select-solid" name="rack" id="rack" aria-label="Floating label select example" required>
-                                                        <option value="r1">1</option>
-                                                        <option value="r2">2</option>
-                                                        <option value="r3">3</option>
-                                                    </select>
+                                            <div class="row my-4 mx-4 justify-content-center">
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="rack" id="rack" placeholder="# de rack" pattern="[0-9]+" required />
                                                     <label for="rack" style="padding-left: 25px;">Rack</label>
-                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
-                                                        Por favor seleccione el nivel de Rack.
-                                                    </div>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="nivel" id="nivel" placeholder="# de nivel" pattern="[0-9]+" required />
+                                                    <label for="nivel" style="padding-left: 25px;">Nivel</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-
-                                            <div class="row mb-4">
-                                                <div class="form-floating col-lg-10 mb-4">
-                                                    <select class="form-select form-select-solid" name="Nivel" id="Nivel" aria-label="Floating label select example" required>
-                                                        <option value="n1">1</option>
-                                                        <option value="n2">2</option>
-                                                        <option value="n3">3</option>
-                                                    </select>
-                                                    <label for="Nivel" style="padding-left: 25px;">Nivel</label>
-                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
-                                                        Por favor seleccione el estado de cobro del envío.
-                                                    </div>
+                                            <div class="row my-4 mx-4 justify-content-center">
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="caja" id="caja" placeholder="# de caja" pattern="[0-9]+" required />
+                                                    <label for="caja" style="padding-left: 25px;">Caja</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
-                                            </div>
-                                            <div class="row mb-4">
-                                                <div class="form-floating col-lg-10 mb-4">
-                                                    <select class="form-select form-select-solid" name="Caja" id="Caja" aria-label="Floating label select example" required>
-                                                        <option value="c1">1</option>
-                                                        <option value="c2">2</option>
-                                                        <option value="c3">3</option>
-                                                        <option value="c4">4</option>
-                                                        <option value="c5">5</option>
-                                                        <option value="c6">6</option>
-                                                    </select>
-                                                    <label for="Caja" style="padding-left: 25px;">Caja</label>
-                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
-                                                        Por favor seleccione el estado de cobro del envío.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="row mb-4">
-                                                <div class="form-floating col-lg-10 mb-4">
-                                                    <select class="form-select form-select-solid" name="Tarima" id="Tarima" aria-label="Floating label select example" required>
-                                                        <option value="t1">1</option>
-                                                        <option value="t2">2</option>
-                                                        <option value="t3">3</option>
-                                                    </select>
-                                                    <label for="Tarima" style="padding-left: 25px;">Tarima</label>
-                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
-                                                        Por favor seleccione el estado de cobro del envío.
-                                                    </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="tarima" id="tarima" placeholder="# de tarima" pattern="[0-9]+" required />
+                                                    <label for="tarima" style="padding-left: 25px;">Tarima</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
                                         </div>
