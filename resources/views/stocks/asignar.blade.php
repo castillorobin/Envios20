@@ -110,7 +110,7 @@
                                             <span class="path2"></span>
                                         </i>
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar # de guia" />
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar # de guia" />
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
