@@ -85,7 +85,7 @@
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                            <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
+                            <a href="/envio/crear" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -129,7 +129,7 @@
                                             <option value="all">Personalizado Departamental</option>
                                             <option value="Creado">Punto Fijo</option>
                                             <option value="Entregado">Casillero</option>
-                                           
+
                                         </select>
                                         <!--end::Select2-->
                                     </div>
@@ -146,10 +146,10 @@
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
-                                    
+
                                 </div>
                                 <!--end::Card toolbar-->
-                                
+
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
@@ -201,8 +201,11 @@
                                                 <td class="text-center">3</td>
                                                 <td class="text-center">4</td>
                                                 <td class="text-center">1</td>
-                                                <td class="text-center">accion</td>
-
+                                                <td>
+                                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
+                                                        asignar
+                                                    </button>
+                                                </td>
 
                                             </tr>
 
@@ -219,6 +222,84 @@
                                 <!--end::Table-->
                             </div>
                             <!--end::Table-->
+
+                            <div class="modal fade" tabindex="-1" id="kt_modal_1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h3 class="modal-title">Asignar paquete</h3>
+                                            <!--begin::Close-->
+                                            <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                                                <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                                            </div>
+                                            <!--end::Close-->
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row mb-4">
+                                                <div class="form-floating col-lg-4 mb-4">
+                                                    <select class="form-select form-select-solid" name="rack" id="rack" aria-label="Floating label select example" required>
+                                                        <option value="r1">1</option>
+                                                        <option value="r2">2</option>
+                                                        <option value="r3">3</option>
+                                                    </select>
+                                                    <label for="rack" style="padding-left: 25px;">Rack</label>
+                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione el nivel de Rack.
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="row mb-4">
+                                                <div class="form-floating col-lg-10 mb-4">
+                                                    <select class="form-select form-select-solid" name="Nivel" id="Nivel" aria-label="Floating label select example" required>
+                                                        <option value="n1">1</option>
+                                                        <option value="n2">2</option>
+                                                        <option value="n3">3</option>
+                                                    </select>
+                                                    <label for="Nivel" style="padding-left: 25px;">Nivel</label>
+                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione el estado de cobro del envío.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="form-floating col-lg-10 mb-4">
+                                                    <select class="form-select form-select-solid" name="Caja" id="Caja" aria-label="Floating label select example" required>
+                                                        <option value="c1">1</option>
+                                                        <option value="c2">2</option>
+                                                        <option value="c3">3</option>
+                                                        <option value="c4">4</option>
+                                                        <option value="c5">5</option>
+                                                        <option value="c6">6</option>
+                                                    </select>
+                                                    <label for="Caja" style="padding-left: 25px;">Caja</label>
+                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione el estado de cobro del envío.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mb-4">
+                                                <div class="form-floating col-lg-10 mb-4">
+                                                    <select class="form-select form-select-solid" name="Tarima" id="Tarima" aria-label="Floating label select example" required>
+                                                        <option value="t1">1</option>
+                                                        <option value="t2">2</option>
+                                                        <option value="t3">3</option>
+                                                    </select>
+                                                    <label for="Tarima" style="padding-left: 25px;">Tarima</label>
+                                                    <div id="cenviovalidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione el estado de cobro del envío.
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="button" class="btn btn-primary">Asignar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         </div>
                         <!--end::Card body-->
                     </div>
