@@ -78,6 +78,9 @@ Route::get('/envios/detallefoto', function () {
 Route::get('/stocks/asignar', function () {
     return view('stocks.asignar');
 });
+Route::get('/configuraciones/ajustes', function () {
+    return view('configuraciones.ajustes');
+});
 
 
 Route::get('envio', [App\Http\Controllers\EnvioController::class, 'index'] )->name('index') ;

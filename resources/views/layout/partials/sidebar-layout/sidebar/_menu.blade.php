@@ -340,13 +340,22 @@
 					</div>
 				</div>
 			</div>
-
 			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('setting-3', 'fs-2') !!}</span>
 					<span class="menu-title">Configuraciones</span>
 					<span class="menu-arrow"></span>
 				</span>
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/configuraciones/ajustes">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Configuraciones de ruta</span>
+						</a>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
