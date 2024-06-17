@@ -389,7 +389,9 @@ $(document).ready(function() {
     <!--begin::Card body-->
     <div class="card-body p-12">
         <!--begin::Form-->
-        <form action="" action="" id="kt_invoice_form">
+        <form action="/cobro/imprimir" id="kt_invoice_form" method="POST"> 
+        @csrf
+        @method('GET')
             <!--begin::Wrapper-->
             <div class="d-flex flex-column align-items-start flex-xxl-row">
                 <!--begin::Input group-->
@@ -749,7 +751,7 @@ $(document).ready(function() {
                 <!--end::Notes--> 
             </div>   
             <!--end::Wrapper-->          
-        </form>
+        
         <!--end::Form-->
     </div>
     <!--end::Card body-->
@@ -843,9 +845,10 @@ $(document).ready(function() {
           
             <!--end::Row-->
             
-            <button type="submit" href="#" class="btn btn-primary w-100" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
+            <button type="submit" class="btn btn-primary w-100" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
             </button>
-        </div>                
+        </div> 
+        </form>               
         <!--end::Actions-->    
     </div>
     <!--end::Card body-->
