@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comercio;
 use App\Models\Cobro;
+use PDF;
 
 class CobroController extends Controller
 {
@@ -29,6 +30,16 @@ class CobroController extends Controller
         return view('envios.registroorden', compact('comercios', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
 
+    public function imprimir(Request $request)
+    {
+        $pdf = PDF::loadView('envios.ticketpagos');
+        //return view('envios.ticketpagos');
+        $pdf->setPaper('b6', 'portrait');
+        return $pdf->stream();
+
+    }
+
+ 
     public function agregar(Request $request)
     {
         $guia = $request->get('guia') ;

@@ -128,6 +128,8 @@ Route::get('registro-orden', [App\Http\Controllers\CobroController::class, 'inde
 Route::get('cobro/agregar/', [App\Http\Controllers\CobroController::class, 'agregar'] )->name('agregarco') ;
 Route::get('cobro/limpiar', [App\Http\Controllers\CobroController::class, 'limpiar'] )->name('limpiarco') ;
 
+Route::get('cobro/imprimir', [App\Http\Controllers\CobroController::class, 'imprimir'] )->name('imprimirco') ;
+
 //Comercios
 Route::get('comercio', [App\Http\Controllers\ComercioController::class, 'index'] )->name('indexco') ;
 Route::get('comercio/crearcomercio', [App\Http\Controllers\ComercioController::class, 'create'] )->name('createco') ;
