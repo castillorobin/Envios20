@@ -27,22 +27,27 @@
 <div style="width:100%; " class="text-center centrar">
     <img src="../public/assets/media/logos/lo.png" alt="" width="20%" height="5%">
     <br>
-            <div class="margen "> <span class="page__heading melo" >www.MeloExpress.com.sv</span></div>
+            <div class="margen "> <span class="page__heading melo" >Expertos en paqueteria</span></div>
             
            <!-- <img alt="image" src="/public/img/logo.png" > -->
            
-           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">EXPERTOS EN PAQUETERIA</span> </div>
+           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Comprobante de pago</span> </div>
            
            <br>
            <span>Centro Comercial Metrogaleria
            local 3-9 <br> San Salvador </span>
-        </div>
-        <br>
+           <br>
+           
+        </div >
+        <div style="margin-top:10px;" class="centrar">
+           <span >WWW.MELOEXPRESS.COM.SV</span></div>
+       <br>
 
                         <div class="fecha centrar " style="font-weight: bolder;">
    TICKET Nº 0000-0000001
+   <hr>
    </div>
-   <br>
+   
    <div class="fecha ">
    <span > Fecha: {{ now()->Format('d/m/Y')}} </span>
    <span style="float:right; ">Hora: {{ now()->Format('H:i A')}}</span> 
