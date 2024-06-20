@@ -389,7 +389,7 @@ $(document).ready(function() {
     <!--begin::Card body-->
     <div class="card-body p-12">
         <!--begin::Form-->
-        <form action="/cobro/imprimir" id="kt_invoice_form" method="POST"> 
+        <form action="/cobro/ticket" id="kt_invoice_form" method="POST"> 
         @csrf
         @method('GET')
             <!--begin::Wrapper-->

@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('cobros', function (Blueprint $table) {
             $table->id();
+            $table->string('ticketc');
             $table->string('guia');
             $table->string('comercio');
             $table->string('tipo');

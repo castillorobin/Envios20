@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('envios', function (Blueprint $table) {
             $table->id();
             $table->string('guia');
+            $table->string('ticketc');
             $table->string('comercio');
             $table->string('destinatario');
             $table->string('direccion');
