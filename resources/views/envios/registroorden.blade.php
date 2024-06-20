@@ -389,7 +389,7 @@ $(document).ready(function() {
     <!--begin::Card body-->
     <div class="card-body p-12">
         <!--begin::Form-->
-        <form action="/cobro/imprimir" id="kt_invoice_form" method="POST"> 
+        <form action="/cobro/ticketcabeza" id="kt_invoice_form" method="POST"> 
         @csrf
         @method('GET')
             <!--begin::Wrapper-->
@@ -531,7 +531,7 @@ $(document).ready(function() {
                                                             <input type="text" value="Personalizado" class="visually-hidden" name="ingrese1" id="ingrese1">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar1()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" onclick="aumentar1()">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
