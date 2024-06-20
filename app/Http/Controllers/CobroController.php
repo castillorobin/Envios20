@@ -52,6 +52,13 @@ class CobroController extends Controller
 
     }
 
+    public function ticketcabeza(Request $request)
+    {
+        $comercio = $request->get('comercio') ;
+        return $comercio;
+
+    }
+
  
     public function agregar(Request $request)
     {
