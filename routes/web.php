@@ -78,8 +78,11 @@ Route::get('/envios/detallefoto', function () {
 Route::get('/stocks/asignar', function () {
     return view('stocks.asignar');
 });
-Route::get('/stocks/asignarrepartidor', function () {
-    return view('stocks.asignarrepartidor');
+Route::get('/stocks/seleccionarzona', function () {
+    return view('stocks.seleccionarzona');
+});
+Route::get('/stocks/seleccionarpunto', function () {
+    return view('stocks.seleccionarpunto');
 });
 Route::get('/configuraciones/ajustes', function () {
     return view('configuraciones.ajustes');
