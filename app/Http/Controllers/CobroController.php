@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Comercio;
 use App\Models\Cobro;
+use App\Models\Ticketc;
+use Carbon\Carbon;
+use App\Models\Envio;
 use PDF;
 
 class CobroController extends Controller
@@ -27,7 +30,15 @@ class CobroController extends Controller
             $cobropfijo = $cobropfijo->count();
             $cobrocasi = Cobro::where('tipo', "Casillero")->get();
             $cobrocasi = $cobrocasi->count();
-        return view('envios.registroorden', compact('comercios', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+
+            $ultimoid = Ticketc::latest('id')->first();
+            $idcompr = $ultimoid->id + 1;
+     
+            $date = Carbon::now();
+            $date = $date->format('Y');
+            $factura = "$date".$idcompr;
+     
+        return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
 
     public function imprimir(Request $request)
@@ -54,15 +65,157 @@ class CobroController extends Controller
 
     public function ticketcabeza(Request $request)
     {
+        $codigo= $request->get('codigo');
         $comercios = Comercio::all(); 
         $nota=" ";
         $comercio = $request->get('comercio') ;
 
-        $ticket = new Cobro();
+        $ticket = new Ticketc();
+        $ticket->codigo = $request->get('codigo');
+        $ticket->comercio = $request->get('comercio');
+        $ticket->correo = $request->get('correo');
+        $ticket->telefono = $request->get('telefono');
+        $ticket->save();
+
+        $ticketactual = Ticketc::where('codigo', $codigo)->get();
+
+        if ($request->filled('guia')) {
+        $envio = new Envio();
+        $envio->tipo = $request->get('tipo1');
+        $envio->guia = $request->get('guia');
+        $envio->ticketc = $codigo;
+        $envio->comercio = $request->get('comercio');
+        $envio->save();
+
+        }
+
+        if ($request->filled('guia2')) {
+            $envio = new Envio();
+            $envio->tipo = $request->get('tipo2');
+            $envio->guia = $request->get('guia2');
+            $envio->ticketc = $codigo;
+            $envio->comercio = $request->get('comercio');
+            $envio->save();
+    
+            }
+
+            if ($request->filled('guia3')) {
+                $envio = new Envio();
+                $envio->tipo = $request->get('tipo3');
+                $envio->guia = $request->get('guia3');
+                $envio->ticketc = $codigo;
+                $envio->comercio = $request->get('comercio');
+                $envio->save();
+        
+                }
+            
+            if ($request->filled('guia4')) {
+                    $envio = new Envio();
+                    $envio->tipo = $request->get('tipo4');
+                    $envio->guia = $request->get('guia4');
+                    $envio->ticketc = $codigo;
+                    $envio->comercio = $request->get('comercio');
+                    $envio->save();
+            
+                    }
+
+        $cobroperso = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Personalizado")
+        ->get();
+        $cobroperso = $cobroperso->count();
+
+        $cobroperdepa = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Personalizado departamental")
+        ->get();
+        $cobroperdepa =  $cobroperdepa->count();
+
+        $cobropfijo = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Punto fijo")
+        ->get();
+        $cobropfijo =  $cobropfijo->count();
+
+        $cobrocasi = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Casillero")
+        ->get();
+        $cobrocasi =  $cobrocasi->count();
 
 
+        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
-        return view('envios.registroordenlista', compact('comercios','nota'));
+    }
+
+    public function ticketpartes(Request $request)
+    {
+        $codigo= $request->get('codigo');
+        $comercios = Comercio::all(); 
+        $nota=" ";
+        $comercio = $request->get('comercio') ;
+
+     
+        $ticketactual = Ticketc::where('codigo', $codigo)->get();
+
+        if ($request->filled('guia')) {
+        $envio = new Envio();
+        $envio->tipo = $request->get('tipo1');
+        $envio->guia = $request->get('guia');
+        $envio->ticketc = $codigo;
+        $envio->comercio = $request->get('comercio');
+        $envio->save();
+
+        }
+
+        if ($request->filled('guia2')) {
+            $envio = new Envio();
+            $envio->tipo = $request->get('tipo2');
+            $envio->guia = $request->get('guia2');
+            $envio->ticketc = $codigo;
+            $envio->comercio = $request->get('comercio');
+            $envio->save();
+    
+            }
+
+            if ($request->filled('guia3')) {
+                $envio = new Envio();
+                $envio->tipo = $request->get('tipo3');
+                $envio->guia = $request->get('guia3');
+                $envio->ticketc = $codigo;
+                $envio->comercio = $request->get('comercio');
+                $envio->save();
+        
+                }
+            
+            if ($request->filled('guia4')) {
+                    $envio = new Envio();
+                    $envio->tipo = $request->get('tipo4');
+                    $envio->guia = $request->get('guia4');
+                    $envio->ticketc = $codigo;
+                    $envio->comercio = $request->get('comercio');
+                    $envio->save();
+            
+                    }
+
+        $cobroperso = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Personalizado")
+        ->get();
+        $cobroperso = $cobroperso->count();
+
+        $cobroperdepa = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Personalizado departamental")
+        ->get();
+        $cobroperdepa =  $cobroperdepa->count();
+
+        $cobropfijo = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Punto fijo")
+        ->get();
+        $cobropfijo =  $cobropfijo->count();
+
+        $cobrocasi = Envio::where('ticketc', $codigo)
+        ->where('tipo', "Casillero")
+        ->get();
+        $cobrocasi =  $cobrocasi->count();
+
+
+        return view('envios.registroordenlista', compact('comercios', 'ticketactual', 'nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
     }
 

@@ -47,7 +47,9 @@ function agregariva() {
     const totalfin = (total + coniva);
 
     $('#total1').text(totalfin);
+    document.getElementById("total2").value = totalfin ;
     $('#ivam').text(coniva);
+    document.getElementById("iva2").value = coniva ;
     //$('#siva').text("+$" + coniva);
     //checkbox.checked = false;
 
@@ -72,7 +74,9 @@ const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
 //const totalfin = (total + coniva);
 
 $('#total1').text(total);
+document.getElementById("total2").value = total ;
 $('#ivam').text("0.00");
+document.getElementById("iva2").value = "0.00" ;
 //$('#siva').text("+$" + coniva);
 //checkbox.checked = false;
 
@@ -82,24 +86,7 @@ document.getElementById('aiva').hidden = false;
 };
 function descontar() {
 
-/*
 
-const subtotal = parseFloat(document.getElementById('precio1').value);
-const subtotal2 = parseFloat(document.getElementById("precio2").value);
-const subtotal3 = parseFloat(document.getElementById("precio3").value);
-const subtotal4 = parseFloat(document.getElementById("precio4").value);
-const subtotal5 = parseFloat(document.getElementById("precio5").value);
-
-const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
-//const coniva = total * 0.13;
-
-//const totalfin = (total + coniva);
-
-$('#total1').text("$" + total);
-//$('#siva').text("+$" + coniva);
-//checkbox.checked = false;
-*/
-//document.getElementById('siva').hidden = true;
 document.getElementById('descuent').hidden = false;
 document.getElementById('nota').hidden = false;
 
@@ -132,7 +119,7 @@ document.getElementById('nota').hidden = false;
  nombre = parseFloat(document.getElementById("cantidad1").value);
  nom= nombre + 1;
  document.getElementById("cantidad1").value = parseFloat(nom);
- document.getElementById("guia1").value = " ";
+ document.getElementById("guia").value = " ";
 
 }
 function aumentar2() {
@@ -164,7 +151,7 @@ function aumentar5() {
 }
 
 function limpiar1() {
- document.getElementById("guia1").value = "";
+ document.getElementById("guia").value = "";
  document.getElementById("cantidad1").value = "0";
  document.getElementById("precio1").value = "0";
 }
@@ -198,6 +185,22 @@ function limpiar5() {
         
 
 $(document).ready(function() {
+
+    $("#pago").change(function() {
+                                                                    
+    const pago =parseFloat($(this).val());
+    const cambio = parseFloat(document.getElementById("total2").value); 
+    
+                                                           
+    const total = pago - cambio ;
+     //const total = subtotal;               
+     //$('#subto').text(total);
+     //document.getElementById("cambio").value = total ;    
+     $('#cambio').val(total);
+
+                 });
+
+
  
                       $("#precio1").change(function() {
                                                                     
@@ -210,6 +213,9 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
+         $('#total1').text(total);
+         document.getElementById("total2").value = total ; 
+         document.getElementById("pre1").value = subtotal ;
 
                    });
 
@@ -224,7 +230,9 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
-
+         $('#total1').text(total);
+         document.getElementById("total2").value = total ;
+         document.getElementById("pre2").value = subtotal ;
                    });
 
                 $("#precio3").change(function() {
@@ -238,6 +246,9 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
+         $('#total1').text(total);
+         document.getElementById("total2").value = total ;
+         document.getElementById("pre3").value = subtotal ;
 
                    });
                 
@@ -252,6 +263,9 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
+         $('#total1').text(total);
+         document.getElementById("total2").value = total ;
+         document.getElementById("pre4").value = subtotal ;
 
                    });
                 
@@ -266,7 +280,10 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
+         $('#total1').text(total);
+         document.getElementById("total2").value = total ;
 
+         document.getElementById("pre5").value = subtotal ;
                    });
 
 
@@ -277,12 +294,12 @@ $(document).ready(function() {
 
     const descu =parseFloat($(this).val());
 
-   const total =parseFloat($('#total1').text());
+    const total =parseFloat($('#total1').text());
 
     const totalsin = total - descu ;
 
     $('#total1').text(totalsin);
-    
+    document.getElementById("total2").value = totalsin ;
 
     });
 
@@ -312,9 +329,7 @@ $(document).ready(function() {
                 <div class="d-flex flex-column flex-column-fluid">
                                             
 <!--begin::Toolbar-->
-<div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 " 
-     
-         >
+<div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 " >
 
             <!--begin::Toolbar container-->
         <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
@@ -389,7 +404,7 @@ $(document).ready(function() {
     <!--begin::Card body-->
     <div class="card-body p-12">
         <!--begin::Form-->
-        <form action="/cobro/ticketcabeza" id="kt_invoice_form" method="POST"> 
+        <form action="/cobro/ticketpartes" id="kt_invoice_form" method="POST"> 
         @csrf
         @method('GET')
             <!--begin::Wrapper-->
@@ -403,7 +418,7 @@ $(document).ready(function() {
                     <!--begin::Input-->
                     <div class="position-relative d-flex align-items-center w-150px">
                         <!--begin::Datepicker-->
-                        <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="invoice_date"/>
+                        <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="fecha"/>
                         <!--end::Datepicker-->
                         
                         <!--begin::Icon-->
@@ -423,7 +438,7 @@ $(document).ready(function() {
                 <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice due date">
                     <!--begin::Date-->
                     <span class="fs-2x fw-bold text-gray-800">Factura #</span> 
-                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="2024001" placehoder="..."/>
+                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="{{$ticketactual[0]->codigo}}" name="codigo" id="codigo" />
                     <!--end::Input-->                
                 </div>                
                 <!--end::Input group--> 
@@ -444,26 +459,16 @@ $(document).ready(function() {
 
                         <!--begin::Input group-->
                         <div class="mb-5">
-                            <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" onchange="valor()">
-                                <option value=" ">Buscar comercio</option>
-                                @foreach ($comercios as $comercio)
-                                <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
-                                @endforeach
-                            </select>
+                            <input type="text" class="form-control form-control-solid" name="comercio" id="comercio" value="{{$ticketactual[0]->comercio}}"/>
                         </div>
 
-                        @foreach ($comercios as $comercio)
-                        <input hidden id="dir{{$comercio->comercio}}" value="{{ $comercio->direccion }} ">
-                        <input hidden id="cor{{$comercio->comercio}}" value="{{ $comercio->correo }} ">
-                        <input hidden id="tel{{$comercio->comercio}}" value="{{ $comercio->telefono }} ">
-                            
-                                @endforeach
+                      
 
                         <!--end::Input group-->
 
                         <!--begin::Input group-->
                         <div class="mb-5">
-                            <input type="text" class="form-control form-control-solid" placeholder="Correo" name="correo" id="correo" />
+                            <input type="text" class="form-control form-control-solid" value="{{$ticketactual[0]->correo}}" name="correo" id="correo" />
                         </div>
                         <!--end::Input group-->
 
@@ -487,7 +492,7 @@ $(document).ready(function() {
 
                         <!--begin::Input group-->
                         <div class="mb-5">
-                            <input type="text" class="form-control form-control-solid" placeholder="Telefono" name="telefono" id="telefono" />
+                            <input type="text" class="form-control form-control-solid" value="{{$ticketactual[0]->telefono}}" name="telefono" id="telefono" />
                         </div>
                         <!--end::Input group-->
 
@@ -527,8 +532,8 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia1" name="guia1" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese1" id="ingrese1">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Personalizado" class="visually-hidden" name="tipo1" id="tipo1">
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" onclick="aumentar1()">Agregar</button>
@@ -540,7 +545,7 @@ $(document).ready(function() {
 
                                 <td class="ps-0">   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                         
-                                    <input type="text" class="form-control form-control-solid" id="cantidad1" name="cantidad1"  value="0" />
+                                    <input type="text" class="form-control form-control-solid" id="cantidad1" name="cantidad1"  value="{{$cobroperso}}" />
                                 </td>
 
                                 <td>   
@@ -563,11 +568,11 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia2" name="guia2" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese2" id="ingrese2">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia2" name="guia2" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Personalizado departamental" class="visually-hidden" name="tipo2" id="tipo2">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar2()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -576,7 +581,7 @@ $(document).ready(function() {
 
                                 <td class="ps-0">          
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                  
-                                    <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2"  value="0" />
+                                    <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2" value="{{$cobroperdepa}}" />
                                 </td>
 
                                 <td>   
@@ -598,11 +603,11 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia3" name="guia3" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese3" id="ingrese3">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia3" name="guia3" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Punto fijo" class="visually-hidden" name="tipo3" id="tipo3">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar3()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -611,7 +616,7 @@ $(document).ready(function() {
 
                                 <td class="ps-0">      
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                      
-                                    <input type="text" class="form-control form-control-solid" id="cantidad3" name="cantidad3"  value="0" />
+                                <input type="text" class="form-control form-control-solid" id="cantidad3" name="cantidad3" value="{{$cobropfijo}}" />
                                 </td>
 
                                 <td>   
@@ -633,11 +638,11 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese4" id="ingrese4">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Casillero" class="visually-hidden" name="tipo4" id="tipo4">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar4()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -646,7 +651,7 @@ $(document).ready(function() {
 
                                 <td class="ps-0">            
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                
-                                    <input type="text" class="form-control form-control-solid" id="cantidad4" name="cantidad4"  value="0" />
+                                    <input type="text" class="form-control form-control-solid" id="cantidad4" name="cantidad4" value="{{ $cobrocasi }}" />
                                 </td>
 
                                 <td>   
@@ -697,15 +702,18 @@ $(document).ready(function() {
                                 
                             </tr>         
                         </tbody>
-                        <!--end::Table body-->
-
-                        <!--begin::Table foot-->
+                    </form> 
+                    <!--end::Table body-->
+                    <form action="/cobro/ticket" id="kt_invoice_form" method="POST"> 
+                        @csrf
+                        @method('GET')
                         <tfoot>
                             <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
                                 <th class="text-primary">
                                    
                                 </th>  
-
+                            
+                            
                                 <th colspan="2" class="border-bottom border-bottom-dashed ps-0">
                                     <div class="d-flex flex-column align-items-start">
                                         <div class="fs-5">Subtotal</div> 
@@ -827,10 +835,17 @@ $(document).ready(function() {
         <div class="mb-10">
             <!--begin::Label-->
             <label class="form-label fw-bold fs-6 text-gray-700">Cambio:</label><br>
-            <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price"/>
+            <input type="text" class="form-control form-control-solid text-end" name="cambio" id="cambio" placeholder="0" value="0" data-kt-element="price"/>
             <!--end::Label-->
 
-                
+            <input type="text" class="form-control form-control-solid text-end" name="total2" id="total2" data-kt-element="price"/>  
+            <input type="text" class="form-control form-control-solid text-end" name="iva2" id="iva2" data-kt-element="price"/>  
+
+            <input type="text" class="form-control form-control-solid text-end" name="pre1" id="pre1" data-kt-element="price"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price"/>  
             <!--end::Select-->
         </div>
         <!--end::Input group-->
@@ -872,137 +887,7 @@ $(document).ready(function() {
     </x-default-layout>
 
     <script>
-        function calcu() {
-
-
-
-            var calculo = document.getElementById("calculo").value;
-            var uno = document.getElementById("uno").value;
-            document.getElementById("calculo").value = calculo + uno;
-            //            alert(calculo);
-
-            //document.getElementById("comerci").value = comer;
-        }
-
-        function calcu2() {
-            var calculo = document.getElementById("calculo").value;
-            var uno = document.getElementById("dos").value;
-            document.getElementById("calculo").value = calculo + uno;
-        }
-
-        function calcu3() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("tres").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu4() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("cuatro").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu5() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("cinco").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu6() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("seis").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu7() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("siete").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu8() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("ocho").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu9() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("nueve").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu0() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("cero").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcu00() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("cerocero").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcupunto() {
-            var calculo = document.getElementById("calculo").value;
-            var num = document.getElementById("punto").value;
-            document.getElementById("calculo").value = calculo + num;
-        }
-
-        function calcuborrar() {
-            //var calculo = document.getElementById("calculo").value;
-            //var num = document.getElementById("borrar").value;
-            document.getElementById("calculo").value = " ";
-        }
-
-        function calcuc() {
-            //var calculo = document.getElementById("calculo").value;
-            //var num = document.getElementById("borrar").value;
-            document.getElementById("calculo").value = " ";
-        }
-
-        function calcuenter() {
-            var orden = document.getElementById("ordenpre").value;
-            var calc = document.getElementById("calculo").value;
-            if (orden == "0") {
-
-                document.getElementById("depasub").value = calc;
-
-
-            }
-            if (orden == "1") {
-                document.getElementById("persosub").value = calc;
-            }
-            if (orden == "2") {
-                document.getElementById("fijosub").value = calc;
-            }
-            if (orden == "3") {
-                document.getElementById("casisub").value = calc;
-            }
-            desdeenter();
-            calcuborrar();
-
-        }
-        function desdeenter() {
-            
-            const subtotal = parseFloat(document.getElementById("depasub").value);
-            const subtotal2 = parseFloat(document.getElementById("persosub").value);
-            const subtotal3 = parseFloat(document.getElementById("fijosub").value);
-            const subtotal4 = parseFloat(document.getElementById("casisub").value);
-
-            const total = subtotal + subtotal2 + subtotal3 + subtotal4;
-
-            $('#stotal').text("$" + total);
-            $('#total1').text("$" + total);
-
-            //alert('hola');
-
-
-
-
-        }
-
+       
         function calcuperso() {
             //var calculo = document.getElementById("calculo").value;
             //var num = document.getElementById("borrar").value;

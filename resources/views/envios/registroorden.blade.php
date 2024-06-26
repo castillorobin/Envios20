@@ -414,16 +414,17 @@ $(document).ready(function() {
                 <!--end::Input group--> 
 
                 <!--begin::Input group-->
-                <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Enter invoice number">
+                <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover" >
                     
                 </div>                
                 <!--end::Input group--> 
 
                 <!--begin::Input group-->
-                <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice due date">
+                <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover" >
                     <!--begin::Date-->
                     <span class="fs-2x fw-bold text-gray-800">Factura #</span> 
-                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="2024001" placehoder="..."/>
+                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="{{ $factura }}" name="codigo" id="codigo" />
+                    
                     <!--end::Input-->                
                 </div>                
                 <!--end::Input group--> 
@@ -527,11 +528,11 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia1" name="guia1" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese1" id="ingrese1">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Personalizado" class="visually-hidden" name="tipo1" id="tipo1">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="submit" class="btn btn-primary mb-3" onclick="aumentar1()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3">Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -555,7 +556,7 @@ $(document).ready(function() {
                                 
 
                                 
-                            </tr>    
+                            </tr>  
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
                                 <td class="pe-7">                                            
                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Personalizado departamental</label>
@@ -563,11 +564,11 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia2" name="guia2" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese2" id="ingrese2">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia2" name="guia2" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Personalizado departamental" class="visually-hidden" name="tipo2" id="tipo2">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar2()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -576,7 +577,7 @@ $(document).ready(function() {
 
                                 <td class="ps-0">          
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                  
-                                    <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2"  value="0" />
+                                    <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2" value="0" />
                                 </td>
 
                                 <td>   
@@ -598,11 +599,11 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia3" name="guia3" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese3" id="ingrese3">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia3" name="guia3" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Punto fijo" class="visually-hidden" name="tipo3" id="tipo3">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar3()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -611,7 +612,7 @@ $(document).ready(function() {
 
                                 <td class="ps-0">      
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                      
-                                    <input type="text" class="form-control form-control-solid" id="cantidad3" name="cantidad3"  value="0" />
+                                    <input type="text" class="form-control form-control-solid" id="cantidad3" name="cantidad3" value="0" />
                                 </td>
 
                                 <td>   
@@ -633,11 +634,11 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                            <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese4" id="ingrese4">
+                                                                    <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" placeholder="Ingrese guía" >
+                                                                    <input type="text" value="Casillero" class="visually-hidden" name="tipo4" id="tipo4">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar4()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -646,7 +647,7 @@ $(document).ready(function() {
 
                                 <td class="ps-0">            
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                
-                                    <input type="text" class="form-control form-control-solid" id="cantidad4" name="cantidad4"  value="0" />
+                                    <input type="text" class="form-control form-control-solid" id="cantidad4" name="cantidad4" value="0" />
                                 </td>
 
                                 <td>   
@@ -660,7 +661,7 @@ $(document).ready(function() {
                                 <button type="button" class="btn btn-primary mt-9" onclick="limpiar4()"><i class="fas fa-broom"></i></button>
                                 </td>
                                 
-                            </tr>       
+                            </tr>         
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
                                 <td class="pe-7">                                            
                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Guias</label>
@@ -669,7 +670,7 @@ $(document).ready(function() {
 <div class="row">
                                                                 <div class="col-8">
                                                             <input type="text" class="form-control form-control-solid " id="guia5" name="guia5" placeholder="Ingrese guía" >
-                                                            <input type="text" value="Personalizado" class="visually-hidden" name="ingrese5" id="ingrese5">
+                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo5" id="tipo5">
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="button" class="btn btn-primary mb-3" onclick="aumentar5()">Agregar</button>
@@ -697,8 +698,11 @@ $(document).ready(function() {
                                 
                             </tr>         
                         </tbody>
+                    </form> 
                         <!--end::Table body-->
-
+                        <form action="/cobro/ticket" id="kt_invoice_form" method="POST"> 
+                            @csrf
+                            @method('GET')
                         <!--begin::Table foot-->
                         <tfoot>
                             <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
