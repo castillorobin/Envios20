@@ -58,7 +58,9 @@ class CobroController extends Controller
         $nota=" ";
         $comercio = $request->get('comercio') ;
 
-        
+        $ticket = new Cobro();
+
+
 
         return view('envios.registroordenlista', compact('comercios','nota'));
 

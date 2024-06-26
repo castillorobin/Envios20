@@ -403,7 +403,7 @@ $(document).ready(function() {
                     <!--begin::Input-->
                     <div class="position-relative d-flex align-items-center w-150px">
                         <!--begin::Datepicker-->
-                        <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="invoice_date"/>
+                        <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="fecha"/>
                         <!--end::Datepicker-->
                         
                         <!--begin::Icon-->
