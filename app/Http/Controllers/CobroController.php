@@ -54,8 +54,13 @@ class CobroController extends Controller
 
     public function ticketcabeza(Request $request)
     {
+        $comercios = Comercio::all(); 
+        $nota=" ";
         $comercio = $request->get('comercio') ;
-        return $comercio;
+
+        
+
+        return view('envios.registroordenlista', compact('comercios','nota'));
 
     }
 
