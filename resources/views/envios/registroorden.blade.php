@@ -703,7 +703,7 @@ $(document).ready(function() {
                         <form action="/cobro/ticket" id="kt_invoice_form" method="POST"> 
                             @csrf
                             @method('GET')
-                        <!--begin::Table foot-->
+                        <!--begin::Table foot--> 
                         <tfoot>
                             <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
                                 <th class="text-primary">

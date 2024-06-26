@@ -186,22 +186,27 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-
-                                            <td><a href="#" class="text-gray-900 text-hover-primary">#000</a></td>
-                                            <td><a href="#" class="text-gray-900 text-hover-primary">MODA SV </a></td>
-                                            <td>JOAKIN POLANCO</td>
-                                            <td>SANTA ANA</td>
-                                            <td class="text-star"><span class="badge badge-light-success">Personalizado</span></td>
-                                            <td class="text-star"><span class="badge badge-light-success">Entregado</span></td>
-                                            <td>25/mayo/2021</td>
-                                            <td class="text-star"><span class="badge badge-light-success">pagado</span></td>
-                                            <td>$25.00</td>
-                                            <td>$5.00</td>
-                                            <td>$30</td>
-                                            <td>se relaizo descuento</td>
+                                            @foreach ($pedidos as $pedido)                                               
+                                           
+                                            <tr>
 
 
+
+                                                <td>{{$pedido->guia}}</td>
+                                                <td>{{$pedido->comercio}}</td>
+                                                <td>{{$pedido->destinatario}}</td>
+                                                <td>{{$pedido->direccion}}</td>
+                                                <td>{{$pedido->tipo}}</td>
+                                                <td>{{$pedido->estado}}</td>
+                                                <td>{{$pedido->fecha_entrega}}</td>
+                                                <td>{{$pedido->pago}}</td>
+                                                <td>{{$pedido->precio}}</td>
+                                                <td>{{$pedido->envio}}</td>
+                                                <td>{{$pedido->total}}</td>
+                                                <td>{{$pedido->nota}}</td>
+                                                
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
 
