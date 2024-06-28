@@ -42,7 +42,7 @@
                     <div id="kt_account_settings_profile_details" class="collapse show">
                         <form action="/empleadoguardar" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                             @csrf
-                            @method('GET') 
+                            @method('GET')
                             <div class="card-body border-top p-9">
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label fw-semibold fs-6">Foto</label>
@@ -291,12 +291,6 @@
         });
     </script>
     <script>
-        Inputmask({
-            "mask": "(+999) 9999-9999"
-        }).mask("#whatsapp");
-    </script>
-
-    <script>
         $(document).ready(function() {
             // Validación solo para el campo "Número de Guía" y permitir solo números
             $("#id").focusout(function() {
@@ -344,15 +338,11 @@
 
         $(document).ready(function() {
             // Máscara y validación para el campo de teléfono
-            Inputmask({
-                mask: "(+999) 9999-9999",
-                clearIncomplete: true
-            }).mask("#telefono");
 
-            // Función para validar el número de teléfono de El Salvador
+            // Función para validar el número de teléfono (solo 8 números)
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de El Salvador
-                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
+                // Expresión regular para validar que solo sean 8 números
+                var telefonoRegex = /^\d{8}$/;
                 return telefonoRegex.test(telefono);
             }
 
@@ -381,18 +371,49 @@
                 }
             });
         });
+        $(document).ready(function() {
+
+            // Función para validar el número de WhatsApp (solo 8 números)
+            function validarWhatsapp(whatsapp) {
+                // Expresión regular para validar que solo sean 8 números
+                var whatsappRegex = /^\d{8}$/;
+                return whatsappRegex.test(whatsapp);
+            }
+
+            // Validación al perder el foco del campo #whatsapp
+            $("#whatsapp").focusout(function() {
+                var whatsappValue = $(this).val().trim();
+                if (whatsappValue === "") {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Este campo es obligatorio.").show();
+                } else if (!validarWhatsapp(whatsappValue)) {
+                    $(this).removeClass("is-valid").addClass("is-invalid");
+                    $(this).next(".invalid-feedback").text("Por favor ingrese un número de WhatsApp válido.").show();
+                } else {
+                    $(this).removeClass("is-invalid").addClass("is-valid");
+                    $(this).next(".invalid-feedback").hide();
+                }
+            });
+
+            // Modificación para manejar el envío del formulario
+            $("#kt_account_profile_details_form").submit(function(e) {
+                var whatsappValue = $("#whatsapp").val().trim();
+                if (whatsappValue === "" || !validarWhatsapp(whatsappValue)) {
+                    e.preventDefault();
+                    $("#whatsapp").removeClass("is-valid").addClass("is-invalid");
+                    $("#whatsapp").next(".invalid-feedback").text("Por favor, corrija los errores en el formulario antes de enviar.").show();
+                }
+            });
+        });
+
+
 
         $(document).ready(function() {
-            // Máscara y validación para el campo de teléfono
-            Inputmask({
-                mask: "(+999) 9999-9999",
-                clearIncomplete: true
-            }).mask("#telefono1");
 
-            // Función para validar el número de teléfono de El Salvador
+            // Función para validar el número de teléfono (solo 8 números)
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de El Salvador
-                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
+                // Expresión regular para validar que solo sean 8 números
+                var telefonoRegex = /^\d{8}$/;
                 return telefonoRegex.test(telefono);
             }
 
@@ -423,16 +444,11 @@
         });
 
         $(document).ready(function() {
-            // Máscara y validación para el campo de teléfono
-            Inputmask({
-                mask: "(+999) 9999-9999",
-                clearIncomplete: true
-            }).mask("#telefono2");
 
-            // Función para validar el número de teléfono de El Salvador
+            // Función para validar el número de teléfono (solo 8 números)
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de El Salvador
-                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
+                // Expresión regular para validar que solo sean 8 números
+                var telefonoRegex = /^\d{8}$/;
                 return telefonoRegex.test(telefono);
             }
 
@@ -462,17 +478,13 @@
             });
         });
 
-        $(document).ready(function() {
-            // Máscara y validación para el campo de teléfono
-            Inputmask({
-                mask: "(+999) 9999-9999",
-                clearIncomplete: true
-            }).mask("#telefono3");
 
-            // Función para validar el número de teléfono de El Salvador
+        $(document).ready(function() {
+
+            // Función para validar el número de teléfono (solo 8 números)
             function validarTelefono(telefono) {
-                // Expresión regular para validar números de teléfono de El Salvador
-                var telefonoRegex = /^\(\+503\)\s\d{4}-\d{4}$/;
+                // Expresión regular para validar que solo sean 8 números
+                var telefonoRegex = /^\d{8}$/;
                 return telefonoRegex.test(telefono);
             }
 
@@ -501,6 +513,7 @@
                 }
             });
         });
+
 
         $(document).ready(function() {
             // Validación para el campo "Destinatario"

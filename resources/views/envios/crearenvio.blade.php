@@ -80,12 +80,7 @@
         });
 
         $(document).ready(function() {
-            // Función para validar el número de teléfono
-            Inputmask({
-                mask: "(+503) 9999-9999",
-                clearIncomplete: true
-            }).mask("#telefonop");
-
+           
             // Validación para el campo de teléfono
             $("#telefonop").focusout(function() {
                 var value = $(this).val().trim();
@@ -360,12 +355,6 @@
 <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
 <script src="assets/plugins/global/plugins.bundle.js"></script>
 
-
-<script>
-    flatpickr("#fecha_entregap", {
-        dateFormat: 'Y-m-d',
-    });
-</script>
 <script>
     $(document).ready(function() {
 

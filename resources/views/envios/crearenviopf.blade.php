@@ -285,9 +285,3 @@
 
     });
 </script>
-<script>
-    Inputmask({
-        mask: "(+503) 9999-9999",
-        clearIncomplete: true
-    }).mask("#telefono");
-</script>
