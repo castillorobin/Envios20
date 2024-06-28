@@ -87,7 +87,9 @@ Route::get('/stocks/seleccionarpunto', function () {
 Route::get('/configuraciones/ajustes', function () {
     return view('configuraciones.ajustes');
 });
-
+Route::get('/envios/registroconguia', function () {
+    return view('envios.registroconguia');
+});
 
 Route::get('envio', [App\Http\Controllers\EnvioController::class, 'index'] )->name('index') ;
 Route::get('envio/indexdigitadofiltro/{id}', [App\Http\Controllers\EnvioController::class, 'indexdigitadofiltro'] )->name('indexdigitadofiltro') ;
