@@ -118,12 +118,12 @@ Route::get('/entregas', function () {
     return view('envios.entregas');
 });
 
-
+/*
 Route::get('/listapagos', function () {
     return view('envios.pagoslista');
 });
 
-/*
+
 Route::get('/registro-orden', function () {
     return view('envios.registroorden');
 });
@@ -135,6 +135,8 @@ Route::get('cobro/agregar/', [App\Http\Controllers\CobroController::class, 'agre
 Route::get('cobro/limpiar', [App\Http\Controllers\CobroController::class, 'limpiar'] )->name('limpiarco') ;
 Route::get('cobro/ticket', [App\Http\Controllers\CobroController::class, 'ticket'] )->name('ticketco') ;
 Route::get('cobro/ticketcabeza', [App\Http\Controllers\CobroController::class, 'ticketcabeza'] )->name('ticketcabeza') ;
+Route::get('cobro/ticketpartes', [App\Http\Controllers\CobroController::class, 'ticketpartes'] )->name('ticketpartes') ;
+
 
 Route::get('cobro/imprimir', [App\Http\Controllers\CobroController::class, 'imprimir'] )->name('imprimirco') ;
 
@@ -143,7 +145,9 @@ Route::get('comercio', [App\Http\Controllers\ComercioController::class, 'index']
 Route::get('comercio/crearcomercio', [App\Http\Controllers\ComercioController::class, 'create'] )->name('createco') ;
 Route::get('comercio/guardar', [App\Http\Controllers\ComercioController::class, 'store'] )->name('storeco') ;
 
-
+//facturacion - Pago
+Route::get('listapagos', [App\Http\Controllers\PagoController::class, 'index'] )->name('indexpago') ;
+Route::get('pago/connombre', [App\Http\Controllers\PagoController::class, 'connombre'] )->name('connombre') ;
 
 
 
