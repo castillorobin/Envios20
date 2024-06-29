@@ -34,7 +34,120 @@
             color: #28a745;
         }
     </style>
-    
+    <script>
+        $(document).ready(function() {
+            // Validación solo para el campo "Número de Guía" y permitir solo números
+            $("#n_guia").focusout(function() {
+                var value = $(this).val();
+                if (value.length == 0 || !$.isNumeric(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo debe contener solo números');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+                console.log('Este campo es obligatorio');
+            });
+
+            $(document).ready(function() {
+                // Validación para el campo "Destinatario"
+                $("#destinatariop").focusout(function() {
+                    var value = $(this).val();
+                    if (value.trim() === "") {
+                        $(this).addClass("is-invalid");
+                        $(this).removeClass("is-valid");
+                        console.log('El campo "Destinatario" es obligatorio');
+                    } else {
+                        $(this).removeClass("is-invalid");
+                        $(this).addClass("is-valid");
+                    }
+                });
+            });
+
+            // Validación para campos de tipo select
+            $("select").focusout(function() {
+                var value = $(this).val();
+                if (value.length == 0) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+                console.log('Este campo es obligatorio');
+            });
+        });
+
+        $(document).ready(function() {
+
+            // Validación para el campo de teléfono
+            $("#telefonop").focusout(function() {
+                var value = $(this).val().trim();
+                if (value === "") {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('El campo "Teléfono" es obligatorio');
+                } else if (!validarTelefono(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un número de teléfono válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+
+            // Modificación para manejar el envío del formulario
+            $("#kt_ecommerce_settings_general_form").submit(function(e) {
+                // Validar el campo de teléfono antes de enviar el formulario
+                var telefonoValue = $("#telefonop").val().trim();
+                if (telefonoValue === "" || !validarTelefono(telefonoValue)) {
+                    e.preventDefault(); // Evitar que el formulario se envíe
+                    $("#telefonop").addClass("is-invalid");
+                    console.log('Por favor, corrija los errores en el formulario antes de enviar.');
+                }
+                // Puedes agregar más lógica de validación aquí si es necesario
+            });
+        });
+
+        $(document).ready(function() {
+            // Función para validar valor monetario
+            function validarValorMoneda(valor) {
+                // Expresión regular para validar números o formatos de moneda válidos
+                var valorMonedaRegex = /^\d+(\.\d{1,2})?$/; // Acepta números con hasta 2 decimales
+                return valorMonedaRegex.test(valor);
+            }
+
+            // Validación para campos de valor monetario
+            $(".precio-moneda").focusout(function() {
+                var value = $(this).val().trim();
+                if (value !== "" && !validarValorMoneda(value)) {
+                    $(this).addClass("is-invalid");
+                    $(this).removeClass("is-valid");
+                    console.log('Por favor ingrese un valor monetario válido');
+                } else {
+                    $(this).removeClass("is-invalid");
+                    $(this).addClass("is-valid");
+                }
+            });
+        });
+        $(document).ready(function() {
+            // Validación para el campo de fecha de entrega al enviar el formulario
+            $("form").submit(function(event) {
+                var value = $("#fecha_entregap").val().trim();
+                if (value === "") {
+                    $("#fecha_entregap").addClass("is-invalid");
+                    $("#fecha_entregap").removeClass("is-valid");
+                    $("#fechaEntregapValidationFeedback").addClass("invalid-feedback");
+                    event.preventDefault(); // Evita que el formulario se envíe si la validación falla
+                } else {
+                    $("#fecha_entregap").removeClass("is-invalid");
+                    $("#fecha_entregap").addClass("is-valid");
+                }
+            });
+        });
+    </script>
 
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
@@ -67,7 +180,7 @@
 
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-3 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" required />
+                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" />
                                         
                                         <label for="n_guia" style="padding-left: 25px;">Buscar # de guía</label>
                                         
@@ -81,7 +194,7 @@
                             </form>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-7 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="comercio" id="comercio" placeholder="Aqui cargara automaticamente el comercio" />
+                                        <input type="text" class="form-control form-control-solid" name="comercio" id="comercio" value="{{$pedido[0]->comercio}}" readonly/>
                                         <label for="comercio" style="padding-left: 25px;">Nombre de comercio</label>
                                     </div>
                                     <div class="form-floating col-lg-5 mb-4">
@@ -91,7 +204,7 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Destinatario"  />
+                                        <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Destinatario" required />
                                         <label for="destinatariop" style="padding-left: 25px;">Destinatario</label>
                                         <div id="destinatarioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese el destinatario.
@@ -136,22 +249,22 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="cenvio" id="cenvio" placeholder="Aqui cargara automaticamente" />
+                                        <input type="text" class="form-control form-control-solid" name="cenvio" id="cenvio" value="Pendiente" readonly/>
                                         <label for="cenvio" style="padding-left: 25px;">Cobro del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="estado_pago" id="estado_pago" placeholder="Aqui cargara automaticamente" />
+                                        <input type="text" class="form-control form-control-solid" name="estado_pago" id="estado_pago" value="Por pagar" readonly/>
                                         <label for="estado_pago" style="padding-left: 25px;">Estado del pago</label>
                                     </div>
                                 </div>
                                 <div class="row my-4 mx-4">
 
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="tipo_envio" id="tipo_envio" placeholder="Aqui cargara automaticamente" />
+                                        <input type="text" class="form-control form-control-solid" name="tipo_envio" id="tipo_envio" value="{{$pedido[0]->tipo}}" readonly/>
                                         <label for="tipo_envio" style="padding-left: 25px;">Tipo de envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="estado_enviop" id="estado_enviop" placeholder="Aqui cargara automaticamente" />
+                                        <input type="text" class="form-control form-control-solid" name="estado_enviop" id="estado_enviop" value="Creado" readonly/>
                                         <label for="estado_enviop" style="padding-left: 25px;">Estado del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">

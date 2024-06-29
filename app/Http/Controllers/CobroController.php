@@ -69,7 +69,7 @@ class CobroController extends Controller
         $comercios = Comercio::all(); 
         $nota=" ";
         $comercio = $request->get('comercio') ;
-
+ 
         $ticket = new Ticketc();
         $ticket->codigo = $request->get('codigo');
         $ticket->comercio = $request->get('comercio');

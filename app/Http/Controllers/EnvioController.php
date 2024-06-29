@@ -145,7 +145,14 @@ class EnvioController extends Controller
         return redirect('/envios/lista');
     }
 
+    public function conguia(Request $request)
+    {
+        $guia= $request->get('n_guia');
+        $pedido = Envio::where('guia', $guia)->get();
 
+        return view('envios.registroconguiadatos', compact('pedido'));
+
+    }
     /**
      * Show the form for creating a new resource.
      */
