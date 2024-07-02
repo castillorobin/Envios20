@@ -399,7 +399,7 @@ $(document).ready(function() {
                     <!--begin::Date-->
                     <div class="fs-6 fw-bold text-gray-700 text-nowrap">Fecha:</div>  
                     <!--end::Date-->                    
-
+ 
                     <!--begin::Input-->
                     <div class="position-relative d-flex align-items-center w-150px">
                         <!--begin::Datepicker-->

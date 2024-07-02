@@ -357,7 +357,7 @@ $(document).ready(function() {
                     <li class="breadcrumb-item">
                         <span class="bullet bg-gray-500 w-5px h-2px"></span>
                     </li>
-                    <!--end::Item-->
+                    <!--end::Item--> 
                                         
                             <!--begin::Item-->
                                     <li class="breadcrumb-item text-muted">
@@ -536,7 +536,7 @@ $(document).ready(function() {
                                                                     <input type="text" value="Personalizado" class="visually-hidden" name="tipo1" id="tipo1">
                                                         </div>
                                                         <div class="col-4">
-                                                            <button type="submit" class="btn btn-primary mb-3" onclick="aumentar1()">Agregar</button>
+                                                            <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                         </div>
 
@@ -580,7 +580,7 @@ $(document).ready(function() {
                                 </td>
 
                                 <td class="ps-0">          
-                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>                                  
+                                <label class="form-label fs-6 fw-bold text-gray-700 mb-3">&nbsp;</label>                                  
                                     <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2" value="{{$cobroperdepa}}" />
                                 </td>
 
@@ -838,14 +838,14 @@ $(document).ready(function() {
             <input type="text" class="form-control form-control-solid text-end" name="cambio" id="cambio" placeholder="0" value="0" data-kt-element="price"/>
             <!--end::Label-->
 
-            <input type="text" class="form-control form-control-solid text-end" name="total2" id="total2" data-kt-element="price"/>  
-            <input type="text" class="form-control form-control-solid text-end" name="iva2" id="iva2" data-kt-element="price"/>  
+            <input type="text" class="form-control form-control-solid text-end" name="total2" id="total2" data-kt-element="price" hidden/>  
+            <input type="text" class="form-control form-control-solid text-end" name="iva2" id="iva2" data-kt-element="price" hidden/>  
 
-            <input type="text" class="form-control form-control-solid text-end" name="pre1" id="pre1" data-kt-element="price"/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price"/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price"/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price"/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price"/>  
+            <input type="text" class="form-control form-control-solid text-end" name="pre1" id="pre1" data-kt-element="price" hidden/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price" hidden/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price" hidden/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price" hidden/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/>  
             <!--end::Select-->
         </div>
         <!--end::Input group-->
