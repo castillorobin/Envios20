@@ -260,6 +260,14 @@
 							<span class="menu-title">Registro con guia </span>
 						</a>
 					</div>
+					<div class="menu-item">
+						<a class="menu-link" href="/envios/listadoticket">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Listado de ticket</span>
+						</a>
+					</div>
 				</div>
 			</div>
 

@@ -90,6 +90,12 @@ Route::get('/configuraciones/ajustes', function () {
 Route::get('/envios/registroconguia', function () {
     return view('envios.registroconguia');
 });
+Route::get('/envios/listadoticket', function () {
+    return view('envios.listadoticket');
+});
+Route::get('/envios/detalleticket', function () {
+    return view('envios.detalleticket');
+});
 
 Route::get('envio', [App\Http\Controllers\EnvioController::class, 'index'] )->name('index') ;
 Route::get('envio/indexdigitadofiltro/{id}', [App\Http\Controllers\EnvioController::class, 'indexdigitadofiltro'] )->name('indexdigitadofiltro') ;
