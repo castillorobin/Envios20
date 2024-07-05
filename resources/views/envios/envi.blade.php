@@ -176,15 +176,19 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px"># de guía</th>
+                                                <th class="min-w-80px"># de guía</th>
                                                 <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-50px">Dirección</th>
-                                                <th class="text-center min-w-50px">Status</th>
-                                                <th class="min-w-50px">Precio</th>
-                                                <th class="min-w-50px">Envío</th>
+                                                <th class="min-w-100px">Destinatario</th>
+                                                <th class="min-w-150px">Dirección</th>
+                                                <th class="min-w-50px">Tipo de envío</th>
+                                                <th class="min-w-100px text-center">Cobro de envio</th>
+                                                <th class="min-w-50px">Fecha de entrega</th>
+                                                <th class="min-w-50px">Status</th>
                                                 <th class="min-w-50px">Total</th>
-                                                <th class="text-center min-w-80px">Estado del pago</th>
+                                                <th class="min-w-50px">Ruta</th>
+                                                <th class="min-w-50px">Nota </th>
+                                                <th class="min-w-50px">Nota de repartidor</th>
+                                                <th class="min-w-50px">Ubicación</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
@@ -198,17 +202,16 @@
                                                 <td>{{ $envio->comercio }}</td>
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
+                                                <td>Personalizado</td>
+                                                <td style="text-align: center;">$34</td>
+                                                <td>20/07/2024</td>
                                                 <td>
                                                     @if( $envio->estado == 'Fallida')
                                                     <span class="badge badge-danger">{{ $envio->estado }}</span>
-
-
                                                     @elseif( $envio->estado == 'Creado')
                                                     <span class="badge badge-warning">{{ $envio->estado }}</span>
-
                                                     @elseif( $envio->estado == 'Entregado')
                                                     <span class="badge badge-success">{{ $envio->estado }}</span>
-
 
                                                     @elseif( $envio->estado == 'En transito')
                                                     <span class="badge badge-info">{{ $envio->estado }}</span>
@@ -218,19 +221,14 @@
                                                     <span class="badge badge-primary">{{ $envio->estado }}</span>
                                                     @else
                                                     <span class="badge badge-light">{{ $envio->estado }}</span>
-
-
                                                     @endif
-
-
-
                                                 </td>
-                                                <td class="text-end">{{ $envio->precio }}</td>
-                                                <td class="text-end">{{ $envio->envio }}</td>
                                                 <td class="text-end">{{ $envio->total }}</td>
-                                                <td class="text-center">
-                                                    <span class="badge badge-light-success">{{ $envio->pago }}</span>
-                                                </td>
+                                                <td>2</td>
+                                                <td>mensaje de nota</td>
+                                                <td>no respondio</td>
+                                                <td>Santa ana, el salvador</td>
+                                               
 
 
                                             </tr>

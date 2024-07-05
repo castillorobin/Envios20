@@ -126,7 +126,7 @@
                                                     <div class="fw-semibold fs-5 text-black-100 text-right">Calle morena, santa ana, el salvador</div>
                                                 </div>
 
-                                                
+
                                             </div>
                                             <!--end::Wrapper-->
 
@@ -137,12 +137,26 @@
                                 <!--end::Details-->
                                 <!--begin::Navs-->
                                 <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
-                                    <!--begin::Nav item-->
                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="#">Detalle ticket</a>
                                     </li>
-                                    <!--end::Nav item-->
+                                    <li class="nav-item mt-2">
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Personalizado</a>
+                                    </li>
+                                    <li class="nav-item mt-2">
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Punto fijo</a>
+                                    </li>
+                                    <li class="nav-item mt-2">
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Casillero</a>
+                                    </li>
+                                    <li class="nav-item mt-2">
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Personalizado Departamental</a>
+                                    </li>
+                                    <li class="nav-item mt-2">
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Guias</a>
+                                    </li>
                                 </ul>
+
                                 <!--begin::Navs-->
                             </div>
                         </div>
