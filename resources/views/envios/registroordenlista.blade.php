@@ -532,7 +532,7 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
+                                                                    <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" autofocus>
                                                                     <input type="text" value="Personalizado" class="visually-hidden" name="tipo1" id="tipo1">
                                                         </div>
                                                         <div class="col-4">
