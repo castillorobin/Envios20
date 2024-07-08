@@ -155,7 +155,8 @@
                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/guiasticket">Guias</a>
                                     </li>
-                                </ul> 
+                                </ul>
+
                                 <!--begin::Navs-->
                             </div>
                         </div>
@@ -167,166 +168,58 @@
                             <div class="card-header cursor-pointer">
                                 <!--begin::Card title-->
                                 <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">Detalles del ticket</h3>
+                                    <h3 class="fw-bold m-0">Detalles del ticket personalizado</h3>
                                 </div>
-                                <!--end::Card title-->
+                                <!--end::Card title--> 
                             </div>
                             <!--begin::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body p-9">
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Estado
-                                    </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-success">Creado</span>
-                                    </div>
-                                    <!--end::Col-->
+                                <!--begin::Table-->
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
+                                        <thead>
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th class="min-w-100px"># de ticket</th>
+                                                <th class="min-w-50px">Fecha de creacion</th>
+                                                <th class="min-w-50px">Hora de creacion</th>
+                                                <th class="min-w-50px">tipo de envio</th>
+                                                <th class="min-w-50px">local</th>
+                                                <th class="min-w-50px">Status</th>
+                                                <th class="min-w-50px">cantidad</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px text-center">Estado del pago</th>
+                                                <th class="min-w-50px">Cajero</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fw-semibold  text-gray-400">
+                                            <tr class="'table-row-gray' : 'table-row-white' ">
+                                                <td> <a href="/envios/detalleticket" class="text-gray-900 text-hover-primary">
+                                                        #00001
+                                                    </a></td>
+                                                <td>20/07/2024</td>
+                                                <td>08:22 PM</td>
+                                                <td>Personalizado</td>
+                                                <td>San Salvador</td>
+                                                <td>Envido</td>
+                                                <td>15</td>
+                                                <td>$220</td>
+                                                <td><span class="badge badge-warning">Pendiente</span>
+                                                </td>
+                                                <td>Robin castillo</td>
+
+                                            </tr>
+                                        </tbody>
+
+                                    </table>
+                                    <ul class="pagination">
+                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
+                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
+                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
+                                    </ul>
                                 </div>
-                                <!--end::Input group-->
-                                <!--begin::Row-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Numero de ticket</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">#0001</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Comercio</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">MODA SV</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de creacion</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">20/06/2024</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Hora de creacion</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">16:22 PM</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Personalizado</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Punto fijo</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Casillero</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Personalizado Departamental</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Guias</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 Guias</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Total</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">$250</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Entrego</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$260.00</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Cambio</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$10.00</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Cajero</label>
-                                    <!--begin::Label-->
-                                    <!--begin::Label-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-semibold fs-6 text-gray-800">Robin castillo</span>
-                                    </div>
-                                    <!--begin::Label-->
-                                </div>
+                                <!--end::Table-->
 
                             </div>
                             <!--end::Card body-->

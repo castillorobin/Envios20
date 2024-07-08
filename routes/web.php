@@ -96,6 +96,27 @@ Route::get('/envios/listadoticket', function () {
 Route::get('/envios/detalleticket', function () {
     return view('envios.detalleticket');
 });
+Route::get('/envios/personalizadoticket', function () {
+    return view('envios.personalizadoticket');
+});
+Route::get('/envios/puntoticket', function () {
+    return view('envios.puntoticket');
+});
+
+Route::get('/envios/casilleroticket', function () {
+    return view('envios.casilleroticket');
+});
+
+Route::get('/envios/departamentalticket', function () {
+    return view('envios.departamentalticket');
+});
+Route::get('/envios/guiasticket', function () {
+    return view('envios.guiasticket');
+});
+
+
+
+
 
 Route::get('envio', [App\Http\Controllers\EnvioController::class, 'index'] )->name('index') ;
 Route::get('envio/indexdigitadofiltro/{id}', [App\Http\Controllers\EnvioController::class, 'indexdigitadofiltro'] )->name('indexdigitadofiltro') ;
@@ -126,6 +147,7 @@ Route::get('/faltas/listafaltas', function () {
 Route::get('/entregas', function () {
     return view('envios.entregas');
 });
+
 
 /*
 Route::get('/listapagos', function () {
