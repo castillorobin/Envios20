@@ -603,7 +603,7 @@
                                                             </tr>
                                                         </thead>
                                                         <!--end::Table head-->
-
+                                                      
                                                         <!--begin::Table body-->
                                                         <tbody>
                                                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
@@ -613,7 +613,7 @@
                                                                     <br>
                                                                     <div class="row">
                                                                         <div class="col-8">
-                                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía">
+                                                                            <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" >
                                                                             <input type="text" value="Personalizado" class="visually-hidden" name="tipo1" id="tipo1">
                                                                         </div>
                                                                         <div class="col-4">
@@ -623,7 +623,7 @@
 
                                                                     </div>
                                                                 </td>
-
+                                                                
                                                                 <td class="ps-0">
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
                                                                     <input type="text" class="form-control form-control-solid" id="cantidad1" name="cantidad1" value="0" />
@@ -659,7 +659,15 @@
 
                                                                     </div>
                                                                 </td>
-
+                                                                @if($nota != 4)
+                                                                        <script>
+                                                                            const div2 = document.querySelector("guia2");
+                                                                            //div2.autofocus = true;
+                                                                            div2.setAttribute("disabled", ""); 
+                                                                            //div2.toggleAttribute("hidden");
+                                                                            //alert('Hola');
+                                                                        </script>
+                                                                @endif
                                                                 <td class="ps-0">
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
                                                                     <input type="text" class="form-control form-control-solid" id="cantidad2" name="cantidad2" value="0" />
