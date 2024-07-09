@@ -392,7 +392,7 @@
                                             <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" />
                                             <div class="invalid-feedback">Este campo es obligatorio.</div>
                                         </div>
-                                    </div>
+                                    </div> 
 
                                     <div class="row mb-6">
                                         <label class="col-lg-3 col-form-label">Dirección del comercio</label>
@@ -530,12 +530,13 @@
 
                                                         <!--begin::Input group-->
                                                         <div class="mb-5">
-                                                            <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" onchange="valor()">
-                                                                <option value=" ">Buscar comercio</option>
+                                                            <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" onchange="valor()" required>
+                                                                <option value="">Buscar Comercio</option>
                                                                 @foreach ($comercios as $comercio)
                                                                 <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
                                                                 @endforeach
                                                             </select>
+                                                            <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                         </div>
 
                                                         @foreach ($comercios as $comercio)
