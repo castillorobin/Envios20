@@ -550,7 +550,7 @@ $(document).ready(function() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0" value="0" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" value="{{$precio1}}" data-kt-element="price"/>
                                 </td>
                                 
                                 <td >
@@ -586,7 +586,7 @@ $(document).ready(function() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0" value="0" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" value="{{$precio2}}" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -621,7 +621,7 @@ $(document).ready(function() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0" value="0" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" value="{{$precio3}}" data-kt-element="price"/>
                                 </td>
                                 
                                 <td >
@@ -656,7 +656,7 @@ $(document).ready(function() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0" value="0" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" value="{{$precio4}}" data-kt-element="price"/>
                                 </td>
                                 
                                 
@@ -691,7 +691,7 @@ $(document).ready(function() {
 
                                 <td>   
                                 <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0" value="0" data-kt-element="price"/>
+                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" value="{{$precio5}}" data-kt-element="price"/>
                                 </td>
                                 
                                 

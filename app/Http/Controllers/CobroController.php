@@ -79,7 +79,15 @@ class CobroController extends Controller
 
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
 
+        $precio1= $request->get('precio1');
+        $precio2= $request->get('precio2');
+        $precio3= $request->get('precio3');
+        $precio4= $request->get('precio4');
+        $precio5= $request->get('precio5');
+
+
         if ($request->filled('guia')) {
+        
         $envio = new Envio();
         $envio->tipo = $request->get('tipo1');
         $envio->guia = $request->get('guia');
@@ -109,7 +117,7 @@ class CobroController extends Controller
         $cobrocasi =  $cobrocasi->count();
 
 
-        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
 
@@ -143,7 +151,7 @@ class CobroController extends Controller
         $cobrocasi =  $cobrocasi->count();
 
 
-        return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+        return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
     
             }
@@ -179,7 +187,7 @@ class CobroController extends Controller
             $cobrocasi =  $cobrocasi->count();
     
     
-            return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+            return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
         
                 }
             
@@ -213,7 +221,7 @@ class CobroController extends Controller
                 $cobrocasi =  $cobrocasi->count();
         
         
-                return view('envios.registroordenlistacasi', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+                return view('envios.registroordenlistacasi', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
             
                     }
 
@@ -230,6 +238,12 @@ class CobroController extends Controller
 
      
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
+
+        $precio1= $request->get('precio1');
+        $precio2= $request->get('precio2');
+        $precio3= $request->get('precio3');
+        $precio4= $request->get('precio4');
+        $precio5= $request->get('precio5');
 
         if ($request->filled('guia')) {
         $envio = new Envio();
@@ -262,7 +276,7 @@ class CobroController extends Controller
         $cobrocasi =  $cobrocasi->count();
 
 
-        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
 
@@ -296,7 +310,7 @@ class CobroController extends Controller
         $cobrocasi =  $cobrocasi->count();
 
 
-        return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+        return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
     
             }
 
@@ -330,7 +344,7 @@ class CobroController extends Controller
             $cobrocasi =  $cobrocasi->count();
     
     
-            return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+            return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
         
                 }
             
@@ -365,7 +379,7 @@ class CobroController extends Controller
                 $cobrocasi =  $cobrocasi->count();
         
         
-                return view('envios.registroordenlistacasi', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+                return view('envios.registroordenlistacasi', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
             
                     }
