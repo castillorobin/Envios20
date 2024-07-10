@@ -180,7 +180,7 @@
 
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-3 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[0-9]+" />
+                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" />
                                         
                                         <label for="n_guia" style="padding-left: 25px;">Buscar # de guía</label>
                                         
@@ -249,7 +249,7 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="cenvio" id="cenvio" value="Pendiente" readonly/>
+                                        <input type="text" class="form-control form-control-solid" name="cenvio" id="cenvio" value="{{$pedido[0]->cobro}}" readonly/>
                                         <label for="cenvio" style="padding-left: 25px;">Cobro del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
@@ -268,13 +268,11 @@
                                         <label for="estado_enviop" style="padding-left: 25px;">Estado del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="date" class="form-control form-control-solid" name="fecha_entregap" id="fecha_entregap" placeholder="Fecha de entrega" />
+                                        <input type="date" class="form-control form-control-solid" name="fecha_entregap" id="fecha_entregap" value="<?php echo date("Y-m-d");?>" />
                                         <label for="fecha_entregap" style="padding-left: 25px;">Fecha de entrega</label>
-                                        <div id="fechaEntregapValidationFeedback" class="invalid-feedback">
-                                            Por favor seleccione una fecha de entrega.
-                                        </div>
+                                        
                                     </div>
-                                </div>
+                                </div>b  xbh u8h88b
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating mb-4">
                                         <textarea name="nota" class="form-control form-control-solid" placeholder="Nota" id="nota" style="height: 80px"></textarea>
