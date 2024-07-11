@@ -153,6 +153,35 @@ class EnvioController extends Controller
         return view('envios.registroconguiadatos', compact('pedido'));
 
     }
+    public function guardarconguia(Request $request, $id)
+    {
+        
+        $envio = Envio::find($id);
+
+        //$envio->guia = $request->get('n_guia');
+        $envio->destinatario = $request->get('destinatariop');
+        $envio->direccion = $request->get('direccionp');
+        $envio->telefono = $request->get('telefonop');
+       // $envio->cobro = $request->get('cenvio');
+        $envio->precio = $request->get('precio');
+        $envio->envio = $request->get('envio');
+        $envio->total = $request->get('total');
+        $envio->estado = $request->get('estado_enviop');
+        $envio->pago = $request->get('estado_pago');
+        //$envio->tipo = $request->get('tipo_enviop');
+        $envio->fecha_entrega = $request->get('fecha_entregap');
+        $envio->nota = $request->get('nota');
+
+        $envio->save();
+       // return redirect('/envios/lista');
+
+        
+        //$pedido = Envio::where('guia', $guia)->get();
+
+        return view('envios.registroconguia');
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */

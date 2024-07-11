@@ -190,8 +190,13 @@
                                     <div class="form-floating col-lg-5 mb-4">
                                         <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
                                     </div>
-                                </div>
+                                </div> 
                             </form>
+                            
+                            <form action="/envios/guardarconguia/{{$pedido[0]->id}}" id="kt_invoice_form" method="POST"> 
+                                @csrf
+                                @method('GET')
+
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-7 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="comercio" id="comercio" value="{{$pedido[0]->comercio}}" readonly/>
@@ -200,7 +205,7 @@
                                     <div class="form-floating col-lg-5 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Direccion de recolecta" />
                                         <label for="destinatariop" style="padding-left: 25px;">Direccion de recolecta</label>
-                                    </div>
+                                    </div> 
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
@@ -293,6 +298,8 @@
                                                 </span>
                                             </button>
                                         </div>
+
+                                    </form>
                                     </div>
                                 </div>
                             </form>
