@@ -125,7 +125,7 @@ class CobroController extends Controller
             $envio = new Envio();
             $envio->tipo = $request->get('tipo2');
             $envio->guia = $request->get('guia2');
-            $envio->cobro = "Cobrado";
+            $envio->cobro = "Pagado";
             $envio->ticketc = $codigo;
             $envio->comercio = $request->get('comercio');
             $envio->save();
@@ -160,7 +160,7 @@ class CobroController extends Controller
                 $envio = new Envio();
                 $envio->tipo = $request->get('tipo3');
                 $envio->guia = $request->get('guia3');
-                $envio->cobro = "Cobrado";
+                $envio->cobro = "Pagado";
                 $envio->ticketc = $codigo;
                 $envio->comercio = $request->get('comercio');
                 $envio->save();
@@ -195,7 +195,7 @@ class CobroController extends Controller
                     $envio = new Envio();
                     $envio->tipo = $request->get('tipo4');
                     $envio->guia = $request->get('guia4');
-                    $envio->cobro = "Cobrado";
+                    $envio->cobro = "Pagado";
                     $envio->ticketc = $codigo;
                     $envio->comercio = $request->get('comercio');
                     $envio->save();
@@ -284,7 +284,7 @@ class CobroController extends Controller
             $envio = new Envio();
             $envio->tipo = $request->get('tipo2');
             $envio->guia = $request->get('guia2');
-            $envio->cobro = "Cobrado";
+            $envio->cobro = "Pagado";
             $envio->ticketc = $codigo;
             $envio->comercio = $request->get('comercio');
             $envio->save();
@@ -318,7 +318,7 @@ class CobroController extends Controller
                 $envio = new Envio();
                 $envio->tipo = $request->get('tipo3');
                 $envio->guia = $request->get('guia3');
-                $envio->cobro = "Cobrado";
+                $envio->cobro = "Pagado";
                 $envio->ticketc = $codigo;
                 $envio->comercio = $request->get('comercio');
                 $envio->save();
@@ -352,7 +352,7 @@ class CobroController extends Controller
                     $envio = new Envio();
                     $envio->tipo = $request->get('tipo4');
                     $envio->guia = $request->get('guia4');
-                    $envio->cobro = "Cobrado";
+                    $envio->cobro = "Pagado";
                     $envio->ticketc = $codigo;
                     $envio->comercio = $request->get('comercio');
                     $envio->save();
