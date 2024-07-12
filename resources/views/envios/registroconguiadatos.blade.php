@@ -231,21 +231,21 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4">
-                                        <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" placeholder="Aqui cargara automaticamente el precio" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" value="0" />
                                         <label for="precio" style="padding-left: 25px;">Precio del paquete</label>
                                         <div id="precioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el paquete.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" placeholder="Precio del envío" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" value="0" />
                                         <label for="envio" style="padding-left: 25px;">Precio del envío</label>
                                         <div id="envioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el envío.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" placeholder="Total a pagar" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" value="0" />
                                         <label for="total" style="padding-left: 25px;">Total a pagar</label>
                                         <div id="totalValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un total válido a pagar.
@@ -254,11 +254,15 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="cenvio" id="cenvio" value="{{$pedido[0]->cobro}}" readonly/>
+                                        <input type="text" class="form-control form-control-solid" name="cenvio" id="cenvio" value="{{$pedido[0]->cobro}}" />
                                         <label for="cenvio" style="padding-left: 25px;">Cobro del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="estado_pago" id="estado_pago" value="Por pagar" readonly/>
+                                        <select class="form-select form-select-solid" name="estado_pago" id="estado_pago" aria-label="Floating label select example" required>
+                                            <option value="Por pagar">Por pagar</option>
+                                            <option value="Pagado">Pagado</option>
+                                        </select>
+                                       
                                         <label for="estado_pago" style="padding-left: 25px;">Estado del pago</label>
                                     </div>
                                 </div>
@@ -277,7 +281,7 @@
                                         <label for="fecha_entregap" style="padding-left: 25px;">Fecha de entrega</label>
                                         
                                     </div>
-                                </div>b  xbh u8h88b
+                                </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating mb-4">
                                         <textarea name="nota" class="form-control form-control-solid" placeholder="Nota" id="nota" style="height: 80px"></textarea>
@@ -314,6 +318,73 @@
 <script src="assets/plugins/global/plugins.bundle.js"></script>
 
 <script>
+
+
+$(document).ready(function() {
+  
+  $("#envio").change(function() {
+                                   //alert($(this).val());
+const tenv = document.getElementById("cenvio").value;
+const preci = parseFloat(document.getElementById("precio").value);						                                                    
+const envi =parseFloat($(this).val()); 
+
+if(tenv=="Pagado")
+{
+document.getElementById("total").value = preci;
+}else{
+document.getElementById("total").value = preci - envi;
+}
+
+
+                                   //const castot = parseFloat(document.getElementById("totalc").value);
+                                   //document.getElementById("ptotal").value = castot ; 
+
+});
+
+$("#precio").change(function() {
+                                   //alert($(this).val());
+const tenv2 = document.getElementById("cenvio").value;
+const envi2 = parseFloat(document.getElementById("envio").value);						                                                    
+const preci2 =parseFloat($(this).val()); 
+
+if(tenv2=="Pagado")
+{
+document.getElementById("total").value = preci2;
+}else{
+document.getElementById("total").value = preci2 - envi2;
+}
+
+
+                                   //const castot = parseFloat(document.getElementById("totalc").value);
+                                   //document.getElementById("ptotal").value = castot ; 
+
+});
+
+
+$("#cenvio").change(function() {
+                                   //alert($(this).val());
+const tenv3 = document.getElementById("precio").value;
+const envi3 = parseFloat(document.getElementById("envio").value);						                                                    
+const preci3 =document.getElementById("cenvio").value; 
+
+if(preci3=="Pagado")
+{
+document.getElementById("total").value = tenv3;
+}else{
+document.getElementById("total").value = tenv3 - envi3;
+}
+
+
+                                   //const castot = parseFloat(document.getElementById("totalc").value);
+                                   //document.getElementById("ptotal").value = castot ; 
+
+});
+
+                       });
+
+/*
+
+    
     $(document).ready(function() {
 
         // Función para calcular el total
@@ -346,4 +417,5 @@
         $("#envio").keyup(calcularTotal);
 
     });
+    */
 </script>
