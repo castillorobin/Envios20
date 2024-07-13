@@ -41,6 +41,7 @@ class CobroController extends Controller
         return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
 
+
     public function imprimir(Request $request)
     {
         $pdf = PDF::loadView('envios.ticketpagos');
@@ -476,6 +477,44 @@ class CobroController extends Controller
      */
     public function create()
     {
+        
+    }
+    public function agregarcomercio(Request $request)
+    {
+        $comercio = new Comercio();
+        $comercio->comercio = $request->input('fname');
+        $comercio->direccion = $request->input('direccion');
+        $comercio->telefono = $request->input('telefono');
+        $comercio->tipo = $request->input('tipo');
+        $comercio->estado = $request->input('estado');
+        $comercio->agencia = $request->input('agencia_registro');
+        $comercio->correo = $request->input('email');
+        $comercio->nota = $request->input('nota');
+        $comercio->f_alta = Carbon::now();
+
+
+/*
+        $comercio->whatsapp = $request->input('whatsapp');
+        $comercio->f_alta = $request->input('fecha_alta');
+        $comercio->f_baja = $request->input('fecha_baja');   
+        $comercio->titular = $request->input('titular');
+        $comercio->banco = $request->input('banco');
+        $comercio->cuenta = $request->input('cuenta');
+        $comercio->dui = $request->input('dui');
+        $comercio->tipo_cuenta = $request->input('tipo_cuenta');
+        $comercio->chivo = $request->input('chivo');
+        $comercio->tigo = $request->input('tigo');
+        $comercio->empresa = $request->input('empresa');
+        $comercio->tipo_contri = $request->input('tipo_contribuyente');
+        $comercio->giro = $request->input('giro');
+        $comercio->iva = $request->input('nit');
+        $comercio->nrc = $request->input('ncr');
+        $comercio->d_fiscal = $request->input('direccionf');
+        //$comercio-> = $request->input('');
+
+        */
+        $comercio->save();
+        return redirect('/registro-orden');
         
     }
 

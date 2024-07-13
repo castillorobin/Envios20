@@ -375,11 +375,16 @@
                     </div>
                     <!--end::Toolbar container-->
                 </div>
+
+                <form action="/cobro/agregarcomercio" id="kt_invoice_form" method="POST">
+                    @csrf
+                    @method('GET')
+
                 <!--end::Toolbar-->
                 <div class="modal fade" id="kt_modal_create_app" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
-                            <div class="modal-header">
+                            <div class="modal-header"> 
                                 <h5 class="modal-title" id="exampleModalLabel">Agregar Comercio</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
@@ -419,7 +424,7 @@
                                     <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Estado de comercio</label>
                                         <div class="col-lg-8">
-                                            <select name="Estado_comercio" id="Estado_comercio" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
+                                            <select name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
                                                 <option value="Alta">Alta</option>
                                                 <option value="baja">Baja</option>
                                                 <option value="Lista_negra">Lista negra</option>
@@ -453,12 +458,12 @@
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                <button type="button" class="btn btn-primary">Guardar</button>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
                             </div>
                         </div>
                     </div>
                 </div>
-
+            </form>
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content  flex-column-fluid ">
 

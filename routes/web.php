@@ -168,6 +168,7 @@ Route::get('cobro/limpiar', [App\Http\Controllers\CobroController::class, 'limpi
 Route::get('cobro/ticket', [App\Http\Controllers\CobroController::class, 'ticket'] )->name('ticketco') ;
 Route::get('cobro/ticketcabeza', [App\Http\Controllers\CobroController::class, 'ticketcabeza'] )->name('ticketcabeza') ;
 Route::get('cobro/ticketpartes', [App\Http\Controllers\CobroController::class, 'ticketpartes'] )->name('ticketpartes') ;
+Route::get('cobro/agregarcomercio', [App\Http\Controllers\CobroController::class, 'agregarcomercio'] )->name('agregarcomercio') ;
 
 
 Route::get('cobro/imprimir', [App\Http\Controllers\CobroController::class, 'imprimir'] )->name('imprimirco') ;

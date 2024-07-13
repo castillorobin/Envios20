@@ -74,7 +74,7 @@ class EnvioController extends Controller
         $envio->nota = $request->get('nota');
 
         $envio->save();
-        return redirect('/envios/lista');
+        return redirect('/registro-orden');
     }
 
     public function envioguardarpd(Request $request)
