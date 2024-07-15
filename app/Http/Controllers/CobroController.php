@@ -95,7 +95,7 @@ class CobroController extends Controller
         $precio4= $request->get('precio4');
         $precio5= $request->get('precio5');
 
-
+        $nota="Guía Duplicada";
         if ($request->filled('guia')) {
             if($hayguia== 0){
                 $nota=" ";
