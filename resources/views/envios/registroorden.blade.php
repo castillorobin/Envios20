@@ -17,7 +17,7 @@
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
+ 
 
     <!--end::Global Stylesheets Bundle-->
 </head>
@@ -613,7 +613,9 @@
                                                         <!--begin::Table body-->
                                                         <tbody>
                                                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                                              <span style="font-size:18px; color: red;"> {!! \Session::get('success') !!} </span>
                                                                 <td class="pe-7">
+                                                                    
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Personalizado</label>
 
                                                                     <br>
@@ -661,6 +663,7 @@
                                                                         <div class="col-4">
                                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
                                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                                            
                                                                         </div>
 
                                                                     </div>
@@ -704,6 +707,7 @@
                                                                         <div class="col-4">
                                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
                                                                             <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                                           
                                                                         </div>
 
                                                                     </div>

@@ -20,7 +20,12 @@ class CobroController extends Controller
     {
         $pedidos = Cobro::all();
         $comercios = Comercio::all(); 
-        $nota=" ";
+        $nota="";
+
+           
+
+
+
         $comer=" ";
         $cobrodepa = Cobro::where('tipo', "Departamental")->get();
         $cobrodepa = $cobrodepa->count();
@@ -66,6 +71,10 @@ class CobroController extends Controller
 
     public function ticketcabeza(Request $request)
     {
+        $guia = $request->get('guia');
+        $hayguia = Envio::where('guia', $guia)->exists();
+        
+
         $codigo= $request->get('codigo');
         $comercios = Comercio::all(); 
         $nota=" ";
@@ -88,7 +97,8 @@ class CobroController extends Controller
 
 
         if ($request->filled('guia')) {
-        
+            if($hayguia== 0){
+                $nota=" ";
         $envio = new Envio();
         $envio->tipo = $request->get('tipo1');
         $envio->guia = $request->get('guia');
@@ -96,6 +106,7 @@ class CobroController extends Controller
         $envio->ticketc = $codigo;
         $envio->comercio = $request->get('comercio');
         $envio->save();
+            }
 
         $cobroperso = Envio::where('ticketc', $codigo)
         ->where('tipo', "Personalizado")
@@ -123,6 +134,8 @@ class CobroController extends Controller
         }
 
         if ($request->filled('guia2')) {
+            if($hayguia== 0){
+                $nota=" ";
             $envio = new Envio();
             $envio->tipo = $request->get('tipo2');
             $envio->guia = $request->get('guia2');
@@ -130,6 +143,7 @@ class CobroController extends Controller
             $envio->ticketc = $codigo;
             $envio->comercio = $request->get('comercio');
             $envio->save();
+            }
 
             $cobroperso = Envio::where('ticketc', $codigo)
         ->where('tipo', "Personalizado")
@@ -158,6 +172,8 @@ class CobroController extends Controller
             }
 
             if ($request->filled('guia3')) {
+                if($hayguia== 0){
+                    $nota=" ";
                 $envio = new Envio();
                 $envio->tipo = $request->get('tipo3');
                 $envio->guia = $request->get('guia3');
@@ -165,6 +181,7 @@ class CobroController extends Controller
                 $envio->ticketc = $codigo;
                 $envio->comercio = $request->get('comercio');
                 $envio->save();
+                }
 
                 
             $cobroperso = Envio::where('ticketc', $codigo)
@@ -193,6 +210,8 @@ class CobroController extends Controller
                 }
             
             if ($request->filled('guia4')) {
+                if($hayguia== 0){
+                    $nota=" ";
                     $envio = new Envio();
                     $envio->tipo = $request->get('tipo4');
                     $envio->guia = $request->get('guia4');
@@ -200,6 +219,7 @@ class CobroController extends Controller
                     $envio->ticketc = $codigo;
                     $envio->comercio = $request->get('comercio');
                     $envio->save();
+                }
 
                     $cobroperso = Envio::where('ticketc', $codigo)
                 ->where('tipo', "Personalizado")
@@ -232,6 +252,10 @@ class CobroController extends Controller
 
     public function ticketpartes(Request $request)
     {
+
+        $guia = $request->get('guia');
+        $hayguia = Envio::where('guia', $guia)->exists();
+        
         $codigo= $request->get('codigo');
         $comercios = Comercio::all(); 
         $nota=" ";
@@ -245,8 +269,13 @@ class CobroController extends Controller
         $precio3= $request->get('precio3');
         $precio4= $request->get('precio4');
         $precio5= $request->get('precio5');
-
+        $nota="Guia Duplicada";
         if ($request->filled('guia')) {
+            
+            if($hayguia== 0){
+                $nota=" ";
+               
+            
         $envio = new Envio();
         $envio->tipo = $request->get('tipo1');
         $envio->guia = $request->get('guia');
@@ -254,7 +283,7 @@ class CobroController extends Controller
         $envio->ticketc = $codigo;
         $envio->comercio = $request->get('comercio');
         $envio->save();
-
+    }
         
         $cobroperso = Envio::where('ticketc', $codigo)
         ->where('tipo', "Personalizado")
@@ -282,6 +311,9 @@ class CobroController extends Controller
         }
 
         if ($request->filled('guia2')) {
+
+            if($hayguia== 0){
+                $nota=" ";
             $envio = new Envio();
             $envio->tipo = $request->get('tipo2');
             $envio->guia = $request->get('guia2');
@@ -289,7 +321,7 @@ class CobroController extends Controller
             $envio->ticketc = $codigo;
             $envio->comercio = $request->get('comercio');
             $envio->save();
-
+            }
             $cobroperso = Envio::where('ticketc', $codigo)
         ->where('tipo', "Personalizado")
         ->get();
@@ -316,6 +348,8 @@ class CobroController extends Controller
             }
 
             if ($request->filled('guia3')) {
+                if($hayguia== 0){
+                    $nota=" ";
                 $envio = new Envio();
                 $envio->tipo = $request->get('tipo3');
                 $envio->guia = $request->get('guia3');
@@ -323,6 +357,7 @@ class CobroController extends Controller
                 $envio->ticketc = $codigo;
                 $envio->comercio = $request->get('comercio');
                 $envio->save();
+                }
 
                 $cobroperso = Envio::where('ticketc', $codigo)
             ->where('tipo', "Personalizado")
@@ -350,6 +385,9 @@ class CobroController extends Controller
                 }
             
             if ($request->filled('guia4')) {
+
+                if($hayguia== 0){
+                    $nota=" ";
                     $envio = new Envio();
                     $envio->tipo = $request->get('tipo4');
                     $envio->guia = $request->get('guia4');
@@ -357,7 +395,7 @@ class CobroController extends Controller
                     $envio->ticketc = $codigo;
                     $envio->comercio = $request->get('comercio');
                     $envio->save();
-
+                }
                     
                 $cobroperso = Envio::where('ticketc', $codigo)
                 ->where('tipo', "Personalizado")

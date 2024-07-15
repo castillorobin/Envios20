@@ -526,6 +526,7 @@ $(document).ready(function() {
                         <!--begin::Table body-->
                         <tbody>
                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
+                                <span style="font-size:18px; color: red;"> {!! \Session::get('success') !!} </span>
                                 <td class="pe-7">                                            
                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Personalizado</label>
                                     
