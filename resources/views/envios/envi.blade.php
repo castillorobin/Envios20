@@ -77,7 +77,7 @@
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                            <a href="/envio/crear" class="btn btn-sm fw-bold btn-primary"  data-bs-target="#kt_modal_create_app">Crear envio</a>
+                            <a href="/envio/crear" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -122,9 +122,11 @@
                                             <option></option>
                                             <option value="all">Todo</option>
                                             <option value="Creado">Creado</option>
+                                            <option value="Creado">En ruta</option>
                                             <option value="Entregado">Entregado</option>
-                                            <option value="Fallido">Fallido</option>
-                                            <option value="En transito">En transito</option>
+                                            <option value="Fallido">No entregado</option>
+                                            <option value="En transito">Reprogramado</option>
+                                            <option value="En transito">Devuelto al comercio</option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>
@@ -170,28 +172,27 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
 
-
                                 <!--begin::Table-->
-                                <div class="table-responsive">
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-80px"># de guía</th>
+                                                <th class="min-w-80px "># de guía</th>
                                                 <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-100px">Destinatario</th>
+                                                <th class="min-w-150px">Destinatario</th>
                                                 <th class="min-w-150px">Dirección</th>
-                                                <th class="min-w-50px">Tipo de envío</th>
-                                                <th class="min-w-100px text-center">Cobro de envio</th>
-                                                <th class="min-w-50px">Fecha de entrega</th>
-                                                <th class="min-w-50px">Status</th>
+                                                <th class="min-w-150px">Fecha de entrega</th>
+                                                <th class="min-w-100px">Tipo de envío</th>
+                                                <th class="min-w-50px text-center">Cobro de envio</th>
+                                                <th class="min-w-50px text-center">Status</th>
                                                 <th class="min-w-50px">Total</th>
                                                 <th class="min-w-50px">Ruta</th>
-                                                <th class="min-w-50px">Nota </th>
-                                                <th class="min-w-50px">Nota de repartidor</th>
-                                                <th class="min-w-50px">Ubicación</th>
+                                                <th class="min-w-100px text-center">Nota </th>
+                                                <th class="min-w-100px text-center">Nota de repartidor</th>
+                                                <th class="min-w-150px">Ubicación</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fw-semibold  text-gray-400">
+                                        <tbody class="fw-semibold text-gray-400">
                                             @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
                                                 <td>
@@ -202,39 +203,40 @@
                                                 <td>{{ $envio->comercio }}</td>
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
-                                                <td>Personalizado</td>
-                                                <td style="text-align: center;">$34</td>
-                                                <td>20/07/2024</td>
-                                                <td>
-                                                    @if( $envio->estado == 'Fallida')
+                                                <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
+                                                <td>{{ $envio->tipo}}</td>
+                                                <td style="text-align: center;">
+                                                    @if( $envio->cobro == 'Cobrado')
+                                                    <span class="badge badge-success">{{ $envio->cobro}}</span>
+                                                    @else
+                                                    <span class="badge badge-danger">{{ $envio->cobro }}</span>
+                                                    @endif
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    @if( $envio->estado == 'No entregado')
                                                     <span class="badge badge-danger">{{ $envio->estado }}</span>
                                                     @elseif( $envio->estado == 'Creado')
                                                     <span class="badge badge-warning">{{ $envio->estado }}</span>
                                                     @elseif( $envio->estado == 'Entregado')
                                                     <span class="badge badge-success">{{ $envio->estado }}</span>
-
-                                                    @elseif( $envio->estado == 'En transito')
+                                                    @elseif( $envio->estado == 'En ruta')
                                                     <span class="badge badge-info">{{ $envio->estado }}</span>
-                                                    @elseif( $envio->estado == 'En transito')
+                                                    @elseif( $envio->estado == 'Reprogramado')
                                                     <span class="badge badge-dark">{{ $envio->estado }}</span>
-                                                    @elseif( $envio->estado == 'Reenvio')
+                                                    @elseif( $envio->estado == 'Devuelto al comercio')
                                                     <span class="badge badge-primary">{{ $envio->estado }}</span>
                                                     @else
                                                     <span class="badge badge-light">{{ $envio->estado }}</span>
                                                     @endif
                                                 </td>
-                                                <td class="text-end">{{ $envio->total }}</td>
-                                                <td>2</td>
-                                                <td>mensaje de nota</td>
+                                                <td class="text-center">{{ $envio->total }}</td>
+                                                <td style="text-align: center;">2</td>
+                                                <td  style="text-align: center;">{{ $envio->nota }}</td>
                                                 <td>no respondio</td>
                                                 <td>Santa ana, el salvador</td>
-                                               
-
-
                                             </tr>
                                             @endforeach
                                         </tbody>
-
                                     </table>
                                     <ul class="pagination">
                                         <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
@@ -244,6 +246,7 @@
                                     </ul>
                                 </div>
                                 <!--end::Table-->
+
                             </div>
                             <!--end::Table-->
                         </div>
