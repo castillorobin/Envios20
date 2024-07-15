@@ -271,16 +271,24 @@
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
                                             @foreach ($comercios as $comercio)
-                                                
-                                           
+
+
                                             <tr>
-                                            <td><a href="#" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
-                                          <td>{{$comercio->comercio}}</td>
-                                          <td>{{$comercio->telefono}}</td>
-                                          <td>{{$comercio->whatsapp}}</td>
-                                          <td>{{$comercio->agencia}}</td>
-                                          <td>{{$comercio->f_alta}}</td>
-                                            <td class="text-star"><span class="badge badge-light-success">Lista negra</span></td>
+                                                <td><a href="#" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
+                                                <td>{{$comercio->comercio}}</td>
+                                                <td>{{$comercio->telefono}}</td>
+                                                <td>{{$comercio->whatsapp}}</td>
+                                                <td>{{$comercio->agencia}}</td>
+                                                <td>{{$comercio->f_alta}}</td>
+                                                <td class="text-star">
+                                                    @if( $comercio->estado == 'Baja')
+                                                    <span class="badge badge-danger">{{ $comercio->estado }}</span>
+                                                    @elseif( $comercio->estado == 'Lista negra')
+                                                    <span class="badge badge-dark">{{ $comercio->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-success">{{ $comercio->estado }}</span>
+                                                    @endif
+                                                </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
