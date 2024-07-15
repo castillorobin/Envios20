@@ -43,7 +43,7 @@
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container container-xxl">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes </h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes por ticket</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
                                     <a href="/" class="text-muted text-hover-primary">Inicio</a>
@@ -58,17 +58,12 @@
                                 <li class="breadcrumb-item text-muted">Pagar</li>
                             </ul>
                         </div>
-                        <form action="/pago/connombre" id="kt_invoice_form" method="POST"> 
+                        <form action="/pago/conticket" id="kt_invoice_form" method="POST"> 
                             @csrf
                             @method('GET')
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
                             <div class="col-md-3 m-2 mb-4">
-                                <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" >
-                                    <option value=" ">Buscar comercio</option>
-                                    @foreach ($comercios as $comercio)
-                                    <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" class="form-control form-control-solid" placeholder="Ingrese # ticket" name="ticket" id="ticket" />
                             </div> 
                             <div class="col-md-auto align-self-center mb-3">
                                 <button type="submit" class="btn btn-primary btn-kg">Buscar</button>

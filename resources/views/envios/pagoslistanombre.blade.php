@@ -71,12 +71,10 @@
                                 </select>
                             </div> 
                             <div class="col-md-auto align-self-center mb-3">
-                                <button type="submit" class="btn btn-primary btn-kg">Pago con nombre</button>
+                                <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
                             </div>
                         </form>
-                            <div class="col-md-auto align-self-center mb-3">
-                                <button type="submit" class="btn btn-primary">Pago general</button>
-                            </div>
+                            
                             <div class="col-md-3 m-2 mb-4">
                                 <div class="d-flex flex-stack bg-success rounded-4 p-3">
                                     <div class="fs-6 fw-bold text-white">

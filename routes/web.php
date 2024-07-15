@@ -181,6 +181,8 @@ Route::get('comercio/guardar', [App\Http\Controllers\ComercioController::class, 
 //facturacion - Pago
 Route::get('listapagos', [App\Http\Controllers\PagoController::class, 'index'] )->name('indexpago') ;
 Route::get('pago/connombre', [App\Http\Controllers\PagoController::class, 'connombre'] )->name('connombre') ;
+Route::get('listapagosticket', [App\Http\Controllers\PagoController::class, 'listaticket'] )->name('listaticket') ;
+Route::get('pago/conticket', [App\Http\Controllers\PagoController::class, 'conticket'] )->name('conticket') ;
 
 
 

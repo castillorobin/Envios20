@@ -58,23 +58,18 @@
                                 <li class="breadcrumb-item text-muted">Pagar</li>
                             </ul>
                         </div>
-                        <form action="/pago/connombre" id="kt_invoice_form" method="POST"> 
+                        <form action="/pago/conticket" id="kt_invoice_form" method="POST"> 
                             @csrf
                             @method('GET')
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
                             <div class="col-md-3 m-2 mb-4">
-                                <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" >
-                                    <option value=" ">Buscar comercio</option>
-                                    @foreach ($comercios as $comercio)
-                                    <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
-                                    @endforeach
-                                </select>
+                                <input type="text" class="form-control form-control-solid" placeholder="Ingrese # ticket" name="ticket" id="ticket" />
                             </div> 
                             <div class="col-md-auto align-self-center mb-3">
                                 <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
                             </div>
                         </form>
-                           
+                            
                             <div class="col-md-3 m-2 mb-4">
                                 <div class="d-flex flex-stack bg-success rounded-4 p-3">
                                     <div class="fs-6 fw-bold text-white">
@@ -184,22 +179,27 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-
-                                            <td><a href="#" class="text-gray-900 text-hover-primary"></a></td>
-                                            <td><a href="#" class="text-gray-900 text-hover-primary"> </a></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
+                                            @foreach ($pedidos as $pedido)                                               
+                                           
+                                            <tr>
 
 
+
+                                                <td>{{$pedido->guia}}</td>
+                                                <td>{{$pedido->comercio}}</td>
+                                                <td>{{$pedido->destinatario}}</td>
+                                                <td>{{$pedido->direccion}}</td>
+                                                <td>{{$pedido->tipo}}</td>
+                                                <td>{{$pedido->estado}}</td>
+                                                <td>{{$pedido->fecha_entrega}}</td>
+                                                <td>{{$pedido->pago}}</td>
+                                                <td>{{$pedido->precio}}</td>
+                                                <td>{{$pedido->envio}}</td>
+                                                <td>{{$pedido->total}}</td>
+                                                <td>{{$pedido->nota}}</td>
+                                                
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
 

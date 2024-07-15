@@ -317,7 +317,15 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Pagar</span>
+							<span class="menu-title">Pagar por Comercio</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a class="menu-link" href="/listapagosticket">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Pagar por Ticket</span>
 						</a>
 					</div>
 					<div class="menu-item">
