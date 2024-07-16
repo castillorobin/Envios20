@@ -709,6 +709,7 @@ $(document).ready(function() {
                         @method('GET')
                         <tfoot>
                             <tr class="border-top border-top-dashed align-top fs-6 fw-bold text-gray-700">
+                                <span style="font-size:18px; color: red;"> {!! \Session::get('success') !!} </span>
                                 <th class="text-primary">
                                    
                                 </th>  
