@@ -206,7 +206,7 @@
                                                 <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
                                                 <td>{{ $envio->tipo}}</td>
                                                 <td style="text-align: center;">
-                                                    @if( $envio->cobro == 'Cobrado')
+                                                    @if( $envio->cobro == 'Pagado')
                                                     <span class="badge badge-success">{{ $envio->cobro}}</span>
                                                     @else
                                                     <span class="badge badge-danger">{{ $envio->cobro }}</span>
