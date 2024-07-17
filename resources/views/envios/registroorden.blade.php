@@ -639,7 +639,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0" value="0" data-kt-element="price" />
+                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio1" id="precio1" placeholder="0" value="0" data-kt-element="price" onClick="this.select()"/>
                                                                 </td>
 
                                                                 <td>
@@ -684,7 +684,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0" value="0" data-kt-element="price" />
+                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio2" id="precio2" placeholder="0" value="0" data-kt-element="price" onClick="this.select()"/>
                                                                 </td>
 
 
@@ -720,7 +720,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0" value="0" data-kt-element="price" />
+                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio3" id="precio3" placeholder="0" value="0" data-kt-element="price" onClick="this.select()"/>
                                                                 </td>
 
                                                                 <td>
@@ -755,7 +755,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0" value="0" data-kt-element="price" />
+                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio4" id="precio4" placeholder="0" value="0" data-kt-element="price" onClick="this.select()"/>
                                                                 </td>
 
 
@@ -790,7 +790,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> &nbsp;</label>
-                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0" value="0" data-kt-element="price" />
+                                                                    <input type="text" class="form-control form-control-solid text-end" name="precio5" id="precio5" placeholder="0" value="0" data-kt-element="price" onClick="this.select()"/>
                                                                 </td>
 
 
