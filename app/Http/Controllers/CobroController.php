@@ -60,7 +60,9 @@ class CobroController extends Controller
 
     public function ticket(Request $request)
     {
-        $pdf = PDF::loadView('envios.ticketpagos');
+        
+
+        $pdf = PDF::loadView('envios.ticketpagos', ['detalles'=>$detalles, 'cotiactual'=>$cotiactual]);
         //return view('envios.ticketpagos');
         $customPaper = array(0,0,360,550);
         //$pdf->setPaper('b6', 'portrait');

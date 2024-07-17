@@ -437,7 +437,7 @@ $(document).ready(function() {
                 <!--begin::Input group-->
                 <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice due date">
                     <!--begin::Date-->
-                    <span class="fs-2x fw-bold text-gray-800">Factura #</span> 
+                    <span class="fs-2x fw-bold text-gray-800">Ticket #</span> 
                     <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="{{$ticketactual[0]->codigo}}" name="codigo" id="codigo" />
                     <!--end::Input-->                
                 </div>                
@@ -701,7 +701,7 @@ $(document).ready(function() {
                                 <button type="button" class="btn btn-primary mt-9" onclick="limpiar5()"><i class="fas fa-broom"></i></button>
                                 </td>
                                 
-                            </tr>         
+                            </tr>          
                         </tbody>
                     </form> 
                     <!--end::Table body-->
@@ -846,7 +846,8 @@ $(document).ready(function() {
             <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price" hidden/>
             <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price" hidden/>
             <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price" hidden/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/>  
+            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/> 
+            <input type="text" class="form-control form-control-solid text-end" name="ticketnum" id="ticketnum" data-kt-element="price" hidden/> 
             <!--end::Select-->
         </div>
         <!--end::Input group-->

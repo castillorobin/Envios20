@@ -512,7 +512,7 @@
                                                 <!--begin::Input group-->
                                                 <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover">
                                                     <!--begin::Date-->
-                                                    <span class="fs-2x fw-bold text-gray-800">Factura #</span>
+                                                    <span class="fs-2x fw-bold text-gray-800">Ticket #</span>
                                                     <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="{{ $factura }}" name="codigo" id="codigo" />
 
                                                     <!--end::Input-->
