@@ -90,8 +90,8 @@
                                     <div class="col-lg-3">
                                         <select name="Estado_comercio" id="Estado_comercio" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
                                             <option value="Alta">Alta</option>
-                                            <option value="baja">Baja</option>
-                                            <option value="Lista_negra">Lista negra</option>
+                                            <option value="Baja">Baja</option>
+                                            <option value="Lista negra">Lista negra</option>
                                         </select>
                                     </div>
                                 </div>

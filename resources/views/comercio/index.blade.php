@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
+    
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
@@ -35,16 +35,16 @@
 
 </head>
 
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+<body id="kt_app_body">
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div class="app-main flex-column flex-row-fluid " id="kt_app_main">
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid">
+            <div class="d-flex flex-column flex-column-fluid ">
                 <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                <div id="kt_app_toolbar" class="app-toolbar ">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
@@ -71,7 +71,7 @@
                         <!--end::Page title-->
 
                         <!--begin::Actions-->
-                        <div class="d-flex align-items-center gap-2 gap-lg-3">
+                        <div class="d-flex align-items-center gap-2 gap-lg-3" >
                             <!--begin::Filter menu-->
                             <div class="m-0">
                                 <!--begin::Menu toggle-->
@@ -135,7 +135,7 @@
                                         </div>
                                         <!--end::Input group-->
                                         <!--begin::Input group-->
-                                        <div class="mb-10">
+                                        <div class="mb-10 " >
                                             <!--begin::Label-->
                                             <label class="form-label fw-semibold">Notifications:</label>
                                             <!--end::Label-->
@@ -162,7 +162,9 @@
                             <!--begin::Secondary button-->
                             <!--end::Secondary button-->
                             <!--begin::Primary button-->
+                            <div >
                             <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary">Agregar</a>
+                        </div>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -173,7 +175,7 @@
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container ">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
