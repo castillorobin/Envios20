@@ -41,7 +41,7 @@
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes </h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -75,8 +75,8 @@
                             </div>
                         </form>
                             
-                            <div class="col-md-3 m-2 mb-4">
-                                <div class="d-flex flex-stack bg-success rounded-4 p-3">
+                            <div class="col-md-7 m-2 mb-4 ">
+                                <div class="d-flex flex-stack bg-success rounded-4 p-3 float-end " style="width: 250px;">
                                     <div class="fs-6 fw-bold text-white">
                                         <span class="d-block fs-1 lh-1">Total</span>
                                     </div>
@@ -85,6 +85,9 @@
                                     </div>
                                 </div>
                             </div>
+
+
+
                         </div>
 
                         <br>
