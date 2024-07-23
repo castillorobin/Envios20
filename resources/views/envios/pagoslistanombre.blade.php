@@ -28,6 +28,71 @@
     </style>
 
 </head>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    $(document).on('click', '#check3', function(){
+
+
+        
+        
+
+
+		var id=$(this).val();
+
+        var total1 = $('#total1').text();      
+
+        if ($(this).prop('checked')) {
+        var totaleste=parseFloat($('#tot'+id).text());
+        var total = parseFloat(totaleste) + parseFloat(total1);
+        $('#total1').text(total); 
+        }else {
+            var totaleste=parseFloat($('#tot'+id).text());
+            var total = parseFloat(total1) - parseFloat(totaleste);
+            $('#total1').text(total); 
+              
+        }
+
+        //alert("el total es: " + total);
+        /*
+		var prec=parseFloat($('#tot'+id).text());
+
+        //
+        var envi=$('#env'+id).text();
+        
+        //alert("le diste click" + prec);
+        var tota = $('#preci').text();
+        var senvi = $('#sumas').text();
+        //var tota = parseFloat(tota, 10);
+
+        if ($(this).prop('checked')) {
+
+            var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
+            var tenv = parseFloat(senvi, 10) + parseFloat(envi, 10);
+        $('#preci').text(parseFloat(to3, 10)); 
+        $('#preci2').text(to3); 
+        $('#toti').val(to3); 
+        $('#sumas').text(tenv);  
+
+        } else {
+            var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
+            var tenv = parseFloat(senvi, 10) - parseFloat(envi, 10);
+        $('#preci').text(to3); 
+        $('#preci2').text(to3);
+        $('#toti').val(to3);
+        $('#sumas').text(tenv);  
+        }
+
+    
+
+       
+       $('#ivat').text((parseFloat(tenv, 10) * 0.13).toFixed(2) ); 
+        $('#stotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
+        $('#atotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
+  
+     */
+
+    });
+</script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
@@ -81,7 +146,7 @@
                                         <span class="d-block fs-1 lh-1">Total</span>
                                     </div>
                                     <div class="fs-6 fw-bold text-white text-end">
-                                        <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">$0.00</span>
+                                       <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">0</span>
                                     </div>
                                 </div>
                             </div>
@@ -172,6 +237,7 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th></th>
                                                 <th># De guia</th>
                                                 <th>Comercio</th>
                                                 <th>Destinatario</th>
@@ -190,7 +256,12 @@
                                             @foreach ($pedidos as $pedido)                                               
                                            
                                             <tr>
-
+                                                <td >
+                                                    <div class="form-group form-check" style="width: 5px;">
+                                                     <input type="checkbox" value="{{ $pedido->id }}" class="form-check-input" id="check3" name="checked[]" >
+                                                     
+                                                    </div>
+                                                    </td>
 
 
                                                 <td>{{$pedido->guia}}</td>
@@ -204,6 +275,7 @@
                                                 <td>{{$pedido->precio}}</td>
                                                 <td>{{$pedido->envio}}</td>
                                                 <td>{{$pedido->total}}</td>
+                                                <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <td>{{$pedido->nota}}</td>
                                                 
                                             </tr>
