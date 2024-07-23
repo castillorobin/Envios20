@@ -45,10 +45,12 @@
         var totaleste=parseFloat($('#tot'+id).text());
         var total = parseFloat(totaleste) + parseFloat(total1);
         $('#total1').text(total); 
+        $('#tot1').text(total);
         }else {
             var totaleste=parseFloat($('#tot'+id).text());
             var total = parseFloat(total1) - parseFloat(totaleste);
             $('#total1').text(total); 
+            $('#tot1').text(total);
               
         }
 
@@ -92,6 +94,20 @@
      */
 
     });
+
+    $(document).on('click', '#checktodo', function(){
+        document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
+        checkElement.checked = true;
+        todo();
+    });
+    
+    });
+
+    function todo() {
+        var total5 =  document.getElementById('total5').innerText;
+        document.getElementById('total1').innerText = total5;
+       //alert(total5);
+}
 </script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -234,10 +250,19 @@
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive">
+
+                                    <form name="f1" id="formElement">
+
+
+
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th></th>
+                                                <th><div class="form-group form-check" style="width: 5px;">
+
+                                                     <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
+                                                     
+                                                    </div></th>
                                                 <th># De guia</th>
                                                 <th>Comercio</th>
                                                 <th>Destinatario</th>
@@ -253,6 +278,7 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
+                                            <span hidden id="total3"> {{ $total4 = 0 }}</span>
                                             @foreach ($pedidos as $pedido)                                               
                                            
                                             <tr>
@@ -276,13 +302,17 @@
                                                 <td>{{$pedido->envio}}</td>
                                                 <td>{{$pedido->total}}</td>
                                                 <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
+                                                <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
+                                                
                                                 <td>{{$pedido->nota}}</td>
                                                 
                                             </tr>
                                             @endforeach
+
+                                            <span id="total5"> {{ $total4 }}</span>
                                         </tbody>
                                     </table>
-
+                                </form>
                                 </div>
                                 <br>
                                 <!--end::Table-->
@@ -625,7 +655,7 @@
                                                                     <div class="fs-6 fw-bold text-white text-end">
                                                                         <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
                                                                         <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                                                        <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
+                                                                        <span id="tot1" name="tot1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                                                     </div>
                                                                 </div>
                                                                 <!-- End of Summary -->
