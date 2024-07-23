@@ -345,13 +345,13 @@
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Nombre</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">MODA SV</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->comercio}}</p>
                                                                     </div>
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Teléfono</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">+503 7569-3332</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->telefono}}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-1">
@@ -359,13 +359,13 @@
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Dirección</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">SANTA ANA. EL SALVADOR</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->direccion}}</p>
                                                                     </div>
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Whatsapp</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">+503 7569-3332</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->whatsapp}}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-1">
@@ -373,7 +373,7 @@
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Correo</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">MODASV@gmail.com</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->correo}}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>

@@ -27,8 +27,9 @@ class PagoController extends Controller
        // $pedidos = Cobro::all();
        $comercio = $request->get('comercio') ;
        $pedidos = Envio::where('comercio', $comercio)->get();
+       $comercioset = Comercio::where('comercio', $comercio)->get();
         $comercios = Comercio::all(); 
-        return view('envios.pagoslistanombre', compact('comercios', 'pedidos'));
+        return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
     }
 
     public function listaticket()
@@ -37,7 +38,7 @@ class PagoController extends Controller
         //$comercios = Comercio::all(); 
         return view('envios.pagoslistaticket');
     }
-
+ 
     public function conticket(Request $request)
     {
        // $pedidos = Cobro::all();
