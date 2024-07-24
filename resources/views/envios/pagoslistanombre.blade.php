@@ -111,6 +111,8 @@
     function todo() {
         var total5 =  document.getElementById('total5').innerText;
         document.getElementById('total1').innerText = total5;
+        document.getElementById('tot1').innerText = total5;
+       // $('#tot1').text(total);
        //alert(total5);
 }
 
@@ -130,6 +132,7 @@ document.getElementById('checknada').style.display = 'none';
 function nada() {
 var total5 =  document.getElementById('total5').innerText;
 document.getElementById('total1').innerText = 0;
+document.getElementById('tot1').innerText = 0;
 //alert(total5);
 }
 
