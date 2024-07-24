@@ -96,9 +96,14 @@
     });
 
     $(document).on('click', '#checktodo', function(){
+
         document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
         checkElement.checked = true;
         todo();
+
+        document.getElementById('checktodo').style.display = 'none';
+        document.getElementById('checknada').style.display = '';
+
     });
     
     });
@@ -108,6 +113,39 @@
         document.getElementById('total1').innerText = total5;
        //alert(total5);
 }
+
+$(document).on('click', '#checknada', function(){
+
+document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
+checkElement.checked = false;
+nada();
+
+document.getElementById('checktodo').style.display = '';
+document.getElementById('checknada').style.display = 'none';
+
+});
+
+});
+
+function nada() {
+var total5 =  document.getElementById('total5').innerText;
+document.getElementById('total1').innerText = 0;
+//alert(total5);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -261,6 +299,7 @@
                                                 <th><div class="form-group form-check" style="width: 5px;">
 
                                                      <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
+                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
                                                      
                                                     </div></th>
                                                 <th># De guia</th>
@@ -309,7 +348,7 @@
                                             </tr>
                                             @endforeach
 
-                                            <span id="total5"> {{ $total4 }}</span>
+                                            <span hidden id="total5"> {{ $total4 }}</span>
                                         </tbody>
                                     </table>
                                 </form>
@@ -329,7 +368,7 @@
 
                                                 <!--begin::Close-->
                                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                                                    <i class="ki-duotone ki-cross fs-2x"><span class="path1"></span><span class="path2"></span></i>
+                                                    <i class="ki-duotone ki-cross"><span class="path1"></span><span class="path2"></span></i>
                                                 </div>
                                                 <!--end::Close-->
                                             </div>
@@ -340,37 +379,37 @@
                                                         <div class="col-lg-7">
                                                             <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
                                                                 <h3 style="margin-bottom: 20px;">Datos del comercio</h3>
-                                                                <div class="row mb-1">
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Nombre</label>
+                                                                <div class="row ">
+                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right m-0">
+                                                                        <label class="text-muted mb-0">Nombre</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
                                                                         <p class="mb-0">{{$comercioset[0]->comercio}}</p>
                                                                     </div>
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Teléfono</label>
+                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right mb-0">
+                                                                        <label class="text-muted mb-0">Teléfono</label>
                                                                     </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
+                                                                    <div class="col-lg-4 d-flex align-items-center mb-0">
                                                                         <p class="mb-0">{{$comercioset[0]->telefono}}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-1">
+                                                                <div class="row ">
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Dirección</label>
+                                                                        <label class="text-muted min-w-125px w-125px mb-0">Dirección</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
                                                                         <p class="mb-0">{{$comercioset[0]->direccion}}</p>
                                                                     </div>
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Whatsapp</label>
+                                                                        <label class="text-muted min-w-125px w-125px mb-0">Whatsapp</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
                                                                         <p class="mb-0">{{$comercioset[0]->whatsapp}}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-1">
+                                                                <div class="row ">
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Correo</label>
+                                                                        <label class="text-muted min-w-125px w-125px mb-0">Correo</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
                                                                         <p class="mb-0">{{$comercioset[0]->correo}}</p>
@@ -414,10 +453,10 @@
                                                                                     <!--begin::Summary-->
                                                                                     <div class="me-3">
                                                                                         <div class="d-flex align-items-center">
-                                                                                            <div class="text-gray-800 fw-bold">MODA SV</div>
-                                                                                            <div class="badge badge-light-primary ms-5">Primary</div>
+                                                                                            <div class="text-gray-800 fw-bold">{{$comercioset[0]->comercio}}</div>
+                                                                                            <div class="badge badge-light-primary ms-5">{{$comercioset[0]->estado}}</div>
                                                                                         </div>
-                                                                                        <div class="text-muted">Expires Dec 2024</div>
+                                                                                        <div class="text-muted"></div>
                                                                                     </div>
                                                                                     <!--end::Summary-->
                                                                                 </div>
@@ -459,7 +498,7 @@
                                                                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-150px py-3" data-kt-menu="true">
                                                                                         <!--begin::Menu item-->
                                                                                         <div class="menu-item px-3">
-                                                                                            <a href="#" class="menu-link px-3" data-kt-payment-mehtod-action="set_as_primary">Set as Primary</a>
+                                                                                            <a href="#" class="menu-link px-3" data-kt-payment-mehtod-action="set_as_primary"></a>
                                                                                         </div>
                                                                                         <!--end::Menu item-->
                                                                                     </div>
@@ -476,57 +515,57 @@
                                                                                 <div class="d-flex flex-wrap py-5">
                                                                                     <!--begin::Col-->
                                                                                     <div class="flex-equal me-5">
-                                                                                        <table class="table table-flush fw-semibold gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
+                                                                                        <table class="table table-flush gy-1 table-with-spacing" style="margin-left: -30px;"> <!-- Ajusta el valor de margen según tus necesidades -->
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-120px">Titular</td>
-                                                                                                <td class="text-gray-800">Robin castillo</td>
+                                                                                                <td ><p>{{$comercioset[0]->titular}}</p></td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Banco</td>
-                                                                                                <td class="text-gray-800">BANCO AGRICOLA</td>
+                                                                                                <td >{{$comercioset[0]->banco}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Numero de cuenta</td>
-                                                                                                <td class="text-gray-800">4390 9300 6586 9455</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->cuenta}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">DUI</td>
-                                                                                                <td class="text-gray-800">05249855-8</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->dui}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Tipo de cuenta</td>
-                                                                                                <td class="text-gray-800">Ahorros</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->tipo_cuenta}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Empresa</td>
-                                                                                                <td class="text-gray-800">MODA SV</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->empresa}}</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </div>
                                                                                     <!--end::Col-->
                                                                                     <!--begin::Col-->
                                                                                     <div class="flex-equal">
-                                                                                        <table class="table table-flush fw-semibold gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
+                                                                                        <table class="table table-flush gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Tipo de Contribuyente</td>
-                                                                                                <td class="text-gray-800">Pequeño</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->tipo_contri}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Giro</td>
                                                                                                 <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">Ventas</a>
+                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->giro}}</a>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">NCR</td>
                                                                                                 <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">05452154</a>
+                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->nrc}}</a>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Direccion fiscal</td>
                                                                                                 <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">col las violetas cl san luis la planta pje 1 casa 21</a>
+                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->d_fiscal}}</a>
                                                                                                 </td>
                                                                                             </tr>
 
@@ -554,7 +593,7 @@
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Chivo wallet</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">7985-2660</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->chivo}}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-1">
@@ -562,7 +601,7 @@
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Tigo Money</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">7896-5522</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->tigo}}</p>
                                                                     </div>
                                                                 </div>
 
@@ -671,7 +710,7 @@
                                                                 <div class="row justify-content-end">
                                                                     <label class="col-lg-3 col-form-label ">Cambio</label>
                                                                     <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$5.00" readonly />
+                                                                        <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$0.00" readonly />
                                                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                     </div>
                                                                 </div>
