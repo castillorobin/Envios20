@@ -236,51 +236,41 @@ document.getElementById('tot1').innerText = 0;
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    
+                                    <select class="form-control form-control-solid w-100 mw-250px" placeholder="Rango"">
+                                        <option value="rango">Rango</option>
+                                            <option value="ahora">Ahora</option>
+                                            <option value="semana">última Semana</option>
+                                            <option value="semana2">últimos 30 dias</option>   
+                                            <option value="mes">último mes</option>         
+                                        </select>
                                     <!--   <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />    end::Daterangepicker-->
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
-                                            <option></option>
-                                            <option value="Todos">Todos</option>
-                                            <option value="Alta">Alta</option>
-                                            <option value="Baja">Baja</option>
+                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
+                                            <option value="estado" >Estado</option>
+                          <option value="Creado" >Creado</option>
+                          <option value="En ruta">En ruta</option>
+                          <option value="Entregado">Entregado</option>
+                          <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
+                          <option value="Reprogramado">Reprogramado</option>
+                          <option value="Agencia San Salvador">Agencia San Salvador</option>
+                          <option value="Agencia San Miguel">Agencia San Miguel</option>
+                          <option value="Agencia Santa Ana">Agencia Santa Ana</option>
+                          <option value="No retirado">No retirado</option>
+                          <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
+                          <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
+                          <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
+                          <option value="No retirado Centro logístico">No retirado Centro logístico</option>
+                          <option value="Casillero San Salvador">Casillero San Salvador</option>
+                          <option value="Casillero San Miguel">Casillero San Miguel</option>
+                          <option value="Casillero Santa Ana">Casillero Santa Ana</option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
-                                    <!--begin::Export dropdown-->
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                        <i class="ki-duotone ki-exit-up fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>Exportar Reporte</button>
-                                    <!--begin::Menu-->
-                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
+                                 
+                                   
                                     <!--end::Menu-->
                                     <!--end::Export dropdown-->
                                 </div>
