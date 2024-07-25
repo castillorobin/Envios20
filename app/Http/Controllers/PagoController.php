@@ -48,6 +48,54 @@ class PagoController extends Controller
         return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos'));
     }
 
+    public function filtrandonombre(Request $request)
+    {
+        
+        //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+        //$repartidores = Repartidor::all();
+        //$vendedores = Vendedor::all()
+        $comerset = $request->input('comerset');
+        $rango = $request->input('rango');
+        $estado = $request->input('estado');
+        $pedidos = Envio::where('comercio', $comerset)->get(); 
+
+        if($rango=="ahora")
+        {    
+        $pedidos = $pedidos->intersect(Envio::whereIn('fecha_entrega', [Carbon::today()])->get());    
+        }
+        if($rango=="semana")
+        {    
+            $pedidos = Envio::where('comercio', $comerset)
+            ->whereBetween('fecha_entrega', [Carbon::now()->subWeek()->format("Y-m-d"), Carbon::now()])
+            ->get();
+        }
+
+        if($rango=="semana2")
+        {    
+            $pedidos = Envio::where('comercio', $comerset)
+            //->whereMonth('fecha_entrega', '>', [Carbon::now()->subDays(30)->format("Y-m-d"), Carbon::now()])
+            ->where('fecha_entrega', '>', Carbon::now()->subDays(30))
+            ->get();
+        } 
+        if($rango=="mes")
+        {    
+            $pedidos = Envio::where('comercio', $comerset)
+            ->whereMonth('fecha_entrega', Carbon::now()->month)
+            ->get();
+        }  
+
+        if($estado != "estado")
+        {    
+        $pedidos = $pedidos->intersect(Envio::whereIn('estado', [$estado])->get());    
+        }
+        $comercios = Comercio::all(); 
+        $comercioset = Comercio::where('comercio', $comerset)->get();
+        //return view('pedido.noretiradofiltro', compact('repartidores', 'pedidos'));
+        return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
+
+
+    }
+
     /**
      * Show the form for creating a new resource.
      */

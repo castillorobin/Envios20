@@ -229,25 +229,34 @@ document.getElementById('tot1').innerText = 0;
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
-                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                    
                                     <!--end::Export buttons-->
                                 </div>
+                                <form action="pago/filtrandonombre" method="GET" id="myForm" >
+                                    @method('GET') 
+                                    <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
-                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                               
+                               <div class="row">
+                                
+                                <div class="gap-5 col-4">
                                     <!--begin::Daterangepicker-->
-                                    <select class="form-control form-control-solid w-100 mw-250px" placeholder="Rango"">
+                                    <select class="form-control form-control-solid mw-150px" placeholder="Rango" name="rango">
                                         <option value="rango">Rango</option>
                                             <option value="ahora">Ahora</option>
                                             <option value="semana">última Semana</option>
                                             <option value="semana2">últimos 30 dias</option>   
                                             <option value="mes">último mes</option>         
                                         </select>
+                                        
                                     <!--   <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />    end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
+                                </div>
+                          
+                                    <div class="col-4">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
+                                        <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
                                             <option value="estado" >Estado</option>
                           <option value="Creado" >Creado</option>
                           <option value="En ruta">En ruta</option>
@@ -267,15 +276,23 @@ document.getElementById('tot1').innerText = 0;
                           <option value="Casillero Santa Ana">Casillero Santa Ana</option>
                                         </select>
                                         <!--end::Select2-->
+                                       
+            
                                     </div>
                                     <!--end::Filter-->
-                                 
-                                   
+                                    <div class="col-4">
+                                    <button type="submit" class="btn btn-primary" >Filtrar</button>
+                                    
+                                </div>
+                            </div>
                                     <!--end::Menu-->
                                     <!--end::Export dropdown-->
-                                </div>
+                                
+                                
+                                
                                 <!--end::Card toolbar-->
                             </div>
+                        </form>
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
