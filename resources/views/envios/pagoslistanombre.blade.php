@@ -232,17 +232,19 @@ document.getElementById('tot1').innerText = 0;
                                     
                                     <!--end::Export buttons-->
                                 </div>
+                            
+                                
                                 <form action="pago/filtrandonombre" method="GET" id="myForm" >
                                     @method('GET') 
                                     <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                
-                               <div class="row">
+                                <div class="row">
                                 
-                                <div class="gap-5 col-4">
+                                <div class="col-5" style="width: 140px;">
                                     <!--begin::Daterangepicker-->
-                                    <select class="form-control form-control-solid mw-150px" placeholder="Rango" name="rango">
+                                    <select class="form-select form-select-solid " placeholder="Rango" data-control="select2" data-hide-search="true" name="rango">
                                         <option value="rango">Rango</option>
                                             <option value="ahora">Ahora</option>
                                             <option value="semana">última Semana</option>
@@ -254,33 +256,23 @@ document.getElementById('tot1').innerText = 0;
                                     <!--begin::Filter-->
                                 </div>
                           
-                                    <div class="col-4">
+                                    <div class="col-4" style="width: 160px;">
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
                                             <option value="estado" >Estado</option>
-                          <option value="Creado" >Creado</option>
-                          <option value="En ruta">En ruta</option>
-                          <option value="Entregado">Entregado</option>
-                          <option value="Nr devuelto al comercio">Nr devuelto al comercio</option>
-                          <option value="Reprogramado">Reprogramado</option>
-                          <option value="Agencia San Salvador">Agencia San Salvador</option>
-                          <option value="Agencia San Miguel">Agencia San Miguel</option>
-                          <option value="Agencia Santa Ana">Agencia Santa Ana</option>
-                          <option value="No retirado">No retirado</option>
-                          <option value="No retirado agencia San Salvador">No retirado agencia San Salvador</option>
-                          <option value="No retirado agencia San Miguel">No retirado agencia San Miguel</option>
-                          <option value="No retirado agencia Santa Ana">No retirado agencia Santa Ana</option>
-                          <option value="No retirado Centro logístico">No retirado Centro logístico</option>
-                          <option value="Casillero San Salvador">Casillero San Salvador</option>
-                          <option value="Casillero San Miguel">Casillero San Miguel</option>
-                          <option value="Casillero Santa Ana">Casillero Santa Ana</option>
+                                            <option value="Creado">Creado</option>
+                                            <option value="Creado">En ruta</option>
+                                            <option value="Entregado">Entregado</option>
+                                            <option value="Fallido">No entregado</option>
+                                            <option value="En transito">Reprogramado</option>
+                                            <option value="En transito">Devuelto al comercio</option>
                                         </select>
                                         <!--end::Select2-->
                                        
             
                                     </div>
                                     <!--end::Filter-->
-                                    <div class="col-4">
+                                    <div class="col-3">
                                     <button type="submit" class="btn btn-primary" >Filtrar</button>
                                     
                                 </div>
@@ -288,11 +280,11 @@ document.getElementById('tot1').innerText = 0;
                                     <!--end::Menu-->
                                     <!--end::Export dropdown-->
                                 
-                                
+                                </form>
                                 
                                 <!--end::Card toolbar-->
                             </div>
-                        </form>
+                      
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
@@ -314,8 +306,8 @@ document.getElementById('tot1').innerText = 0;
                                                     </div></th>
                                                 <th># De guia</th>
                                                 <th>Comercio</th>
-                                                <th>Destinatario</th>
-                                                <th>Dirección </th>
+                                                <th class="min-w-150px">Destinatario</th>
+                                                <th class="min-w-150px">Dirección </th>
                                                 <th class="text-center">Tipo de envío</th>
                                                 <th class="text-center">Estado del envío</th>
                                                 <th class="text-center">Fecha de entrega</th>
@@ -323,7 +315,9 @@ document.getElementById('tot1').innerText = 0;
                                                 <th class="text-center">Precio del paquete</th>
                                                 <th class="text-center">Precio de envío</th>
                                                 <th>Total </th>
-                                                <th>Nota</th>
+                                                <th class="min-w-150px">Nota</th>
+                                                <th >Nota de repartidor</th>
+                                                <th class="min-w-150px">Ubicación</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
@@ -354,7 +348,8 @@ document.getElementById('tot1').innerText = 0;
                                                 <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
                                                 
                                                 <td>{{$pedido->nota}}</td>
-                                                
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                             @endforeach
 
@@ -368,7 +363,13 @@ document.getElementById('tot1').innerText = 0;
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
                                         <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
+                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                            <i class="ki-duotone ki-exit-up fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>Exportar Reporte</button>
                                     </div>
+                                    
                                 </div>
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">
                                     <div class="modal-dialog modal-fullscreen">
