@@ -10,6 +10,7 @@ use App\Models\Ticketc;
 use Carbon\Carbon;
 use App\Models\Envio;
 use PDF;
+use Illuminate\Support\Str;
 
 class PagoController extends Controller
 {
@@ -57,6 +58,22 @@ class PagoController extends Controller
         $comerset = $request->input('comerset');
         $rango = $request->input('rango');
         $estado = $request->input('estado');
+
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        $partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+       return ($partenueva1);
+/*
+       $pedidos = Envio::whereBetween('fecha_entrega', [$fecha1, $fecha2])
+
+       ->get();
+
+       $comercios = Comercio::all(); 
+       $comercioset = Comercio::where('comercio', $comerset)->get();
+       return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
+
+
         $pedidos = Envio::where('comercio', $comerset)->get(); 
 
         if($rango=="ahora")
@@ -92,7 +109,7 @@ class PagoController extends Controller
         $comercioset = Comercio::where('comercio', $comerset)->get();
         //return view('pedido.noretiradofiltro', compact('repartidores', 'pedidos'));
         return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
-
+*/
 
     }
 

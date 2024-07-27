@@ -140,16 +140,9 @@ document.getElementById('tot1').innerText = 0;
 
 
 
-
-
-
-
-
-
-
-
-
 </script>
+
+
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
@@ -225,19 +218,23 @@ document.getElementById('tot1').innerText = 0;
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar"  />
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                     
                                     <!--end::Export buttons-->
+                                    <form action="pago/filtrandonombre" method="GET" id="myForm" >
+                                        @method('GET') 
+                                        <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                                 </div>
-                            
+                                
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                                   
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
                                     <div class="w-150px">
@@ -252,11 +249,13 @@ document.getElementById('tot1').innerText = 0;
                                             <option value="En transito">Devuelto al comercio</option>
                                         </select>
                                         <!--end::Select2-->
+                                        
                                     </div>
+                                    <button type="submit" class="btn btn-primary" >Filtrar</button>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
                                    
-                                        
+                                </form>
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                        
@@ -275,7 +274,7 @@ document.getElementById('tot1').innerText = 0;
                                     <!--end::Export dropdown-->
                                 </div>
                                 <!--end::Card toolbar-->
-                            </div>
+                           
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0">

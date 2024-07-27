@@ -3514,7 +3514,7 @@ var KTWidgets = function () {
             applyClass: 'btn-primary',
             cancelClass: 'btn-light-primary',
             ranges: {
-                'Today': [moment(), moment()],
+                'Ahora': [moment(), moment()],
                 'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
                 'Last 7 Days': [moment().subtract(6, 'days'), moment()],
                 'Last 30 Days': [moment().subtract(29, 'days'), moment()],
