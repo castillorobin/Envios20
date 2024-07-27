@@ -233,30 +233,14 @@ document.getElementById('tot1').innerText = 0;
                                     <!--end::Export buttons-->
                                 </div>
                             
-                                
-                                <form action="pago/filtrandonombre" method="GET" id="myForm" >
-                                    @method('GET') 
-                                    <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
-                               
-                                <div class="row">
-                                
-                                <div class="col-5" style="width: 140px;">
+                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <select class="form-select form-select-solid " placeholder="Rango" data-control="select2" data-hide-search="true" name="rango">
-                                        <option value="rango">Rango</option>
-                                            <option value="ahora">Ahora</option>
-                                            <option value="semana">última Semana</option>
-                                            <option value="semana2">últimos 30 dias</option>   
-                                            <option value="mes">último mes</option>         
-                                        </select>
-                                        
-                                    <!--   <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />    end::Daterangepicker-->
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />
+                                    <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                </div>
-                          
-                                    <div class="col-4" style="width: 160px;">
+                                    <div class="w-150px">
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
                                             <option value="estado" >Estado</option>
@@ -268,23 +252,30 @@ document.getElementById('tot1').innerText = 0;
                                             <option value="En transito">Devuelto al comercio</option>
                                         </select>
                                         <!--end::Select2-->
-                                       
-            
                                     </div>
                                     <!--end::Filter-->
-                                    <div class="col-3">
-                                    <button type="submit" class="btn btn-primary" >Filtrar</button>
-                                    
-                                </div>
-                            </div>
+                                    <!--begin::Export dropdown-->
+                                   
+                                        
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                       
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
+                                        </div>
+                                        -->
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                     
+                                        <!--end::Menu item-->
+                                    </div>
                                     <!--end::Menu-->
                                     <!--end::Export dropdown-->
-                                
-                                </form>
-                                
+                                </div>
                                 <!--end::Card toolbar-->
                             </div>
-                      
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
