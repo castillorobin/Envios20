@@ -62,10 +62,12 @@ class PagoController extends Controller
         $parte1 = Str::of($rango)->explode('-');
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
-        $partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
-       return ($partenueva1);
-/*
-       $pedidos = Envio::whereBetween('fecha_entrega', [$fecha1, $fecha2])
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+       //return ($fechacam);
+
+       $pedidos = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
 
        ->get();
 
@@ -73,7 +75,7 @@ class PagoController extends Controller
        $comercioset = Comercio::where('comercio', $comerset)->get();
        return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
 
-
+/*
         $pedidos = Envio::where('comercio', $comerset)->get(); 
 
         if($rango=="ahora")
