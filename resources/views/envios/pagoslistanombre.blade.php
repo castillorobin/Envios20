@@ -33,10 +33,6 @@
     $(document).on('click', '#check3', function(){
 
 
-        
-        
-
-
 		var id=$(this).val();
 
         var total1 = $('#total1').text();      

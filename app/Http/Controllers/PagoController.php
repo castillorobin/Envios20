@@ -40,14 +40,7 @@ class PagoController extends Controller
         return view('envios.pagoslistaticket');
     }
  
-    public function conticket(Request $request)
-    {
-       // $pedidos = Cobro::all();
-       $comercio = $request->get('ticket') ;
-       $pedidos = Envio::where('ticketc', $comercio)->get();
-        $comercios = Comercio::all(); 
-        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos'));
-    }
+   
 
     public function filtrandonombre(Request $request)
     {
@@ -113,6 +106,17 @@ class PagoController extends Controller
         return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
 */
 
+    }
+
+    public function conticket(Request $request)
+    {
+       // $pedidos = Cobro::all();
+       $comercio = $request->get('ticket') ;
+       $pedidos = Envio::where('ticketc', $comercio)->get();
+       $comer = $pedidos[0]->comercio;
+       $comercioset = Comercio::where('comercio', $comer)->get();
+        $comercios = Comercio::all(); 
+        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset'));
     }
 
     /**

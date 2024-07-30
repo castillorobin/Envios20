@@ -29,6 +29,119 @@
 
 </head>
 
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    $(document).on('click', '#check3', function(){
+
+
+		var id=$(this).val();
+
+        var total1 = $('#total1').text();      
+
+        if ($(this).prop('checked')) {
+        var totaleste=parseFloat($('#tot'+id).text());
+        var total = parseFloat(totaleste) + parseFloat(total1);
+        $('#total1').text(total); 
+        $('#tot1').text(total);
+        }else {
+            var totaleste=parseFloat($('#tot'+id).text());
+            var total = parseFloat(total1) - parseFloat(totaleste);
+            $('#total1').text(total); 
+            $('#tot1').text(total);
+              
+        }
+
+        //alert("el total es: " + total);
+        /*
+		var prec=parseFloat($('#tot'+id).text());
+
+        //
+        var envi=$('#env'+id).text();
+        
+        //alert("le diste click" + prec);
+        var tota = $('#preci').text();
+        var senvi = $('#sumas').text();
+        //var tota = parseFloat(tota, 10);
+
+        if ($(this).prop('checked')) {
+
+            var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
+            var tenv = parseFloat(senvi, 10) + parseFloat(envi, 10);
+        $('#preci').text(parseFloat(to3, 10)); 
+        $('#preci2').text(to3); 
+        $('#toti').val(to3); 
+        $('#sumas').text(tenv);  
+
+        } else {
+            var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
+            var tenv = parseFloat(senvi, 10) - parseFloat(envi, 10);
+        $('#preci').text(to3); 
+        $('#preci2').text(to3);
+        $('#toti').val(to3);
+        $('#sumas').text(tenv);  
+        }
+
+    
+
+       
+       $('#ivat').text((parseFloat(tenv, 10) * 0.13).toFixed(2) ); 
+        $('#stotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
+        $('#atotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
+  
+     */
+
+    });
+
+    $(document).on('click', '#checktodo', function(){
+
+        document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
+        checkElement.checked = true;
+        todo();
+
+        document.getElementById('checktodo').style.display = 'none';
+        document.getElementById('checknada').style.display = '';
+
+    });
+    
+    });
+
+    function todo() {
+        var total5 =  document.getElementById('total5').innerText;
+        document.getElementById('total1').innerText = total5;
+        document.getElementById('tot1').innerText = total5;
+       // $('#tot1').text(total);
+       //alert(total5);
+}
+
+$(document).on('click', '#checknada', function(){
+
+document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
+checkElement.checked = false;
+nada();
+
+document.getElementById('checktodo').style.display = '';
+document.getElementById('checknada').style.display = 'none';
+
+});
+
+});
+
+function nada() {
+var total5 =  document.getElementById('total5').innerText;
+document.getElementById('total1').innerText = 0;
+document.getElementById('tot1').innerText = 0;
+//alert(total5);
+}
+
+
+
+
+
+</script>
+
+
+
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
@@ -70,101 +183,107 @@
                             </div>
                         </form>
                             
-                            <div class="col-md-7 m-2 mb-4">
-                                <div class="d-flex flex-stack bg-success rounded-4 p-3 float-end" style="width: 250px;">
-                                    <div class="fs-6 fw-bold text-white">
-                                        <span class="d-block fs-1 lh-1">Total</span>
-                                    </div>
-                                    <div class="fs-6 fw-bold text-white text-end">
-                                        <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">$0.00</span>
-                                    </div>
+                        <div class="col-md-7 m-2 mb-4 ">
+                            <div class="d-flex flex-stack bg-success rounded-4 p-3 float-end " style="width: 250px;">
+                                <div class="fs-6 fw-bold text-white">
+                                    <span class="d-block fs-1 lh-1">Total</span>
+                                </div>
+                                <div class="fs-6 fw-bold text-white text-end">
+                                   <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">0</span>
                                 </div>
                             </div>
                         </div>
 
-                        <br>
-                        <!--begin::Products-->
-                        <div class="card card-flush">
-                            <!--begin::Card header-->
-                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
-                                <!--begin::Card title-->
-                                <div class="card-title">
-                                    <!--begin::Search-->
-                                    <div class="d-flex align-items-center position-relative my-1">
-                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                    </div>
-                                    <!--end::Search-->
-                                    <!--begin::Export buttons-->
-                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                    <!--end::Export buttons-->
+
+
+                    </div>
+
+                    <br>
+                    <!--begin::Products-->
+                    <div class="card card-flush">
+                        <!--begin::Card header-->
+                        <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <!--begin::Search-->
+                                <div class="d-flex align-items-center position-relative my-1">
+                                    <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                        <span class="path1"></span>
+                                        <span class="path2"></span>
+                                    </i>
+                                    <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar"  />
                                 </div>
+                                <!--end::Search-->
+                                <!--begin::Export buttons-->
                                 
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                    <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />
-                                    <!--end::Daterangepicker-->
-                                    <!--begin::Filter-->
-                                    <div class="w-150px">
-                                        <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
-                                            <option></option>
-                                            <option value="Todos">Todos</option>
-                                            <option value="Alta">Alta</option>
-                                            <option value="Baja">Baja</option>
-                                        </select>
-                                        <!--end::Select2-->
-                                    </div>
-                                    <!--end::Filter-->
-                                    <!--begin::Export dropdown-->
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                        <i class="ki-duotone ki-exit-up fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>Exportar Reporte</button>
-                                    <!--begin::Menu-->
-                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu-->
-                                    <!--end::Export dropdown-->
-                                </div>
-                                <!--end::Card toolbar-->
+                                <!--end::Export buttons-->
+                                <form action="pago/filtrandonombre" method="GET" id="myForm" >
+                                    @method('GET') 
+                                    <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                             </div>
-                            <!--end::Card header-->
-                            <!--begin::Card body-->
+                            
+                            <!--end::Card title-->
+                            <!--begin::Card toolbar-->
+                            <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                               
+                                <!--begin::Daterangepicker-->
+                                <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                <!--end::Daterangepicker-->
+                                <!--begin::Filter-->
+                                <div class="w-150px">
+                                    <!--begin::Select2-->
+                                    <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
+                                        <option value="estado" >Estado</option>
+                                        <option value="Creado">Creado</option>
+                                        <option value="Creado">En ruta</option>
+                                        <option value="Entregado">Entregado</option>
+                                        <option value="Fallido">No entregado</option>
+                                        <option value="En transito">Reprogramado</option>
+                                        <option value="En transito">Devuelto al comercio</option>
+                                    </select>
+                                    <!--end::Select2-->
+                                    
+                                </div>
+                                <button type="submit" class="btn btn-primary" >Filtrar</button>
+                                <!--end::Filter-->
+                                <!--begin::Export dropdown-->
+                               
+                            </form>
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item-->
+                                   
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item
+                                    <div class="menu-item px-3">
+                                        <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
+                                    </div>
+                                    -->
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item-->
+                                 
+                                    <!--end::Menu item-->
+                                </div>
+                                <!--end::Menu-->
+                                <!--end::Export dropdown-->
+                            </div>
+                            <!--end::Card toolbar-->
+                       
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive">
+
+                                    <form name="f1" id="formElement">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th><div class="form-group form-check" style="width: 5px;">
+
+                                                    <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
+                                                    <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
+                                                    
+                                                   </div></th>
                                                 <th># De guia</th>
                                                 <th>Comercio</th>
                                                 <th>Destinatario</th>
@@ -177,13 +296,22 @@
                                                 <th class="text-center">Precio de envío</th>
                                                 <th>Total </th>
                                                 <th>Nota</th>
+                                                <th >Nota de repartidor</th>
+                                                <th class="min-w-150px">Ubicación</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
+                                            <span hidden id="total3"> {{ $total4 = 0 }}</span>
                                             @foreach ($pedidos as $pedido)                                               
                                            
                                             <tr>
 
+                                                <td >
+                                                    <div class="form-group form-check" style="width: 5px;">
+                                                     <input type="checkbox" value="{{ $pedido->id }}" class="form-check-input" id="check3" name="checked[]" >
+                                                     
+                                                    </div>
+                                                    </td>
 
 
                                                 <td>{{$pedido->guia}}</td>
@@ -198,18 +326,26 @@
                                                 <td>{{$pedido->envio}}</td>
                                                 <td>{{$pedido->total}}</td>
                                                 <td>{{$pedido->nota}}</td>
-                                                
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                             @endforeach
+
+                                            <span hidden id="total5"> {{ $total4 }}</span>
                                         </tbody>
                                     </table>
-
+                                </form>
                                 </div>
                                 <br>
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
                                         <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
+                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                            <i class="ki-duotone ki-exit-up fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>Exportar Reporte</button>
                                     </div>
                                 </div>
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">
@@ -220,7 +356,7 @@
 
                                                 <!--begin::Close-->
                                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                                                    <i class="ki-duotone ki-cross fs-2x"><span class="path1"></span><span class="path2"></span></i>
+                                                    <i class="ki-duotone ki-cross"><span class="path1"></span><span class="path2"></span></i>
                                                 </div>
                                                 <!--end::Close-->
                                             </div>
@@ -231,40 +367,40 @@
                                                         <div class="col-lg-7">
                                                             <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
                                                                 <h3 style="margin-bottom: 20px;">Datos del comercio</h3>
-                                                                <div class="row mb-1">
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Nombre</label>
+                                                                <div class="row ">
+                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right m-0">
+                                                                        <label class="text-muted mb-0">Nombre</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">MODA SV</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->comercio}}</p>
                                                                     </div>
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Teléfono</label>
+                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right mb-0">
+                                                                        <label class="text-muted mb-0">Teléfono</label>
                                                                     </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">+503 7569-3332</p>
+                                                                    <div class="col-lg-4 d-flex align-items-center mb-0">
+                                                                        <p class="mb-0">{{$comercioset[0]->telefono}}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-1">
+                                                                <div class="row ">
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Dirección</label>
+                                                                        <label class="text-muted min-w-125px w-125px mb-0">Dirección</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">SANTA ANA. EL SALVADOR</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->direccion}}</p>
                                                                     </div>
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Whatsapp</label>
+                                                                        <label class="text-muted min-w-125px w-125px mb-0">Whatsapp</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">+503 7569-3332</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->whatsapp}}</p>
                                                                     </div>
                                                                 </div>
-                                                                <div class="row mb-1">
+                                                                <div class="row ">
                                                                     <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Correo</label>
+                                                                        <label class="text-muted min-w-125px w-125px mb-0">Correo</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">MODASV@gmail.com</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->correo}}</p>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -305,10 +441,10 @@
                                                                                     <!--begin::Summary-->
                                                                                     <div class="me-3">
                                                                                         <div class="d-flex align-items-center">
-                                                                                            <div class="text-gray-800 fw-bold">MODA SV</div>
-                                                                                            <div class="badge badge-light-primary ms-5">Primary</div>
+                                                                                            <div class="text-gray-800 fw-bold">{{$comercioset[0]->comercio}}</div>
+                                                                                            <div class="badge badge-light-primary ms-5">{{$comercioset[0]->estado}}</div>
                                                                                         </div>
-                                                                                        <div class="text-muted">Expires Dec 2024</div>
+                                                                                        <div class="text-muted"></div>
                                                                                     </div>
                                                                                     <!--end::Summary-->
                                                                                 </div>
@@ -350,7 +486,7 @@
                                                                                     <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-150px py-3" data-kt-menu="true">
                                                                                         <!--begin::Menu item-->
                                                                                         <div class="menu-item px-3">
-                                                                                            <a href="#" class="menu-link px-3" data-kt-payment-mehtod-action="set_as_primary">Set as Primary</a>
+                                                                                            <a href="#" class="menu-link px-3" data-kt-payment-mehtod-action="set_as_primary"></a>
                                                                                         </div>
                                                                                         <!--end::Menu item-->
                                                                                     </div>
@@ -367,57 +503,57 @@
                                                                                 <div class="d-flex flex-wrap py-5">
                                                                                     <!--begin::Col-->
                                                                                     <div class="flex-equal me-5">
-                                                                                        <table class="table table-flush fw-semibold gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
+                                                                                        <table class="table table-flush gy-1 table-with-spacing" style="margin-left: -30px;"> <!-- Ajusta el valor de margen según tus necesidades -->
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-120px">Titular</td>
-                                                                                                <td class="text-gray-800">Robin castillo</td>
+                                                                                                <td ><p>{{$comercioset[0]->titular}}</p></td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Banco</td>
-                                                                                                <td class="text-gray-800">BANCO AGRICOLA</td>
+                                                                                                <td >{{$comercioset[0]->banco}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Numero de cuenta</td>
-                                                                                                <td class="text-gray-800">4390 9300 6586 9455</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->cuenta}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">DUI</td>
-                                                                                                <td class="text-gray-800">05249855-8</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->dui}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Tipo de cuenta</td>
-                                                                                                <td class="text-gray-800">Ahorros</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->tipo_cuenta}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Empresa</td>
-                                                                                                <td class="text-gray-800">MODA SV</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->empresa}}</td>
                                                                                             </tr>
                                                                                         </table>
                                                                                     </div>
                                                                                     <!--end::Col-->
                                                                                     <!--begin::Col-->
                                                                                     <div class="flex-equal">
-                                                                                        <table class="table table-flush fw-semibold gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
+                                                                                        <table class="table table-flush gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Tipo de Contribuyente</td>
-                                                                                                <td class="text-gray-800">Pequeño</td>
+                                                                                                <td class="text-gray-800">{{$comercioset[0]->tipo_contri}}</td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Giro</td>
                                                                                                 <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">Ventas</a>
+                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->giro}}</a>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">NCR</td>
                                                                                                 <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">05452154</a>
+                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->nrc}}</a>
                                                                                                 </td>
                                                                                             </tr>
                                                                                             <tr>
                                                                                                 <td class="text-muted min-w-125px w-125px">Direccion fiscal</td>
                                                                                                 <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">col las violetas cl san luis la planta pje 1 casa 21</a>
+                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->d_fiscal}}</a>
                                                                                                 </td>
                                                                                             </tr>
 
@@ -445,7 +581,7 @@
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Chivo wallet</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">7985-2660</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->chivo}}</p>
                                                                     </div>
                                                                 </div>
                                                                 <div class="row mb-1">
@@ -453,7 +589,7 @@
                                                                         <label class="text-muted min-w-125px w-125px col-form-label mb-0">Tigo Money</label>
                                                                     </div>
                                                                     <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">7896-5522</p>
+                                                                        <p class="mb-0">{{$comercioset[0]->tigo}}</p>
                                                                     </div>
                                                                 </div>
 
@@ -546,7 +682,7 @@
                                                                     <div class="fs-6 fw-bold text-white text-end">
                                                                         <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
                                                                         <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                                                        <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
+                                                                        <span id="tot1" name="tot1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                                                     </div>
                                                                 </div>
                                                                 <!-- End of Summary -->
@@ -562,7 +698,7 @@
                                                                 <div class="row justify-content-end">
                                                                     <label class="col-lg-3 col-form-label ">Cambio</label>
                                                                     <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$5.00" readonly />
+                                                                        <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$0.00" readonly />
                                                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                     </div>
                                                                 </div>
@@ -572,18 +708,6 @@
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cobrar</button>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
                                             </div>
                                         </div>
                                     </div>
