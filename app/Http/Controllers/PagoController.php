@@ -112,11 +112,24 @@ class PagoController extends Controller
     {
        // $pedidos = Cobro::all();
        $comercio = $request->get('ticket') ;
+
        $pedidos = Envio::where('ticketc', $comercio)->get();
-       $comer = $pedidos[0]->comercio;
-       $comercioset = Comercio::where('comercio', $comer)->get();
+      
+     //  return ($pedidos[0]->comercio);
+       
         $comercios = Comercio::all(); 
+
+        if(empty($pedidos[0]->comercio)){
+            $comer = $comercios[0]->comercio;
+            $comercioset = Comercio::where('comercio', $comer)->get();
+        }else{
+            $comer = $pedidos[0]->comercio;
+            $comercioset = Comercio::where('comercio', $comer)->get();
+        }
+        
+
         return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset'));
+        
     }
 
     /**
