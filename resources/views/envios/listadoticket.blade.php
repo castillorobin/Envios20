@@ -186,18 +186,20 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
+                                            @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> <a href="/envios/detalleticket" class="text-gray-900 text-hover-primary">
-                                                        #00001
+                                                    #{{$ticket->codigo}}
                                                     </a></td>
-                                                <td>MODA SV</td>
-                                                <td>San Salvador</td>
+                                                <td>{{$ticket->comercio}}</td> 
+                                                <td></td>
                                                 <td>Envido</td>
-                                                <td>15</td>
-                                                <td>$220</td>
+                                                <td>{{$ticket->perso + $ticket->punto + $ticket->casil + $ticket->depar}}</td>
+                                                <td>${{$ticket->total}}</td>
                                                 <td><span class="badge badge-warning">Pendiente</span>
                                                 </td>
                                             </tr>
+                                            @endforeach
                                         </tbody>
 
                                     </table>

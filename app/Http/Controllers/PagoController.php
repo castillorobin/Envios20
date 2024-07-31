@@ -23,6 +23,12 @@ class PagoController extends Controller
         $comercios = Comercio::all(); 
         return view('envios.pagoslista', compact('comercios'));
     }
+    public function listadoticket()
+    {
+       // $pedidos = Cobro::all();
+        $tickets = Ticketc::all(); 
+        return view('envios.listadoticket', compact('tickets'));
+    }
     public function connombre(Request $request)
     {
        // $pedidos = Cobro::all();
@@ -106,7 +112,7 @@ class PagoController extends Controller
         return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
 */
 
-    }
+    } 
 
     public function conticket(Request $request)
     {
