@@ -37,6 +37,16 @@ class PagoController extends Controller
         $pedidos = Ticketc::where('codigo', $id)->get();
         return view('envios.detalleticket', compact('pedidos'));
     }
+    public function personalizadoticket($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        //$pedidos = Ticketc::where('codigo', $id)->get();
+        $pedidos = Envio::where('ticketc', $id)
+        ->where('tipo', "Personalizado")
+        ->get();
+        return view('envios.personalizadoticket', compact('pedidos'));
+    }
 
 
 

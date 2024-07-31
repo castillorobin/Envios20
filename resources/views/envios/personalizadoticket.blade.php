@@ -129,7 +129,7 @@
 
                                             </div>
                                             <!--end::Wrapper-->
-
+ 
                                         </div>
                                     </div>
                                     <!--end::Info-->
@@ -193,22 +193,24 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
+                                            @foreach ($pedidos as $pedido) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> <a href="/envios/detalleticket" class="text-gray-900 text-hover-primary">
-                                                        #00001
-                                                    </a></td>
-                                                <td>20/07/2024</td>
-                                                <td>08:22 PM</td>
+                                                <td> 
+                                                    {{$pedido->codigo}}
+                                                    </td>
+                                                <td>{{ date('d/m/Y', strtotime($pedido->created_at)) }}</td>
+                                                <td>{{ date('H:i:s', strtotime($pedido->created_at)) }}</td>
                                                 <td>Personalizado</td>
-                                                <td>San Salvador</td>
+                                                <td>{{$pedido->local}}</td>
                                                 <td>Envido</td>
-                                                <td>15</td>
-                                                <td>$220</td>
+                                                <td>{{$pedido->precio}}</td>
+                                                <td>{{$pedido->total}}</td>
                                                 <td><span class="badge badge-warning">Pendiente</span>
                                                 </td>
                                                 <td>Robin castillo</td>
 
                                             </tr>
+                                            @endforeach
                                         </tbody>
 
                                     </table>
