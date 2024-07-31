@@ -91,9 +91,7 @@ Route::get('/envios/registroconguia', function () {
     return view('envios.registroconguia');
 });
 
-Route::get('/envios/detalleticket', function () {
-    return view('envios.detalleticket');
-});
+
 Route::get('/envios/personalizadoticket', function () {
     return view('envios.personalizadoticket');
 });
@@ -186,8 +184,13 @@ Route::get('pago/filtrandonombre', [App\Http\Controllers\PagoController::class, 
 
 //Administracion Tickets
 Route::get('/envios/listadoticket', [App\Http\Controllers\PagoController::class, 'listadoticket'] )->name('listadoticket') ;
+Route::get('/envios/detalleticket/{id}', [App\Http\Controllers\PagoController::class, 'detalleticket'] )->name('detalleticket') ;
 
 /*
+Route::get('/envios/detalleticket', function () {
+    return view('envios.detalleticket');
+});
+
 Route::get('/envios/listadoticket', function () {
     return view('envios.listadoticket');
 });

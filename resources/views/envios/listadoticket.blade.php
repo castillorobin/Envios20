@@ -188,7 +188,7 @@
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> <a href="/envios/detalleticket" class="text-gray-900 text-hover-primary">
+                                                <td> <a href="/envios/detalleticket/{{$ticket->codigo}}" class="text-gray-900 text-hover-primary">
                                                     #{{$ticket->codigo}}
                                                     </a></td>
                                                 <td>{{$ticket->comercio}}</td> 

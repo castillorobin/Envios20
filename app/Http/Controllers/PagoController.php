@@ -29,6 +29,18 @@ class PagoController extends Controller
         $tickets = Ticketc::all(); 
         return view('envios.listadoticket', compact('tickets'));
     }
+
+    public function detalleticket($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        $pedidos = Ticketc::where('codigo', $id)->get();
+        return view('envios.detalleticket', compact('pedidos'));
+    }
+
+
+
+
     public function connombre(Request $request)
     {
        // $pedidos = Cobro::all();

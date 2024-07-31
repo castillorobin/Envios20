@@ -13,7 +13,7 @@
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
-<!--begin::Body-->
+<!--begin::Body--> 
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
     <!--begin::Theme mode setup on page load--> <!--begin::Sign-in Method-->
@@ -68,7 +68,7 @@
                                     <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                            <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                                            <img src="/assets/media/avatars/300-1.jpg" alt="image" />
                                             <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                         </div>
                                     </div>
@@ -81,7 +81,7 @@
                                                     <div class="col-lg-6 mb-2">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#" class="text-gray-900 text-hover-primary fs-3 fw-bold me-1" style="white-space: nowrap;">
-                                                                MODA SV
+                                                                {{$pedidos[0]->comercio}}
                                                             </a>
                                                             <a href="#">
                                                                 <i class="ki-duotone ki-verify fs-1 text-primary">
@@ -98,17 +98,17 @@
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
                                                             <span class="path3"></span>
-                                                        </i>Telefono</a>
+                                                        </i>Telefono</a> {{$pedidos[0]->telefono}} &nbsp; &nbsp; &nbsp;
                                                     <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
                                                         <i class="ki-duotone ki-geolocation fs-5 me-1">
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
-                                                        </i>agencia</a>
+                                                        </i>Agencia</a> {{$pedidos[0]->local}} &nbsp; &nbsp; &nbsp;
                                                     <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
                                                         <i class="ki-duotone ki-sms fs-5 me-1">
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
-                                                        </i>Email comercio</a>
+                                                        </i>Email</a>&nbsp; &nbsp; {{$pedidos[0]->correo}} &nbsp; 
                                                 </div>
                                             </div>
                                             <div class="d-flex my-1">
@@ -123,7 +123,7 @@
                                             <div class="d-flex flex-column flex-grow-1 pe-8">
                                                 <div class="d-flex flex-column flex-grow-1 mt-6">
                                                     <div class="fw-semibold fs-6 text-black-500 text-right">Direccion</div>
-                                                    <div class="fw-semibold fs-5 text-black-100 text-right">Calle morena, santa ana, el salvador</div>
+                                                    <div class="fw-semibold fs-5 text-black-100 text-right">{{$pedidos[0]->direccion}}</div>
                                                 </div>
 
 
@@ -193,7 +193,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">#0001</span>
+                                        <span class="fw-bold fs-6 text-gray-800">#{{$pedidos[0]->codigo}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -205,7 +205,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">MODA SV</span>
+                                        <span class="fw-semibold text-gray-800 fs-6">{{$pedidos[0]->comercio}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -216,7 +216,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">20/06/2024</span>
+                                        <span class="fw-bold fs-6 text-gray-800">{{ date('d/m/Y', strtotime($pedidos[0]->created_at)) }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -226,7 +226,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">16:22 PM</span>
+                                        <span class="fw-bold fs-6 text-gray-800">{{ date('H:i:s', strtotime($pedidos[0]->created_at)) }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -237,7 +237,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{$pedidos[0]->perso}} paquetes</a>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -247,7 +247,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{$pedidos[0]->punto}} paquetes</a>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -257,7 +257,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{$pedidos[0]->casil}} paquetes</a>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -267,7 +267,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 paquetes</a>
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{$pedidos[0]->depar}} paquetes</a>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -277,7 +277,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">10 Guias</a>
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{$pedidos[0]->guias}} Guias</a>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -289,7 +289,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">$250</a>
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">${{$pedidos[0]->total}}</a>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -301,7 +301,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$260.00</span>
+                                        <span class="fw-bold fs-6 text-gray-800">${{$pedidos[0]->entrega}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -311,7 +311,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$10.00</span>
+                                        <span class="fw-bold fs-6 text-gray-800">${{$pedidos[0]->cambio}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
