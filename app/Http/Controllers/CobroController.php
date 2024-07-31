@@ -27,7 +27,7 @@ class CobroController extends Controller
 
 
         $comer=" ";
-        $cobrodepa = Cobro::where('tipo', "Departamental")->get();
+        $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
         $cobrodepa = $cobrodepa->count();
         $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
             $cobroperdepa = $cobroperdepa->count();
@@ -60,9 +60,63 @@ class CobroController extends Controller
 
     public function ticket(Request $request)
     {
-        
+        $ticketnum = $request->get('ticketnum');
+        //$ticketid = $request->get('ticketid');
+        $ticketid1 = Ticketc::where('codigo', $ticketnum)
+        ->get();
+        $ticketid = $ticketid1[0]->id;
+        //return ($ticketid);
 
-        $pdf = PDF::loadView('envios.ticketpagos', ['detalles'=>$detalles, 'cotiactual'=>$cotiactual]);
+        $cobroperso = Envio::where('ticketc', $ticketnum)
+        ->where('tipo', "Personalizado")
+        ->get();
+        $cobroperso = $cobroperso->count();
+
+        $cobroperdepa = Envio::where('ticketc', $ticketnum)
+        ->where('tipo', "Personalizado departamental")
+        ->get();
+        $cobroperdepa =  $cobroperdepa->count();
+
+        $cobropfijo = Envio::where('ticketc', $ticketnum)
+        ->where('tipo', "Punto fijo")
+        ->get();
+        $cobropfijo =  $cobropfijo->count();
+
+        $cobrocasi = Envio::where('ticketc', $ticketnum)
+        ->where('tipo', "Casillero")
+        ->get();
+        $cobrocasi =  $cobrocasi->count();
+
+        $ticketc = Ticketc::find($ticketid);
+
+      //  $ticketc = Ticketc::where('codigo', $ticketnum)
+       // ->get();
+        $ticketc->perso = $cobroperso;
+        $ticketc->punto = $cobropfijo ;
+        $ticketc->casil = $cobrocasi ;
+        $ticketc->depar = $cobroperdepa ;
+        $ticketc->persoi = $request->get('pre1');
+        $ticketc->depari = $request->get('pre2');
+        $ticketc->puntoi = $request->get('pre3');
+        $ticketc->casili = $request->get('pre4');
+        $ticketc->iva = $request->get('iva2');
+        $ticketc->total = $request->get('total2');
+        $ticketc->metodo = $request->get('metodo');
+        $ticketc->entrega = $request->get('pago');
+        $ticketc->cambio = $request->get('cambio');
+        //$ticketc->iva = $ ;
+        $ticketc->save();
+        $ticketact = Ticketc::where('codigo', $ticketnum)
+        ->get();
+
+
+
+
+
+
+
+
+        $pdf = PDF::loadView('envios.ticketpagos', ['ticketact'=>$ticketact]);
         //return view('envios.ticketpagos');
         $customPaper = array(0,0,360,550);
         //$pdf->setPaper('b6', 'portrait');
@@ -532,7 +586,7 @@ class CobroController extends Controller
         $comercio->nota = $request->input('nota');
         $comercio->f_alta = Carbon::now();
 
-
+ 
 /*
         $comercio->whatsapp = $request->input('whatsapp');
         $comercio->f_alta = $request->input('fecha_alta');

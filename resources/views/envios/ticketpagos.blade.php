@@ -44,7 +44,7 @@
        <br>
 
                         <div class="fecha centrar " style="font-weight: bolder;">
-   TICKET Nº 0000-0000001
+   TICKET Nº {{ $ticketact[0]->codigo }}
    <hr>
    </div>
    
@@ -67,23 +67,23 @@
         <tbody>
             <tr>
                 <td style="text-align: left;">Personalizado</td>
-                <td>0</td>
-                <td>$0.00</td>
+                <td>{{ $ticketact[0]->perso }}</td>
+                <td>${{ $ticketact[0]->persoi }}</td>
             </tr>
             <tr>
                 <td style="text-align: left;">Punto fijo</td>
-                <td>0</td>
-                <td>$0.00</td>
+                <td>{{ $ticketact[0]->punto }}</td>
+                <td>${{ $ticketact[0]->puntoi }}</td>
             </tr>
             <tr>
                 <td style="text-align: left;">Casillero</td>
-                <td>0</td>
-                <td>$0.00</td>
+                <td>{{ $ticketact[0]->casil }}</td>
+                <td>${{ $ticketact[0]->casili }}</td>
             </tr>
             <tr>
                 <td style="text-align: left;">Personalizado Departamental</td>
-                <td>0</td>
-                <td>$0.00</td>
+                <td>{{ $ticketact[0]->depar }}</td>
+                <td>${{ $ticketact[0]->depari }}</td>
             </tr>
             <tr >
                 <td style="text-align: left; border-bottom: 2px solid black;"> Guias</td>
@@ -93,7 +93,7 @@
             <tr >
                 <td></td>
                 <td>IVA</td>
-                <td >$0.00
+                <td >${{ $ticketact[0]->iva }}
                  
                 </td>
                 
@@ -101,17 +101,17 @@
             <tr>
                 <td></td>
                 <td style="font-weight: bolder;">TOTAL</td>
-                <td >$0.00</td>
+                <td >${{ $ticketact[0]->total }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td >ENTREGA EFECTIVO:</td>
-                <td >$0.00</td>
+                <td >${{ $ticketact[0]->entrega }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td>CAMBIO:</td>
-                <td >$0.00</td>
+                <td >${{ $ticketact[0]->cambio }}</td>
             </tr>
         </tbody>
 

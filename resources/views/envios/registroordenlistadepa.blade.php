@@ -846,7 +846,9 @@ $(document).ready(function() {
             <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price" hidden/>
             <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price" hidden/>
             <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price" hidden/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/>  
+            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/> 
+            <input type="text" class="form-control form-control-solid text-end" name="ticketnum" id="ticketnum" data-kt-element="price" value="{{$ticketactual[0]->codigo}}" hidden/>  
+            <input type="text" class="form-control form-control-solid text-end" name="ticketid" id="ticketid" data-kt-element="price" value="{{$ticketactual[0]->id}}" hidden/> 
             <!--end::Select-->
         </div>
         <!--end::Input group-->
