@@ -68,7 +68,7 @@
                                     <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                            <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                                            <img src="/assets/media/avatars/300-1.jpg" alt="image" />
                                             <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                         </div>
                                     </div>
@@ -137,20 +137,20 @@
                                 <!--end::Details-->
                                 <!--begin::Navs-->
                                 <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/envios/detalleticket">Detalle ticket</a>
+                                <li class="nav-item mt-2">
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5 " href="/envios/detalleticket/{{$pedidos[0]->codigo}}">Detalle ticket</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/personalizadoticket">Personalizado</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/envios/personalizadoticket/{{$pedidos[0]->codigo}}">Personalizado</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/puntoticket">Punto fijo</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/puntoticket/{{$pedidos[0]->codigo}}">Punto fijo</a>
                                     </li>
                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/casilleroticket">Casillero</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/departamentalticket">Personalizado Departamental</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/departamentalticket/{{$pedidos[0]->codigo}}">Personalizado Departamental</a>
                                     </li>
                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/guiasticket">Guias</a>

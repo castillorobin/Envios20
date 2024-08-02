@@ -93,17 +93,11 @@ Route::get('/envios/registroconguia', function () {
 
 
 
-Route::get('/envios/puntoticket', function () {
-    return view('envios.puntoticket');
-});
 
-Route::get('/envios/casilleroticket', function () {
-    return view('envios.casilleroticket');
-});
 
-Route::get('/envios/departamentalticket', function () {
-    return view('envios.departamentalticket');
-});
+
+
+
 Route::get('/envios/guiasticket', function () {
     return view('envios.guiasticket');
 });
@@ -184,8 +178,23 @@ Route::get('pago/filtrandonombre', [App\Http\Controllers\PagoController::class, 
 Route::get('/envios/listadoticket', [App\Http\Controllers\PagoController::class, 'listadoticket'] )->name('listadoticket') ;
 Route::get('/envios/detalleticket/{id}', [App\Http\Controllers\PagoController::class, 'detalleticket'] )->name('detalleticket') ;
 Route::get('/envios/personalizadoticket/{id}', [App\Http\Controllers\PagoController::class, 'personalizadoticket'] )->name('personalizadoticket') ;
+Route::get('/envios/puntoticket/{id}', [App\Http\Controllers\PagoController::class, 'puntoticket'] )->name('puntoticket') ;
+Route::get('/envios/departamentalticket/{id}', [App\Http\Controllers\PagoController::class, 'departamentalticket'] )->name('departamentalticket') ;
+Route::get('/envios/casilleroticket/{id}', [App\Http\Controllers\PagoController::class, 'casilleroticket'] )->name('casilleroticket') ;
 
 /*
+Route::get('/envios/casilleroticket', function () {
+    return view('envios.casilleroticket');
+});
+Route::get('/envios/departamentalticket', function () {
+    return view('envios.departamentalticket');
+});
+
+Route::get('/envios/puntoticket', function () {
+    return view('envios.puntoticket');
+});
+
+
 Route::get('/envios/personalizadoticket', function () {
     return view('envios.personalizadoticket');
 });

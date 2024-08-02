@@ -38,7 +38,7 @@
                                     <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">ticket</a>
                                 </li>
                                 <!--end::Item-->
-                                <!--begin::Item-->
+                                <!--begin::Item--> 
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
@@ -137,20 +137,20 @@
                                 <!--end::Details-->
                                 <!--begin::Navs-->
                                 <ul class="nav nav-stretch nav-line-tabs nav-line-tabs-2x border-transparent fs-5 fw-bold">
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/envios/detalleticket">Detalle ticket</a>
+                                <li class="nav-item mt-2">
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5 " href="/envios/detalleticket/{{$pedidos[0]->codigo}}">Detalle ticket</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/personalizadoticket">Personalizado</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/personalizadoticket/{{$pedidos[0]->codigo}}">Personalizado</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/puntoticket">Punto fijo</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/puntoticket/{{$pedidos[0]->codigo}}">Punto fijo</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/casilleroticket">Casillero</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5 active" href="/envios/casilleroticket">Casillero</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/departamentalticket">Personalizado Departamental</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/departamentalticket/{{$pedidos[0]->codigo}}">Personalizado Departamental</a>
                                     </li>
                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/guiasticket">Guias</a>
@@ -193,22 +193,24 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
+                                        @foreach ($pedidos as $pedido) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> <a href="/envios/detalleticket" class="text-gray-900 text-hover-primary">
-                                                        #00001
-                                                    </a></td>
-                                                <td>20/07/2024</td>
-                                                <td>08:22 PM</td>
-                                                <td>Casillero</td>
-                                                <td>San Salvador</td>
+                                                <td> 
+                                                    {{$pedido->codigo}}
+                                                    </td>
+                                                <td>{{ date('d/m/Y', strtotime($pedido->created_at)) }}</td>
+                                                <td>{{ date('H:i:s', strtotime($pedido->created_at)) }}</td>
+                                                <td>Personalizado</td>
+                                                <td>{{$pedido->local}}</td>
                                                 <td>Envido</td>
-                                                <td>15</td>
-                                                <td>$220</td>
+                                                <td>{{$pedido->precio}}</td>
+                                                <td>{{$pedido->total}}</td>
                                                 <td><span class="badge badge-warning">Pendiente</span>
                                                 </td>
                                                 <td>Robin castillo</td>
 
                                             </tr>
+                                            @endforeach
                                         </tbody>
 
                                     </table>

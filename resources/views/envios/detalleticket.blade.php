@@ -144,13 +144,13 @@
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/personalizadoticket/{{$pedidos[0]->codigo}}">Personalizado</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/puntoticket">Punto fijo</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/puntoticket/{{$pedidos[0]->codigo}}">Punto fijo</a>
                                     </li>
                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/casilleroticket">Casillero</a>
                                     </li>
                                     <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/departamentalticket">Personalizado Departamental</a>
+                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/departamentalticket/{{$pedidos[0]->codigo}}">Personalizado Departamental</a>
                                     </li>
                                     <li class="nav-item mt-2">
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/guiasticket">Guias</a>

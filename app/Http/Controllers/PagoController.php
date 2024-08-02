@@ -42,10 +42,46 @@ class PagoController extends Controller
        // $pedidos = Cobro::all();
         //$tickets = Ticketc::all(); 
         //$pedidos = Ticketc::where('codigo', $id)->get();
+        //return ($id);
         $pedidos = Envio::where('ticketc', $id)
         ->where('tipo', "Personalizado")
         ->get();
         return view('envios.personalizadoticket', compact('pedidos'));
+    }
+
+    public function puntoticket($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        //$pedidos = Ticketc::where('codigo', $id)->get();
+        //return ($id);
+        $pedidos = Envio::where('ticketc', $id)
+        ->where('tipo', "Punto fijo")
+        ->get();
+        return view('envios.puntoticket', compact('pedidos'));
+    }
+    public function departamentalticket($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        //$pedidos = Ticketc::where('codigo', $id)->get();
+        //return ($id);
+        $pedidos = Envio::where('ticketc', $id)
+        ->where('tipo', "Personalizado departamental")
+        ->get();
+        return view('envios.departamentalticket', compact('pedidos'));
+    }
+
+    public function casilleroticket($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        //$pedidos = Ticketc::where('codigo', $id)->get();
+        //return ($id);
+        $pedidos = Envio::where('ticketc', $id)
+        ->where('tipo', "Casillero")
+        ->get();
+        return view('envios.casilleroticket', compact('pedidos'));
     }
 
 
