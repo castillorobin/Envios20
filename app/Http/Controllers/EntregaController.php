@@ -20,6 +20,8 @@ class EntregaController extends Controller
     {
         $guia = $request->get('guia') ;
 
+        return ($guia);
+
         $ticket = new Entrega();
         //$ticket->codigo = $request->get('codigo');
         $ticket->save();
@@ -28,7 +30,7 @@ class EntregaController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
-        return ($envio->id);
+       
 
         $envioid= $envio[0]->id ;
 
