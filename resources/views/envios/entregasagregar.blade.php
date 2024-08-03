@@ -102,6 +102,7 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    <span hidden id="total3"> {{ $total4 = 0 }}</span>
                                                     @foreach ($pedidos as $pedido) 
                                                         <tr>
                                                             <td><a href="#" class="text-gray-900 text-hover-primary">{{$pedido->guia}}</a></td>
@@ -109,12 +110,14 @@
                                                             <td>{{$pedido->destinatario}}</td>
                                                             <td class="text-center"><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
                                                             <td class="text-center">{{$pedido->total}}</td>
+                                                            <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
                                                             <td style="text-align: center;">
                                                                 <button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button>
                                                             </td>
                                                         </tr>
                                                     @endforeach
                                                     </tbody>
+                                                    <span hidden id="total5"> {{ $total4 }}</span>
                                                 </table>
                                             </div>
                                             <!--end::Table-->
@@ -213,7 +216,7 @@
                                         <div class="fs-6 fw-bold text-white text-end">
                                             <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
                                             <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
+                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">${{ $total4 }}</span>
                                         </div>
                                         <!--end::Content-->
                                     </div>
