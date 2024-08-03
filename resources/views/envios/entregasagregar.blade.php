@@ -66,14 +66,14 @@
 
 
 
-                                                    <form action="/entrega/agregar/" class="row g-2" method="POST">
+                                                    <form action="/entrega/agregarparte/" class="row g-2" method="POST">
                                                     @csrf
                                                     @method('GET')
                                                         <div class="col-auto">
                                                             <label for="guia" class="visually-hidden">Guía</label>
                                                             <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia">
                                                             <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
-                                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar guia">
+                                                            <input type="text" class="visually-hidden" name="entrega" id="entrega" value="{{$actual}}">
                                                         </div>
                                                         <div class="col-auto">
                                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
@@ -103,17 +103,18 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
+                                                    @foreach ($pedidos as $pedido) 
                                                         <tr>
-                                                            <td><a href="#" class="text-gray-900 text-hover-primary"></a></td>
-                                                            <td><a href="#" class="text-gray-900 text-hover-primary"></a></td>
-                                                            <td></td>
-                                                            <td class="text-center"><span class="badge badge-light-success"></span></td>
-                                                            <td class="text-center"></td>
+                                                            <td><a href="#" class="text-gray-900 text-hover-primary">{{$pedido->guia}}</a></td>
+                                                            <td><a href="#" class="text-gray-900 text-hover-primary">{{$pedido->comercio}}</a></td>
+                                                            <td>{{$pedido->destinatario}}</td>
+                                                            <td class="text-center"><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
+                                                            <td class="text-center">{{$pedido->total}}</td>
                                                             <td style="text-align: center;">
                                                                 <button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button>
                                                             </td>
                                                         </tr>
-
+                                                    @endforeach
                                                     </tbody>
                                                 </table>
                                             </div>

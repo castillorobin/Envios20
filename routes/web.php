@@ -133,9 +133,7 @@ Route::get('/faltas/listafaltas', function () {
     return view('faltas.listafaltas');
 });
 
-Route::get('/entregas', function () {
-    return view('envios.entregas');
-});
+
 
 
 /*
@@ -182,7 +180,18 @@ Route::get('/envios/puntoticket/{id}', [App\Http\Controllers\PagoController::cla
 Route::get('/envios/departamentalticket/{id}', [App\Http\Controllers\PagoController::class, 'departamentalticket'] )->name('departamentalticket') ;
 Route::get('/envios/casilleroticket/{id}', [App\Http\Controllers\PagoController::class, 'casilleroticket'] )->name('casilleroticket') ;
 
+
+
+//Entregas
+Route::get('entregas', [App\Http\Controllers\EntregaController::class, 'index'] )->name('indexentre') ;
+Route::get('/entrega/agregar', [App\Http\Controllers\EntregaController::class, 'agregar'] )->name('agregarentre') ;
+Route::get('/entrega/agregarparte', [App\Http\Controllers\EntregaController::class, 'agregarparte'] )->name('agregarparteentre') ;
+
 /*
+
+Route::get('/entregas', function () {
+    return view('envios.entregas');
+});
 Route::get('/envios/casilleroticket', function () {
     return view('envios.casilleroticket');
 });
