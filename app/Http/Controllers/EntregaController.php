@@ -20,7 +20,7 @@ class EntregaController extends Controller
     {
         $guia = $request->get('guia') ;
 
-        return ($guia);
+        //return ($guia);
 
         $ticket = new Entrega();
         //$ticket->codigo = $request->get('codigo');
