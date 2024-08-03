@@ -28,8 +28,8 @@ class EntregaController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
-        return ($envio[0]->id);
-        
+        return ($envio->id);
+
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);
