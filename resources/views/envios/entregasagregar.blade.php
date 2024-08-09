@@ -19,6 +19,40 @@
     <!--end::Global Stylesheets Bundle-->
 </head>
 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+<script>
+        
+
+$(document).ready(function() {
+
+    $("#descuento").change(function() {
+                                                                    
+    const pago = parseFloat($(this).val());
+    const cambio = parseFloat(document.getElementById("suto").value); 
+    
+                                                           
+    const total = cambio - pago;
+     //const total = subtotal;               
+     //$('#subto').text(total);
+     //document.getElementById("cambio").value = total ;    
+     $('#sdescuento').text(pago);
+     $('#total1').text(total);
+
+
+                 });
+
+
+ 
+
+                   });
+    </script>
+
+
+
+
+
+
 
 <body id="kt_body" class="">
     <x-default-layout>
@@ -214,9 +248,10 @@
                                         <!--end::Content-->
                                         <!--begin::Content-->
                                         <div class="fs-6 fw-bold text-white text-end">
-                                            <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                            <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">${{ $total4 }}</span>
+                                            <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">{{ $total4 }}</span>
+                                            <input type="text" id="suto" value="{{ $total4 }}" hidden>
+                                            <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">0</span>
+                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">0</span>
                                         </div>
                                         <!--end::Content-->
                                     </div>
