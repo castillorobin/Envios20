@@ -66,6 +66,14 @@ class EntregaController extends Controller
         
         return view('envios.entregasagregar', compact('actual', 'pedidos'));
     }
+    public function limpiar($id)
+    {
+        $pedido = Envio::find($id);
+        $pedido->entrega = "";
+        $pedido->save();
+        return redirect()->back();
+        //return view('envios.departamentalticket', compact('pedidos'));
+    }
 
     /**
      * Show the form for creating a new resource.

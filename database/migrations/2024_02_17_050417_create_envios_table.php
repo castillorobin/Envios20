@@ -28,6 +28,7 @@ return new class extends Migration
             $table->string('tipo')->nullable();
             $table->date('fecha_entrega')->nullable();
             $table->string('nota')->nullable();
+            $table->string('entrega')->nullable();
             $table->timestamps();
         });
     }

@@ -22,7 +22,7 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 <script>
-        
+         
 
 $(document).ready(function() {
 
@@ -80,7 +80,7 @@ $(document).ready(function() {
                 <!--begin::Row-->
                 <div class="row gy-0 gx-10 ">
                     <!--begin::Col-->
-                    <div class="col-xl-8 ">
+                    <div class="col-xl-9 ">
 
                         <!--begin::General Widget 1-->
                         <div class="mb-5 mb-lg-10 ">
@@ -132,7 +132,8 @@ $(document).ready(function() {
                                                             <th class="text-center">DESTINATARIO</th>
                                                             <th class="text-center">TIPO DE ENVÍO</th>
                                                             <th class="text-center">TOTAL A PAGAR</th>
-                                                            <th class="text-center">BORRAR</th>
+                                                            <th class="text-center">NOTA</th>
+                                                            <th class="text-center">LIMPIAR</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -144,9 +145,12 @@ $(document).ready(function() {
                                                             <td>{{$pedido->destinatario}}</td>
                                                             <td class="text-center"><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
                                                             <td class="text-center">{{$pedido->total}}</td>
+                                                            <td class="text-center">{{$pedido->nota}}</td>
                                                             <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
                                                             <td style="text-align: center;">
-                                                                <button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button>
+                                                                <a href="/entrega/limpiar/{{$pedido->id}}">
+                                                                <button type="button" class="btn btn-danger p-2"> <i class="fas fa-trash-alt"></i></button>
+                                                            </a>
                                                             </td>
                                                         </tr>
                                                     @endforeach
@@ -166,7 +170,7 @@ $(document).ready(function() {
                     </div>
                     <!--end::Col-->
                     <!--begin::Col-->
-                    <div class="col-xl-4">
+                    <div class="col-xl-3">
                         <!--begin::Mixed Widget 12-->
                         <div class="card mb-5 mb-lg-10">
                             <!--begin::Header-->
