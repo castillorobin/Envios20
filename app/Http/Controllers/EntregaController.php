@@ -16,7 +16,19 @@ class EntregaController extends Controller
     {
         return view('envios.entregas');
     }
+    
+    public function listadoentregas()
+    {
+        $tickets = Entrega::all();
+        
+        return view('envios.listadoentregas', compact('tickets'));
+    }
+
+
+    
     public function agregar(Request $request)
+
+    
     {
         $guia = $request->get('guia') ;
 
@@ -72,6 +84,31 @@ class EntregaController extends Controller
         $pedido->entrega = "";
         $pedido->save();
         return redirect()->back();
+        //return view('envios.departamentalticket', compact('pedidos'));
+    }
+
+    public function ticketentrega(Request $request)
+    {
+        $identrega = $request->get('entrega2');
+        $cajero = $request->get('cajero');
+        $metodo = $request->get('metodo');
+        $descu = $request->get('descu');
+        $sutota = $request->get('sutota');
+        $nota = $request->get('nota');
+        $tota = $request->get('tota');
+
+
+        $pedido = Entrega::find($identrega);
+        $pedido->cajero = $cajero;
+        $pedido->metodo = $metodo;
+        $pedido->desceunto = $descu;
+        $pedido->nota = $nota;
+        $pedido->subtotal = $sutota;
+        $pedido->total = $tota;
+        $pedido->save();
+
+        return view('envios.entregas');
+        //return redirect()->back();
         //return view('envios.departamentalticket', compact('pedidos'));
     }
 

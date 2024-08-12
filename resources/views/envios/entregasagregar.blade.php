@@ -38,7 +38,8 @@ $(document).ready(function() {
      //document.getElementById("cambio").value = total ;    
      $('#sdescuento').text(pago);
      $('#total1').text(total);
-
+     $('#descu').val(pago);
+     $('#tota').val(total);
 
                  });
 
@@ -169,8 +170,11 @@ $(document).ready(function() {
                         </div>
                     </div>
                     <!--end::Col-->
+                   
                     <!--begin::Col-->
                     <div class="col-xl-3">
+                        <form action="/entrega/ticketentrega/" class="row g-2" method="GET">
+                            <input type="text" class="visually-hidden" name="entrega2" id="entrega2" value="{{$actual}}">
                         <!--begin::Mixed Widget 12-->
                         <div class="card mb-5 mb-lg-10">
                             <!--begin::Header-->
@@ -198,7 +202,7 @@ $(document).ready(function() {
                                             <tbody>
                                                 <div class="form-floating col-lg-12 mb-4">
                                                     <div class="form-floating col-lg-12 mb-4">
-                                                        <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="Joakin Polanco" required readonly />
+                                                        <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value=" " required readonly />
                                                         <label for="Cajero">Cajero</label>
                                                         <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                             Por favor ingrese el destinatario.
@@ -259,45 +263,53 @@ $(document).ready(function() {
                                         </div>
                                         <!--end::Content-->
                                     </div>
+                                    <input type="text" class="visually-hidden" name="descu" id="descu" >
+                                    <input type="text" class="visually-hidden" name="tota" id="tota" >
+                                    <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
+                                    
                                     <!--end::Summary-->
                                     <!--begin::Payment Method-->
                                     <div class="m-0">
                                         <!--begin::Actions-->
-                                        <button class="btn btn-primary fs-1 w-100 py-3 px-3">Imprimir comprobante</button>
+                                        <button type="submit" class="btn btn-primary fs-1 w-100 py-3 px-3">Imprimir comprobante</button>
                                         <br> &nbsp; &nbsp;
                                         <a href="/entregas">
                                         <button class="btn btn-danger fs-1 w-100 py-3 px-3">Cancelar</button>
                                     </a>
                                         <!--end::Actions-->
-                                    </div>
+                                   
+                                    </div> 
+                                </form>
                                     <!--end::Payment Method-->
                                 </div>
                                 <!--end: Card Body-->
 
-
+                            
 
                             </div>
                             <!--end::Header-->
-
+                       
                             <!--begin::Body-->
 
                             <!--end::Body-->
                         </div>
                         <!--end::Mixed Widget 12-->
-
+                    
 
 
                         <!--end: List Widget 5-->
                     </div>
                     <!--end::Col-->
 
-
+                
                     <!--end: List Widget 5-->
                 </div>
+            
                 <!--end::Col-->
             </div>
             <!--end::Row-->
         </div>
+    
         <!--end::Post-->
         </div>
         <!--end::Container-->

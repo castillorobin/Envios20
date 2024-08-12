@@ -187,6 +187,8 @@ Route::get('entregas', [App\Http\Controllers\EntregaController::class, 'index'] 
 Route::get('/entrega/agregar', [App\Http\Controllers\EntregaController::class, 'agregar'] )->name('agregarentre') ;
 Route::get('/entrega/agregarparte', [App\Http\Controllers\EntregaController::class, 'agregarparte'] )->name('agregarparteentre') ;
 Route::get('/entrega/limpiar/{id}', [App\Http\Controllers\EntregaController::class, 'limpiar'] )->name('limpiar') ;
+Route::get('/entrega/ticketentrega', [App\Http\Controllers\EntregaController::class, 'ticketentrega'] )->name('ticketentrega') ;
+Route::get('/listadoentregas', [App\Http\Controllers\EntregaController::class, 'listadoentregas'] )->name('listadoentregas') ;
 
 /*
 
