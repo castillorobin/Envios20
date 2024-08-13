@@ -107,7 +107,18 @@ class EntregaController extends Controller
         $pedido->total = $tota;
         $pedido->save();
 
-        return view('envios.entregas');
+
+        $ticketact = Entrega::where('id', $identrega)
+        ->get();
+
+        $pdf = PDF::loadView('envios.ticketentrega', ['ticketact'=>$ticketact]);
+        //return view('envios.ticketpagos');
+        $customPaper = array(0,0,360,550);
+        //$pdf->setPaper('b6', 'portrait');
+        $pdf->setPaper($customPaper );
+        return $pdf->stream();
+
+        //return view('envios.entregas');
         //return redirect()->back();
         //return view('envios.departamentalticket', compact('pedidos'));
     }
