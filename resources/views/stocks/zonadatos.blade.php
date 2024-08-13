@@ -124,7 +124,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;"></span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">{{$envio[0]->tipo}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -137,7 +137,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6" style="font-size: 30px !important;"></span>
+                                        <span class="fw-semibold text-gray-800 fs-6" style="font-size: 30px !important;">{{$envio[0]->direccion}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -148,7 +148,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;"></span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">{{$envio[0]->ruta}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -158,7 +158,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;"></span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">{{$envio[0]->fecha_entrega}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>

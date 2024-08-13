@@ -78,9 +78,7 @@ Route::get('/envios/detallefoto', function () {
 Route::get('/stocks/asignar', function () {
     return view('stocks.asignar');
 });
-Route::get('/stocks/seleccionarzona', function () {
-    return view('stocks.seleccionarzona');
-});
+
 Route::get('/stocks/seleccionarpunto', function () {
     return view('stocks.seleccionarpunto');
 });
@@ -190,7 +188,19 @@ Route::get('/entrega/limpiar/{id}', [App\Http\Controllers\EntregaController::cla
 Route::get('/entrega/ticketentrega', [App\Http\Controllers\EntregaController::class, 'ticketentrega'] )->name('ticketentrega') ;
 Route::get('/listadoentregas', [App\Http\Controllers\EntregaController::class, 'listadoentregas'] )->name('listadoentregas') ;
 
+//Stock
+Route::get('/stocks/seleccionarzona', [App\Http\Controllers\StockController::class, 'index'] )->name('indexstock') ;
+Route::get('/stocks/zonadatos', [App\Http\Controllers\StockController::class, 'zonadatos'] )->name('zonadatos') ;
 /*
+
+Stock
+Route::get('/stocks/seleccionarzona', function () {
+    return view('stocks.seleccionarzona');
+});
+
+
+
+***************
 
 Route::get('/entregas', function () {
     return view('envios.entregas');
