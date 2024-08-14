@@ -82,9 +82,7 @@ Route::get('/stocks/asignar', function () {
 Route::get('/stocks/seleccionarpunto', function () {
     return view('stocks.seleccionarpunto');
 });
-Route::get('/configuraciones/ajustes', function () {
-    return view('configuraciones.ajustes');
-});
+
 Route::get('/envios/registroconguia', function () {
     return view('envios.registroconguia');
 });
@@ -191,7 +189,18 @@ Route::get('/listadoentregas', [App\Http\Controllers\EntregaController::class, '
 //Stock
 Route::get('/stocks/seleccionarzona', [App\Http\Controllers\StockController::class, 'index'] )->name('indexstock') ;
 Route::get('/stocks/zonadatos', [App\Http\Controllers\StockController::class, 'zonadatos'] )->name('zonadatos') ;
+
+
+//Rutas
+Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;
+Route::get('/ruta/agregar', [App\Http\Controllers\RutaController::class, 'agregar'] )->name('agregarruta') ;
+
 /*
+
+Rutas 
+Route::get('/configuraciones/ajustes', function () {
+    return view('configuraciones.ajustes');
+});
 
 Stock
 Route::get('/stocks/seleccionarzona', function () {

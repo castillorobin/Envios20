@@ -119,39 +119,12 @@
                                                 <span class="path3"></span>
                                                 <span class="path4"></span>
                                                 <span class="path5"></span>
-                                            </i>Almacenar</a>
+                                            </i>Listado</a>
                                     </li>
-                                    <!--end:::Tab item-->
+                                    
                                     <!--begin:::Tab item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_localization">
-                                            <i class="ki-duotone ki-compass fs-2 me-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                            </i>Localizacion</a>
-                                    </li>
-                                    <!--end:::Tab item-->
-                                    <!--begin:::Tab item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_products">
-                                            <i class="ki-duotone ki-package fs-2 me-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                                <span class="path3"></span>
-                                            </i>Productos</a>
-                                    </li>
-                                    <!--end:::Tab item-->
-                                    <!--begin:::Tab item-->
-                                    <li class="nav-item">
-                                        <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_customers">
-                                            <i class="ki-duotone ki-people fs-2 me-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                                <span class="path3"></span>
-                                                <span class="path4"></span>
-                                                <span class="path5"></span>
-                                            </i>Clientes</a>
-                                    </li>
+                                    
+                                    
                                     <!--end:::Tab item-->
                                 </ul>
                                 <!--end:::Tabs-->
@@ -160,15 +133,18 @@
                                     <!--begin:::Tab pane-->
                                     <div class="tab-pane fade show active" id="kt_ecommerce_settings_general" role="tabpanel">
                                         <!--begin::Form-->
-                                        <form id="kt_ecommerce_settings_general_form" class="form" action="#">
+                                        <form action="/ruta/agregar" id="kt_invoice_form" method="POST"> 
+                                            @csrf
+                                            @method('GET')
                                             <!--begin::Heading-->
                                             <div class="row mb-7">
                                                 <div class="col-md-9 offset-md-3">
-                                                    <h2>configuraciones de ruta</h2>
+                                                    <h2>Configuraciones de ruta</h2>
                                                 </div>
                                             </div>
                                             <!--end::Heading-->
                                             <!--begin::Input group-->
+
                                             <div class="row fv-row mb-7">
                                                 <div class="col-md-3 text-md-end">
                                                     <!--begin::Label-->
@@ -187,11 +163,12 @@
                                                 <div class="col-md-9">
                                                     <div class="w-100">
                                                         <!--begin::Select2-->
-                                                        <select class="form-select form-select-solid" name="theme" data-control="select2" data-hide-search="true" data-placeholder="Select a layout">
+                                                        <select class="form-select form-select-solid" name="zona" data-control="select2" data-hide-search="true" data-placeholder="Select a layout">
                                                             <option></option>
-                                                            <option value="Default" selected="selected">Occidente</option>
-                                                            <option value="Minimalist">Zona central</option>
-                                                            <option value="Dark">Oriente</option>
+                                                            <option value="Occidente" selected="selected">Occidente</option>
+                                                            <option value="Zona central">Zona central</option>
+                                                            <option value="Zona paracentral">Zona paracentral</option>
+                                                            <option value="Oriente">Oriente</option>
                                                         </select>
                                                         <!--end::Select2-->
                                                     </div>
@@ -217,7 +194,7 @@
                                                 </div>
                                                 <div class="col-md-9">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="meta_keywords" value="" data-kt-ecommerce-settings-type="tagify" />
+                                                    <input type="text" class="form-control form-control-solid" name="ruta" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                             </div>
@@ -240,7 +217,7 @@
                                                 </div>
                                                 <div class="col-md-9">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="meta_keywords" value="" data-kt-ecommerce-settings-type="tagify" />
+                                                    <input type="text" class="form-control form-control-solid" name="punto" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                             </div>
@@ -263,7 +240,7 @@
                                                 </div>
                                                 <div class="col-md-9">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="meta_keywords" value="3" data-kt-ecommerce-settings-type="tagify" readonly/>
+                                                    <input type="text" class="form-control form-control-solid" name="numero" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                             </div>
@@ -274,7 +251,7 @@
                                                 <div class="col-md-9 offset-md-3">
                                                     <div class="d-flex">
                                                         <!--begin::Button-->
-                                                        <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">Cancel</button>
+                                                        <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">Cancelar</button>
                                                         <!--end::Button-->
                                                         <!--begin::Button-->
                                                         <button type="submit" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
@@ -293,6 +270,77 @@
 
                                 </div>
                                 <!--end:::Tab content-->
+
+                                <!--begin:::Tab content-->
+                                <div class="tab-content" id="myTabContent">
+                                    <!--begin:::Tab pane-->
+                                    <div class="tab-pane fade show" id="kt_ecommerce_settings_store" role="tabpanel">
+                                        <!--begin::Form-->
+                                       
+                                            <!--begin::Heading-->
+                                            <div class="row mb-7">
+                                                <div class="col-md-9 offset-md-3">
+                                                    <h2>Listado de rutas</h2>
+                                                </div>
+                                            </div>
+                                            <!--end::Heading-->
+                                            
+                                            <!--begin::Table-->
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
+                                        <thead>
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th class="min-w-100px">ID</th>
+                                                <th class="min-w-50px">Zona</th>
+                                                <th class="min-w-50px">Ruta</th>
+                                                <th class="min-w-50px">Punto</th>
+                                                <th class="min-w-50px">Numero</th>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fw-semibold ">
+                                            @foreach ($rutas as $ruta) 
+                                            <tr class="'table-row-gray' : 'table-row-white' ">
+                                                <td> #{{$ruta->id}}</td>
+                                                <td>{{ $ruta->zona }}</td>
+                                                <td>{{$ruta->ruta}}</td>
+                                                <td>{{$ruta->punto}}</td>
+                                                <td>{{$ruta->numero}}</td>
+
+                                                
+                                                
+                                            </tr>
+                                            @endforeach
+                                        </tbody>
+
+                                    </table>
+                                    <ul class="pagination">
+                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
+                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
+                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
+                                    </ul>
+                                </div>
+                                <!--end::Table-->
+                                          
+                                            
+                                       
+                                        <!--end::Form-->
+                                    </div>
+
+                                </div>
+                                <!--end:::Tab content-->
+
+
+
+
+
+
+
+
+
+
+
                             </div>
                             <!--end::Card body-->
                         </div>
