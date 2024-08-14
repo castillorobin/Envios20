@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Vendedor;
 use App\Models\Empleado;
 use App\Models\Comercio;
+use App\Models\Rutas;
 
 class EnvioController extends Controller
 {
@@ -147,10 +148,11 @@ class EnvioController extends Controller
 
     public function conguia(Request $request)
     {
+        $puntos = Rutas::all();
         $guia= $request->get('n_guia');
         $pedido = Envio::where('guia', $guia)->get();
 
-        return view('envios.registroconguiadatos', compact('pedido'));
+        return view('envios.registroconguiadatos', compact('pedido', 'puntos'));
 
     }
     public function guardarconguia(Request $request, $id)

@@ -217,10 +217,26 @@
                                     </div>
                                 </div>
                                 <div class="row my-4 mx-4">
+
+                                    @if ($pedido[0]->tipo == "Punto fijo" )
+                                    <div class="form-floating col-lg-7 mb-4">
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="punto" id="punto" >
+                                        <option value="">Buscar punto</option>
+                                        @foreach ($puntos as $punto)
+                                        <option value="{{$punto->id}}">{{$punto->zona}} -- {{$punto->ruta}} -- {{$punto->punto}} -- {{$punto->numero}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                                    @else
+
+
                                     <div class="form-floating col-lg-7 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="direccionp" id="direccionp" placeholder="Dirección" />
                                         <label for="direccionp" style="padding-left: 25px;">Dirección</label>
                                     </div>
+
+                                    @endif
+
                                     <div class="form-floating col-lg-5 mb-4">
                                         <input type="tel" class="form-control form-control-solid" name="telefonop" id="telefonop" placeholder="Teléfono" />
                                         <label for="telefonop" style="padding-left: 25px;">Teléfono</label>
