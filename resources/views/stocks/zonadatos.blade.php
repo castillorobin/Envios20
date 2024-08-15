@@ -137,7 +137,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6" style="font-size: 30px !important;">{{$envio[0]->direccion}}</span>
+                                        <span class="fw-semibold text-gray-800 fs-6" style="font-size: 30px !important;">{{$punto[0]->zona}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -148,7 +148,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">{{$envio[0]->ruta}}</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">{{$punto[0]->ruta}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>

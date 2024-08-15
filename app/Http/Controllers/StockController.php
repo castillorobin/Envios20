@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Stock;
 use App\Models\Envio;
+use App\Models\Rutas;
 
 class StockController extends Controller
 {
@@ -21,7 +22,9 @@ class StockController extends Controller
     {
         $id = $request->get('guia') ;
         $envio = Envio::where('guia', $id)->get();
-        return view('stocks.zonadatos', compact('envio'));
+        $idpunto = $envio[0]->punto;
+        $punto = Rutas::where('id', $idpunto)->get();
+        return view('stocks.zonadatos', compact('envio', 'punto'));
     }
 
     /**
