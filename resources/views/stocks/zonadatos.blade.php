@@ -105,7 +105,7 @@
                                 <div class="row mb-7">
                                    
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="guia" id="guia" required />
+                                        <input type="text" class="form-control form-control-solid" name="guia" id="guia" required autofocus />
                                         <label for="rack" style="padding-left: 25px;"># de guia</label>
                                         <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                         
@@ -158,7 +158,7 @@
                                             {{$punto[0]->ruta}}
                                         @endif
                                             
-                                            
+                                             
                                         </span>
                                     </div>
                                     <!--end::Col-->
