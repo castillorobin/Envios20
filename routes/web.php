@@ -189,7 +189,7 @@ Route::get('/listadoentregas', [App\Http\Controllers\EntregaController::class, '
 //Stock
 Route::get('/stocks/seleccionarzona', [App\Http\Controllers\StockController::class, 'index'] )->name('indexstock') ;
 Route::get('/stocks/zonadatos', [App\Http\Controllers\StockController::class, 'zonadatos'] )->name('zonadatos') ;
-
+Route::get('/stocks/puntodatos', [App\Http\Controllers\StockController::class, 'puntodatos'] )->name('puntodatos') ;
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;

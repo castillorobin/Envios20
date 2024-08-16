@@ -43,6 +43,31 @@ class StockController extends Controller
 */
     }
 
+    public function puntodatos(Request $request)
+    {
+        $id = $request->get('guia') ;
+        $envio = Envio::where('guia', $id)->get();
+        $idpunto = $envio[0]->punto;
+        $punto = Rutas::where('id', $idpunto)->get();
+        return view('stocks.puntodatos', compact('envio', 'punto'));
+/*
+        if($envio[0]->punto != NULL){
+        
+        return view('stocks.zonadatos', compact('envio', 'punto'));
+        }else{
+
+            $punto[0]->id = 1;
+            $punto[0]->zona = " "; 
+            $punto[0]->ruta = " ";
+            $punto[0]->punto = " ";
+            $punto[0]->numero = " ";
+
+            return view('stocks.zonadatos', compact('envio', 'punto'));
+        }
+
+*/
+    }
+
     /**
      * Show the form for creating a new resource.
      */

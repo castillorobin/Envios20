@@ -99,7 +99,7 @@
                                     @method('GET')
                                 <div class="row mb-7">
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="guia" id="guia" placeholder="# de guia"  required />
+                                        <input type="text" class="form-control form-control-solid" name="guia" id="guia" placeholder="# de guia" required />
                                         <label for="rack" style="padding-left: 25px;"># de guia</label>
                                         <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
@@ -117,7 +117,12 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6" style="font-size: 30px !important;"></span>
+                                        <span class="fw-semibold text-gray-800 fs-6" style="font-size: 30px !important;">
+                                            @if ($punto->isNotEmpty())
+                                            {{$punto[0]->zona}}
+                                        @endif
+                                    
+                                        </span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -128,7 +133,12 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;"></span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">
+                                            @if ($punto->isNotEmpty())
+                                            {{$punto[0]->ruta}}
+                                        @endif
+                                            
+                                        </span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -138,7 +148,11 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;"></span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">
+                                            @if ($punto->isNotEmpty())
+                                            {{$punto[0]->punto}}
+                                        @endif
+                                        </span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -148,7 +162,11 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;"></span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">Espacio 
+                                            @if ($punto->isNotEmpty())
+                                            {{$punto[0]->numero}}
+                                        @endif
+                                        </span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -158,7 +176,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;"></span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">{{$envio[0]->fecha_entrega}}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
