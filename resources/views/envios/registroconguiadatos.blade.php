@@ -223,7 +223,7 @@
                                     <select class="form-select form-select-solid mi-selector" data-control="select2" name="punto" id="punto" >
                                         <option value="">Buscar punto</option>
                                         @foreach ($puntos as $punto)
-                                        <option value="{{$punto->id}}">{{$punto->zona}} -- {{$punto->ruta}} -- {{$punto->punto}} -- {{$punto->numero}}</option>
+                                        <option value="{{$punto->id}}">{{$punto->zona}} -- {{$punto->ruta}} </option>
                                         @endforeach
                                     </select>
                                 </div>
