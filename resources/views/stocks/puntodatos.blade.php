@@ -132,10 +132,10 @@
                                     <label class="col-lg-4 fw-semibold" style="font-size: 30px;">Ruta:</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="font-size: 30px !important;">
+                                    <div class="col-lg-8" style="color: #fff ;">
+                                        <span class="fw-bold fs-6 text-gray-800 px-2" style=" border-radius: 10px; color: #fff ; font-size: 30px !important; background-color: {{$punto[0]->color}};">
                                             @if ($punto->isNotEmpty())
-                                            {{$punto[0]->ruta}}
+                                          <span  style="color: #fff ;">  {{$punto[0]->ruta}}</span>
                                         @endif
                                             
                                         </span>

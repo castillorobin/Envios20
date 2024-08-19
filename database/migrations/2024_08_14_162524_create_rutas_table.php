@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('ruta')->nullable();
             $table->string('punto')->nullable();
             $table->integer('numero')->nullable();
+            $table->string('color')->nullable();
             $table->timestamps();
         });
     }

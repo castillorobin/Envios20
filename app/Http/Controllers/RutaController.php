@@ -25,6 +25,7 @@ class RutaController extends Controller
         $envio->ruta = $request->get('ruta');
         $envio->punto = $request->get('punto');
         $envio->numero = $request->get('numero');
+        $envio->color = $request->get('colo');
         
 
         $envio->save();

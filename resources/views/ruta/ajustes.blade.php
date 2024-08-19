@@ -192,9 +192,30 @@
                                                     </label>
                                                     <!--end::Label-->
                                                 </div>
-                                                <div class="col-md-9">
+                                                <div class="col-md-3">
                                                     <!--begin::Input-->
                                                     <input type="text" class="form-control form-control-solid" name="ruta" value="" data-kt-ecommerce-settings-type="tagify" />
+                                                    <!--end::Input-->
+                                                </div>
+
+                                                <div class="col-md-3 text-md-end">
+                                                    <!--begin::Label-->
+                                                    <label class="fs-6 fw-semibold form-label mt-3">
+                                                        <span>Color</span>
+                                                        <span class="ms-1" data-bs-toggle="tooltip" >
+                                                            <i class="ki-duotone ki-information-5 text-gray-500 fs-6">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                                <span class="path3"></span>
+                                                            </i>
+                                                        </span>
+                                                    </label>
+                                                    <!--end::Label-->
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <!--begin::Input-->
+                                                    
+                                                    <input type="color" id="colo" name="colo" value="#ff0000">
                                                     <!--end::Input-->
                                                 </div>
                                             </div>
