@@ -236,6 +236,7 @@
 					<span class="menu-arrow"></span>
 				</span>
 				<div class="menu-sub menu-sub-accordion">
+					<!--
 					<div class="menu-item">
 						<a class="menu-link" href="/envio/crear">
 							<span class="menu-bullet">
@@ -244,6 +245,7 @@
 							<span class="menu-title">Crear orden</span>
 						</a>
 					</div>
+				-->
 					<div class="menu-item">
 						<a class="menu-link" href="/envios/lista">
 							<span class="menu-bullet">
