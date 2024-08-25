@@ -8,6 +8,7 @@ use App\Models\Vendedor;
 use App\Models\Empleado;
 use App\Models\Comercio;
 use App\Models\Rutas;
+use Carbon\Carbon;
 
 class EnvioController extends Controller
 {
@@ -42,16 +43,18 @@ class EnvioController extends Controller
     }
 
     public function envioca()
-    {
+    { 
 
         $comercios = Comercio::all();
+        
         return view('envios.crearenvioca', compact('comercios'));
     }
 
     public function envioli()
     {
 
-        $envios = Envio::all();
+        //$envios = Envio::all();
+        $envios = Envio::whereDate('fecha_entrega', Carbon::today())->get();
         return view('envios.envi', compact('envios'));
     }
 

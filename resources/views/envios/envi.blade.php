@@ -49,7 +49,7 @@
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
@@ -76,8 +76,8 @@
                         <!--end::Page title-->
 
                         <!--begin::Actions-->
-                        <div class="d-flex align-items-center gap-2 gap-lg-3">
-                            <a href="/envio/crear" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
+                        <div class="d-flex gap-2 gap-lg-3" style="float: right;">
+                            <a href="/envio/crear" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -88,7 +88,7 @@
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -204,7 +204,7 @@
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
                                                 <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
-                                                <td>{{ $envio->tipo}}</td>
+                                                <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
                                                 <td style="text-align: center;">
                                                     @if( $envio->cobro == 'Pagado')
                                                     <span class="badge badge-success">{{ $envio->cobro}}</span>
@@ -263,7 +263,7 @@
 
 
     </x-default-layout>
-    <!--begin::Javascript-->
+    <!--begin::Javascript--> 
     <script>
 
     </script>
