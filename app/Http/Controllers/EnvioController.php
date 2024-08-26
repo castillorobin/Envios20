@@ -9,6 +9,7 @@ use App\Models\Empleado;
 use App\Models\Comercio;
 use App\Models\Rutas;
 use Carbon\Carbon;
+use Illuminate\Support\Str;
 
 class EnvioController extends Controller
 {
@@ -21,6 +22,34 @@ class EnvioController extends Controller
         $vendedores = Vendedor::all();
         return view('envios.index', compact('vendedores'));
     }
+    public function filtrandoenvios(Request $request)
+    {
+        
+        //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
+        //$repartidores = Repartidor::all();
+        //$vendedores = Vendedor::all()
+        //$comerset = $request->input('comerset');
+        $rango = $request->input('rango');
+        $estado = $request->input('estado');
+
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+       //return ($fechacam);
+
+       $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+
+       ->get();
+
+       //$comercios = Comercio::all(); 
+       //$comercioset = Comercio::where('comercio', $comerset)->get();
+       return view('envios.envifiltrado', compact( 'envios'));
+
+
+    } 
     public function crearenvio()
     {
         $comercios = Comercio::all();
@@ -170,7 +199,7 @@ class EnvioController extends Controller
        // $envio->cobro = $request->get('cenvio');
         $envio->precio = $request->get('precio');
         $envio->envio = $request->get('envio');
-        $envio->total = $request->get('total');
+        $envio->total = $request->get('total'); 
         $envio->estado = $request->get('estado_enviop');
         $envio->pago = $request->get('estado_pago');
         $envio->punto = $request->get('punto');

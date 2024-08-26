@@ -175,6 +175,7 @@ Route::get('/envios/personalizadoticket/{id}', [App\Http\Controllers\PagoControl
 Route::get('/envios/puntoticket/{id}', [App\Http\Controllers\PagoController::class, 'puntoticket'] )->name('puntoticket') ;
 Route::get('/envios/departamentalticket/{id}', [App\Http\Controllers\PagoController::class, 'departamentalticket'] )->name('departamentalticket') ;
 Route::get('/envios/casilleroticket/{id}', [App\Http\Controllers\PagoController::class, 'casilleroticket'] )->name('casilleroticket') ;
+Route::get('/envios/filtrandoenvios', [App\Http\Controllers\EnvioController::class, 'filtrandoenvios'] )->name('filtrandoenvioss') ;
 
 
 

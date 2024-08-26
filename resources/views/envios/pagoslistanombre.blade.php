@@ -233,7 +233,7 @@ document.getElementById('tot1').innerText = 0;
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
+                                    <div class="w-150px"> 
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
                                             <option value="estado" >Estado</option>

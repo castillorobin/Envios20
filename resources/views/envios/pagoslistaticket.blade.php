@@ -103,7 +103,7 @@
                                     <!--end::Export buttons-->
                                 </div>
                                 <!--end::Card title-->
-                                <!--begin::Card toolbar-->
+                                <!--begin::Card toolbar--> 
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />

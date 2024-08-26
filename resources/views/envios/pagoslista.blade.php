@@ -114,7 +114,7 @@
                                     <!--begin::Daterangepicker-->
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />
                                     <!--end::Daterangepicker-->
-                                    <!--begin::Filter-->
+                                    <!--begin::Filter--> 
                                     <div class="w-150px">
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
