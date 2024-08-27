@@ -25,6 +25,13 @@
         .dataTables_length {
             display: none;
         }
+
+        #kt_ecommerce_report_shipping_table_previous{
+            display: none;
+        }
+        #kt_ecommerce_report_shipping_table_next{
+            display: none;
+        }
     </style>
 
 </head>
@@ -204,17 +211,17 @@
                                             @endforeach
                                         </tbody>
                                     </table>
-<!-- Empty list item to push elements to the right
-                                    <ul class="pagination">
-                                        <li style="margin-left:auto"></li> 
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                    </ul>
- -->
+
+
                                 </div>
                                 <!--end::Table-->
-
+<!-- Empty list item to push elements to the right  -->
+<ul class="pagination">
+    <li style="margin-left:auto"></li> 
+    <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
+    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+    <li class="page-item next"><a href="#" class="page-link">Next</a></li>
+</ul>
                             </div>
                             <!--end::Table-->
                         </div>
