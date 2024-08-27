@@ -145,7 +145,9 @@
                                                 <th class="min-w-150px">Fecha de entrega</th>
                                                 <th class="min-w-100px">Tipo de envío</th>
                                                 <th class="min-w-50px text-center">Cobro de envio</th>
-                                                <th class="min-w-50px text-center">Status</th>
+                                                <th class="min-w-50px text-center">Estado</th>
+                                                <th class="min-w-50px text-center">Sub estado</th>
+                                                <th class="min-w-50px text-center">Fecha estado</th>
                                                 <th class="min-w-50px">Total</th>
                                                 <th class="min-w-50px">Ruta</th>
                                                 <th class="min-w-100px text-center">Nota </th>
@@ -190,6 +192,8 @@
                                                     <span class="badge badge-light">{{ $envio->estado }}</span>
                                                     @endif
                                                 </td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
                                                 <td class="text-center">{{ $envio->total }}</td>
                                                 <td style="text-align: center;">2</td>
                                                 <td  style="text-align: center;">{{ $envio->nota }}</td>
