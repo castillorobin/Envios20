@@ -41,7 +41,8 @@ var KTAppEcommerceReportShipping = function () {
             endDate: end,
             ranges: {
                 "Ahora": [moment(), moment()],
-                "última Semana": [moment().subtract(6, "days"), moment()],
+                "ayer": [moment().subtract(1, "days"), moment()],
+                "últimos 15 dias": [moment().subtract(14, "days"), moment()],
                 "últimos 30 dias": [moment().subtract(29, "days"), moment()],
                 "último mes": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
             }
