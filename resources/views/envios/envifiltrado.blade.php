@@ -115,9 +115,10 @@
                                             <option value="Creado">Creado</option>
                                             <option value="Creado">En ruta</option>
                                             <option value="Entregado">Entregado</option>
-                                            <option value="Fallido">No entregado</option>
-                                            <option value="En transito">Reprogramado</option>
-                                            <option value="En transito">Devuelto al comercio</option>
+                                            <option value="No entregado">No entregado</option>
+                                            <option value="Reprogramado">Reprogramado</option>
+                                            <option value="Reenvio">Reenvio</option>
+                                            <option value="Devuelto al comercio">Devuelto al comercio</option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>
