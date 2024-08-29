@@ -21,7 +21,19 @@
         .dataTables_filter {
             display: none;
         }
+
+
+
 */
+
+.dataTables_filter input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: auto;
+  height: 40px;
+  background-color: #ededed9f;
+}
+
         .dataTables_length {
             display: none;
         }
