@@ -18,24 +18,14 @@
             /* Ajusta el valor según sea necesario */
         }
 
-        .dataTables_filter {
+       
+.dataTables_filter {
             display: none;
-           /* float: left;
-  margin-left: -700px;*/
+        }
+        .paginate_button {
+            display: none;
         }
 
-
-
-/*
-
-.dataTables_filter input {
-  margin-left: 0.5em;
-  display: inline-block;
-  width: auto;
-  height: 40px;
-  background-color: #ededed9f;
-}
-*/
         .dataTables_length {
             display: none;
         }
@@ -321,17 +311,16 @@ if (searchText == "") {
                                             @endforeach
                                         </tbody>
                                     </table>
-<!-- Empty list item to push elements to the right
-                                    <ul class="pagination">
-                                        <li style="margin-left:auto"></li> 
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                    </ul>
- -->
+
                                 </div>
                                 <!--end::Table-->
-
+<!-- Empty list item to push elements to the right  -->
+<ul class="pagination">
+    <li style="margin-left:auto"></li> 
+    <li class="page-item previous disabled"><a href="#" class="page-link">Anterior</a></li>
+    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+    <li class="page-item next"><a href="#" class="page-link">Siguiente</a></li>
+</ul>
                             </div>
                             <!--end::Table-->
                         </div>
