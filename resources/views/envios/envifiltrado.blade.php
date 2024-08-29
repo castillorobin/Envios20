@@ -17,14 +17,15 @@
             padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
         }
-/*
+
         .dataTables_filter {
-            display: none;
+            float: left;
+  margin-left: -700px;
         }
 
 
 
-*/
+
 
 .dataTables_filter input {
   margin-left: 0.5em;
