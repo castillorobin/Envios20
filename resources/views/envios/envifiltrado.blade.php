@@ -17,11 +17,11 @@
             padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
         }
-
+/*
         .dataTables_filter {
             display: none;
         }
-
+*/
         .dataTables_length {
             display: none;
         }
@@ -93,12 +93,14 @@
                                 <div class="card-title">
                                     <!--begin::Search-->
                                     <div class="d-flex align-items-center position-relative my-1">
+                                        <!--
                                         <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
 
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                        -->
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
@@ -251,6 +253,44 @@
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
+
+    <script>
+         
+        $(document).ready(function () {
+    $('#kt_ecommerce_repo').DataTable(
+        {
+           
+            language: {
+        "decimal": "",
+        "emptyTable": "No hay información",
+        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+        "infoPostFix": "",
+        "thousands": ",",
+        "lengthMenu": "Mostrar _MENU_ Entradas",
+        "loadingRecords": "Cargando...",
+        "processing": "Procesando...",
+        "search": "Buscar:",
+        "zeroRecords": "Sin resultados encontrados",
+        "paginate": {
+            "first": "Primero",
+            "last": "Ultimo",
+            "next": "Siguiente",
+            "previous": "Anterior"
+        }
+    },
+
+        dom: 'tri',
+        
+        
+       
+       
+
+        } 
+    );
+}); 
+    </script>
 
 </body>
 <!--end::Body-->
