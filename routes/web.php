@@ -65,9 +65,7 @@ Route::get('/envios/envi', function () {
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
-Route::get('/envios/detalle', function () {
-    return view('envios.detalle');
-});
+
 Route::get('/envios/editardetalle', function () {
     return view('envios.editardetalle');
 });
@@ -176,8 +174,15 @@ Route::get('/envios/puntoticket/{id}', [App\Http\Controllers\PagoController::cla
 Route::get('/envios/departamentalticket/{id}', [App\Http\Controllers\PagoController::class, 'departamentalticket'] )->name('departamentalticket') ;
 Route::get('/envios/casilleroticket/{id}', [App\Http\Controllers\PagoController::class, 'casilleroticket'] )->name('casilleroticket') ;
 Route::get('/envios/filtrandoenvios', [App\Http\Controllers\EnvioController::class, 'filtrandoenvios'] )->name('filtrandoenvioss') ;
+Route::get('/envios/detalle/{id}', [App\Http\Controllers\EnvioController::class, 'detalle'] )->name('detalleenvioss') ;
 
+/*
 
+Route::get('/envios/detalle', function () {
+    return view('envios.detalle');
+});
+
+*/
 
 //Entregas
 Route::get('entregas', [App\Http\Controllers\EntregaController::class, 'index'] )->name('indexentre') ;

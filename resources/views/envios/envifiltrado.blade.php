@@ -267,7 +267,7 @@ if (searchText == "") {
                                             @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
                                                 <td>
-                                                    <a href="/envios/detalle" class="text-gray-900 text-hover-primary">
+                                                    <a href="/envios/detalle/{{ $envio->guia }}" class="text-gray-900 text-hover-primary">
                                                         {{ $envio->guia }}
                                                     </a>
                                                 </td>

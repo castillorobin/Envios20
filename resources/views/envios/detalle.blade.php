@@ -12,7 +12,7 @@
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
 </head>
-<!--end::Head-->
+<!--end::Head--> 
 <!--begin::Body-->
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -74,7 +74,7 @@
                                     <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                            <img src="assets/media/avatars/300-1.jpg" alt="image" />
+                                            <img src="/assets/media/avatars/300-1.jpg" alt="image" />
                                             <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                         </div>
                                     </div>
@@ -87,7 +87,8 @@
                                                     <div class="col-lg-6 mb-2">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#" class="text-gray-900 text-hover-primary fs-3 fw-bold me-1" style="white-space: nowrap;">
-                                                                MODA SV
+                                                                
+                                                                {{ $comercio[0]->comercio }}
                                                             </a>
                                                             <a href="#">
                                                                 <i class="ki-duotone ki-verify fs-1 text-primary">
@@ -104,17 +105,17 @@
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
                                                             <span class="path3"></span>
-                                                        </i>Telefono</a>
+                                                        </i> {{ $comercio[0]->telefono }}</a>
                                                     <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
                                                         <i class="ki-duotone ki-geolocation fs-5 me-1">
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
-                                                        </i>agencia</a>
+                                                        </i> {{ $comercio[0]->agencia }}</a>
                                                     <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
                                                         <i class="ki-duotone ki-sms fs-5 me-1">
                                                             <span class="path1"></span>
                                                             <span class="path2"></span>
-                                                        </i>Email comercio</a>
+                                                        </i>{{ $comercio[0]->correo }}</a>
                                                 </div>
                                             </div>
                                             <div class="d-flex my-1">
@@ -238,7 +239,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-success">Creado</span>
+                                        <span class="badge badge-success">{{ $envio[0]->estado }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -250,7 +251,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Juan Diego López</span>
+                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->destinatario }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -262,7 +263,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">Calle la sultana av 2, casa 20 Usuluán</span>
+                                        <span class="fw-semibold text-gray-800 fs-6">{{ $envio[0]->direccion }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -273,7 +274,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">7450-5041</span>
+                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->telefono }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -285,7 +286,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-primary">PERSONALIZADO</span>
+                                        <span class="badge badge-primary">{{ $envio[0]->tipo }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -297,7 +298,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">15-mayo-2024</a>
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{ $envio[0]->fecha_entrega }}</a>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -309,7 +310,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$25.00</span>
+                                        <span class="fw-bold fs-6 text-gray-800">${{ $envio[0]->precio }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -321,7 +322,7 @@
                                     <!--begin::Label-->
                                     <!--begin::Label-->
                                     <div class="col-lg-8">
-                                        <span class="fw-semibold fs-6 text-gray-800">$2.00</span>
+                                        <span class="fw-semibold fs-6 text-gray-800">${{ $envio[0]->envio }}</span>
                                     </div>
                                     <!--begin::Label-->
                                 </div>
@@ -333,7 +334,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">$27.00</span>
+                                        <span class="fw-bold fs-6 text-gray-800">${{ $envio[0]->total }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -345,7 +346,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Pendiente</span>
+                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->cobro }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -356,7 +357,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-danger">POR PAGAR</span>
+                                        <span class="badge badge-danger">{{ $envio[0]->pago }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -368,7 +369,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Solo contesta Whatsapp</span>
+                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->nota }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
