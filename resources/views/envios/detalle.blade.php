@@ -201,14 +201,7 @@
                                     </li>
                                     <!--end::Nav item-->
                                     <!--begin::Nav item-->
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="#">Historial</a>
-                                    </li>
-                                    <!--end::Nav item-->
-                                    <!--begin::Nav item-->
-                                    <li class="nav-item mt-2">
-                                        <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/detallefoto">Fotos</a>
-                                    </li>
+                                   
                                     <!--end::Nav item-->
                                 </ul>
                                 <!--begin::Navs-->
@@ -239,7 +232,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-success">{{ $envio[0]->estado }}</span>
+                                        <span class="badge badge-success" style="float:right;">{{ $envio[0]->estado }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -251,7 +244,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->destinatario }}</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">{{ $envio[0]->destinatario }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -263,7 +256,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">{{ $envio[0]->direccion }}</span>
+                                        <span class="fw-semibold text-gray-800 fs-6" style="float:right;"> {{ $envio[0]->direccion }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -274,10 +267,28 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->telefono }}</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;"> {{ $envio[0]->telefono }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
+
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de entrega </label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8" style="float:right;">
+                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary"><span style="float:right;">{{ $envio[0]->fecha_entrega }}</span></a>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+
+
+
+                                </div>
+                                </div>
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                <div class="card-body p-9">
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
@@ -286,22 +297,13 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-primary">{{ $envio[0]->tipo }}</span>
+                                        <span class="badge badge-primary" style="float:right;">{{ $envio[0]->tipo }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de entrega </label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{ $envio[0]->fecha_entrega }}</a>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
+                                
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
@@ -310,7 +312,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">${{ $envio[0]->precio }}</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">${{ $envio[0]->precio }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -322,7 +324,7 @@
                                     <!--begin::Label-->
                                     <!--begin::Label-->
                                     <div class="col-lg-8">
-                                        <span class="fw-semibold fs-6 text-gray-800">${{ $envio[0]->envio }}</span>
+                                        <span class="fw-semibold fs-6 text-gray-800" style="float:right;">${{ $envio[0]->envio }}</span>
                                     </div>
                                     <!--begin::Label-->
                                 </div>
@@ -334,7 +336,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">${{ $envio[0]->total }}</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">${{ $envio[0]->total }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -346,7 +348,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->cobro }}</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">{{ $envio[0]->cobro }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -357,7 +359,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-danger">{{ $envio[0]->pago }}</span>
+                                        <span class="badge badge-danger" style="float:right;">{{ $envio[0]->pago }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -369,10 +371,14 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">{{ $envio[0]->nota }}</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">{{ $envio[0]->nota }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
+                                </div>
+                                </div>
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                <div class="card-body p-9">
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
@@ -381,7 +387,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Diego</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">Diego</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -393,7 +399,27 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">2</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">2</span>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-semibold text-muted">Sub Estado </label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;"></span>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de subestado</label>
+                                    <!--end::Label-->
+                                    <!--begin::Col-->
+                                    <div class="col-lg-8">
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;"></span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -405,7 +431,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Cliente no contesta</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">Cliente no contesta</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -417,7 +443,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">Bodega</span>
+                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">Bodega</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
