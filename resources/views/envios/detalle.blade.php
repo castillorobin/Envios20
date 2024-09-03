@@ -208,6 +208,50 @@
                             </div>
                         </div>
                         <!--end::Navbar-->
+                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                            <!--begin::Card header-->
+                            <div class="card-header cursor-pointer">
+                                <div class="row">
+                                <div class="card-title m-0 py-3 col-12">
+                                    
+                                    <h2 class="fw-bold m-0" style="color:steelblue">{{ $envio[0]->guia }}</h2>
+                                </div>
+                                </div>
+
+                            </div>
+                            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                <div class="row p-3 text-center">
+                                
+                                    <div class="col-2 text-center">
+                                        <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i>
+                                        
+                                        <h4 style="margin-top: 0.25em;">Creado</h4>
+                                    </div>
+                                    <div class="col-3">
+                                        <hr style="height:15px;background-color:green">
+                                    </div>
+
+                                    <div class="col-2 ">
+                                        <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>
+                                        
+                                        <h4 style="margin-top: 0.25em;">En Ruta</h4>
+                                    </div>
+                                    <div class="col-3">
+                                        <hr style="height:15px;background-color: gray">
+                                    </div>
+                                    
+                                    <div class="col-2 ">
+                                        
+                                        <i class="fas fa-clipboard-check" style="font-size:45px; color:steelblue"></i>
+                                        
+                                        <h4 style="margin-top: 0.25em;">No entregado</h4>
+                                    </div>
+                                </div>
+                               
+
+                            </div>
+                        </div>
+
 
                         <!--begin::details View-->
                         <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
@@ -215,7 +259,8 @@
                             <div class="card-header cursor-pointer">
                                 <!--begin::Card title-->
                                 <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">Detalles del envio</h3>
+                                    
+                                    <h3 class="fw-bold m-0" >Detalles del envio</h3>
                                 </div>
                                 <!--end::Card title-->
                                 <!--begin::Action-->
