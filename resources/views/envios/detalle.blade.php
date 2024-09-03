@@ -330,7 +330,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 d-flex align-items-center">
+                                    <div class="col-lg-8 ">
                                         <span class="badge badge-success" style="float:right;">{{ $envio[0]->estado }}</span>
                                     </div>
                                     <!--end::Col-->
