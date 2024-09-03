@@ -217,54 +217,55 @@
                                     <h2 class="fw-bold m-0" style="color:steelblue">{{ $envio[0]->guia }}</h2>
                                     
                                 </div>
-                                <div class="alert alert-primary d-flex align-items-center " role="alert" style="border-radius: 10px 40px 40px 10px; padding:5px; margin: 2px;">
-                                    <i class="fas fa-store-alt" style="color:steelblue;"></i>
-                                    <div style="font-size: 16px; margin: 2px;">
+                                <div class="alert alert-primary d-flex align-items-center text-center " role="alert" style="border-radius: 40px 40px 40px 40px; ">
+                                    <i class="fas fa-store-alt ps-6" style="color:steelblue;"></i>
+                                    <div style="font-size: 16px; text-center">
                                     &nbsp; &nbsp;  {{ $envio[0]->estado }} </div>
                                   </div>
                                 </div>
 
                             </div>
-                            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                            <div class="card mb-5 mb-xl-10 text-center" id="kt_profile_details_view">
 
                             @if( $envio[0]->estado  == "Creado")
-                                <div class="row p-3 text-center">
+                                <div class="row p-3 text-center ms-10">
                                     <div class="col-1 text-center">
                                         <i class="fas fa-store-alt" style="font-size:35px; color:steelblue"></i> 
                                         <h4 style="margin-top: 0.25em;">Creado</h4>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-4 py-4">
                                         <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </div>
                                     <div class="col-1 ">
                                         <i class="fas fa-shipping-fast" style="font-size:35px; color:steelblue"></i>  
                                         <h4 style="margin-top: 0.25em;">En Ruta</h4>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-4 py-4">
                                         <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </div>
                                     <div class="col-1 ">
-                                    <i class="fas fa-calendar-times" style="font-size:35px; color:steelblue"></i> 
+                                      
+                                    <i class="fas fa-calendar-check" style="font-size:35px; color:steelblue"></i> 
                                         <h4 style="margin-top: 0.25em;">Entregado</h4>
                                     </div>
                                 </div>
                             @endif
 
                             @if( $envio[0]->estado  == "Entregado")
-                                <div class="row p-3 text-center">
+                                <div class="row p-3 text-center ms-10">
                                     <div class="col-2 text-center">
                                         <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i> 
                                         <h4 style="margin-top: 0.25em;">Creado</h4>
                                     </div>
-                                    <div class="col-3">
-                                        <hr style="background-color: green; height: 15px; border: 0; opacity: 1; ">
+                                    <div class="col-3 py-4">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
                                     </div>
                                     <div class="col-2 ">
                                         <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>  
                                         <h4 style="margin-top: 0.25em;">En Ruta</h4>
                                     </div>
-                                    <div class="col-3">
-                                        <hr style="background-color: green; height: 15px; border: 0; opacity: 1; ">
+                                    <div class="col-3 py-4">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
                                     </div>
                                     <div class="col-2 ">
                                     <i class="fas fa-clipboard-check" style="font-size:45px; color:steelblue"></i> 
@@ -274,20 +275,20 @@
                             @endif
 
                             @if( $envio[0]->estado  == "No entregado")
-                                <div class="row p-3 text-center">
+                                <div class="row p-3 text-center ms-10">
                                     <div class="col-2 text-center">
                                         <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i> 
                                         <h4 style="margin-top: 0.25em;">Creado</h4>
                                     </div>
-                                    <div class="col-3">
-                                        <hr style="background-color: green; height: 15px; border: 0; opacity: 1; ">
+                                    <div class="col-3 py-4">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
                                     </div>
                                     <div class="col-2 ">
                                         <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>  
                                         <h4 style="margin-top: 0.25em;">En Ruta</h4>
                                     </div>
-                                    <div class="col-3">
-                                        <hr style="background-color: red; height: 15px; border: 0; opacity: 1; ">
+                                    <div class="col-3 py-4">
+                                        <hr style="background-color: red; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
                                     </div>
                                     <div class="col-2 ">
                                     <i class="fas fa-calendar-times" style="font-size:45px; color:steelblue"></i> 
