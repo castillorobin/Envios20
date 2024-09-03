@@ -66,9 +66,7 @@ Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']
 
 require __DIR__.'/auth.php';
 
-Route::get('/envios/editardetalle', function () {
-    return view('envios.editardetalle');
-});
+
 Route::get('/envios/detallefoto', function () {
     return view('envios.detallefoto');
 });
@@ -175,8 +173,14 @@ Route::get('/envios/departamentalticket/{id}', [App\Http\Controllers\PagoControl
 Route::get('/envios/casilleroticket/{id}', [App\Http\Controllers\PagoController::class, 'casilleroticket'] )->name('casilleroticket') ;
 Route::get('/envios/filtrandoenvios', [App\Http\Controllers\EnvioController::class, 'filtrandoenvios'] )->name('filtrandoenvioss') ;
 Route::get('/envios/detalle/{id}', [App\Http\Controllers\EnvioController::class, 'detalle'] )->name('detalleenvioss') ;
-
+Route::get('/envios/editardetalle/{id}', [App\Http\Controllers\EnvioController::class, 'editardetalle'] )->name('editardetalle') ;
+Route::get('/envios/detalleeditando', [App\Http\Controllers\EnvioController::class, 'detalleeditando'] )->name('detalleeditando') ;
 /*
+envios/detalleeditando
+
+Route::get('/envios/editardetalle', function () {
+    return view('envios.editardetalle');
+});
 
 Route::get('/envios/detalle', function () {
     return view('envios.detalle');

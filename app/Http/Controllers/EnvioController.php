@@ -31,6 +31,47 @@ class EnvioController extends Controller
         //$vendedores = Vendedor::all();
         return view('envios.detalle', compact('envio', 'comercio'));
     }
+    public function editardetalle($id)
+    {
+
+        $envio = Envio::where('guia', $id)->get();
+        $comer = $envio[0]->comercio;
+        $comercio = Comercio::where('comercio', $comer)->get();
+        //$vendedores = Vendedor::all();
+        return view('envios.editardetalle', compact('envio', 'comercio'));
+    }
+    public function detalleeditando(Request $request)
+    {
+        $id = $request->get('iden');
+
+        $envios = Envio::find($id);
+
+        //$envio->guia = $request->get('n_guia');
+         $envios->destinatario = $request->get('destinatario');
+         $envios->direccion = $request->get('direccion');
+        //$envio->telefono = $request->get('telefonop');
+         $envios->tipo = $request->get('tipo');
+         $envios->precio = $request->get('precio');
+         $envios->envio = $request->get('envio');
+         $envios->total = $request->get('total'); 
+         $envios->cobro = $request->get('cobro');
+         $envios->estado = $request->get('estado');
+         $envios->pago = $request->get('pago');
+        //$envio->punto = $request->get('punto');
+         $envios->fecha_entrega = $request->get('fechae');
+         $envios->nota = $request->get('nota');
+
+        $envios->save();
+
+        $guia = $request->get('guia');
+
+        $envio = Envio::where('guia', $guia)->get();
+        $comer = $envio[0]->comercio;
+        $comercio = Comercio::where('comercio', $comer)->get();
+        //$vendedores = Vendedor::all();
+        return view('envios.detalle', compact('envio', 'comercio'));
+
+    }
     public function filtrandoenvios(Request $request)
     {
         
