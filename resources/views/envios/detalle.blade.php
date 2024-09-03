@@ -215,7 +215,14 @@
                                 <div class="card-title m-0 py-3 col-12">
                                     
                                     <h2 class="fw-bold m-0" style="color:steelblue">{{ $envio[0]->guia }}</h2>
+                                    
+                                    
                                 </div>
+                                <div class="alert alert-primary d-flex align-items-center" role="alert">
+                                    <i class="fas fa-store-alt" style="color:steelblue"></i>
+                                    <div style="font-size: 18px">
+                                    &nbsp; &nbsp;  Creado                                    </div>
+                                  </div>
                                 </div>
 
                             </div>
