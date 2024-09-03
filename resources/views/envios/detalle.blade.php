@@ -221,39 +221,86 @@
                                 <div class="alert alert-primary d-flex align-items-center" role="alert">
                                     <i class="fas fa-store-alt" style="color:steelblue"></i>
                                     <div style="font-size: 18px">
-                                    &nbsp; &nbsp;  Creado                                    </div>
+                                    &nbsp; &nbsp;  {{ $envio[0]->estado }}                                    </div>
                                   </div>
                                 </div>
 
                             </div>
                             <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+
+                            @if( $envio[0]->estado  == "Creado")
                                 <div class="row p-3 text-center">
-                                
                                     <div class="col-2 text-center">
-                                        <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i>
-                                        
+                                        <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i> 
                                         <h4 style="margin-top: 0.25em;">Creado</h4>
                                     </div>
                                     <div class="col-3">
-                                        <hr style="height:15px;background-color:green">
+                                        <hr style="background-color: green; height: 15px; border: 0; opacity: 1; ">
                                     </div>
-
                                     <div class="col-2 ">
-                                        <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>
-                                        
+                                        <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>  
                                         <h4 style="margin-top: 0.25em;">En Ruta</h4>
                                     </div>
                                     <div class="col-3">
-                                        <hr style="height:15px;background-color: gray">
+                                        <hr style="background-color: gray; height: 15px; border: 0; opacity: 1; ">
                                     </div>
-                                    
                                     <div class="col-2 ">
-                                        
-                                        <i class="fas fa-clipboard-check" style="font-size:45px; color:steelblue"></i>
-                                        
+                                    <i class="fas fa-calendar-times" style="font-size:45px; color:steelblue"></i> 
+                                        <h4 style="margin-top: 0.25em;">Entregado</h4>
+                                    </div>
+                                </div>
+                            @endif
+
+                            @if( $envio[0]->estado  == "Entregado")
+                                <div class="row p-3 text-center">
+                                    <div class="col-2 text-center">
+                                        <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i> 
+                                        <h4 style="margin-top: 0.25em;">Creado</h4>
+                                    </div>
+                                    <div class="col-3">
+                                        <hr style="background-color: green; height: 15px; border: 0; opacity: 1; ">
+                                    </div>
+                                    <div class="col-2 ">
+                                        <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>  
+                                        <h4 style="margin-top: 0.25em;">En Ruta</h4>
+                                    </div>
+                                    <div class="col-3">
+                                        <hr style="background-color: green; height: 15px; border: 0; opacity: 1; ">
+                                    </div>
+                                    <div class="col-2 ">
+                                    <i class="fas fa-clipboard-check" style="font-size:45px; color:steelblue"></i> 
+                                        <h4 style="margin-top: 0.25em;">Entregado</h4>
+                                    </div>
+                                </div>
+                            @endif
+
+                            @if( $envio[0]->estado  == "No entregado")
+                                <div class="row p-3 text-center">
+                                    <div class="col-2 text-center">
+                                        <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i> 
+                                        <h4 style="margin-top: 0.25em;">Creado</h4>
+                                    </div>
+                                    <div class="col-3">
+                                        <hr style="background-color: green; height: 15px; border: 0; opacity: 1; ">
+                                    </div>
+                                    <div class="col-2 ">
+                                        <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>  
+                                        <h4 style="margin-top: 0.25em;">En Ruta</h4>
+                                    </div>
+                                    <div class="col-3">
+                                        <hr style="background-color: red; height: 15px; border: 0; opacity: 1; ">
+                                    </div>
+                                    <div class="col-2 ">
+                                    <i class="fas fa-calendar-times" style="font-size:45px; color:steelblue"></i> 
                                         <h4 style="margin-top: 0.25em;">No entregado</h4>
                                     </div>
                                 </div>
+                            @endif
+
+
+
+
+                               
                                
 
                             </div>
