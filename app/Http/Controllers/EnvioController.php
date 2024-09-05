@@ -28,8 +28,17 @@ class EnvioController extends Controller
         $envio = Envio::where('guia', $id)->get();
         $comer = $envio[0]->comercio;
         $comercio = Comercio::where('comercio', $comer)->get();
+        
+
         //$vendedores = Vendedor::all();
-        return view('envios.detalle', compact('envio', 'comercio'));
+        $enviostotal = Envio::where('comercio', $comer)->get()->count();
+        $entregados = Envio::where('comercio', $comer)->
+                       where('estado', "Entregado")->get()->count();
+        $noentregados = Envio::where('comercio', $comer)->
+                       where('estado', "No entregado")->get()->count();
+
+
+        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
     }
     public function editardetalle($id)
     {
@@ -38,7 +47,14 @@ class EnvioController extends Controller
         $comer = $envio[0]->comercio;
         $comercio = Comercio::where('comercio', $comer)->get();
         //$vendedores = Vendedor::all();
-        return view('envios.editardetalle', compact('envio', 'comercio'));
+        $enviostotal = Envio::where('comercio', $comer)->get()->count();
+        $entregados = Envio::where('comercio', $comer)->
+                       where('estado', "Entregado")->get()->count();
+        $noentregados = Envio::where('comercio', $comer)->
+                       where('estado', "No entregado")->get()->count();
+
+
+        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
     }
     public function detalleeditando(Request $request)
     {
@@ -69,7 +85,14 @@ class EnvioController extends Controller
         $comer = $envio[0]->comercio;
         $comercio = Comercio::where('comercio', $comer)->get();
         //$vendedores = Vendedor::all();
-        return view('envios.detalle', compact('envio', 'comercio'));
+        $enviostotal = Envio::where('comercio', $comer)->get()->count();
+        $entregados = Envio::where('comercio', $comer)->
+                       where('estado', "Entregado")->get()->count();
+        $noentregados = Envio::where('comercio', $comer)->
+                       where('estado', "No entregado")->get()->count();
+
+
+        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
 
     }
     public function filtrandoenvios(Request $request)

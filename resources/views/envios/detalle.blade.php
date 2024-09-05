@@ -146,7 +146,7 @@
                                                                 <span class="path1"></span>
                                                                 <span class="path2"></span>
                                                             </i>
-                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="4500">0</div>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="{{ $enviostotal }}">0</div>
                                                         </div>
                                                         <!--end::Number-->
                                                         <!--begin::Label-->
@@ -162,7 +162,7 @@
                                                                 <span class="path1"></span>
                                                                 <span class="path2"></span>
                                                             </i>
-                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="80">0</div>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="{{ $entregados }}">0</div>
                                                         </div>
                                                         <!--end::Number-->
                                                         <!--begin::Label-->
@@ -178,7 +178,7 @@
                                                                 <span class="path1"></span>
                                                                 <span class="path2"></span>
                                                             </i>
-                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="60" >0</div>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="{{ $noentregados }}" >0</div>
                                                         </div>
                                                         <!--end::Number-->
                                                         <!--begin::Label-->
