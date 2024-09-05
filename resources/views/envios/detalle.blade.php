@@ -10,7 +10,7 @@
 
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/oswald-4" rel="stylesheet">
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head--> 
@@ -18,7 +18,7 @@
 <style>
     .delabase{
         color: #001295; 
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: 'Oswald', sans-serif;
         font-weight: 600;
         font-size: 16px;
     }
@@ -241,13 +241,13 @@
                                     <td>
                                         <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
                                     </td>
                                     <td>
                                         <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </td>
                                     <td>
@@ -270,13 +270,13 @@
                                     <td>
                                         <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
                                     </td>
                                     <td>
                                         <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </td>
                                     <td>
@@ -299,13 +299,13 @@
                                     <td>
                                         <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
                                     </td>
-                                    <td style="width: 40%">
-                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
+                                    <td style="width: 40%; padding-top: 12px;">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%; ">
                                     </td>
                                     <td>
                                         <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;" >
                                         <hr style="background-color: red; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </td>
                                     <td>
@@ -351,7 +351,7 @@
                             <div class="card-body p-9">
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Estado
+                                    <label class="col-lg-4 fw-semibold ">Estado
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
@@ -364,7 +364,7 @@
                                 <!--begin::Row-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted ">Destinatario</label>
+                                    <label class="col-lg-4 fw-semibold ">Destinatario</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px; ">
@@ -376,7 +376,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Dirección</label>
+                                    <label class="col-lg-4 fw-semibold">Dirección</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row" style="margin-top: -20px;">
@@ -387,7 +387,7 @@
                                 <!--end::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Telefono Destinatario</label>
+                                    <label class="col-lg-4 fw-semibold ">Telefono Destinatario</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -398,7 +398,7 @@
 
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de entrega </label>
+                                    <label class="col-lg-4 fw-semibold ">Fecha de entrega </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -416,7 +416,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Tipo de envío
+                                    <label class="col-lg-4 fw-semibold ">Tipo de envío
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
@@ -434,7 +434,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Precio del paquete </label>
+                                    <label class="col-lg-4 fw-semibold ">Precio del paquete </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -449,7 +449,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Precio de envío</label>
+                                    <label class="col-lg-4 fw-semibold ">Precio de envío</label>
                                     <!--begin::Label-->
                                     <!--begin::Label-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -461,7 +461,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Precio total </label>
+                                    <label class="col-lg-4 fw-semibold ">Precio total </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -473,7 +473,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Cobro de envío</label>
+                                    <label class="col-lg-4 fw-semibold ">Cobro de envío</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -484,7 +484,7 @@
                                 <!--end::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Estado del pago</label>
+                                    <label class="col-lg-4 fw-semibold ">Estado del pago</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 " style="margin-top: -20px;">
@@ -496,7 +496,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Nota</label>
+                                    <label class="col-lg-4 fw-semibold ">Nota</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -512,7 +512,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Repartidor </label>
+                                    <label class="col-lg-4 fw-semibold">Repartidor </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -524,7 +524,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Ruta </label>
+                                    <label class="col-lg-4 fw-semibold ">Ruta </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -534,7 +534,7 @@
                                 </div>
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Sub Estado </label>
+                                    <label class="col-lg-4 fw-semibold ">Sub Estado </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -544,7 +544,7 @@
                                 </div>
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de subestado</label>
+                                    <label class="col-lg-4 fw-semibold ">Fecha de subestado</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -556,7 +556,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Nota del repartidor</label>
+                                    <label class="col-lg-4 fw-semibold ">Nota del repartidor</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -568,7 +568,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Ubicación</label>
+                                    <label class="col-lg-4 fw-semibold ">Ubicación</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" style="margin-top: -20px;">
@@ -597,7 +597,7 @@
                                 <!--begin::Row-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Fecha de creación</label>
+                                    <label class="col-lg-4 fw-semibold ">Fecha de creación</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8" >
@@ -609,7 +609,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Usuario</label>
+                                    <label class="col-lg-4 fw-semibold ">Usuario</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row" >
@@ -621,7 +621,7 @@
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Agencia de registro</label>
+                                    <label class="col-lg-4 fw-semibold ">Agencia de registro</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row" >
