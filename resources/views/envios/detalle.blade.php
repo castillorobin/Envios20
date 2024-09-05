@@ -420,7 +420,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 ">
+                                    <div class="col-lg-8 " style="margin-top: -20px;">
                                         <span class="badge badge-primary" style="float:right;">{{ $envio[0]->tipo }}</span>
                                     </div>
 
@@ -437,7 +437,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Precio del paquete </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">${{ $envio[0]->precio }}</span>
                                     </div>
                                     <!--end::Col-->
@@ -452,7 +452,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Precio de envío</label>
                                     <!--begin::Label-->
                                     <!--begin::Label-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">${{ $envio[0]->envio }}</span>
                                     </div>
                                     <!--begin::Label-->
@@ -464,7 +464,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Precio total </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">${{ $envio[0]->total }}</span>
                                     </div>
                                     <!--end::Col-->
@@ -476,7 +476,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Cobro de envío</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">{{ $envio[0]->cobro }}</span>
                                     </div>
                                     <!--end::Col-->
@@ -487,7 +487,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Estado del pago</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 d-flex align-items-center">
+                                    <div class="col-lg-8 " style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">{{ $envio[0]->pago }}</span>
                                     </div>
                                     <!--end::Col-->
@@ -499,7 +499,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Nota</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">{{ $envio[0]->nota }}</span>
                                     </div>
                                     <!--end::Col-->
@@ -515,7 +515,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Repartidor </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">Diego</span>
                                     </div>
                                     <!--end::Col-->
@@ -527,7 +527,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Ruta </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">2</span>
                                     </div>
                                     <!--end::Col-->
@@ -537,7 +537,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Sub Estado </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;"></span>
                                     </div>
                                     <!--end::Col-->
@@ -547,7 +547,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Fecha de subestado</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;"></span>
                                     </div>
                                     <!--end::Col-->
@@ -559,7 +559,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Nota del repartidor</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">Cliente no contesta</span>
                                     </div>
                                     <!--end::Col-->
@@ -571,7 +571,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Ubicación</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="margin-top: -20px;">
                                         <span class="delabase" style="float:right;">Bodega</span>
                                     </div>
                                     <!--end::Col-->
@@ -600,7 +600,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Fecha de creación</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" >
                                         <span class="delabase">14-mayo-2024</span>
                                     </div>
                                     <!--end::Col-->
@@ -612,7 +612,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Usuario</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row">
+                                    <div class="col-lg-8 fv-row" >
                                         <span class="delabase">Melvin</span>
                                     </div>
                                     <!--end::Col-->
@@ -624,7 +624,7 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Agencia de registro</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row">
+                                    <div class="col-lg-8 fv-row" >
                                         <span class="delabase">Santa Ana </span>
                                     </div>
                                     <!--end::Col-->
