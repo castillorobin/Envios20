@@ -10,11 +10,19 @@
 
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head--> 
 <!--begin::Body-->
-
+<style>
+    .delabase{
+        color: #001295; 
+        font-family: 'Bebas Neue', sans-serif;
+        font-weight: 600;
+        font-size: 16px;
+    }
+</style>
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
     <!--begin::Theme mode setup on page load--> <!--begin::Sign-in Method-->
     <x-default-layout>
@@ -228,73 +236,90 @@
                             <div class="card mb-5 mb-xl-10 text-center" id="kt_profile_details_view">
 
                             @if( $envio[0]->estado  == "Creado")
-                                <div class="row p-3 text-center ms-10">
-                                    <div class="col-1 text-center">
-                                        <i class="fas fa-store-alt" style="font-size:35px; color:steelblue"></i> 
-                                        <h4 style="margin-top: 0.25em;">Creado</h4>
-                                    </div>
-                                    <div class="col-4 py-4">
+                               <table>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
+                                    </td>
+                                    <td style="width: 40%">
+                                        <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
+                                    </td>
+                                    <td style="width: 40%">
                                         <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
-                                    </div>
-                                    <div class="col-1 ">
-                                        <i class="fas fa-shipping-fast" style="font-size:35px; color:steelblue"></i>  
-                                        <h4 style="margin-top: 0.25em;">En Ruta</h4>
-                                    </div>
-                                    <div class="col-4 py-4">
-                                        <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
-                                    </div>
-                                    <div class="col-1 ">
-                                      
-                                    <i class="fas fa-calendar-check" style="font-size:35px; color:steelblue"></i> 
-                                        <h4 style="margin-top: 0.25em;">Entregado</h4>
-                                    </div>
-                                </div>
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-calendar-check" style="font-size:20px; color:steelblue"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Creado</td>
+                                    <td></td>
+                                    <td>En Ruta</td>
+                                    <td></td>
+                                    <td>Entregado</td>
+                                </tr>
+                               </table>
                             @endif
 
                             @if( $envio[0]->estado  == "Entregado")
-                                <div class="row p-3 text-center ms-10">
-                                    <div class="col-2 text-center">
-                                        <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i> 
-                                        <h4 style="margin-top: 0.25em;">Creado</h4>
-                                    </div>
-                                    <div class="col-3 py-4">
-                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
-                                    </div>
-                                    <div class="col-2 ">
-                                        <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>  
-                                        <h4 style="margin-top: 0.25em;">En Ruta</h4>
-                                    </div>
-                                    <div class="col-3 py-4">
-                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
-                                    </div>
-                                    <div class="col-2 ">
-                                    <i class="fas fa-clipboard-check" style="font-size:45px; color:steelblue"></i> 
-                                        <h4 style="margin-top: 0.25em;">Entregado</h4>
-                                    </div>
-                                </div>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
+                                    </td>
+                                    <td style="width: 40%">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
+                                    </td>
+                                    <td style="width: 40%">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-calendar-check" style="font-size:20px; color:steelblue"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Creado</td>
+                                    <td></td>
+                                    <td>En Ruta</td>
+                                    <td></td>
+                                    <td>Entregado</td>
+                                </tr>
+                               </table>
                             @endif
 
                             @if( $envio[0]->estado  == "No entregado")
-                                <div class="row p-3 text-center ms-10">
-                                    <div class="col-2 text-center">
-                                        <i class="fas fa-store-alt" style="font-size:45px; color:steelblue"></i> 
-                                        <h4 style="margin-top: 0.25em;">Creado</h4>
-                                    </div>
-                                    <div class="col-3 py-4">
-                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
-                                    </div>
-                                    <div class="col-2 ">
-                                        <i class="fas fa-shipping-fast" style="font-size:45px; color:steelblue"></i>  
-                                        <h4 style="margin-top: 0.25em;">En Ruta</h4>
-                                    </div>
-                                    <div class="col-3 py-4">
-                                        <hr style="background-color: red; height: 8px; border: 0; opacity: 1; border-radius: 20px; ">
-                                    </div>
-                                    <div class="col-2 ">
-                                    <i class="fas fa-calendar-times" style="font-size:45px; color:steelblue"></i> 
-                                        <h4 style="margin-top: 0.25em;">No entregado</h4>
-                                    </div>
-                                </div>
+                            <table>
+                                <tr>
+                                    <td>
+                                        <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
+                                    </td>
+                                    <td style="width: 40%">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
+                                    </td>
+                                    <td style="width: 40%">
+                                        <hr style="background-color: red; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
+                                    </td>
+                                    <td>
+                                        <i class="fas fa-calendar-times" style="font-size:20px; color:steelblue"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Creado</td>
+                                    <td></td>
+                                    <td>En Ruta</td>
+                                    <td></td>
+                                    <td>No entregado</td>
+                                </tr>
+                               </table>
                             @endif
 
 
@@ -330,7 +355,7 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 ">
+                                    <div class="col-lg-8 " style="margin-top: -20px; ">
                                         <span class="badge badge-success" style="float:right;">{{ $envio[0]->estado }}</span>
                                     </div>
                                     <!--end::Col-->
@@ -339,11 +364,11 @@
                                 <!--begin::Row-->
                                 <div class="row mb-7">
                                     <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold text-muted">Destinatario</label>
+                                    <label class="col-lg-4 fw-semibold text-muted ">Destinatario</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">{{ $envio[0]->destinatario }}</span>
+                                    <div class="col-lg-8" style="margin-top: -20px; ">
+                                        <span class="delabase" style="float:right;">{{ $envio[0]->destinatario }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -354,8 +379,8 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Dirección</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6" style="float:right;"> {{ $envio[0]->direccion }}</span>
+                                    <div class="col-lg-8 fv-row" style="margin-top: -20px;">
+                                        <span class="delabase" style="float:right;"> {{ $envio[0]->direccion }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -365,8 +390,8 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Telefono Destinatario</label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;"> {{ $envio[0]->telefono }}</span>
+                                    <div class="col-lg-8" style="margin-top: -20px;">
+                                        <span class="delabase" style="float:right;"> {{ $envio[0]->telefono }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -376,8 +401,8 @@
                                     <label class="col-lg-4 fw-semibold text-muted">Fecha de entrega </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8" style="float:right;">
-                                        <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary"><span style="float:right;">{{ $envio[0]->fecha_entrega }}</span></a>
+                                    <div class="col-lg-8" style="margin-top: -20px;">
+                                        <span class="delabase" style="float:right;">{{ $envio[0]->fecha_entrega }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -395,9 +420,11 @@
                                     </label>
                                     <!--end::Label-->
                                     <!--begin::Col-->
-                                    <div class="col-lg-8 d-flex align-items-center">
+                                    <div class="col-lg-8 ">
                                         <span class="badge badge-primary" style="float:right;">{{ $envio[0]->tipo }}</span>
                                     </div>
+
+                                  
                                     <!--end::Col-->
                                 </div>
                                 <!--end::Input group-->
@@ -411,10 +438,13 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">${{ $envio[0]->precio }}</span>
+                                        <span class="delabase" style="float:right;">${{ $envio[0]->precio }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
+
+                                
+                                   
                                 <!--end::Input group-->
                                 <!--begin::Input group-->
                                 <div class="row mb-7">
@@ -423,7 +453,7 @@
                                     <!--begin::Label-->
                                     <!--begin::Label-->
                                     <div class="col-lg-8">
-                                        <span class="fw-semibold fs-6 text-gray-800" style="float:right;">${{ $envio[0]->envio }}</span>
+                                        <span class="delabase" style="float:right;">${{ $envio[0]->envio }}</span>
                                     </div>
                                     <!--begin::Label-->
                                 </div>
@@ -435,7 +465,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">${{ $envio[0]->total }}</span>
+                                        <span class="delabase" style="float:right;">${{ $envio[0]->total }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -447,7 +477,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">{{ $envio[0]->cobro }}</span>
+                                        <span class="delabase" style="float:right;">{{ $envio[0]->cobro }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -458,7 +488,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 d-flex align-items-center">
-                                        <span class="badge badge-danger" style="float:right;">{{ $envio[0]->pago }}</span>
+                                        <span class="delabase" style="float:right;">{{ $envio[0]->pago }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -470,7 +500,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">{{ $envio[0]->nota }}</span>
+                                        <span class="delabase" style="float:right;">{{ $envio[0]->nota }}</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -486,7 +516,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">Diego</span>
+                                        <span class="delabase" style="float:right;">Diego</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -498,7 +528,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">2</span>
+                                        <span class="delabase" style="float:right;">2</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -508,7 +538,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;"></span>
+                                        <span class="delabase" style="float:right;"></span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -518,7 +548,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;"></span>
+                                        <span class="delabase" style="float:right;"></span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -530,7 +560,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">Cliente no contesta</span>
+                                        <span class="delabase" style="float:right;">Cliente no contesta</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -542,7 +572,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800" style="float:right;">Bodega</span>
+                                        <span class="delabase" style="float:right;">Bodega</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -571,7 +601,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8">
-                                        <span class="fw-bold fs-6 text-gray-800">14-mayo-2024</span>
+                                        <span class="delabase">14-mayo-2024</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -583,7 +613,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">Melvin</span>
+                                        <span class="delabase">Melvin</span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
@@ -595,7 +625,7 @@
                                     <!--end::Label-->
                                     <!--begin::Col-->
                                     <div class="col-lg-8 fv-row">
-                                        <span class="fw-semibold text-gray-800 fs-6">Santa Ana </span>
+                                        <span class="delabase">Santa Ana </span>
                                     </div>
                                     <!--end::Col-->
                                 </div>
