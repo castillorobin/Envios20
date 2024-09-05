@@ -10,7 +10,7 @@
 
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/oswald-4" rel="stylesheet">
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head--> 
@@ -18,7 +18,7 @@
 <style>
     .delabase{
         color: #001295; 
-        font-family: 'Bebas Neue', sans-serif;
+        font-family: 'Oswald', sans-serif;
         font-weight: 600;
         font-size: 16px;
     }
@@ -241,13 +241,13 @@
                                     <td>
                                         <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
                                     </td>
                                     <td>
                                         <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: gray; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </td>
                                     <td>
@@ -270,13 +270,13 @@
                                     <td>
                                         <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
                                     </td>
                                     <td>
                                         <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;">
                                         <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </td>
                                     <td>
@@ -299,13 +299,13 @@
                                     <td>
                                         <i class="fas fa-store-alt" style="font-size:20px; color:steelblue"></i> 
                                     </td>
-                                    <td style="width: 40%">
-                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%">
+                                    <td style="width: 40%; padding-top: 12px;">
+                                        <hr style="background-color: green; height: 8px; border: 0; opacity: 1; border-radius: 20px; width:100%; ">
                                     </td>
                                     <td>
                                         <i class="fas fa-shipping-fast" style="font-size:20px; color:steelblue"></i>  
                                     </td>
-                                    <td style="width: 40%">
+                                    <td style="width: 40%; padding-top: 12px;" >
                                         <hr style="background-color: red; height: 8px; border: 0; opacity: 1; border-radius: 20px;">
                                     </td>
                                     <td>
