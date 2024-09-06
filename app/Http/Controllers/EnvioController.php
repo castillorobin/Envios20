@@ -54,7 +54,7 @@ class EnvioController extends Controller
                        where('estado', "No entregado")->get()->count();
 
 
-        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
+        return view('envios.editardetalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
     }
     public function detalleeditando(Request $request)
     {
