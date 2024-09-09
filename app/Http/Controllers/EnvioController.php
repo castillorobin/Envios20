@@ -256,8 +256,12 @@ class EnvioController extends Controller
         $puntos = Rutas::all();
         $guia= $request->get('n_guia');
         $pedido = Envio::where('guia', $guia)->get();
-
-        return view('envios.registroconguiadatos', compact('pedido', 'puntos'));
+        $nota = " "; 
+        if($pedido->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            return view('envios.registroconguia', compact('nota'));
+        }
+        return view('envios.registroconguiadatos', compact('pedido', 'puntos', 'nota'));
 
     }
     public function guardarconguia(Request $request, $id)

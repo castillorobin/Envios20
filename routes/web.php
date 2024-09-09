@@ -80,7 +80,8 @@ Route::get('/stocks/seleccionarpunto', function () {
 });
 
 Route::get('/envios/registroconguia', function () {
-    return view('envios.registroconguia');
+    $nota = " ";
+    return view('envios.registroconguia', compact('nota'));
 });
 
 

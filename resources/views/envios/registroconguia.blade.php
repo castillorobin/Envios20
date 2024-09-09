@@ -73,6 +73,10 @@
                                     </div>
                                     <div class="form-floating col-lg-5 mb-4">
                                         <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
+                                        
+                                        <span style="color:red; font-weight:bolder;">{{$nota}}</span>
+                                       
+                                        
                                     </div>
 
                                 </div>

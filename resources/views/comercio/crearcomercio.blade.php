@@ -42,6 +42,13 @@
                             @method('GET')
                             <div class="card-body border-top p-9">
                                 <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del titular</label>
+                                    <div class="col-lg-8">
+                                        <input type="text" name="ftitu" id="ftitu" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del titular" />
+                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
                                     <div class="col-lg-8">
                                         <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" />
