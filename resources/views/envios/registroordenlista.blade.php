@@ -486,7 +486,7 @@ $(document).ready(function() {
 
                         <!--begin::Input group-->
                         <div class="mb-5">
-                            <input type="text" class="form-control form-control-solid" placeholder="Direccion" name="direccion" id="direccion" />
+                            <input type="text" class="form-control form-control-solid" placeholder="Direccion" name="direccion" id="direccion" value="{{$ticketactual[0]->direccion}}" />
                         </div>
                         <!--end::Input group-->
 

@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('codigo');
             $table->string('comercio');
             $table->string('correo')->nullable();
+           //$table->string('direccion')->nullable();
             $table->string('telefono')->nullable();
             $table->integer('perso')->nullable();
             $table->integer('punto')->nullable();

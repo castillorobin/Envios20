@@ -139,6 +139,7 @@ class CobroController extends Controller
         $ticket = new Ticketc();
         $ticket->codigo = $request->get('codigo');
         $ticket->comercio = $request->get('comercio');
+        $ticket->direccion = $request->get('direccion');
         $ticket->correo = $request->get('correo');
         $ticket->telefono = $request->get('telefono');
         $ticket->save();
