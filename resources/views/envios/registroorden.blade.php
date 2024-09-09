@@ -878,7 +878,7 @@
                                 <div class="mb-10">
                                     <!--begin::Label-->
                                     <label class="form-label fw-bold fs-6 text-gray-700">Cajero:</label><br>
-                                    <label class="form-label fw-bold fs-6 text-gray-400">Max Smith</label>
+                                    <label class="form-label fw-bold fs-6 text-gray-400">{{ Auth::user()->name }}</label>
                                     <!--end::Label-->
 
 
