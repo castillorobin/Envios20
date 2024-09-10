@@ -28,8 +28,6 @@ class EnvioController extends Controller
         $envio = Envio::where('guia', $id)->get();
         $comer = $envio[0]->comercio;
         $comercio = Comercio::where('comercio', $comer)->get();
-        
-
         //$vendedores = Vendedor::all();
         $enviostotal = Envio::where('comercio', $comer)->get()->count();
         $entregados = Envio::where('comercio', $comer)->
@@ -288,8 +286,9 @@ class EnvioController extends Controller
 
         
         //$pedido = Envio::where('guia', $guia)->get();
-
-        return view('envios.registroconguia');
+        $nota = " ";
+        return view('envios.registroconguia', compact('nota'));
+        //return view('envios.registroconguia');
 
     }
 
