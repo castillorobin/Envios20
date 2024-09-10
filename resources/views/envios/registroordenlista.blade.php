@@ -574,7 +574,7 @@ $(document).ready(function() {
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                           
                                                         </div>
 
                                                         </div>
@@ -609,7 +609,7 @@ $(document).ready(function() {
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            
                                                         </div>
 
                                                         </div>
@@ -644,7 +644,7 @@ $(document).ready(function() {
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            
                                                         </div>
 
                                                         </div>

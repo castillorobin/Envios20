@@ -538,7 +538,7 @@ $(document).ready(function() {
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            
                                                         </div>
 
                                                         </div>
@@ -574,7 +574,7 @@ $(document).ready(function() {
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            
                                                         </div>
 
                                                         </div>
@@ -609,7 +609,7 @@ $(document).ready(function() {
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            
                                                         </div>
 
                                                         </div>
@@ -639,7 +639,7 @@ $(document).ready(function() {
                                     <br>
 <div class="row">
                                                                 <div class="col-8">
-                                                                    <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" autofocus>
+                                                                    <input type="text" class="form-control form-control-solid " id="guia4" name="guia4" placeholder="Ingrese guía" autofocus>
                                                                     <input type="text" value="Casillero" class="visually-hidden" name="tipo4" id="tipo4">
                                                         </div>
                                                         <div class="col-4">
