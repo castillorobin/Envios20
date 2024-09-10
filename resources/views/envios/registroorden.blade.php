@@ -767,17 +767,15 @@
                                                             </tr>
                                                             <tr class="border-bottom border-bottom-dashed" data-kt-element="item">
                                                                 <td class="pe-7">
-                                                                    <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Guias</label>
+                                                                 
 
                                                                     <br>
                                                                     <div class="row">
-                                                                        <div class="col-8">
-                                                                            <input type="text" class="form-control form-control-solid " id="guia5" name="guia5" placeholder="Ingrese guía">
-                                                                            <input type="text" value="Personalizado" class="visually-hidden" name="tipo5" id="tipo5">
+                                                                        <div class="col-8 pt-6">
+                                                                            <label class="form-label fs-6 fw-bold text-gray-700 mb-3"> Guias</label>
                                                                         </div>
                                                                         <div class="col-4">
-                                                                            <button type="button" class="btn btn-primary mb-3" onclick="aumentar5()">Agregar</button>
-                                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                                            
                                                                         </div>
 
                                                                     </div>
@@ -932,6 +930,23 @@
 
                                     <!--end::Select-->
                                 </div>
+                                <div class="mb-10">
+                                    <!--begin::Label-->
+                                    <label class="form-label fw-bold fs-6 text-gray-700">Comprobante:</label><br>
+                                    <select class="form-select form-select-solid" name="comprobante" id="comprobante">
+                                        <option value="Comprobante de Cobro">Comprobante de Cobro</option>
+                                        <option value="Crédito fiscal">Crédito fiscal</option>
+                                        <option value="Factura consumidor final">Factura consumidor final</option>
+                                        <option value="Nota de Remisión">Nota de Remisión</option>
+                                       
+
+
+                                    </select>
+                                    <!--end::Label-->
+
+
+                                    <!--end::Select-->
+                                </div>
                                 <!--end::Input group-->
 
                                 <!--begin::Separator-->
@@ -944,8 +959,12 @@
 
                                     <!--end::Row-->
 
-                                    <button type="submit" class="btn btn-primary w-100" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
+                                    <button type="submit" class="btn btn-primary w-100  mb-3" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
                                     </button>
+                                  
+                                    <a href="/registro-orden">
+                                    <button type="button" class="btn btn-danger w-100">Cancelar</button>
+                                </a>
                                 </div>
                                 </form>
                                 <!--end::Actions-->
