@@ -22,10 +22,6 @@ class CobroController extends Controller
         $comercios = Comercio::all(); 
         $nota="";
 
-           
-
-
-
         $comer=" ";
         $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
         $cobrodepa = $cobrodepa->count();
@@ -362,7 +358,7 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
-
+ 
         return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }

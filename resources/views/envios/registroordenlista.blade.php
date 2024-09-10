@@ -880,7 +880,7 @@ $(document).ready(function() {
             <button type="submit" class="btn btn-primary w-100 mb-3" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
             </button>
 
-            <a href="/registro-orden">
+            <a href="/envios/cancelar/{{$ticketactual[0]->codigo}}">
                 <button type="button" class="btn btn-danger w-100">Cancelar</button>
             </a>
         </div> 

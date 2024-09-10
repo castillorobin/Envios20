@@ -10,6 +10,7 @@ use App\Models\Comercio;
 use App\Models\Rutas;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
+use App\Models\Ticketc;
 
 class EnvioController extends Controller
 {
@@ -21,6 +22,29 @@ class EnvioController extends Controller
 
         $vendedores = Vendedor::all();
         return view('envios.index', compact('vendedores'));
+    }
+    public function cancelar($id)
+    {
+
+        //$envio = Envio::where('guia', $id)->get();
+        //$comer = $envio[0]->comercio;
+
+        $ticket = Ticketc::where('codigo', $id)->get();
+        $ticketid = $ticket[0]->id;
+
+        Ticketc::find($ticketid)->delete();
+
+        $envios = Envio::where('ticketc', $id)->get();
+
+        foreach($envios as $envio){
+            $envioid = $envio->id;
+            Envio::find($envioid)->delete();
+        }
+       
+        
+       //return route('registro-orden');
+       return redirect()->route('indexcobro');
+        //return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
     }
     public function detalle($id)
     {

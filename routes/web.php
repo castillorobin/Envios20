@@ -112,6 +112,8 @@ Route::get('envioguardarca', [App\Http\Controllers\EnvioController::class, 'envi
 Route::get('envios/lista', [App\Http\Controllers\EnvioController::class, 'envioli'] )->name('envioli') ;
 Route::get('envios/conguia', [App\Http\Controllers\EnvioController::class, 'conguia'] )->name('conguia') ;
 Route::get('envios/guardarconguia/{id}', [App\Http\Controllers\EnvioController::class, 'guardarconguia'] )->name('guardarconguia') ;
+Route::get('envios/cancelar/{id}', [App\Http\Controllers\EnvioController::class, 'cancelar'] )->name('cancelar') ;
+
 
 Route::get('empleado', [App\Http\Controllers\EmpleadoController::class, 'empleado'] )->name('empleado') ;
 Route::get('empleados/{id}', [App\Http\Controllers\EmpleadoController::class, 'empleadover'] )->name('empleadover') ;
