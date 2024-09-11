@@ -49,8 +49,8 @@
 
         const totalfin = (total + coniva);
 
-        $('#total1').text(totalfin);
-        $('#ivam').text(coniva);
+        $('#total1').text(totalfin.toFixed(2));
+        $('#ivam').text(coniva.toFixed(2));
         //$('#siva').text("+$" + coniva);
         //checkbox.checked = false;
 
@@ -74,7 +74,7 @@
 
         //const totalfin = (total + coniva);
 
-        $('#total1').text(total);
+        $('#total1').text(total.toFixed(2));
         $('#ivam').text("0.00");
         //$('#siva').text("+$" + coniva);
         //checkbox.checked = false;
@@ -285,7 +285,7 @@
 
             const totalsin = total - descu;
 
-            $('#total1').text(totalsin);
+            $('#total1').text(totalsin.toFixed(2));
 
 
         });
@@ -1114,7 +1114,7 @@
             const total = subtotal + subtotal2 + subtotal3 + subtotal4;
 
             $('#stotal').text("$" + total);
-            $('#total1').text("$" + total);
+            $('#total1').text("$" + total.toFixed(2));
 
             //alert('hola');
 
