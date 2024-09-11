@@ -410,7 +410,7 @@ $(document).ready(function() {
             <!--begin::Wrapper-->
             <div class="d-flex flex-column align-items-start flex-xxl-row">
                 <!--begin::Input group-->
-                <div class="d-flex align-items-center flex-equal fw-row me-4 order-2" data-bs-toggle="tooltip" data-bs-trigger="hover" title="Specify invoice date">
+                <div class="d-flex align-items-center flex-equal fw-row me-4 order-2" data-bs-toggle="tooltip" data-bs-trigger="hover">
                     <!--begin::Date-->
                     <div class="fs-6 fw-bold text-gray-700 text-nowrap">Fecha:</div>  
                     <!--end::Date-->                    
