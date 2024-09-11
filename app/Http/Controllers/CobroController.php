@@ -149,6 +149,7 @@ class CobroController extends Controller
         $precio5= $request->get('precio5');
 
         $nota="Guía Duplicada";
+
         if ($request->filled('guia')) {
             if($hayguia== 0){
                 $nota=" ";
@@ -307,7 +308,13 @@ class CobroController extends Controller
     {
 
         $guia = $request->get('guia');
+        $guia2 = $request->get('guia2');
+        $guia3 = $request->get('guia3');
+        $guia4 = $request->get('guia4');
         $hayguia = Envio::where('guia', $guia)->exists();
+        $hayguia2 = Envio::where('guia', $guia2)->exists();
+        $hayguia3 = Envio::where('guia', $guia3)->exists();
+        $hayguia4 = Envio::where('guia', $guia4)->exists();
         
         $codigo= $request->get('codigo');
         $comercios = Comercio::all(); 
@@ -322,7 +329,9 @@ class CobroController extends Controller
         $precio3= $request->get('precio3');
         $precio4= $request->get('precio4');
         $precio5= $request->get('precio5');
+
         $nota="Guia Duplicada";
+
         if ($request->filled('guia')) {
             
             if($hayguia== 0){
@@ -335,6 +344,7 @@ class CobroController extends Controller
         $envio->cobro = "Pendiente";
         $envio->ticketc = $codigo;
         $envio->comercio = $request->get('comercio');
+        $envio->entrega = $request->get('direccion');
         $envio->save();
     }
         
@@ -362,10 +372,10 @@ class CobroController extends Controller
         return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
-
+        $nota="Guia Duplicada";
         if ($request->filled('guia2')) {
 
-            if($hayguia== 0){
+            if($hayguia2== 0){
                 $nota=" ";
             $envio = new Envio();
             $envio->tipo = $request->get('tipo2');
@@ -373,6 +383,7 @@ class CobroController extends Controller
             $envio->cobro = "Pagado";
             $envio->ticketc = $codigo;
             $envio->comercio = $request->get('comercio');
+            $envio->entrega = $request->get('direccion');
             $envio->save();
             }
             $cobroperso = Envio::where('ticketc', $codigo)
@@ -399,9 +410,9 @@ class CobroController extends Controller
         return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
     
             }
-
+            $nota="Guia Duplicada";
             if ($request->filled('guia3')) {
-                if($hayguia== 0){
+                if($hayguia3== 0){
                     $nota=" ";
                 $envio = new Envio();
                 $envio->tipo = $request->get('tipo3');
@@ -409,6 +420,7 @@ class CobroController extends Controller
                 $envio->cobro = "Pagado";
                 $envio->ticketc = $codigo;
                 $envio->comercio = $request->get('comercio');
+                $envio->entrega = $request->get('direccion');
                 $envio->save();
                 }
 
@@ -436,10 +448,10 @@ class CobroController extends Controller
             return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
         
                 }
-            
+                $nota="Guia Duplicada";
             if ($request->filled('guia4')) {
 
-                if($hayguia== 0){
+                if($hayguia4== 0){
                     $nota=" ";
                     $envio = new Envio();
                     $envio->tipo = $request->get('tipo4');
@@ -447,6 +459,7 @@ class CobroController extends Controller
                     $envio->cobro = "Pagado";
                     $envio->ticketc = $codigo;
                     $envio->comercio = $request->get('comercio');
+                    $envio->entrega = $request->get('direccion');
                     $envio->save();
                 }
                     

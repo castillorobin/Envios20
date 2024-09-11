@@ -204,7 +204,7 @@
                                         <label for="comercio" style="padding-left: 25px;">Nombre de comercio</label>
                                     </div>
                                     <div class="form-floating col-lg-5 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Direccion de recolecta" />
+                                        <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Direccion de recolecta" value="{{$pedido[0]->entrega}}" />
                                         <label for="destinatariop" style="padding-left: 25px;">Direccion de recolecta</label>
                                     </div> 
                                 </div>
