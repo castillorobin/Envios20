@@ -278,11 +278,20 @@ class EnvioController extends Controller
         $puntos = Rutas::all();
         $guia= $request->get('n_guia');
         $pedido = Envio::where('guia', $guia)->get();
+
         $nota = " "; 
         if($pedido->isEmpty()){
             $nota = "La Guía que se ingreso no existe"; 
             return view('envios.registroconguia', compact('nota'));
         }
+
+        if($pedido[0]->registro != 0 ){
+            $nota = "La Guía ya ha sido registrada"; 
+            return view('envios.registroconguia', compact('nota'));
+        }
+
+
+
         return view('envios.registroconguiadatos', compact('pedido', 'puntos', 'nota'));
 
     }
@@ -304,7 +313,7 @@ class EnvioController extends Controller
         $envio->punto = $request->get('punto');
         $envio->fecha_entrega = $request->get('fecha_entregap');
         $envio->nota = $request->get('nota');
-
+        $envio->registro = 1;
         $envio->save();
        // return redirect('/envios/lista');
 

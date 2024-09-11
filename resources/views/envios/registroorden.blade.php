@@ -170,7 +170,7 @@
     }
 
     function limpiar1() {
-        document.getElementById("guia1").value = "";
+        document.getElementById("guia").value = " ";
         document.getElementById("cantidad1").value = "0";
         document.getElementById("precio1").value = "0";
     }
@@ -502,7 +502,7 @@
                                                     <!--end::Input-->
                                                 </div>
                                                 <!--end::Input group-->
-
+ 
                                                 <!--begin::Input group-->
                                                 <div class="d-flex flex-center flex-equal fw-row text-nowrap order-1 order-xxl-2 me-4" data-bs-toggle="tooltip" data-bs-trigger="hover">
 

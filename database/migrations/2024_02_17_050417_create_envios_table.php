@@ -30,6 +30,7 @@ return new class extends Migration
             $table->string('nota')->nullable();
             $table->string('entrega')->nullable();
             $table->integer('punto')->nullable();
+            $table->integer('registro')->nullable();
             $table->timestamps(); 
         });
     }

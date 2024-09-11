@@ -76,7 +76,7 @@
                                         
                                         <span style="color:red; font-weight:bolder;">{{$nota}}</span>
                                        
-                                        
+                                         
                                     </div>
 
                                 </div>

@@ -12,7 +12,7 @@ use App\Models\Envio;
 use PDF;
 
 class CobroController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      */
