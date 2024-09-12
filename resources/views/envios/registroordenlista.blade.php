@@ -269,7 +269,7 @@ $(document).ready(function() {
 
                    });
                 
-                   $("#precio5").change(function() {
+                   $("#cantidad5").change(function() {
                                                                     
          const subtotal =parseFloat($(this).val());
          const subtotal2 = parseFloat(document.getElementById("precio1").value); 
