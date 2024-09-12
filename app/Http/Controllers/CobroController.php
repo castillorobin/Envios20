@@ -114,7 +114,7 @@ class CobroController extends Controller
 
         $pdf = PDF::loadView('envios.ticketpagos', ['ticketact'=>$ticketact]);
         //return view('envios.ticketpagos');
-        $customPaper = array(0,0,360,550);
+        $customPaper = array(0,0,360,650);
         //$pdf->setPaper('b6', 'portrait');
         $pdf->setPaper($customPaper );
         return $pdf->stream();

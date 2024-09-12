@@ -31,7 +31,7 @@
             
            <!-- <img alt="image" src="/public/img/logo.png" > -->
            
-           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Comprobante de pago</span> </div>
+           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Comprobante de cobro</span> </div>
            
            <br>
            <span>Centro Comercial Metrogaleria
@@ -45,8 +45,11 @@
 
                         <div class="fecha centrar " style="font-weight: bolder;">
    TICKET Nº {{ $ticketact[0]->codigo }}
-   <hr>
+  
+   
    </div>
+   Comercio: <span style="font-weight: bolder;">{{ $ticketact[0]->comercio }}</span> 
+   <hr>
    
    <div class="fecha ">
    <span > Fecha: {{ now()->Format('d/m/Y')}} </span>
@@ -118,13 +121,14 @@
     </thead>
 </table>
 <br>
-<div>Le atendio: Robin Castillo</div>
+<div>Le atendio: {{ Auth::user()->name }}</div>
 <hr>
 <div>¡¡GRACIAS POR PREFERIRNOS!!</div>
 <hr>
+<div style="padding-left: 75px;"> {!! DNS1D::getBarcodeHTML($ticketact[0]->codigo , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> {{ $ticketact[0]->codigo }} </span></div>
 </div>
 
-   
+
 
 </body>
 </html>
