@@ -25,7 +25,7 @@
 
     </style>
 <div style="width:100%; " class="text-center centrar">
-    <img src="../public/assets/media/logos/lo.png" alt="" width="20%" height="5%">
+    <img src="../public/fotos/logo24.png" alt="" width="40%">
     <br>
             <div class="margen "> <span class="page__heading melo" >Expertos en paqueteria</span></div>
             
