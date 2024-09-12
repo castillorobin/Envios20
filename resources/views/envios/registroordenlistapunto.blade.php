@@ -276,7 +276,7 @@ $(document).ready(function() {
          const subtotal3 = parseFloat(document.getElementById("precio3").value); 
          const subtotal4 = parseFloat(document.getElementById("precio4").value); 
          const subtotal5 = parseFloat(document.getElementById("precio2").value); 
-
+         document.getElementById("precio5").value = subtotal ;
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
