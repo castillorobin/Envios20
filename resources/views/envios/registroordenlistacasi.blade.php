@@ -723,7 +723,7 @@ $(document).ready(function() {
                                         
                                         <button type="button" class="btn btn-link py-1" onclick="descontar()" >Agregar descuento</button>
                                         <input type="text" class="form-control form-control-solid" id="descuent" name="descuent"  value="0" hidden/>
-                                        <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20"></textarea>
+                                        <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" ></textarea>
                                     </div>
                                 </th> 
 
@@ -845,8 +845,8 @@ $(document).ready(function() {
             <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price" hidden/>
             <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price" hidden/>
             <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price" hidden/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/>  
-            <input type="text" class="form-control form-control-solid text-end" name="ticketnum" id="ticketnum" data-kt-element="price" value="{{$ticketactual[0]->id}}" hidden/> 
+            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/> 
+            <input type="text" class="form-control form-control-solid text-end" name="ticketnum" id="ticketnum" data-kt-element="price" value="{{$ticketactual[0]->codigo}}" hidden/> 
             <input type="text" class="form-control form-control-solid text-end" name="ticketid" id="ticketid" data-kt-element="price" value="{{$ticketactual[0]->id}}" hidden/> 
             <!--end::Select-->
         </div>
@@ -880,12 +880,12 @@ $(document).ready(function() {
             
             <button type="submit" class="btn btn-primary w-100 mb-3" id="kt_invoice_submit_button" formtarget="_blank"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
             </button>
-            
+
             <a href="/envios/cancelar/{{$ticketactual[0]->codigo}}">
                 <button type="button" class="btn btn-danger w-100">Cancelar</button>
             </a>
         </div> 
-        </form>               
+        </form>                     
         <!--end::Actions-->    
     </div>
     <!--end::Card body-->

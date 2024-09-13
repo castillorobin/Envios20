@@ -309,7 +309,7 @@ $(document).ready(function() {
     const total =parseFloat($('#total1').text());
 
     const totalsin = total - descu ;
-
+ 
     $('#total1').text(totalsin(totalsin.toFixed(2)));
     document.getElementById("total2").value = totalsin ;
 
