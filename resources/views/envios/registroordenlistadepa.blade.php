@@ -722,7 +722,7 @@ $(document).ready(function() {
                                         
                                         <button type="button" class="btn btn-link py-1" onclick="descontar()" >Agregar descuento</button>
                                         <input type="text" class="form-control form-control-solid" id="descuent" name="descuent"  value="0" hidden/>
-                                        <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" hidden/>Ingresar nota </textarea>
+                                        <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" ></textarea>
                                     </div>
                                 </th> 
 

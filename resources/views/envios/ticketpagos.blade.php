@@ -4,7 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ticket</title>
-    
+    <script type="text/javascript">
+     function printHTML() { 
+  if (window.print) { 
+    window.print();
+  }
+}
+document.addEventListener("DOMContentLoaded", function(event) {
+  printHTML(); 
+});
+ </script>
 </head>
 <body>
 <style>
