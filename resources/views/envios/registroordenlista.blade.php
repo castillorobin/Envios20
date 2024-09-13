@@ -31,6 +31,18 @@
 
 
 <script>  
+
+
+function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    
+    window.location = "http://127.0.0.1:8000/registro-orden";
+   // window.location = "https://appmeloexpress.com/pedidos/create";
+};
+
 function agregariva() {
 
 
@@ -46,7 +58,7 @@ function agregariva() {
 
     const totalfin = (total + coniva);
 
-    $('#total1').text(totalfin);
+    $('#total1').text(totalfin.toFixed(2));
     document.getElementById("total2").value = totalfin ;
     $('#ivam').text(coniva(totalsin.toFixed(2)));
     document.getElementById("iva2").value = coniva ;
@@ -73,7 +85,7 @@ const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
 
 //const totalfin = (total + coniva);
 
-$('#total1').text(total);
+$('#total1').text(total.toFixed(2));
 document.getElementById("total2").value = total ;
 $('#ivam').text("0.00");
 document.getElementById("iva2").value = "0.00" ;
@@ -877,7 +889,7 @@ $(document).ready(function() {
           
             <!--end::Row-->
             
-            <button type="submit" class="btn btn-primary w-100 mb-3" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
+            <button type="submit" class="btn btn-primary w-100 mb-3" id="kt_invoice_submit_button" onclick="redireccionarPagina()" target="_blank"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
             </button>
 
             <a href="/envios/cancelar/{{$ticketactual[0]->codigo}}">

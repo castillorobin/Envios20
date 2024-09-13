@@ -46,10 +46,10 @@ function agregariva() {
 
     const totalfin = (total + coniva);
 
-    $('#total1').text(totalfin(totalsin.toFixed(2)));
-    document.getElementById("total2").value = totalfin ;
-    $('#ivam').text(coniva(totalsin.toFixed(2)));
-    document.getElementById("iva2").value = coniva ;
+    $('#total1').text(totalfin.toFixed(2));
+    document.getElementById("total2").value = totalfin.toFixed(2) ;
+    $('#ivam').text(coniva.toFixed(2));
+    document.getElementById("iva2").value = coniva.toFixed(2) ;
     //$('#siva').text("+$" + coniva);
     //checkbox.checked = false;
 
@@ -73,8 +73,8 @@ const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
 
 //const totalfin = (total + coniva);
 
-$('#total1').text(total(totalsin.toFixed(2)));
-document.getElementById("total2").value = total ;
+$('#total1').text(total.toFixed(2));
+document.getElementById("total2").value = total.toFixed(2) ;
 $('#ivam').text("0.00");
 document.getElementById("iva2").value = "0.00" ;
 //$('#siva').text("+$" + coniva);
