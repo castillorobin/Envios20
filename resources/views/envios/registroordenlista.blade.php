@@ -39,8 +39,8 @@ function redireccionarPagina(){
     
 function abrirURL(){
     
-    window.location = "http://127.0.0.1:8000/registro-orden";
-   // window.location = "https://appmeloexpress.com/pedidos/create";
+   // window.location = "http://127.0.0.1:8000/registro-orden";
+   window.location = "http://154.12.227.235/registro-orden";
 };
 
 function agregariva() {

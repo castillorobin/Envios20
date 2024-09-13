@@ -31,6 +31,19 @@
 
 
 <script>  
+
+
+function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    
+   // window.location = "http://127.0.0.1:8000/registro-orden";
+   window.location = "http://154.12.227.235/registro-orden";
+};
+
+
 function agregariva() {
 
 
@@ -877,7 +890,7 @@ $(document).ready(function() {
           
             <!--end::Row-->
             
-            <button type="submit" class="btn btn-primary w-100 mb-3" id="kt_invoice_submit_button" formtarget="_blank"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
+            <button type="submit" class="btn btn-primary w-100 mb-3" onclick="redireccionarPagina()" id="kt_invoice_submit_button" formtarget="_blank"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3"></span></i> Guardar e imprimir
             </button>
             <a href="/envios/cancelar/{{$ticketactual[0]->codigo}}">
                 <button type="button" class="btn btn-danger w-100">Cancelar</button>
