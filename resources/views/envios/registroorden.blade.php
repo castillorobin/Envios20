@@ -959,7 +959,7 @@
 
                                     <!--end::Row-->
 
-                                    <button type="button" class="btn btn-primary w-100  mb-3" id="kt_invoice_submit_button"><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3" disabled></span></i> Guardar e imprimir
+                                    <button type="button" class="btn btn-primary w-100  mb-3" id="kt_invoice_submit_button" disabled><i class="ki-duotone ki-triangle fs-3"><span class="path1"></span><span class="path2"></span><span class="path3" disabled></span></i> Guardar e imprimir
                                     </button>
                                   
                                     <a href="/registro-orden">
