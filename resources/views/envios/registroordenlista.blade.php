@@ -59,9 +59,9 @@ function agregariva() {
     const totalfin = (total + coniva);
 
     $('#total1').text(totalfin.toFixed(2));
-    document.getElementById("total2").value = totalfin ;
-    $('#ivam').text(coniva(totalsin.toFixed(2)));
-    document.getElementById("iva2").value = coniva ;
+    document.getElementById("total2").value = totalfin.toFixed(2) ;
+    $('#ivam').text(coniva.toFixed(2));
+    document.getElementById("iva2").value = coniva.toFixed(2) ;
     //$('#siva').text("+$" + coniva);
     //checkbox.checked = false;
 
@@ -208,7 +208,7 @@ $(document).ready(function() {
      //const total = subtotal;               
      //$('#subto').text(total);
      //document.getElementById("cambio").value = total ;    
-     $('#cambio').val(total);
+     $('#cambio').val(total.toFixed(2));
 
                  });
 
@@ -225,7 +225,7 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
-         $('#total1').text(total(totalsin.toFixed(2)));
+         $('#total1').text(total.toFixed(2));
          document.getElementById("total2").value = total ; 
          document.getElementById("pre1").value = subtotal ;
 
@@ -242,7 +242,7 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
-         $('#total1').text(total(totalsin.toFixed(2)));
+         $('#total1').text(total.toFixed(2));
          document.getElementById("total2").value = total ;
          document.getElementById("pre2").value = subtotal ;
                    });
@@ -258,7 +258,7 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
-         $('#total1').text(total)(totalsin.toFixed(2));
+         $('#total1').text(total.toFixed(2));
          document.getElementById("total2").value = total ;
          document.getElementById("pre3").value = subtotal ;
 
@@ -275,7 +275,7 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
-         $('#total1').text(total)(totalsin.toFixed(2));
+         $('#total1').text(total.toFixed(2));
          document.getElementById("total2").value = total ;
          document.getElementById("pre4").value = subtotal ;
 
@@ -292,7 +292,7 @@ $(document).ready(function() {
          const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ;
          //const total = subtotal;               
          $('#subto').text(total);
-         $('#total1').text(total(totalsin.toFixed(2)));
+         $('#total1').text(total.toFixed(2));
          document.getElementById("total2").value = total ;
 
          document.getElementById("pre5").value = subtotal ;
@@ -310,8 +310,8 @@ $(document).ready(function() {
 
     const totalsin = total - descu ;
  
-    $('#total1').text(totalsin(totalsin.toFixed(2)));
-    document.getElementById("total2").value = totalsin ;
+    $('#total1').text(totalsin.toFixed(2));
+    document.getElementById("total2").value = totalsin.toFixed(2) ;
 
     });
 
