@@ -100,13 +100,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
             </tr>
             <tr >
                 <td style="text-align: left; border-bottom: 2px solid black;"> Guias</td>
-                <td style="border-bottom: 2px solid black;">0</td>
-                <td style="border-bottom: 2px solid black;">$0.00</td>
+                <td style="border-bottom: 2px solid black;">{{ $ticketact[0]->guias }}</td>
+                <td style="border-bottom: 2px solid black;">${{ $ticketact[0]->guias }}<</td>
             </tr>
             <tr >
                 <td></td>
-                <td>IVA</td>
-                <td >${{ $ticketact[0]->iva }}
+                <td>SUBTOTAL</td>
+                <td >${{ $ticketact[0]->persoi + $ticketact[0]->puntoi + $ticketact[0]->casili + $ticketact[0]->depari + $ticketact[0]->guias }}
+                 
+                </td>
+                
+            </tr>
+            <tr >
+                <td></td>
+                <td>DESCUENTO</td>
+                <td >${{ $ticketact[0]->descuento }}
                  
                 </td>
                 
@@ -117,8 +125,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 <td >${{ $ticketact[0]->total }}</td>
             </tr>
             <tr>
-                <td></td>
-                <td >ENTREGA EFECTIVO:</td>
+                
+                <td colspan="2" style="text-align: right;">ENTREGA EFECTIVO:</td>
                 <td >${{ $ticketact[0]->entrega }}</td>
             </tr>
             <tr>

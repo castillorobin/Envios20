@@ -28,6 +28,7 @@ return new class extends Migration
             $table->double('casili')->nullable();
             $table->double('depari')->nullable();
             $table->double('guiasi')->nullable();
+            $table->double('descuento')->nullable();
             $table->double('iva')->nullable();
             $table->double('total')->nullable();
             $table->string('metodo')->nullable();

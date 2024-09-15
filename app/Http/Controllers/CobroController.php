@@ -60,7 +60,7 @@ class CobroController extends Controller
         //$ticketid = $request->get('ticketid');
         $ticketid1 = Ticketc::where('codigo', $ticketnum)
         ->get();
-        $ticketid = $ticketid1[0]->id;
+        $ticketid = $ticketid1[0]->id; 
         //return ($ticketid);
 
         $cobroperso = Envio::where('ticketc', $ticketnum)
@@ -95,6 +95,9 @@ class CobroController extends Controller
         $ticketc->depari = $request->get('pre2');
         $ticketc->puntoi = $request->get('pre3');
         $ticketc->casili = $request->get('pre4');
+        $ticketc->guias = $request->get('pre5');
+        $ticketc->guiasi = $request->get('pre5');
+        $ticketc->descuento = $request->get('descuent');
         $ticketc->iva = $request->get('iva2');
         $ticketc->total = $request->get('total2');
         $ticketc->metodo = $request->get('metodo');
@@ -123,6 +126,7 @@ class CobroController extends Controller
 
     public function ticketcabeza(Request $request)
     {
+       
         $guia = $request->get('guia');
         $hayguia = Envio::where('guia', $guia)->exists();
         
@@ -300,12 +304,13 @@ class CobroController extends Controller
             
                     }
 
-        
+                    
 
     }
 
     public function ticketpartes(Request $request)
     {
+       
 
         $guia = $request->get('guia');
         $guia2 = $request->get('guia2');
@@ -488,30 +493,7 @@ class CobroController extends Controller
 
             
                     }
-/*
-        $cobroperso = Envio::where('ticketc', $codigo)
-        ->where('tipo', "Personalizado")
-        ->get();
-        $cobroperso = $cobroperso->count();
-
-        $cobroperdepa = Envio::where('ticketc', $codigo)
-        ->where('tipo', "Personalizado departamental")
-        ->get();
-        $cobroperdepa =  $cobroperdepa->count();
-
-        $cobropfijo = Envio::where('ticketc', $codigo)
-        ->where('tipo', "Punto fijo")
-        ->get();
-        $cobropfijo =  $cobropfijo->count();
-
-        $cobrocasi = Envio::where('ticketc', $codigo)
-        ->where('tipo', "Casillero")
-        ->get();
-        $cobrocasi =  $cobrocasi->count();
-
-
-        return view('envios.registroordenlista', compact('comercios', 'ticketactual', 'nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi'));
-*/
+                    return redirect()->back();
     }
 
  

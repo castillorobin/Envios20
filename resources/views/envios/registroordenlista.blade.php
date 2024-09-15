@@ -849,16 +849,17 @@ $(document).ready(function() {
             <input type="text" class="form-control form-control-solid text-end" name="cambio" id="cambio" placeholder="0" value="0" data-kt-element="price"/>
             <!--end::Label-->
 
-            <input type="text" class="form-control form-control-solid text-end" name="total2" id="total2" data-kt-element="price" hidden/>  
-            <input type="text" class="form-control form-control-solid text-end" name="iva2" id="iva2" data-kt-element="price" hidden/>  
+            <input type="text" class="form-control form-control-solid text-end" name="total2" id="total2" data-kt-element="price" />  
+            <input type="text" class="form-control form-control-solid text-end" name="iva2" id="iva2" data-kt-element="price" />  
 
-            <input type="text" class="form-control form-control-solid text-end" name="pre1" id="pre1" data-kt-element="price" hidden/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price" hidden/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price" hidden/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price" hidden/>
-            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" hidden/> 
-            <input type="text" class="form-control form-control-solid text-end" name="ticketnum" id="ticketnum" data-kt-element="price" value="{{$ticketactual[0]->codigo}}" hidden/> 
-            <input type="text" class="form-control form-control-solid text-end" name="ticketid" id="ticketid" data-kt-element="price" value="{{$ticketactual[0]->id}}" hidden/> 
+            <input type="text" class="form-control form-control-solid text-end" name="pre1" id="pre1" data-kt-element="price" value="{{$precio1}}" />
+            <input type="text" class="form-control form-control-solid text-end" name="pre2" id="pre2" data-kt-element="price" value="{{$precio2}}"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre3" id="pre3" data-kt-element="price" value="{{$precio3}}"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre4" id="pre4" data-kt-element="price" value="{{$precio4}}"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pre5" id="pre5" data-kt-element="price" value="{{$precio5}}"/> 
+        
+            <input type="text" class="form-control form-control-solid text-end" name="ticketnum" id="ticketnum" data-kt-element="price" value="{{$ticketactual[0]->codigo}}" > 
+            <input type="text" class="form-control form-control-solid text-end" name="ticketid" id="ticketid" data-kt-element="price" value="{{$ticketactual[0]->id}}" /> 
             <!--end::Select-->
         </div>
         <!--end::Input group-->
