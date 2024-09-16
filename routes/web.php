@@ -150,6 +150,7 @@ Route::get('cobro/ticket', [App\Http\Controllers\CobroController::class, 'ticket
 Route::get('cobro/ticketcabeza', [App\Http\Controllers\CobroController::class, 'ticketcabeza'] )->name('ticketcabeza') ;
 Route::get('cobro/ticketpartes', [App\Http\Controllers\CobroController::class, 'ticketpartes'] )->name('ticketpartes') ;
 Route::get('cobro/agregarcomercio', [App\Http\Controllers\CobroController::class, 'agregarcomercio'] )->name('agregarcomercio') ;
+Route::get('cobro/limpiando', [App\Http\Controllers\CobroController::class, 'limpiando'] )->name('limpiando') ;
 
 
 Route::get('cobro/imprimir', [App\Http\Controllers\CobroController::class, 'imprimir'] )->name('imprimirco') ;

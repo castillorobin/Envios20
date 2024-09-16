@@ -60,7 +60,7 @@
     };
 
     function quitariva() {
-
+ 
 
 
         const subtotal = parseFloat(document.getElementById('precio1').value);
@@ -944,7 +944,7 @@
                                     </select>
                                     <!--end::Label-->
 
-
+                                   
                                     <!--end::Select-->
                                 </div>
                                 <!--end::Input group-->

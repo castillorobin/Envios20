@@ -41,6 +41,30 @@ class CobroController extends Controller
      
         return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
+    
+    public function limpiando(Request $request)
+    {
+
+        //$ticket = Ticketc::where('codigo', $id)->get();
+        //$ticketid = $ticket[0]->id;
+
+       // Ticketc::find($ticketid)->delete();
+       $codigo = $request->get('codi');
+       $tipo = $request->get('tipo11');
+
+        $envios = Envio::where('ticketc', $codigo)
+        ->where('tipo', $tipo)
+        ->get();
+
+        foreach($envios as $envio){
+            $envioid = $envio->id;
+            Envio::find($envioid)->delete();
+        }
+
+        //return redirect()->back();
+
+    }
+
 
 
     public function imprimir(Request $request)
