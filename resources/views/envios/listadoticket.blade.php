@@ -178,10 +178,10 @@
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-100px"># de ticket</th>
                                                 <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-50px">local</th>
-                                                <th class="min-w-50px">Status</th>
-                                                <th class="min-w-50px">cantidad</th>
-                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Agencia</th>
+                                                <th class="min-w-50px">Cantidad</th>
+                                                <th class="min-w-50px">Descuento</th>
+                                                <th class="min-w-50px">Fecha y hora</th>
                                                 <th class="min-w-50px">Estado del pago</th>
                                             </tr>
                                         </thead>
@@ -192,10 +192,10 @@
                                                     #{{$ticket->codigo}}
                                                     </a></td>
                                                 <td>{{$ticket->comercio}}</td> 
-                                                <td></td>
-                                                <td>Envido</td>
+                                                <td>{{$ticket->direccion}}</td>
                                                 <td>{{$ticket->perso + $ticket->punto + $ticket->casil + $ticket->depar}}</td>
                                                 <td>${{$ticket->total}}</td>
+                                                <td>{{$ticket->created_at}}</td>
                                                 <td><span class="badge badge-warning">Pendiente</span>
                                                 </td>
                                             </tr>
