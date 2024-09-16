@@ -34,6 +34,7 @@
 
 
 <script>
+    
     function agregariva() {
 
 
@@ -915,7 +916,7 @@
                                 <div class="mb-10">
                                     <!--begin::Label-->
                                     <label class="form-label fw-bold fs-6 text-gray-700">Pago:</label><br>
-                                    <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price" />
+                                    <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price" onClick="this.select()">
                                     <!--end::Label-->
 
 
@@ -924,7 +925,7 @@
                                 <div class="mb-10">
                                     <!--begin::Label-->
                                     <label class="form-label fw-bold fs-6 text-gray-700">Cambio:</label><br>
-                                    <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price" />
+                                    <input type="text" class="form-control form-control-solid text-end" name="cambio" id="cambio" placeholder="0" value="0" data-kt-element="price" onClick="this.select()" />
                                     <!--end::Label-->
 
 
@@ -1179,6 +1180,8 @@
 
     </script>
     <script>
+       // $('#pago').val("");
+        //$('#cambio').val("");
         document.addEventListener("DOMContentLoaded", function() {
             // Evento para abrir el modal de agregar comercio cuando se hace clic en el enlace
             $('#openAgregarComerciosModal').on('click', function() {

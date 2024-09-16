@@ -843,7 +843,7 @@ $(document).ready(function() {
         <div class="mb-10">
             <!--begin::Label-->
             <label class="form-label fw-bold fs-6 text-gray-700">Pago:</label><br>
-            <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price"/>
+            <input type="text" class="form-control form-control-solid text-end" name="pago" id="pago" placeholder="0" value="0" data-kt-element="price" onClick="this.select()" />
             <!--end::Label-->
 
                 
@@ -852,7 +852,7 @@ $(document).ready(function() {
         <div class="mb-10">
             <!--begin::Label-->
             <label class="form-label fw-bold fs-6 text-gray-700">Cambio:</label><br>
-            <input type="text" class="form-control form-control-solid text-end" name="cambio" id="cambio" placeholder="0" value="0" data-kt-element="price"/>
+            <input type="text" class="form-control form-control-solid text-end" name="cambio" id="cambio" placeholder="0" value="0" data-kt-element="price" onClick="this.select()" />
             <!--end::Label-->
 
             <input type="text" class="form-control form-control-solid text-end" name="total2" id="total2" data-kt-element="price"  hidden/>  
