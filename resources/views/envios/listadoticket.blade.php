@@ -309,7 +309,7 @@ if (searchText == "") {
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> 
-                                                    <button class="edit" value="{{$ticket->codigo}}" id="kt_drawer_example_basic_button" >#{{$ticket->codigo}}</button>
+                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->codigo}}" id="kt_drawer_example_basic_button" >#{{$ticket->codigo}}</button>
                                                     
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
