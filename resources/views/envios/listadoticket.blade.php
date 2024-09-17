@@ -36,7 +36,24 @@
             padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
         }
+
+        .margen{
+            margin: 5px;
+        }
+        .margenint{
+            padding: 5px;
+        }
+        
+.columna{
+    width:350px;
+}
+.centrar{
+    
+    text-align: center;
+}
     </style>
+
+
 
 </head>
 
@@ -195,6 +212,18 @@ if (searchText == "") {
 
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
                                     </div>
+
+
+
+
+
+
+
+
+
+
+
+
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
@@ -279,9 +308,10 @@ if (searchText == "") {
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> <a href="/envios/detalleticket/{{$ticket->codigo}}" class="text-gray-900 text-hover-primary">
-                                                    #{{$ticket->codigo}}
-                                                    </a></td>
+                                                <td> 
+                                                <button id="kt_drawer_example_basic_button" class="btn btn-active-light-secondary">#{{$ticket->codigo}}</button>
+                                                    
+                                                    </td>
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->direccion}}</td>
                                                 <td>{{$ticket->perso + $ticket->punto + $ticket->casil + $ticket->depar}}</td>
@@ -314,6 +344,165 @@ if (searchText == "") {
             <!--end::Content-->
         </div>
         <!--end::Content wrapper-->
+
+
+
+
+
+
+
+        <!--begin::Ticket-->
+<div
+    id="kt_drawer_example_basic"
+
+    class="bg-white"
+    data-kt-drawer="true"
+    data-kt-drawer-activate="true"
+    data-kt-drawer-toggle="#kt_drawer_example_basic_button"
+    data-kt-drawer-close="#kt_drawer_example_basic_close"
+    data-kt-drawer-width="500px"
+>
+    
+
+
+
+
+<div style="width:100%; " class="text-center centrar">
+    <img src="/fotos/logo24.png" width="150px">
+    
+    <div class="margen "> <span>Expertos en paqueteria</span></div>
+
+    <div class="margenint " style="background-color: black; color:white; width:80%; margin-left:10%;">  <span style="background-color: black; color:white; width:100%;">Comprobante de cobro</span> </div>
+
+    <br>
+           <span>Centro Comercial Metrogaleria
+           local 3-9 <br> San Salvador </span>
+           <br>
+
+           <div style="margin-top:10px;" class="centrar">
+           <span >WWW.MELOEXPRESS.COM.SV</span></div>
+       <br>
+
+                        <div class="fecha centrar " style="font-weight: bolder;">
+   TICKET Nº 202401
+  
+   
+   </div>
+   <div style="text-align: left; margin-left:10%;">
+   Comercio: <span style="font-weight: bolder;">ModaSV</span> 
+   </div>
+   <hr style="margin-right:10%; margin-left:10%;">
+   
+   <div style="text-align: left; margin-right:10%; margin-left:10%;">
+   <span > Fecha: 16/09/2024 </span>
+   <span style="float:right; ">Hora: 10:30 pm.</span> 
+   </div>
+
+
+   <div class="centrar">
+<table class="centrar" style="margin-left:10%; width: 80%;">
+    <thead class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black;">
+        <tr>
+        <th style="width: 200px;">DESCRIPCION</th>
+        <TH>CANT</TH>
+        <TH>IMPORTE</TH>
+        </tr>
+
+        <tbody>
+            <tr>
+                <td style="text-align: left;">Personalizado</td>
+                <td>1</td>
+                <td>$10.2</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Punto fijo</td>
+                <td>2</td>
+                <td>$7.5</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Casillero</td>
+                <td>0</td>
+                <td>$0</td>
+            </tr>
+            <tr>
+                <td style="text-align: left;">Personalizado Departamental</td>
+                <td>2</td>
+                <td>$21.3</td>
+            </tr>
+            <tr >
+                <td style="text-align: left; border-bottom: 2px solid black;"> Guias</td>
+                <td style="border-bottom: 2px solid black;">5</td>
+                <td style="border-bottom: 2px solid black;">$5</td>
+            </tr>
+            <tr >
+                <td></td>
+                <td>SUBTOTAL</td>
+                <td >$30.2
+                 
+                </td>
+                
+            </tr>
+            <tr >
+                <td></td>
+                <td>DESCUENTO</td>
+                <td>$5
+                 
+                </td>
+                
+            </tr>
+            <tr>
+                <td></td>
+                <td style="font-weight: bolder;">TOTAL</td>
+                <td >$24.8</td>
+            </tr>
+            <tr>
+                
+                <td colspan="2" style="text-align: right;">ENTREGA EFECTIVO:</td>
+                <td >$35</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>CAMBIO:</td>
+                <td >$4.8</td>
+            </tr>
+        </tbody>
+
+    </thead>
+</table>
+
+
+   
+<br>
+<div>Le atendio: {{ Auth::user()->name }}</div>
+<hr>
+<div>¡¡GRACIAS POR PREFERIRNOS!!</div>
+<hr>
+<div style="padding-left: 125px;"> {!! DNS1D::getBarcodeHTML(202401 , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> 202401</span></div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+<!--end::Ticket-->
+
+
+
+
+
+
+
 
     </x-default-layout>
     <!--begin::Javascript-->
