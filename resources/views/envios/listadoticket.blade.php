@@ -40,6 +40,97 @@
 
 </head>
 
+<script>
+    function doSearch()
+
+{
+
+const tableReg = document.getElementById('tenvios');
+
+const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+let total = 0;
+
+
+
+// Recorremos todas las filas con contenido de la tabla
+
+for (let i = 1; i < tableReg.rows.length; i++) {
+
+    // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+    if (tableReg.rows[i].classList.contains("noSearch")) {
+
+        continue;
+
+    }
+
+
+
+    let found = false;
+
+    const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+    // Recorremos todas las celdas
+
+    for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+        const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+        // Buscamos el texto en el contenido de la celda
+
+        if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+            found = true;
+
+            total++;
+
+        }
+
+    }
+
+    if (found) {
+
+        tableReg.rows[i].style.display = '';
+
+    } else {
+
+       
+
+        tableReg.rows[i].style.display = 'none';
+
+    }
+
+}
+
+
+
+// mostramos las coincidencias
+
+const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+const td=lastTR.querySelector("td");
+
+lastTR.classList.remove("hide", "red");
+
+if (searchText == "") {
+
+    lastTR.classList.add("hide");
+
+} else if (total) {
+
+    td.innerHTML="";
+
+} else {
+
+    lastTR.classList.add("red");
+
+    td.innerHTML="";
+
+}
+
+}
+</script>
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
@@ -102,7 +193,7 @@
                                             <span class="path2"></span>
                                         </i>
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" />
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
