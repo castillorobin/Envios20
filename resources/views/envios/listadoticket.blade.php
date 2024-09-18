@@ -511,9 +511,9 @@ if (searchText == "") {
 <br>
 <p></p>
 
-<button type="button" class="btn btn-danger" data-kt-drawer-dismiss="true">Cerrar</button>
+<button type="button" class="btn btn-secondary" data-kt-drawer-dismiss="true">Cerrar</button>
 &nbsp; &nbsp;
-<button type="button" class="btn btn-success">Imprimir</button>
+<button type="button" class="btn btn-primary">Imprimir</button>
 
 
 
