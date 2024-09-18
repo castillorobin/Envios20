@@ -513,8 +513,9 @@ if (searchText == "") {
 
 <button type="button" class="btn btn-secondary" data-kt-drawer-dismiss="true">Cerrar</button>
 &nbsp; &nbsp;
-<button type="button" class="btn btn-primary">Imprimir</button>
-
+<a id="impri" target="_blank">
+<button type="button" class="btn btn-dark">Imprimir</button>
+</a>
 
 
 
@@ -592,7 +593,8 @@ if (searchText == "") {
            $('#camb').text(cambi);
            $('#cod2').text(cod);
           
-    
+           var ide = '/cobro/ticketlistado/'+cod ;
+		   document.getElementById("impri").href = ide;
     
             
     
