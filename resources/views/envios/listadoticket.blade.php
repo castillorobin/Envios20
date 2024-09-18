@@ -327,8 +327,16 @@ if (searchText == "") {
                                                     <span hidden id="pei{{ $ticket->codigo }}"> {{ $ticket->persoi }}</span>
                                                     <span hidden id="pun{{ $ticket->codigo }}"> {{ $ticket->punto }}</span>
                                                     <span hidden id="pui{{ $ticket->codigo }}"> {{ $ticket->puntoi }}</span>
-
-
+                                                    <span hidden id="cas{{ $ticket->codigo }}"> {{ $ticket->casil }}</span>
+                                                    <span hidden id="cai{{ $ticket->codigo }}"> {{ $ticket->casili }}</span>
+                                                    <span hidden id="dep{{ $ticket->codigo }}"> {{ $ticket->depar }}</span>
+                                                    <span hidden id="dei{{ $ticket->codigo }}"> {{ $ticket->depari }}</span>
+                                                    <span hidden id="gui{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="gii{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="sub{{ $ticket->codigo }}"> {{ $ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guias }}</span>
+                                                    <span hidden id="tot{{ $ticket->codigo }}"> {{ $ticket->total }}</span>
+                                                    <span hidden id="ent{{ $ticket->codigo }}"> {{ $ticket->entrega }}</span>
+                                                    <span hidden id="cam{{ $ticket->codigo }}"> {{ $ticket->cambio }}</span>
 
 
                                                 </td>
@@ -434,23 +442,23 @@ if (searchText == "") {
             </tr>
             <tr>
                 <td style="text-align: left;">Casillero</td>
-                <td>0</td>
-                <td>$0</td>
+                <td><label for="" id="casi"></label></td>
+                <td>$<label for="" id="caii"></label></td>
             </tr>
             <tr>
                 <td style="text-align: left;">Personalizado Departamental</td>
-                <td></td>
-                <td>$</td>
+                <td><label for="" id="depa"></label></td>
+                <td>$<label for="" id="depi"></label></td>
             </tr>
             <tr >
                 <td style="text-align: left; border-bottom: 2px solid black;"> Guias</td>
-                <td style="border-bottom: 2px solid black;"></td>
-                <td style="border-bottom: 2px solid black;">$</td>
+                <td style="border-bottom: 2px solid black;"><label for="" id="guia"></label></td>
+                <td style="border-bottom: 2px solid black;">$<label for="" id="guii"></label></td>
             </tr>
             <tr >
                 <td></td>
                 <td>SUBTOTAL</td>
-                <td >$
+                <td >$<label for="" id="subt"> </label>
                  
                 </td>
                 
@@ -466,17 +474,17 @@ if (searchText == "") {
             <tr>
                 <td></td>
                 <td style="font-weight: bolder;">TOTAL</td>
-                <td >$</td>
+                <td >$<label for="" id="tota"> </label></td>
             </tr>
             <tr>
                 
                 <td colspan="2" style="text-align: right;">ENTREGA EFECTIVO:</td>
-                <td >$</td>
+                <td >$<label for="" id="entr"> </label></td>
             </tr>
             <tr>
                 <td></td>
                 <td>CAMBIO:</td>
-                <td >$</td>
+                <td >$<label for="" id="camb"> </label></td>
             </tr>
         </tbody>
 
@@ -490,7 +498,7 @@ if (searchText == "") {
 <hr>
 <div>¡¡GRACIAS POR PREFERIRNOS!!</div>
 <hr>
-<div style="padding-left: 125px;"> {!! DNS1D::getBarcodeHTML(202401 , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> 202401</span></div>
+<div style="padding-left: 125px;"> {!! DNS1D::getBarcodeHTML(202401 , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> <label for="" id="cod2"> </label></span></div>
 
 
 
@@ -500,9 +508,12 @@ if (searchText == "") {
 </div>
 
 
+<br>
+<p></p>
 
-
-
+<button type="button" class="btn btn-danger" data-kt-drawer-dismiss="true">Cerrar</button>
+&nbsp; &nbsp;
+<button type="button" class="btn btn-success">Imprimir</button>
 
 
 
@@ -546,6 +557,16 @@ if (searchText == "") {
            var persi=$('#pei'+cod).text();
            var punto=$('#pun'+cod).text();
            var punti=$('#pui'+cod).text();
+           var casil=$('#cas'+cod).text();
+           var casill=$('#cai'+cod).text();
+           var depar=$('#dep'+cod).text();
+           var depai=$('#dei'+cod).text();
+           var guias=$('#gui'+cod).text();
+           var guiai=$('#gii'+cod).text();
+           var subto=$('#sub'+cod).text();
+           var total=$('#tot'+cod).text();
+           var entre=$('#ent'+cod).text();
+           var cambi=$('#cam'+cod).text();
             
     //alert("HOla");
             
@@ -559,6 +580,17 @@ if (searchText == "") {
            $('#peri').text(persi);
            $('#punt').text(punto);
            $('#puni').text(punti);
+           $('#casi').text(casil);
+           $('#caii').text(casill);
+           $('#depa').text(depar);
+           $('#depi').text(depai);
+           $('#guia').text(guias);
+           $('#guii').text(guiai);
+           $('#subt').text(subto);
+           $('#tota').text(total);
+           $('#entr').text(entre);
+           $('#camb').text(cambi);
+           $('#cod2').text(cod);
           
     
     
