@@ -309,7 +309,7 @@ if (searchText == "") {
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> 
-                                                <button id="kt_drawer_example_basic_button" class="btn btn-active-light-secondary">#{{$ticket->codigo}}</button>
+                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->codigo}}" id="kt_drawer_example_basic_button" >#{{$ticket->codigo}}</button>
                                                     
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
@@ -318,6 +318,27 @@ if (searchText == "") {
                                                 <td>${{$ticket->total}}</td>
                                                 <td>{{$ticket->created_at}}</td>
                                                 <td><span class="badge badge-warning">Pendiente</span>
+                                                    
+                                                    <span hidden id="id{{ $ticket->codigo }}"> {{ $ticket->id }}</span>
+                                                    <span hidden id="com{{ $ticket->codigo }}"> {{ $ticket->comercio }}</span>
+                                                    <span hidden id="fec{{ $ticket->codigo }}"> {{date('d/m/Y', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="hor{{ $ticket->codigo }}"> {{ date('H:i:s', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="per{{ $ticket->codigo }}"> {{ $ticket->perso }}</span>
+                                                    <span hidden id="pei{{ $ticket->codigo }}"> {{ $ticket->persoi }}</span>
+                                                    <span hidden id="pun{{ $ticket->codigo }}"> {{ $ticket->punto }}</span>
+                                                    <span hidden id="pui{{ $ticket->codigo }}"> {{ $ticket->puntoi }}</span>
+                                                    <span hidden id="cas{{ $ticket->codigo }}"> {{ $ticket->casil }}</span>
+                                                    <span hidden id="cai{{ $ticket->codigo }}"> {{ $ticket->casili }}</span>
+                                                    <span hidden id="dep{{ $ticket->codigo }}"> {{ $ticket->depar }}</span>
+                                                    <span hidden id="dei{{ $ticket->codigo }}"> {{ $ticket->depari }}</span>
+                                                    <span hidden id="gui{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="gii{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="sub{{ $ticket->codigo }}"> {{ $ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guias }}</span>
+                                                    <span hidden id="tot{{ $ticket->codigo }}"> {{ $ticket->total }}</span>
+                                                    <span hidden id="ent{{ $ticket->codigo }}"> {{ $ticket->entrega }}</span>
+                                                    <span hidden id="cam{{ $ticket->codigo }}"> {{ $ticket->cambio }}</span>
+
+
                                                 </td>
                                             </tr>
                                             @endforeach
@@ -384,18 +405,18 @@ if (searchText == "") {
        <br>
 
                         <div class="fecha centrar " style="font-weight: bolder;">
-   TICKET Nº 202401
+   TICKET Nº <label for="" id="codigo"></label>
   
    
    </div>
    <div style="text-align: left; margin-left:10%;">
-   Comercio: <span style="font-weight: bolder;">ModaSV</span> 
+   Comercio: <span style="font-weight: bolder;"><label for="" id="come"></label></span> 
    </div>
    <hr style="margin-right:10%; margin-left:10%;">
    
    <div style="text-align: left; margin-right:10%; margin-left:10%;">
-   <span > Fecha: 16/09/2024 </span>
-   <span style="float:right; ">Hora: 10:30 pm.</span> 
+   <span > Fecha: <label for="" id="fech"></label> </span>
+   <span style="float:right; ">Hora: <label for="" id="hora"></label></span> 
    </div>
 
 
@@ -411,33 +432,33 @@ if (searchText == "") {
         <tbody>
             <tr>
                 <td style="text-align: left;">Personalizado</td>
-                <td>1</td>
-                <td>$10.2</td>
+                <td><label for="" id="pers"></label></td>
+                <td>$<label for="" id="peri"></label></td>
             </tr>
             <tr>
                 <td style="text-align: left;">Punto fijo</td>
-                <td>2</td>
-                <td>$7.5</td>
+                <td><label for="" id="punt"></label></td>
+                <td>$<label for="" id="puni"></label></td>
             </tr>
             <tr>
                 <td style="text-align: left;">Casillero</td>
-                <td>0</td>
-                <td>$0</td>
+                <td><label for="" id="casi"></label></td>
+                <td>$<label for="" id="caii"></label></td>
             </tr>
             <tr>
                 <td style="text-align: left;">Personalizado Departamental</td>
-                <td>2</td>
-                <td>$21.3</td>
+                <td><label for="" id="depa"></label></td>
+                <td>$<label for="" id="depi"></label></td>
             </tr>
             <tr >
                 <td style="text-align: left; border-bottom: 2px solid black;"> Guias</td>
-                <td style="border-bottom: 2px solid black;">5</td>
-                <td style="border-bottom: 2px solid black;">$5</td>
+                <td style="border-bottom: 2px solid black;"><label for="" id="guia"></label></td>
+                <td style="border-bottom: 2px solid black;">$<label for="" id="guii"></label></td>
             </tr>
             <tr >
                 <td></td>
                 <td>SUBTOTAL</td>
-                <td >$30.2
+                <td >$<label for="" id="subt"> </label>
                  
                 </td>
                 
@@ -445,7 +466,7 @@ if (searchText == "") {
             <tr >
                 <td></td>
                 <td>DESCUENTO</td>
-                <td>$5
+                <td>$
                  
                 </td>
                 
@@ -453,17 +474,17 @@ if (searchText == "") {
             <tr>
                 <td></td>
                 <td style="font-weight: bolder;">TOTAL</td>
-                <td >$24.8</td>
+                <td >$<label for="" id="tota"> </label></td>
             </tr>
             <tr>
                 
                 <td colspan="2" style="text-align: right;">ENTREGA EFECTIVO:</td>
-                <td >$35</td>
+                <td >$<label for="" id="entr"> </label></td>
             </tr>
             <tr>
                 <td></td>
                 <td>CAMBIO:</td>
-                <td >$4.8</td>
+                <td >$<label for="" id="camb"> </label></td>
             </tr>
         </tbody>
 
@@ -477,7 +498,7 @@ if (searchText == "") {
 <hr>
 <div>¡¡GRACIAS POR PREFERIRNOS!!</div>
 <hr>
-<div style="padding-left: 125px;"> {!! DNS1D::getBarcodeHTML(202401 , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> 202401</span></div>
+<div style="padding-left: 125px;"> {!! DNS1D::getBarcodeHTML(202401 , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> <label for="" id="cod2"> </label></span></div>
 
 
 
@@ -487,10 +508,14 @@ if (searchText == "") {
 </div>
 
 
+<br>
+<p></p>
 
-
-
-
+<button type="button" class="btn btn-secondary" data-kt-drawer-dismiss="true">Cerrar</button>
+&nbsp; &nbsp;
+<a id="impri" target="_blank">
+<button type="button" class="btn btn-dark">Imprimir</button>
+</a>
 
 
 
@@ -513,6 +538,90 @@ if (searchText == "") {
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+
+
+
+    
+
+<script>
+       
+        
+    $(document).ready(function(){
+        $(document).on('click', '.edit', function(){
+           var cod=$(this).val();
+           var iden=$('#id'+cod).text();
+           var comer=$('#com'+cod).text();
+           var fecha=$('#fec'+cod).text();
+           var horas=$('#hor'+cod).text();
+           var perso=$('#per'+cod).text();
+           var persi=$('#pei'+cod).text();
+           var punto=$('#pun'+cod).text();
+           var punti=$('#pui'+cod).text();
+           var casil=$('#cas'+cod).text();
+           var casill=$('#cai'+cod).text();
+           var depar=$('#dep'+cod).text();
+           var depai=$('#dei'+cod).text();
+           var guias=$('#gui'+cod).text();
+           var guiai=$('#gii'+cod).text();
+           var subto=$('#sub'+cod).text();
+           var total=$('#tot'+cod).text();
+           var entre=$('#ent'+cod).text();
+           var cambi=$('#cam'+cod).text();
+            
+    //alert("HOla");
+            
+        
+            //$('#edit').modal('show');
+           $('#codigo').text(cod);
+           $('#come').text(comer);
+           $('#fech').text(fecha);
+           $('#hora').text(horas);
+           $('#pers').text(perso);
+           $('#peri').text(persi);
+           $('#punt').text(punto);
+           $('#puni').text(punti);
+           $('#casi').text(casil);
+           $('#caii').text(casill);
+           $('#depa').text(depar);
+           $('#depi').text(depai);
+           $('#guia').text(guias);
+           $('#guii').text(guiai);
+           $('#subt').text(subto);
+           $('#tota').text(total);
+           $('#entr').text(entre);
+           $('#camb').text(cambi);
+           $('#cod2').text(cod);
+          
+           var ide = '/cobro/ticketlistado/'+cod ;
+		   document.getElementById("impri").href = ide;
+    
+            
+    
+            //$('#impri a').prop("href", ide);
+            //$('.paginacion a').prop('href','http://nuevaUrl.com');
+    
+           // document.getElementById("impri").href = ide;
+        });
+    });
+     
+    
+    
+    
+    
+    
+    
+        </script>
+
+
+
+
+
+
+
+
+
+
 
 </body>
 <!--end::Body-->

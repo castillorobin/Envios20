@@ -151,7 +151,7 @@ Route::get('cobro/ticketcabeza', [App\Http\Controllers\CobroController::class, '
 Route::get('cobro/ticketpartes', [App\Http\Controllers\CobroController::class, 'ticketpartes'] )->name('ticketpartes') ;
 Route::get('cobro/agregarcomercio', [App\Http\Controllers\CobroController::class, 'agregarcomercio'] )->name('agregarcomercio') ;
 Route::get('cobro/limpiando', [App\Http\Controllers\CobroController::class, 'limpiando'] )->name('limpiando') ;
-
+Route::get('cobro/ticketlistado/{id}', [App\Http\Controllers\CobroController::class, 'ticketlistado'] )->name('ticketlistado') ;
 
 Route::get('cobro/imprimir', [App\Http\Controllers\CobroController::class, 'imprimir'] )->name('imprimirco') ;
 
@@ -168,6 +168,7 @@ Route::get('pago/conticket', [App\Http\Controllers\PagoController::class, 'conti
 Route::get('pago/filtrandonombre', [App\Http\Controllers\PagoController::class, 'filtrandonombre'] )->name('filtrandonombre') ;
 Route::get('enviosdeticket', [App\Http\Controllers\PagoController::class, 'enviosdeticket'] )->name('enviosdeticket') ;
 Route::get('enviosdeticketdatos', [App\Http\Controllers\PagoController::class, 'enviosdeticketdatos'] )->name('enviosdeticketdatos') ;
+
 
 
 //Administracion Tickets

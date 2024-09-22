@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
   printHTML(); 
 });
  </script>
-</head>
+</head> 
 <body>
 <style>
         .margen{
