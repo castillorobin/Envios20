@@ -103,6 +103,22 @@ class PagoController extends Controller
         //$comercios = Comercio::all(); 
         return view('envios.pagoslistaticket');
     }
+
+    public function enviosdeticket()
+    {
+       // $pedidos = Cobro::all();
+        //$comercios = Comercio::all(); 
+        return view('envios.enviosdeticket');
+    }
+
+    public function enviosdeticketdatos(Request $request)
+    {
+        $comercio = $request->get('ticket') ;
+
+        $pedidos = Envio::where('ticketc', $comercio)->get();
+
+        return view('envios.enviosdeticketdatos', compact('pedidos'));
+    }
  
    
 

@@ -166,6 +166,8 @@ Route::get('pago/connombre', [App\Http\Controllers\PagoController::class, 'conno
 Route::get('listapagosticket', [App\Http\Controllers\PagoController::class, 'listaticket'] )->name('listaticket') ;
 Route::get('pago/conticket', [App\Http\Controllers\PagoController::class, 'conticket'] )->name('conticket') ;
 Route::get('pago/filtrandonombre', [App\Http\Controllers\PagoController::class, 'filtrandonombre'] )->name('filtrandonombre') ;
+Route::get('enviosdeticket', [App\Http\Controllers\PagoController::class, 'enviosdeticket'] )->name('enviosdeticket') ;
+Route::get('enviosdeticketdatos', [App\Http\Controllers\PagoController::class, 'enviosdeticketdatos'] )->name('enviosdeticketdatos') ;
 
 
 //Administracion Tickets
