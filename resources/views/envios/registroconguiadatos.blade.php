@@ -290,7 +290,7 @@
                                         <label for="tipo_envio" style="padding-left: 25px;">Tipo de envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="estado_enviop" id="estado_enviop" value="Creado" readonly/>
+                                        <input type="text" class="form-control form-control-solid" name="estado_enviop" id="estado_enviop" readonly/>
                                         <label for="estado_enviop" style="padding-left: 25px;">Estado del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">

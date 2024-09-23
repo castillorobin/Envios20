@@ -262,6 +262,15 @@
 							<span class="menu-title">Registro con guia </span>
 						</a>
 					</div>
+
+					<div class="menu-item">
+						<a class="menu-link" href="/enviosdeticket">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Envios por ticket</span>
+						</a>
+					</div>
 					
 				</div>
 			</div>
@@ -347,14 +356,7 @@
 							<span class="menu-title">Listado de ticket</span>
 						</a>
 					</div>
-					<div class="menu-item">
-						<a class="menu-link" href="/enviosdeticket">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Envios por ticket</span>
-						</a>
-					</div>
+					
 				</div>
 			</div>
 

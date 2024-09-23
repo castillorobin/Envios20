@@ -115,9 +115,9 @@ class PagoController extends Controller
     {
         $comercio = $request->get('ticket') ;
 
-        $pedidos = Envio::where('ticketc', $comercio)->get();
+        $envios = Envio::where('ticketc', $comercio)->get();
 
-        return view('envios.enviosdeticketdatos', compact('pedidos'));
+        return view('envios.enviosdeticketdatos', compact('envios'));
     }
  
    

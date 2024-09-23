@@ -159,40 +159,67 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th># De guia</th>
-                                                <th>Comercio</th>
-                                                <th>Destinatario</th>
-                                                <th>Dirección </th>
-                                                <th class="text-center">Tipo de envío</th>
-                                                <th class="text-center">Estado del envío</th>
-                                                <th class="text-center">Fecha de entrega</th>
-                                                <th class="text-center">Estado del pago</th>
-                                                <th class="text-center">Precio del paquete</th>
-                                                <th class="text-center">Precio de envío</th>
-                                                <th>Total </th>
-                                                <th>Nota</th>
+                                                <th class="min-w-80px "># de guía</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-150px">Destinatario</th>
+                                                <th class="min-w-150px">Dirección</th>
+                                                <th class="min-w-150px">Fecha de entrega</th>
+                                                <th class="min-w-100px">Tipo de envío</th>
+                                                <th class="min-w-50px text-center">Cobro de envio</th>
+                                                <th class="min-w-50px text-center">Estado</th>
+                                                <th class="min-w-50px text-center">Sub estado</th>
+                                                <th class="min-w-50px text-center">Fecha estado</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Ruta</th>
+                                                <th class="min-w-100px text-center">Nota </th>
+                                                <th class="min-w-100px text-center">Nota de repartidor</th>
+                                                <th class="min-w-150px">Ubicación</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-                                        @foreach ($pedidos as $pedido)                                               
-                                           
-                                            <tr>
-                                        <td>{{$pedido->guia}}</td>
-                                                <td>{{$pedido->comercio}}</td>
-                                                <td>{{$pedido->destinatario}}</td>
-                                                <td>{{$pedido->direccion}}</td>
-                                                <td>{{$pedido->tipo}}</td>
-                                                <td>{{$pedido->estado}}</td>
-                                                <td>{{$pedido->fecha_entrega}}</td>
-                                                <td>{{$pedido->pago}}</td>
-                                                <td>{{$pedido->precio}}</td>
-                                                <td>{{$pedido->envio}}</td>
-                                                <td>{{$pedido->total}}</td>
-                                                <td>{{$pedido->nota}}</td>
-                                               
-                                                
-
-
+                                            @foreach ($envios as $index => $envio)
+                                            <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
+                                                <td>
+                                                    <a href="/envios/detalle" class="text-gray-900 text-hover-primary">
+                                                        {{ $envio->guia }}
+                                                    </a>
+                                                </td>
+                                                <td>{{ $envio->comercio }}</td>
+                                                <td>{{ $envio->destinatario }}</td>
+                                                <td>{{ $envio->direccion }}</td>
+                                                <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
+                                                <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
+                                                <td style="text-align: center;">
+                                                    @if( $envio->cobro == 'Pagado')
+                                                    <span class="badge badge-success">{{ $envio->cobro}}</span>
+                                                    @else
+                                                    <span class="badge badge-danger">{{ $envio->cobro }}</span>
+                                                    @endif
+                                                </td>
+                                                <td style="text-align: center;">
+                                                    @if( $envio->estado == 'No entregado')
+                                                    <span class="badge badge-danger">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Creado')
+                                                    <span class="badge badge-warning">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Entregado')
+                                                    <span class="badge badge-success">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'En ruta')
+                                                    <span class="badge badge-info">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Reprogramado')
+                                                    <span class="badge badge-dark">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Devuelto al comercio')
+                                                    <span class="badge badge-primary">{{ $envio->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-light">{{ $envio->estado }}</span>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center">{{ $envio->total }}</td>
+                                                <td style="text-align: center;">2</td>
+                                                <td  style="text-align: center;">{{ $envio->nota }}</td>
+                                                <td>no respondio</td>
+                                                <td>Santa ana, el salvador</td>
                                             </tr>
                                             @endforeach
                                         </tbody>

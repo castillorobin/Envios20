@@ -149,7 +149,7 @@
                                                 <th class="min-w-80px "># de guía</th>
                                                 <th class="min-w-50px">Comercio</th>
                                                 <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-150px">Dirección</th>
+                                                <th class="min-w-150px">Dirección</th> 
                                                 <th class="min-w-150px">Fecha de entrega</th>
                                                 <th class="min-w-100px">Tipo de envío</th>
                                                 <th class="min-w-50px text-center">Cobro de envio</th>

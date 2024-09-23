@@ -159,18 +159,21 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th># De guia</th>
-                                                <th>Comercio</th>
-                                                <th>Destinatario</th>
-                                                <th>Dirección </th>
-                                                <th class="text-center">Tipo de envío</th>
-                                                <th class="text-center">Estado del envío</th>
-                                                <th class="text-center">Fecha de entrega</th>
-                                                <th class="text-center">Estado del pago</th>
-                                                <th class="text-center">Precio del paquete</th>
-                                                <th class="text-center">Precio de envío</th>
-                                                <th>Total </th>
-                                                <th>Nota</th>
+                                                <th class="min-w-80px "># de guía</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-150px">Destinatario</th>
+                                                <th class="min-w-150px">Dirección</th>
+                                                <th class="min-w-150px">Fecha de entrega</th>
+                                                <th class="min-w-100px">Tipo de envío</th>
+                                                <th class="min-w-50px text-center">Cobro de envio</th>
+                                                <th class="min-w-50px text-center">Estado</th>
+                                                <th class="min-w-50px text-center">Sub estado</th>
+                                                <th class="min-w-50px text-center">Fecha estado</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Ruta</th>
+                                                <th class="min-w-100px text-center">Nota </th>
+                                                <th class="min-w-100px text-center">Nota de repartidor</th>
+                                                <th class="min-w-150px">Ubicación</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
@@ -183,6 +186,9 @@
                                             <td class="text-star"><span class="badge badge-light-success"></span></td>
                                             <td></td>
                                             <td class="text-star"><span class="badge badge-light-success"></span></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
                                             <td></td>
                                             <td></td>
                                             <td></td>
