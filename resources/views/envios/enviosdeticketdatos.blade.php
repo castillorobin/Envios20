@@ -27,7 +27,100 @@
         }
     </style>
 
+
 </head>
+
+<script>
+    function doSearch()
+
+{
+
+const tableReg = document.getElementById('shipping_table');
+
+const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+let total = 0;
+
+
+
+// Recorremos todas las filas con contenido de la tabla
+
+for (let i = 1; i < tableReg.rows.length; i++) {
+
+    // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+    if (tableReg.rows[i].classList.contains("noSearch")) {
+
+        continue;
+
+    }
+
+
+
+    let found = false;
+
+    const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+    // Recorremos todas las celdas
+
+    for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+        const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+        // Buscamos el texto en el contenido de la celda
+
+        if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+            found = true;
+
+            total++;
+
+        }
+
+    }
+
+    if (found) {
+
+        tableReg.rows[i].style.display = '';
+
+    } else {
+
+       
+
+        tableReg.rows[i].style.display = 'none';
+
+    }
+
+}
+
+
+
+// mostramos las coincidencias
+
+const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+const td=lastTR.querySelector("td");
+
+lastTR.classList.remove("hide", "red");
+
+if (searchText == "") {
+
+    lastTR.classList.add("hide");
+
+} else if (total) {
+
+    td.innerHTML="";
+
+} else {
+
+    lastTR.classList.add("red");
+
+    td.innerHTML="";
+
+}
+
+}
+</script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
@@ -90,7 +183,7 @@
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" onkeyup="doSearch()" />
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
@@ -156,7 +249,7 @@
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-80px "># de guía</th>
@@ -226,6 +319,12 @@
                                     </table>
 
                                 </div>
+                                <ul class="pagination">
+                                    <li style="margin-left:auto"></li> 
+                                    <li class="page-item previous disabled"><a href="#" class="page-link">Anterior</a></li>
+                                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                    <li class="page-item next"><a href="#" class="page-link">Siguiente</a></li>
+                                </ul>
                                 <br>
                                 <!--end::Table-->
                                 <div class="row justify-content-end">

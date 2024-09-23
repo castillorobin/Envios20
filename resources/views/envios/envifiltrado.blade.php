@@ -25,7 +25,7 @@
         .paginate_button {
             display: none;
         }
-
+ 
         .dataTables_length {
             display: none;
         }
