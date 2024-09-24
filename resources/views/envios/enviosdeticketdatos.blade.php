@@ -201,9 +201,14 @@ if (searchText == "") {
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
                                             <option></option>
-                                            <option value="Todos">Todos</option>
-                                            <option value="Alta">Alta</option>
-                                            <option value="Baja">Baja</option>
+                                            <option value="all">Todo</option>
+                                            <option value="Creado">Creado</option>
+                                            <option value="Creado">En ruta</option>
+                                            <option value="Entregado">Entregado</option>
+                                            <option value="No entregado">No entregado</option>
+                                            <option value="Reprogramado">Reprogramado</option>
+                                            <option value="Reenvio">Reenvio</option>
+                                            <option value="Devuelto al comercio">Devuelto al comercio</option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>
