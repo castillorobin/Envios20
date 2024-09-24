@@ -308,7 +308,7 @@ class EnvioController extends Controller
         $envio->precio = $request->get('precio');
         $envio->envio = $request->get('envio');
         $envio->total = $request->get('total'); 
-        $envio->estado = $request->get('estado_enviop');
+        $envio->estado = "Creado";
         $envio->pago = $request->get('estado_pago');
         $envio->punto = $request->get('punto');
         $envio->fecha_entrega = $request->get('fecha_entregap');

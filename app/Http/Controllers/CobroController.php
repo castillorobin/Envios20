@@ -179,6 +179,7 @@ class CobroController extends Controller
         $ticket->direccion = $request->get('direccion');
         $ticket->correo = $request->get('correo');
         $ticket->telefono = $request->get('telefono');
+        $envio->entrega = $request->get('direccion');
         $ticket->save();
 
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
@@ -199,7 +200,10 @@ class CobroController extends Controller
         $envio->guia = $request->get('guia');
         $envio->cobro = "Pendiente";
         $envio->ticketc = $codigo;
+        $envio->estado = "Recepcionado";
+        $envio->direccion = $request->get('direccion');
         $envio->comercio = $request->get('comercio');
+        $envio->entrega = $request->get('direccion');
         $envio->save();
             }
 
@@ -236,7 +240,10 @@ class CobroController extends Controller
             $envio->guia = $request->get('guia2');
             $envio->cobro = "Pagado";
             $envio->ticketc = $codigo;
+            $envio->estado = "Recepcionado";
+            $envio->direccion = $request->get('direccion');
             $envio->comercio = $request->get('comercio');
+            $envio->entrega = $request->get('direccion');
             $envio->save();
             }
 
@@ -274,7 +281,10 @@ class CobroController extends Controller
                 $envio->guia = $request->get('guia3');
                 $envio->cobro = "Pagado";
                 $envio->ticketc = $codigo;
+                $envio->estado = "Recepcionado";
+                $envio->direccion = $request->get('direccion');
                 $envio->comercio = $request->get('comercio');
+                $envio->entrega = $request->get('direccion');
                 $envio->save();
                 }
 
@@ -312,7 +322,10 @@ class CobroController extends Controller
                     $envio->guia = $request->get('guia4');
                     $envio->cobro = "Pagado";
                     $envio->ticketc = $codigo;
+                    $envio->estado = "Recepcionado";
+                    $envio->direccion = $request->get('direccion');
                     $envio->comercio = $request->get('comercio');
+                    $envio->entrega = $request->get('direccion');
                     $envio->save();
                 }
 
@@ -385,6 +398,8 @@ class CobroController extends Controller
         $envio->guia = $request->get('guia');
         $envio->cobro = "Pendiente";
         $envio->ticketc = $codigo;
+        $envio->estado = "Recepcionado";
+        $envio->direccion = $request->get('direccion');
         $envio->comercio = $request->get('comercio');
         $envio->entrega = $request->get('direccion');
         $envio->save();
@@ -424,6 +439,8 @@ class CobroController extends Controller
             $envio->guia = $request->get('guia2');
             $envio->cobro = "Pagado";
             $envio->ticketc = $codigo;
+            $envio->estado = "Recepcionado";
+            $envio->direccion = $request->get('direccion');
             $envio->comercio = $request->get('comercio');
             $envio->entrega = $request->get('direccion');
             $envio->save();
@@ -461,6 +478,8 @@ class CobroController extends Controller
                 $envio->guia = $request->get('guia3');
                 $envio->cobro = "Pagado";
                 $envio->ticketc = $codigo;
+                $envio->estado = "Recepcionado";
+                $envio->direccion = $request->get('direccion');
                 $envio->comercio = $request->get('comercio');
                 $envio->entrega = $request->get('direccion');
                 $envio->save();
@@ -500,6 +519,8 @@ class CobroController extends Controller
                     $envio->guia = $request->get('guia4');
                     $envio->cobro = "Pagado";
                     $envio->ticketc = $codigo;
+                    $envio->estado = "Recepcionado";
+                    $envio->direccion = $request->get('direccion');
                     $envio->comercio = $request->get('comercio');
                     $envio->entrega = $request->get('direccion');
                     $envio->save();

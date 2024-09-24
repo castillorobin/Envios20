@@ -309,10 +309,10 @@ if (searchText == "") {
                                                 <td class="text-center"></td>
                                                 <td class="text-center"></td>
                                                 <td class="text-center">{{ $envio->total }}</td>
-                                                <td style="text-align: center;">2</td>
+                                                <td style="text-align: center;"></td>
                                                 <td  style="text-align: center;">{{ $envio->nota }}</td>
-                                                <td>no respondio</td>
-                                                <td>Santa ana, el salvador</td>
+                                                <td></td>
+                                                <td></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
