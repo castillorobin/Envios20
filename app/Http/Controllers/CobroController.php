@@ -201,7 +201,7 @@ class CobroController extends Controller
         $envio->cobro = "Pendiente";
         $envio->ticketc = $codigo;
         $envio->estado = "Recepcionado";
-        //$envio->direccion = $request->get('direccion');
+        $envio->dircomercio = $request->get('direccion');
         $envio->comercio = $request->get('comercio');
         $envio->entrega = $request->get('direccion');
         $envio->save();
@@ -241,7 +241,7 @@ class CobroController extends Controller
             $envio->cobro = "Pagado";
             $envio->ticketc = $codigo;
             $envio->estado = "Recepcionado";
-           // $envio->direccion = $request->get('direccion');
+            $envio->dircomercio = $request->get('direccion');
             $envio->comercio = $request->get('comercio');
             $envio->entrega = $request->get('direccion');
             $envio->save();
@@ -282,7 +282,7 @@ class CobroController extends Controller
                 $envio->cobro = "Pagado";
                 $envio->ticketc = $codigo;
                 $envio->estado = "Recepcionado";
-                //$envio->direccion = $request->get('direccion');
+                $envio->dircomercio = $request->get('direccion');
                 $envio->comercio = $request->get('comercio');
                 $envio->entrega = $request->get('direccion');
                 $envio->save();
@@ -323,7 +323,7 @@ class CobroController extends Controller
                     $envio->cobro = "Pagado";
                     $envio->ticketc = $codigo;
                     $envio->estado = "Recepcionado";
-                    //$envio->direccion = $request->get('direccion');
+                    $envio->dircomercio = $request->get('direccion');
                     $envio->comercio = $request->get('comercio');
                     $envio->entrega = $request->get('direccion');
                     $envio->save();
@@ -399,7 +399,7 @@ class CobroController extends Controller
         $envio->cobro = "Pendiente";
         $envio->ticketc = $codigo;
         $envio->estado = "Recepcionado";
-       // $envio->direccion = $request->get('direccion');
+        $envio->dircomercio = $request->get('direccion');
         $envio->comercio = $request->get('comercio');
         $envio->entrega = $request->get('direccion');
         $envio->save();
@@ -440,7 +440,7 @@ class CobroController extends Controller
             $envio->cobro = "Pagado";
             $envio->ticketc = $codigo;
             $envio->estado = "Recepcionado";
-            //$envio->direccion = $request->get('direccion');
+            $envio->dircomercio = $request->get('direccion');
             $envio->comercio = $request->get('comercio');
             $envio->entrega = $request->get('direccion');
             $envio->save();
@@ -479,7 +479,7 @@ class CobroController extends Controller
                 $envio->cobro = "Pagado";
                 $envio->ticketc = $codigo;
                 $envio->estado = "Recepcionado";
-               // $envio->direccion = $request->get('direccion');
+                $envio->dircomercio = $request->get('direccion');
                 $envio->comercio = $request->get('comercio');
                 $envio->entrega = $request->get('direccion');
                 $envio->save();
@@ -520,7 +520,7 @@ class CobroController extends Controller
                     $envio->cobro = "Pagado";
                     $envio->ticketc = $codigo;
                     $envio->estado = "Recepcionado";
-                   // $envio->direccion = $request->get('direccion');
+                    $envio->dircomercio = $request->get('direccion');
                     $envio->comercio = $request->get('comercio');
                     $envio->entrega = $request->get('direccion');
                     $envio->save();

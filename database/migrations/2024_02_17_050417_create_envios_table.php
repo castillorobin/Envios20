@@ -18,11 +18,13 @@ return new class extends Migration
             $table->string('comercio');
             $table->string('destinatario')->nullable();
             $table->string('direccion')->nullable();
+            $table->string('dircomercio')->nullable();
             $table->string('telefono')->nullable();
             $table->string('cobro')->nullable();
             $table->double('precio')->nullable();
             $table->double('envio')->nullable();
             $table->double('total')->nullable();
+            $table->string('repartidor')->nullable();
             $table->string('estado')->nullable();
             $table->string('pago')->nullable();
             $table->string('tipo')->nullable();

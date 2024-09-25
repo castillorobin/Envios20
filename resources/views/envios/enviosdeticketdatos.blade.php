@@ -249,27 +249,30 @@ if (searchText == "") {
                                 </div>
                                 <!--end::Card toolbar-->
                             </div>
-                            <!--end::Card header-->
+                            <!--end::Card header       fs-8 -->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0">
+                            <div class="card-body pt-0 ">
                                 <!--begin::Table-->
-                                <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="shipping_table">
+                                <div class="table-responsive " >
+                                    <table  class="table align-middle table-row-dashed gy-5" style="font-size: 12px;" id="shipping_table">
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                            <tr class="text-start text-gray-400 fw-bold text-uppercase gs-0 ">
                                                 <th class="min-w-80px "># de guía</th>
-                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-100px">Comercio</th>
+                                                <th class="min-w-100px">Dirección Comercio</th>
                                                 <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-150px">Dirección</th>
+                                                <th class="min-w-150px">Dirección destinatario</th>
                                                 <th class="min-w-150px">Fecha de entrega</th>
                                                 <th class="min-w-100px">Tipo de envío</th>
                                                 <th class="min-w-50px text-center">Cobro de envio</th>
                                                 <th class="min-w-50px text-center">Estado</th>
+                                                <th class="min-w-100px text-center">Nota </th>
                                                 <th class="min-w-50px text-center">Sub estado</th>
                                                 <th class="min-w-50px text-center">Fecha estado</th>
                                                 <th class="min-w-50px">Total</th>
+                                                <th class="min-w-100px">Repartidor</th>
                                                 <th class="min-w-50px">Ruta</th>
-                                                <th class="min-w-100px text-center">Nota </th>
+                                                
                                                 <th class="min-w-100px text-center">Nota de repartidor</th>
                                                 <th class="min-w-150px">Ubicación</th>
                                             </tr>
@@ -283,6 +286,7 @@ if (searchText == "") {
                                                     </a>
                                                 </td>
                                                 <td>{{ $envio->comercio }}</td>
+                                                <td>{{ $envio->dircomercio }}</td>
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
                                                 <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
@@ -311,11 +315,13 @@ if (searchText == "") {
                                                     <span class="badge badge-light">{{ $envio->estado }}</span>
                                                     @endif
                                                 </td>
+                                                <td  style="text-align: center;">{{ $envio->nota }}</td>
                                                 <td class="text-center"></td>
                                                 <td class="text-center"></td>
                                                 <td class="text-center">{{ $envio->total }}</td>
+                                                <td style="text-align: center;">{{ $envio->repartidor }}</td>
                                                 <td style="text-align: center;"></td>
-                                                <td  style="text-align: center;">{{ $envio->nota }}</td>
+                                                
                                                 <td></td>
                                                 <td></td>
                                             </tr>
