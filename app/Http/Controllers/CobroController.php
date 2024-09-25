@@ -179,7 +179,7 @@ class CobroController extends Controller
         $ticket->direccion = $request->get('direccion');
         $ticket->correo = $request->get('correo');
         $ticket->telefono = $request->get('telefono');
-        $envio->entrega = $request->get('direccion');
+        $envio->direccion = $request->get('direccion');
         $ticket->save();
 
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
