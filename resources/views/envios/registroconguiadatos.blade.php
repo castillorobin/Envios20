@@ -35,7 +35,17 @@
         }
     </style>
     <script>
+
+
+
+
         $(document).ready(function() {
+            $("#fecha_entregap").flatpickr({
+    altInput: true,
+    altFormat: "F j, Y",
+    dateFormat: "Y-m-d",
+    mode: "range"
+});
             // Validación solo para el campo "Número de Guía" y permitir solo números
             $("#n_guia").focusout(function() {
                 var value = $(this).val();
@@ -248,21 +258,21 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-4">
-                                        <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" value="0" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="precio" id="precio" value="0" onClick="this.select()" />
                                         <label for="precio" style="padding-left: 25px;">Precio del paquete</label>
                                         <div id="precioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el paquete.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" value="0" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="envio" id="envio" value="0" onClick="this.select()" />
                                         <label for="envio" style="padding-left: 25px;">Precio del envío</label>
                                         <div id="envioValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un precio válido para el envío.
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" value="0" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" value="0" onClick="this.select()" />
                                         <label for="total" style="padding-left: 25px;">Total a pagar</label>
                                         <div id="totalValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un total válido a pagar.
@@ -271,7 +281,12 @@
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-6 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="cenvio" id="cenvio" value="{{$pedido[0]->cobro}}" />
+                                        
+
+                                        <select class="form-select form-select-solid" name="cenvio" id="cenvio" aria-label="Floating label select example" required>
+                                            <option value="Pendiente">Pendiente</option>
+                                            <option value="Pagado">Pagado</option>
+                                        </select>
                                         <label for="cenvio" style="padding-left: 25px;">Cobro del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-6 mb-4">
@@ -294,7 +309,7 @@
                                         <label for="estado_enviop" style="padding-left: 25px;">Estado del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="date" class="form-control form-control-solid" name="fecha_entregap" id="fecha_entregap" value="<?php echo date("Y-m-d");?>" />
+                                        <input class="form-control form-control-solid" name="fecha_entregap" id="fecha_entregap"  />
                                         <label for="fecha_entregap" style="padding-left: 25px;">Fecha de entrega</label>
                                         
                                     </div>
