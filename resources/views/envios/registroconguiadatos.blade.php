@@ -232,7 +232,7 @@
 
 
                                     <div class="form-floating col-lg-7 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="direccionp" id="direccionp" placeholder="Dirección" value="{{$pedido[0]->entrega}}" />
+                                        <input type="text" class="form-control form-control-solid" name="direccionp" id="direccionp" placeholder="Dirección" value="{{$pedido[0]->direccion}}" />
                                         <label for="direccionp" style="padding-left: 25px;">Dirección</label>
                                     </div>
 
