@@ -232,11 +232,12 @@
                                     @if ($pedido[0]->tipo == "Punto fijo" )
                                     <div class="form-floating col-lg-7 mb-4">
                                     <select class="form-select form-select-solid mi-selector" data-control="select2" name="direccionp" id="direccionp" >
-                                        <option value="">Buscar punto</option>
+                                        <option value=" "> </option>
                                         @foreach ($puntos as $punto)
                                         <option value="{{$punto->punto}}">{{$punto->punto}} </option>
                                         @endforeach
                                     </select>
+                                    <label for="direccionp" style="padding-left: 25px;">Buscar punto</label>
                                 </div>
                                     @else
 
@@ -284,6 +285,7 @@
                                         
 
                                         <select class="form-select form-select-solid" name="cenvio" id="cenvio" aria-label="Floating label select example" required>
+                                            <option value="{{$pedido[0]->cobro}}">{{$pedido[0]->cobro}}</option>
                                             <option value="Pendiente">Pendiente</option>
                                             <option value="Pagado">Pagado</option>
                                         </select>
@@ -309,7 +311,7 @@
                                         <label for="estado_enviop" style="padding-left: 25px;">Estado del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input class="form-control form-control-solid" name="fecha_entregap" id="fecha_entregap"  />
+                                        <input class="form-control form-control-solid" name="fecha_entregap" id=""  />
                                         <label for="fecha_entregap" style="padding-left: 25px;">Fecha de entrega</label>
                                         
                                     </div>
