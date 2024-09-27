@@ -40,12 +40,15 @@
 
 
         $(document).ready(function() {
+            $("#fecha_entregap").flatpickr();
+            /*
             $("#fecha_entregap").flatpickr({
     altInput: true,
     altFormat: "F j, Y",
     dateFormat: "Y-m-d",
     mode: "range"
 });
+*/
             // Validación solo para el campo "Número de Guía" y permitir solo números
             $("#n_guia").focusout(function() {
                 var value = $(this).val();
@@ -232,7 +235,7 @@
                                     @if ($pedido[0]->tipo == "Punto fijo" )
                                     <div class="form-floating col-lg-7 mb-4">
                                     <select class="form-select form-select-solid mi-selector" data-control="select2" name="direccionp" id="direccionp" >
-                                        <option value=" "> </option>
+                                       
                                         @foreach ($puntos as $punto)
                                         <option value="{{$punto->punto}}">{{$punto->punto}} </option>
                                         @endforeach
@@ -311,7 +314,7 @@
                                         <label for="estado_enviop" style="padding-left: 25px;">Estado del envío</label>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input class="form-control form-control-solid" name="fecha_entregap" id=""  />
+                                        <input class="form-control form-control-solid" name="fecha_entregap" id="fecha_entregap"  />
                                         <label for="fecha_entregap" style="padding-left: 25px;">Fecha de entrega</label>
                                         
                                     </div>
