@@ -119,6 +119,17 @@ class PagoController extends Controller
 
         return view('envios.enviosdeticketdatos', compact('envios'));
     }
+
+    public function enviosdeticketfiltro(Request $request)
+    {
+        $comercio = $request->get('ticketn') ;
+        $estado = $request->get('filtro') ;
+
+        $envios = Envio::where('ticketc', $comercio)
+        ->where('estado', $estado)->get();
+
+        return view('envios.enviosdeticketdatos', compact('envios'));
+    }
  
    
 
@@ -189,7 +200,7 @@ class PagoController extends Controller
     } 
 
     public function conticket(Request $request)
-    {
+    { 
        // $pedidos = Cobro::all();
        $comercio = $request->get('ticket') ;
 

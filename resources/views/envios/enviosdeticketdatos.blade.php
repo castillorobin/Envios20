@@ -157,6 +157,8 @@ if (searchText == "") {
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
                             <div class="col-md-3 m-2 mb-4">
                                 <input type="text" class="form-control form-control-solid" placeholder="Ingrese # ticket" name="ticket" id="ticket" />
+
+                                
                             </div> 
                             <div class="col-md-auto align-self-center mb-3">
                                 <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
@@ -197,9 +199,14 @@ if (searchText == "") {
                                     
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
+                                    <form action="enviosdeticketfiltro" id="kt_invoice_form" method="POST"> 
+                                        @csrf
+                                        @method('GET')
+                                    <div class="row w-350px">
+                                       
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
+                                        <div class="col-md-7 align-self-center mb-3">
+                                        <select class="form-select form-select-solid" data-control="select2" name="filtro" id="filtro" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
                                             <option></option>
                                             <option value="all">Todo</option>
                                             <option value="Creado">Creado</option>
@@ -210,7 +217,14 @@ if (searchText == "") {
                                             <option value="Reenvio">Reenvio</option>
                                             <option value="Devuelto al comercio">Devuelto al comercio</option>
                                         </select>
+                                        
+                                        <input type="text" value="{{ $envios[0]->ticketc }}" name="ticketn" id="ticketn" hidden>
+                                    </div>
                                         <!--end::Select2-->
+                                        <div class="col-md-auto align-self-center mb-3">
+                                            <button type="submit" class="btn btn-primary btn-kg">Filtrar</button>
+                                        </div>
+                                    </form>
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
