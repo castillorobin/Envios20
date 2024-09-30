@@ -33,7 +33,8 @@
         .precio-moneda.is-valid+label {
             color: #28a745;
         }
-    </style>
+     
+            </style>
     <script>
 
 
@@ -161,7 +162,11 @@
             });
         });
     </script>
-
+<style>
+       .select2-container .select2-selection--single {
+  height: 50px;
+}
+</style>
     <div class="app-content flex-column-fluid">
         <div class="app-container container-xxl">
             <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-4">
@@ -233,14 +238,15 @@
                                 <div class="row my-4 mx-4">
 
                                     @if ($pedido[0]->tipo == "Punto fijo" )
-                                    <div class="form-floating col-lg-7 mb-4">
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="direccionp" id="direccionp" >
-                                        <option value=""> </option>
+                                    <div class="form-floating col-lg-7 mb-4" style="height: 50px;" >
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="direccionp" id="direccionp"  >
+                                        <option value="" style="height: 50px;"> </option>
                                         @foreach ($puntos as $punto)
                                         <option value="{{$punto->punto}}">{{$punto->punto}} </option>
                                         @endforeach
                                     </select>
-                                    <label for="direccionp" style="padding-left: 25px;">Buscar punto</label>
+                                    <label for="direccionp" style="padding-left: 25px; height: 50px;">Buscar punto</label>
+                                    <br>
                                 </div>
                                     @else
 
