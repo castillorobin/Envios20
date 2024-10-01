@@ -135,9 +135,23 @@ class EnvioController extends Controller
         $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
        //return ($fechacam);
 
-       $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+       
 
+       
+
+       if($estado != "todo")
+       {
+       // $envios = $envios->intersect(Envio::whereIn('estado', "Creado")->get());    
+       $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+        ->where('estado', $estado)
        ->get();
+
+       }else{
+        $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+
+        ->get();
+ 
+        }
 
        //$comercios = Comercio::all(); 
        //$comercioset = Comercio::where('comercio', $comerset)->get();

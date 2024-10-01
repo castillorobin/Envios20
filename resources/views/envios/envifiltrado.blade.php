@@ -216,11 +216,11 @@ if (searchText == "") {
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
-                                            <option></option>
-                                            <option value="all">Todo</option>
+                                        <select class="form-select form-select-solid" data-control="select2" name="estado"  data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
+                                            
+                                            <option value="todo">Todo</option>
                                             <option value="Creado">Creado</option>
-                                            <option value="Creado">En ruta</option>
+                                            <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
                                             <option value="No entregado">No entregado</option>
                                             <option value="Reprogramado">Reprogramado</option>
