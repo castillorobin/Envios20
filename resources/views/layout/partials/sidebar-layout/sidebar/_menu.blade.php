@@ -251,9 +251,19 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Lista de ordenes </span>
+							<span class="menu-title">Búsqueda manual </span>
 						</a>
 					</div>
+
+					<div class="menu-item">
+						<a class="menu-link" href="/enviosdeticket">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Búsqueda por ticket</span>
+						</a>
+					</div>
+
 					<div class="menu-item">
 						<a class="menu-link" href="/envios/registroconguia">
 							<span class="menu-bullet">
@@ -263,14 +273,7 @@
 						</a>
 					</div>
 
-					<div class="menu-item">
-						<a class="menu-link" href="/enviosdeticket">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Envios por ticket</span>
-						</a>
-					</div>
+					
 					
 				</div>
 			</div>
