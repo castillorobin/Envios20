@@ -267,7 +267,7 @@ if (searchText == "") {
                             <!--begin::Card body-->
                             <div class="card-body pt-0 ">
                                 <!--begin::Table-->
-                                <div class="table-responsive " >
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                     <table  class="table align-middle table-row-dashed gy-5" style="font-size: 12px;" id="shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold text-uppercase gs-0 ">
