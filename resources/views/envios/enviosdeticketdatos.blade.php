@@ -210,7 +210,7 @@ if (searchText == "") {
                                             <option></option>
                                             <option value="all">Todo</option>
                                             <option value="Creado">Creado</option>
-                                            <option value="Creado">En ruta</option>
+                                            <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
                                             <option value="No entregado">No entregado</option>
                                             <option value="Reprogramado">Reprogramado</option>

@@ -128,10 +128,20 @@ class PagoController extends Controller
         $envios = Envio::where('ticketc', $comercio)
         ->where('estado', $estado)->get();
 
-        return view('envios.enviosdeticketdatos', compact('envios'));
+        $enviop = Envio::where('ticketc', $comercio)
+        ->where('estado', $estado)->exists();
+
+        if($enviop == 0){
+            return view('envios.enviosdeticket');
+
+        }else{
+            return view('envios.enviosdeticketdatos', compact('envios'));
+        }
+
+        
     }
  
-   
+    
 
     public function filtrandonombre(Request $request)
     {
