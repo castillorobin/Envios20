@@ -106,7 +106,7 @@
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
+                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" disabled>
                                             <option></option>
                                             <option value="Todos">Todos</option>
                                             <option value="Alta">Alta</option>
@@ -116,38 +116,7 @@
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                        <i class="ki-duotone ki-exit-up fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>Exportar Reporte</button>
-                                    <!--begin::Menu-->
-                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    <!--end::Menu-->
-                                    <!--end::Export dropdown-->
+                                    
                                 </div>
                                 <!--end::Card toolbar-->
                             </div>
@@ -156,7 +125,7 @@
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-80px "># de guía</th>
@@ -204,7 +173,38 @@
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        
+                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                            <i class="ki-duotone ki-exit-up fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>Exportar Reporte</button>
+                                        <!--begin::Menu-->
+                                        <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                                            <!--begin::Menu item
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
+                                            </div>
+                                            -->
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
+                                            </div>
+                                            -->
+                                            <!--end::Menu item-->
+                                            <!--begin::Menu item-->
+                                            <div class="menu-item px-3">
+                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
+                                            </div>
+                                            <!--end::Menu item-->
+                                        </div>
+                                        <!--end::Menu-->
+                                        <!--end::Export dropdown-->
                                     </div>
                                 </div>
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">

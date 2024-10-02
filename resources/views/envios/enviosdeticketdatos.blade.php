@@ -202,7 +202,7 @@ if (searchText == "") {
                                     <form action="enviosdeticketfiltro" id="kt_invoice_form" method="POST"> 
                                         @csrf
                                         @method('GET')
-                                    <div class="row w-350px">
+                                    <div class="row w-550px">
                                        
                                         <!--begin::Select2-->
                                         <div class="col-md-7 align-self-center mb-3">
@@ -218,13 +218,17 @@ if (searchText == "") {
                                             <option value="Devuelto al comercio">Devuelto al comercio</option>
                                         </select>
                                         
-                                        <input type="text" value="{{ $envios[0]->ticketc }}" name="ticketn" id="ticketn" hidden>
+                                        <input type="text" value="{{ $comercio }}" name="ticketn" id="ticketn" hidden>
                                     </div>
                                         <!--end::Select2-->
                                         <div class="col-md-auto align-self-center mb-3">
                                             <button type="submit" class="btn btn-primary btn-kg">Filtrar</button>
+                                        </form>
+                                        <a href="/envios/lista">
+                                            <button class="btn btn-danger" >Limpiar</button>
+                                        </a>
                                         </div>
-                                    </form>
+                                   
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->

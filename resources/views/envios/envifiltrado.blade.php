@@ -233,6 +233,9 @@ if (searchText == "") {
                                     <button type="submit" class="btn btn-primary" >Filtrar</button>
                                     <!--end::Export dropdown-->
                                 </form>
+                                <a href="/envios/lista">
+                                <button class="btn btn-danger" >Limpiar</button>
+                            </a>
                                 </div>
 
                                 <!--end::Card toolbar-->
