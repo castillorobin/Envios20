@@ -208,7 +208,7 @@ if (searchText == "") {
                                         <div class="col-md-7 align-self-center mb-3">
                                         <select class="form-select form-select-solid" data-control="select2" name="filtro" id="filtro" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
                                             <option></option>
-                                            <option value="all">Todo</option>
+                                            
                                             <option value="Creado">Creado</option>
                                             <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
@@ -216,6 +216,7 @@ if (searchText == "") {
                                             <option value="Reprogramado">Reprogramado</option>
                                             <option value="Reenvio">Reenvio</option>
                                             <option value="Devuelto al comercio">Devuelto al comercio</option>
+                                            <option value="Recepcionado">Recepcionado</option>
                                         </select>
                                         
                                         <input type="text" value="{{ $comercio }}" name="ticketn" id="ticketn" hidden>
@@ -224,8 +225,8 @@ if (searchText == "") {
                                         <div class="col-md-auto align-self-center mb-3">
                                             <button type="submit" class="btn btn-primary btn-kg">Filtrar</button>
                                         </form>
-                                        <a href="/envios/lista">
-                                            <button class="btn btn-danger" >Limpiar</button>
+                                        <a href="/envios/limpiarticket/{{ $comercio }}" class="btn btn-danger">
+                                            Limpiar
                                         </a>
                                         </div>
                                    

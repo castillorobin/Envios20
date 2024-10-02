@@ -226,6 +226,7 @@ if (searchText == "") {
                                             <option value="Reprogramado">Reprogramado</option>
                                             <option value="Reenvio">Reenvio</option>
                                             <option value="Devuelto al comercio">Devuelto al comercio</option>
+                                            <option value="Recepcionado">Recepcionado</option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>

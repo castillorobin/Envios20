@@ -120,6 +120,19 @@ class PagoController extends Controller
         return view('envios.enviosdeticketdatos', compact('envios', 'comercio'));
     }
 
+
+
+    public function limpiarticket($comercio)
+    {
+        //$comercio = $request->get('ticket') ;
+
+        $envios = Envio::where('ticketc', $comercio)->get();
+
+        return view('envios.enviosdeticketdatos', compact('envios', 'comercio'));
+    }
+
+
+
     public function enviosdeticketfiltro(Request $request)
     {
         $comercio = $request->get('ticketn') ;
