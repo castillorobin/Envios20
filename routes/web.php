@@ -184,6 +184,7 @@ Route::get('/envios/filtrandoenvios', [App\Http\Controllers\EnvioController::cla
 Route::get('/envios/detalle/{id}', [App\Http\Controllers\EnvioController::class, 'detalle'] )->name('detalleenvioss') ;
 Route::get('/envios/editardetalle/{id}', [App\Http\Controllers\EnvioController::class, 'editardetalle'] )->name('editardetalle') ;
 Route::get('/envios/detalleeditando', [App\Http\Controllers\EnvioController::class, 'detalleeditando'] )->name('detalleeditando') ;
+Route::get('/envios/limpiarfiltro', [App\Http\Controllers\EnvioController::class, 'limpiarfiltro'] )->name('limpiarfiltro') ;
 /*
 envios/detalleeditando
 

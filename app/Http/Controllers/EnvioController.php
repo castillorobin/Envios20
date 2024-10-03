@@ -119,26 +119,17 @@ class EnvioController extends Controller
     }
     public function filtrandoenvios(Request $request)
     {
-        
-        //$pedidos = Pedido::whereDate('created_at', '=', Carbon::now()->format('Y-m-d'))->get();
-        //$repartidores = Repartidor::all();
-        //$vendedores = Vendedor::all()
-        //$comerset = $request->input('comerset');
         $rango = $request->input('rango');
-        $estado = $request->input('estado');
+        $estado = $request->input('estado'); 
+        $rangol = $request->input('rangolimp');
 
         $parte1 = Str::of($rango)->explode('-');
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
-        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+       
         $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
         $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
-       //return ($fechacam);
-
        
-
-       
-
        if($estado != "todo")
        {
        // $envios = $envios->intersect(Envio::whereIn('estado', "Creado")->get());    
@@ -147,18 +138,38 @@ class EnvioController extends Controller
        ->get();
 
        }else{
-        $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
-
-        ->get();
- 
+        $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])->get();
         }
 
-       //$comercios = Comercio::all(); 
-       //$comercioset = Comercio::where('comercio', $comerset)->get();
-       return view('envios.envifiltrado', compact( 'envios'));
-
+       return view('envios.envifiltrado', compact( 'envios', 'rangol'));
 
     } 
+
+    public function limpiarfiltro(Request $request)
+    {
+        $rangol = $request->input('rangol');
+        //$estado = $request->input('estado'); 
+        //$rangol = $request->input('rangolimp');
+
+        $parte1 = Str::of($rangol)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+       
+        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+       
+      
+       $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+       ->get();
+
+
+       return view('envios.envifiltrado', compact( 'envios', 'rangol'));
+
+    } 
+
+
+
+
     public function crearenvio()
     {
         $comercios = Comercio::all();

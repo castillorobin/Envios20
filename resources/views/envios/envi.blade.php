@@ -35,7 +35,30 @@
     </style>
 
 </head>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    $(document).ready(function() {
 
+        $("#kt_ecommerce_report_shipping_daterangepicker").change(function() {
+
+            const subtotal = $(this).val();
+         document.getElementById("rangolimp").value = subtotal ;
+            
+
+            
+
+        });
+
+  
+
+        
+    });
+
+    window.onload = function() { // también puede usar window.addEventListener('load', (event) => {
+       const subtotal = document.getElementById("kt_ecommerce_report_shipping_daterangepicker").value
+    document.getElementById("rangolimp").value = subtotal ;
+  };
+</script>
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
@@ -117,7 +140,7 @@
                                     <div class="w-150px">
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" data-control="select2" name="estado" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" >
-                                                                                        <option value="todo">Todo</option>
+                                            <option value="todo"> &nbsp;</option>                                        
                                             <option value="Creado">Creado</option>
                                             <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
@@ -129,6 +152,7 @@
                                         </select>
                                         <!--end::Select2-->
                                     </div>
+                                    <input type="text" id="rangolimp" name="rangolimp" hidden>
                                     <!--end::Filter-->
                                     <button type="submit" class="btn btn-primary" >Filtrar</button>
                                     <!--end::Export dropdown-->

@@ -217,8 +217,8 @@ if (searchText == "") {
                                     <div class="w-150px">
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" data-control="select2" name="estado"  data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
-                                            
-                                            <option value="todo">Todo</option>
+                                             
+                                            <option value="todo"> &nbsp;</option>
                                             <option value="Creado">Creado</option>
                                             <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
@@ -228,15 +228,22 @@ if (searchText == "") {
                                             <option value="Devuelto al comercio">Devuelto al comercio</option>
                                             <option value="Recepcionado">Recepcionado</option>
                                         </select>
+                                        <input type="text" id="rangolimp" name="rangolimp" value="{{ $rangol }}" hidden>
                                         <!--end::Select2-->
                                     </div>
+
                                     <!--end::Filter-->
                                     <button type="submit" class="btn btn-primary" >Filtrar</button>
                                     <!--end::Export dropdown-->
+                                    
                                 </form>
-                                <a href="/envios/lista">
-                                <button class="btn btn-danger" >Limpiar</button>
-                            </a>
+                                <form action="envios/limpiarfiltro" method="GET" id="myForm2" >
+                                    @method('GET') 
+                                    <input type="text" id="rangol" name="rangol" value="{{ $rangol }}" hidden>
+                                
+                                <button class="btn btn-danger" type="submit">Limpiar</button>
+                           
+                        </form>
                                 </div>
 
                                 <!--end::Card toolbar-->
