@@ -28,7 +28,7 @@ var KTAppEcommerceReportShipping = function () {
 
     // Init daterangepicker
     var initDaterangepicker = () => {
-        var start = moment().subtract(29, "days");
+        var start = moment();
         var end = moment();
         var input = $("#kt_ecommerce_report_shipping_daterangepicker");
 
