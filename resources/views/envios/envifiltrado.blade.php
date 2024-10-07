@@ -204,21 +204,21 @@ if (searchText == "") {
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
                                     <!--end::Export buttons-->
-                                    <form action="envios/filtrandoenvios" method="GET" id="myForm" >
+                                    <form action="envios/filtrandoenvios2" method="GET" id="myForm" >
                                         @method('GET') 
                                 </div>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" disabled/>
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" data-control="select2" name="estado"  data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" >
                                              
-                                            <option value="todo"> &nbsp;</option>
+                                            <option value="todo"> Todo</option>
                                             <option value="Creado">Creado</option>
                                             <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
@@ -237,13 +237,11 @@ if (searchText == "") {
                                     <!--end::Export dropdown-->
                                     
                                 </form>
-                                <form action="envios/limpiarfiltro" method="GET" id="myForm2" >
-                                    @method('GET') 
-                                    <input type="text" id="rangol" name="rangol" value="{{ $rangol }}" hidden>
                                 
+                                <a href="envios/lista">
                                 <button class="btn btn-danger" type="submit">Limpiar</button>
-                           
-                        </form>
+                                </a>
+                        
                                 </div>
 
                                 <!--end::Card toolbar-->

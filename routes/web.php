@@ -181,6 +181,7 @@ Route::get('/envios/puntoticket/{id}', [App\Http\Controllers\PagoController::cla
 Route::get('/envios/departamentalticket/{id}', [App\Http\Controllers\PagoController::class, 'departamentalticket'] )->name('departamentalticket') ;
 Route::get('/envios/casilleroticket/{id}', [App\Http\Controllers\PagoController::class, 'casilleroticket'] )->name('casilleroticket') ;
 Route::get('/envios/filtrandoenvios', [App\Http\Controllers\EnvioController::class, 'filtrandoenvios'] )->name('filtrandoenvioss') ;
+Route::get('/envios/filtrandoenvios2', [App\Http\Controllers\EnvioController::class, 'filtrandoenvios2'] )->name('filtrandoenvioss2') ;
 Route::get('/envios/detalle/{id}', [App\Http\Controllers\EnvioController::class, 'detalle'] )->name('detalleenvioss') ;
 Route::get('/envios/editardetalle/{id}', [App\Http\Controllers\EnvioController::class, 'editardetalle'] )->name('editardetalle') ;
 Route::get('/envios/detalleeditando', [App\Http\Controllers\EnvioController::class, 'detalleeditando'] )->name('detalleeditando') ;

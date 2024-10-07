@@ -139,7 +139,7 @@
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" name="estado" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" >
+                                        <select class="form-select form-select-solid" data-control="select2" name="estado" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" disabled>
                                             <option value="todo"> &nbsp;</option>                                        
                                             <option value="Creado">Creado</option>
                                             <option value="En ruta">En ruta</option>
@@ -157,9 +157,9 @@
                                     <button type="submit" class="btn btn-primary" >Filtrar</button>
                                     <!--end::Export dropdown-->
                                 </form>
-                                <a href="/envios/lista">
-                                    <button class="btn btn-danger" >Limpiar</button>
-                                </a>
+                                
+                                    <button class="btn btn-danger" disabled>Limpiar</button>
+                                
                                 </div>
 
                                 <!--end::Card toolbar-->
