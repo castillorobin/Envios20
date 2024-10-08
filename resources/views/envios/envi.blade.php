@@ -96,7 +96,7 @@
 
                         <!--begin::Actions-->
                         <div class="d-flex gap-2 gap-lg-3" style="float: right;">
-                            <a href="/envio/crear" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
+                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -137,21 +137,7 @@
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
-                                        <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" name="estado" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" disabled>
-                                            <option value="todo"> &nbsp;</option>                                        
-                                            <option value="Creado">Creado</option>
-                                            <option value="En ruta">En ruta</option>
-                                            <option value="Entregado">Entregado</option>
-                                            <option value="No entregado">No entregado</option>
-                                            <option value="Reprogramado">Reprogramado</option>
-                                            <option value="Reenvio">Reenvio</option>
-                                            <option value="Devuelto al comercio">Devuelto al comercio</option>
-                                            <option value="Recepcionado">Recepcionado</option>
-                                        </select>
-                                        <!--end::Select2-->
-                                    </div>
+                                    
                                     <input type="text" id="rangolimp" name="rangolimp" hidden>
                                     <!--end::Filter-->
                                     <button type="submit" class="btn btn-primary" >Filtrar</button>

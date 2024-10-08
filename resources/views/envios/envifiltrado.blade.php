@@ -171,7 +171,7 @@ if (searchText == "") {
 
                         <!--begin::Actions-->
                         <div class="d-flex gap-2 gap-lg-3" style="float: right;">
-                            <a href="/envio/crear" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
+                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -211,7 +211,7 @@ if (searchText == "") {
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" disabled/>
+                                    <input class="form-control form-control-solid w-100 mw-250px" value="{{ $rangol }}" name="rango" disabled/>
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
                                     <div class="w-150px">
