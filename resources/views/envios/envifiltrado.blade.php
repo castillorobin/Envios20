@@ -10,6 +10,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <!--end::Global Stylesheets Bundle-->
     <style> 
         .table th,
@@ -36,6 +37,26 @@
         #kt_ecommerce_report_shipping_table_next{
             display: none;
         }
+
+        #kt_ecommerce_report_shipping_table_next{
+            display: none;
+        }
+
+        .dt-length{
+            display: none;
+        }
+        .dt-search{
+            display: none;
+        }
+        
+
+        
+
+
+
+   
+		
+
     </style>
 
 
@@ -133,6 +154,10 @@ if (searchText == "") {
 
 }
 </script>
+
+
+
+
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
@@ -249,9 +274,12 @@ if (searchText == "") {
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
+                                <!-- Empty list item to push elements to the right  -->
 
+			 		
+			  	
                                 <!--begin::Table-->
-                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                <div class="table-responsive" >
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" style="font-size: 12px;" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
@@ -323,13 +351,16 @@ if (searchText == "") {
 
                                 </div>
                                 <!--end::Table-->
-<!-- Empty list item to push elements to the right  -->
-<ul class="pagination">
-    <li style="margin-left:auto"></li> 
-    <li class="page-item previous disabled"><a href="#" class="page-link">Anterior</a></li>
-    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-    <li class="page-item next"><a href="#" class="page-link">Siguiente</a></li>
-</ul>
+
+
+ 
+
+
+
+
+
+
+
                             </div>
                             <!--end::Table-->
                         </div>
@@ -354,48 +385,21 @@ if (searchText == "") {
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <!--end::Global Javascript Bundle-->
-    <!--begin::Vendors Javascript(used for this page only)-->
-    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <!--begin::Vendors Javascript(used for this page only)   <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script> -->
+    
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
     <script>
-         
-        $(document).ready(function () {
-    $('#kt_ecommerce_repo').DataTable(
-        {
-           
-            language: {
-        "decimal": "",
-        "emptyTable": "No hay información",
-        "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
-        "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
-        "infoFiltered": "(Filtrado de _MAX_ total entradas)",
-        "infoPostFix": "",
-        "thousands": ",",
-        "lengthMenu": "Mostrar _MENU_ Entradas",
-        "loadingRecords": "Cargando...",
-        "processing": "Procesando...",
-        "search": "Buscar:",
-        "zeroRecords": "Sin resultados encontrados",
-        "paginate": {
-            "first": "Primero",
-            "last": "Ultimo",
-            "next": "Siguiente",
-            "previous": "Anterior"
-        }
-    },
-
-        dom: 'tri',
-        
-        
-       
-       
-
-        } 
-    );
-}); 
+        import DataTable from 'datatables.net-dt';
+        import language from 'datatables.net-plugins/i18n/es-MX.mjs';
+ 
+ let table = new DataTable('#kt_ecommerce_report_shipping_table', {
+    language,
+ });
     </script>
 
 </body>
