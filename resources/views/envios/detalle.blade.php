@@ -238,18 +238,17 @@
                               
 
                                      
-                                <!--begin::Stepper-->
-                                <div class="stepper stepper-pills" id="kt_stepper_example_basic">
+                             <!--begin::Stepper-->
+                             <div class="stepper stepper-pills" id="kt_stepper_example_basic">
                                 <!--begin::Nav-->
-                                <div class="stepper-nav flex-center flex-wrap mb-10 ">
+                                <div class="stepper-nav flex-center w-100 ps-10">
                                     <!--begin::Step 1-->
-                                    <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                    <div class="stepper-item mx-8 my-4 current " data-kt-stepper-element="nav">
                                         <!--begin::Wrapper-->
-                                        <div class="stepper-wrapper d-flex align-items-center">
+                                        <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                             <!--begin::Icon-->
-                                            <div class="stepper-icon w-40px h-40px alert-success" >
-                                                <i class="stepper-check fas fa-check"></i>
-                                                <span class="stepper-number">1</span>
+                                            <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                              <i class="fas fa-check" style="color: white"></i>
                                             </div>
                                             <!--end::Icon-->
                                 
@@ -268,7 +267,7 @@
                                         <!--end::Wrapper-->
                                 
                                         <!--begin::Line-->
-                                        <div class="stepper-line h-40px"></div>
+                                        <div class="stepper-line w-40px"></div>
                                         <!--end::Line-->
                                     </div>
                                     <!--end::Step 1-->
@@ -276,9 +275,9 @@
                                     <!--begin::Step 2-->
                                     <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
                                         <!--begin::Wrapper-->
-                                        <div class="stepper-wrapper d-flex align-items-center">
+                                        <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                              <!--begin::Icon-->
-                                            <div class="stepper-icon w-40px h-40px">
+                                            <div class="stepper-icon w-40px h-40px" >
                                                 <i class="stepper-check fas fa-check"></i>
                                                 <span class="stepper-number" >2</span>
                                             </div>
@@ -307,7 +306,7 @@
                                     <!--begin::Step 3-->
                                     <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
                                         <!--begin::Wrapper-->
-                                        <div class="stepper-wrapper d-flex align-items-center" >
+                                        <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                              <!--begin::Icon-->
                                             <div class="stepper-icon w-40px h-40px" >
                                                 <i class="stepper-check fas fa-check"></i>
@@ -338,7 +337,7 @@
                                     <!--begin::Step 4-->
                                     <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
                                         <!--begin::Wrapper-->
-                                        <div class="stepper-wrapper d-flex align-items-center">
+                                        <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                              <!--begin::Icon-->
                                             <div class="stepper-icon w-40px h-40px" >
                                                 <i class="stepper-check fas fa-check"></i>
@@ -406,7 +405,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                          <div ><hr style="width: 70px;"></div>
+                                          <div class="stepper-line w-40px"></div>
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 1-->
@@ -437,7 +436,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                          <div ><hr style="width: 70px;"></div>
+                                          <div class="stepper-line h-40px"></div>
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 2-->
@@ -468,7 +467,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                          <div ><hr style="width: 70px;"></div>
+                                          <div class="stepper-line h-40px"></div>
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 3-->
@@ -499,7 +498,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                        
+                                          <div class="stepper-line h-40px"></div>
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 4-->
@@ -509,271 +508,267 @@
                               @endif
   
                               @if( $envio[0]->estado  == "En ruta")
-                               <!--begin::Stepper-->
-                               <div class="stepper stepper-pills" id="kt_stepper_example_basic">
-                                  <!--begin::Nav-->
-                                  <div class="stepper-nav flex-center flex-wrap mb-10">
-                                      <!--begin::Step 1-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
-                                              <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px" >
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number">1</span>
-                                              </div>
-                                              <!--end::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                  Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    Recepcionado
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 1-->
-                                  
-                                      <!--begin::Step 2-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
-                                               <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px">
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number" >2</span>
-                                              </div>
-                                              <!--begin::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                      Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    Creado
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 2-->
-                                  
-                                      <!--begin::Step 3-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center" >
-                                               <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px" >
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number" >3</span>
-                                              </div>
-                                              <!--begin::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                      Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    En Ruta
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 3-->
-                                  
-                                      <!--begin::Step 4-->
-                                      <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
-                                               <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px" >
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number" >4</span>
-                                              </div>
-                                              <!--begin::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                      Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    Entregado
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 4-->
-                                  </div>
-                                  <!--end::Nav-->
+                                  <!--begin::Stepper-->
+                                <div class="stepper stepper-pills" id="kt_stepper_example_basic">
+                                    <!--begin::Nav-->
+                                    <div class="stepper-nav flex-center w-100 ps-10">
+                                        <!--begin::Step 1-->
+                                        <div class="stepper-item mx-8 my-4 current " data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                <!--begin::Icon-->
+                                                <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--end::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                    Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Recepcionado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line w-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 1-->
+                                    
+                                        <!--begin::Step 2-->
+                                        <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Creado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 2-->
+                                    
+                                        <!--begin::Step 3-->
+                                        <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                 <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      En Ruta
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 3-->
+                                    
+                                        <!--begin::Step 4-->
+                                        <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                <div class="stepper-icon w-40px h-40px" >
+                                                    <i class="stepper-check fas fa-check"></i>
+                                                    <span class="stepper-number" >4</span>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Entregado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 4-->
+                                    </div>
+                                    <!--end::Nav-->
   
                               @endif
   
                               @if( $envio[0]->estado  == "Entregado")
                               
-                                  <!--begin::Stepper-->
-                               <div class="stepper stepper-pills" id="kt_stepper_example_basic">
-                                  <!--begin::Nav-->
-                                  <div class="stepper-nav flex-center flex-wrap mb-10">
-                                      <!--begin::Step 1-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
-                                              <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px" >
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number">1</span>
-                                              </div>
-                                              <!--end::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                  Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    Recepcionado
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 1-->
-                                  
-                                      <!--begin::Step 2-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
-                                               <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px">
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number" >2</span>
-                                              </div>
-                                              <!--begin::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                      Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    Creado
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 2-->
-                                  
-                                      <!--begin::Step 3-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center" >
-                                               <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px" >
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number" >3</span>
-                                              </div>
-                                              <!--begin::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                      Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    En Ruta
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 3-->
-                                  
-                                      <!--begin::Step 4-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                          <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
-                                               <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px" >
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number" >4</span>
-                                              </div>
-                                              <!--begin::Icon-->
-                                  
-                                              <!--begin::Label-->
-                                              <div class="stepper-label">
-                                                  <h3 class="stepper-title">
-                                                      Pedido
-                                                  </h3>
-                                  
-                                                  <div class="stepper-desc">
-                                                    Entregado
-                                                  </div>
-                                              </div>
-                                              <!--end::Label-->
-                                          </div>
-                                          <!--end::Wrapper-->
-                                  
-                                          <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
-                                          <!--end::Line-->
-                                      </div>
-                                      <!--end::Step 4-->
-                                  </div>
-                                  <!--end::Nav-->
-  
-  
+                                 <!--begin::Stepper-->
+                                <div class="stepper stepper-pills" id="kt_stepper_example_basic">
+                                    <!--begin::Nav-->
+                                    <div class="stepper-nav flex-center w-100 ps-10">
+                                        <!--begin::Step 1-->
+                                        <div class="stepper-item mx-8 my-4 current " data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                <!--begin::Icon-->
+                                                <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--end::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                    Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Recepcionado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line w-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 1-->
+                                    
+                                        <!--begin::Step 2-->
+                                        <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Creado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 2-->
+                                    
+                                        <!--begin::Step 3-->
+                                        <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                 <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      En Ruta
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 3-->
+                                    
+                                        <!--begin::Step 4-->
+                                        <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                 <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Entregado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 4-->
+                                    </div>
+                                    <!--end::Nav-->  
   
   
   
@@ -781,136 +776,135 @@
                               @endif
   
                               @if( $envio[0]->estado  == "No entregado")
-                              
-                                  <!--begin::Stepper-->
-                                  <div class="stepper stepper-pills" id="kt_stepper_example_basic">
-                                  <!--begin::Nav-->
-                                    <div class="stepper-nav flex-center flex-wrap mb-10">
-                                  <!--begin::Step 1-->
-                                  <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                      <!--begin::Wrapper-->
-                                      <div class="stepper-wrapper d-flex align-items-center">
-                                          <!--begin::Icon-->
-                                          <div class="stepper-icon w-40px h-40px" >
-                                              <i class="stepper-check fas fa-check"></i>
-                                              <span class="stepper-number">1</span>
-                                          </div>
-                                          <!--end::Icon-->
-                              
-                                          <!--begin::Label-->
-                                          <div class="stepper-label">
-                                              <h3 class="stepper-title">
-                                              Pedido
-                                              </h3>
-                              
-                                              <div class="stepper-desc">
-                                                Recepcionado
-                                              </div>
-                                          </div>
-                                          <!--end::Label-->
-                                      </div>
-                                      <!--end::Wrapper-->
-                              
-                                      <!--begin::Line-->
-                                      <div class="stepper-line h-40px"></div>
-                                      <!--end::Line-->
-                                  </div>
-                                  <!--end::Step 1-->
-                              
-                                  <!--begin::Step 2-->
-                                  <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                      <!--begin::Wrapper-->
-                                      <div class="stepper-wrapper d-flex align-items-center">
-                                           <!--begin::Icon-->
-                                          <div class="stepper-icon w-40px h-40px">
-                                              <i class="stepper-check fas fa-check"></i>
-                                              <span class="stepper-number" >2</span>
-                                          </div>
-                                          <!--begin::Icon-->
-                              
-                                          <!--begin::Label-->
-                                          <div class="stepper-label">
-                                              <h3 class="stepper-title">
-                                                  Pedido
-                                              </h3>
-                              
-                                              <div class="stepper-desc">
-                                                Creado
-                                              </div>
-                                          </div>
-                                          <!--end::Label-->
-                                      </div>
-                                      <!--end::Wrapper-->
-                              
-                                      <!--begin::Line-->
-                                      <div class="stepper-line h-40px"></div>
-                                      <!--end::Line-->
-                                  </div>
-                                  <!--end::Step 2-->
-                              
-                                  <!--begin::Step 3-->
-                                  <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                      <!--begin::Wrapper-->
-                                      <div class="stepper-wrapper d-flex align-items-center" >
-                                           <!--begin::Icon-->
-                                          <div class="stepper-icon w-40px h-40px" >
-                                              <i class="stepper-check fas fa-check"></i>
-                                              <span class="stepper-number" >3</span>
-                                          </div>
-                                          <!--begin::Icon-->
-                              
-                                          <!--begin::Label-->
-                                          <div class="stepper-label">
-                                              <h3 class="stepper-title">
-                                                  Pedido
-                                              </h3>
-                              
-                                              <div class="stepper-desc">
-                                                En Ruta
-                                              </div>
-                                          </div>
-                                          <!--end::Label-->
-                                      </div>
-                                      <!--end::Wrapper-->
-                              
-                                      <!--begin::Line-->
-                                      <div class="stepper-line h-40px"></div>
-                                      <!--end::Line-->
-                                  </div>
-                                  <!--end::Step 3-->
-                              
-                                  <!--begin::Step 4-->
-                                  <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
-                                      <!--begin::Wrapper-->
-                                      <div class="stepper-wrapper d-flex align-items-center">
-                                           <!--begin::Icon-->
-                                          <div class="stepper-icon w-40px h-40px" >
-                                              <i class="stepper-check fas fa-check"></i>
-                                              <span class="stepper-number" >4</span>
-                                          </div>
-                                          <!--begin::Icon-->
-                              
-                                          <!--begin::Label-->
-                                          <div class="stepper-label">
-                                              <h3 class="stepper-title">
-                                                  Pedido
-                                              </h3>
-                              
-                                              <div class="stepper-desc">
-                                                No entregado
-                                              </div>
-                                          </div>
-                                          <!--end::Label-->
-                                      </div>
-                                      <!--end::Wrapper-->
-                              
-                                      <!--begin::Line-->
-                                      <div class="stepper-line h-40px"></div>
-                                      <!--end::Line-->
-                                  </div>
-                                  <!--end::Step 4-->
-                              </div>
-                              <!--end::Nav-->
+                                    
+                                 <!--begin::Stepper-->
+                                <div class="stepper stepper-pills" id="kt_stepper_example_basic">
+                                    <!--begin::Nav-->
+                                    <div class="stepper-nav flex-center w-100 ps-10">
+                                        <!--begin::Step 1-->
+                                        <div class="stepper-item mx-8 my-4 current " data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                <!--begin::Icon-->
+                                                <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--end::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                    Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Recepcionado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line w-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 1-->
+                                    
+                                        <!--begin::Step 2-->
+                                        <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      Creado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 2-->
+                                    
+                                        <!--begin::Step 3-->
+                                        <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                 <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      En Ruta
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 3-->
+                                    
+                                        <!--begin::Step 4-->
+                                        <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
+                                            <!--begin::Wrapper-->
+                                            <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
+                                                 <!--begin::Icon-->
+                                                 <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                  
+                                                    <i class="fas fa-check" style="color: white"></i>
+                                                </div>
+                                                <!--begin::Icon-->
+                                    
+                                                <!--begin::Label-->
+                                                <div class="stepper-label">
+                                                    <h3 class="stepper-title">
+                                                        Pedido
+                                                    </h3>
+                                    
+                                                    <div class="stepper-desc">
+                                                      No entregado
+                                                    </div>
+                                                </div>
+                                                <!--end::Label-->
+                                            </div>
+                                            <!--end::Wrapper-->
+                                    
+                                            <!--begin::Line-->
+                                            <div class="stepper-line h-40px"></div>
+                                            <!--end::Line-->
+                                        </div>
+                                        <!--end::Step 4-->
+                                    </div>
+                                    <!--end::Nav-->  
 
                               @endif
   
