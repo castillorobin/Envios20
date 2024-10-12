@@ -228,17 +228,9 @@
                                 </div>
                             </div>
                             
-                            <div class="row">
-                                    <div class="card-title m-0 py-3 col-2" style="background-color: red:">
-                               
-                                <div class="alert alert-primary d-flex align-items-center text-center " role="alert" style="border-radius: 40px 40px 40px 40px; ">
-                                    <i class="fas fa-store-alt ps-6" style="color:steelblue;"></i>
-                                    <div style="font-size: 16px; text-center">
-                                    &nbsp; &nbsp;  {{ $envio[0]->estado }} 
-                                        </div>
-                                </div>
-                                </div>
-                                  <div class="card-title m-0 py-3 col-10">
+                            <div class="row p-0 m-0">
+                                  
+                                  <div class="card-title py-3 col-12 p-0 m-0"  >
 
 
                                     
@@ -249,7 +241,7 @@
                                 <!--begin::Stepper-->
                                 <div class="stepper stepper-pills" id="kt_stepper_example_basic">
                                 <!--begin::Nav-->
-                                <div class="stepper-nav flex-center flex-wrap mb-10">
+                                <div class="stepper-nav flex-center flex-wrap mb-10 ">
                                     <!--begin::Step 1-->
                                     <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
                                         <!--begin::Wrapper-->
@@ -388,15 +380,14 @@
                                 <!--begin::Stepper-->
                                 <div class="stepper stepper-pills" id="kt_stepper_example_basic">
                                   <!--begin::Nav-->
-                                  <div class="stepper-nav flex-center flex-wrap mb-10">
+                                  <div class="stepper-nav flex-center w-100 ps-10">
                                       <!--begin::Step 1-->
-                                      <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
+                                      <div class="stepper-item mx-8 my-4 current " data-kt-stepper-element="nav">
                                           <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
+                                          <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                               <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px" >
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number">1</span>
+                                              <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                <i class="fas fa-check" style="color: white"></i>
                                               </div>
                                               <!--end::Icon-->
                                   
@@ -415,7 +406,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
+                                          <div ><hr style="width: 70px;"></div>
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 1-->
@@ -423,11 +414,11 @@
                                       <!--begin::Step 2-->
                                       <div class="stepper-item mx-8 my-4 current" data-kt-stepper-element="nav">
                                           <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
+                                          <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                                <!--begin::Icon-->
-                                              <div class="stepper-icon w-40px h-40px">
-                                                  <i class="stepper-check fas fa-check"></i>
-                                                  <span class="stepper-number" >2</span>
+                                              <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                
+                                                  <i class="fas fa-check" style="color: white"></i>
                                               </div>
                                               <!--begin::Icon-->
                                   
@@ -446,7 +437,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
+                                          <div ><hr style="width: 70px;"></div>
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 2-->
@@ -454,7 +445,7 @@
                                       <!--begin::Step 3-->
                                       <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
                                           <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center" >
+                                          <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                                <!--begin::Icon-->
                                               <div class="stepper-icon w-40px h-40px" >
                                                   <i class="stepper-check fas fa-check"></i>
@@ -477,7 +468,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
+                                          <div ><hr style="width: 70px;"></div>
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 3-->
@@ -485,7 +476,7 @@
                                       <!--begin::Step 4-->
                                       <div class="stepper-item mx-8 my-4" data-kt-stepper-element="nav">
                                           <!--begin::Wrapper-->
-                                          <div class="stepper-wrapper d-flex align-items-center">
+                                          <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                                <!--begin::Icon-->
                                               <div class="stepper-icon w-40px h-40px" >
                                                   <i class="stepper-check fas fa-check"></i>
@@ -508,7 +499,7 @@
                                           <!--end::Wrapper-->
                                   
                                           <!--begin::Line-->
-                                          <div class="stepper-line h-40px"></div>
+                                        
                                           <!--end::Line-->
                                       </div>
                                       <!--end::Step 4-->
