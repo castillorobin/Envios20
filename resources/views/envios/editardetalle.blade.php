@@ -188,7 +188,7 @@
                                 <select name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar agencia">
                                     <option value="Creado">{{ $envio[0]->estado }}</option>
                                     <option value="Creado">Creado</option>
-                                            <option value="Creado">En ruta</option>
+                                            <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
                                             <option value="No entregado">No entregado</option>
                                             <option value="Reprogramado">Reprogramado</option>
