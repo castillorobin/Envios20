@@ -878,7 +878,7 @@
                                             <!--begin::Wrapper-->
                                             <div class="stepper-wrapper d-flex align-items-center" style="width:200px; ">
                                                  <!--begin::Icon-->
-                                                 <div class="stepper-icon w-40px h-40px" style="background-color: green;">
+                                                 <div class="stepper-icon w-40px h-40px" style="background-color: red;">
                                                   
                                                     <i class="fas fa-check" style="color: white"></i>
                                                 </div>
