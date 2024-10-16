@@ -48,11 +48,11 @@ class EntregaController extends Controller
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);
-        $ticketc->entrega = $actual;
+        $ticketc->entrega2 = $actual;
         
         $ticketc->save();
 
-        $pedidos = Envio::where('entrega', $actual)
+        $pedidos = Envio::where('entrega2', $actual)
         ->get();
 
         
@@ -69,11 +69,11 @@ class EntregaController extends Controller
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);
-        $ticketc->entrega = $actual;
+        $ticketc->entrega2 = $actual;
         
         $ticketc->save();
 
-        $pedidos = Envio::where('entrega', $actual)
+        $pedidos = Envio::where('entrega2', $actual)
         ->get();
 
         
@@ -110,7 +110,7 @@ class EntregaController extends Controller
         $pedido->cambio = $request->get('cambio');
         $pedido->save();
 
-        $envios = Envio::where('entrega', $identrega)
+        $envios = Envio::where('entrega2', $identrega)
         ->get();
 
 
