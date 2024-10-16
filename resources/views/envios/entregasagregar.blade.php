@@ -43,11 +43,26 @@ $(document).ready(function() {
 
                  });
 
+                 $("#entrega3").change(function() {
+                                                                   
+                     const pago =parseFloat($(this).val());
+                     const cambio = parseFloat(document.getElementById("tota").value); 
+                                                                    
+                                                                                                                           
+                    const total = pago - cambio ;
+                                                                      
+                    //$('#cambio').val(total.toFixed(2));
+                    document.getElementById("cambio").value = total.toFixed(2)                                          
+                                                                                 });
+
 
  
 
-                   });
+                 
+                });
     </script>
+    
+
 
 
 
@@ -202,7 +217,7 @@ $(document).ready(function() {
                                             <tbody>
                                                 <div class="form-floating col-lg-12 mb-4">
                                                     <div class="form-floating col-lg-12 mb-4">
-                                                        <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value=" " required readonly />
+                                                        <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
                                                         <label for="Cajero">Cajero</label>
                                                         <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                             Por favor ingrese el destinatario.
@@ -239,6 +254,19 @@ $(document).ready(function() {
                                                     <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
                                                     <label for="nota" style="padding-left: 25px;">Nota</label>
                                                 </div>
+
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
+                                                    <label for="entrega" style="padding-left: 25px;">Entrega</label>
+                                                    
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" placeholder="Cambio" />
+                                                    <label for="cambio" style="padding-left: 25px;">Cambio</label>
+                                                    
+                                                </div>
+
+
                                             </tbody>
                                             <!--end::Table body-->
                                         </table>
@@ -259,12 +287,12 @@ $(document).ready(function() {
                                             <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">{{ $total4 }}</span>
                                             <input type="text" id="suto" value="{{ $total4 }}" hidden>
                                             <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">0</span>
-                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">0</span>
+                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">{{ $total4 }}</span>
                                         </div>
                                         <!--end::Content-->
                                     </div>
                                     <input type="text" class="visually-hidden" name="descu" id="descu" >
-                                    <input type="text" class="visually-hidden" name="tota" id="tota" >
+                                    <input type="text" class="visually-hidden" name="tota" id="tota" value="{{ $total4 }}">
                                     <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
                                     
                                     <!--end::Summary-->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Entrega;
 use App\Models\Envio;
 use Illuminate\Http\Request;
+use PDF; 
 //use App\Models\Entrega;
 
 class EntregaController extends Controller
@@ -105,15 +106,20 @@ class EntregaController extends Controller
         $pedido->nota = $nota;
         $pedido->subtotal = $sutota;
         $pedido->total = $tota;
+        $pedido->entrega = $request->get('entrega3');
+        $pedido->cambio = $request->get('cambio');
         $pedido->save();
+
+        $envios = Envio::where('entrega', $identrega)
+        ->get();
 
 
         $ticketact = Entrega::where('id', $identrega)
         ->get();
 
-        $pdf = PDF::loadView('envios.ticketentrega', ['ticketact'=>$ticketact]);
+        $pdf = PDF::loadView('envios.ticketentrega', ['ticketact'=>$ticketact, 'envios'=>$envios]);
         //return view('envios.ticketpagos');
-        $customPaper = array(0,0,360,550);
+        $customPaper = array(0,0,360,750);
         //$pdf->setPaper('b6', 'portrait');
         $pdf->setPaper($customPaper );
         return $pdf->stream();

@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('nota')->nullable();
             $table->double('subtotal')->nullable();
             $table->double('total')->nullable();
+            $table->double('entrega')->nullable();
+            $table->double('cambio')->nullable();
             $table->timestamps();
         });
     }
