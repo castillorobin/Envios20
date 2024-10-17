@@ -78,6 +78,10 @@
                                                         </div>
                                                         <div class="col-auto">
                                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            @if($errors->any())
+                                                            <span style="font-size:18px; color: red;">{{$errors->first()}} </span>
+                                                            @endif
                                                         </div>
 
                                                     </form>

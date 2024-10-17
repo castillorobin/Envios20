@@ -15,7 +15,8 @@ class EntregaController extends Controller
      */
     public function index()
     {
-        return view('envios.entregas');
+        $nota = " "; 
+        return view('envios.entregas', compact('nota'));
     } 
     
     public function listadoentregas()
@@ -33,7 +34,7 @@ class EntregaController extends Controller
     {
         $guia = $request->get('guia') ;
 
-        //return ($guia);
+        
 
         $ticket = new Entrega();
         //$ticket->codigo = $request->get('codigo');
@@ -43,6 +44,17 @@ class EntregaController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+       
+        //$pedido = Envio::where('guia', $guia)->get();
+
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+           
+        }
        
 
         $envioid= $envio[0]->id ;
@@ -66,6 +78,18 @@ class EntregaController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+           
+        }
+       
+
+
+
+
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);
