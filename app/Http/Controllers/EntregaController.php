@@ -16,7 +16,7 @@ class EntregaController extends Controller
     public function index()
     {
         return view('envios.entregas');
-    }
+    } 
     
     public function listadoentregas()
     {
@@ -82,7 +82,7 @@ class EntregaController extends Controller
     public function limpiar($id)
     {
         $pedido = Envio::find($id);
-        $pedido->entrega = "";
+        $pedido->entrega2 = NULL;
         $pedido->save();
         return redirect()->back();
         //return view('envios.departamentalticket', compact('pedidos'));
