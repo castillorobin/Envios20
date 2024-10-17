@@ -304,8 +304,8 @@ $(document).ready(function() {
                                         <!--begin::Actions-->
                                         <button type="submit" class="btn btn-primary fs-1 w-100 py-3 px-3">Imprimir comprobante</button>
                                         <br> &nbsp; &nbsp;
-                                        <a href="/entregas">
-                                        <button class="btn btn-danger fs-1 w-100 py-3 px-3">Cancelar</button>
+                                        <a href="/entregas" class="btn btn-danger fs-1 w-100 py-3 px-3">
+                                        Cancelar
                                     </a>
                                         <!--end::Actions-->
                                    
