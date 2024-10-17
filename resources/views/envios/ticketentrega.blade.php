@@ -50,6 +50,7 @@
                         <div class="fecha centrar " style="font-weight: bolder;">
    TICKET Nº {{ $ticketact[0]->id }}
    <br>
+   <p></p>
    <hr>
    </div>
    
@@ -73,7 +74,7 @@
                     
                 
                 <tr>
-                    <td style="text-align: left;"><span style="font-weight: bolder;">{{ $envio->guia }} </span><br> {{ $envio->destinatario }} </td>
+                    <td style="text-align: left;"><span style="font-weight: bolder;">{{ $envio->guia }} </span><br><span style="font-size: 12px;"> {{ $envio->destinatario }} </span></td>
                     <td>${{ $envio->total }}</td>
                     
                 </tr>
@@ -130,7 +131,7 @@
 <hr>
 <div class="centrar">¡¡GRACIAS POR PREFERIRNOS!!</div>
 <hr>
-<div style="padding-left:125px;"> {!! DNS1D::getBarcodeHTML($ticketact[0]->id , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> {{ $ticketact[0]->id }} </span></div>
+<div style="padding-left:75px;"> {!! DNS1D::getBarcodeHTML($ticketact[0]->id , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> {{ $ticketact[0]->id }} </span></div>
 </div>
 
    
