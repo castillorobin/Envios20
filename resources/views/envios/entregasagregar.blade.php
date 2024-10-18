@@ -230,10 +230,9 @@ $(document).ready(function() {
                                                 <div class="form-floating col-lg-12 mb-4">
                                                     <select class="form-select form-select-solid" name="metodo" id="metodo" required>
                                                         <option value="Efectivo">Efectivo</option>
-                                                        <option value="Transferencia_empresa">Transferencia a la empresa</option>
+                                                        <option value="Efectivo">Transferencia a la empresa</option>
                                                         <option value="Transferencia_comercio">Transferencia al comercio</option>
-                                                        <option value="Tigo_money">Tigo money</option>
-                                                        <option value="Chivo">Chivo</option>
+                                                       
                                                     </select>
                                                     <label for="estado_envio">Metodo de pago</label>
                                                     <div id="estadoEnvioValidationFeedback" class="invalid-feedback">

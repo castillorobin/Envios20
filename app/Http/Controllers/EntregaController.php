@@ -134,8 +134,24 @@ class EntregaController extends Controller
         $pedido->cambio = $request->get('cambio');
         $pedido->save();
 
+
+
         $envios = Envio::where('entrega2', $identrega)
         ->get();
+
+        
+
+        foreach($envios as $envio){
+            $envioid = $envio->id;
+            if($metodo == "Efectivo"){
+                $envio->pago = "Por pagar";
+            }else{
+                $envio->pago = "Pagado";
+            }
+            $envio->save();
+            
+        }
+       
 
 
         $ticketact = Entrega::where('id', $identrega)
