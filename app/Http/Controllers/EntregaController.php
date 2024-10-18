@@ -15,8 +15,9 @@ class EntregaController extends Controller
      */
     public function index()
     {
-        return view('envios.entregas');
-    }
+        $nota = " "; 
+        return view('envios.entregas', compact('nota'));
+    } 
     
     public function listadoentregas()
     {
@@ -33,7 +34,7 @@ class EntregaController extends Controller
     {
         $guia = $request->get('guia') ;
 
-        //return ($guia);
+        
 
         $ticket = new Entrega();
         //$ticket->codigo = $request->get('codigo');
@@ -43,6 +44,17 @@ class EntregaController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+       
+        //$pedido = Envio::where('guia', $guia)->get();
+
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+           
+        }
        
 
         $envioid= $envio[0]->id ;
@@ -66,6 +78,18 @@ class EntregaController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+           
+        }
+       
+
+
+
+
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);
@@ -82,7 +106,7 @@ class EntregaController extends Controller
     public function limpiar($id)
     {
         $pedido = Envio::find($id);
-        $pedido->entrega = "";
+        $pedido->entrega2 = NULL;
         $pedido->save();
         return redirect()->back();
         //return view('envios.departamentalticket', compact('pedidos'));
@@ -110,8 +134,24 @@ class EntregaController extends Controller
         $pedido->cambio = $request->get('cambio');
         $pedido->save();
 
+
+
         $envios = Envio::where('entrega2', $identrega)
         ->get();
+
+        
+
+        foreach($envios as $envio){
+            $envioid = $envio->id;
+            if($metodo == "Efectivo"){
+                $envio->pago = "Por pagar";
+            }else{
+                $envio->pago = "Pagado";
+            }
+            $envio->save();
+            
+        }
+       
 
 
         $ticketact = Entrega::where('id', $identrega)
