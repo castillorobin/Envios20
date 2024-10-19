@@ -146,13 +146,19 @@ $(document).ready(function() {
                                                 <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                     <thead>
                                                         <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                            <th># DE GUÍA</th>
-                                                            <th>COMERCIO</th>
-                                                            <th class="text-center">DESTINATARIO</th>
-                                                            <th class="text-center">TIPO DE ENVÍO</th>
-                                                            <th class="text-center">TOTAL A PAGAR</th>
-                                                            <th class="text-center">NOTA</th>
-                                                            <th class="text-center">LIMPIAR</th>
+                                                        <th># De guia</th>
+                                                <th>Comercio</th>
+                                                <th>Destinatario</th>
+                                               
+                                                <th class="text-center">Tipo de envío</th>
+                                                <th class="text-center">Estado del envío</th>
+                                                
+                                                <th class="text-center">Estado del pago</th>
+                                                <th class="text-center">Precio del paquete</th>
+                                                <th class="text-center">Precio de envío</th>
+                                                <th>Total </th>
+                                                <th>Nota</th>
+                                                            <th class="text-center">Borrar</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -163,6 +169,10 @@ $(document).ready(function() {
                                                             <td><a href="#" class="text-gray-900 text-hover-primary">{{$pedido->comercio}}</a></td>
                                                             <td>{{$pedido->destinatario}}</td>
                                                             <td class="text-center"><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
+                                                            <td class="text-center">{{$pedido->estado}}</td>
+                                                            <td class="text-center">{{$pedido->pago}}</td>
+                                                            <td class="text-center">{{$pedido->precio}}</td>
+                                                            <td class="text-center">{{$pedido->envio}}</td>
                                                             <td class="text-center">{{$pedido->total}}</td>
                                                             <td class="text-center">{{$pedido->nota}}</td>
                                                             <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
@@ -259,7 +269,7 @@ $(document).ready(function() {
 
                                                 <div class="form-floating col-lg-12 mb-4">
                                                     <input type="text" class="form-control form-control-solid" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
-                                                    <label for="entrega" style="padding-left: 25px;">Entrega</label>
+                                                    <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
                                                     
                                                 </div>
                                                 <div class="form-floating col-lg-12 mb-4">
@@ -286,10 +296,10 @@ $(document).ready(function() {
                                         <!--end::Content-->
                                         <!--begin::Content-->
                                         <div class="fs-6 fw-bold text-white text-end">
-                                            <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">{{ $total4 }}</span>
+                                            <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">${{ $total4 }}</span>
                                             <input type="text" id="suto" value="{{ $total4 }}" hidden>
-                                            <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">0</span>
-                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">{{ $total4 }}</span>
+                                            <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0</span>
+                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">${{ $total4 }}</span>
                                         </div>
                                         <!--end::Content-->
                                     </div>

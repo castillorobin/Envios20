@@ -20,15 +20,15 @@
 </head>
 
 
-<body id="kt_body" class="">
+<body class="">
     <x-default-layout>
         <!--begin::Container-->
-        <div id="kt_content_container" class="d-flex flex-column-fluid align-items-start ">
+        <div style=" margin-top:-300px">
             <!--begin::Post-->
-            <div class="content flex-row-fluid" id="kt_content" >
-                <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 mb-5" >
-                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Entrega de paquetes </h1>
-                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+            <div >
+                <div >
+                    <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0 mt-1 pt-1">Entrega de paquetes </h1>
+                    <ul class="breadcrumb breadcrumb-separatorless fw-semibold my-0 pt-1">
                         <li class="breadcrumb-item text-muted">
                             <a href="/" class="text-muted text-hover-primary">Inicio</a>
                         </li>
@@ -99,12 +99,19 @@
                                                 <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                     <thead>
                                                         <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                            <th># DE GUÍA</th>
-                                                            <th>COMERCIO</th>
-                                                            <th class="text-center">DESTINATARIO</th>
-                                                            <th class="text-center">TIPO DE ENVÍO</th>
-                                                            <th class="text-center">TOTAL A PAGAR</th>
-                                                            <th class="text-center">BORRAR</th>
+                                                        <th># De guia</th>
+                                                <th>Comercio</th>
+                                                <th>Destinatario</th>
+                                               
+                                                <th class="text-center">Tipo de envío</th>
+                                                <th class="text-center">Estado del envío</th>
+                                                
+                                                <th class="text-center">Estado del pago</th>
+                                                <th class="text-center">Precio del paquete</th>
+                                                <th class="text-center">Precio de envío</th>
+                                                <th>Total </th>
+                                                <th>Nota</th>
+                                                            <th class="text-center">Borrar</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -114,8 +121,15 @@
                                                             <td></td>
                                                             <td class="text-center"><span class="badge badge-light-success"></span></td>
                                                             <td class="text-center"></td>
+                                                            <td class="text-center"></td>
+                                                            
+                                                            
+                                                            <td class="text-center"></td>
+                                                            <td class="text-center"></td>
+                                                            <td class="text-center"></td>
+                                                            <td class="text-center"></td>
                                                             <td style="text-align: center;">
-                                                                <button type="button" class="btn btn-danger p-2"><i class="fas fa-trash-alt"></i></button>
+                                                               
                                                             </td>
                                                         </tr>
 
@@ -154,53 +168,6 @@
     </x-default-layout>
 
 
-
-    <!--begin::Javascript-->
-    <script>
-        var hostUrl = "assets/";
-    </script>
-    <!--begin::Global Javascript Bundle(mandatory for all pages)-->
-    <script src="assets/plugins/global/plugins.bundle.js"></script>
-    <script src="assets/js/scripts.bundle.js"></script>
-    <!--end::Global Javascript Bundle-->
-    <!--begin::Vendors Javascript(used for this page only)-->
-    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
-    <!--end::Vendors Javascript-->
-    <script>
-        // Función para obtener la fecha y hora actual en El Salvador
-        function obtenerFechaHoraElSalvador() {
-            var ahora = new Date();
-            var timeZoneOffset = -6 * 60; // GMT-6 (El Salvador)
-            var offset = ahora.getTimezoneOffset();
-            ahora.setMinutes(ahora.getMinutes() - (offset - timeZoneOffset));
-            return ahora;
-        }
-
-        // Función para formatear la fecha
-        function formatearFecha(fecha) {
-            var meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];
-            var dia = fecha.getDate();
-            var mes = meses[fecha.getMonth()];
-            var año = fecha.getFullYear();
-            var horas = fecha.getHours();
-            var minutos = fecha.getMinutes();
-            var am_pm = horas >= 12 ? 'AM' : 'PM';
-            horas = horas % 12;
-            horas = horas ? horas : 12;
-            minutos = minutos < 10 ? '0' + minutos : minutos;
-            return dia + '/' + mes + '/' + año + ' ' + horas + ':' + minutos + ' ' + am_pm;
-        }
-
-        // Función para establecer la fecha y hora actual en el campo de fecha de entrega
-        function establecerFechaEntrega() {
-            var fechaHoraActual = obtenerFechaHoraElSalvador();
-            var fechaFormateada = formatearFecha(fechaHoraActual);
-            document.getElementById('fecha_entrega').value = fechaFormateada;
-        }
-
-        // Llamar a la función para establecer la fecha y hora actual al cargar la página
-        establecerFechaEntrega();
-    </script>
 
 </body>
 <!--end::Body-->

@@ -61,15 +61,15 @@
 
     
    <div class="centrar">
-    <table class="centrar" style="width: 100%;" >
-        <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black;">
+    <table class="centrar" style="width: 100%; width: 250px;" >
+        <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
             <tr>
             <th style="width: 250px;">DESCRIPCION</th>
            
             <TH>IMPORTE</TH>
             </tr>
         </thead>
-            <tbody  >
+            <tbody style="min-height: 300px;">
                 @foreach ($envios as $envio)
                     
                 
