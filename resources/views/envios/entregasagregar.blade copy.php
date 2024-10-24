@@ -105,7 +105,7 @@ $(document).ready(function() {
                 <!--begin::Row-->
                 <div class="row gy-0 gx-10 ">
                     <!--begin::Col-->
-                    <div class="col-xl-12 ">
+                    <div class="col-xl-9 ">
 
                         <!--begin::General Widget 1-->
                         <div class="mb-5 mb-lg-10 ">
@@ -219,39 +219,163 @@ $(document).ready(function() {
                                                 </table>
                                             </div>
                                             <!--end::Table-->
-                                            <a href="/entregas" class="btn btn-danger mt-3 ms-3" style="float: right; width:150px;">
-                                                Cancelar
-                                            </a>
-                                           
-                                            <button type="button"data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary mt-3"  style="float: right; width:150px;">Entregar</button>
-                                            
-                                            
                                         </div>
                                         <!--end::Card body-->
-                                        
                                     </div>
                                     <!--end::Tables Widget 2-->
-                                    
                                 </div>
                             </div>
-
-                            
                             <!--end::Tab content-->
                         </div>
                     </div>
                     <!--end::Col-->
                    
                     <!--begin::Col-->
-                
+                    <div class="col-xl-3">
+                        <form action="/entrega/ticketentrega/" class="row g-2" method="GET">
+                            <input type="text" class="visually-hidden" name="entrega2" id="entrega2" value="{{$actual}}">
+                        <!--begin::Mixed Widget 12-->
+                        <div class="card mb-5 mb-lg-10">
+                            <!--begin::Header-->
+                            <div class="card card-flush bg-body" id="kt_pos_form">
+                                <!--begin::Header-->
+                                <div class="card-header pt-5">
+                                    <h3 class="card-title fw-bold text-gray-800 fs-2qx">Entregas</h3>
+                                </div>
+                                <!--begin::Body-->
+                                <div class="card-body pt-0">
+                                    <!--begin::Table container-->
+                                    <div class="table-responsive mb-8">
+                                        <!--begin::Table-->
+                                        <table class="table align-middle gs-0 gy-4 my-0">
+                                            <!--begin::Table head-->
+                                            <thead>
+                                                <tr>
+                                                    <th class="min-w-175px"></th>
+                                                    <th class="w-125px"></th>
+                                                    <th class="w-60px"></th>
+                                                </tr>
+                                            </thead>
+                                            <!--end::Table head-->
+                                            <!--begin::Table body-->
+                                            <tbody>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <div class="form-floating col-lg-12 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
+                                                        <label for="Cajero">Cajero</label>
+                                                        <div id="CajeroValidationFeedback" class="invalid-feedback">
+                                                            Por favor ingrese el destinatario.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <select class="form-select form-select-solid" name="metodo" id="metodo" required>
+                                                        <option value="Efectivo">Efectivo</option>
+                                                        <option value="Efectivo">Transferencia a la empresa</option>
+                                                        <option value="Transferencia al comercio">Transferencia al comercio</option>
+                                                       
+                                                    </select>
+                                                    <label for="estado_envio">Metodo de pago</label>
+                                                    <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione el estado del envío.
+                                                    </div>
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
+                                                    <label for="fecha_entrega">Fecha de entrega</label>
+                                                    <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
+                                                        Por favor seleccione una fecha de entrega.
+                                                    </div>
+                                                </div>
+                                                <!-- Campo para la cantidad de descuento -->
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                                    <label for="descuento" style="padding-left: 25px;">Descuento</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
+                                                    <label for="nota" style="padding-left: 25px;">Nota</label>
+                                                </div>
+
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
+                                                    <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
+                                                    
+                                                </div>
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" placeholder="Cambio" />
+                                                    <label for="cambio" style="padding-left: 25px;">Cambio</label>
+                                                    
+                                                </div>
+
+
+                                            </tbody>
+                                            <!--end::Table body-->
+                                        </table>
+                                        <!--end::Table-->
+                                    </div>
+                                    <!--end::Table container-->
+                                    <!--begin::Summary-->
+                                    <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
+                                        <!--begin::Content-->
+                                        <div class="fs-6 fw-bold text-white">
+                                            <span class="d-block lh-1 mb-2">Subtotal</span>
+                                            <span class="d-block mb-2">Descuento</span>
+                                            <span class="d-block fs-2qx lh-1">Total</span>
+                                        </div>
+                                        <!--end::Content-->
+                                        <!--begin::Content-->
+                                        <div class="fs-6 fw-bold text-white text-end">
+                                            <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">${{ $total4 }}</span>
+                                            <input type="text" id="suto" value="{{ $total4 }}" hidden>
+                                            <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0</span>
+                                            <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">${{ $total4 }}</span>
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <input type="text" class="visually-hidden" name="descu" id="descu" >
+                                    <input type="text" class="visually-hidden" name="tota" id="tota" value="{{ $total4 }}">
+                                    <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
+                                    
+                                    <!--end::Summary-->
+                                    <!--begin::Payment Method-->
+                                    <div class="m-0">
+                                        <!--begin::Actions-->
+                                        <button type="submit" class="btn btn-primary fs-1 w-100 py-3 px-3" onclick="redireccionarPagina()" formtarget="_blank">Imprimir comprobante</button>
+                                        <br> &nbsp; &nbsp;
+                                        <a href="/entregas" class="btn btn-danger fs-1 w-100 py-3 px-3">
+                                        Cancelar
+                                    </a>
+                                        <!--end::Actions-->
+                                   
+                                    </div> 
+                                </form>
+                                    <!--end::Payment Method-->
+                                </div>
+                                <!--end: Card Body-->
+
+                            
+
+                            </div>
+                            <!--end::Header-->
+                       
+                            <!--begin::Body-->
+
+                            <!--end::Body-->
+                        </div>
                         <!--end::Mixed Widget 12-->
                     
 
 
-                   
+                        <!--end: List Widget 5-->
+                    </div>
                     <!--end::Col-->
 
                 
-                 
+                    <!--end: List Widget 5-->
+                </div>
+            
                 <!--end::Col-->
             </div>
             <!--end::Row-->
@@ -260,154 +384,9 @@ $(document).ready(function() {
         <!--end::Post-->
         </div>
         <!--end::Container-->
-       
-<!-- Inicia Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Entrega de paquetes</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body"> <!-- Inicia Modalbody -->
-            <form action="/entrega/ticketentrega/" class="row g-2" method="GET">
-                <input type="text" class="visually-hidden" name="entrega2" id="entrega2" value="{{$actual}}">
-            <!--begin::Mixed Widget 12-->
-            <div class="card mb-5 mb-lg-10">
-                <!--begin::Header-->
-                <div class="card card-flush bg-body" id="kt_pos_form">
-                    <!--begin::Header-->
-                    
-                    <!--begin::Body-->
-                    <div class="card-body pt-0">
-                        <!--begin::Table container-->
-                        <div class="table-responsive mb-8">
-                            <!--begin::Table-->
-                            <table class="table align-middle gs-0 gy-4 my-0">
-                                <!--begin::Table head-->
-                                <thead>
-                                    <tr>
-                                        <th class="min-w-175px"></th>
-                                        <th class="w-125px"></th>
-                                        <th class="w-60px"></th>
-                                    </tr>
-                                </thead>
-                                <!--end::Table head-->
-                                <!--begin::Table body-->
-                                <tbody>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <div class="form-floating col-lg-12 mb-4">
-                                            <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
-                                            <label for="Cajero">Cajero</label>
-                                            <div id="CajeroValidationFeedback" class="invalid-feedback">
-                                                Por favor ingrese el destinatario.
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" name="metodo" id="metodo" required>
-                                            <option value="Efectivo">Efectivo</option>
-                                            <option value="Efectivo">Transferencia a la empresa</option>
-                                            <option value="Transferencia al comercio">Transferencia al comercio</option>
-                                           
-                                        </select>
-                                        <label for="estado_envio">Metodo de pago</label>
-                                        <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
-                                            Por favor seleccione el estado del envío.
-                                        </div>
-                                    </div>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
-                                        <label for="fecha_entrega">Fecha de entrega</label>
-                                        <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
-                                            Por favor seleccione una fecha de entrega.
-                                        </div>
-                                    </div>
-                                    <!-- Campo para la cantidad de descuento -->
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
-                                        <label for="descuento" style="padding-left: 25px;">Descuento</label>
-                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                    </div>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
-                                        <label for="nota" style="padding-left: 25px;">Nota</label>
-                                    </div>
-
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
-                                        <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
-                                        
-                                    </div>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" placeholder="Cambio" />
-                                        <label for="cambio" style="padding-left: 25px;">Cambio</label>
-                                        
-                                    </div>
-
-                                </tbody>
-                                <!--end::Table body-->
-                            </table>
-                            <!--end::Table-->
-                        </div>
-                        <!--end::Table container-->
-                        <!--begin::Summary-->
-                        <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
-                            <!--begin::Content-->
-                            <div class="fs-6 fw-bold text-white">
-                                <span class="d-block lh-1 mb-2">Subtotal</span>
-                                <span class="d-block mb-2">Descuento</span>
-                                <span class="d-block fs-2qx lh-1">Total</span>
-                            </div>
-                            <!--end::Content-->
-                            <!--begin::Content-->
-                            <div class="fs-6 fw-bold text-white text-end">
-                                <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">${{ $total4 }}</span>
-                                <input type="text" id="suto" value="{{ $total4 }}" hidden>
-                                <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0</span>
-                                <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">${{ $total4 }}</span>
-                            </div>
-                            <!--end::Content-->
-                        </div>
-                        <input type="text" class="visually-hidden" name="descu" id="descu" >
-                        <input type="text" class="visually-hidden" name="tota" id="tota" value="{{ $total4 }}">
-                        <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
-                        
-                        <!--end::Summary-->
-                        <!--begin::Payment Method-->
-                        <div class="m-0">
-                            <!--begin::Actions-->
-                            <button type="submit" class="btn btn-primary fs-1 w-100 pt-3 px-3" onclick="redireccionarPagina()" formtarget="_blank">Imprimir comprobante</button>
-                            
-                            
-                            <!--end::Actions-->
-                       
-                        </div> 
-                    </form>
-                        <!--end::Payment Method-->
-                    </div>
-                    <!--end: Card Body-->
-
-                
-
-                </div>
-
-<!--end: List Widget 5-->
-        </div>
 
 
 
-
-
-        </div>
-        <div class="modal-footer"> <!-- Termina ModalBody -->
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-     
-        </div>
-      </div>
-    </div>
-  </div>
-<!-- Termina Modal -->
 
     </x-default-layout>
 
