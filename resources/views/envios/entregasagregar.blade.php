@@ -151,12 +151,12 @@ $(document).ready(function() {
                                                             <th class="min-w-150px">Destinatario</th>
                                                             <th class="min-w-250px">Direccion</th>
                                                             
-                                                            <th class="min-w-50px text-center">Tipo de envío</th>
-                                                            <th class="min-w-50px text-center">Estado del envío</th>
+                                                            <th class="min-w-150px text-center">Tipo de envío</th>
+                                                            <th class="min-w-150px text-center">Estado del envío</th>
                                                             <th class="text-center min-w-150px" >Fecha de entrega</th>
-                                                            <th class="min-w-50px text-center">Estado del pago</th>
-                                                            <th class="min-w-50px text-center">Precio del paquete</th>
-                                                            <th class="min-w-50px text-center">Precio de envío</th>
+                                                            <th class="min-w-150px text-center">Estado del pago</th>
+                                                            <th class="min-w-150px text-center">Precio del paquete</th>
+                                                            <th class="min-w-150px text-center">Precio de envío</th>
                                                             <th class="min-w-50px">Total </th>
                                                             <th class="min-w-50px">Nota</th>
                                                             <th class="min-w-50px">Nota de repartidor</th>
