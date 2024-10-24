@@ -61,29 +61,56 @@
 
     
    <div class="centrar">
-    <table class="centrar" style="width: 100%; width: 250px;" >
+    <table class="centrar" style="width: 100%; display:table; " >
         <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
             <tr>
             <th style="width: 250px;">DESCRIPCION</th>
            
-            <TH>IMPORTE</TH>
+            <th>IMPORTE</th>
             </tr>
         </thead>
-            <tbody style="min-height: 300px;">
+        
+            <tbody style=" height: 500px;">
+            {{ $i = 0 }}
                 @foreach ($envios as $envio)
                     
                 
-                <tr>
+                <tr >
                     <td style="text-align: left;"><span style="font-weight: bolder;">{{ $envio->guia }} </span><br><span style="font-size: 12px;"> {{ $envio->destinatario }} </span></td>
                     <td>${{ $envio->total }}</td>
-                    
+                    {{ $i++ }}
                 </tr>
                 @endforeach
+                
+                @if($i < 5)
 
+                <tr >   
+                    <td > &nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+
+                @endif
+               
                 <tr class="izqui">
                     
                     
-                    <td style="border-top: 2px solid black;" >SUBTOTAL</td>
+                    <td style="border-top: 2px solid black;" >SUBTOTAL </td>
                     <td style="border-top: 2px solid black;" class="centrar">${{ $ticketact[0]->subtotal }}
                      
                     </td>
@@ -118,6 +145,7 @@
                 
 
             </tbody>
+            
     </table>
    
    <div class="">

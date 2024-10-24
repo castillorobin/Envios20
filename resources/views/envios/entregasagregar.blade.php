@@ -22,6 +22,15 @@
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
 <script>
+    function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    
+   //window.location = "http://127.0.0.1:8000/entregas";
+   window.location = "http://154.12.227.235/entregas";
+};
          
 
 $(document).ready(function() {
@@ -241,7 +250,7 @@ $(document).ready(function() {
                                                     <select class="form-select form-select-solid" name="metodo" id="metodo" required>
                                                         <option value="Efectivo">Efectivo</option>
                                                         <option value="Efectivo">Transferencia a la empresa</option>
-                                                        <option value="Transferencia_comercio">Transferencia al comercio</option>
+                                                        <option value="Transferencia al comercio">Transferencia al comercio</option>
                                                        
                                                     </select>
                                                     <label for="estado_envio">Metodo de pago</label>
@@ -311,7 +320,7 @@ $(document).ready(function() {
                                     <!--begin::Payment Method-->
                                     <div class="m-0">
                                         <!--begin::Actions-->
-                                        <button type="submit" class="btn btn-primary fs-1 w-100 py-3 px-3">Imprimir comprobante</button>
+                                        <button type="submit" class="btn btn-primary fs-1 w-100 py-3 px-3" onclick="redireccionarPagina()" formtarget="_blank">Imprimir comprobante</button>
                                         <br> &nbsp; &nbsp;
                                         <a href="/entregas" class="btn btn-danger fs-1 w-100 py-3 px-3">
                                         Cancelar
