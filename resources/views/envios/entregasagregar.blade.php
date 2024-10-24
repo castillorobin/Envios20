@@ -155,20 +155,23 @@ $(document).ready(function() {
                                                 <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                     <thead>
                                                         <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                        <th># De guia</th>
-                                                <th>Comercio</th>
-                                                <th>Destinatario</th>
-                                               
-                                                <th class="text-center">Tipo de envío</th>
-                                                <th class="text-center">Estado del envío</th>
-                                                
-                                                <th class="text-center">Estado del pago</th>
-                                                <th class="text-center">Precio del paquete</th>
-                                                <th class="text-center">Precio de envío</th>
-                                                <th>Total </th>
-                                                <th>Nota</th>
-                                                            <th class="text-center">Borrar</th>
+                                                            <th class="min-w-100px"># De guia</th>
+                                                            <th class="min-w-50px">Comercio</th>
+                                                            <th class="min-w-150px">Destinatario</th>
+                                                            <th class="min-w-250px">Direccion</th>
+                                                            
+                                                            <th class="min-w-150px text-center">Tipo de envío</th>
+                                                            <th class="min-w-150px text-center">Estado del envío</th>
+                                                            <th class="text-center min-w-150px" >Fecha de entrega</th>
+                                                            <th class="min-w-150px text-center">Estado del pago</th>
+                                                            <th class="min-w-150px text-center">Precio del paquete</th>
+                                                            <th class="min-w-150px text-center">Precio de envío</th>
+                                                            <th class="min-w-50px">Total </th>
+                                                            <th class="min-w-50px">Nota</th>
+                                                            <th class="min-w-50px">Nota de repartidor</th>
+                                                            <th class="min-w-50px text-center">Borrar</th>
                                                         </tr>
+
                                                     </thead>
                                                     <tbody>
                                                     <span hidden id="total3"> {{ $total4 = 0 }}</span>
@@ -177,14 +180,33 @@ $(document).ready(function() {
                                                             <td><a href="#" class="text-gray-900 text-hover-primary">{{$pedido->guia}}</a></td>
                                                             <td><a href="#" class="text-gray-900 text-hover-primary">{{$pedido->comercio}}</a></td>
                                                             <td>{{$pedido->destinatario}}</td>
-                                                            <td class="text-center"><span class="badge badge-light-success">{{$pedido->tipo}}</span></td>
-                                                            <td class="text-center">{{$pedido->estado}}</td>
+                                                            <td  >{{$pedido->direccion}}</td>
+                                                            <td class="text-center"><span class="badge badge-dark">{{$pedido->tipo}}</span></td>
+                                                            <td class="text-center">
+                                                                @if( $pedido->estado == 'No entregado')
+                                                                <span class="badge badge-danger">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Creado')
+                                                                <span class="badge badge-warning">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Entregado')
+                                                                <span class="badge badge-success">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'En ruta')
+                                                                <span class="badge badge-info">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Reprogramado')
+                                                                <span class="badge badge-dark">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Devuelto al comercio')
+                                                                <span class="badge badge-primary">{{ $pedido->estado }}</span>
+                                                                @else
+                                                                <span class="badge badge-light">{{ $pedido->estado }}</span>
+                                                                @endif
+                                                            </td>
+                                                            <td class="text-center">{{$pedido->fecha_entrega}}</td>
                                                             <td class="text-center">{{$pedido->pago}}</td>
                                                             <td class="text-center">{{$pedido->precio}}</td>
                                                             <td class="text-center">{{$pedido->envio}}</td>
                                                             <td class="text-center">{{$pedido->total}}</td>
                                                             <td class="text-center">{{$pedido->nota}}</td>
                                                             <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
+                                                            <td class="text-center"></td>
                                                             <td style="text-align: center;">
                                                                 <a href="/entrega/limpiar/{{$pedido->id}}">
                                                                 <button type="button" class="btn btn-danger p-2"> <i class="fas fa-trash-alt"></i></button>

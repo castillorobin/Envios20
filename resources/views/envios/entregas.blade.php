@@ -102,15 +102,17 @@
                                                         <th># De guia</th>
                                                 <th>Comercio</th>
                                                 <th>Destinatario</th>
-                                               
+                                                <th>Direccion</th>
+                                                
                                                 <th class="text-center">Tipo de envío</th>
                                                 <th class="text-center">Estado del envío</th>
-                                                
+                                                <th class="text-center">Fecha de entrega</th>
                                                 <th class="text-center">Estado del pago</th>
                                                 <th class="text-center">Precio del paquete</th>
                                                 <th class="text-center">Precio de envío</th>
                                                 <th>Total </th>
                                                 <th>Nota</th>
+                                                <th>Nota de repartidor</th>
                                                             <th class="text-center">Borrar</th>
                                                         </tr>
                                                     </thead>
@@ -122,8 +124,9 @@
                                                             <td class="text-center"><span class="badge badge-light-success"></span></td>
                                                             <td class="text-center"></td>
                                                             <td class="text-center"></td>
-                                                            
-                                                            
+                                                            <td class="text-center"></td>
+                                                            <td class="text-center"></td>
+                                                            <td class="text-center"></td>
                                                             <td class="text-center"></td>
                                                             <td class="text-center"></td>
                                                             <td class="text-center"></td>
