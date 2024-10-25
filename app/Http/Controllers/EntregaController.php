@@ -106,9 +106,20 @@ class EntregaController extends Controller
     public function limpiar($id)
     {
         $pedido = Envio::find($id);
+        $actual= $pedido->entrega2;
         $pedido->entrega2 = NULL;
         $pedido->save();
-        return redirect()->back();
+
+       // $actual= $pedido->entrega2;
+
+        $pedidos = Envio::where('entrega2', $actual)
+        ->get();
+
+        
+        return view('envios.entregasagregar', compact('actual', 'pedidos'));
+
+
+        //return redirect()->back();
         //return view('envios.departamentalticket', compact('pedidos'));
     }
 
@@ -148,6 +159,7 @@ class EntregaController extends Controller
             }else{
                 $envio->pago = "Pagado";
             }
+            $envio->estado = "Entregado";
             $envio->save();
             
         }

@@ -158,7 +158,7 @@ $(document).ready(function() {
                                                             <th class="min-w-100px"># De guia</th>
                                                             <th class="min-w-50px">Comercio</th>
                                                             <th class="min-w-150px">Destinatario</th>
-                                                            <th class="min-w-250px">Direccion</th>
+                                                            <th class="min-w-200px">Direccion</th>
                                                             
                                                             <th class="min-w-150px text-center">Tipo de envío</th>
                                                             <th class="min-w-150px text-center">Estado del envío</th>
@@ -200,7 +200,15 @@ $(document).ready(function() {
                                                                 @endif
                                                             </td>
                                                             <td class="text-center">{{$pedido->fecha_entrega}}</td>
-                                                            <td class="text-center">{{$pedido->pago}}</td>
+                                                            <td class="text-center">
+                                                            @if( $pedido->pago == 'Pagado')
+                                                            <span class="badge badge-success">{{ $pedido->pago}}</span>
+                                                            @else
+                                                            <span class="badge badge-danger">{{ $pedido->pago }}</span>
+                                                            @endif
+
+                                                        </td>
+
                                                             <td class="text-center">{{$pedido->precio}}</td>
                                                             <td class="text-center">{{$pedido->envio}}</td>
                                                             <td class="text-center">{{$pedido->total}}</td>
