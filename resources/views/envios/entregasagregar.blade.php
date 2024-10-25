@@ -364,17 +364,18 @@ $(document).ready(function() {
                         <input type="text" class="visually-hidden" name="descu" id="descu" >
                         <input type="text" class="visually-hidden" name="tota" id="tota" value="{{ $total4 }}">
                         <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
-                        
-                        <div class="form-floating col-lg-12 mb-4">
-                            <input type="text" class="form-control form-control-solid" style="width: 70%;" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
+                        <div class="">
+                        <div class="form-floating col-lg-8 mb-4 " style="float: right;">
+                            <input type="text" class="form-control form-control-solid" style="" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
                             <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
                             
                         </div>
-                        <div class="form-floating col-lg-12 mb-4">
-                            <input type="text" class="form-control form-control-solid " style="width: 70%;" name="cambio" id="cambio" placeholder="Cambio" />
+                        <div class="form-floating col-lg-8 mb-4" style="float: right;">
+                            <input type="text" class="form-control form-control-solid " style="" name="cambio" id="cambio" placeholder="Cambio" />
                             <label for="cambio" style="padding-left: 25px;">Cambio</label>
                             
                         </div>
+                    </div>
                         <!--end::Summary-->
                         <!--begin::Payment Method-->
                         <div class="m-0">
