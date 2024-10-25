@@ -334,16 +334,6 @@ $(document).ready(function() {
                                         <label for="nota" style="padding-left: 25px;">Nota</label>
                                     </div>
 
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
-                                        <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
-                                        
-                                    </div>
-                                    <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" placeholder="Cambio" />
-                                        <label for="cambio" style="padding-left: 25px;">Cambio</label>
-                                        
-                                    </div>
 
                                 </tbody>
                                 <!--end::Table body-->
@@ -367,12 +357,24 @@ $(document).ready(function() {
                                 <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0</span>
                                 <span id="total1" name="total1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">${{ $total4 }}</span>
                             </div>
+
+                            
                             <!--end::Content-->
                         </div>
                         <input type="text" class="visually-hidden" name="descu" id="descu" >
                         <input type="text" class="visually-hidden" name="tota" id="tota" value="{{ $total4 }}">
                         <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
                         
+                        <div class="form-floating col-lg-12 mb-4">
+                            <input type="text" class="form-control form-control-solid" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
+                            <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
+                            
+                        </div>
+                        <div class="form-floating col-lg-12 mb-4">
+                            <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" placeholder="Cambio" />
+                            <label for="cambio" style="padding-left: 25px;">Cambio</label>
+                            
+                        </div>
                         <!--end::Summary-->
                         <!--begin::Payment Method-->
                         <div class="m-0">
