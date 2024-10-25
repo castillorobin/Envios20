@@ -366,12 +366,12 @@ $(document).ready(function() {
                         <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
                         
                         <div class="form-floating col-lg-12 mb-4">
-                            <input type="text" class="form-control form-control-solid" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
+                            <input type="text" class="form-control form-control-solid" style="width: 70%;" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
                             <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
                             
                         </div>
                         <div class="form-floating col-lg-12 mb-4">
-                            <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" placeholder="Cambio" />
+                            <input type="text" class="form-control form-control-solid " style="width: 70%;" name="cambio" id="cambio" placeholder="Cambio" />
                             <label for="cambio" style="padding-left: 25px;">Cambio</label>
                             
                         </div>
