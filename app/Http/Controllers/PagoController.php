@@ -193,15 +193,25 @@ class PagoController extends Controller
         $comerset = $request->input('comerset');
       
         $estado = $request->input('estado');
+        $ticketc = $request->input('ticketc');
 
+        if($estado=="todos"){
+            $pedidos = Envio::where('ticketc', $ticketc)
+                 
+            ->get();
+        }
+        else{
+            $pedidos = Envio::where('ticketc', $ticketc)
+            ->where('estado', $estado)
+     
+            ->get();
+        }
 
-       $pedidos = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
-
-       ->get();
+      
 
        $comercios = Comercio::all(); 
        $comercioset = Comercio::where('comercio', $comerset)->get();
-       return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
+       return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset'));
 
 
     } 

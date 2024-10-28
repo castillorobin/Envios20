@@ -220,6 +220,7 @@ document.getElementById('tot1').innerText = 0;
                                 <form action="pago/filtrandonombre2" method="GET" id="myForm" >
                                     @method('GET') 
                                     <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
+                                    <input type="text" value="{{$pedidos[0]->ticketc}}" name="ticketc" hidden>
                             </div>
                             
                             <!--end::Card title-->
@@ -233,7 +234,8 @@ document.getElementById('tot1').innerText = 0;
                                 <div class="w-150px">
                                     <!--begin::Select2-->
                                     <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
-                                        <option value="estado" >Estado</option>
+                                        <option value="todos" >Estado</option>
+                                        <option value="todos" >Todos</option>
                                         <option value="Creado">Creado</option>
                                         <option value="Creado">En ruta</option>
                                         <option value="Entregado">Entregado</option>
