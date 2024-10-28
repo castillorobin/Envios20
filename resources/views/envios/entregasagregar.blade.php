@@ -69,6 +69,22 @@ $(document).ready(function() {
 
                  
                 });
+
+                function formapago() {
+
+                    const meto = document.getElementById("metodo").value; 
+                    if(meto == "Transferencia al comercio"){
+                        $('#tota').val(0);
+                        $('#total1').text(0);
+                        $('#sutota').val(0);
+                        $('#stotal').text(0);
+                    }
+                   // alert(meto);
+                  
+}
+
+
+               
     </script>
     
 
@@ -209,9 +225,9 @@ $(document).ready(function() {
 
                                                         </td>
 
-                                                            <td class="text-center">{{$pedido->precio}}</td>
-                                                            <td class="text-center">{{$pedido->envio}}</td>
-                                                            <td class="text-center">{{$pedido->total}}</td>
+                                                            <td class="text-center">${{$pedido->precio}}</td>
+                                                            <td class="text-center">${{$pedido->envio}}</td>
+                                                            <td class="text-center">${{$pedido->total}}</td>
                                                             <td class="text-center">{{$pedido->nota}}</td>
                                                             <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
                                                             <td class="text-center"></td>
@@ -313,7 +329,7 @@ $(document).ready(function() {
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <select class="form-select form-select-solid" name="metodo" id="metodo" required>
+                                        <select class="form-select form-select-solid" name="metodo" id="metodo" onchange="formapago()" required>
                                             <option value="Efectivo">Efectivo</option>
                                             <option value="Efectivo">Transferencia a la empresa</option>
                                             <option value="Transferencia al comercio">Transferencia al comercio</option>
@@ -333,7 +349,7 @@ $(document).ready(function() {
                                     </div>
                                     <!-- Campo para la cantidad de descuento -->
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                        <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" value="0" onClick="this.select()" />
                                         <label for="descuento" style="padding-left: 25px;">Descuento</label>
                                         <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
@@ -374,12 +390,12 @@ $(document).ready(function() {
                         <input type="text" class="visually-hidden" name="sutota" id="sutota" value="{{$total4}}">
                         <div class="">
                         <div class="form-floating col-lg-8 mb-4 " style="float: right;">
-                            <input type="text" class="form-control form-control-solid" style="" name="entrega3" id="entrega3" placeholder="Entrega efectivo" />
+                            <input type="text" class="form-control form-control-solid" style="" name="entrega3" id="entrega3"value="0" onClick="this.select()" />
                             <label for="entrega" style="padding-left: 25px;">Efectivo recibido</label>
                             
                         </div>
                         <div class="form-floating col-lg-8 mb-4" style="float: right;">
-                            <input type="text" class="form-control form-control-solid " style="" name="cambio" id="cambio" placeholder="Cambio" />
+                            <input type="text" class="form-control form-control-solid " style="" name="cambio" id="cambio" value="0"  />
                             <label for="cambio" style="padding-left: 25px;">Cambio</label>
                             
                         </div>
