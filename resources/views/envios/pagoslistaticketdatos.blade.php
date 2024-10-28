@@ -217,7 +217,7 @@ document.getElementById('tot1').innerText = 0;
                                 <!--begin::Export buttons-->
                                 
                                 <!--end::Export buttons-->
-                                <form action="pago/filtrandonombre" method="GET" id="myForm" >
+                                <form action="pago/filtrandonombre2" method="GET" id="myForm" >
                                     @method('GET') 
                                     <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                             </div>
@@ -226,8 +226,8 @@ document.getElementById('tot1').innerText = 0;
                             <!--begin::Card toolbar-->
                             <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                
-                                <!--begin::Daterangepicker-->
-                                <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                <!--begin::Daterangepicker
+                                <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />  -->
                                 <!--end::Daterangepicker-->
                                 <!--begin::Filter-->
                                 <div class="w-150px">
