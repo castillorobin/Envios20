@@ -189,7 +189,7 @@ document.getElementById('tot1').innerText = 0;
                                     <span class="d-block fs-1 lh-1">Total</span>
                                 </div>
                                 <div class="fs-6 fw-bold text-white text-end">
-                                   <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">0</span>
+                                   <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">10</span>
                                 </div>
                             </div>
                         </div>
@@ -354,6 +354,7 @@ document.getElementById('tot1').innerText = 0;
                                                 <td></td>
                                                 <td></td>
                                             </tr>
+                                            <span hidden >  {{ $total4 = $total4 + $pedido->total}}</span>
                                             @endforeach
 
                                             <span hidden id="total5"> {{ $total4 }}</span>
