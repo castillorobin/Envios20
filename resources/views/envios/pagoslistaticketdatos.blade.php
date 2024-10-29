@@ -31,67 +31,51 @@
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
 <script>
     $(document).on('click', '#check3', function(){
 
+        //alert("Hola mundo");
 
-		var id=$(this).val();
-
-        var total1 = $('#total1').text();      
-
+        var id=$(this).val();
+        var total1 = $('#total1').text();  
         if ($(this).prop('checked')) {
-        var totaleste=parseFloat($('#tot'+id).text());
-        var total = parseFloat(totaleste) + parseFloat(total1);
-        $('#total1').text(total); 
-        $('#tot1').text(total);
-        }else {
             var totaleste=parseFloat($('#tot'+id).text());
-            var total = parseFloat(total1) - parseFloat(totaleste);
-            $('#total1').text(total); 
-            $('#tot1').text(total);
-              
-        }
-
-        //alert("el total es: " + total);
-        /*
-		var prec=parseFloat($('#tot'+id).text());
-
-        //
-        var envi=$('#env'+id).text();
+            var total = parseFloat(totaleste) + parseFloat(total1);
+$('#total1').text(total); 
+$('#tot1').text(total);
+}else {
+    var totaleste=parseFloat($('#tot'+id).text());
+    var total = parseFloat(total1) - parseFloat(totaleste);
+    $('#total1').text(total); 
+    $('#tot1').text(total);
+      
+}
         
-        //alert("le diste click" + prec);
-        var tota = $('#preci').text();
-        var senvi = $('#sumas').text();
-        //var tota = parseFloat(tota, 10);
+/*
 
-        if ($(this).prop('checked')) {
 
-            var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
-            var tenv = parseFloat(senvi, 10) + parseFloat(envi, 10);
-        $('#preci').text(parseFloat(to3, 10)); 
-        $('#preci2').text(to3); 
-        $('#toti').val(to3); 
-        $('#sumas').text(tenv);  
+if ($(this).prop('checked')) {
 
-        } else {
-            var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
-            var tenv = parseFloat(senvi, 10) - parseFloat(envi, 10);
-        $('#preci').text(to3); 
-        $('#preci2').text(to3);
-        $('#toti').val(to3);
-        $('#sumas').text(tenv);  
-        }
+var total = parseFloat(totaleste) + parseFloat(total1);
+$('#total1').text(total); 
+$('#tot1').text(total);
+}else {
+    var totaleste=parseFloat($('#tot'+id).text());
+    var total = parseFloat(total1) - parseFloat(totaleste);
+    $('#total1').text(total); 
+    $('#tot1').text(total);
+      
+}
 
+*/
+
+
+});
+</script>
+
+<script>
     
-
-       
-       $('#ivat').text((parseFloat(tenv, 10) * 0.13).toFixed(2) ); 
-        $('#stotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
-        $('#atotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
-  
-     */
-
-    });
 
     $(document).on('click', '#checktodo', function(){
 
@@ -189,7 +173,7 @@ document.getElementById('tot1').innerText = 0;
                                     <span class="d-block fs-1 lh-1">Total</span>
                                 </div>
                                 <div class="fs-6 fw-bold text-white text-end">
-                                   <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">10</span>
+                                   <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">0</span>
                                 </div>
                             </div>
                         </div>
@@ -350,6 +334,7 @@ document.getElementById('tot1').innerText = 0;
                                                 <td class="text-center">${{$pedido->precio}}</td>
                                                 <td class="text-center">${{$pedido->envio}}</td>
                                                 <td class="text-center">${{$pedido->total}}</td>
+                                                <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <td class="text-center">{{$pedido->nota}}</td>
                                                 <td></td>
                                                 <td></td>
