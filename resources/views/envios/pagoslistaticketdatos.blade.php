@@ -277,29 +277,29 @@ document.getElementById('tot1').innerText = 0;
                                 <div class="table-responsive">
 
                                     <form name="f1" id="formElement">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">
 
                                                     <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
                                                     
                                                    </div></th>
-                                                <th># De guia</th>
-                                                <th>Comercio</th>
-                                                <th>Destinatario</th>
-                                                <th>Dirección </th>
-                                                <th class="text-center">Tipo de envío</th>
-                                                <th class="text-center">Estado del envío</th>
-                                                <th class="text-center">Fecha de entrega</th>
-                                                <th class="text-center">Estado del pago</th>
-                                                <th class="text-center">Precio del paquete</th>
-                                                <th class="text-center">Precio de envío</th>
-                                                <th>Total </th>
-                                                <th>Nota</th>
-                                                <th >Nota de repartidor</th>
-                                                <th class="min-w-150px">Ubicación</th>
+                                                <th class="min-w-100px"># De guia</th>
+                                                <th class="min-w-100px">Comercio</th>
+                                                <th class="min-w-100px">Destinatario</th>
+                                                <th class="min-w-200px">Dirección </th>
+                                                <th class="min-w-100px text-center">Tipo de envío</th>
+                                                <th class="min-w-150px text-center">Estado del envío</th>
+                                                <th class="min-w-150px text-center">Fecha de entrega</th>
+                                                <th class="min-w-150px text-center">Estado del pago</th>
+                                                <th class="min-w-150px text-center">Precio del paquete</th>
+                                                <th class="min-w-150px text-center">Precio de envío</th>
+                                                <th class="min-w-100px text-center">Total </th>
+                                                <th class="min-w-100px text-center">Nota</th>
+                                                <th class="min-w-100px text-center">Nota de repartidor</th>
+                                                <th class="min-w-100px">Ubicación</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
@@ -320,14 +320,37 @@ document.getElementById('tot1').innerText = 0;
                                                 <td>{{$pedido->comercio}}</td>
                                                 <td>{{$pedido->destinatario}}</td>
                                                 <td>{{$pedido->direccion}}</td>
-                                                <td>{{$pedido->tipo}}</td>
-                                                <td>{{$pedido->estado}}</td>
-                                                <td>{{$pedido->fecha_entrega}}</td>
-                                                <td>{{$pedido->pago}}</td>
-                                                <td>{{$pedido->precio}}</td>
-                                                <td>{{$pedido->envio}}</td>
-                                                <td>{{$pedido->total}}</td>
-                                                <td>{{$pedido->nota}}</td>
+                                                <td class="text-center"><span class="badge badge-dark">{{$pedido->tipo}}</span></td>
+                                                <td class="text-center">
+                                                    @if( $pedido->estado == 'No entregado')
+                                                    <span class="badge badge-danger">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Creado')
+                                                    <span class="badge badge-warning">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Entregado')
+                                                    <span class="badge badge-success">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'En ruta')
+                                                    <span class="badge badge-info">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Reprogramado')
+                                                    <span class="badge badge-dark">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Devuelto al comercio')
+                                                    <span class="badge badge-primary">{{ $pedido->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-light">{{ $pedido->estado }}</span>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center">{{$pedido->fecha_entrega}}</td>
+                                                <td class="text-center">
+                                                    @if( $pedido->pago == 'Pagado')
+                                                    <span class="badge badge-success">{{ $pedido->pago}}</span>
+                                                    @else
+                                                    <span class="badge badge-danger">{{ $pedido->pago }}</span>
+                                                    @endif
+
+                                                </td>
+                                                <td class="text-center">${{$pedido->precio}}</td>
+                                                <td class="text-center">${{$pedido->envio}}</td>
+                                                <td class="text-center">${{$pedido->total}}</td>
+                                                <td class="text-center">{{$pedido->nota}}</td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
