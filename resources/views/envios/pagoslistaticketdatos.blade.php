@@ -215,21 +215,24 @@ document.getElementById('tot1').innerText = 0;
                                 <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />  -->
                                 <!--end::Daterangepicker-->
                                 <!--begin::Filter-->
+                                
                                 <div class="w-150px">
                                     <!--begin::Select2-->
                                     <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
                                         <option value="todos" >Estado</option>
                                         <option value="todos" >Todos</option>
                                         <option value="Creado">Creado</option>
-                                        <option value="Creado">En ruta</option>
+                                        <option value="En ruta">En ruta</option>
                                         <option value="Entregado">Entregado</option>
-                                        <option value="Fallido">No entregado</option>
-                                        <option value="En transito">Reprogramado</option>
-                                        <option value="En transito">Devuelto al comercio</option>
+                                        <option value="No entregado">No entregado</option>
+                                        <option value="Reprogramado">Reprogramado</option>
+                                        <option value="Devuelto al comercio">Devuelto al comercio</option>
+                                        <option value="Recepcionado">Recepcionado</option>
                                     </select>
                                     <!--end::Select2-->
-                                    
+                                   
                                 </div>
+                                
                                 <button type="submit" class="btn btn-primary" >Filtrar</button>
                                 <!--end::Filter-->
                                 <!--begin::Export dropdown-->
@@ -249,19 +252,20 @@ document.getElementById('tot1').innerText = 0;
                                  
                                     <!--end::Menu item-->
                                 </div>
+                                <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                 <!--end::Menu-->
                                 <!--end::Export dropdown-->
                             </div>
                             <!--end::Card toolbar-->
-                       
+                            
                         <!--end::Card header-->
                         <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
-                                <div class="table-responsive">
+                                <div class="table-responsive" style="max-height: 480px;">
 
                                     <form name="f1" id="formElement">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5 "  >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">

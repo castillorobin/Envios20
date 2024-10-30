@@ -67,6 +67,7 @@
                             </div> 
                             <div class="col-md-auto align-self-center mb-3">
                                 <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
+                                
                             </div>
                         </form>
                            
@@ -79,9 +80,11 @@
                                         <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                     </div>
                                 </div>
+                                <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                             </div>
+                            
                         </div>
-
+                       
                         <br>
                         <!--begin::Products-->
                         <div class="card card-flush">
@@ -111,7 +114,7 @@
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
+                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status" disabled>
                                             <option></option>
                                             <option value="Todos">Todos</option>
                                             <option value="Alta">Alta</option>
@@ -136,7 +139,7 @@
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel" disabled>Exportar a Excel</a>
                                         </div>
                                         <!--end::Menu item-->
                                         <!--begin::Menu item
@@ -147,7 +150,7 @@
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
                                         </div>
                                         <!--end::Menu item-->
                                     </div>

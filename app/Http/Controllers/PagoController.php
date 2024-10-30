@@ -21,7 +21,8 @@ class PagoController extends Controller
     { 
        // $pedidos = Cobro::all();
         $comercios = Comercio::all(); 
-        return view('envios.pagoslista', compact('comercios'));
+        $nota = " ";
+        return view('envios.pagoslista', compact('nota','comercios'));
     }
     public function listadoticket()
     {
@@ -101,7 +102,8 @@ class PagoController extends Controller
     {
        // $pedidos = Cobro::all();
         //$comercios = Comercio::all(); 
-        return view('envios.pagoslistaticket');
+        $nota = " ";
+        return view('envios.pagoslistaticket', compact('nota'));
     }
 
     public function enviosdeticket()
@@ -207,11 +209,22 @@ class PagoController extends Controller
             ->get();
         }
 
+        $comercios = Comercio::all(); 
+       $comercioset = Comercio::where('comercio', $comerset)->get();
+       $nota = " ";
+        if(empty($pedidos[0]->comercio)){
+            $pedidos = Envio::where('ticketc', $ticketc)->get();
+            $nota = "No hay envios con el estado seleccionado";
+
+            return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota'));
+
+        }else{
+            return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota'));
+        }
       
 
-       $comercios = Comercio::all(); 
-       $comercioset = Comercio::where('comercio', $comerset)->get();
-       return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset'));
+       
+      // return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset'));
 
 
     } 
@@ -226,17 +239,19 @@ class PagoController extends Controller
      //  return ($pedidos[0]->comercio);
        
         $comercios = Comercio::all(); 
-
+        $nota = " ";
         if(empty($pedidos[0]->comercio)){
             $comer = $comercios[0]->comercio;
             $comercioset = Comercio::where('comercio', $comer)->get();
+            $nota = "El ticket no existe";
+            return view('envios.pagoslistaticket', compact('nota'));
         }else{
             $comer = $pedidos[0]->comercio;
             $comercioset = Comercio::where('comercio', $comer)->get();
         }
         
 
-        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset'));
+        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota'));
         
     }
 
