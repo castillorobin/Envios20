@@ -44,34 +44,59 @@
             var total = parseFloat(totaleste) + parseFloat(total1);
 $('#total1').text(total); 
 $('#tot1').text(total);
+$('#stotal').text(total);
 }else {
     var totaleste=parseFloat($('#tot'+id).text());
     var total = parseFloat(total1) - parseFloat(totaleste);
     $('#total1').text(total); 
     $('#tot1').text(total);
-      
+    $('#stotal').text(total);
 }
         
-/*
-
-
-if ($(this).prop('checked')) {
-
-var total = parseFloat(totaleste) + parseFloat(total1);
-$('#total1').text(total); 
-$('#tot1').text(total);
-}else {
-    var totaleste=parseFloat($('#tot'+id).text());
-    var total = parseFloat(total1) - parseFloat(totaleste);
-    $('#total1').text(total); 
-    $('#tot1').text(total);
-      
-}
-
-*/
-
 
 });
+
+
+</script>
+
+
+<script>
+    
+    $(document).ready(function() {
+
+$("#descuento").change(function() {
+                                                                
+const pago = parseFloat($(this).val());
+const cambio = parseFloat($('#stotal').text());                                        
+const total = cambio - pago;
+ 
+ $('#sdescuento').text(pago);
+$('#tot1').text(total);
+ //$('#descu').val(pago);
+ //$('#tota').val(total);
+
+             });
+            
+
+             $("#entrega").change(function() {
+                //alert("Hola");
+                                                               
+                 const pago = parseFloat($(this).val());
+                 const cambio = parseFloat($('#tot1').text());   
+                                                                
+                                                                                                                       
+               const total = pago - cambio ;
+                                                                  
+                //$('#cambio').text(total.toFixed(2));
+               document.getElementById("cambio").value = total.toFixed(2)                                          
+                                                                             });
+
+
+
+
+             
+            });
+            
 </script>
 
 <script>
@@ -94,6 +119,7 @@ $('#tot1').text(total);
         var total5 =  document.getElementById('total5').innerText;
         document.getElementById('total1').innerText = total5;
         document.getElementById('tot1').innerText = total5;
+        document.getElementById('stotal').innerText = total5;
        // $('#tot1').text(total);
        //alert(total5);
 }
@@ -115,6 +141,7 @@ function nada() {
 var total5 =  document.getElementById('total5').innerText;
 document.getElementById('total1').innerText = 0;
 document.getElementById('tot1').innerText = 0;
+document.getElementById('stotal').innerText = 0;
 //alert(total5);
 }
 
@@ -219,7 +246,7 @@ document.getElementById('tot1').innerText = 0;
                                 <div class="w-150px">
                                     <!--begin::Select2-->
                                     <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
-                                        <option value="todos" >Estado</option>
+                                        
                                         <option value="todos" >Todos</option>
                                         <option value="Creado">Creado</option>
                                         <option value="En ruta">En ruta</option>
@@ -633,7 +660,7 @@ document.getElementById('tot1').innerText = 0;
                                                                             <h2>Datos de pagar</h2>
                                                                             <br>
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="Joakin Polanco" required readonly />
+                                                                                <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
                                                                                 <label for="Cajero">Cajero</label>
                                                                                 <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                                                     Por favor ingrese el destinatario.
@@ -670,16 +697,7 @@ document.getElementById('tot1').innerText = 0;
                                                                                 <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
                                                                                 <label for="nota" style="padding-left: 25px;">Nota</label>
                                                                             </div>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <select class="form-select form-select-solid" name="metodo" id="metodo" required>
-                                                                                    <option value="Pagado">Pagado</option>
-                                                                                    <option value="sin_Pagar">Sin Pagar</option>
-                                                                                </select>
-                                                                                <label for="estado_envio">Estado del pago</label>
-                                                                                <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
-                                                                                    Por favor seleccione el método de pago.
-                                                                                </div>
-                                                                            </div>
+                                                                            
                                                                         </tbody>
                                                                         <!--end::Table body-->
                                                                     </table>
@@ -705,7 +723,7 @@ document.getElementById('tot1').innerText = 0;
                                                                 <div class="row justify-content-end">
                                                                     <label class="col-lg-3 col-form-label ">Pago</label>
                                                                     <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="Pago" id="Pago" />
+                                                                        <input type="text" class="form-control form-control-solid" name="entrega" id="entrega" value="0.00" onClick="this.select()"/>
                                                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                     </div>
                                                                 </div>
@@ -713,7 +731,7 @@ document.getElementById('tot1').innerText = 0;
                                                                 <div class="row justify-content-end">
                                                                     <label class="col-lg-3 col-form-label ">Cambio</label>
                                                                     <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$0.00" readonly />
+                                                                        <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" value="0.00"  />
                                                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                     </div>
                                                                 </div>
