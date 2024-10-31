@@ -110,7 +110,7 @@
                 <tr class="izqui">
                     
                     
-                    <td style="border-top: 2px solid black;" >SUBTOTAL </td>
+                    <td style="border-top: 2px solid black; " > <span style="margin-right: -45px;"> SUBTOTAL </span></td>
                     <td style="border-top: 2px solid black;" class="centrar">${{ $ticketact[0]->subtotal }}
                      
                     </td>
@@ -119,7 +119,7 @@
                 </tr>
                 <tr class="izqui">
                     
-                    <td>DESCUENTO</td>
+                    <td><span style="margin-right: -45px;"> DESCUENTO</span></td>
                     <td class="centrar" >${{ $ticketact[0]->desceunto }}
                      
                     </td>
@@ -127,18 +127,18 @@
                 </tr>
                 <tr class="izqui">
                     
-                    <td style="font-weight: bolder;">TOTAL</td>
+                    <td style="font-weight: bolder;"><span style="margin-right: -45px;"> TOTAL</span></td>
                     <td class="centrar" style="font-weight: bolder;">${{ $ticketact[0]->total }}</td>
                    
                 </tr>
                 <tr class="izqui">
                 
-                    <td style="text-align: right;">ENTREGA:</td>
+                    <td style="text-align: right;"><span style="margin-right: -45px;"> ENTREGA:</span></td>
                     <td class="centrar" >${{ $ticketact[0]->entrega }}</td>
                 </tr>
                 <tr class="izqui">
                     
-                    <td>CAMBIO:</td>
+                    <td><span style="margin-right: -45px;"> CAMBIO:</span></td>
                     <td class="centrar">${{ $ticketact[0]->cambio }}</td>
                 </tr>
                     
