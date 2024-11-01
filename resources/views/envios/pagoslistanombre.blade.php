@@ -12,7 +12,7 @@
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <style>
-        .table th,
+         .table th,
         .table td {
             padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
@@ -236,13 +236,14 @@ document.getElementById('tot1').innerText = 0;
                                     <div class="w-150px"> 
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
-                                            <option value="estado" >Estado</option>
-                                            <option value="Creado">Creado</option>
-                                            <option value="Creado">En ruta</option>
-                                            <option value="Entregado">Entregado</option>
-                                            <option value="Fallido">No entregado</option>
-                                            <option value="En transito">Reprogramado</option>
-                                            <option value="En transito">Devuelto al comercio</option>
+                                            <option value="todos" >Todos</option>
+                                        <option value="Creado">Creado</option>
+                                        <option value="En ruta">En ruta</option>
+                                        <option value="Entregado">Entregado</option>
+                                        <option value="No entregado">No entregado</option>
+                                        <option value="Reprogramado">Reprogramado</option>
+                                        <option value="Devuelto al comercio">Devuelto al comercio</option>
+                                        <option value="Recepcionado">Recepcionado</option>
                                         </select>
                                         <!--end::Select2-->
                                         
@@ -275,42 +276,42 @@ document.getElementById('tot1').innerText = 0;
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
-                                <div class="table-responsive">
+                                <div class="table-responsive" style="max-height: 480px;">
 
-                                    <form name="f1" id="formElement">
+                                    <form action="/pago/pagoticket/" method="GET">
 
 
 
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">
 
-                                                     <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
-                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
-                                                     
-                                                    </div></th>
-                                                <th># De guia</th>
-                                                <th>Comercio</th>
-                                                <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-150px">Dirección </th>
-                                                <th class="text-center">Tipo de envío</th>
-                                                <th class="text-center">Estado del envío</th>
-                                                <th class="text-center">Fecha de entrega</th>
-                                                <th class="text-center">Estado del pago</th>
-                                                <th class="text-center">Precio del paquete</th>
-                                                <th class="text-center">Precio de envío</th>
-                                                <th>Total </th>
-                                                <th class="min-w-150px">Nota</th>
-                                                <th >Nota de repartidor</th>
-                                                <th class="min-w-150px">Ubicación</th>
+                                                    <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
+                                                    <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
+                                                    
+                                                   </div></th>
+                                                <th class="min-w-100px"># De guia</th>
+                                                <th class="min-w-100px">Comercio</th>
+                                                <th class="min-w-100px">Destinatario</th>
+                                                <th class="min-w-200px">Dirección </th>
+                                                <th class="min-w-100px text-center">Tipo de envío</th>
+                                                <th class="min-w-150px text-center">Estado del envío</th>
+                                                <th class="min-w-150px text-center">Fecha de entrega</th>
+                                                <th class="min-w-150px text-center">Estado del pago</th>
+                                                <th class="min-w-150px text-center">Precio del paquete</th>
+                                                <th class="min-w-150px text-center">Precio de envío</th>
+                                                <th class="min-w-100px text-center">Total </th>
+                                                <th class="min-w-100px text-center">Nota</th>
+                                                <th class="min-w-100px text-center">Nota de repartidor</th>
+                                                <th class="min-w-100px">Ubicación</th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
                                             <span hidden id="total3"> {{ $total4 = 0 }}</span>
                                             @foreach ($pedidos as $pedido)                                               
-                                           
                                             <tr>
+
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
                                                      <input type="checkbox" value="{{ $pedido->id }}" class="form-check-input" id="check3" name="checked[]" >
@@ -323,26 +324,48 @@ document.getElementById('tot1').innerText = 0;
                                                 <td>{{$pedido->comercio}}</td>
                                                 <td>{{$pedido->destinatario}}</td>
                                                 <td>{{$pedido->direccion}}</td>
-                                                <td>{{$pedido->tipo}}</td>
-                                                <td>{{$pedido->estado}}</td>
-                                                <td>{{$pedido->fecha_entrega}}</td>
-                                                <td>{{$pedido->pago}}</td>
-                                                <td>{{$pedido->precio}}</td>
-                                                <td>{{$pedido->envio}}</td>
-                                                <td>{{$pedido->total}}</td>
+                                                <td class="text-center"><span class="badge badge-dark">{{$pedido->tipo}}</span></td>
+                                                <td class="text-center">
+                                                    @if( $pedido->estado == 'No entregado')
+                                                    <span class="badge badge-danger">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Creado')
+                                                    <span class="badge badge-warning">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Entregado')
+                                                    <span class="badge badge-success">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'En ruta')
+                                                    <span class="badge badge-info">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Reprogramado')
+                                                    <span class="badge badge-dark">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Devuelto al comercio')
+                                                    <span class="badge badge-primary">{{ $pedido->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-light">{{ $pedido->estado }}</span>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center">{{$pedido->fecha_entrega}}</td>
+                                                <td class="text-center">
+                                                    @if( $pedido->pago == 'Pagado')
+                                                    <span class="badge badge-success">{{ $pedido->pago}}</span>
+                                                    @else
+                                                    <span class="badge badge-danger">{{ $pedido->pago }}</span>
+                                                    @endif
+
+                                                </td>
+                                                <td class="text-center">${{$pedido->precio}}</td>
+                                                <td class="text-center">${{$pedido->envio}}</td>
+                                                <td class="text-center">${{$pedido->total}}</td>
                                                 <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
-                                                <span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
-                                                
-                                                <td>{{$pedido->nota}}</td>
+                                                <td class="text-center">{{$pedido->nota}}</td>
                                                 <td></td>
                                                 <td></td>
                                             </tr>
+                                            <span hidden >  {{ $total4 = $total4 + $pedido->total}}</span>
                                             @endforeach
 
                                             <span hidden id="total5"> {{ $total4 }}</span>
                                         </tbody>
                                     </table>
-                                </form>
+                                
                                 </div>
                                 <br>
                                 <!--end::Table-->
@@ -507,7 +530,7 @@ document.getElementById('tot1').innerText = 0;
                                                                             <!--end::Header-->
 
                                                                             <!--begin::Body-->
-                                                                            <div id="kt_customer_view_payment_method_1" class="collapse show fs-6 ps-10" data-bs-parent="#kt_customer_view_payment_method">
+                                                                            <div class="collapse show fs-6 ps-10" >
                                                                                 <!--begin::Details-->
                                                                                 <div class="d-flex flex-wrap py-5">
                                                                                     <!--begin::Col-->
@@ -733,7 +756,7 @@ document.getElementById('tot1').innerText = 0;
                                         </div>
                                     </div>
                                 </div>
-
+                            </form>
 
                             </div>
                             <!--end::Table-->

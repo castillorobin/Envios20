@@ -296,7 +296,7 @@ document.getElementById("tota").value = 0;
                                 <div class="table-responsive" style="max-height: 480px;">
                                 <form action="/pago/pagoticket/" method="GET">
                                     
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5 "  >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5 "  id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">
