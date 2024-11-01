@@ -9,6 +9,7 @@ use App\Models\Cobro;
 use App\Models\Ticketc;
 use Carbon\Carbon;
 use App\Models\Envio;
+use App\Models\Ticktpago;
 use PDF; 
 use Illuminate\Support\Str;
 
@@ -253,6 +254,56 @@ class PagoController extends Controller
 
         return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota'));
         
+    }
+
+    public function pagoticket(Request $request)
+    {
+        $identrega = $request->get('entrega');
+        $cajero = $request->get('cajero');
+        $metodo = $request->get('metodo');
+        $descu = $request->get('descuento');
+        //$sutota = $request->get('sutota');
+        $nota = $request->get('nota');
+        $tota = $request->get('tota');
+        $comercio = $request->get('comercio');
+
+
+        $pedido = new Ticktpago();
+        $pedido->comercio = $comercio;
+        $pedido->descuento = $descu;
+        //$pedido->subtotal = $sutota;
+        $pedido->total = $tota;
+        $pedido->metodo = $metodo;
+        $pedido->entrega = $request->get('entrega');
+        $pedido->cambio = $request->get('cambio');
+        $pedido->cajero = $cajero;
+        $pedido->nota = $nota;
+        $pedido->save();
+
+        $ticketact = Ticktpago::latest('id')->first();
+
+
+        $checked = $request->input('checked');
+       $envios = Envio::query()->find($checked);
+
+       if($envios){
+        foreach($envios as $envio){
+            
+            $envio->pagoticket = $ticketact->id;
+
+            $envio->save();
+
+            }
+       }
+
+       
+
+        $pdf = PDF::loadView('envios.pagoticket', ['ticketact'=>$ticketact, 'envios'=>$envios]);
+       
+        $customPaper = array(0,0,360,750);
+       
+        $pdf->setPaper($customPaper );
+        return $pdf->stream();
     }
 
     /**

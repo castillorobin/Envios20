@@ -45,12 +45,14 @@
 $('#total1').text(total); 
 $('#tot1').text(total);
 $('#stotal').text(total);
+document.getElementById("tota").value = total.toFixed(2);
 }else {
     var totaleste=parseFloat($('#tot'+id).text());
     var total = parseFloat(total1) - parseFloat(totaleste);
     $('#total1').text(total); 
     $('#tot1').text(total);
     $('#stotal').text(total);
+    document.getElementById("tota").value = total.toFixed(2);
 }
         
 
@@ -88,7 +90,7 @@ $('#tot1').text(total);
                const total = pago - cambio ;
                                                                   
                 //$('#cambio').text(total.toFixed(2));
-               document.getElementById("cambio").value = total.toFixed(2)                                          
+               document.getElementById("cambio").value = total.toFixed(2);                                          
                                                                              });
 
 
@@ -120,6 +122,7 @@ $('#tot1').text(total);
         document.getElementById('total1').innerText = total5;
         document.getElementById('tot1').innerText = total5;
         document.getElementById('stotal').innerText = total5;
+        document.getElementById("tota").value = total5.toFixed(2);
        // $('#tot1').text(total);
        //alert(total5);
 }
@@ -142,6 +145,7 @@ var total5 =  document.getElementById('total5').innerText;
 document.getElementById('total1').innerText = 0;
 document.getElementById('tot1').innerText = 0;
 document.getElementById('stotal').innerText = 0;
+document.getElementById("tota").value = 0;
 //alert(total5);
 }
 
@@ -290,8 +294,8 @@ document.getElementById('stotal').innerText = 0;
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive" style="max-height: 480px;">
-
-                                    <form name="f1" id="formElement">
+                                <form action="/pago/pagoticket/" method="GET">
+                                    
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 "  >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
@@ -376,13 +380,13 @@ document.getElementById('stotal').innerText = 0;
                                             <span hidden id="total5"> {{ $total4 }}</span>
                                         </tbody>
                                     </table>
-                                </form>
+                                
                                 </div>
                                 <br>
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
+                                        <button type="button" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
@@ -656,11 +660,12 @@ document.getElementById('stotal').innerText = 0;
                                                                         </thead>
                                                                         <!--end::Table head-->
                                                                         <!--begin::Table body-->
+                                                                        
                                                                         <tbody>
                                                                             <h2>Datos de pagar</h2>
                                                                             <br>
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
+                                                                                <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
                                                                                 <label for="Cajero">Cajero</label>
                                                                                 <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                                                     Por favor ingrese el destinatario.
@@ -735,17 +740,19 @@ document.getElementById('stotal').innerText = 0;
                                                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                     </div>
                                                                 </div>
+                                                                <input type="text" value="{{$comercioset[0]->comercio}}" name="comercio" hidden>
+                                                                <input type="text" name="tota" id="tota" hidden>
                                                                 <!-- End of Payment and Change -->
                                                                 <br>
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cobrar</button>
+                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cobrar</button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                </form>
 
                             </div>
                             <!--end::Table-->

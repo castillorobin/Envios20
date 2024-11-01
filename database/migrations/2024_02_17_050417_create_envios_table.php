@@ -33,6 +33,8 @@ return new class extends Migration
             $table->string('entrega')->nullable();
             $table->integer('punto')->nullable();
             $table->integer('registro')->nullable();
+            $table->string('entrega2')->nullable();
+            $table->integer('pagoticket')->nullable();
             $table->timestamps(); 
         });
     }
