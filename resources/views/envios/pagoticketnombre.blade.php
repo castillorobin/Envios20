@@ -48,13 +48,14 @@
     
 
                         <div class="fecha centrar " style="font-weight: bolder;">
+                            <br>
    TICKET Nº {{ $ticketact->id }}
    </div>
    <br>
    <div class="fecha " style="font-weight: bolder;">
    Comercio {{ $ticketact->comercio }}
    <br>
-   <p></p>
+   
    <hr>
    </div>
    
