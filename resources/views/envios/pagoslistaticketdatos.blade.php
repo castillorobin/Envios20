@@ -232,7 +232,7 @@ document.getElementById("tota").value = 0;
                                 <!--begin::Export buttons-->
                                 
                                 <!--end::Export buttons-->
-                                <form action="pago/filtrandonombre2" method="GET" id="myForm" >
+                                <form action="pago/filtrandonombre2" method="GET"  >
                                     @method('GET') 
                                     <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                                     <input type="text" value="{{$pedidos[0]->ticketc}}" name="ticketc" hidden>
@@ -294,13 +294,13 @@ document.getElementById("tota").value = 0;
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive" style="max-height: 480px;">
-                                <form action="/pago/pagoticket/" method="GET">
+                                
                                     
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5 "  id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5 " >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">
-
+                                                <form action="/pago/pagoticket/" method="GET" id="myForm">
                                                     <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
                                                     

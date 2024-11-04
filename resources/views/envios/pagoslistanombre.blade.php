@@ -32,64 +32,74 @@
 <script>
     $(document).on('click', '#check3', function(){
 
+        //alert("Hola mundo");
 
-		var id=$(this).val();
-
-        var total1 = $('#total1').text();      
-
+        var id=$(this).val();
+        var total1 = $('#total1').text();  
         if ($(this).prop('checked')) {
-        var totaleste=parseFloat($('#tot'+id).text());
-        var total = parseFloat(totaleste) + parseFloat(total1);
-        $('#total1').text(total); 
-        $('#tot1').text(total);
-        }else {
             var totaleste=parseFloat($('#tot'+id).text());
-            var total = parseFloat(total1) - parseFloat(totaleste);
-            $('#total1').text(total); 
-            $('#tot1').text(total);
-              
-        }
-
-        //alert("el total es: " + total);
-        /*
-		var prec=parseFloat($('#tot'+id).text());
-
-        //
-        var envi=$('#env'+id).text();
+            var total = parseFloat(totaleste) + parseFloat(total1);
+$('#total1').text(total); 
+$('#tot1').text(total);
+$('#stotal').text(total);
+document.getElementById("tota").value = total.toFixed(2);
+}else {
+    var totaleste=parseFloat($('#tot'+id).text());
+    var total = parseFloat(total1) - parseFloat(totaleste);
+    $('#total1').text(total); 
+    $('#tot1').text(total);
+    $('#stotal').text(total);
+    document.getElementById("tota").value = total.toFixed(2);
+}
         
-        //alert("le diste click" + prec);
-        var tota = $('#preci').text();
-        var senvi = $('#sumas').text();
-        //var tota = parseFloat(tota, 10);
 
-        if ($(this).prop('checked')) {
+});
 
-            var to3 = parseFloat(tota, 10) + parseFloat(prec, 10);
-            var tenv = parseFloat(senvi, 10) + parseFloat(envi, 10);
-        $('#preci').text(parseFloat(to3, 10)); 
-        $('#preci2').text(to3); 
-        $('#toti').val(to3); 
-        $('#sumas').text(tenv);  
 
-        } else {
-            var to3 = parseFloat(tota, 10) - parseFloat(prec, 10);
-            var tenv = parseFloat(senvi, 10) - parseFloat(envi, 10);
-        $('#preci').text(to3); 
-        $('#preci2').text(to3);
-        $('#toti').val(to3);
-        $('#sumas').text(tenv);  
-        }
+</script>
 
+
+<script>
     
+    $(document).ready(function() {
 
-       
-       $('#ivat').text((parseFloat(tenv, 10) * 0.13).toFixed(2) ); 
-        $('#stotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
-        $('#atotal').text(parseFloat(tenv, 10) + (parseFloat(tenv, 10) * 0.13) ); 
-  
-     */
+$("#descuento").change(function() {
+                                                                
+const pago = parseFloat($(this).val());
+const cambio = parseFloat($('#stotal').text());                                        
+const total = cambio - pago;
+ 
+ $('#sdescuento').text(pago);
+$('#tot1').text(total);
+ //$('#descu').val(pago);
+ //$('#tota').val(total);
 
-    });
+             });
+            
+
+             $("#entrega").change(function() {
+                //alert("Hola");
+                                                               
+                 const pago = parseFloat($(this).val());
+                 const cambio = parseFloat($('#tot1').text());   
+                                                                
+                                                                                                                       
+               const total = pago - cambio ;
+                                                                  
+                //$('#cambio').text(total.toFixed(2));
+               document.getElementById("cambio").value = total.toFixed(2);                                          
+                                                                             });
+
+
+
+
+             
+            });
+            
+</script>
+
+<script>
+    
 
     $(document).on('click', '#checktodo', function(){
 
@@ -108,6 +118,8 @@
         var total5 =  document.getElementById('total5').innerText;
         document.getElementById('total1').innerText = total5;
         document.getElementById('tot1').innerText = total5;
+        document.getElementById('stotal').innerText = total5;
+        document.getElementById("tota").value = total5.toFixed(2);
        // $('#tot1').text(total);
        //alert(total5);
 }
@@ -129,6 +141,8 @@ function nada() {
 var total5 =  document.getElementById('total5').innerText;
 document.getElementById('total1').innerText = 0;
 document.getElementById('tot1').innerText = 0;
+document.getElementById('stotal').innerText = 0;
+document.getElementById("tota").value = 0;
 //alert(total5);
 }
 
@@ -228,11 +242,12 @@ document.getElementById('tot1').innerText = 0;
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                   
+                                <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                     <!--begin::Daterangepicker-->
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
+                                    
                                     <div class="w-150px"> 
                                         <!--begin::Select2-->
                                         <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
@@ -244,6 +259,7 @@ document.getElementById('tot1').innerText = 0;
                                         <option value="Reprogramado">Reprogramado</option>
                                         <option value="Devuelto al comercio">Devuelto al comercio</option>
                                         <option value="Recepcionado">Recepcionado</option>
+                                        <option value="Fallido">Fallido</option>
                                         </select>
                                         <!--end::Select2-->
                                         
@@ -280,9 +296,9 @@ document.getElementById('tot1').innerText = 0;
 
                                     <form action="/pago/pagoticket/" method="GET">
 
+ 
 
-
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">
@@ -338,6 +354,8 @@ document.getElementById('tot1').innerText = 0;
                                                     <span class="badge badge-dark">{{ $pedido->estado }}</span>
                                                     @elseif( $pedido->estado == 'Devuelto al comercio')
                                                     <span class="badge badge-primary">{{ $pedido->estado }}</span>
+                                                    @elseif( $pedido->estado == 'Fallido')
+                                                    <span class="badge badge-secondary">{{ $pedido->estado }}</span>
                                                     @else
                                                     <span class="badge badge-light">{{ $pedido->estado }}</span>
                                                     @endif
@@ -371,7 +389,7 @@ document.getElementById('tot1').innerText = 0;
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
+                                        <button type="button" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
@@ -650,7 +668,7 @@ document.getElementById('tot1').innerText = 0;
                                                                             <h2>Datos de pagar</h2>
                                                                             <br>
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="Cajero" id="Cajero" placeholder="Cajero" value="Joakin Polanco" required readonly />
+                                                                                <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
                                                                                 <label for="Cajero">Cajero</label>
                                                                                 <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                                                     Por favor ingrese el destinatario.
@@ -687,16 +705,7 @@ document.getElementById('tot1').innerText = 0;
                                                                                 <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
                                                                                 <label for="nota" style="padding-left: 25px;">Nota</label>
                                                                             </div>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <select class="form-select form-select-solid" name="metodo" id="metodo" required>
-                                                                                    <option value="Pagado">Pagado</option>
-                                                                                    <option value="sin_Pagar">Sin Pagar</option>
-                                                                                </select>
-                                                                                <label for="estado_envio">Estado del pago</label>
-                                                                                <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
-                                                                                    Por favor seleccione el método de pago.
-                                                                                </div>
-                                                                            </div>
+                                                                            
                                                                         </tbody>
                                                                         <!--end::Table body-->
                                                                     </table>
@@ -722,7 +731,7 @@ document.getElementById('tot1').innerText = 0;
                                                                 <div class="row justify-content-end">
                                                                     <label class="col-lg-3 col-form-label ">Pago</label>
                                                                     <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="Pago" id="Pago" />
+                                                                        <input type="text" class="form-control form-control-solid" name="entrega" id="entrega" value="0.00" onClick="this.select()"/>
                                                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                     </div>
                                                                 </div>
@@ -730,16 +739,18 @@ document.getElementById('tot1').innerText = 0;
                                                                 <div class="row justify-content-end">
                                                                     <label class="col-lg-3 col-form-label ">Cambio</label>
                                                                     <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="Cambio" id="Cambio" value="$0.00" readonly />
+                                                                        <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" value="0.00"  />
                                                                         <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                     </div>
                                                                 </div>
+                                                                <input type="text" value="{{$comercioset[0]->comercio}}" name="comercio" hidden>
+                                                                <input type="text" name="tota" id="tota" hidden>
                                                                 <!-- End of Payment and Change -->
                                                                 <br>
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cobrar</button>
+                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cobrar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -749,10 +760,7 @@ document.getElementById('tot1').innerText = 0;
                                                 </div>
                                             </div>
 
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>

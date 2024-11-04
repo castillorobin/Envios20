@@ -96,7 +96,8 @@ class PagoController extends Controller
        $pedidos = Envio::where('comercio', $comercio)->get();
        $comercioset = Comercio::where('comercio', $comercio)->get();
         $comercios = Comercio::all(); 
-        return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
+        $nota = " ";
+        return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset', 'nota'));
     }
 
     public function listaticket()
@@ -177,14 +178,32 @@ class PagoController extends Controller
         $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
         $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
        //return ($fechacam);
+       $nota = " ";
+       if($estado == "todos")
+       {
+        $pedidos = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+        ->where('comercio', $comerset)->get();
 
-       $pedidos = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+       }else{
+        $pedidos = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+       ->where('estado', $estado)
+       ->where('comercio', $comerset)
 
        ->get();
+       }
+       if(empty($pedidos[0]->comercio)){
+        
+        $nota = "No hay envios con el estado seleccionado";
+
+      
+
+    }
+
+ 
 
        $comercios = Comercio::all(); 
        $comercioset = Comercio::where('comercio', $comerset)->get();
-       return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset'));
+       return view('envios.pagoslistanombre', compact('comercios', 'pedidos', 'comercioset', 'nota'));
 
 
     } 
