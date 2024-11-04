@@ -324,6 +324,55 @@ class PagoController extends Controller
         $pdf->setPaper($customPaper );
         return $pdf->stream();
     }
+    public function pagoticket2(Request $request)
+    {
+        $identrega = $request->get('entrega');
+        $cajero = $request->get('cajero');
+        $metodo = $request->get('metodo');
+        $descu = $request->get('descuento');
+        //$sutota = $request->get('sutota');
+        $nota = $request->get('nota');
+        $tota = $request->get('tota');
+        $comercio = $request->get('comercio');
+
+
+        $pedido = new Ticktpago();
+        $pedido->comercio = $comercio;
+        $pedido->descuento = $descu;
+        //$pedido->subtotal = $sutota;
+        $pedido->total = $tota;
+        $pedido->metodo = $metodo;
+        $pedido->entrega = $request->get('entrega');
+        $pedido->cambio = $request->get('cambio');
+        $pedido->cajero = $cajero;
+        $pedido->nota = $nota;
+        $pedido->save();
+
+        $ticketact = Ticktpago::latest('id')->first();
+
+
+        $checked = $request->input('checked');
+       $envios = Envio::query()->find($checked);
+
+       if($envios){
+        foreach($envios as $envio){
+            
+            $envio->pagoticket = $ticketact->id;
+
+            $envio->save();
+
+            }
+       }
+
+       
+
+        $pdf = PDF::loadView('envios.pagoticketnombre', ['ticketact'=>$ticketact, 'envios'=>$envios]);
+       
+        $customPaper = array(0,0,360,750);
+       
+        $pdf->setPaper($customPaper );
+        return $pdf->stream();
+    }
 
     /**
      * Show the form for creating a new resource.
