@@ -39,16 +39,20 @@
         if ($(this).prop('checked')) {
             var totaleste=parseFloat($('#tot'+id).text());
             var total = parseFloat(totaleste) + parseFloat(total1);
-$('#total1').text(total); 
-$('#tot1').text(total);
-$('#stotal').text(total);
-document.getElementById("tota").value = total.toFixed(2);
-document.getElementById("stota").value = total.toFixed(2);
+            $('#total1').text(total); 
+            $('#totalito').text(total);
+            document.getElementById("stota").value = total.toFixed(2);
+           
+          // document.getElementById("totalito").value = total.toFixed(2);
+           //alert("Hola mundo");
+            $('#stotal').text(total);
+//document.getElementById("tota").value = total.toFixed(2);
+//document.getElementById("stota").value = total.toFixed(2);
 }else {
     var totaleste=parseFloat($('#tot'+id).text());
     var total = parseFloat(total1) - parseFloat(totaleste);
     $('#total1').text(total); 
-    $('#tot1').text(total);
+    $('#totalito').text(total);
     $('#stotal').text(total);
     document.getElementById("tota").value = total.toFixed(2);
     document.getElementById("stota").value = total.toFixed(2);
@@ -72,10 +76,10 @@ const cambio = parseFloat($('#stotal').text());
 const total = cambio - pago;
  
  $('#sdescuento').text(pago);
-$('#tot1').text(total);
+$('#totalito').text(total);
  $('#stota').val(stotal);
  $('#tota').val(total);
-
+ document.getElementById("stota").value = cambio.toFixed(2);
              });
             
 
@@ -83,7 +87,7 @@ $('#tot1').text(total);
                 //alert("Hola");
                                                                
                  const pago = parseFloat($(this).val());
-                 const cambio = parseFloat($('#tot1').text());   
+                 const cambio = parseFloat($('#totalito').text());   
                                                                 
                                                                                                                        
                const total = pago - cambio ;
@@ -119,7 +123,7 @@ function abrirURL(){
 
         document.getElementById('checktodo').style.display = 'none';
         document.getElementById('checknada').style.display = '';
-
+        document.getElementById("stota").value = total.toFixed(2);
     });
     
     });
@@ -127,9 +131,10 @@ function abrirURL(){
     function todo() {
         var total5 =  document.getElementById('total5').innerText;
         document.getElementById('total1').innerText = total5;
-        document.getElementById('tot1').innerText = total5;
+        document.getElementById('totalito').innerText = total5;
         document.getElementById('stotal').innerText = total5;
         document.getElementById("tota").value = total5.toFixed(2);
+        document.getElementById("stota").value = total5.toFixed(2);
        // $('#tot1').text(total);
        //alert(total5);
 }
@@ -150,9 +155,10 @@ document.getElementById('checknada').style.display = 'none';
 function nada() {
 var total5 =  document.getElementById('total5').innerText;
 document.getElementById('total1').innerText = 0;
-document.getElementById('tot1').innerText = 0;
+document.getElementById('totalito').innerText = 0;
 document.getElementById('stotal').innerText = 0;
 document.getElementById("tota").value = 0;
+document.getElementById("stota").value = 0;
 //alert(total5);
 }
 
@@ -244,7 +250,7 @@ document.getElementById("tota").value = 0;
                                     <!--begin::Export buttons-->
                                     
                                     <!--end::Export buttons-->
-                                    <form action="pago/filtrandonombre" method="GET" id="myForm" >
+                                    <form action="pago/filtrandonombre" method="GET"  >
                                         @method('GET') 
                                         <input type="text" value="{{$comercioset[0]->comercio}}" name="comerset" hidden>
                                 </div>
@@ -303,15 +309,14 @@ document.getElementById("tota").value = 0;
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive" style="max-height: 480px;">
-
                                     <form action="/pago/pagoticket2/" method="GET">
-
- 
 
                                     <table class="table align-middle table-row-dashed fs-6 gy-5"  id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
-                                                <th><div class="form-group form-check" style="width: 5px;">
+                                                
+                                                <th>
+                                                    <div class="form-group form-check" style="width: 5px;">
 
                                                     <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
@@ -389,7 +394,7 @@ document.getElementById("tota").value = 0;
                                             </tr>
                                             <span hidden >  {{ $total4 = $total4 + $pedido->total}}</span>
                                             @endforeach
-
+                                            
                                             <span hidden id="total5"> {{ $total4 }}</span>
                                         </tbody>
                                     </table>
@@ -731,9 +736,13 @@ document.getElementById("tota").value = 0;
                                                                     </div>
                                                                     <!-- Content -->
                                                                     <div class="fs-6 fw-bold text-white text-end">
+                                                                        
                                                                         <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
                                                                         <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                                                        <span id="tot1" name="tot1" class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total">$0.00</span>
+                                                                        <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$1.00</span>
+                                                                       
+                                                                        
+                                                                        
                                                                     </div>
                                                                 </div>
                                                                 <!-- End of Summary -->
