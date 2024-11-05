@@ -281,7 +281,7 @@ class PagoController extends Controller
         $cajero = $request->get('cajero');
         $metodo = $request->get('metodo');
         $descu = $request->get('descuento');
-        //$sutota = $request->get('sutota');
+        $sutota = $request->get('stota');
         $nota = $request->get('nota');
         $tota = $request->get('tota');
         $comercio = $request->get('comercio');
@@ -290,7 +290,7 @@ class PagoController extends Controller
         $pedido = new Ticktpago();
         $pedido->comercio = $comercio;
         $pedido->descuento = $descu;
-        //$pedido->subtotal = $sutota;
+        $pedido->subtotal = $sutota;
         $pedido->total = $tota;
         $pedido->metodo = $metodo;
         $pedido->entrega = $request->get('entrega');
