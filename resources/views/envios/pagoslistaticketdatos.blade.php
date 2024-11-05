@@ -79,7 +79,7 @@ const cambio = parseFloat($('#stotal').text());
 const total = cambio - pago;
  
  $('#sdescuento').text(pago);
-$('#tot1').text(total);
+$('#totalito').text(total);
  //$('#descu').val(pago);
  $('#tota').val(total);
  document.getElementById("stota").value = cambio.toFixed(2);
