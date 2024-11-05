@@ -309,7 +309,7 @@ class PagoController extends Controller
         foreach($envios as $envio){
             
             $envio->pagoticket = $ticketact->id;
-
+            $envio->pago = "Pagado";
             $envio->save();
 
             }
@@ -358,7 +358,7 @@ class PagoController extends Controller
         foreach($envios as $envio){
             
             $envio->pagoticket = $ticketact->id;
-
+            $envio->pago = "Pagado";
             $envio->save();
 
             }
