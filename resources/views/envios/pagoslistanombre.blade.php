@@ -43,6 +43,7 @@ $('#total1').text(total);
 $('#tot1').text(total);
 $('#stotal').text(total);
 document.getElementById("tota").value = total.toFixed(2);
+document.getElementById("stota").value = total.toFixed(2);
 }else {
     var totaleste=parseFloat($('#tot'+id).text());
     var total = parseFloat(total1) - parseFloat(totaleste);
@@ -50,6 +51,7 @@ document.getElementById("tota").value = total.toFixed(2);
     $('#tot1').text(total);
     $('#stotal').text(total);
     document.getElementById("tota").value = total.toFixed(2);
+    document.getElementById("stota").value = total.toFixed(2);
 }
         
 
@@ -71,8 +73,8 @@ const total = cambio - pago;
  
  $('#sdescuento').text(pago);
 $('#tot1').text(total);
- //$('#descu').val(pago);
- //$('#tota').val(total);
+ $('#stota').val(stotal);
+ $('#tota').val(total);
 
              });
             
@@ -99,7 +101,15 @@ $('#tot1').text(total);
 </script>
 
 <script>
+      function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
     
+function abrirURL(){
+    
+   //window.location = "http://127.0.0.1:8000/listapagos";
+   window.location = "http://154.12.227.235/listapagos";
+};
 
     $(document).on('click', '#checktodo', function(){
 
@@ -745,12 +755,13 @@ document.getElementById("tota").value = 0;
                                                                 </div>
                                                                 <input type="text" value="{{$comercioset[0]->comercio}}" name="comercio" hidden>
                                                                 <input type="text" name="tota" id="tota" hidden>
+                                                                <input type="text" name="stota" id="stota" hidden>
                                                                 <!-- End of Payment and Change -->
                                                                 <br>
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cobrar</button>
+                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Cobrar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

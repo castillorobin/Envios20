@@ -75,7 +75,7 @@ const total = cambio - pago;
  $('#sdescuento').text(pago);
 $('#tot1').text(total);
  //$('#descu').val(pago);
- //$('#tota').val(total);
+ $('#tota').val(total);
 
              });
             

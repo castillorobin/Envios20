@@ -53,7 +53,7 @@
    </div>
    <br>
    <div class="fecha " style="font-weight: bolder;">
-   Comercio {{ $ticketact->comercio }}
+   Comercio: {{ $ticketact->comercio }}
    <br>
    
    <hr>
