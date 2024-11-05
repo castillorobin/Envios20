@@ -115,7 +115,7 @@ $('#totalito').text(total);
 function abrirURL(){
     
    //window.location = "http://127.0.0.1:8000/listapagos";
-   window.location = "http://154.12.227.235/listapagos";
+   window.location = "http://154.12.227.235/listapagosticket";
 };
 
     $(document).on('click', '#checktodo', function(){
