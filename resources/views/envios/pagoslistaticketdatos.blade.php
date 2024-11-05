@@ -105,10 +105,8 @@ $('#totalito').text(total);
              
             });
             
-</script>
 
-<script>
-     function redireccionarPagina(){
+            function redireccionarPagina(){
     window.setTimeout( abrirURL, 2000 ); // 3 segundos
 };
     
@@ -117,11 +115,16 @@ function abrirURL(){
    //window.location = "http://127.0.0.1:8000/listapagos";
    window.location = "http://154.12.227.235/listapagosticket";
 };
+</script>
+
+<script>
+   
 
     $(document).on('click', '#checktodo', function(){
 
         document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
         checkElement.checked = true;
+       
         todo();
 
         document.getElementById('checktodo').style.display = 'none';
@@ -132,13 +135,16 @@ function abrirURL(){
     });
 
     function todo() {
+        
         var total5 =  document.getElementById('total5').innerText;
         document.getElementById('total1').innerText = total5;
         document.getElementById('totalito').innerText = total5;
         document.getElementById('stotal').innerText = total5;
-        document.getElementById("tota").value = total5.toFixed(2);
+        $totalisimo=parseFloat(total5);
+        document.getElementById("tota").value = $totalisimo.toFixed(2);
        // $('#tot1').text(total);
-       //alert(total5);
+       
+       //alert("Hola");
 }
 
 $(document).on('click', '#checknada', function(){
@@ -200,7 +206,7 @@ document.getElementById("tota").value = 0;
                                 <li class="breadcrumb-item text-muted">Pagar</li>
                             </ul>
                         </div>
-                        <form action="/pago/conticket" id="kt_invoice_form" method="POST"> 
+                        <form action="/pago/conticket" id="kt_invoice_form" method="POST" > 
                             @csrf
                             @method('GET')
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
@@ -303,18 +309,18 @@ document.getElementById("tota").value = 0;
                             </div>
                             <!--end::Card toolbar-->
                             
-                        <!--end::Card header-->
+                        <!--end::Card header               -->
                         <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive" style="max-height: 480px;">
-                                
+                                    <form action="/pago/pagoticket/" method="GET" name="f1" id="formElement" >
                                     
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">
-                                                <form action="/pago/pagoticket/" method="GET" id="myForm">
+                                               
                                                     <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
                                                     
