@@ -48,13 +48,14 @@
     
 
                         <div class="fecha centrar " style="font-weight: bolder;">
+                            <br>
    TICKET Nº {{ $ticketact->id }}
    </div>
    <br>
    <div class="fecha " style="font-weight: bolder;">
    Comercio {{ $ticketact->comercio }}
    <br>
-   <p></p>
+   
    <hr>
    </div>
    
@@ -68,7 +69,7 @@
     <table class="centrar" style="width: 100%; display:table; " >
         <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
             <tr>
-            <th style="width: 250px;">DESCRIPCION</th>
+            <th style="width: 250px; text-align: left;">DESCRIPCION</th>
            
             <th>IMPORTE</th>
             </tr>
@@ -110,12 +111,21 @@
                 </tr>
 
                 @endif
-               
+                <tr style="text-align: left;">
+                    
+                    
+                    <td style="border-top: 2px solid black; " >Método de pago: {{ $ticketact->metodo }} </td>
+                    <td style="border-top: 2px solid black;" class="centrar">
+                     
+                    </td>
+                    
+                    
+                </tr>
                 <tr class="izqui">
                     
-                    
-                    <td style="border-top: 2px solid black; " > <span style="margin-right: -45px;"> SUBTOTAL </span></td>
-                    <td style="border-top: 2px solid black;" class="centrar">${{ $ticketact->subtotal }}
+                    Método de pago: {{ $ticketact->metodo }}
+                    <td  > <span style="margin-right: -45px;"> SUBTOTAL </span></td>
+                    <td style="text-align: left; padding-left: 55px;">${{ $ticketact->subtotal }}
                      
                     </td>
                     
@@ -124,7 +134,7 @@
                 <tr class="izqui">
                     
                     <td><span style="margin-right: -45px;"> DESCUENTO</span></td>
-                    <td class="centrar" >${{ $ticketact->descuento }}
+                    <td style="text-align: left; padding-left: 55px;">${{ $ticketact->descuento }}
                      
                     </td>
                     
@@ -132,18 +142,18 @@
                 <tr class="izqui">
                     
                     <td style="font-weight: bolder;"><span style="margin-right: -45px;"> TOTAL</span></td>
-                    <td class="centrar" style="font-weight: bolder;">${{ $ticketact->total }}</td>
+                    <td style="font-weight: bolder; text-align: left; padding-left: 55px;">${{ $ticketact->total }}</td>
                    
                 </tr>
                 <tr class="izqui">
                 
                     <td style="text-align: right;"><span style="margin-right: -45px;"> ENTREGA:</span></td>
-                    <td class="centrar" >${{ $ticketact->entrega }}</td>
+                    <td style="text-align: left; padding-left: 55px;" >${{ $ticketact->entrega }}</td>
                 </tr>
                 <tr class="izqui">
                     
                     <td><span style="margin-right: -45px;"> CAMBIO:</span></td>
-                    <td class="centrar">${{ $ticketact->cambio }}</td>
+                    <td style="text-align: left; padding-left: 55px;">${{ $ticketact->cambio }}</td>
                 </tr>
                     
                 

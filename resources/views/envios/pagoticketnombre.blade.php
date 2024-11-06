@@ -69,7 +69,7 @@
     <table class="centrar" style="width: 100%; display:table; " >
         <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
             <tr>
-            <th style="width: 250px;">DESCRIPCION</th>
+            <th style="width: 250px; text-align: left;">DESCRIPCION</th>
            
             <th>IMPORTE</th>
             </tr>

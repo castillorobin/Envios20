@@ -25,6 +25,11 @@
         .dataTables_length {
             display: none;
         }
+        /*
+        .sorting.sorting_asc{
+            display: none;
+        }
+            */
     </style>
 
 </head>
@@ -102,10 +107,7 @@ $('#totalito').text(total);
              
             });
             
-</script>
-
-<script>
-      function redireccionarPagina(){
+            function redireccionarPagina(){
     window.setTimeout( abrirURL, 2000 ); // 3 segundos
 };
     
@@ -114,6 +116,10 @@ function abrirURL(){
    //window.location = "http://127.0.0.1:8000/listapagos";
    window.location = "http://154.12.227.235/listapagos";
 };
+</script>
+
+<script>
+    
 
     $(document).on('click', '#checktodo', function(){
 
@@ -121,20 +127,21 @@ function abrirURL(){
         checkElement.checked = true;
         todo();
 
-        document.getElementById('checktodo').style.display = 'none';
-        document.getElementById('checknada').style.display = '';
-        document.getElementById("stota").value = total.toFixed(2);
+document.getElementById('checktodo').style.display = 'none';
+document.getElementById('checknada').style.display = '';
     });
     
     });
 
     function todo() {
+        
         var total5 =  document.getElementById('total5').innerText;
         document.getElementById('total1').innerText = total5;
         document.getElementById('totalito').innerText = total5;
-        document.getElementById('stotal').innerText = total5;
-        document.getElementById("tota").value = total5.toFixed(2);
-        document.getElementById("stota").value = total5.toFixed(2);
+       document.getElementById('stotal').innerText = total5;
+       $totalisimo=parseFloat(total5);
+      document.getElementById("tota").value = $totalisimo.toFixed(2);
+
        // $('#tot1').text(total);
        //alert(total5);
 }
@@ -309,7 +316,7 @@ document.getElementById("stota").value = 0;
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive" style="max-height: 480px;">
-                                    <form action="/pago/pagoticket2/" method="GET">
+                                    <form action="/pago/pagoticket2/" method="GET" name="f1" id="formElement">
 
                                     <table class="table align-middle table-row-dashed fs-6 gy-5"  id="kt_ecommerce_report_shipping_table">
                                         <thead>
