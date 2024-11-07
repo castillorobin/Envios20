@@ -51,6 +51,8 @@
           // document.getElementById("totalito").value = total.toFixed(2);
            //alert("Hola mundo");
             $('#stotal').text(total);
+
+            $("#pago").prop('disabled',false)  
 //document.getElementById("tota").value = total.toFixed(2);
 //document.getElementById("stota").value = total.toFixed(2);
 }else {
@@ -61,8 +63,12 @@
     $('#stotal').text(total);
     document.getElementById("tota").value = total.toFixed(2);
     document.getElementById("stota").value = total.toFixed(2);
+
+    if(total <= 0){
+        $("#pago").prop('disabled',true)
+    }
 }
-$("#pago").prop('disabled',false)    
+  
 
 });
 

@@ -52,6 +52,7 @@
             $('#stotal').text(total);
 //document.getElementById("tota").value = total.toFixed(2);
 //document.getElementById("stota").value = total.toFixed(2);
+$("#pago").prop('disabled',false)
 }else {
     var totaleste=parseFloat($('#tot'+id).text());
     var total = parseFloat(total1) - parseFloat(totaleste);
@@ -60,10 +61,14 @@
     $('#stotal').text(total);
     document.getElementById("tota").value = total.toFixed(2);
     document.getElementById("stota").value = total.toFixed(2);
+
+    if(total <= 0){
+        $("#pago").prop('disabled',true)
+    }
 }   
 
 
-$("#pago").prop('disabled',false)
+
 
 });
 
