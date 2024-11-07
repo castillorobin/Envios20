@@ -790,6 +790,11 @@ $("#pago").prop('disabled',true)
             </div>
             <!--end::Content-->
         </div>
+    </div>
+</div>
+</div>
+</div>
+</div>
         <!--end::Content wrapper-->
     </x-default-layout>
     <!--begin::Javascript-->
