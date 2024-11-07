@@ -287,6 +287,7 @@ class PagoController extends Controller
         $comercio = $request->get('comercio');
 
 
+
         $pedido = new Ticktpago();
         $pedido->comercio = $comercio;
         $pedido->descuento = $descu;
@@ -314,8 +315,6 @@ class PagoController extends Controller
 
             }
        }
-
-       
 
         $pdf = PDF::loadView('envios.pagoticket', ['ticketact'=>$ticketact, 'envios'=>$envios]);
        

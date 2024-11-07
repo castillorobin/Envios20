@@ -62,6 +62,9 @@
     document.getElementById("stota").value = total.toFixed(2);
 }   
 
+
+$("#pago").prop('disabled',false)
+
 });
 
 
@@ -143,7 +146,7 @@ function abrirURL(){
         $totalisimo=parseFloat(total5);
         document.getElementById("tota").value = $totalisimo.toFixed(2);
        // $('#tot1').text(total);
-       
+       $("#pago").prop('disabled',false)
        //alert("Hola");
 }
 
@@ -167,6 +170,7 @@ document.getElementById('totalito').innerText = 0;
 document.getElementById('stotal').innerText = 0;
 document.getElementById("tota").value = 0;
 //alert(total5);
+$("#pago").prop('disabled',true)
 }
 
 
@@ -303,7 +307,7 @@ document.getElementById("tota").value = 0;
                                  
                                     <!--end::Menu item-->
                                 </div>
-                                <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
+                               <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                 <!--end::Menu-->
                                 <!--end::Export dropdown-->
                             </div>
@@ -406,7 +410,7 @@ document.getElementById("tota").value = 0;
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="button" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
+                                        <button type="button" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
@@ -768,7 +772,7 @@ document.getElementById("tota").value = 0;
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Cobrar</button>
+                                                                        <button type="submit" id="botonpagar" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Cobrar</button>
                                             </div>
                                         </div>
                                     </div>

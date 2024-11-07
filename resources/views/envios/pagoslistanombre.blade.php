@@ -62,7 +62,7 @@
     document.getElementById("tota").value = total.toFixed(2);
     document.getElementById("stota").value = total.toFixed(2);
 }
-        
+$("#pago").prop('disabled',false)    
 
 });
 
@@ -141,7 +141,7 @@ document.getElementById('checknada').style.display = '';
        document.getElementById('stotal').innerText = total5;
        $totalisimo=parseFloat(total5);
       document.getElementById("tota").value = $totalisimo.toFixed(2);
-
+      $("#pago").prop('disabled',false)
        // $('#tot1').text(total);
        //alert(total5);
 }
@@ -167,6 +167,7 @@ document.getElementById('stotal').innerText = 0;
 document.getElementById("tota").value = 0;
 document.getElementById("stota").value = 0;
 //alert(total5);
+$("#pago").prop('disabled',true)
 }
 
 
@@ -411,7 +412,7 @@ document.getElementById("stota").value = 0;
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="button" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
+                                        <button type="button" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
@@ -719,7 +720,7 @@ document.getElementById("stota").value = 0;
                                                                             </div>
                                                                             <!-- Campo para la cantidad de descuento -->
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
+                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0" onClick="this.select()"/>
                                                                                 <label for="descuento" style="padding-left: 25px;">Descuento</label>
                                                                                 <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                                             </div>
