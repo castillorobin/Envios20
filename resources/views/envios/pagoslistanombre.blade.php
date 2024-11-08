@@ -25,11 +25,18 @@
         .dataTables_length {
             display: none;
         }
+        
         /*
         .sorting.sorting_asc{
             display: none;
         }
+            th.sorting.sorting_asc::after{
+            display: none;
+        }
             */
+
+        
+        
     </style>
 
 </head>
@@ -325,7 +332,7 @@ $("#pago").prop('disabled',true)
                                 <div class="table-responsive" style="max-height: 480px;">
                                     <form action="/pago/pagoticket2/" method="GET" name="f1" id="formElement">
 
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5"  id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5"  id="kt_ecommerce_report_shipping_table" data-ordering="false">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 
