@@ -308,7 +308,7 @@ $("#pago").prop('disabled',true)
                                 </form>
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
-                                       
+                                        
                                         <!--end::Menu item-->
                                         <!--begin::Menu item
                                         <div class="menu-item px-3">

@@ -373,6 +373,24 @@ class PagoController extends Controller
         return $pdf->stream();
     }
 
+    public function exportarticket( $ticketc)
+    {
+        //Alert::message('Mensaje', 'Título opcional');
+
+        $pedidos = Envio::where('ticketc', $ticketc)
+            
+     
+            ->get();
+
+        
+        $pdf = PDF::loadView('envios.exportarpagarticket', ['pedidos'=>$pedidos]);
+            $pdf->setPaper('letter', 'landscape');
+            return $pdf->stream();
+
+
+    }
+
+
     /**
      * Show the form for creating a new resource.
      */

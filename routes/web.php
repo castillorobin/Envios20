@@ -174,6 +174,7 @@ Route::get('/envios/limpiarticket/{comercio}', [App\Http\Controllers\PagoControl
 
 Route::get('pago/pagoticket/', [App\Http\Controllers\PagoController::class, 'pagoticket'] )->name('pagoticket') ;
 Route::get('pago/pagoticket2/', [App\Http\Controllers\PagoController::class, 'pagoticket2'] )->name('pagoticket2') ;
+Route::get('pago/exportarticket/{ticketc}', [App\Http\Controllers\PagoController::class, 'exportarticket'] )->name('exportarticket') ;
 
 //Administracion Tickets
 Route::get('/envios/listadoticket', [App\Http\Controllers\PagoController::class, 'listadoticket'] )->name('listadoticket') ;

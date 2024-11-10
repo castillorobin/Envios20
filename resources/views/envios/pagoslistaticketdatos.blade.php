@@ -325,7 +325,7 @@ $("#pago").prop('disabled',true)
                                 <div class="table-responsive" style="max-height: 480px;">
                                     <form action="/pago/pagoticket/" method="GET" name="f1" id="formElement" >
                                     
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5 " >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table" data-ordering="false">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th><div class="form-group form-check" style="width: 5px;">
@@ -352,6 +352,8 @@ $("#pago").prop('disabled',true)
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
                                             <span hidden id="total3"> {{ $total4 = 0 }}</span>
+
+                                            
                                             @foreach ($pedidos as $pedido)                                               
                                            
                                             <tr>
@@ -416,13 +418,24 @@ $("#pago").prop('disabled',true)
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
                                         <button type="button" style="height: 42px; margin-top: 10px;" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
+                                       
+                                        <a href="/pago/exportarticket/{{$pedidos[0]->ticketc}}"> 
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>Exportar Reporte</button>
+
+
+                                            </a>
+
                                     </div>
+
+
+
                                 </div>
+
+
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">
                                     <div class="modal-dialog modal-fullscreen">
                                         <div class="modal-content shadow-none">
