@@ -41,7 +41,7 @@
 <span>Repartidor: </span>
 <br>
 <br>
-<span>Cantidad: </span>
+<span>Ticket: {{ $pedidos[0]->ticketc }}</span>
 <p></p>
 <p></p>
 
@@ -71,7 +71,7 @@
     <tr style='border-bottom: 1px solid; font-size: 12px'>
     
     <td >{{ $pedido->id }}</td>
-    <td >{{ $pedido->vendedor }}</td>
+    <td >{{ $pedido->comercio }}</td>
     <td >{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
 
@@ -105,12 +105,10 @@
    <td>&nbsp;</td>
    
        <td >  
-       Total Cobrado:  $
+       Total Pagado:  $ {{ $total }}
        <br>
-       Total sin envio:  $
-        <br>
-        Total de Envio: $
-       </td>
+     
+      
        
    </tr>
   </table>   
