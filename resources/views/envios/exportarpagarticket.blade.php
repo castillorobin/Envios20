@@ -36,14 +36,16 @@
  
    
    <hr>
-      <span>Operario: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
+      <span>Usuario: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
    <br>
 <span>Repartidor: </span>
 <br>
-<br>
+
 <span>Ticket: {{ $pedidos[0]->ticketc }}</span>
+<br>
+<span>Cantidad de Guias: {{ $cantidad }}</span>
 <p></p>
-<p></p>
+
 
 
 

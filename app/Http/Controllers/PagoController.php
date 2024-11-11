@@ -380,16 +380,17 @@ class PagoController extends Controller
         $pedidos = Envio::where('ticketc', $ticketc)->get();
         $comercio = $pedidos[0]->comercio;
         $total = 0;
+        $cantidad = 0;
 
         foreach($pedidos as $pedido){
             
             $total = $total + $pedido->total  ;
             
-
+            $cantidad = $cantidad + 1;
             }
 
         $comerset = Comercio::where('comercio', $comercio)->get();
-        $pdf = PDF::loadView('envios.exportarpagarticket', ['pedidos'=>$pedidos, 'comerset'=>$comerset, 'total'=>$total]);
+        $pdf = PDF::loadView('envios.exportarpagarticket', ['pedidos'=>$pedidos, 'comerset'=>$comerset, 'total'=>$total, 'cantidad'=>$cantidad]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
 
