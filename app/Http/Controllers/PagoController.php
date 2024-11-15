@@ -397,6 +397,32 @@ class PagoController extends Controller
 
     }
 
+    public function exportarcomercio( $ticketc)
+    {
+        
+        //Alert::message('Mensaje', 'Título opcional');
+
+        //$pedidos = Envio::where('ticketc', $ticketc)->get();
+        $pedidos = Envio::where('comercio', $ticketc)->get();
+       // $comercio = $pedidos[0]->comercio;
+        $total = 0;
+        $cantidad = 0;
+
+        foreach($pedidos as $pedido){
+            
+            $total = $total + $pedido->total  ;
+            
+            $cantidad = $cantidad + 1;
+            }
+
+        //$comerset = Comercio::where('comercio', $comercio)->get();
+        $pdf = PDF::loadView('envios.exportarpagarcomercio', ['pedidos'=>$pedidos, 'total'=>$total, 'cantidad'=>$cantidad]);
+            $pdf->setPaper('letter', 'landscape');
+            return $pdf->stream();
+
+
+    }
+
 
     /**
      * Show the form for creating a new resource.
