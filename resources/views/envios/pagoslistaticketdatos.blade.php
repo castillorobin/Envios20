@@ -25,6 +25,24 @@
         .dataTables_length {
             display: none;
         }
+/*
+        .dataTables_paginate {
+            position: absolute;
+  z-index: 100;
+ 
+bottom: -160px;
+        }
+*/
+        /*
+        .pagination {
+            position: absolute;
+  z-index: 100;
+ 
+        bottom: -160px;
+        }
+*/
+       
+
     </style>
 
 </head>
@@ -322,7 +340,7 @@ $("#pago").prop('disabled',true)
                         <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
-                                <div class="table-responsive" style="max-height: 480px;">
+                                <div class="table-responsive" >
                                     <form action="/pago/pagoticket/" method="GET" name="f1" id="formElement" >
                                     
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table" data-ordering="false">
@@ -424,7 +442,7 @@ $("#pago").prop('disabled',true)
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
-                                            </i>Exportar Reporteeeeee</button>
+                                            </i>Exportar Reporte</button>
 
 
                                             </a>
