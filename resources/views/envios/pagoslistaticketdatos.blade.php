@@ -352,23 +352,23 @@ $("#pago").prop('disabled',true)
                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
                                                     
                                                    </div></th>
-                                                <th class="min-w-100px"># De guia</th>
-                                                <th class="min-w-100px">Comercio</th>
-                                                <th class="min-w-100px">Destinatario</th>
-                                                <th class="min-w-200px">Dirección </th>
-                                                <th class="min-w-100px text-center">Tipo de envío</th>
-                                                <th class="min-w-150px text-center">Estado del envío</th>
-                                                <th class="min-w-150px text-center">Fecha de entrega</th>
-                                                <th class="min-w-150px text-center">Estado del pago</th>
-                                                <th class="min-w-150px text-center">Precio del paquete</th>
-                                                <th class="min-w-150px text-center">Precio de envío</th>
-                                                <th class="min-w-100px text-center">Total </th>
-                                                <th class="min-w-100px text-center">Nota</th>
-                                                <th class="min-w-100px text-center">Nota de repartidor</th>
-                                                <th class="min-w-100px">Ubicación</th>
+                                                <th class="min-w-50px"># De guia</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-50px">Destinatario</th>
+                                                <th class="min-w-150px">Dirección </th>
+                                                <th class="min-w-50px text-center">Tipo de envío</th>
+                                                <th class="min-w-100px text-center">Estado del envío</th>
+                                                <th class="min-w-100px text-center">Fecha de entrega</th>
+                                                <th class="min-w-100px text-center">Estado del pago</th>
+                                                <th class="min-w-100px text-center">Precio del paquete</th>
+                                                <th class="min-w-100px text-center">Precio de envío</th>
+                                                <th class="min-w-50px text-center">Total </th>
+                                                <th class="min-w-50px text-center">Nota</th>
+                                                <th class="min-w-50px text-center">Nota de repartidor</th>
+                                                <th class="min-w-50px">Ubicación</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fw-semibold text-black-400">
+                                        <tbody class="fw-semibold text-black-400" style="font-size: 10px;">
                                             <span hidden id="total3"> {{ $total4 = 0 }}</span>
 
                                             
