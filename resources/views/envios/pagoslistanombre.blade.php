@@ -426,14 +426,29 @@ $("#pago").prop('disabled',true)
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
                                         <button type="button" style="height: 42px; margin-top: 10px;" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
+<<<<<<< HEAD
 
 
+=======
+<<<<<<< HEAD
+                                        
+                                        
+                                        <a href="/pago/exportarcomercio/{{$comercioset[0]->comercio}}"> 
+                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+=======
+>>>>>>> 08ef45cb8804559f2a3b9ed1883b1519ccf08c29
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" >
+>>>>>>> c41eb226d5c840588b061f883831caab5d011a15
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>Exportar Reporte</button>
+<<<<<<< HEAD
                                             
+=======
+
+                                            </a>
+>>>>>>> 08ef45cb8804559f2a3b9ed1883b1519ccf08c29
                                     </div>
                                     
                                 </div>
