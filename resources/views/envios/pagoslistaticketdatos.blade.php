@@ -27,21 +27,25 @@
         }
 /*
         .dataTables_paginate {
-            position: absolute;
-  z-index: 100;
- 
-bottom: -160px;
+  
+bottom: -360px;
         }
-*/
-        /*
+
+        
         .pagination {
+            
             position: absolute;
   z-index: 100;
  
-        bottom: -160px;
+    margin-bottom: -560px;
         }
-*/
-       
+
+       */
+
+       table.dataTable tbody td {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
 
     </style>
 
@@ -218,7 +222,7 @@ $("#pago").prop('disabled',true)
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes </h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
                                     <a href="/" class="text-muted text-hover-primary">Inicio</a>
@@ -340,7 +344,7 @@ $("#pago").prop('disabled',true)
                         <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
-                                <div class="table-responsive" >
+                                
                                     <form action="/pago/pagoticket/" method="GET" name="f1" id="formElement" >
                                     
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table" data-ordering="false">
@@ -374,7 +378,7 @@ $("#pago").prop('disabled',true)
                                             
                                             @foreach ($pedidos as $pedido)                                               
                                            
-                                            <tr>
+                                            <tr >
 
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
@@ -431,7 +435,7 @@ $("#pago").prop('disabled',true)
                                     </table>
                                 
                                 </div>
-                                <br>
+                                
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">

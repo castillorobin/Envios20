@@ -34,6 +34,10 @@
             display: none;
         }
             */
+            table.dataTable tbody td {
+  padding-top: 9px !important;
+  padding-bottom: 9px !important;
+}
 
         
         
@@ -329,37 +333,35 @@ $("#pago").prop('disabled',true)
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
-                                <div class="table-responsive" >
+                               
                                     <form action="/pago/pagoticket2/" method="GET" name="f1" id="formElement">
 
                                     <table class="table align-middle table-row-dashed fs-6 gy-5"  id="kt_ecommerce_report_shipping_table" data-ordering="false">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
-                                                
-                                                <th>
-                                                    <div class="form-group form-check" style="width: 5px;">
+                                                <th><div class="form-group form-check" style="width: 5px;">
 
                                                     <input type="checkbox" class="form-check-input" id="checktodo" name="checked[]" >
                                                     <input type="checkbox" class="form-check-input" id="checknada" name="checked[]" style="display:none;">
                                                     
                                                    </div></th>
-                                                <th class="min-w-100px"># De guia</th>
-                                                <th class="min-w-100px">Comercio</th>
-                                                <th class="min-w-100px">Destinatario</th>
-                                                <th class="min-w-200px">Dirección </th>
-                                                <th class="min-w-100px text-center">Tipo de envío</th>
-                                                <th class="min-w-150px text-center">Estado del envío</th>
-                                                <th class="min-w-150px text-center">Fecha de entrega</th>
-                                                <th class="min-w-150px text-center">Estado del pago</th>
-                                                <th class="min-w-150px text-center">Precio del paquete</th>
-                                                <th class="min-w-150px text-center">Precio de envío</th>
-                                                <th class="min-w-100px text-center">Total </th>
-                                                <th class="min-w-100px text-center">Nota</th>
-                                                <th class="min-w-100px text-center">Nota de repartidor</th>
-                                                <th class="min-w-100px">Ubicación</th>
+                                                <th class="min-w-50px"># De guia</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-50px">Destinatario</th>
+                                                <th class="min-w-150px">Dirección </th>
+                                                <th class="min-w-50px text-center">Tipo de envío</th>
+                                                <th class="min-w-100px text-center">Estado del envío</th>
+                                                <th class="min-w-100px text-center">Fecha de entrega</th>
+                                                <th class="min-w-100px text-center">Estado del pago</th>
+                                                <th class="min-w-100px text-center">Precio del paquete</th>
+                                                <th class="min-w-100px text-center">Precio de envío</th>
+                                                <th class="min-w-50px text-center">Total </th>
+                                                <th class="min-w-50px text-center">Nota</th>
+                                                <th class="min-w-50px text-center">Nota de repartidor</th>
+                                                <th class="min-w-50px">Ubicación</th>
                                             </tr>
                                         </thead>
-                                        <tbody class="fw-semibold text-black-400">
+                                        <tbody class="fw-semibold text-black-400" style="font-size: 10px;">
                                             <span hidden id="total3"> {{ $total4 = 0 }}</span>
                                             @foreach ($pedidos as $pedido)                                               
                                             <tr>
@@ -420,35 +422,24 @@ $("#pago").prop('disabled',true)
                                         </tbody>
                                     </table>
                                 
-                                </div>
-                                <br>
+                                    </div>
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
                                         <button type="button" style="height: 42px; margin-top: 10px;" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
-<<<<<<< HEAD
 
-
-=======
-<<<<<<< HEAD
                                         
                                         
                                         <a href="/pago/exportarcomercio/{{$comercioset[0]->comercio}}"> 
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-=======
->>>>>>> 08ef45cb8804559f2a3b9ed1883b1519ccf08c29
+
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" >
->>>>>>> c41eb226d5c840588b061f883831caab5d011a15
+
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>Exportar Reporte</button>
-<<<<<<< HEAD
                                             
-=======
-
-                                            </a>
->>>>>>> 08ef45cb8804559f2a3b9ed1883b1519ccf08c29
                                     </div>
                                     
                                 </div>
