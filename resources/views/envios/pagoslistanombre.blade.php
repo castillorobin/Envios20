@@ -26,21 +26,29 @@
             display: none;
         }
         
-        /*
-        .sorting.sorting_asc{
-            display: none;
-        }
-            th.sorting.sorting_asc::after{
-            display: none;
-        }
-            */
-            table.dataTable tbody td {
-  padding-top: 9px !important;
-  padding-bottom: 9px !important;
+        
+
+            tbody td {
+    padding-top: 5px !important; /* e.g. change 8x to 4px here */
+    padding-bottom: 5px !important;
 }
 
-        
-        
+
+.dataTables_paginate {
+           
+           
+          display: none;   
+        }
+
+        /*
+        .table-responsive{
+            position: relative !important;
+          
+         }
+        */ 
+
+      
+      
     </style>
 
 </head>
@@ -425,11 +433,17 @@ $("#pago").prop('disabled',true)
                                     </div>
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
+                                    <ul class="pagination" style="margin-bottom: 15px;">
+                                        <li style="margin-left:auto"></li> 
+                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
+                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                        <li class="page-item "><a href="" class="page-link">2</a></li>
+                                        <li class="page-item next"><a href="" class="page-link">Next</a></li>
+                                    </ul>
+                                    
                                     <div class="col-auto align-self-end text-end">
                                         <button type="button" style="height: 42px; margin-top: 10px;" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
 
-                                        
-                                        
                                         <a href="/pago/exportarcomercio/{{$comercioset[0]->comercio}}"> 
                                         <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
 
@@ -439,7 +453,10 @@ $("#pago").prop('disabled',true)
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>
                                             </i>Exportar Reporte</button>
-                                            
+
+
+                                            </a>
+
                                     </div>
                                     
                                 </div>
