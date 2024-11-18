@@ -359,6 +359,7 @@ $("#pago").prop('disabled',true)
                             <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                     <form action="/pago/pagoticket/" method="GET" name="f1" id="formElement" >
                                     
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table" data-ordering="false">
