@@ -73,7 +73,7 @@ if(tipo=='suelto'){
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
@@ -120,7 +120,7 @@ if(tipo=='suelto'){
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -189,6 +189,7 @@ if(tipo=='suelto'){
                                                 <th class="text-center min-w-50px">Estado del envio</th>
                                                 <th class="min-w-50px">Fecha de entrega</th>
                                                 <th class="min-w-50px">Ubicacion</th>
+                                                <th class="min-w-50px">Tipo de ubicacion</th>
                                                 <th class="min-w-50px">Rack</th>
                                                 <th class="min-w-50px">Nivel</th>
                                                 <th class="min-w-50px">Caja</th>
@@ -229,6 +230,7 @@ if(tipo=='suelto'){
                                                                 @endif
                                                 </td>
                                                 <td class="text-center">{{$pedido->fecha_entrega}}</td>
+                                                <td class="text-center"></td>
                                                 <td class="text-center"></td>
                                                 <td class="text-center"></td>
                                                 <td class="text-center"></td>

@@ -43,15 +43,15 @@
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                        <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor</h1>
                             <!--end::Title-->
@@ -91,20 +91,20 @@
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid">
+                <div id="kt_content" class="content flex-column-fluid " >
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_content_container" class="">
                         <!--begin::Products-->
-                        <div class="card card-flush">
+                        <div class="card card-flush ">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                            <div class="card-header align-items-center">
                                 <!--begin::Card title-->
-                                <div class="card-title">
+                                <div class="card-title ">
                                     <!--begin::Search-->
                                     
                                     <form action="/stocks/agregarguia/" class="row g-2" method="GET">
                                                    
-                                        <div class="col-auto">
+                                        <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Guía</label>
                                             <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia">
                                             <input type="text" value="Departamental" class="visually-hidden" name="asignar" id="asignar">
@@ -174,6 +174,7 @@
                                                 <th class="text-center min-w-50px">Estado del envio</th>
                                                 <th class="min-w-50px">Fecha de entrega</th>
                                                 <th class="min-w-50px">Ubicacion</th>
+                                                <th class="min-w-50px">Tipo de ubicacion</th>
                                                 <th class="min-w-50px">Rack</th>
                                                 <th class="min-w-50px">Nivel</th>
                                                 <th class="min-w-50px">Caja</th>
@@ -189,6 +190,7 @@
                                                 </td>
                                                 <td></td>
                                                 <td> </td>
+                                                <td></td>
                                                 <td></td>
                                                 <td>
                                                    
