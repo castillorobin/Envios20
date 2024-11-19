@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Stock;
 use App\Models\Envio;
 use App\Models\Rutas;
+use App\Models\Asignar;
 
 class StockController extends Controller
 {
@@ -41,7 +42,7 @@ class StockController extends Controller
         }
 
 */
-    }
+    } 
 
     public function puntodatos(Request $request)
     {
@@ -66,6 +67,81 @@ class StockController extends Controller
         }
 
 */
+    }
+
+    public function agregarguia(Request $request)
+    {
+        $guia = $request->get('guia') ;
+
+        $ticket = new Asignar();
+        $ticket->save();
+
+        $actualid = Asignar::latest('id')->first();
+        $actual = $actualid->id;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+ 
+        //$pedido = Envio::where('guia', $guia)->get();
+/*
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+           
+        }
+            */
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->asignado = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('guia', $guia)
+        ->get();
+
+        
+        return view('stocks.asignardatos', compact('pedidos', 'actual' ));
+    }
+
+    public function agregarmasguia(Request $request)
+    {
+        $guia = $request->get('guia') ;
+        $actual = $request->get('asignum') ;
+/*
+        $ticket = new Asignar();
+        $ticket->save();
+
+        $actualid = Asignar::latest('id')->first();
+        $actual = $actualid->id;
+*/
+        $envio = Envio::where('guia', $guia)
+        ->get();
+ 
+        //$pedido = Envio::where('guia', $guia)->get();
+/*
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+           
+        }
+            */
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->asignado = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('asignado', $actual)
+        ->get();
+
+        
+        return view('stocks.asignardatos', compact('pedidos', 'actual' ));
     }
 
     /**

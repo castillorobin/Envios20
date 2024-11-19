@@ -35,6 +35,12 @@ return new class extends Migration
             $table->integer('registro')->nullable();
             $table->string('entrega2')->nullable();
             $table->integer('pagoticket')->nullable();
+            $table->integer('asignado')->nullable();
+            $table->string('ubicacion')->nullable();
+            $table->string('rack')->nullable();
+            $table->string('nivel')->nullable();
+            $table->string('caja')->nullable();
+            $table->string('tarima')->nullable();
             $table->timestamps(); 
         });
     }

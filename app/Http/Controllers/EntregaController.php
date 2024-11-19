@@ -28,13 +28,10 @@ class EntregaController extends Controller
 
 
     
+   
     public function agregar(Request $request)
-
-    
     {
         $guia = $request->get('guia') ;
-
-        
 
         $ticket = new Entrega();
         //$ticket->codigo = $request->get('codigo');

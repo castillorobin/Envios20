@@ -13,7 +13,7 @@ use Illuminate\Support\Str;
 use App\Models\Ticketc;
 
 class EnvioController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      */
