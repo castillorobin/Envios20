@@ -217,6 +217,7 @@ Route::get('/stocks/zonadatos', [App\Http\Controllers\StockController::class, 'z
 Route::get('/stocks/puntodatos', [App\Http\Controllers\StockController::class, 'puntodatos'] )->name('puntodatos') ;
 Route::get('/stocks/agregarguia', [App\Http\Controllers\StockController::class, 'agregarguia'] )->name('agregarguia') ;
 Route::get('/stocks/agregarmasguia', [App\Http\Controllers\StockController::class, 'agregarmasguia'] )->name('agregarmasguia') ;
+Route::get('/stocks/guardarasignar', [App\Http\Controllers\StockController::class, 'guardarasignar'] )->name('guardarasignar') ;
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;

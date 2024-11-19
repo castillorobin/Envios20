@@ -144,6 +144,53 @@ class StockController extends Controller
         return view('stocks.asignardatos', compact('pedidos', 'actual' ));
     }
 
+    public function guardarasignar(Request $request)
+    {
+        $usuario = $request->get('usuario');
+        $agencia = $request->get('agencia');
+        $cajasuelto = $request->get('cajasuelto');
+        $caja = $request->get('caja');
+        $rack = $request->get('rack');
+        $nivel = $request->get('nivel');
+        $tarima = $request->get('tarima');
+
+        $racks = $request->get('racks');
+        $nivels = $request->get('nivels');
+        $tarimas = $request->get('tarimas');
+
+        $actual = $request->get('asignum2');
+
+        $envios = Envio::where('asignado', $actual)->get();
+        foreach($envios as $envio){
+
+            $envio->ubicacion = $cajasuelto;
+
+            if($cajasuelto=="caja"){
+                $envio->rack = $rack;
+            $envio->nivel = $nivel;
+            $envio->caja = $caja;
+            $envio->tarima = $tarima;
+            } 
+
+            if($cajasuelto=="suelto"){
+            $envio->rack = $racks;
+            $envio->nivel = $nivels;
+            //$envio->caja = $caja;
+            $envio->tarima = $tarimas;
+            } 
+            
+
+            $envio->save();
+        }
+
+
+        return view('stocks.asignar');
+
+
+
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      */

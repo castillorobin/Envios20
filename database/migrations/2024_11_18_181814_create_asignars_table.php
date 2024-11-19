@@ -13,7 +13,8 @@ return new class extends Migration
     {
         Schema::create('asignars', function (Blueprint $table) {
             $table->id();
-            
+            $table->string('usuario')->nullable();
+            $table->string('agencia')->nullable();
             $table->timestamps();
         });
     }
