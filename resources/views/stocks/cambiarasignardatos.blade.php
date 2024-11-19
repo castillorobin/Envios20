@@ -239,9 +239,10 @@ if(tipo=='suelto'){
                                                 <td class="text-center">{{$pedido->caja}}</td>
                                                 <td class="text-center">{{$pedido->tarima}}</td>
                                                 <td class="text-center">
-                                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
+                                                    <button type="button" class="btn btn-primary btn-sm" id="kt_drawer_example_basic_button">
                                                         Cambiar
                                                     </button>
+
                                                 </td>
                                                 
 
@@ -260,7 +261,17 @@ if(tipo=='suelto'){
                                 <!--end::Table-->
                             </div>
                             <!--end::Table-->
-                            <div class="modal fade" tabindex="-1" id="kt_modal_1">
+                            
+                                <div
+    id="kt_modal_1"
+
+    class="bg-white"
+    data-kt-drawer="true"
+    data-kt-drawer-activate="true"
+    data-kt-drawer-toggle="#kt_drawer_example_basic_button"
+    data-kt-drawer-close="#kt_drawer_example_basic_close"
+    data-kt-drawer-width="500px"
+>
                            
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
