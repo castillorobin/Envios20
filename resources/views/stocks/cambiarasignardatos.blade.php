@@ -276,7 +276,7 @@ if(tipo=='suelto'){
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
                                         <div class="modal-header mt-5 m-5" >
-                                            <h3 class="modal-title">Asignar paquete</h3>
+                                            <h3 class="modal-title">Cambiar ubicación</h3>
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
@@ -370,7 +370,7 @@ if(tipo=='suelto'){
                                         <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum2" id="asignum2">
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="submit" class="btn btn-primary">Asignar</button>
+                                            <button type="submit" class="btn btn-primary">Cambiar</button>
                                         </div>
                                     </div>
                                 </div>
