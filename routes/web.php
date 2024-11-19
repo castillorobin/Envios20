@@ -218,6 +218,9 @@ Route::get('/stocks/puntodatos', [App\Http\Controllers\StockController::class, '
 Route::get('/stocks/agregarguia', [App\Http\Controllers\StockController::class, 'agregarguia'] )->name('agregarguia') ;
 Route::get('/stocks/agregarmasguia', [App\Http\Controllers\StockController::class, 'agregarmasguia'] )->name('agregarmasguia') ;
 Route::get('/stocks/guardarasignar', [App\Http\Controllers\StockController::class, 'guardarasignar'] )->name('guardarasignar') ;
+Route::get('/stocks/cambiar', [App\Http\Controllers\StockController::class, 'cambiar'] )->name('cambiar') ;
+Route::get('/stocks/cambiarguia', [App\Http\Controllers\StockController::class, 'cambiarguia'] )->name('cambiarguia') ;
+Route::get('/stocks/agregarmascambiarguia', [App\Http\Controllers\StockController::class, 'agregarmascambiarguia'] )->name('agregarmascambiarguia') ;
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;

@@ -110,26 +110,10 @@ class StockController extends Controller
     {
         $guia = $request->get('guia') ;
         $actual = $request->get('asignum') ;
-/*
-        $ticket = new Asignar();
-        $ticket->save();
 
-        $actualid = Asignar::latest('id')->first();
-        $actual = $actualid->id;
-*/
         $envio = Envio::where('guia', $guia)
         ->get();
  
-        //$pedido = Envio::where('guia', $guia)->get();
-/*
-        $nota = " "; 
-        if($envio->isEmpty()){
-            $nota = "La Guía que se ingreso no existe"; 
-            //return view('envios.registroconguia', compact('nota'));
-            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
-           
-        }
-            */
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);
@@ -189,6 +173,60 @@ class StockController extends Controller
 
 
         
+    }
+
+    public function cambiar()
+    {
+        return view('stocks.cambiarasignar');
+    }
+
+    public function cambiarguia(Request $request)
+    {
+        $guia = $request->get('guia') ;
+
+        $ticket = new Asignar();
+        $ticket->save();
+
+        $actualid = Asignar::latest('id')->first();
+        $actual = $actualid->id;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+ 
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->cambiando = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('guia', $guia)
+        ->get();
+
+        
+
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual' ));
+    }
+    public function agregarmascambiarguia(Request $request)
+    {
+        $guia = $request->get('guia') ;
+        $actual = $request->get('asignum') ;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+ 
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->cambiando = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('cambiando', $actual)
+        ->get();
+
+        
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual' ));
     }
 
     /**

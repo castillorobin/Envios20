@@ -409,6 +409,14 @@
 						</a>
 					</div>
 					<div class="menu-item">
+						<a class="menu-link" href="/stocks/cambiar">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Cambiar ubicaciones</span>
+						</a>
+					</div>
+					<div class="menu-item">
 						<a class="menu-link" href="#">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>

@@ -77,7 +77,7 @@ if(tipo=='suelto'){
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de ubicación</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Cambiar ubicación</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -100,7 +100,7 @@ if(tipo=='suelto'){
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Asignacion de ubicación</li>
+                                <li class="breadcrumb-item text-muted">Cambiar ubicación</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -128,7 +128,7 @@ if(tipo=='suelto'){
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <form action="/stocks/agregarmasguia/" class="row g-2" method="GET">
+                                    <form action="/stocks/agregarmascambiarguia/" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto">
                                             <label for="guia" class="visually-hidden">Guía</label>
@@ -137,8 +137,9 @@ if(tipo=='suelto'){
                                             
                                         </div>
                                         <div class="col-auto">
-                                            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
                                             <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum" id="asignum">
+                                            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                                           
                                         </div>
 
                                     </form>
@@ -194,6 +195,7 @@ if(tipo=='suelto'){
                                                 <th class="min-w-50px">Nivel</th>
                                                 <th class="min-w-50px">Caja</th>
                                                 <th class="min-w-50px">Tarima</th>
+                                                <th class="min-w-50px">Acción</th>
                                                
                                             </tr>
                                         </thead>
@@ -236,6 +238,11 @@ if(tipo=='suelto'){
                                                 <td class="text-center">{{$pedido->nivel}}</td>
                                                 <td class="text-center">{{$pedido->caja}}</td>
                                                 <td class="text-center">{{$pedido->tarima}}</td>
+                                                <td class="text-center">
+                                                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
+                                                        Cambiar
+                                                    </button>
+                                                </td>
                                                 
 
                                             </tr>

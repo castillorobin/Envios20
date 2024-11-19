@@ -41,6 +41,7 @@ return new class extends Migration
             $table->string('nivel')->nullable();
             $table->string('caja')->nullable();
             $table->string('tarima')->nullable();
+            $table->integer('cambiando')->nullable();
             $table->timestamps(); 
         });
     }
