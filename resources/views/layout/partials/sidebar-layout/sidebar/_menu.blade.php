@@ -421,7 +421,15 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Asignar repartidor</span>
+							<span class="menu-title">Asignar repartidor por guia</span>
+						</a>
+					</div>
+					<div class="menu-item">
+						<a class="menu-link" href="/stocks/asignarrepartidorcaja">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Asignar repartidor por caja</span>
 						</a>
 					</div>
 					<div class="menu-item">
