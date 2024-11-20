@@ -261,6 +261,38 @@ class StockController extends Controller
         return view('stocks.cambiarasignar');
     }
 
+    public function asignarrepartidor()
+    {
+        return view('stocks.asignarrepartidor');
+    }
+    public function agregarrepartidor(Request $request)
+    {
+        $guia = $request->get('guia') ;
+
+        $ticket = new Asignar();
+        $ticket->save();
+
+        $actualid = Asignar::latest('id')->first();
+        $actual = $actualid->id;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+ 
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->cambiando = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('guia', $guia)
+        ->get();
+
+        
+
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual' ));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

@@ -77,7 +77,7 @@ if(tipo=='suelto'){
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Cambiar ubicación</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -100,7 +100,7 @@ if(tipo=='suelto'){
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Cambiar ubicación</li>
+                                <li class="breadcrumb-item text-muted">Asignacion de repartidor</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -128,7 +128,7 @@ if(tipo=='suelto'){
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <form action="/stocks/agregarmascambiarguia/" class="row g-2" method="GET">
+                                    <form action="/stocks/agregarmasguia/" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto">
                                             <label for="guia" class="visually-hidden">Guía</label>
@@ -137,9 +137,8 @@ if(tipo=='suelto'){
                                             
                                         </div>
                                         <div class="col-auto">
-                                            <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum" id="asignum">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                                           
+                                            <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum" id="asignum">
                                         </div>
 
                                     </form>
@@ -160,7 +159,9 @@ if(tipo=='suelto'){
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
+                                            Asignar en lote
+                                        </button>
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -193,7 +194,6 @@ if(tipo=='suelto'){
                                                 <th class="min-w-50px">Nivel</th>
                                                 <th class="min-w-50px">Caja</th>
                                                 <th class="min-w-50px">Tarima</th>
-                                                <th class="min-w-50px">Acción</th>
                                                
                                             </tr>
                                         </thead>
@@ -236,21 +236,7 @@ if(tipo=='suelto'){
                                                 <td class="text-center">{{$pedido->nivel}}</td>
                                                 <td class="text-center">{{$pedido->caja}}</td>
                                                 <td class="text-center">{{$pedido->tarima}}</td>
-                                                <td class="text-center">
-                                                    <button type="button" value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" id="kt_drawer_example_basic_button">
-                                                        Cambiar
-                                                    </button>
-
-                                                </td>
                                                 
-                                                <span hidden id="id{{ $pedido->id }}"> {{ $pedido->id }}</span>
-                                                <span hidden id="ub{{ $pedido->id }}"> {{ $pedido->ubicacion }}</span>
-                                                <span hidden id="fe{{ $pedido->id }}"> {{ $pedido->updated_at }}</span>
-                                                <span hidden id="ra{{ $pedido->id }}"> {{ $pedido->rack }}</span>
-                                                <span hidden id="ni{{ $pedido->id }}"> {{ $pedido->nivel }}</span>
-                                                <span hidden id="ca{{ $pedido->id }}"> {{ $pedido->caja }}</span>
-                                                <span hidden id="ta{{ $pedido->id }}"> {{ $pedido->tarima }}</span>
-
 
                                             </tr>
                                             @endforeach
@@ -267,99 +253,23 @@ if(tipo=='suelto'){
                                 <!--end::Table-->
                             </div>
                             <!--end::Table-->
-                            
-                                <div
-    id="kt_modal_1"
-
-    class="bg-white"
-    data-kt-drawer="true"
-    data-kt-drawer-activate="true"
-    data-kt-drawer-toggle="#kt_drawer_example_basic_button"
-    data-kt-drawer-close="#kt_drawer_example_basic_close"
-    data-kt-drawer-width="500px"
->
+                            <div class="modal fade" tabindex="-1" id="kt_modal_1">
                            
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
                                         <div class="modal-header mt-5 m-5" >
-                                            
+                                            <h3 class="modal-title">Asignar paquete</h3>
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
                                             </div>
                                             <!--end::Close-->
 
-                                            
+                                            <form action="/stocks/guardarasignar/" method="GET">
 
                                         </div>
-                                        <form action="/stocks/guardarcambiarguia/" method="GET">
                                         <div class="modal-body">
                                             <div class="row my-2 mx-2 justify-content-center">
-
-                                                
-                                                
-
-
-                                                <h3 class="modal-title mb-3" >Ubicación actual</h3>
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="usuario5" id="usuario5" value="{{ Auth::user()->name }}" readonly />
-                                                    <label for="rack" style="padding-left: 25px;">Usuario</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="fecha5" id="fecha5" value="{{ now()->Format('d/m/Y H:i A')}}" readonly/>
-                                                    <label for="nivel" style="padding-left: 25px;">Fecha y hora</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                            </div>
-                                            <div class="row my-2 mx-2 justify-content-center">
-                                                <div class="form-floating col-lg-12 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" value="Santa Ana" name="agencia5" id="agencia5"  readonly/>
-                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row my-2 mx-2 justify-content-center">
-                                                <div class="form-floating col-lg-12 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="cajasuelto5" id="cajasuelto5" readonly />
-                                                    <label for="cenvio" style="padding-left: 25px;">Tipo de ubicación</label>
-                                                </div>
-                                               
-                                            </div>
-                                            <div class="row my-2 mx-2 justify-content-center" >
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="caja5" id="caja5" placeholder="# de rack" readonly />
-                                                    <label for="rack" style="padding-left: 25px;">Caja</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="rack5" id="rack5" placeholder="# de nivel" readonly />
-                                                    <label for="nivel" style="padding-left: 25px;">Rack</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div> 
-                                            </div>
-                                            <div class="row my-2 mx-2 justify-content-center" >
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="nivel5" id="nivel5" placeholder="# de caja" readonly />
-                                                    <label for="caja" style="padding-left: 25px;">Nivel</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="tarima5" id="tarima5" placeholder="# de tarima"  readonly/>
-                                                    <label for="tarima" style="padding-left: 25px;">Tarima</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                            </div>
-                                            
-
-
-
-
-
-                                            
-                                            <div class="row my-2 mx-2 justify-content-center">
-
-                                                <h3 class="modal-title mb-3">Nueva ubicación</h3>
                                                 <div class="form-floating col-lg-6 mb-4">
                                                     <input type="text" class="form-control form-control-solid" name="usuario" id="usuario" value="{{ Auth::user()->name }}" readonly />
                                                     <label for="rack" style="padding-left: 25px;">Usuario</label>
@@ -438,12 +348,11 @@ if(tipo=='suelto'){
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-                                        
                                         </div>
-                                        <input type="text" class="visually-hidden" name="asignum2" id="asignum2">
+                                        <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum2" id="asignum2">
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="submit" class="btn btn-primary">Cambiar</button>
+                                            <button type="submit" class="btn btn-primary">Asignar</button>
                                         </div>
                                     </div>
                                 </div>
@@ -471,49 +380,6 @@ if(tipo=='suelto'){
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
-
-
-   
-
-    <script>
-       
-        
-        $(document).ready(function(){
-            $(document).on('click', '.edit', function(){
-               var cod=$(this).val();
-               var ubi=$('#ub'+cod).text();
-               var caj=$('#ca'+cod).text();
-               var rac=$('#ra'+cod).text();
-               var niv=$('#ni'+cod).text();
-               var tar=$('#ta'+cod).text();
-               var fec=$('#fe'+cod).text();
-            
-                //$('#edit').modal('show');
-                document.getElementById("cajasuelto5").value = ubi;
-                document.getElementById("caja5").value = caj;
-                document.getElementById("rack5").value = rac;
-                document.getElementById("nivel5").value = niv;
-                document.getElementById("tarima5").value = tar;
-                document.getElementById("fecha5").value = fec;
-                document.getElementById("asignum2").value = cod;
-              // $('#cajasuelto5').text(cod);
-
-                
-        
-            });
-        });
-         
-        
-        
-        
-        
-        
-        
-            </script>
-
-
-
-
 
 </body>
 <!--end::Body-->

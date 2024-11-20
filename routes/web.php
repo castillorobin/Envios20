@@ -221,7 +221,9 @@ Route::get('/stocks/guardarasignar', [App\Http\Controllers\StockController::clas
 Route::get('/stocks/cambiar', [App\Http\Controllers\StockController::class, 'cambiar'] )->name('cambiar') ;
 Route::get('/stocks/cambiarguia', [App\Http\Controllers\StockController::class, 'cambiarguia'] )->name('cambiarguia') ;
 Route::get('/stocks/agregarmascambiarguia', [App\Http\Controllers\StockController::class, 'agregarmascambiarguia'] )->name('agregarmascambiarguia') ;
-Route::get('/stocks/guardarcambiarguia', [App\Http\Controllers\StockController::class, 'guardarcambiarguia'] )->name('guardarcambiarguia') ;
+Route::get('/stocks/guardarcambiarguia', [App\Http\Controllers\StockController::class, 'guardarcambiarguia'] )->name('guardarcambiarguia');
+Route::get('/stocks/asignarrepartidor', [App\Http\Controllers\StockController::class, 'asignarrepartidor'] )->name('asignarrepartidor');
+Route::get('/stocks/agregarrepartidor', [App\Http\Controllers\StockController::class, 'agregarrepartidor'] )->name('agregarrepartidor');
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;
