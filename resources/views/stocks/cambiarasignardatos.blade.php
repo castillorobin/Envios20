@@ -239,12 +239,20 @@ if(tipo=='suelto'){
                                                 <td class="text-center">{{$pedido->caja}}</td>
                                                 <td class="text-center">{{$pedido->tarima}}</td>
                                                 <td class="text-center">
-                                                    <button type="button" class="btn btn-primary btn-sm" id="kt_drawer_example_basic_button">
+                                                    <button type="button" value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" id="kt_drawer_example_basic_button">
                                                         Cambiar
                                                     </button>
 
                                                 </td>
                                                 
+                                                <span hidden id="id{{ $pedido->id }}"> {{ $pedido->id }}</span>
+                                                <span hidden id="ub{{ $pedido->id }}"> {{ $pedido->ubicacion }}</span>
+                                                <span hidden id="fe{{ $pedido->id }}"> {{ $pedido->updated_at }}</span>
+                                                <span hidden id="ra{{ $pedido->id }}"> {{ $pedido->rack }}</span>
+                                                <span hidden id="ni{{ $pedido->id }}"> {{ $pedido->nivel }}</span>
+                                                <span hidden id="ca{{ $pedido->id }}"> {{ $pedido->caja }}</span>
+                                                <span hidden id="ta{{ $pedido->id }}"> {{ $pedido->tarima }}</span>
+
 
                                             </tr>
                                             @endforeach
@@ -276,18 +284,84 @@ if(tipo=='suelto'){
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
                                         <div class="modal-header mt-5 m-5" >
-                                            <h3 class="modal-title">Cambiar ubicación</h3>
+                                            
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
                                             </div>
                                             <!--end::Close-->
 
-                                            <form action="/stocks/guardarasignar/" method="GET">
+                                            
 
                                         </div>
+                                        <form action="/stocks/guardarcambiarguia/" method="GET">
                                         <div class="modal-body">
                                             <div class="row my-2 mx-2 justify-content-center">
+
+                                                
+                                                
+
+
+                                                <h3 class="modal-title mb-3" >Ubicación actual</h3>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="usuario5" id="usuario5" value="{{ Auth::user()->name }}" readonly />
+                                                    <label for="rack" style="padding-left: 25px;">Usuario</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="fecha5" id="fecha5" value="{{ now()->Format('d/m/Y H:i A')}}" readonly/>
+                                                    <label for="nivel" style="padding-left: 25px;">Fecha y hora</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center">
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" value="Santa Ana" name="agencia5" id="agencia5"  readonly/>
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
+                                               
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center">
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="cajasuelto5" id="cajasuelto5" readonly />
+                                                    <label for="cenvio" style="padding-left: 25px;">Tipo de ubicación</label>
+                                                </div>
+                                               
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center" >
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="caja5" id="caja5" placeholder="# de rack" readonly />
+                                                    <label for="rack" style="padding-left: 25px;">Caja</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="rack5" id="rack5" placeholder="# de nivel" readonly />
+                                                    <label for="nivel" style="padding-left: 25px;">Rack</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center" >
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="nivel5" id="nivel5" placeholder="# de caja" readonly />
+                                                    <label for="caja" style="padding-left: 25px;">Nivel</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="tarima5" id="tarima5" placeholder="# de tarima"  readonly/>
+                                                    <label for="tarima" style="padding-left: 25px;">Tarima</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            
+
+
+
+
+
+                                            
+                                            <div class="row my-2 mx-2 justify-content-center">
+
+                                                <h3 class="modal-title mb-3">Nueva ubicación</h3>
                                                 <div class="form-floating col-lg-6 mb-4">
                                                     <input type="text" class="form-control form-control-solid" name="usuario" id="usuario" value="{{ Auth::user()->name }}" readonly />
                                                     <label for="rack" style="padding-left: 25px;">Usuario</label>
@@ -366,6 +440,7 @@ if(tipo=='suelto'){
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
+                                        
                                         </div>
                                         <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum2" id="asignum2">
                                         <div class="modal-footer m-5">
@@ -398,6 +473,48 @@ if(tipo=='suelto'){
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+
+   
+
+    <script>
+       
+        
+        $(document).ready(function(){
+            $(document).on('click', '.edit', function(){
+               var cod=$(this).val();
+               var ubi=$('#ub'+cod).text();
+               var caj=$('#ca'+cod).text();
+               var rac=$('#ra'+cod).text();
+               var niv=$('#ni'+cod).text();
+               var tar=$('#ta'+cod).text();
+               var fec=$('#fe'+cod).text();
+            
+                //$('#edit').modal('show');
+                document.getElementById("cajasuelto5").value = ubi;
+                document.getElementById("caja5").value = caj;
+                document.getElementById("rack5").value = rac;
+                document.getElementById("nivel5").value = niv;
+                document.getElementById("tarima5").value = tar;
+                document.getElementById("fecha5").value = fec;
+              // $('#cajasuelto5').text(cod);
+
+                
+        
+            });
+        });
+         
+        
+        
+        
+        
+        
+        
+            </script>
+
+
+
+
 
 </body>
 <!--end::Body-->

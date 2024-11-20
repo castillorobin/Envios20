@@ -228,6 +228,11 @@ class StockController extends Controller
         
         return view('stocks.cambiarasignardatos', compact('pedidos', 'actual' ));
     }
+    public function guardarcambiarguia(Request $request)
+    {
+        
+        
+    }
 
     /**
      * Show the form for creating a new resource.
