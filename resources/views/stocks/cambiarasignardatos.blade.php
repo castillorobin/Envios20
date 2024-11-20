@@ -338,7 +338,7 @@ if(tipo=='suelto'){
                                                     <input type="text" class="form-control form-control-solid" name="rack5" id="rack5" placeholder="# de nivel" readonly />
                                                     <label for="nivel" style="padding-left: 25px;">Rack</label>
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
+                                                </div> 
                                             </div>
                                             <div class="row my-2 mx-2 justify-content-center" >
                                                 <div class="form-floating col-lg-6 mb-4">
@@ -442,7 +442,7 @@ if(tipo=='suelto'){
                                             </div>
                                         
                                         </div>
-                                        <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum2" id="asignum2">
+                                        <input type="text" class="visually-hidden" name="asignum2" id="asignum2">
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
                                             <button type="submit" class="btn btn-primary">Cambiar</button>
@@ -497,6 +497,7 @@ if(tipo=='suelto'){
                 document.getElementById("nivel5").value = niv;
                 document.getElementById("tarima5").value = tar;
                 document.getElementById("fecha5").value = fec;
+                document.getElementById("asignum2").value = cod;
               // $('#cajasuelto5').text(cod);
 
                 

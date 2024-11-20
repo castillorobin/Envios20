@@ -230,8 +230,35 @@ class StockController extends Controller
     }
     public function guardarcambiarguia(Request $request)
     {
+        $usuario = $request->get('usuario');
+        $agencia = $request->get('agencia');
+        $cajasuelto = $request->get('cajasuelto');
+        $caja = $request->get('caja');
+        $rack = $request->get('rack');
+        $nivel = $request->get('nivel');
+        $tarima = $request->get('tarima');
+        $id = $request->get('asignum2');
+
+        $envio = Envio::find($id);
+        //$envio->cambiando = $actual;
+        if($caja){
+            $envio->caja = $caja;
+        }
+        if($rack){
+            $envio->rack = $rack;
+        }
+
+        if($nivel){
+            $envio->nivel = $nivel;
+        }
+
+        if($tarima){
+            $envio->tarima = $tarima;
+        }
+
+        $envio->save();
         
-        
+        return view('stocks.cambiarasignar');
     }
 
     /**
