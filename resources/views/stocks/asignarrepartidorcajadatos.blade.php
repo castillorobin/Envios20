@@ -77,7 +77,7 @@ if(tipo=='suelto'){
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor por caja</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -100,7 +100,7 @@ if(tipo=='suelto'){
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Asignacion de repartidor</li>
+                                <li class="breadcrumb-item text-muted">Asignacion de repartidor por caja</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -128,17 +128,17 @@ if(tipo=='suelto'){
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <form action="/stocks/agregarmasguia/" class="row g-2" method="GET">
+                                    <form action="/stocks/agregarrepartidorcaja/" class="row g-2" method="GET">
                                                    
-                                        <div class="col-auto">
-                                            <label for="guia" class="visually-hidden">Guía</label>
-                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia">
-                                           
-                                            
+                                        <div class="col-auto ">
+                                            <label for="guia" class="visually-hidden">Caja</label>
+                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar caja">
+                                            <input type="text" value="Departamental" class="visually-hidden" name="asignar" id="asignar">
+                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar guia">
                                         </div>
                                         <div class="col-auto">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                                            <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum" id="asignum">
+                                           
                                         </div>
 
                                     </form>
@@ -372,7 +372,7 @@ if(tipo=='suelto'){
                                                 </div>
                                             </div>
                                         </div>
-                                        <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum2" id="asignum2">
+                                       
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
                                             <button type="submit" class="btn btn-primary">Asignar</button>
