@@ -313,6 +313,30 @@ class StockController extends Controller
         return view('stocks.asignarrepartidorcajadatos', compact('pedidos', 'empleados' ));
     }
 
+    public function guardarasignarrepartidor(Request $request)
+    {
+        $usuario = $request->get('usuario');
+        $agencia = $request->get('agencia');
+        $repartidor = $request->get('repartidor');
+        $caja = $request->get('caja6');
+
+
+        $envios = Envio::where('caja', $caja)
+        ->get();
+
+
+        foreach($envios as $envio){
+
+            $envio->repartidor = $repartidor;
+
+            $envio->save();
+        }
+        
+        return view('stocks.asignarrepartidorcaja');
+    }
+
+    
+
     /**
      * Show the form for creating a new resource.
      */
