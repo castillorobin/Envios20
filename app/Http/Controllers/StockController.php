@@ -8,6 +8,7 @@ use App\Models\Stock;
 use App\Models\Envio;
 use App\Models\Rutas;
 use App\Models\Asignar;
+use App\Models\Empleado;
 
 class StockController extends Controller
 {
@@ -288,9 +289,9 @@ class StockController extends Controller
         $pedidos = Envio::where('guia', $guia)
         ->get();
 
-        
+        $empleados = Empleado::all(); 
 
-        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual' ));
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados' ));
     }
 
     /**

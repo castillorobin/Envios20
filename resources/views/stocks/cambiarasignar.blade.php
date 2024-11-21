@@ -126,26 +126,13 @@
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Tipo de envio" data-kt-ecommerce-order-filter="status" disabled>
-                                            <option></option>
-                                            <option value="all">Personalizado</option>
-                                            <option value="all">Personalizado Departamental</option>
-                                            <option value="Creado">Punto Fijo</option>
-                                            <option value="Entregado">Casillero</option>
-
-                                        </select>
+                                       
                                         <!--end::Select2-->
                                     </div>
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado del envio" data-kt-ecommerce-order-filter="status" disabled>
-                                            <option></option>
-                                            <option value="all">Entregado</option>
-                                            <option value="Creado">Sin entregar</option>
-                                            <option value="Entregado">Fallido</option>
-                                            <option value="Fallido">Creado</option>
-                                        </select>
+                                        
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->

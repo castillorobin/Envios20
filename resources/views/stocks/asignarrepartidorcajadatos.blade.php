@@ -128,7 +128,7 @@ if(tipo=='suelto'){
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <form action="/stocks/agregarmasrepartidor/" class="row g-2" method="GET">
+                                    <form action="/stocks/agregarmasguia/" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto">
                                             <label for="guia" class="visually-hidden">Guía</label>
@@ -159,7 +159,9 @@ if(tipo=='suelto'){
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
+                                            Asignar en lote
+                                        </button>
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -192,7 +194,6 @@ if(tipo=='suelto'){
                                                 <th class="min-w-50px">Nivel</th>
                                                 <th class="min-w-50px">Caja</th>
                                                 <th class="min-w-50px">Tarima</th>
-                                                <th class="min-w-50px">Acción</th>
                                                
                                             </tr>
                                         </thead>
@@ -229,17 +230,14 @@ if(tipo=='suelto'){
                                                                 @endif
                                                 </td>
                                                 <td class="text-center">{{$pedido->fecha_entrega}}</td>
-                                                <td class="text-center">{{$pedido->agencia}}</td>
+                                                <td class="text-center"></td>
                                                 <td class="text-center">{{$pedido->ubicacion}}</td>
                                                 <td class="text-center">{{$pedido->rack}}</td>
                                                 <td class="text-center">{{$pedido->nivel}}</td>
                                                 <td class="text-center">{{$pedido->caja}}</td>
                                                 <td class="text-center">{{$pedido->tarima}}</td>
-                                                <td class="text-center">
-                                                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
-                                                    Asignar
-                                                </button>
-                                            </td>
+                                                
+
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -258,7 +256,7 @@ if(tipo=='suelto'){
                                 </div>
                                 <div class="row">
                                     <div class="col-12 mb-3" >
-                                        <a href="/stocks/asignarrepartidor">
+                                        <a href="/stocks/asignarrepartidorcaja">
                                         <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
                                     </a>
                                     </div>
@@ -283,14 +281,14 @@ if(tipo=='suelto'){
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
                                         <div class="modal-header mt-5 m-5" >
-                                            <h3 class="modal-title">Asignar repartidor</h3>
+                                            <h3 class="modal-title">Asignar paquete</h3>
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
                                             </div>
                                             <!--end::Close-->
 
-                                            <form action="/stocks/guardarasignarreaprtidor/" method="GET">
+                                            <form action="/stocks/guardarasignar/" method="GET">
 
                                         </div>
                                         <div class="modal-body">
@@ -318,23 +316,61 @@ if(tipo=='suelto'){
                                                 </div>
                                                
                                             </div>
-
                                             <div class="row my-2 mx-2 justify-content-center">
                                                 <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="repartidor" id="repartidor"  >
-                                                        <option value="" style="height: 60px;"></option>
-                                                        @foreach ($empleados as $empleado)
-                                                        <option value="{{$empleado->nombre}}" >{{$empleado->nombre}} </option>
-                                                        @endforeach
+                                                    <select class="form-select form-select-solid" name="cajasuelto" id="cajasuelto" aria-label="Floating label select example" onchange="elegircajasuelto()">
+                                                       
+                                                        <option value="caja">Caja</option>
+                                                        <option value="suelto">Suelto</option>
+                                                        
                                                     </select>
-                                                    <label for="cenvio" style="padding-left: 25px;">Repartidor</label>
+                                                    <label for="cenvio" style="padding-left: 25px;"></label>
                                                 </div>
                                                
                                             </div>
-                                                               
-                                          
-                                           
-                                          
+                                            <div class="row my-2 mx-2 justify-content-center" name="caja1" id="caja1">
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="caja" id="caja" placeholder="# de rack"  />
+                                                    <label for="rack" style="padding-left: 25px;">Caja</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="rack" id="rack" placeholder="# de nivel"  />
+                                                    <label for="nivel" style="padding-left: 25px;">Rack</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center" name="caja2" id="caja2">
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="nivel" id="nivel" placeholder="# de caja"  />
+                                                    <label for="caja" style="padding-left: 25px;">Nivel</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="tarima" id="tarima" placeholder="# de tarima"  />
+                                                    <label for="tarima" style="padding-left: 25px;">Tarima</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center" name="caja1" id="suelto1" hidden>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="racks" id="racks" placeholder="# de nivel" />
+                                                    <label for="nivel" style="padding-left: 25px;">Rack</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="nivels" id="nivels" placeholder="# de nivel"  />
+                                                    <label for="nivel" style="padding-left: 25px;">Nivel</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2 mx-2 " name="caja1" id="suelto2" hidden>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="tarimas" id="tarimas" placeholder="# de tarima"  />
+                                                    <label for="tarima" style="padding-left: 25px;">Tarima</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum2" id="asignum2">
                                         <div class="modal-footer m-5">
