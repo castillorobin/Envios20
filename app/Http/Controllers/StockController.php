@@ -338,6 +338,7 @@ class StockController extends Controller
         foreach($envios as $envio){
 
             $envio->repartidor = $repartidor;
+            $envio->estado = "En ruta";
 
             $envio->save();
         }
