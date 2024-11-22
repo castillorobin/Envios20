@@ -84,15 +84,16 @@ class StockController extends Controller
         ->get();
  
         //$pedido = Envio::where('guia', $guia)->get();
-/*
+
         $nota = " "; 
         if($envio->isEmpty()){
             $nota = "La Guía que se ingreso no existe"; 
             //return view('envios.registroconguia', compact('nota'));
-            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
-           
+            //return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+            return view('stocks.asignar', compact('nota',));
         }
-            */
+            
+
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);
@@ -104,7 +105,7 @@ class StockController extends Controller
         ->get();
 
         
-        return view('stocks.asignardatos', compact('pedidos', 'actual' ));
+        return view('stocks.asignardatos', compact('pedidos', 'actual', 'nota' ));
     }
 
     public function agregarmasguia(Request $request)
@@ -178,7 +179,8 @@ class StockController extends Controller
 
     public function cambiar()
     {
-        return view('stocks.cambiarasignar');
+        $nota = " "; 
+        return view('stocks.cambiarasignar', compact('nota' ));
     }
 
     public function cambiarguia(Request $request)
@@ -193,6 +195,14 @@ class StockController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            //return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+            return view('stocks.cambiarasignar', compact('nota',));
+        }
  
         $envioid= $envio[0]->id ;
 

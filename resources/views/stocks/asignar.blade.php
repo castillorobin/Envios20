@@ -64,7 +64,7 @@
                                 <!--end::Item-->
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item">
-                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span> 
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -112,7 +112,7 @@
                                         </div>
                                         <div class="col-auto">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                                           
+                                            <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                         </div>
 
                                     </form>

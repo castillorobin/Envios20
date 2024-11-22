@@ -72,7 +72,8 @@ Route::get('/envios/detallefoto', function () {
 });
 
 Route::get('/stocks/asignar', function () {
-    return view('stocks.asignar');
+    $nota = " ";
+    return view('stocks.asignar', compact('nota',));
 });
 
 Route::get('/stocks/seleccionarpunto', function () {
