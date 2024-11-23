@@ -258,17 +258,25 @@ class StockController extends Controller
         //$envio->cambiando = $actual;
         if($caja){
             $envio->caja = $caja;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
         if($rack){
             $envio->rack = $rack;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
 
         if($nivel){
             $envio->nivel = $nivel;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
 
         if($tarima){
             $envio->tarima = $tarima;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
 
         $envio->save();
