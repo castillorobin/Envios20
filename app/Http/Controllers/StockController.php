@@ -156,6 +156,8 @@ class StockController extends Controller
             $envio->nivel = $nivel;
             $envio->caja = $caja;
             $envio->tarima = $tarima;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
             } 
 
             if($cajasuelto=="suelto"){
@@ -163,6 +165,8 @@ class StockController extends Controller
             $envio->nivel = $nivels;
             //$envio->caja = $caja;
             $envio->tarima = $tarimas;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
             } 
             
 
