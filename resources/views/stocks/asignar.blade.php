@@ -45,7 +45,7 @@
     <x-default-layout>
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main" style="margin-top: -355px;">
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid">
+            <div class="d-flex flex-column flex-column-fluid" >
                 <!--begin::Toolbar-->
                 <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->

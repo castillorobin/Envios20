@@ -156,6 +156,8 @@ class StockController extends Controller
             $envio->nivel = $nivel;
             $envio->caja = $caja;
             $envio->tarima = $tarima;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
             } 
 
             if($cajasuelto=="suelto"){
@@ -163,6 +165,8 @@ class StockController extends Controller
             $envio->nivel = $nivels;
             //$envio->caja = $caja;
             $envio->tarima = $tarimas;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
             } 
             
 
@@ -254,17 +258,25 @@ class StockController extends Controller
         //$envio->cambiando = $actual;
         if($caja){
             $envio->caja = $caja;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
         if($rack){
             $envio->rack = $rack;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
 
         if($nivel){
             $envio->nivel = $nivel;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
 
         if($tarima){
             $envio->tarima = $tarima;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
         }
 
         $envio->save();
@@ -338,6 +350,7 @@ class StockController extends Controller
         foreach($envios as $envio){
 
             $envio->repartidor = $repartidor;
+            $envio->estado = "En ruta";
 
             $envio->save();
         }
