@@ -232,6 +232,9 @@ Route::get('/stocks/agregarrepartidorcaja', [App\Http\Controllers\StockControlle
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;
 Route::get('/ruta/agregar', [App\Http\Controllers\RutaController::class, 'agregar'] )->name('agregarruta') ;
 Route::get('/stocks/guardarasignarrepartidor', [App\Http\Controllers\StockController::class, 'guardarasignarrepartidor'] )->name('guardarasignarrepartidor');
+
+Route::get('/stocks/agregarfoto', [App\Http\Controllers\StockController::class, 'agregarfoto'] )->name('aagregarfoto');
+Route::get('/stocks/agregarguiafoto', [App\Http\Controllers\StockController::class, 'agregarguiafoto'] )->name('agregarguiafoto');
 /*
 
 Rutas 

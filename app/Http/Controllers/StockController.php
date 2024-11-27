@@ -358,6 +358,24 @@ class StockController extends Controller
         return view('stocks.asignarrepartidorcaja');
     }
 
+    public function agregarfoto() 
+    {
+        //$envios = Envio::all(); 
+        $nota = " ";
+        return view('stocks.agregarfoto', compact('nota'));
+    }
+
+    public function agregarguiafoto(Request $request) 
+    {
+        //$envios = Envio::all(); 
+        $guia = $request->get('guia') ;
+        $envio = Envio::where('guia', $guia)
+        ->get();
+        $nota = " ";
+        return view('stocks.agregarfotodatos', compact('nota', 'envio'));
+    }
+
+
     
 
     /**
