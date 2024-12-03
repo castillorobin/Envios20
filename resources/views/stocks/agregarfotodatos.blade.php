@@ -191,9 +191,10 @@
                            
                             <p></p>
                                 <p><input multiple type="file" class="inputfile file-input-control" accept="image/*" name="image" id="file" onchange="loadFile(event)" style=""></p>
-                                <label for="file" class="file-input-label"><i class="fa fa-upload"></i> Agregar fotos</label>
+                                <label for="file" class="file-input-label"><i class="far fa-image"></i> Agregar fotos</label>
                                 <p></p>
-                                <p class="cont" style="border: solid; border-radius: 30px; padding: 15px;"></p>
+                                <p class="cont" style="padding: 15px; margin-top: 50px;"></p>
+                                <p>  <button class="btn btn-primary mb-3" style="float: right;">Guardar</button> </p>
                             
                         </div>
                         <!--end::Card body-->
