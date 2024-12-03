@@ -375,6 +375,22 @@ class StockController extends Controller
         return view('stocks.agregarfotodatos', compact('nota', 'envio'));
     }
 
+    public function guardarfoto(Request $request) 
+    {
+        /*
+        $guia = $request->get('guia') ;
+        */
+        //$envio = Envio::where('guia', $guia)
+      //  ->get();
+
+       // $fotos = $request->get('image') ;
+
+       // dd($fotos);
+        
+       $nota = " ";
+        return view('stocks.agregarfoto', compact('nota'));
+    }
+
 
     
 

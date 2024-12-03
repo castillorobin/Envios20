@@ -235,6 +235,8 @@ Route::get('/stocks/guardarasignarrepartidor', [App\Http\Controllers\StockContro
 
 Route::get('/stocks/agregarfoto', [App\Http\Controllers\StockController::class, 'agregarfoto'] )->name('aagregarfoto');
 Route::get('/stocks/agregarguiafoto', [App\Http\Controllers\StockController::class, 'agregarguiafoto'] )->name('agregarguiafoto');
+Route::get('/stocks/guardarfoto', [App\Http\Controllers\StockController::class, 'guardarfoto'] )->name('aguardarfoto');
+
 /*
 
 Rutas 
