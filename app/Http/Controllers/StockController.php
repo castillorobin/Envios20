@@ -9,6 +9,8 @@ use App\Models\Envio;
 use App\Models\Rutas;
 use App\Models\Asignar;
 use App\Models\Empleado;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Validator;
 
 class StockController extends Controller
 {
@@ -377,15 +379,53 @@ class StockController extends Controller
 
     public function guardarfoto(Request $request) 
     {
-        /*
-        $guia = $request->get('guia') ;
-        */
+        
+        $guia = $request->get('guia2') ;
+        
         //$envio = Envio::where('guia', $guia)
       //  ->get();
+      $envio = Envio::find($guia);
+      //$envio->cambiando = $actual;
+      $fotos= [];  
+      
 
-       // $fotos = $request->get('image') ;
+       $fotos = $request->file("image") ;
 
-       // dd($fotos);
+       //dd($fotos[0]);
+       //dd($fotos[0]);
+/*
+       if ($fotos[0]) {
+
+        $imagen = $fotos[0];
+        $nombreimagen = Str::slug(time()) . "." . $imagen->getClientOriginalExtension();
+        $envio->foto1 = $nombreimagen;
+        $ruta = public_path("/fotos");
+        $imagen->move($ruta, $nombreimagen);
+    }*/
+    
+
+        foreach($fotos as $image) {
+          $path = $image->getClientOriginalName();
+          $name = time() . '-' . $path;
+    
+          $envio = Envio::find($guia);
+          $envio->foto1 = $name;
+        $ruta = public_path("/fotos");
+        $imagen->move($ruta, $name);
+        $envio->save();
+        }
+      
+/*
+    foreach ($request->image as $file) {
+        $imagen = $file;
+        $nombreimagen = Str::slug(time()) . "." . $imagen->getClientOriginalExtension();
+        $envio->foto1 = $nombreimagen;
+        $ruta = public_path("/fotos");
+        $imagen->move($ruta, $nombreimagen);
+        $envio->save();
+
+    }
+    */
         
        $nota = " ";
         return view('stocks.agregarfoto', compact('nota'));

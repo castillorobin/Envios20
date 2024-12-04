@@ -72,6 +72,7 @@
     image.src = URL.createObjectURL(event.target.files[i]);
     image.id = "output";
     image.width = "200";
+    image.style.margin = "10px";
     document.querySelector(".cont").appendChild(image);
   }
 };
@@ -181,20 +182,23 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <form action="/stocks/guardarfoto/" class="row g-2" method="GET">
+                            <form action="/stocks/guardarfoto/" class="row g-2" method="GET" enctype="multipart/form-data">
+                            
+                        
                             <div class="card-body pt-0">
 
                             <span style="font-size: 20px; font-weight: bolder;"> Guia: {{ $envio[0]->guia }}</span>
+                            <input type="text" value="{{ $envio[0]->guia }}" class="visually-hidden" name="guia2" id="guia2">
                             <br>
                             <span style="font-size: 12px; font-weight: bolder;"> Comercio: {{ $envio[0]->comercio }}</span>
                             <br>
                             <span style="font-size: 12px; font-weight: bolder;"> Destinatario: {{ $envio[0]->destinatario }}</span>
                            
                             <p></p>
-                                <p><input multiple type="file" class="inputfile file-input-control" accept="image/*" name="image[]" id="file" onchange="loadFile(event)" style=""></p>
+                                <p><input multiple type="file" class="inputfile file-input-control" name="image[]" id="file" onchange="loadFile(event)" style=""></p>
                                 <label for="file" class="file-input-label"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
                                 <p></p>
-                                <p class="cont" style="padding: 15px; margin-top: 50px;"></p>
+                                <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
                                 <p>  <button type="submit" class="btn btn-primary mb-3" style="float: right;">Guardar</button> </p>
                             
                         </div>

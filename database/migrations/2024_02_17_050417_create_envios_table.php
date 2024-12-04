@@ -42,6 +42,11 @@ return new class extends Migration
             $table->string('caja')->nullable();
             $table->string('tarima')->nullable();
             $table->integer('cambiando')->nullable();
+            $table->string('foto1')->nullable();
+            $table->string('foto2')->nullable();
+            $table->string('foto3')->nullable();
+            $table->string('foto4')->nullable();
+            $table->string('foto5')->nullable();
             $table->timestamps(); 
         });
     }
