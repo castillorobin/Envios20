@@ -47,7 +47,7 @@
 }
 
 .file-input-label {
-    background-color: #f15d22;
+    background-color: #009cf5;
     color: #fff;
     padding: 10px 20px;
     border-radius: 5px;
@@ -56,7 +56,7 @@
 }
 
 .file-input-label:hover {
-    background-color: #e14c1f;
+    background-color: #009cf5;
 }
 
       
@@ -182,8 +182,8 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <form action="/stocks/guardarfoto/" class="row g-2" method="GET" enctype="multipart/form-data">
-                            
+                            <form action="/stocks/guardarfoto/" class="row g-2" method="POST" enctype="multipart/form-data">
+                                @method('GET')
                         
                             <div class="card-body pt-0">
 
@@ -195,8 +195,13 @@
                             <span style="font-size: 12px; font-weight: bolder;"> Destinatario: {{ $envio[0]->destinatario }}</span>
                            
                             <p></p>
-                                <p><input multiple type="file" class="inputfile file-input-control" name="image[]" id="file" onchange="loadFile(event)" style=""></p>
+                                <p><input type="file" class="inputfile file-input-control" name="foto1" id="file" onchange="loadFile(event)" style="">
                                 <label for="file" class="file-input-label"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
+                            </p>
+                                <input type="file" class="inputfile file-input-control" name="foto2" id="file2" onchange="loadFile(event)" style="">
+                                <label for="file2" class="file-input-label"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos 2</label>
+                            
+
                                 <p></p>
                                 <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
                                 <p>  <button type="submit" class="btn btn-primary mb-3" style="float: right;">Guardar</button> </p>

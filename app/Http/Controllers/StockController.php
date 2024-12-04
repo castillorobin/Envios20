@@ -379,53 +379,76 @@ class StockController extends Controller
 
     public function guardarfoto(Request $request) 
     {
-        
-        $guia = $request->get('guia2') ;
-        
-        //$envio = Envio::where('guia', $guia)
-      //  ->get();
-      $envio = Envio::find($guia);
-      //$envio->cambiando = $actual;
-      $fotos= [];  
-      
-
-       $fotos = $request->file("image") ;
-
-       //dd($fotos[0]);
-       //dd($fotos[0]);
-/*
-       if ($fotos[0]) {
-
-        $imagen = $fotos[0];
-        $nombreimagen = Str::slug(time()) . "." . $imagen->getClientOriginalExtension();
-        $envio->foto1 = $nombreimagen;
-        $ruta = public_path("/fotos");
-        $imagen->move($ruta, $nombreimagen);
-    }*/
+        $guia = $request->get('guia2') ;    
+        //$foto1 = $request->file("foto1") ;
+        //dd($foto1);
+        if ($request->hasFile('foto1')) {
+            $pedidos = Envio::where('guia', $guia)
+        ->get(); 
+            $guiaact = $pedidos[0]->id;
+            $envio = Envio::find($guiaact);
+            $imagen = $request->file("foto1");
+            $nombreimagen = "foto1" . Str::slug(time()) . "." . $imagen->guessExtension();
+            //dd($envio);
+            $envio->foto1 = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+            $envio->save();  
+        }   
+        //dd($request->file("foto2"));
+        if ($request->hasFile('foto2')) {
+            $pedidos = Envio::where('guia', $guia)
+        ->get(); 
+            $guiaact = $pedidos[0]->id;
+            $envio = Envio::find($guiaact);
+            $imagen = $request->file("foto2");
+            $nombreimagen = "foto2" . Str::slug(time()) . "." . $imagen->guessExtension();
+//            dd($envio);
+            $envio->foto2 = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+            $envio->save();  
+        }   
+        if ($request->hasFile('foto3')) {
+            $pedidos = Envio::where('guia', $guia)
+        ->get(); 
+            $guiaact = $pedidos[0]->id;
+            $envio = Envio::find($guiaact);
+            $imagen = $request->file("foto3");
+            $nombreimagen = "foto3" . Str::slug(time()) . "." . $imagen->guessExtension();
+//            dd($envio);
+            $envio->foto3 = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+            $envio->save();  
+        } 
+        if ($request->hasFile('foto4')) {
+            $pedidos = Envio::where('guia', $guia)
+        ->get(); 
+            $guiaact = $pedidos[0]->id;
+            $envio = Envio::find($guiaact);
+            $imagen = $request->file("foto4");
+            $nombreimagen = "foto4" . Str::slug(time()) . "." . $imagen->guessExtension();
+//            dd($envio);
+            $envio->foto4 = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+            $envio->save();  
+        } 
+        if ($request->hasFile('foto5')) {
+            $pedidos = Envio::where('guia', $guia)
+        ->get(); 
+            $guiaact = $pedidos[0]->id;
+            $envio = Envio::find($guiaact);
+            $imagen = $request->file("foto5");
+            $nombreimagen = "foto5" . Str::slug(time()) . "." . $imagen->guessExtension();
+//            dd($envio);
+            $envio->foto5 = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+            $envio->save();  
+        } 
     
-
-        foreach($fotos as $image) {
-          $path = $image->getClientOriginalName();
-          $name = time() . '-' . $path;
-    
-          $envio = Envio::find($guia);
-          $envio->foto1 = $name;
-        $ruta = public_path("/fotos");
-        $imagen->move($ruta, $name);
-        $envio->save();
-        }
-      
-/*
-    foreach ($request->image as $file) {
-        $imagen = $file;
-        $nombreimagen = Str::slug(time()) . "." . $imagen->getClientOriginalExtension();
-        $envio->foto1 = $nombreimagen;
-        $ruta = public_path("/fotos");
-        $imagen->move($ruta, $nombreimagen);
-        $envio->save();
-
-    }
-    */
         
        $nota = " ";
         return view('stocks.agregarfoto', compact('nota'));

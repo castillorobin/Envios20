@@ -1231,8 +1231,79 @@
                                 <!--end::Input group-->
                             </div>
                             <!--end::Card body-->
+
+
+                            
+
+                            
+
+
+
+
+
                         </div>
                         <!--end::details View-->
+
+
+
+                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                            <!--begin::Card header-->
+                            <div class="card-header cursor-pointer">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bold m-0">FOTOS</h3>
+                                </div>
+                                <!--end::Card title-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body p-9">
+                                <!--begin::Row-->
+                                <div class="row mb-7">
+                                    <!--begin::Label-->
+                                 <div class="col-2">                                 
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto1}})"></div>
+                                    </div>
+                                </div>  
+                                <div class="col-2">  
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto2}})"></div>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <div class="col-2">  
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto3}})"></div>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <div class="col-2">  
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto4}})"></div>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                                <div class="col-2">  
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto5}})"></div>
+                                    </div>
+                                    <!--end::Col-->
+                                </div>
+                            </div>
+                                <!--end::Row-->
+                                <!--begin::Input group-->
+                               
+                                <!--end::Input group-->
+                                <!--begin::Input group-->
+                              
+                                <!--end::Input group-->
+                            </div>
+
+
+
+
+
                         
                     </div>
                     <!--end::details View-->
