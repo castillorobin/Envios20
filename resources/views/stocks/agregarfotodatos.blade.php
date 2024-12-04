@@ -76,6 +76,31 @@
     document.querySelector(".cont").appendChild(image);
   }
 };
+
+function esconder1(){
+    
+    document.getElementById('file1l').style.display = 'none';
+    document.getElementById('file2l').style.display = '';
+
+ };
+ function esconder2(){
+    
+    document.getElementById('file2l').style.display = 'none';
+    document.getElementById('file3l').style.display = '';
+
+ };
+ function esconder3(){
+    
+    document.getElementById('file3l').style.display = 'none';
+    document.getElementById('file4l').style.display = '';
+
+ };
+ function esconder4(){
+    
+    document.getElementById('file4l').style.display = 'none';
+    document.getElementById('file5l').style.display = '';
+
+ };
 </script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -195,16 +220,31 @@
                             <span style="font-size: 12px; font-weight: bolder;"> Destinatario: {{ $envio[0]->destinatario }}</span>
                            
                             <p></p>
-                                <p><input type="file" class="inputfile file-input-control" name="foto1" id="file" onchange="loadFile(event)" style="">
-                                <label for="file" class="file-input-label"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
+                                <p><input type="file" class="inputfile file-input-control" name="foto1" id="file" onchange="loadFile(event)" onclick="esconder1()" style="">
+                                <label for="file" class="file-input-label" id="file1l"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
                             </p>
-                                <input type="file" class="inputfile file-input-control" name="foto2" id="file2" onchange="loadFile(event)" style="">
-                                <label for="file2" class="file-input-label"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos 2</label>
-                            
+                                <input type="file" class="inputfile file-input-control" name="foto2" id="file2" onchange="loadFile(event)" onclick="esconder2()">
+                                <label for="file2" class="file-input-label" id="file2l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
+
+                                <input type="file" class="inputfile file-input-control" name="foto3" id="file3" onchange="loadFile(event)" onclick="esconder3()">
+                                <label for="file3" class="file-input-label" id="file3l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
+
+                                <input type="file" class="inputfile file-input-control" name="foto4" id="file4" onchange="loadFile(event)" onclick="esconder4()">
+                                <label for="file4" class="file-input-label" id="file4l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
+
+                                <input type="file" class="inputfile file-input-control" name="foto5" id="file5" onchange="loadFile(event)" >
+                                <label for="file5" class="file-input-label" id="file5l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
 
                                 <p></p>
                                 <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
-                                <p>  <button type="submit" class="btn btn-primary mb-3" style="float: right;">Guardar</button> </p>
+                                <p> 
+                                    <a href="/stocks/agregarfoto">
+                                        <button type="button" class="btn btn-danger mb-3" style="float: right; margin-left: 5px;">Limpiar</button>
+                                    </a>
+                                    
+                                    <button type="submit" class="btn btn-primary mb-3" style="float: right;">Guardar</button> 
+                                   
+                                </p>
                             
                         </div>
                         <!--end::Card body-->
