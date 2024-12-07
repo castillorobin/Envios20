@@ -380,6 +380,7 @@ class StockController extends Controller
             //return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
             return view('stocks.agregarfoto', compact('nota',));
         }
+        $nota = " ";
         return view('stocks.agregarfotodatos', compact('nota', 'envio'));
     }
 
