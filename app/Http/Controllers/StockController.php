@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+//use Request;
 use App\Models\Stock;
 use App\Models\Envio;
 use App\Models\Rutas;
@@ -373,14 +374,26 @@ class StockController extends Controller
         $guia = $request->get('guia') ;
         $envio = Envio::where('guia', $guia)
         ->get();
-        $nota = " ";
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            //return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+            return view('stocks.agregarfoto', compact('nota',));
+        }
         return view('stocks.agregarfotodatos', compact('nota', 'envio'));
     }
 
-    public function guardarfoto(Request $request) 
+    public function guardandofoto23(Request $request) 
+    {
+        $foto1 = $request->file("foto1");
+        dd($foto1);
+    }
+    
+
+    public function guardandofoto(Request $request) 
     {
         $guia = $request->get('guia2') ;    
-        //$foto1 = $request->file("foto1") ;
+        $foto1 = $request->file("foto1");
         //dd($foto1);
         if ($request->hasFile('foto1')) {
             $pedidos = Envio::where('guia', $guia)
@@ -389,6 +402,7 @@ class StockController extends Controller
             $envio = Envio::find($guiaact);
             $imagen = $request->file("foto1");
             $nombreimagen = "foto1" . Str::slug(time()) . "." . $imagen->guessExtension();
+            //dd($request->all());
             //dd($envio);
             $envio->foto1 = $nombreimagen;
             $ruta = public_path("/fotos");

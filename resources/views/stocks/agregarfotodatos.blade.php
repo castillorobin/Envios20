@@ -207,8 +207,9 @@ function esconder1(){
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <form action="/stocks/guardarfoto/" class="row g-2" method="POST" enctype="multipart/form-data">
-                                @method('GET')
+                            <form action="/guardandofoto" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
+                                @csrf
+                            @method('GET')
                         
                             <div class="card-body pt-0">
 
