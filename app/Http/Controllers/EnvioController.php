@@ -427,8 +427,31 @@ class EnvioController extends Controller
 
         $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])
         ->get();
+
+        //dd($estado);
+        if ($estado !="todos"){
+           // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
+           $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
+            where('estado', $estado)->get();
+
+        }
+        if ($tipo !="todos"){
+            // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
+           // $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
+             //where('tipo', $tipo)->get();
+             $envios = $envios->intersect(Envio::whereIn('tipo', [$tipo])->get());
+         }
+         if ($repartidorsolo !="todos"){
+            // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
+           // $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
+             //where('tipo', $tipo)->get();
+             $envios = $envios->intersect(Envio::whereIn('repartidor', [$repartidorsolo])->get());
+         }
+            
         $totalperso= 0;
         $totalfijo= 0;
+
+
         foreach($envios as $envio){
             if ($envio->tipo == "Personalizado"){
                 $totalperso += $envio->total;
@@ -440,8 +463,6 @@ class EnvioController extends Controller
             
            // Envio::find($envioid)->delete();
         }
-
-
 
 
         $repartidores = Empleado::all();

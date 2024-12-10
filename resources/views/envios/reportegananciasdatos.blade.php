@@ -87,7 +87,7 @@
                             </div> 
                             <div class="col-md-2 m-2 mb-4">
                                 <select class="form-select form-select-solid mi-selector" data-control="select2" name="repartidor" id="repartidor" >
-                                    <option value=" ">Repartidor</option>
+                                    <option value="todos">Repartidor</option>
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->nombre}}">{{$repartidor->nombre}}</option>
