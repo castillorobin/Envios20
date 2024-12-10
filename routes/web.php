@@ -191,6 +191,10 @@ Route::get('/envios/detalle/{id}', [App\Http\Controllers\EnvioController::class,
 Route::get('/envios/editardetalle/{id}', [App\Http\Controllers\EnvioController::class, 'editardetalle'] )->name('editardetalle') ;
 Route::get('/envios/detalleeditando', [App\Http\Controllers\EnvioController::class, 'detalleeditando'] )->name('detalleeditando') ;
 Route::get('/envios/limpiarfiltro', [App\Http\Controllers\EnvioController::class, 'limpiarfiltro'] )->name('limpiarfiltro') ;
+
+//Reportes
+Route::get('/envios/reporteganancias', [App\Http\Controllers\EnvioController::class, 'reporteganancias'] )->name('reporteganancias') ;
+Route::get('/envios/reportegananciasdatos', [App\Http\Controllers\EnvioController::class, 'reportegananciasdatos'] )->name('reportegananciasdatos') ;
 /*
 envios/detalleeditando
 

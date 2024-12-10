@@ -217,6 +217,14 @@
 						</a>
 						<div class="menu-sub menu-sub-accordion">
 							<div class="menu-item">
+								<a href="/envios/reporteganancias" class="menu-link py-3" style="background-color: transparent;">
+									<span class="menu-bullet">
+										<span class="bullet bullet-dot"></span>
+									</span>
+									<span class="menu-title">Reporte de ganancias</span>
+								</a>
+							</div>
+							<div class="menu-item">
 								<a href="#" class="menu-link py-3" style="background-color: transparent;">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>

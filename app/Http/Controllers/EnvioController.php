@@ -408,4 +408,44 @@ class EnvioController extends Controller
 
         return view('envios.indexdigitadofiltro', compact('pedidos', 'vendedores', 'nota', 'entrega', 'reprogra', 'noentrega', 'creado', 'comercio', 'ruta'));
     }
+
+    public function reporteganancias()
+    { 
+
+        $repartidores = Empleado::all();
+        
+        return view('envios.reporteganancias', compact('repartidores'));
+    }
+
+    public function reportegananciasdatos(Request $request)
+    { 
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        $tipo = $request->input('tipo');
+        $estado = $request->input('estado');
+        $repartidorsolo = $request->input('repartidor');
+
+        $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])
+        ->get();
+        $totalperso= 0;
+        $totalfijo= 0;
+        foreach($envios as $envio){
+            if ($envio->tipo == "Personalizado"){
+                $totalperso += $envio->total;
+            }
+            if ($envio->tipo == "Punto fijo"){
+                $totalfijo += $envio->total;
+            }
+
+            
+           // Envio::find($envioid)->delete();
+        }
+
+
+
+
+        $repartidores = Empleado::all();
+        
+        return view('envios.reportegananciasdatos', compact('repartidores', 'desde', 'hasta', 'tipo', 'estado', 'repartidorsolo', 'totalperso', 'totalfijo'));
+    }
 }
