@@ -113,45 +113,28 @@
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-5 ">
-                                <!--begin::Table-->
-<table style="font-size: 24px;">
-    <tr>
-        <td style="width: 200px;">Desde: <p></p> </td>
-        <td style="width: 400px;">{{$desde}} <p></p></td>
-        <td style="width: 200px;">Personalizado </td>
-        <td style="width: 200px;"> $ {{$totalperso}}</td>
-    </tr>
-    <tr>
-        <td style="width: 200px;">Hasta: <p></p></td>
-        <td style="width: 200px;">{{$hasta}}</td>
-        <td style="width: 200px;">Punto Fijo</td>
-        <td style="width: 200px;">$ {{$totalfijo}}</td>
-    </tr>
-
-    <tr>
-        <td style="width: 200px;">Tipo de paquete:</td>
-        <td style="width: 200px;"> {{$tipo}}</td>
-        <td style="width: 200px;"></td>
-        <td style="width: 200px;"></td>
-    </tr>
-
-    <tr>
-        <td style="width: 200px;">Estado:</td>
-        <td style="width: 200px;">  {{$estado}}</td>
-        <td style="width: 200px;"></td>
-        <td style="width: 200px;"></td>
-    </tr>
-
-    <tr>
-        <td style="width: 200px;">Repartidor:</td>
-        <td style="width: 200px;">  {{$repartidorsolo}}</td>
-        <td style="width: 200px;"></td>
-        <td style="width: 200px;"></td>
-    </tr>
 
 
+                                <div class="row" style="font-size:180%; font-weight: bolder;">
+                                    <div class="col-sm-6 pt-5">
+                                        Desde: {{$desde}}
+                                        <p></p>
+                                        Hasta: {{$hasta}}
+                                        <p></p>
+                                        Tipo de paquete: {{$tipo}}
+                                        <p></p>
+                                        Estado: {{$estado}}
+                                        <p></p>
+                                        Repartidor:  {{$repartidorsolo}}
 
-</table>
+
+                                    </div>
+                                    <div class="col-sm-6 pt-5">
+                                        Personalizado: $ {{$totalperso}}
+                                        <p></p>
+                                        Punto Fijo: $ {{$totalfijo}}
+                                    </div>
+                                </div>
 
 
             <br>
