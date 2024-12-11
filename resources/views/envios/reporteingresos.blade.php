@@ -47,10 +47,10 @@
                     <div id="kt_app_content_container" class="app-container ">
                         
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de Ganancias</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de Ingresos</h1>
                             
                         </div>
-                        <form action="/envios/reportegananciasdatos" id="kt_invoice_form" method="POST"> 
+                        <form action="/envios/reporteingresosdatos" id="kt_invoice_form" method="POST"> 
                             @csrf
                             @method('GET')
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
@@ -58,33 +58,10 @@
                                 <input class="form-control" placeholder="Desde" id="kt_datepicker_1" style="float: left; width:140px;" name="desde" />
                                 <input class="form-control" placeholder="Hasta" id="kt_datepicker_2" style="float: right; width:140px;" name="hasta" />
                             </div> 
+                            
                             <div class="col-md-2 m-2 mb-4">
-                                <select class="form-select form-select-solid mi-selector" data-control="select2" name="tipo" id="tipo" >
-                                    <option value="Todos">Tipo de paquete</option>
-                                    <option value="Todos">Todos</option>
-                                    <option value="Personalizado">Personalizado </option>
-                                    <option value="Personalizado departamental">Personalizado departamental</option>
-                                    <option value="Casillero">Casillero</option>
-                                    <option value="Punto fijo">Punto fijo</option>
-                                    
-                                </select>
-                            </div> 
-                            <div class="col-md-2 m-2 mb-4">
-                                <select class="form-select form-select-solid mi-selector" name="estado" id="estado" data-control="select2" >
-                                    <option value="Todos" >Estado</option>    
-                                    <option value="Todos" >Todos</option>
-                                    <option value="Creado">Creado</option>
-                                    <option value="En ruta">En ruta</option>
-                                    <option value="Entregado">Entregado</option>
-                                    <option value="No entregado">No entregado</option>
-                                    <option value="Reprogramado">Reprogramado</option>
-                                    <option value="Devuelto al comercio">Devuelto al comercio</option>
-                                    <option value="Recepcionado">Recepcionado</option>
-                                </select>
-                            </div> 
-                            <div class="col-md-2 m-2 mb-4">
-                                <select class="form-select form-select-solid mi-selector" data-control="select2" name="repartidor" id="repartidor" >
-                                    <option value="Todos">Repartidor</option>
+                                <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
+                                    <option value="Todos">Usuario</option>
                                     <option value="Todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->nombre}}">{{$repartidor->nombre}}</option>

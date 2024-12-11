@@ -195,6 +195,9 @@ Route::get('/envios/limpiarfiltro', [App\Http\Controllers\EnvioController::class
 //Reportes
 Route::get('/envios/reporteganancias', [App\Http\Controllers\EnvioController::class, 'reporteganancias'] )->name('reporteganancias') ;
 Route::get('/envios/reportegananciasdatos', [App\Http\Controllers\EnvioController::class, 'reportegananciasdatos'] )->name('reportegananciasdatos') ;
+
+Route::get('/envios/reporteingresos', [App\Http\Controllers\EnvioController::class, 'reporteingresos'] )->name('reporteingresos') ;
+
 /*
 envios/detalleeditando
 

@@ -29,9 +29,10 @@
             height: 60px;
         }
     </style>
-    <script>
-        $("#kt_datepicker_1").flatpickr();
-    </script>
+  <script>
+    $("#kt_datepicker_1").flatpickr();
+    $("#kt_datepicker_2").flatpickr();
+</script>
 
 </head>
 
@@ -57,14 +58,14 @@
                             @csrf
                             @method('GET')
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
-                            <div class="col-md-3 m-2">
+                            <div class="col-sm-3 m-2">
                                 <input class="form-control" placeholder="Desde" id="kt_datepicker_1" style="float: left; width:140px;" name="desde"/>
                                 <input class="form-control" placeholder="Hasta" id="kt_datepicker_2" style="float: right; width:140px;" name="hasta"/>
                             </div> 
                             <div class="col-md-2 m-2 mb-4">
                                 <select class="form-select form-select-solid mi-selector" data-control="select2" name="tipo" id="tipo" >
-                                    <option value="todos">Tipo de paquete</option>
-                                    <option value="todos">Todos</option>
+                                    <option value="Todos">Tipo de paquete</option>
+                                    <option value="Todos">Todos</option>
                                     <option value="Personalizado">Personalizado </option>
                                     <option value="Personalizado departamental">Personalizado departamental</option>
                                     <option value="Casillero">Casillero</option>
@@ -74,8 +75,8 @@
                             </div> 
                             <div class="col-md-2 m-2 mb-4">
                                 <select class="form-select form-select-solid mi-selector" name="estado" id="estado" data-control="select2" >
-                                    <option value="todos" >Estado</option>    
-                                    <option value="todos" >Todos</option>
+                                    <option value="Todos" >Estado</option>    
+                                    <option value="Todos" >Todos</option>
                                     <option value="Creado">Creado</option>
                                     <option value="En ruta">En ruta</option>
                                     <option value="Entregado">Entregado</option>
@@ -87,8 +88,8 @@
                             </div> 
                             <div class="col-md-2 m-2 mb-4">
                                 <select class="form-select form-select-solid mi-selector" data-control="select2" name="repartidor" id="repartidor" >
-                                    <option value="todos">Repartidor</option>
-                                    <option value="todos" >Todos</option>
+                                    <option value="Todos">Repartidor</option>
+                                    <option value="Todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->nombre}}">{{$repartidor->nombre}}</option>
                                     @endforeach
@@ -177,10 +178,7 @@
             myModal.show();
         });
     </script>
-     <script>
-        $("#kt_datepicker_1").flatpickr();
-        $("#kt_datepicker_2").flatpickr();
-    </script>
+     
 
     <script>
         // Función para obtener la fecha y hora actual en El Salvador

@@ -225,11 +225,11 @@
 								</a>
 							</div>
 							<div class="menu-item">
-								<a href="#" class="menu-link py-3" style="background-color: transparent;">
+								<a href="/envios/reporteingresos" class="menu-link py-3" style="background-color: transparent;">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
-									<span class="menu-title">listado de reportes</span>
+									<span class="menu-title">Reporte de ingresos</span>
 								</a>
 							</div>
 						</div>

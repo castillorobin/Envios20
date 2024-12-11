@@ -429,19 +429,19 @@ class EnvioController extends Controller
         ->get();
 
         //dd($estado);
-        if ($estado !="todos"){
+        if ($estado !="Todos"){
            // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
            $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
             where('estado', $estado)->get();
 
         }
-        if ($tipo !="todos"){
+        if ($tipo !="Todos"){
             // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
            // $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
              //where('tipo', $tipo)->get();
              $envios = $envios->intersect(Envio::whereIn('tipo', [$tipo])->get());
          }
-         if ($repartidorsolo !="todos"){
+         if ($repartidorsolo !="Todos"){
             // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
            // $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
              //where('tipo', $tipo)->get();
@@ -469,4 +469,17 @@ class EnvioController extends Controller
         
         return view('envios.reportegananciasdatos', compact('repartidores', 'desde', 'hasta', 'tipo', 'estado', 'repartidorsolo', 'totalperso', 'totalfijo'));
     }
+
+    public function reporteingresos()
+    { 
+
+        $repartidores = Empleado::all();
+        
+        return view('envios.reporteingresos', compact('repartidores'));
+    }
+
+
+
+
+    
 }
