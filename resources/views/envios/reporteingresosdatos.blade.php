@@ -26,9 +26,10 @@
             display: none;
         }
     </style>
-    <script>
-        $("#kt_datepicker_1").flatpickr();
-    </script>
+      <script>
+    $("#kt_datepicker_1").flatpickr();
+    $("#kt_datepicker_2").flatpickr();
+</script>
 
 </head>
 
@@ -54,9 +55,9 @@
                             @csrf
                             @method('GET')
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
-                            <div class="col-md-3 m-2">
-                                <input class="form-control" placeholder="Desde" id="kt_datepicker_1" style="float: left; width:170px;" name="desde" />
-                                <input class="form-control" placeholder="Hasta" id="kt_datepicker_2" style="float: right; width:170px;" name="hasta" />
+                            <div class="col-sm-3 m-2">
+                                <input class="form-control" placeholder="Desde" id="kt_datepicker_1" style="float: left; width:48%;" name="desde" />
+                                <input class="form-control" placeholder="Hasta" id="kt_datepicker_2" style="float: right; width:48%;" name="hasta" />
                             </div> 
                             
                             <div class="col-md-2 m-2 mb-4">
@@ -132,10 +133,6 @@
             myModal.show();
         });
     </script> 
-     <script>
-        $("#kt_datepicker_1").flatpickr();
-        $("#kt_datepicker_2").flatpickr();
-    </script>
 
     <script>
         // Función para obtener la fecha y hora actual en El Salvador
