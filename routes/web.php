@@ -197,6 +197,7 @@ Route::get('/envios/reporteganancias', [App\Http\Controllers\EnvioController::cl
 Route::get('/envios/reportegananciasdatos', [App\Http\Controllers\EnvioController::class, 'reportegananciasdatos'] )->name('reportegananciasdatos') ;
 
 Route::get('/envios/reporteingresos', [App\Http\Controllers\EnvioController::class, 'reporteingresos'] )->name('reporteingresos') ;
+Route::get('/envios/reporteingresosdatos', [App\Http\Controllers\EnvioController::class, 'reporteingresosdatos'] )->name('reporteingresosdatos') ;
 
 /*
 envios/detalleeditando

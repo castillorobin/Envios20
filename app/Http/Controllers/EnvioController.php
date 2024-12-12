@@ -478,6 +478,45 @@ class EnvioController extends Controller
         return view('envios.reporteingresos', compact('repartidores'));
     }
 
+    public function reporteingresosdatos(Request $request)
+    { 
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        $usuario = $request->input('usuario');
+
+        $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])
+        ->get();
+
+        $totalperso= 0;
+        $totalfijo= 0;
+        $totalcasi= 0;
+        $totalpf= 0;
+        $totalguia= 0;
+
+
+        foreach($envios as $envio){
+            if ($envio->tipo == "Personalizado"){
+                $totalperso += $envio->total;
+            }
+            if ($envio->tipo == "Punto fijo"){
+                $totalfijo += $envio->total;
+            }
+            if ($envio->tipo == "Casillero"){
+                $totalperso += $envio->total;
+            }
+            if ($envio->tipo == "Personalizado departamental"){
+                $totalfijo += $envio->total;
+            }
+                        
+           // Envio::find($envioid)->delete();
+        }
+
+        $repartidores = Empleado::all();
+        
+        return view('envios.reporteingresosdatos', compact('repartidores', 'totalperso', 'totalfijo', 'totalcasi', 'totalpf'));
+    }
+
+
 
 
 
