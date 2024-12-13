@@ -508,16 +508,16 @@ class EnvioController extends Controller
 
         foreach($envios as $envio){
             if ($envio->tipo == "Personalizado"){
-                $totalperso += $envio->total;
+                $totalperso += $envio->envio;
             }
             if ($envio->tipo == "Punto fijo"){
-                $totalfijo += $envio->total;
+                $totalfijo += $envio->envio;
             }
             if ($envio->tipo == "Casillero"){
-                $totalperso += $envio->total;
+                $totalperso += $envio->envio;
             }
             if ($envio->tipo == "Personalizado departamental"){
-                $totalfijo += $envio->total;
+                $totalfijo += $envio->envio;
             }
                         
            // Envio::find($envioid)->delete();
