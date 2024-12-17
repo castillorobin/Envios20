@@ -451,6 +451,9 @@ class EnvioController extends Controller
             
         $totalperso= 0;
         $totalfijo= 0;
+        $totalcasillero= 0;
+        $totalpersodepa= 0;
+        $totaltodos= 0;
 
 
         foreach($envios as $envio){
@@ -460,6 +463,15 @@ class EnvioController extends Controller
             if ($envio->tipo == "Punto fijo"){
                 $totalfijo += $envio->total;
             }
+            if ($envio->tipo == "Casillero"){
+                $totalcasillero += $envio->total;
+            }
+            if ($envio->tipo == "Personalizado departamental"){
+                $totalpersodepa += $envio->total;
+            }
+            if ($tipo == "Todos"){
+                $totaltodos += $envio->total;
+            }
 
             
            // Envio::find($envioid)->delete();
@@ -468,7 +480,7 @@ class EnvioController extends Controller
 
         $repartidores = Empleado::all();
         
-        return view('envios.reportegananciasdatos', compact('repartidores', 'desde', 'hasta', 'tipo', 'estado', 'repartidorsolo', 'totalperso', 'totalfijo'));
+        return view('envios.reportegananciasdatos', compact('repartidores', 'desde', 'hasta', 'tipo', 'estado', 'repartidorsolo', 'totalperso', 'totalfijo', 'totalcasillero', 'totalpersodepa', 'totaltodos'));
     }
 
     public function reporteingresos()
@@ -497,16 +509,16 @@ class EnvioController extends Controller
 
         foreach($envios as $envio){
             if ($envio->tipo == "Personalizado"){
-                $totalperso += $envio->total;
+                $totalperso += $envio->envio;
             }
             if ($envio->tipo == "Punto fijo"){
-                $totalfijo += $envio->total;
+                $totalfijo += $envio->envio;
             }
             if ($envio->tipo == "Casillero"){
-                $totalperso += $envio->total;
+                $totalperso += $envio->envio;
             }
             if ($envio->tipo == "Personalizado departamental"){
-                $totalfijo += $envio->total;
+                $totalfijo += $envio->envio;
             }
                         
            // Envio::find($envioid)->delete();

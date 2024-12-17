@@ -59,8 +59,8 @@
                             @method('GET')
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
                             <div class="col-sm-3 m-2">
-                                <input class="form-control" placeholder="Desde" id="kt_datepicker_1" style="float: left; width:140px;" name="desde"/>
-                                <input class="form-control" placeholder="Hasta" id="kt_datepicker_2" style="float: right; width:140px;" name="hasta"/>
+                                <input class="form-control" placeholder="Desde" id="kt_datepicker_1" style="float: left; width:48%;" name="desde"/>
+                                <input class="form-control" placeholder="Hasta" id="kt_datepicker_2" style="float: right; width:48%;" name="hasta"/>
                             </div> 
                             <div class="col-md-2 m-2 mb-4">
                                 <select class="form-select form-select-solid mi-selector" data-control="select2" name="tipo" id="tipo" >
@@ -93,7 +93,7 @@
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->nombre}}">{{$repartidor->nombre}}</option>
                                     @endforeach
-                                </select>
+                                </select> 
                             </div> 
                             
                             <div class="col-md-auto align-self-center mb-3">
@@ -131,9 +131,23 @@
 
                                     </div>
                                     <div class="col-sm-6 pt-5">
+                                        @if ($tipo == "Personalizado")
                                         Personalizado: $ {{$totalperso}}
-                                        <p></p>
+                                        @endif
+                                        @if ($tipo == "Punto fijo")
                                         Punto Fijo: $ {{$totalfijo}}
+                                        @endif
+                                        @if ($tipo == "Casillero")
+                                        Casillero: $ {{$totalcasillero}}
+                                        @endif
+                                        @if ($tipo == "Personalizado departamental")
+                                        Personalizado departamental: $ {{$totalpersodepa}}
+                                        @endif
+                                        @if ($tipo == "Todos")
+                                        Todos: $ {{$totaltodos}}
+                                        @endif
+                                        <p></p>
+                                        
                                     </div>
                                 </div>
 
