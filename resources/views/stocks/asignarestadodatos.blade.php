@@ -283,7 +283,7 @@ if(tipo=='suelto'){
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
                                         <div class="modal-header mt-5 m-5" >
-                                            <h3 class="modal-title">Asignar repartidor</h3>
+                                            <h3 class="modal-title">Asignar estado</h3>
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
@@ -308,32 +308,23 @@ if(tipo=='suelto'){
                                             </div>
                                             <div class="row my-2 mx-2 justify-content-center">
                                                 <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid" name="agencia" id="agencia" aria-label="Floating label select example" >
-                                                       
-                                                        <option value="San Salvador">San Salvador</option>
-                                                        <option value="Santa Ana">Santa Ana</option>
-                                                        <option value="San Miguel">San Miguel</option>
+                                                    <select class="form-select form-select-solid mi-selector" name="estado" id="estado" data-control="select2" >
+                                                        <option value="No entregado">No entregado</option>
+                                                        <option value="Todos" >Estado</option>    
+                                                        <option value="Todos" >Todos</option>
+                                                        <option value="Creado">Creado</option>
+                                                        <option value="En ruta">En ruta</option>
+                                                        <option value="Entregado">Entregado</option>
+                                                        
+                                                        <option value="Reprogramado">Reprogramado</option>
+                                                        <option value="Devuelto al comercio">Devuelto al comercio</option>
+                                                        <option value="Recepcionado">Recepcionado</option>
                                                     </select>
-                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
                                                 </div>
                                                
                                             </div>
 
-                                            <div class="row my-2 mx-2 justify-content-center">
-                                                <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="repartidor" id="repartidor"  >
-                                                        <option value="" style="height: 60px;"></option>
-                                                       
-                                                    </select>
-                                                    <label for="cenvio" style="padding-left: 25px;">Repartidor</label>
-                                                </div>
-                                               
-                                            </div>
-                                            <input type="text" class="form-control form-control-solid" name="caja6" id="caja6" value="{{$pedido->caja}}" hidden/>
-                                            
-                                           
-                                          
-                                        </div>
+                                        
                                        
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
