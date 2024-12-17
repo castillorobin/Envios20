@@ -242,7 +242,7 @@ Route::get('/stocks/agregarrepartidorcaja', [App\Http\Controllers\StockControlle
 Route::get('/stocks/asignarestado', [App\Http\Controllers\StockController::class, 'asignarestado'] )->name('asignarestado');
 Route::get('/stocks/asignarestadodatos', [App\Http\Controllers\StockController::class, 'asignarestadodatos'] )->name('asignarestadodatos');
 Route::get('/stocks/agregarestado', [App\Http\Controllers\StockController::class, 'agregarestado'] )->name('agregarestado');
-
+Route::get('/stocks/guardarestado', [App\Http\Controllers\StockController::class, 'guardarestado'] )->name('guardarestado');
 
 
 //Rutas

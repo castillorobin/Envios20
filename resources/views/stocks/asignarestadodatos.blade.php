@@ -290,7 +290,7 @@ if(tipo=='suelto'){
                                             </div>
                                             <!--end::Close-->
 
-                                            <form action="/stocks/guardarasignarrepartidor/" method="GET">
+                                            <form action="/stocks/guardarestado/" method="GET">
 
                                         </div>
                                         <div class="modal-body">
@@ -324,7 +324,7 @@ if(tipo=='suelto'){
                                                
                                             </div>
 
-                                        
+                                            <input type="text" value="{{$actual}} " class="visually-hidden" name="actual2" id="actual2">
                                        
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>

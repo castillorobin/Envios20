@@ -383,7 +383,7 @@ class StockController extends Controller
         $nota = " ";
         return view('stocks.agregarfotodatos', compact('nota', 'envio'));
     }
-
+ 
     public function guardandofoto23(Request $request) 
     {
         $foto1 = $request->file("foto1");
@@ -518,6 +518,39 @@ class StockController extends Controller
         //$empleados = Empleado::all(); 
 
         return view('stocks.asignarestadodatos', compact('pedidos', 'actual' ));
+    }
+
+    public function guardarestado(Request $request)
+    {
+        /*
+        $guia = $request->get('guia') ;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+        $actual = $request->get('actual') ;
+
+        $envioid= $envio[0]->id ;
+
+        
+        $pedidos = Envio::where('cestado', $actual)
+        ->get();
+*/
+        $estado = $request->get('estado') ;
+        $actual = $request->get('actual2') ;
+        $envios = Envio::where('cestado', $actual)
+        ->get();
+        
+        foreach($envios as $envio){
+
+            $envio->estado = $estado;
+            //$envio->estado = "En ruta";
+
+            $envio->save();
+        }
+
+        //$empleados = Empleado::all(); 
+
+        return view('stocks.asignarestado');
     }
 
 
