@@ -324,6 +324,73 @@ if(tipo=='suelto'){
                                                
                                             </div>
 
+                                            <div class="row my-2 mx-2 justify-content-center">
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <select class="form-select form-select-solid" name="agencia" id="agencia" aria-label="Floating label select example" >
+                                                       
+                                                        <option value="San Salvador">San Salvador</option>
+                                                        <option value="Santa Ana">Santa Ana</option>
+                                                        <option value="San Miguel">San Miguel</option>
+                                                    </select>
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
+                                                <div class="row my-2 mx-2 justify-content-center">
+                                                    <div class="form-floating col-lg-12 mb-4">
+                                                        <select class="form-select form-select-solid" name="cajasuelto" id="cajasuelto" aria-label="Floating label select example" onchange="elegircajasuelto()">
+                                                           
+                                                            <option value="caja">Caja</option>
+                                                            <option value="suelto">Suelto</option>
+                                                            
+                                                        </select>
+                                                        <label for="cenvio" style="padding-left: 25px;"></label>
+                                                    </div>
+                                                   
+                                                </div>
+                                                <div class="row my-2 mx-2 justify-content-center" name="caja1" id="caja1">
+                                                    <div class="form-floating col-lg-6 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="caja" id="caja" placeholder="# de rack"  />
+                                                        <label for="rack" style="padding-left: 25px;">Caja</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                    <div class="form-floating col-lg-6 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="rack" id="rack" placeholder="# de nivel"  />
+                                                        <label for="nivel" style="padding-left: 25px;">Rack</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row my-2 mx-2 justify-content-center" name="caja2" id="caja2">
+                                                    <div class="form-floating col-lg-6 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="nivel" id="nivel" placeholder="# de caja"  />
+                                                        <label for="caja" style="padding-left: 25px;">Nivel</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                    <div class="form-floating col-lg-6 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="tarima" id="tarima" placeholder="# de tarima"  />
+                                                        <label for="tarima" style="padding-left: 25px;">Tarima</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row my-2 mx-2 justify-content-center" name="caja1" id="suelto1" hidden>
+                                                    <div class="form-floating col-lg-6 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="racks" id="racks" placeholder="# de nivel" />
+                                                        <label for="nivel" style="padding-left: 25px;">Rack</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                    <div class="form-floating col-lg-6 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="nivels" id="nivels" placeholder="# de nivel"  />
+                                                        <label for="nivel" style="padding-left: 25px;">Nivel</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                </div>
+                                                <div class="row my-2 mx-2 " name="caja1" id="suelto2" hidden>
+                                                    <div class="form-floating col-lg-6 mb-4">
+                                                        <input type="text" class="form-control form-control-solid" name="tarimas" id="tarimas" placeholder="# de tarima"  />
+                                                        <label for="tarima" style="padding-left: 25px;">Tarima</label>
+                                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
                                             <input type="text" value="{{$actual}} " class="visually-hidden" name="actual2" id="actual2">
                                        
                                         <div class="modal-footer m-5">

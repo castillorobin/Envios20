@@ -522,19 +522,19 @@ class StockController extends Controller
 
     public function guardarestado(Request $request)
     {
-        /*
-        $guia = $request->get('guia') ;
+       
+        $agencia = $request->get('agencia');
+        $cajasuelto = $request->get('cajasuelto');
+        $caja = $request->get('caja');
+        $rack = $request->get('rack');
+        $nivel = $request->get('nivel');
+        $tarima = $request->get('tarima');
+        //$id = $request->get('asignum2');
 
-        $envio = Envio::where('guia', $guia)
-        ->get();
-        $actual = $request->get('actual') ;
-
-        $envioid= $envio[0]->id ;
-
+        //$envio = Envio::find($id);
+        //$envio->cambiando = $actual;
         
-        $pedidos = Envio::where('cestado', $actual)
-        ->get();
-*/
+       
         $estado = $request->get('estado') ;
         $actual = $request->get('actual2') ;
         $envios = Envio::where('cestado', $actual)
@@ -544,11 +544,33 @@ class StockController extends Controller
 
             $envio->estado = $estado;
             //$envio->estado = "En ruta";
+            if($caja){
+                $envio->caja = $caja;
+                $envio->agencia = $agencia;
+                $envio->ubicacion = $cajasuelto;
+            }
+            if($rack){
+                $envio->rack = $rack;
+                $envio->agencia = $agencia;
+                $envio->ubicacion = $cajasuelto;
+            }
+    
+            if($nivel){
+                $envio->nivel = $nivel;
+                $envio->agencia = $agencia;
+                $envio->ubicacion = $cajasuelto;
+            }
+    
+            if($tarima){
+                $envio->tarima = $tarima;
+                $envio->agencia = $agencia;
+                $envio->ubicacion = $cajasuelto;
+            }
 
             $envio->save();
         }
 
-        //$empleados = Empleado::all(); 
+       
 
         return view('stocks.asignarestado');
     }
