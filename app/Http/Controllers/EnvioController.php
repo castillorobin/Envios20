@@ -11,6 +11,7 @@ use App\Models\Rutas;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 use App\Models\Ticketc;
+use App\Models\User;
 
 class EnvioController extends Controller
 { 
@@ -473,7 +474,7 @@ class EnvioController extends Controller
     public function reporteingresos()
     { 
 
-        $repartidores = Empleado::all();
+        $repartidores = User::all();
         
         return view('envios.reporteingresos', compact('repartidores'));
     }
@@ -510,8 +511,8 @@ class EnvioController extends Controller
                         
            // Envio::find($envioid)->delete();
         }
-
-        $repartidores = Empleado::all();
+        $repartidores = User::all();
+        //$repartidores = Empleado::all();
         
         return view('envios.reporteingresosdatos', compact('repartidores', 'totalperso', 'totalfijo', 'totalcasi', 'totalpf'));
     }

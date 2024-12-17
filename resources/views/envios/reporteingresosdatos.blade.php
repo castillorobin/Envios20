@@ -65,7 +65,7 @@
                                     <option value="Todos">Usuario</option>
                                     <option value="Todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
-                                    <option value="{{$repartidor->nombre}}">{{$repartidor->nombre}}</option>
+                                    <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
                                     @endforeach
                                 </select>
                             </div> 

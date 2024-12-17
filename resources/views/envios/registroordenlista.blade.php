@@ -804,8 +804,11 @@ $(document).ready(function() {
         <div class="mb-10">
             <!--begin::Label-->
             <label class="form-label fw-bold fs-6 text-gray-700">Cajero:</label><br>
+            <input type="text" name="cajero" class="form-control form-control-solid text-end" value="{{ Auth::user()->name }}" readonly>
+            
+            <!--end::Label
             <label class="form-label fw-bold fs-6 text-gray-400">{{ Auth::user()->name }}</label>
-            <!--end::Label-->
+            -->
 
                 
             <!--end::Select-->

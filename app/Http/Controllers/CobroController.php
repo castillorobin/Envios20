@@ -95,6 +95,7 @@ class CobroController extends Controller
     {
         $ticketnum = $request->get('ticketnum');
         //$ticketid = $request->get('ticketid');
+        $cajero = $request->get('cajero');
         $ticketid1 = Ticketc::where('codigo', $ticketnum)
         ->get();
         $ticketid = $ticketid1[0]->id; 
@@ -120,6 +121,17 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
+
+        $envios = Envio::where('ticketc', $ticketnum)->get();
+
+        foreach($envios as $envio){
+            
+            $envio->usuario = $cajero;
+            $envio->save();
+            }
+
+
+
         $ticketc = Ticketc::find($ticketid);
 
       //  $ticketc = Ticketc::where('codigo', $ticketnum)
@@ -128,6 +140,7 @@ class CobroController extends Controller
         $ticketc->punto = $cobropfijo ;
         $ticketc->casil = $cobrocasi ;
         $ticketc->depar = $cobroperdepa ;
+        $ticketc->cajero = $cajero ;
         $ticketc->persoi = $request->get('pre1');
         $ticketc->depari = $request->get('pre2');
         $ticketc->puntoi = $request->get('pre3');
@@ -140,6 +153,7 @@ class CobroController extends Controller
         $ticketc->metodo = $request->get('metodo');
         $ticketc->entrega = $request->get('pago');
         $ticketc->cambio = $request->get('cambio');
+
         //$ticketc->iva = $ ;
         $ticketc->save();
         $ticketact = Ticketc::where('codigo', $ticketnum)
