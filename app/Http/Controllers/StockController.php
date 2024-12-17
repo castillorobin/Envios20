@@ -469,6 +469,57 @@ class StockController extends Controller
         return view('stocks.agregarfoto', compact('nota'));
     }
 
+    public function asignarestado()
+    {
+        return view('stocks.asignarestado');
+    }
+
+    public function asignarestadodatos(Request $request)
+    {
+        $guia = $request->get('guia') ;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+        $actual = Str::slug(time());
+ //dd($actual);
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->cestado = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('cestado', $actual)
+        ->get();
+
+        //$empleados = Empleado::all(); 
+
+        return view('stocks.asignarestadodatos', compact('pedidos', 'actual' ));
+    }
+
+    public function agregarestado(Request $request)
+    {
+        $guia = $request->get('guia') ;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+        $actual = $request->get('actual') ;
+ //dd($actual);
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->cestado = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('cestado', $actual)
+        ->get();
+
+        //$empleados = Empleado::all(); 
+
+        return view('stocks.asignarestadodatos', compact('pedidos', 'actual' ));
+    }
+
 
     
 

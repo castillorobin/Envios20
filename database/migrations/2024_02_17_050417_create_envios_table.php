@@ -48,6 +48,7 @@ return new class extends Migration
             $table->string('foto4')->nullable();
             $table->string('foto5')->nullable();
             $table->string('usuario')->nullable();
+            $table->string('cestado')->nullable();
             $table->timestamps(); 
         });
     }

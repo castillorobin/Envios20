@@ -442,6 +442,16 @@
 					</div>
 
 					<div class="menu-item">
+						<a class="menu-link" href="/stocks/asignarestado">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Asignar Estado</span>
+						</a>
+					</div>
+
+
+					<div class="menu-item">
 						<a class="menu-link" href="/stocks/agregarfoto">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>

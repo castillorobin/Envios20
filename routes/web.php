@@ -199,6 +199,8 @@ Route::get('/envios/reportegananciasdatos', [App\Http\Controllers\EnvioControlle
 Route::get('/envios/reporteingresos', [App\Http\Controllers\EnvioController::class, 'reporteingresos'] )->name('reporteingresos') ;
 Route::get('/envios/reporteingresosdatos', [App\Http\Controllers\EnvioController::class, 'reporteingresosdatos'] )->name('reporteingresosdatos') ;
 
+
+
 /*
 envios/detalleeditando
 
@@ -236,6 +238,13 @@ Route::get('/stocks/agregarrepartidor', [App\Http\Controllers\StockController::c
 
 Route::get('/stocks/asignarrepartidorcaja', [App\Http\Controllers\StockController::class, 'asignarrepartidorcaja'] )->name('asignarrepartidorcaja');
 Route::get('/stocks/agregarrepartidorcaja', [App\Http\Controllers\StockController::class, 'agregarrepartidorcaja'] )->name('agregarrepartidorcaja');
+
+Route::get('/stocks/asignarestado', [App\Http\Controllers\StockController::class, 'asignarestado'] )->name('asignarestado');
+Route::get('/stocks/asignarestadodatos', [App\Http\Controllers\StockController::class, 'asignarestadodatos'] )->name('asignarestadodatos');
+Route::get('/stocks/agregarestado', [App\Http\Controllers\StockController::class, 'agregarestado'] )->name('agregarestado');
+
+
+
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;
 Route::get('/ruta/agregar', [App\Http\Controllers\RutaController::class, 'agregar'] )->name('agregarruta') ;
