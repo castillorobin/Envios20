@@ -20,7 +20,7 @@ class UsuarioController extends Controller
     /** 
      * Display a listing of the resource.
      */
-    public function index()
+    public function index() 
     {
         $roles = Role::pluck('name','name')->all();
         $usuarios = User::all();
@@ -157,4 +157,7 @@ $usuario->email = $request->input("email");
         User::find($id)->delete();
         return redirect()->route('usuarios.index');
     }
+
+
+    
 }

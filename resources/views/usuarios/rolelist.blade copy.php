@@ -137,6 +137,231 @@
                         <!--end::Col-->
                         <!--begin::Col-->
                         
+                        <!--begin::Col-->
+                        <div class="col-md-4">
+                            <!--begin::Card-->
+                            <div class="card card-flush h-md-100">
+                                <!--begin::Card header-->
+                                <div class="card-header">
+                                    <!--begin::Card title-->
+                                    <div class="card-title">
+                                        <h2>Cajero</h2>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body pt-1">
+                                    <!--begin::Users-->
+                                    <div class="fw-bold text-gray-600 mb-5">Total users with this role: 546</div>
+                                    <!--end::Users-->
+                                    <!--begin::Permissions-->
+                                    <div class="d-flex flex-column text-gray-600">
+                                        <h5>permisos:</h5>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>facturacion
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ordenes
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de comercios
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ubicaciones
+                                        </div>
+                                    </div>
+                                    <!--end::Permissions-->
+                                </div>
+                                <!--end::Card body-->
+                                <!--begin::Card footer-->
+                                <div class="card-footer flex-wrap pt-0">
+                                    <a href="/usuarios/roleview" class="btn btn-light btn-active-primary my-1 me-2">View Role</a>
+                                    <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                                </div>
+                                <!--end::Card footer-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+
+                        <!--begin::Col-->
+                        <div class="col-md-4">
+                            <!--begin::Card-->
+                            <div class="card card-flush h-md-100">
+                                <!--begin::Card header-->
+                                <div class="card-header">
+                                    <!--begin::Card title-->
+                                    <div class="card-title">
+                                        <h2>Digitador</h2>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body pt-1">
+                                    <!--begin::Users-->
+                                    <div class="fw-bold text-gray-600 mb-5">Total users with this role: 546</div>
+                                    <!--end::Users-->
+                                    <!--begin::Permissions-->
+                                    <div class="d-flex flex-column text-gray-600">
+                                        <h5>permisos:</h5>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ordenes
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de comercios
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ubicaciones
+                                        </div>
+                                    </div>
+                                    <!--end::Permissions-->
+                                </div>
+                                <!--end::Card body-->
+                                <!--begin::Card footer-->
+                                <div class="card-footer flex-wrap pt-0">
+                                    <a href="/usuarios/roleview" class="btn btn-light btn-active-primary my-1 me-2">View Role</a>
+                                    <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                                </div>
+                                <!--end::Card footer-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+
+                        <!--begin::Col-->
+                        <div class="col-md-4">
+                            <!--begin::Card-->
+                            <div class="card card-flush h-md-100">
+                                <!--begin::Card header-->
+                                <div class="card-header">
+                                    <!--begin::Card title-->
+                                    <div class="card-title">
+                                        <h2>Atencion al cliente</h2>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body pt-1">
+                                    <!--begin::Users-->
+                                    <div class="fw-bold text-gray-600 mb-5">Total users with this role: 546</div>
+                                    <!--end::Users-->
+                                    <!--begin::Permissions-->
+                                    <div class="d-flex flex-column text-gray-600">
+                                        <h5>permisos:</h5>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ordenes
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de comercios
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ubicaciones
+                                        </div>
+                                    </div>
+                                    <!--end::Permissions-->
+                                </div>
+                                <!--end::Card body-->
+                                <!--begin::Card footer-->
+                                <div class="card-footer flex-wrap pt-0">
+                                    <a href="/usuarios/roleview" class="btn btn-light btn-active-primary my-1 me-2">View Role</a>
+                                    <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                                </div>
+                                <!--end::Card footer-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+
+                        <!--begin::Col-->
+                        <div class="col-md-4">
+                            <!--begin::Card-->
+                            <div class="card card-flush h-md-100">
+                                <!--begin::Card header-->
+                                <div class="card-header">
+                                    <!--begin::Card title-->
+                                    <div class="card-title">
+                                        <h2>Operario</h2>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body pt-1">
+                                    <!--begin::Users-->
+                                    <div class="fw-bold text-gray-600 mb-5">Total users with this role: 546</div>
+                                    <!--end::Users-->
+                                    <!--begin::Permissions-->
+                                    <div class="d-flex flex-column text-gray-600">
+                                        <h5>permisos:</h5>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ordenes
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de comercios
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ubicaciones
+                                        </div>
+                                    </div>
+                                    <!--end::Permissions-->
+                                </div>
+                                <!--end::Card body-->
+                                <!--begin::Card footer-->
+                                <div class="card-footer flex-wrap pt-0">
+                                    <a href="/usuarios/roleview" class="btn btn-light btn-active-primary my-1 me-2">View Role</a>
+                                    <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                                </div>
+                                <!--end::Card footer-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
+
+
+                        <!--begin::Col-->
+                        <div class="col-md-4">
+                            <!--begin::Card-->
+                            <div class="card card-flush h-md-100">
+                                <!--begin::Card header-->
+                                <div class="card-header">
+                                    <!--begin::Card title-->
+                                    <div class="card-title">
+                                        <h2>Repartidor</h2>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--end::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body pt-1">
+                                    <!--begin::Users-->
+                                    <div class="fw-bold text-gray-600 mb-5">Total users with this role: 546</div>
+                                    <!--end::Users-->
+                                    <!--begin::Permissions-->
+                                    <div class="d-flex flex-column text-gray-600">
+                                        <h5>permisos:</h5>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de ordenes
+                                        </div>
+                                        <div class="d-flex align-items-center py-2">
+                                            <span class="bullet bg-primary me-3"></span>Gestion de comercios
+                                        </div>
+                                    </div>
+                                    <!--end::Permissions-->
+                                </div>
+                                <!--end::Card body-->
+                                <!--begin::Card footer-->
+                                <div class="card-footer flex-wrap pt-0">
+                                    <a href="/usuarios/roleview" class="btn btn-light btn-active-primary my-1 me-2">View Role</a>
+                                    <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                                </div>
+                                <!--end::Card footer-->
+                            </div>
+                            <!--end::Card-->
+                        </div>
+                        <!--end::Col-->
 
 
 
@@ -412,7 +637,7 @@
                                                             <!--begin::Table row-->
                                                             <tr>
                                                                 <!--begin::Label-->
-                                                                <td class="text-gray-800">Control de stock</td>
+                                                                <td class="text-gray-800">Control de ubicaciones</td>
                                                                 <!--end::Label-->
                                                                 <!--begin::Options-->
                                                                 <td>
