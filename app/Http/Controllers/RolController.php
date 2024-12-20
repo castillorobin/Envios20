@@ -13,13 +13,15 @@ use Illuminate\Support\Facades\DB;
 class RolController extends Controller
 {
     /*
+    
     function __construct(){
-        $this->middleware('permission')
+        $this->middleware('permission: recursos | financiera |crear | ver | editar', ['only'=>['index']]);
     }
-    */
-    /**
-     * Display a listing of the resource.
+    
+    
+     Display a listing of the resource.
      */
+
     public function index()
 
     {
@@ -34,7 +36,8 @@ class RolController extends Controller
     public function create()
     {
         $permission = Permission::get();
-        return view('usuarios.crearrole', compact('permission'));
+        $roles = Role::all();
+        return view('usuarios.rolelist', compact('roles', 'permission'));
     }
 
     /**
@@ -46,19 +49,19 @@ class RolController extends Controller
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('roles.index');
+        return redirect()->route('usuarios.rolelist');
     }
 
     public function guardarol(Request $request)
     {
-        //$this->validate($request, ['name' => 'required', 'permission' => 'required']);
+        $this->validate($request, ['name' => 'required', 'permission' => 'required']);
         $role = Role::create(['name' => $request->input('name')]);
         $role->syncPermissions($request->input('permission'));
 
-        return redirect()->route('roles.index');
+        return redirect()->route('indexrol');
     }
 
-    /**
+    /** 
      * Display the specified resource.
      */
     public function show(string $id) 
