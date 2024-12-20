@@ -29,7 +29,7 @@
 </head>
 <!--end::Head-->
 
-<body>
+<body> 
     <x-default-layout>
         <div class="d-flex flex-column flex-column-fluid">
             <!--begin::Toolbar-->
@@ -80,7 +80,68 @@
                     <!--begin::Row-->
                     <div class="row row-cols-1 row-cols-md-2 row-cols-xl-3 g-5 g-xl-9">
                         <!--begin::Col-->
-                        <div class="col-md-4">
+                       
+                @foreach($roles as $role)
+                <div class="col-md-4">
+                    <!--begin::Card-->
+                    <div class="card card-flush h-md-100">
+                        <!--begin::Card header-->
+                        <div class="card-header">
+
+                     
+                            <!--begin::Card title-->
+                            <div class="card-title">
+                                <h2>{{ $role->name }}</h2>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--end::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body pt-1">
+                            <!--begin::Users-->
+                            <div class="fw-bold text-gray-600 mb-5">Total users with this role: </div>
+                            <!--end::Users-->
+                            <!--begin::Permissions-->
+                            <div class="d-flex flex-column text-gray-600">
+                                <h5>permisos:</h5>
+                                <div class="d-flex align-items-center py-2">
+                                    <span class="bullet bg-primary me-3"></span>
+                                </div>
+                                <div class="d-flex align-items-center py-2">
+                                    <span class="bullet bg-primary me-3"></span>
+                                </div>
+                                <div class="d-flex align-items-center py-2">
+                                    <span class="bullet bg-primary me-3"></span>
+                                </div>
+                                <div class="d-flex align-items-center py-2">
+                                    <span class="bullet bg-primary me-3"></span>
+                                </div>
+                                <div class="d-flex align-items-center py-2">
+                                    <span class="bullet bg-primary me-3"></span>
+                                </div>
+                                <div class="d-flex align-items-center py-2">
+                                    <span class="bullet bg-primary me-3"></span>
+                                </div>
+                                <div class="d-flex align-items-center py-2">
+                                    <span class="bullet bg-primary me-3"></span>
+                                </div>
+                            </div>
+                            <!--end::Permissions-->
+                        </div>
+                        <!--end::Card body-->
+                        <!--begin::Card footer-->
+                        <div class="card-footer flex-wrap pt-0">
+                            <a href="#" class="btn btn-light btn-active-primary my-1 me-2">View Role</a>
+                            <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                        </div>
+                        <!--end::Card footer-->
+                    </div>
+                    <!--end::Card-->
+                </div>
+
+                @endforeach
+                       
+                        <div class="col-md-4" hidden>
                             <!--begin::Card-->
                             <div class="card card-flush h-md-100">
                                 <!--begin::Card header-->
@@ -97,7 +158,7 @@
                                 <!--begin::Card body-->
                                 <div class="card-body pt-1">
                                     <!--begin::Users-->
-                                    <div class="fw-bold text-gray-600 mb-5">Total users with this role: 5</div>
+                                    <div class="fw-bold text-gray-600 mb-5">Total users with this role: 1</div>
                                     <!--end::Users-->
                                     <!--begin::Permissions-->
                                     <div class="d-flex flex-column text-gray-600">
@@ -137,6 +198,8 @@
                             <!--end::Card-->
                         </div>
                         <!--end::Col-->
+
+
                         <!--begin::Col-->
                         
 
@@ -286,19 +349,19 @@
                                                                     <div class="d-flex">
                                                                         <!--begin::Checkbox-->
                                                                         <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                            <input class="form-check-input" type="checkbox" value="" name="user_management_read" />
+                                                                            <input class="form-check-input" type="checkbox" value="financiera-ver" name="permission[]" />
                                                                             <span class="form-check-label">Ver</span>
                                                                         </label>
                                                                         <!--end::Checkbox-->
                                                                         <!--begin::Checkbox-->
                                                                         <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                            <input class="form-check-input" type="checkbox" value="" name="user_management_write" />
+                                                                            <input class="form-check-input" type="checkbox" value="financiera-editar" name="permission[]" />
                                                                             <span class="form-check-label">Editar</span>
                                                                         </label>
                                                                         <!--end::Checkbox-->
                                                                         <!--begin::Checkbox-->
                                                                         <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                                            <input class="form-check-input" type="checkbox" value="" name="user_management_create" />
+                                                                            <input class="form-check-input" type="checkbox" value="financiera-crear" name="permission[]" />
                                                                             <span class="form-check-label">Crear</span>
                                                                         </label>
                                                                         <!--end::Checkbox-->
@@ -321,19 +384,19 @@
                                                                    <div class="d-flex">
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_read" />
+                                                                        <input class="form-check-input" type="checkbox" value="factura-ver" name="permission[]" />
                                                                         <span class="form-check-label">Ver</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_write" />
+                                                                        <input class="form-check-input" type="checkbox" value="factura-editar" name="permission[]" />
                                                                         <span class="form-check-label">Editar</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_create" />
+                                                                        <input class="form-check-input" type="checkbox" value="factura-crear" name="permission[]" />
                                                                         <span class="form-check-label">Crear</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
@@ -354,19 +417,19 @@
                                                                    <div class="d-flex">
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_read" />
+                                                                        <input class="form-check-input" type="checkbox" value="ordenes-ver" name="permission[]" />
                                                                         <span class="form-check-label">Ver</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_write" />
+                                                                        <input class="form-check-input" type="checkbox" value="ordenes-editar" name="permission[]" />
                                                                         <span class="form-check-label">Editar</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_create" />
+                                                                        <input class="form-check-input" type="checkbox" value="ordenes-crear" name="permission[]" />
                                                                         <span class="form-check-label">Crear</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
@@ -389,19 +452,19 @@
                                                                    <div class="d-flex">
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_read" />
+                                                                        <input class="form-check-input" type="checkbox" value="comercios-ver" name="permission[]" />
                                                                         <span class="form-check-label">Ver</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_write" />
+                                                                        <input class="form-check-input" type="checkbox" value="comercios-editar" name="permission[]" />
                                                                         <span class="form-check-label">Editar</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_create" />
+                                                                        <input class="form-check-input" type="checkbox" value="comercios-crear" name="permission[]" />
                                                                         <span class="form-check-label">Crear</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
@@ -422,19 +485,19 @@
                                                                    <div class="d-flex">
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_read" />
+                                                                        <input class="form-check-input" type="checkbox" value="stock-ver" name="permission[]" />
                                                                         <span class="form-check-label">Ver</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_write" />
+                                                                        <input class="form-check-input" type="checkbox" value="stock-editar" name="permission[]" />
                                                                         <span class="form-check-label">Editar</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-sm form-check-custom form-check-solid">
-                                                                        <input class="form-check-input" type="checkbox" value="" name="user_management_create" />
+                                                                        <input class="form-check-input" type="checkbox" value="stock-crear" name="permission[]" />
                                                                         <span class="form-check-label">Crear</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->

@@ -29,7 +29,7 @@ class RolController extends Controller
         $roles = Role::all();
         return view('usuarios.rolelist', compact('roles', 'permission'));
     }
-
+ 
     /**
      * Show the form for creating a new resource.
      */

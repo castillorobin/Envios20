@@ -10,9 +10,11 @@
 			</div>
 			<div class="menu-item pt-5">
 				<div class="menu-content">
-					<span class="menu-heading fw-bold text-uppercase fs-7">Pages</span>
+					<span class="menu-heading fw-bold text-uppercase fs-7">Secciones</span>
 				</div>
 			</div>
+
+			@can('recursos-ver')
 
 			<div class="menu-item menu-sub-indention menu-accordion" id="menu-item-1" data-kt-menu-trigger="click">
 				<span class="menu-link">
@@ -146,6 +148,9 @@
 					</div>
 				</div>
 			</div>
+			@endcan
+
+			@can('financiera-ver')
 
 			<div class="menu-item menu-sub-indention menu-accordion" id="menu-item-2" data-kt-menu-trigger="click">
 				<span class="menu-link">
@@ -237,6 +242,9 @@
 				</div>
 			</div>
 
+			@endcan
+
+			@can('ordenes-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-3" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('scooter-2', 'fs-2') !!}</span>
@@ -285,7 +293,9 @@
 					
 				</div>
 			</div>
+			@endcan
 
+			@can('comercios-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-4" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('home', 'fs-2') !!}</span>
@@ -311,7 +321,9 @@
 					</div>
 				</div>
 			</div>
+			@endcan
 
+			@can('factura-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-5" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('document', 'fs-2') !!}</span>
@@ -370,7 +382,8 @@
 					
 				</div>
 			</div>
-
+			@endcan
+			@can('stock-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-6" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('address-book', 'fs-2') !!}</span>
@@ -472,8 +485,9 @@
 					</div>
 				</div>
 			</div>
-
+			@endcan
 			
+			@can('configurar-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('setting-3', 'fs-2') !!}</span>
@@ -494,7 +508,7 @@
 				
 
 			</div>
-		
+			@endcan
 		</div>
 	</div>
 </div>

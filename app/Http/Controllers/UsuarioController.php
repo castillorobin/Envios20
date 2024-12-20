@@ -29,7 +29,7 @@ class UsuarioController extends Controller
 
     }
 
-    /**
+    /** 
      * Show the form for creating a new resource.
      */
     public function create()
@@ -63,39 +63,27 @@ class UsuarioController extends Controller
 
     public function guardaru(Request $request)
     {
-        /*
-        $this->validate($request, [
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'required|same:confirm-password',
-            'roles' => 'required'
-        ]);
-    */
-    $usuario = new User();
-        //$input = $request->all();
+       /*
+        $usuario = new User();
         $usuario->password = Hash::make($usuario['password']);
-
-/*          
-        $user = User::create($input);
-*/
-
-if ($request->hasFile('avatar')) {
-
-    $imagen = $request->file("avatar");
-    $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
-    $usuario->avatar = $nombreimagen;
-    $ruta = public_path("/fotos");
-    $imagen->move($ruta, $nombreimagen);
-}
-
-
-$usuario->name = $request->input("name");
-$usuario->email = $request->input("email");
-
- $usuario->save();
-
+        if ($request->hasFile('avatar')) {
+            $imagen = $request->file("avatar");
+            $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
+            $usuario->avatar = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+        }
+        $usuario->name = $request->input("name");
+        $usuario->email = $request->input("email");
+        $usuario->save();
         $usuario->assignRole($request->input('roles'));
     
+*/
+        $input = $request->all();
+        $input['password'] = Hash::make($input['password']);
+
+        $user = User::create($input);
+        $user->assignRole($request->input('roles'));
         return redirect()->route('usuario.index');
     }
 

@@ -111,8 +111,74 @@
                             <div class="card-toolbar">
                                 <!--begin::Toolbar-->
                                 <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                              
+                                    <!--begin::Filter-->
+                                    <button type="button" class="btn btn-light-primary me-3" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                        <i class="ki-duotone ki-filter fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>Filtrar</button>
+                                    <!--begin::Menu 1-->
+                                    <div class="menu menu-sub menu-sub-dropdown w-300px w-md-325px" data-kt-menu="true">
+                                        <!--begin::Header-->
+                                        <div class="px-7 py-5">
+                                            <div class="fs-5 text-dark fw-bold">Opciones de filtro</div>
+                                        </div>
+                                        <!--end::Header-->
+                                        <!--begin::Separator-->
+                                        <div class="separator border-gray-200"></div>
+                                        <!--end::Separator-->
+                                        <!--begin::Content-->
+                                        <div class="px-7 py-5" data-kt-user-table-filter="form">
+                                            <!--begin::Input group-->
+                                            <div class="mb-10">
+                                                <label class="form-label fs-6 fw-semibold">Filtrar por role:</label>
+                                                <select class="form-select form-select-solid fw-bold" data-kt-select2="true" data-placeholder="Seleccionar opción" data-allow-clear="true" data-kt-user-table-filter="role" data-hide-search="true">
+                                                    <option></option>
+                                                    <option value="Administrator">Administrator</option>
+                                                    <option value="Gerente general">Gerente general</option>
+                                                    <option value="Gerente general">Gerente financiero</option>
+                                                    <option value="Jefe de digitado">Jefe de digitado</option>
+                                                    <option value="Jefe de atencion al cliente">Jefe de atencion al cliente</option>
+                                                    <option value="Cajero">Cajero</option>
+                                                    <option value="Digitador">Digitador</option>
+                                                    <option value="Atencion al cliente">Atencion al cliente</option>
+                                                    <option value="Operario">Operario</option>
+                                                    <option value="Repartidor">Repartidor</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Input group-->
 
+                                            <!--begin::Input group-->
+                                            <div class="mb-10">
+                                                <label class="form-label fs-6 fw-semibold">Filtrar por sesion</label>
+                                                <select class="form-select form-select-solid fw-bold" data-kt-select2="true" data-placeholder="Seleccionar opción" data-allow-clear="true" data-kt-user-table-filter="two-step" data-hide-search="true">
+                                                    <option></option>
+                                                    <option value="Activa">Activa</option>
+                                                    <option value="Inactiva">Inactiva</option>
+                                                </select>
+                                            </div>
+                                            <!--end::Input group-->
+                                            <!--begin::Actions-->
+                                            <div class="d-flex justify-content-end">
+                                                <button type="reset" class="btn btn-light btn-active-light-primary fw-semibold me-2 px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="reset">Reiniciar filtros</button>
+                                                <button type="submit" class="btn btn-primary fw-semibold px-6" data-kt-menu-dismiss="true" data-kt-user-table-filter="filter">Aplicar filtros</button>
+                                            </div>
+                                            <!--end::Actions-->
+                                        </div>
+                                        <!--end::Content-->
+                                    </div>
+                                    <!--end::Menu 1-->
+                                    <!--end::Filter-->
+
+
+                                    <!--begin::Export-->
+                                    <button type="button" class="btn btn-light-primary me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_export_users">
+                                        <i class="ki-duotone ki-exit-up fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>Exportar</button>
+                                    <!--end::Export-->
+                                    <!--begin::Add user-->
                                     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_add_user">
                                         <i class="ki-duotone ki-plus fs-2"></i>Añadir usuario</button>
                                     <!--end::Add user-->
