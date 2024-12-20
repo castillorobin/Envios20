@@ -86,11 +86,7 @@
                                 <!--begin::Card header-->
                                 <div class="card-header">
 
-                                @foreach($permission as $value)
-                                        <label>
-                                        {{ $value->name }}</label>
-                                    <br/>
-                                    @endforeach
+                             
                                     <!--begin::Card title-->
                                     <div class="card-title">
                                         <h2>Administrador</h2>
