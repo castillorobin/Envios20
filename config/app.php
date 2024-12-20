@@ -199,7 +199,7 @@ return [
         Barryvdh\DomPDF\ServiceProvider::class,
 
         //Spatie
-        Spatie\Permission\PermissionServiceProvider::class
+        Spatie\Permission\PermissionServiceProvider::class,
 
     ],
 
