@@ -103,36 +103,18 @@
                             <!--end::Users-->
                             <!--begin::Permissions-->
                             <div class="d-flex flex-column text-gray-600">
-                                <h5>permisos:</h5>
-                                <div class="d-flex align-items-center py-2">
-                                    <span class="bullet bg-primary me-3"></span>
-                                </div>
-                                <div class="d-flex align-items-center py-2">
-                                    <span class="bullet bg-primary me-3"></span>
-                                </div>
-                                <div class="d-flex align-items-center py-2">
-                                    <span class="bullet bg-primary me-3"></span>
-                                </div>
-                                <div class="d-flex align-items-center py-2">
-                                    <span class="bullet bg-primary me-3"></span>
-                                </div>
-                                <div class="d-flex align-items-center py-2">
-                                    <span class="bullet bg-primary me-3"></span>
-                                </div>
-                                <div class="d-flex align-items-center py-2">
-                                    <span class="bullet bg-primary me-3"></span>
-                                </div>
-                                <div class="d-flex align-items-center py-2">
-                                    <span class="bullet bg-primary me-3"></span>
-                                </div>
+                                
+
+                               
+                                
                             </div>
                             <!--end::Permissions-->
                         </div>
                         <!--end::Card body-->
                         <!--begin::Card footer-->
                         <div class="card-footer flex-wrap pt-0">
-                            <a href="#" class="btn btn-light btn-active-primary my-1 me-2">View Role</a>
-                            <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role">Edit Role</button>
+                            <a href="/usuarios/roleview/{{ $role->id }}" class="btn btn-light btn-active-primary my-1 me-2">Ver Permisos</a>
+                            <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role" hidden>Edit Role</button>
                         </div>
                         <!--end::Card footer-->
                     </div>

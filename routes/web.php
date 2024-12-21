@@ -17,7 +17,15 @@ use App\Http\Controllers\UsuarioController;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
+
+
+Route::get('/usuarios/roleview', function () {
+    return view('usuarios.roleview');
+});
 */
+
+
+
 
 //Spatie
 Route::group(['middleware' => ['auth']], function(){
@@ -27,6 +35,8 @@ Route::group(['middleware' => ['auth']], function(){
 
 Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
 Route::get('/guardarol', [App\Http\Controllers\RolController::class, 'guardarol'] )->name('guardarol') ;
+
+Route::get('/usuarios/roleview/{id}', [App\Http\Controllers\RolController::class, 'roleview'] )->name('roleview') ;
 
 Route::get('/usuarios/view/{id}', [App\Http\Controllers\UsuarioController::class, 'vista'] )->name('vista') ;
 
@@ -312,8 +322,6 @@ Route::get('/usuarios/view', function () {
     return view('usuarios.usuerview');
 });
 */
-Route::get('/usuarios/roleview', function () {
-    return view('usuarios.roleview');
-});
+
 
 

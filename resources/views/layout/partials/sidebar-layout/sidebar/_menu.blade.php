@@ -54,7 +54,7 @@
 						</div>
 					</div>
 				</div>
-
+				@can('recursos-crear')
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
 						<a href="#" class="menu-link py-3" style="background-color: transparent;">
@@ -85,7 +85,7 @@
 						</div>
 					</div>
 				</div>
-
+				@endcan
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
 						<a href="#" class="menu-link py-3" style="background-color: transparent;">
@@ -488,7 +488,7 @@
 				</div>
 			</div>
 			@endcan
-			
+
 			@can('configurar-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
 				<span class="menu-link">
