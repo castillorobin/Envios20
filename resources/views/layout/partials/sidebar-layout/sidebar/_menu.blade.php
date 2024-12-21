@@ -22,7 +22,7 @@
 					<span class="menu-title">Recursos Humanos</span>
 					<span class="menu-arrow"></span>
 				</span>
-
+ 
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
 						<a href="#" class="menu-link py-3" style="background-color: transparent;">
@@ -279,7 +279,7 @@
 							<span class="menu-title">Búsqueda por ticket</span>
 						</a>
 					</div>
-
+					@can('ordenes-crear')
 					<div class="menu-item">
 						<a class="menu-link" href="/envios/registroconguia">
 							<span class="menu-bullet">
@@ -289,7 +289,7 @@
 						</a>
 					</div>
 
-					
+					@endcan
 					
 				</div>
 			</div>
@@ -302,6 +302,7 @@
 					<span class="menu-title">Gestion de comercios</span>
 					<span class="menu-arrow"></span>
 				</span>
+				@can('comercios-crear')
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
 						<a class="menu-link" href="/comercio/crearcomercio">
@@ -311,6 +312,7 @@
 							<span class="menu-title">Crear comercio</span>
 						</a>
 					</div>
+					@endcan
 					<div class="menu-item">
 						<a class="menu-link" href="/comercio">
 							<span class="menu-bullet">

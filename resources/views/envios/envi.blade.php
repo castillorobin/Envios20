@@ -96,7 +96,9 @@
 
                         <!--begin::Actions-->
                         <div class="d-flex gap-2 gap-lg-3" style="float: right;">
+                        @can('ordenes-crear')
                             <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
+                            @endcan
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->

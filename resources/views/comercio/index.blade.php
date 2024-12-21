@@ -163,7 +163,9 @@
                             <!--end::Secondary button-->
                             <!--begin::Primary button-->
                             <div >
+                            @can('comercios-crear')
                             <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary">Agregar</a>
+                            @endcan
                         </div>
                             <!--end::Primary button-->
                         </div>
