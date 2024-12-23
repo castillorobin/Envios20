@@ -204,9 +204,12 @@
                                     </li>
                                     <!--end::Nav item-->
                                     <!--begin::Nav item-->
+                                    @can('ordenes-editar')
                                     <li class="nav-item mt-2">
+
                                         <a class="nav-link text-active-primary ms-0 me-10 py-5" href="/envios/editardetalle/{{ $envio[0]->guia }}">Editar Entrega</a>
                                     </li>
+                                    @endcan
                                     <!--end::Nav item-->
                                     <!--begin::Nav item-->
                                    

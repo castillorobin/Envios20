@@ -32,7 +32,7 @@
 							<span class="menu-title">Gestion de empleado</span>
 							<span class="menu-arrow"></span>
 						</a>
-
+						@can('recursos-crear')
 						<div class="menu-sub menu-sub-accordion">
 							<div class="menu-item">
 								<a href="/empleado/crear" class="menu-link py-3" style="background-color: transparent;">
@@ -42,7 +42,7 @@
 									<span class="menu-title">Crear empleado</span>
 								</a>
 							</div>
-
+							@endcan
 							<div class="menu-item">
 								<a href="/empleado" class="menu-link py-3" style="background-color: transparent;">
 									<span class="menu-bullet">

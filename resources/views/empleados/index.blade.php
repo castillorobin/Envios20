@@ -70,10 +70,12 @@
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                          
+                        @can('recursos-crear')
                             <!--begin::Primary button-->
                             <a href="/empleado/crear" class="btn btn-sm fw-bold btn-primary">Agregar empleado</a>
                             <!--end::Primary button-->
+
+                            @endcan
                         </div>
                         <!--end::Actions-->
                     </div>
