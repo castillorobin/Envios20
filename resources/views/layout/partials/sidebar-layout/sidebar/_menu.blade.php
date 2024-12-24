@@ -422,7 +422,7 @@
 							</div>
 						</div>
 					</div>
-
+					@can('stock-editar')
 					<div class="menu-item">
 						<a class="menu-link" href="/stocks/asignar">
 							<span class="menu-bullet">
@@ -474,7 +474,7 @@
 							<span class="menu-title">Agregar foto</span>
 						</a>
 					</div>
-
+					@endcan
 
 
 					<div class="menu-item">

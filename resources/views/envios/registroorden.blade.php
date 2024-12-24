@@ -366,7 +366,7 @@
                             <!--begin::Secondary button-->
                             <!--end::Secondary button-->
 
-                            <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
+                            <a class="btn btn-primary" href="/comercio/crearcomercio">
                                 Agregar comercio
                             </a>
 
