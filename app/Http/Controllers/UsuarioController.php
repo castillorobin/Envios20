@@ -93,7 +93,8 @@ class UsuarioController extends Controller
     public function vista(string $id)
     {
         $user = User::find($id);
-        return view('usuarios.usuerview',compact('user'));
+        $roles = Role::pluck('name','name')->all();
+        return view('usuarios.usuerview',compact('user', 'roles'));
 
     }
 
@@ -112,15 +113,16 @@ class UsuarioController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function editarusuario(Request $request, string $id)
     {
+        /*
         $this->validate($request, [
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
             'roles' => 'required'
-        ]);
-    
+        ]); 
+    */
         $input = $request->all();
         if(!empty($input['password'])){ 
             $input['password'] = Hash::make($input['password']);
@@ -134,7 +136,7 @@ class UsuarioController extends Controller
     
         $user->assignRole($request->input('roles'));
     
-        return redirect()->route('usuarios.userview');
+        return redirect()->route('indexuser');
     }
 
     /**

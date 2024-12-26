@@ -42,6 +42,8 @@ Route::get('/roles/eliminando/{id}', [App\Http\Controllers\RolController::class,
 
 Route::get('/usuarios/view/{id}', [App\Http\Controllers\UsuarioController::class, 'vista'] )->name('vista') ;
 
+Route::get('/editarusuario/{id}', [App\Http\Controllers\UsuarioController::class, 'editarusuario'] )->name('editarusuario') ;
+
 Route::get('usuarios/lista', [App\Http\Controllers\UsuarioController::class, 'index'] )->name('indexuser') ;
 
 Route::get('/usuarios/role', [App\Http\Controllers\RolController::class, 'index'] )->name('indexrol') ;
