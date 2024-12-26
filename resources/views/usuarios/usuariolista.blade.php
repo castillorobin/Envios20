@@ -231,7 +231,7 @@
                                             </div>
                                             <!--end::Modal header-->
                                             <!--begin::Modal body-->
-                                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
+                                            <div class="modal-body scroll-y mx-5 mx-xl-15 my-7"> 
                                                 <!--begin::Form-->
                                                 <form id="kt_modal_add_user_form" class="form" action="/guardaruser" method="POST" enctype="multipart/form-data">
 
@@ -245,7 +245,7 @@
                                                         <!--begin::Input group-->
                                                         <div class="fv-row mb-7">
                                                             <!--begin::Label-->
-                                                            <label class="d-block fw-semibold fs-6 mb-5">Avatar</label>
+                                                            <label class="d-block fw-semibold fs-6 mb-5">Foto</label>
                                                             <!--end::Label-->
                                                             <!--begin::Image placeholder-->
                                                             <style>

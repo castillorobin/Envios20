@@ -63,7 +63,7 @@ class UsuarioController extends Controller
 
     public function guardaru(Request $request)
     {
-       /*
+      
         $usuario = new User();
         $usuario->password = Hash::make($usuario['password']);
         if ($request->hasFile('avatar')) {
@@ -77,13 +77,24 @@ class UsuarioController extends Controller
         $usuario->email = $request->input("email");
         $usuario->save();
         $usuario->assignRole($request->input('roles'));
-    
-*/
+     /*
+
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
 
+        if ($request->hasFile('avatar')) {
+
+            $imagen = $request->file("avatar");
+            $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
+            $input->avatar = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+        }
+
+
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
+        */
         return redirect()->route('usuario.index');
     }
 
