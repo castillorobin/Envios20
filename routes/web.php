@@ -38,6 +38,8 @@ Route::get('/guardarol', [App\Http\Controllers\RolController::class, 'guardarol'
 
 Route::get('/usuarios/roleview/{id}', [App\Http\Controllers\RolController::class, 'roleview'] )->name('roleview') ;
 
+Route::get('/roles/eliminando/{id}', [App\Http\Controllers\RolController::class, 'eliminando'] )->name('eliminando') ;
+
 Route::get('/usuarios/view/{id}', [App\Http\Controllers\UsuarioController::class, 'vista'] )->name('vista') ;
 
 Route::get('usuarios/lista', [App\Http\Controllers\UsuarioController::class, 'index'] )->name('indexuser') ;

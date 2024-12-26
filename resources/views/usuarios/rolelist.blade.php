@@ -99,7 +99,7 @@
                         <!--begin::Card body-->
                         <div class="card-body pt-1">
                             <!--begin::Users-->
-                            <div class="fw-bold text-gray-600 mb-5">Total users with this role: </div>
+                            <div class="fw-bold text-gray-600 mb-5"> </div>
                             <!--end::Users-->
                             <!--begin::Permissions-->
                             <div class="d-flex flex-column text-gray-600">
@@ -115,6 +115,7 @@
                         <div class="card-footer flex-wrap pt-0">
                             <a href="/usuarios/roleview/{{ $role->id }}" class="btn btn-light btn-active-primary my-1 me-2">Ver Permisos</a>
                             <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role" hidden>Edit Role</button>
+                            <a href="/roles/eliminando/{{ $role->id }}" class="btn btn-light btn-active-primary my-1 me-2">Eliminar</a>
                         </div>
                         <!--end::Card footer-->
                     </div>
