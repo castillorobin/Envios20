@@ -30,6 +30,38 @@
 <!--end::Head-->
 
 <body> 
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+
+$(document).on('click', '#todos', function(){
+
+document.querySelectorAll('#kt_modal_add_role_form input[type=checkbox]').forEach(function(checkElement) {
+checkElement.checked = true;
+
+//todo();
+
+
+//alert("HOla");
+});
+
+});
+
+function todo() {
+
+var total5 =  document.getElementById('total5').innerText;
+document.getElementById('total1').innerText = total5;
+document.getElementById('totalito').innerText = total5;
+document.getElementById('stotal').innerText = total5;
+$totalisimo=parseFloat(total5);
+document.getElementById("tota").value = $totalisimo.toFixed(2);
+// $('#tot1').text(total);
+$("#pago").prop('disabled',false)
+//alert("Hola");
+}
+
+</script>
+
+
     <x-default-layout>
         <div class="d-flex flex-column flex-column-fluid">
             <!--begin::Toolbar-->
@@ -281,7 +313,7 @@
                                                                 <td>
                                                                     <!--begin::Checkbox-->
                                                                     <label class="form-check form-check-custom form-check-solid me-9">
-                                                                        <input class="form-check-input" type="checkbox" value="" id="kt_roles_select_all" />
+                                                                        <input class="form-check-input" type="checkbox" value="" id="todos"/>
                                                                         <span class="form-check-label" for="kt_roles_select_all">Todo</span>
                                                                     </label>
                                                                     <!--end::Checkbox-->
