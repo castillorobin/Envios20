@@ -147,7 +147,9 @@ $("#pago").prop('disabled',false)
                         <div class="card-footer flex-wrap pt-0">
                             <a href="/usuarios/roleview/{{ $role->id }}" class="btn btn-light btn-active-primary my-1 me-2">Ver Permisos</a>
                             <button type="button" class="btn btn-light btn-active-light-primary my-1" data-bs-toggle="modal" data-bs-target="#kt_modal_update_role" hidden>Edit Role</button>
+                            @if( $role->name != "Admin" )
                             <a href="/roles/eliminando/{{ $role->id }}" class="btn btn-light btn-active-primary my-1 me-2">Eliminar</a>
+                            @endif
                         </div>
                         <!--end::Card footer-->
                     </div>
