@@ -301,7 +301,7 @@
                                                         <div class="fv-row mb-7">
                                                             <label class="required fw-semibold fs-6 mb-2">Selecione un empleado</label>
                                                             <select class="form-select form-select-transparent" name="name" onchange="valor()" id="name" data-placeholder="...">
-
+                                                            <option value=" ">  </option>
                                                                 @foreach ($empleados as $empleado)
                                                                 <option value="{{$empleado->nombre}}">{{ $empleado->nombre }} </option>
                                                                 @endforeach
@@ -323,7 +323,7 @@
                                                             <label class="required fw-semibold fs-6 mb-2">Correo electronico</label>
                                                             <!--end::Label-->
                                                             <!--begin::Input-->
-                                                            <input type="email" name="email" class="form-control form-control-solid mb-3 mb-lg-0" id="email" />
+                                                            <input type="email" name="email" class="form-control form-control-solid mb-3 mb-lg-0" id="email" value=" " />
                                                             <!--end::Input-->
                                                         </div>
                                                         <!--end::Input group-->
