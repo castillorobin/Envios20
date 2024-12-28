@@ -99,11 +99,19 @@ class EmpleadoController extends Controller
 
     public function crear()
     {
+        /*
         ///$empleado = Empleado::where('id', $id)->get();
         $ultimoemp = Empleado::latest('id')->first();
 
-        $ultimo = $ultimoemp->id + 1;
+        if (empty($ultimoemp->id)) {
+            
+            $ultimo = 1;
+        }else{
+            //$ultimo = $ultimoemp->id + 1;
+        }
 
+       */
+      $ultimo = 1;
         return view('empleados.crear', compact('ultimo'));
     }
 
