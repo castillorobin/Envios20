@@ -486,10 +486,20 @@
                                             @endif
                                         </td>
                                         <td>
+                                        
                                             <div class="badge badge-light fw-bold">Yesterday</div>
                                         </td>
                                         <td>
-                                            <div class="badge badge-light-danger fw-bold">Activa</div>
+                                        @if($usuarios[$i]->status == "Offline")
+                                        <div class="badge badge-light-danger fw-bold">
+                                            {{$usuarios[$i]->status}}
+                                            </div> 
+                                        @else
+                                        <div class="badge badge-light-success fw-bold">
+                                            {{$usuarios[$i]->status}}
+                                            </div> 
+                                        @endif
+                                            
                                         </td>
                                         <td>{{ $usuarios[$i]->created_at }}</td>
                                         <td class="text-end">
