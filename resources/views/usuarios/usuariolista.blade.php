@@ -411,7 +411,7 @@
                                                     <!--end::Scroll-->
                                                     <!--begin::Actions-->
                                                     <div class="text-center pt-15">
-                                                        <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancerlar</button>
+                                                        <button type="button" class="btn btn-light me-3" data-bs-dismiss="modal">Cancelar</button>
                                                         <button type="submit" class="btn btn-primary">
                                                             <span class="indicator-label">Crear</span>
                                                             <!--
@@ -487,7 +487,7 @@
                                         </td>
                                         <td>
                                         
-                                            <div class="badge badge-light fw-bold">Yesterday</div>
+                                            <div class="badge badge-light fw-bold">   </div>
                                         </td>
                                         <td>
                                         @if($usuarios[$i]->status == "Offline")
@@ -501,7 +501,9 @@
                                         @endif
                                             
                                         </td>
-                                        <td>{{ $usuarios[$i]->created_at }}</td>
+                                        <td>
+                                        {{ date('d/m/Y', strtotime($usuarios[$i]->created_at)) }}
+                                            </td>
                                         <td class="text-end">
                                             <a href="#" class="btn btn-light btn-active-light-primary btn-flex btn-center btn-sm" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">Actions
                                                 <i class="ki-duotone ki-down fs-5 ms-1"></i></a>
