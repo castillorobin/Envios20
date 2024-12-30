@@ -31,7 +31,7 @@ Route::get('/usuarios/roleview', function () {
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('roles', RolController::class);
     Route::resource('usuario', UsuarioController::class);
-});
+
 
     Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
 Route::get('/guardarol', [App\Http\Controllers\RolController::class, 'guardarol'] )->name('guardarol') ;
@@ -53,7 +53,7 @@ Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'ver
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
 
-
+});
 
 
 
