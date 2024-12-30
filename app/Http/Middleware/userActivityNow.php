@@ -9,7 +9,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class userActivityNow extends Middleware
+class userActivityNow
 {
     /**
      * Handle an incoming request.
