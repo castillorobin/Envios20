@@ -10,16 +10,13 @@
 | the IoC container for the system binding all of the various parts.
 |
 */
-use App\Http\Middleware\UserActivityNow;
+//use App\Http\Middleware\UserActivityNow;
 
 
 $app = new Illuminate\Foundation\Application(
     $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-$app->withMiddleware(function (Middleware $middleware) {
-    $middleware->append(UserActivityNow::class);
-});
 
 /*
 |--------------------------------------------------------------------------
