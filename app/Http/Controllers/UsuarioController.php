@@ -26,7 +26,7 @@ class UsuarioController extends Controller
         $roles = Role::pluck('name','name')->all();
         $usuarios = User::all();
         $empleados = Empleado::all();
-/*
+
         foreach ($usuarios as $key => $user) {
             if (Cache::has('user-is-online-' . $user->id)){
                 $usuarios[$key]->status = 'Online';
@@ -35,7 +35,7 @@ class UsuarioController extends Controller
             }
         }
 
-*/
+
 
         return view('usuarios.usuariolista',compact('usuarios', 'roles', 'empleados')); 
 
