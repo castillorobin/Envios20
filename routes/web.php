@@ -87,6 +87,9 @@ Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']
 require __DIR__.'/auth.php';
 
 
+});
+
+
 Route::get('/envios/detallefoto', function () {
     return view('envios.detallefoto');
 });
@@ -277,7 +280,7 @@ Route::get('/guardandofoto', [App\Http\Controllers\StockController::class, 'guar
 
 
 
-});
+
 
 /*
 
