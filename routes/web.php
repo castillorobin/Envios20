@@ -31,9 +31,9 @@ Route::get('/usuarios/roleview', function () {
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('roles', RolController::class);
     Route::resource('usuario', UsuarioController::class);
+});
 
-
-    Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
+Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
 Route::get('/guardarol', [App\Http\Controllers\RolController::class, 'guardarol'] )->name('guardarol') ;
 
 Route::get('/usuarios/roleview/{id}', [App\Http\Controllers\RolController::class, 'roleview'] )->name('roleview') ;
@@ -52,16 +52,9 @@ Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'ver
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
 
-
-});
-
-
-
-
-
 Route::get('/error', function () {
     abort(500);
-
+});
 /*
 Route::get('/empleados', function () {
     return view('empleados.empleados');
@@ -86,9 +79,6 @@ Route::get('/envios/envi', function () {
 Route::get('/auth/redirect/{provider}', [SocialiteController::class, 'redirect']);
 
 require __DIR__.'/auth.php';
-
-
-});
 
 
 Route::get('/envios/detallefoto', function () {
@@ -278,10 +268,6 @@ Route::get('/stocks/agregarfoto', [App\Http\Controllers\StockController::class, 
 Route::get('/stocks/agregarguiafoto', [App\Http\Controllers\StockController::class, 'agregarguiafoto'] )->name('agregarguiafoto');
 Route::get('/stocks/guardarfoto', [App\Http\Controllers\StockController::class, 'guardarfoto'] )->name('aguardarfoto');
 Route::get('/guardandofoto', [App\Http\Controllers\StockController::class, 'guardandofoto'] )->name('guardandofoto');
-
-
-
-
 
 /*
 
