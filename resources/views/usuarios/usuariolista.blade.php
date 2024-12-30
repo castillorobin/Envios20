@@ -490,6 +490,7 @@
                                             <div class="badge badge-light fw-bold">   </div>
                                         </td>
                                         <td>
+                                            
                                         @if($usuarios[$i]->status == "Offline")
                                         <div class="badge badge-light-danger fw-bold">
                                             {{$usuarios[$i]->status}}
