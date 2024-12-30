@@ -31,9 +31,8 @@ Route::get('/usuarios/roleview', function () {
 Route::group(['middleware' => ['auth']], function(){
     Route::resource('roles', RolController::class);
     Route::resource('usuario', UsuarioController::class);
-});
 
-Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
+    Route::get('/guardaruser', [App\Http\Controllers\UsuarioController::class, 'guardaru'] )->name('guardaru') ;
 Route::get('/guardarol', [App\Http\Controllers\RolController::class, 'guardarol'] )->name('guardarol') ;
 
 Route::get('/usuarios/roleview/{id}', [App\Http\Controllers\RolController::class, 'roleview'] )->name('roleview') ;
@@ -51,6 +50,13 @@ Route::get('/usuarios/role', [App\Http\Controllers\RolController::class, 'index'
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified']);
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+
+
+
+
+
+
+
 
 Route::get('/error', function () {
     abort(500);
@@ -268,6 +274,10 @@ Route::get('/stocks/agregarfoto', [App\Http\Controllers\StockController::class, 
 Route::get('/stocks/agregarguiafoto', [App\Http\Controllers\StockController::class, 'agregarguiafoto'] )->name('agregarguiafoto');
 Route::get('/stocks/guardarfoto', [App\Http\Controllers\StockController::class, 'guardarfoto'] )->name('aguardarfoto');
 Route::get('/guardandofoto', [App\Http\Controllers\StockController::class, 'guardandofoto'] )->name('guardandofoto');
+
+
+
+});
 
 /*
 
