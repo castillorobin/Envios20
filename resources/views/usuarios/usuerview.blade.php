@@ -28,6 +28,84 @@
     <!--end::Global Stylesheets Bundle-->
 </head>
 <!--end::Head-->
+<style>
+     
+.ocultar {
+    display: none;
+}
+ 
+.mostrar {
+    display: block;
+}
+ 
+</style>
+
+<script>
+    /*
+        function ansValidation() {
+           // var nameValue = document.getElementById("name")
+            var passValue = document.getElementById("password")
+            var confpassValue = document.getElementById("confirm-password")
+            if(passValue != confpassValue){
+                window.alert("El password no son iguales")
+            }
+        }
+
+
+        function ansValidation(ev) {
+    ev.preventDefault
+    // there is no input named name
+    //var nameValue = document.getElementById("name").value
+    var nameValue = "test";
+    var passValue = document.getElementById("password").value
+    var confpassValue = document.getElementById("confirm-password").value
+    // the typeof operator returns a string.
+    if(typeof nameValue !== "string"){
+        window.alert("Please re-enter your name")
+    // we use strict validation ( !== ) because it's a good practice.
+    }else if(passValue !== confpassValue) {
+       window.alert("Passwords do not match!")
+    }
+}
+
+*/
+
+function verificarPasswords() {
+ 
+ // Ontenemos los valores de los campos de contraseñas 
+ pass1 = document.getElementById('password');
+ pass2 = document.getElementById('confirm-password');
+
+ // Verificamos si las constraseñas no coinciden 
+ if (pass1.value != pass2.value) {
+
+     // Si las constraseñas no coinciden mostramos un mensaje 
+     document.getElementById("error").classList.add("mostrar");
+
+     return false;
+ } else {
+
+     // Si las contraseñas coinciden ocultamos el mensaje de error
+     document.getElementById("error").classList.remove("mostrar");
+
+     // Mostramos un mensaje mencionando que las Contraseñas coinciden 
+     document.getElementById("ok").classList.remove("ocultar");
+
+     // Desabilitamos el botón de login 
+     document.getElementById("login").disabled = true;
+
+     // Refrescamos la página (Simulación de envío del formulario) 
+     setTimeout(function() {
+         location.reload();
+     }, 3000);
+
+     return true;
+ }
+
+}
+    </script>
+
+
 
 <body>
     <x-default-layout>
@@ -156,7 +234,7 @@
                                     <!--end::Details content-->
                                 </div>
                                 <!--end::Card body-->
-                            </div>
+                            </div> 
                             <!--end::Card-->
 
                         </div>
@@ -628,7 +706,7 @@
                             <!--begin::Modal content-->
                             <div class="modal-content">
                                 <!--begin::Form-->
-                                <form id="kt_modal_add_user_form" class="form" action="/editarusuario/{{ $user->id }}" method="POST" enctype="multipart/form-data">
+                                <form id="kt_modal_add_user_form" class="form" action="/editarusuario/{{ $user->id }}" method="POST" enctype="multipart/form-data" onsubmit="verificarPasswords(); return false"> 
 
                                                     @csrf
                                                     @method('GET')
@@ -650,6 +728,20 @@
                                     <!--begin::Modal body-->
                                     <div class="modal-body py-10 px-lg-17">
                                         <!--begin::Scroll-->
+
+                                      
+ 
+<div id="msg"></div>
+ 
+<!-- Mensajes de Verificación -->
+<div id="error" class="alert alert-danger ocultar" role="alert">
+    Las Contraseñas no coinciden, vuelve a intentar !
+</div>
+<div id="ok" class="alert alert-success ocultar" role="alert">
+    Las Contraseñas coinciden ! (Procesando formulario ... )
+</div>
+<!-- Fin Mensajes de Verificación -->
+
                                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_update_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_update_user_header" data-kt-scroll-wrappers="#kt_modal_update_user_scroll" data-kt-scroll-offset="300px">
                                             <!--begin::User toggle-->
                                             <div class="fw-bolder fs-3 rotate collapsible mb-7" data-bs-toggle="collapse" href="#kt_modal_update_user_user_info" role="button" aria-expanded="false" aria-controls="kt_modal_update_user_user_info">Informacion del usuario
@@ -747,13 +839,7 @@
 
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-15">
-                                                    <!--begin::Input group=-->
-                                                    <div class="fv-row mb-10">
-                                                        <label class="required form-label fs-6 mb-2">Password Actual</label>
-                                                        <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="current_password" autocomplete="off" />
-                                                    </div>
-                                                    <!--end::Input group=-->
-                                                    <!--begin::Input group-->
+                                                    
                                                     <div class="mb-10 fv-row" data-kt-password-meter="true">
                                                         <!--begin::Wrapper-->
                                                         <div class="mb-1">
@@ -762,7 +848,7 @@
                                                             <!--end::Label-->
                                                             <!--begin::Input wrapper-->
                                                             <div class="position-relative mb-3">
-                                                                <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="new_password" autocomplete="off" />
+                                                                <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="password" id="password"  autocomplete="off" />
                                                                 <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                                                     <i class="ki-duotone ki-eye-slash fs-1">
                                                                         <span class="path1"></span>
@@ -789,14 +875,14 @@
                                                         </div>
                                                         <!--end::Wrapper-->
                                                         <!--begin::Hint-->
-                                                        <div class="text-muted">Use 8 or more characters with a mix of letters, numbers & symbols.</div>
+                                                        <div class="text-muted">Utilice 8 o más caracteres con una combinación de letras, números y símbolos.</div>
                                                         <!--end::Hint-->
                                                     </div>
                                                     <!--end::Input group=-->
                                                     <!--begin::Input group=-->
                                                     <div class="fv-row mb-10">
                                                         <label class="form-label fw-semibold fs-6 mb-2">Confirmar nuevo Password</label>
-                                                        <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm_password" autocomplete="off" />
+                                                        <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm-password" id="confirm-password" autocomplete="off" />
                                                     </div>
                                                     <!--end::Input group=-->
                                                 </div>
@@ -852,7 +938,7 @@
                                         <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
                                         <!--end::Button-->
                                         <!--begin::Button-->
-                                        <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+                                        <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit" id="login"> 
                                             <span class="indicator-label">Editar </span>
                                             <span class="indicator-progress">Please wait...
                                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>

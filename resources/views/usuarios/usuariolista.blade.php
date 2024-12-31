@@ -487,7 +487,7 @@
                                         </td>
                                         <td>
                                         
-                                            <div class="badge badge-light fw-bold">   </div>
+                                            <div class="badge badge-light fw-bold"> {{ $usuarios[$i]->updated_at }}  </div>
                                         </td>
                                         <td>
                                             
