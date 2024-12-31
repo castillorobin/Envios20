@@ -877,7 +877,7 @@ function verificarPasswords() {
                                                         <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm-password" id="confirm-password" autocomplete="off" />
                                                         <div id="msg"></div>
                                                         <!-- Mensajes de Verificación -->
-<div id="error" class="alert alert-danger ocultar" role="alert">
+<div id="error" class="ocultar" role="alert" style="color: #c4553d ;">
     Las Contraseñas no coinciden, vuelve a intentar !
 </div>
 
