@@ -97,7 +97,7 @@ function verificarPasswords() {
      // Refrescamos la página (Simulación de envío del formulario) 
      setTimeout(function() {
          location.reload();
-     }, 3000);
+     }, 1000);
 
      return true;
  }
@@ -731,16 +731,8 @@ function verificarPasswords() {
 
                                       
  
-<div id="msg"></div>
+
  
-<!-- Mensajes de Verificación -->
-<div id="error" class="alert alert-danger ocultar" role="alert">
-    Las Contraseñas no coinciden, vuelve a intentar !
-</div>
-<div id="ok" class="alert alert-success ocultar" role="alert">
-    Las Contraseñas coinciden ! (Procesando formulario ... )
-</div>
-<!-- Fin Mensajes de Verificación -->
 
                                         <div class="d-flex flex-column scroll-y me-n7 pe-7" id="kt_modal_update_user_scroll" data-kt-scroll="true" data-kt-scroll-activate="{default: false, lg: true}" data-kt-scroll-max-height="auto" data-kt-scroll-dependencies="#kt_modal_update_user_header" data-kt-scroll-wrappers="#kt_modal_update_user_scroll" data-kt-scroll-offset="300px">
                                             <!--begin::User toggle-->
@@ -883,6 +875,13 @@ function verificarPasswords() {
                                                     <div class="fv-row mb-10">
                                                         <label class="form-label fw-semibold fs-6 mb-2">Confirmar nuevo Password</label>
                                                         <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="confirm-password" id="confirm-password" autocomplete="off" />
+                                                        <div id="msg"></div>
+                                                        <!-- Mensajes de Verificación -->
+<div id="error" class="alert alert-danger ocultar" role="alert">
+    Las Contraseñas no coinciden, vuelve a intentar !
+</div>
+
+<!-- Fin Mensajes de Verificación -->
                                                     </div>
                                                     <!--end::Input group=-->
                                                 </div>
