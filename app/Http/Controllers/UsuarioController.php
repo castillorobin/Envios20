@@ -93,19 +93,30 @@ class UsuarioController extends Controller
         $usuario->save();
         $usuario->assignRole($request->input('roles'));
         */
+
+      
+
         $input = $request->all();
         if ($request->hasFile('avatar')) {
 
             $imagen = $request->file("avatar");
             $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
-            $input['avatar'] = $nombreimagen;
+            //$input['avatar'] = "HOla";
+            //dd($input['avatar']);
             $ruta = public_path("/fotos");
             $imagen->move($ruta, $nombreimagen);
+           // dd($nombreimagen);
         }
-
+        
         $input['password'] = Hash::make($input['password']);
     
         $user = User::create($input);
+        $ultimoemp = User::latest('id')->first();
+        $ultimoemp->avatar = $nombreimagen;
+        $ultimoemp->save();
+        
+
+
         $user->assignRole($request->input('roles'));
      /*
 
@@ -172,10 +183,26 @@ class UsuarioController extends Controller
         }
     
         $user = User::find($id);
+        
+
+
         $user->update($input);
         DB::table('model_has_roles')->where('model_id',$id)->delete();
     
         $user->assignRole($request->input('roles'));
+
+
+        if ($request->hasFile('avatar')) {
+            $usuario = User::find($id);
+            $imagen = $request->file("avatar");
+            $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
+            $usuario->avatar = $nombreimagen;
+            //dd($input['avatar']);
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+           // dd($nombreimagen);
+           $usuario->save();
+        }
     
         return redirect()->route('indexuser');
     }
