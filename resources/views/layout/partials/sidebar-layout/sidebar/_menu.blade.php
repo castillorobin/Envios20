@@ -302,8 +302,9 @@
 					<span class="menu-title">Gestion de comercios</span>
 					<span class="menu-arrow"></span>
 				</span>
-				@can('comercios-crear')
+				
 				<div class="menu-sub menu-sub-accordion">
+				@can('comercios-crear')
 					<div class="menu-item">
 						<a class="menu-link" href="/comercio/crearcomercio">
 							<span class="menu-bullet">

@@ -62,7 +62,7 @@ class UsuarioController extends Controller
             'password' => 'required|same:confirm-password',
             'roles' => 'required'
         ]);
-    */
+    
         $input = $request->all();
         $input['password'] = Hash::make($input['password']);
     
@@ -70,12 +70,14 @@ class UsuarioController extends Controller
         $user->assignRole($request->input('roles'));
     
         return redirect()->route('usuarios.usuariolista');
+
+        */
     }
 
 
     public function guardaru(Request $request)
     {
-      
+        /*
         $usuario = new User();
         $usuario->password = Hash::make($usuario['password']);
         if ($request->hasFile('avatar')) {
@@ -87,8 +89,24 @@ class UsuarioController extends Controller
         }
         $usuario->name = $request->input("name");
         $usuario->email = $request->input("email");
+        //$usuario->email_verified_at = ;
         $usuario->save();
         $usuario->assignRole($request->input('roles'));
+        */
+        $input = $request->all();
+        if ($request->hasFile('avatar')) {
+
+            $imagen = $request->file("avatar");
+            $nombreimagen = Str::slug(time()) . "." . $imagen->guessExtension();
+            $input['avatar'] = $nombreimagen;
+            $ruta = public_path("/fotos");
+            $imagen->move($ruta, $nombreimagen);
+        }
+
+        $input['password'] = Hash::make($input['password']);
+    
+        $user = User::create($input);
+        $user->assignRole($request->input('roles'));
      /*
 
         $input = $request->all();
