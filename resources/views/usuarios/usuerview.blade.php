@@ -246,7 +246,7 @@ function verificarPasswords() {
                             <ul class="nav nav-custom nav-tabs nav-line-tabs nav-line-tabs-2x border-0 fs-4 fw-semibold mb-8">
                                 <!--begin:::Tab item-->
                                 <li class="nav-item">
-                                    <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">actividades</a>
+                                    <a class="nav-link text-active-primary pb-4 active" data-bs-toggle="tab" href="#kt_user_view_overview_tab">Datos del Usuario</a>
                                 </li>
                                 <!--end:::Tab item-->
                                 <!--begin:::Tab item-->
@@ -266,12 +266,7 @@ function verificarPasswords() {
                                 <!--begin:::Tab pane-->
                                 <div class="tab-pane fade show active" id="kt_user_view_overview_tab" role="tabpanel">
                                     <!--begin::Card-->
-                                    <div class="card card-flush mb-6 mb-xl-9">
-                                        <!--begin::Card header-->
-                                        
-                                            
-                                            <!--end::Tab Content-->
-                                        </div>
+                                  
                                         <!--end::Card body-->
                                     </div>
                                     <!--end::Card-->
@@ -285,9 +280,31 @@ function verificarPasswords() {
                                         <!--begin::Card header-->
                                         <div class="card-header mt-6">
                                             <!--begin::Card title-->
-                                           
-                                            <!--end::Card title-->
-                                            <!--begin::Card toolbar-->
+                                           <div class="col-12">
+                                           <span style="font-weight: bolder"> ID Usuario: 000{{ $user->id }}</span> 
+                                            <p></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <span style="font-weight: bolder"> Nombre: {{ $user->name }}</span> 
+                                           <p></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <span style="font-weight: bolder"> Email:  {{ $user->email }}</span> 
+                                           <p></p>
+                                        </div>
+                                        <div class="col-12">
+                                            <span style="font-weight: bolder"> Rol:@if(!empty($user->getRoleNames()))
+                                                @foreach($user->getRoleNames() as $rolNombre)                                       
+                                                  <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
+                                                @endforeach
+                                              @endif    
+                                            </span> 
+                                           <p></p>
+                                        </div>
+                                            <!--begin::Details item-->
+                                            <!--begin::Details item-->
+                                            
+                                            
                                            
                                             <!--end::Card toolbar-->
                                         </div>
