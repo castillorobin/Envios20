@@ -216,6 +216,21 @@ class UsuarioController extends Controller
         return redirect()->route('indexuser');
     }
 
+    public function eliminartodouser(Request $request)
+    {
+        $todos = $request->get("checked");
+        foreach($todos as $pedido){
+            User::find($pedido)->delete();
+
+            }
+        //$todos = $request->get("valores");
+
+        //dd($todos);
+       // User::find($id)->delete();
+        //return redirect()->route('indexuser');
+        return redirect()->route('indexuser');
+    }
+
 
     
 }
