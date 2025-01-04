@@ -279,45 +279,63 @@ function verificarPasswords() {
                                     <div class="card card-flush mb-6 mb-xl-9">
                                         <!--begin::Card header-->
                                         <div class="card-header mt-6">
-                                            <!--begin::Card title-->
-                                           <div class="col-12">
-                                           <span style="font-weight: bolder"> ID Usuario: 000{{ $user->id }}</span> 
-                                            <p></p>
-                                        </div>
-                                        <div class="col-12">
-                                            <span style="font-weight: bolder"> Nombre: {{ $user->name }}</span> 
-                                           <p></p>
-                                        </div>
-                                        <div class="col-12">
-                                            <span style="font-weight: bolder"> Email:  {{ $user->email }}</span> 
-                                           <p></p>
-                                        </div>
-                                        <div class="col-12">
-                                            <span style="font-weight: bolder"> Rol:@if(!empty($user->getRoleNames()))
-                                                @foreach($user->getRoleNames() as $rolNombre)                                       
-                                                  <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
-                                                @endforeach
-                                              @endif    
-                                            </span> 
-                                           <p></p>
-                                        </div>
-                                            <!--begin::Details item-->
-                                            <!--begin::Details item-->
-                                            
-                                            
-                                           
-                                            <!--end::Card toolbar-->
+                                        
+                                          
+                                            <div class="card-title">
+                                                <h2>Editar Perfil</h2>
+                                            </div>
+                                       
+                                       
                                         </div>
                                         <!--end::Card header-->
                                         <!--begin::Card body-->
                                         <div class="card-body d-flex flex-column">
 
-                                          
-                                            <div class="d-flex align-items-center position-relative">
-                                                <!--begin::Label-->
-                                                
-                                            <!--end::Item-->
-                                        </div>
+                                            <div class="table-responsive">
+                                                <!--begin::Table-->
+                                                <table class="table align-middle table-row-dashed gy-5" id="kt_table_users_login_session">
+                                                    <tbody class="fs-6 fw-semibold text-gray-600">
+                                                        <tr>
+                                                            <td>Correo electronico</td>
+                                                            <td>{{ $user->email }}</td>
+                                                            <td class="text-end">
+                                                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_email">
+                                                                    <i class="ki-duotone ki-pencil fs-3">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Contraseña</td>
+                                                            <td>******</td>
+                                                            <td class="text-end">
+                                                                <button type="button" class="btn btn-icon btn-active-light-primary w-30px h-30px ms-auto" data-bs-toggle="modal" data-bs-target="#kt_modal_update_password">
+                                                                    <i class="ki-duotone ki-pencil fs-3">
+                                                                        <span class="path1"></span>
+                                                                        <span class="path2"></span>
+                                                                    </i>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Rol</td>
+                                                            <td>
+                                                                @if(!empty($user->getRoleNames()))
+                                                                @foreach($user->getRoleNames() as $rolNombre)                                       
+                                                                  <h5><span class="badge badge-dark">{{ $rolNombre }}</span></h5>
+                                                                @endforeach
+                                                              @endif
+                                                            </td>
+                                                            <td class="text-end">
+                                                                
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                                <!--end::Table-->
+                                            </div>
                                         <!--end::Card body-->
                                     </div>
                                     <!--end::Tasks-->
@@ -1173,7 +1191,10 @@ function verificarPasswords() {
                                 <!--begin::Modal body-->
                                 <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                     <!--begin::Form-->
-                                    <form id="kt_modal_update_email_form" class="form" action="#">
+                                    <form id="kt_modal_add_user_form" class="form" action="/editarusuario/{{ $user->id }}" method="POST" enctype="multipart/form-data" onsubmit="verificarPasswords(); return false"> 
+
+                                        @csrf
+                                        @method('GET')
                                         <!--begin::Notice-->
                                         <!--begin::Notice-->
                                         <div class="notice d-flex bg-light-primary rounded border-primary border border-dashed mb-9 p-6">
@@ -1204,17 +1225,16 @@ function verificarPasswords() {
                                             </label>
                                             <!--end::Label-->
                                             <!--begin::Input-->
-                                            <input class="form-control form-control-solid" placeholder="" name="profile_email" value="smith@kpmg.com" />
+                                            <input class="form-control form-control-solid" placeholder="" name="email" value="{{ $user->email }}" />
                                             <!--end::Input-->
                                         </div>
                                         <!--end::Input group-->
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
                                             <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
-                                            <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+                                            <button type="submit" class="btn btn-primary" >
                                                 <span class="indicator-label">Aplicar</span>
-                                                <span class="indicator-progress">Espere por favor...
-                                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                
                                             </button>
                                         </div>
                                         <!--end::Actions-->
@@ -1254,12 +1274,12 @@ function verificarPasswords() {
                                 <!--begin::Modal body-->
                                 <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
                                     <!--begin::Form-->
-                                    <form id="kt_modal_update_password_form" class="form" action="#">
+                                    <form id="kt_modal_add_user_form" class="form" action="/editarusuario/{{ $user->id }}" method="POST" enctype="multipart/form-data" onsubmit="verificarPasswords(); return false"> 
+
+                                        @csrf
+                                        @method('GET')
                                         <!--begin::Input group=-->
-                                        <div class="fv-row mb-10">
-                                            <label class="required form-label fs-6 mb-2">Contraseña actual</label>
-                                            <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="current_password" autocomplete="off" />
-                                        </div>
+                                       
                                         <!--end::Input group=-->
                                         <!--begin::Input group-->
                                         <div class="mb-10 fv-row" data-kt-password-meter="true">
@@ -1270,7 +1290,7 @@ function verificarPasswords() {
                                                 <!--end::Label-->
                                                 <!--begin::Input wrapper-->
                                                 <div class="position-relative mb-3">
-                                                    <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="new_password" autocomplete="off" />
+                                                    <input class="form-control form-control-lg form-control-solid" type="password" placeholder="" name="password" autocomplete="off" />
                                                     <span class="btn btn-sm btn-icon position-absolute translate-middle top-50 end-0 me-n2" data-kt-password-meter-control="visibility">
                                                         <i class="ki-duotone ki-eye-slash fs-1">
                                                             <span class="path1"></span>
@@ -1309,10 +1329,9 @@ function verificarPasswords() {
                                         <!--begin::Actions-->
                                         <div class="text-center pt-15">
                                             <button type="reset" class="btn btn-light me-3" data-kt-users-modal-action="cancel">Cancelar</button>
-                                            <button type="submit" class="btn btn-primary" data-kt-users-modal-action="submit">
+                                            <button type="submit" class="btn btn-primary" >
                                                 <span class="indicator-label">Aplicar</span>
-                                                <span class="indicator-progress">Porfavor espere ...
-                                                    <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
+                                                
                                             </button>
                                         </div>
                                         <!--end::Actions-->
