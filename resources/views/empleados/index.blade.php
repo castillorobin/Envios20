@@ -174,7 +174,7 @@
                                                 <th style="min-width: 120px;">Whatsapp</th>
                                                 <th style="min-width: 120px;">Dirección</th>
                                                 <th style="min-width: 120px;">Estado</th>
-                                                <th style="min-width: 120px;">Sesión</th>
+                                              
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
@@ -193,8 +193,13 @@
                                                 @elseif($vendedores[$i]->estado == '')
                                                 <td class="text-star"><span class="badge badge-light-danger"></span></td>
                                                 @endif
-                                                <td class="text-star"><span class="badge badge-light-success">Activa</span></td>
+
+
+                                                
                                                 </tr>
+
+
+
                                                 @endfor
 
 
