@@ -106,8 +106,7 @@ class UsuarioController extends Controller
             $ruta = public_path("/fotos");
             $imagen->move($ruta, $nombreimagen);
            // dd($nombreimagen);
-        }
-        
+           
         $input['password'] = Hash::make($input['password']);
     
         $user = User::create($input);
@@ -116,6 +115,20 @@ class UsuarioController extends Controller
         $ultimoemp->save();
         
 
+
+        $user->assignRole($request->input('roles'));
+        return redirect()->route('usuario.index');
+        }
+        
+        $input['password'] = Hash::make($input['password']);
+    
+        $user = User::create($input);
+        /*
+        $ultimoemp = User::latest('id')->first();
+        $ultimoemp->avatar = $nombreimagen;
+        $ultimoemp->save();
+        
+*/
 
         $user->assignRole($request->input('roles'));
      /*
