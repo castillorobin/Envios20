@@ -36,8 +36,8 @@ class UsuarioController extends Controller
         }
 
 
-
-        return view('usuarios.usuariolista',compact('usuarios', 'roles', 'empleados')); 
+        $nota = " ";
+        return view('usuarios.usuariolista',compact('usuarios', 'roles', 'empleados', 'nota')); 
 
     }
 
@@ -94,6 +94,25 @@ class UsuarioController extends Controller
         $usuario->assignRole($request->input('roles'));
         */
 
+        $ema = $request->input('email');
+        $envios = User::where('email', $ema)
+        ->get();
+        if($envios){
+            $roles = Role::pluck('name','name')->all();
+            $usuarios = User::all();
+            $empleados = Empleado::all();
+    
+            foreach ($usuarios as $key => $user) {
+                if (Cache::has('user-is-online-' . $user->id)){
+                    $usuarios[$key]->status = 'Online';
+                }else{
+                    $usuarios[$key]->status = 'Offline';
+                }
+            }
+            $nota = "El usuario ya existe";
+            return view('usuarios.usuariolista', compact('usuarios', 'roles', 'empleados', 'nota'));
+        }
+        //dd($envios);
       
 
         $input = $request->all();

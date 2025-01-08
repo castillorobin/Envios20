@@ -110,6 +110,7 @@ document.getElementById("valores").value = nombre;
                                         <span class="path2"></span>
                                     </i>
                                     <input type="text" data-kt-user-table-filter="search" class="form-control form-control-solid w-250px ps-13" placeholder="Buscar usuario" />
+                                    <span style="color:red; font-weight:bolder;">{{$nota}}</span>
                                 </div>
                                 <!--end::Search-->
                             </div>
