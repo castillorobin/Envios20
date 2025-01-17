@@ -523,6 +523,38 @@ $("#pago").prop('disabled',false)
                                                                 </td>
                                                                 <!--end::Options-->
                                                             </tr>
+
+                                                            <tr>
+                                                                <!--begin::Label-->
+                                                                <td class="text-gray-800">Repartidores</td>
+                                                                <!--end::Label-->
+                                                                <!--begin::Options-->
+                                                                <td>
+                                                                    <!--begin::Wrapper-->
+                                                                    <div class="d-flex">
+                                                                        <!--begin::Checkbox-->
+                                                                        <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
+                                                                            <input class="form-check-input" type="checkbox" value="repartidor-ver" name="permission[]" />
+                                                                            <span class="form-check-label">Ver</span>
+                                                                        </label>
+                                                                        <!--end::Checkbox-->
+                                                                        <!--begin::Checkbox-->
+                                                                        <label class="form-check form-check-sm form-check-custom form-check-solid me-5 me-lg-20">
+                                                                            <input class="form-check-input" type="checkbox" value="repartidor-editar" name="permission[]" />
+                                                                            <span class="form-check-label">Editar</span>
+                                                                        </label>
+                                                                        <!--end::Checkbox-->
+                                                                        <!--begin::Checkbox-->
+                                                                        <label class="form-check form-check-sm form-check-custom form-check-solid">
+                                                                            <input class="form-check-input" type="checkbox" value="repartidor-crear" name="permission[]" />
+                                                                            <span class="form-check-label">Crear</span>
+                                                                        </label>
+                                                                        <!--end::Checkbox-->
+                                                                    </div>
+                                                                    <!--end::Wrapper-->
+                                                                </td>
+                                                                <!--end::Options-->
+                                                            </tr>
                                                             <!--end::Table row-->
                                                         </tbody>
                                                         <!--end::Table body-->

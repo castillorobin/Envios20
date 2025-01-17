@@ -41,9 +41,10 @@ var KTAppEcommerceReportShipping = function () {
             endDate: end,
             ranges: {
                 "Ahora": [moment(), moment()],
-                "ayer": [moment().subtract(1, "days"), moment()],
-                "últimos 15 dias": [moment().subtract(14, "days"), moment()],
+                "Ayer": [moment().subtract(1, "days"), moment().subtract(1, "days")],
+                "últimos 7 dias": [moment().subtract(6, "days"), moment()],
                 "últimos 30 dias": [moment().subtract(29, "days"), moment()],
+                "Mes actual": [moment().startOf("month"), moment().endOf("month")],
                 "último mes": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
             }
         }, cb);
@@ -83,7 +84,7 @@ var KTAppEcommerceReportShipping = function () {
                 {
                     extend: 'pdfHtml5',
                     title: documentTitle
-                }
+                } 
             ]
         }).container().appendTo($('#kt_ecommerce_report_shipping_export'));
 
