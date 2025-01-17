@@ -97,7 +97,9 @@ class UsuarioController extends Controller
         $ema = $request->input('email');
         $envios = User::where('email', $ema)
         ->get();
-        if($envios){
+
+      //  dd($envios->email);
+        if(!$envios->isEmpty()){
             $roles = Role::pluck('name','name')->all();
             $usuarios = User::all();
             $empleados = Empleado::all();

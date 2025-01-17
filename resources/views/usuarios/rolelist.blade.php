@@ -526,7 +526,7 @@ $("#pago").prop('disabled',false)
 
                                                             <tr>
                                                                 <!--begin::Label-->
-                                                                <td class="text-gray-800">Repartidores</td>
+                                                                <td class="text-gray-800">App Domicilios</td>
                                                                 <!--end::Label-->
                                                                 <!--begin::Options-->
                                                                 <td>
