@@ -60,9 +60,17 @@ class StockController extends Controller
     {
         $id = $request->get('guia') ;
         $envio = Envio::where('guia', $id)->get();
+        if($envio->isEmpty()){
+            //dd("no hay envio");
+            $nota = "La Guía que se ingreso no existe"; 
+            return view('stocks.seleccionarpunto', compact('nota'));
+
+        }
+
         $idpunto = $envio[0]->punto;
         $punto = Rutas::where('id', $idpunto)->get();
-        return view('stocks.puntodatos', compact('envio', 'punto'));
+        $nota = " ";
+        return view('stocks.puntodatos', compact('envio', 'punto', 'nota'));
 /*
         if($envio[0]->punto != NULL){
         

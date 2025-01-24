@@ -105,7 +105,7 @@
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
                                         <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
-                                        
+                                        <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                     </div>
                                 </form>
                                 </div>

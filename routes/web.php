@@ -94,7 +94,8 @@ Route::get('/stocks/asignar', function () {
 });
 
 Route::get('/stocks/seleccionarpunto', function () {
-    return view('stocks.seleccionarpunto');
+    $nota = " ";
+    return view('stocks.seleccionarpunto', compact('nota'));
 });
 
 Route::get('/envios/registroconguia', function () {
