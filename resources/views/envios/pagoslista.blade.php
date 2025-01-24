@@ -112,22 +112,17 @@
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" />
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" disabled/>
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter--> 
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Status" data-kt-ecommerce-order-filter="status">
-                                            <option></option>
-                                            <option value="Todos">Todos</option>
-                                            <option value="Alta">Alta</option>
-                                            <option value="Baja">Baja</option>
-                                        </select>
+                                        
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
@@ -209,7 +204,7 @@
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 ">Pagar</button>
+                                        <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
                                     </div>
                                 </div>
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">

@@ -21,12 +21,20 @@ class StockController extends Controller
     public function index() 
     {
         $envios = Envio::all(); 
-        return view('stocks.seleccionarzona');
+        $nota = " ";
+        return view('stocks.seleccionarzona', compact('nota')); 
     }
     public function zonadatos(Request $request)
     {
         $id = $request->get('guia') ;
         $envio = Envio::where('guia', $id)->get();
+        
+        if($envio->isEmpty()){
+            //dd("no hay envio");
+            $nota = "La Guía que se ingreso no existe"; 
+            return view('stocks.seleccionarzona', compact('nota')); 
+
+        }
         $idpunto = $envio[0]->punto;
         $punto = Rutas::where('id', $idpunto)->get();
         return view('stocks.zonadatos', compact('envio', 'punto'));
