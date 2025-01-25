@@ -440,6 +440,12 @@ $(document).ready(function() {
                         </div>
                     </div>
                     <div class="row mb-6">
+                                        <label class="col-lg-3 col-form-label">Whatsapp</label>
+                                        <div class="col-lg-8">
+                                            <input id="kt_inputmask_2" type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="Whatsapp" />
+                                        </div>
+                                    </div>
+                    <div class="row mb-6">
                         <label class="col-lg-3 col-form-label">Tipo de comercio</label>
                         <div class="col-lg-8">
                             <select name="tipo" id="Tipo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de comercio" required>
@@ -641,10 +647,11 @@ $(document).ready(function() {
                                                                 <div class="col-8">
                                                                     <input type="text" class="form-control form-control-solid " id="guia" name="guia" placeholder="Ingrese guía" autofocus>
                                                                     <input type="text" value="Personalizado" class="visually-hidden" name="tipo1" id="tipo1">
+                                                                    <span style="font-weight: 200;font-family: 'Roboto', serif;font-size:13px; color: #dc3545;"> {{ $nota }} &nbsp; </span>
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-weight: 200;font-family: 'Roboto', serif;font-size:13px; color: #dc3545;"> {{ $nota }} &nbsp; </span>
+                                                            
                                                         </div>
  
                                                         </div>
