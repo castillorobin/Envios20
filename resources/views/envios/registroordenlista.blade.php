@@ -327,7 +327,7 @@ $(document).ready(function() {
        
 
 
-
+        <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
 
         
 
@@ -391,8 +391,9 @@ $(document).ready(function() {
         <!--end::Secondary button-->
     
     <!--begin::Primary button-->
-            <a href="#" class="btn btn-sm fw-bold btn-primary"  data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
-            Crear     </a>
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
+        Agregar comercio
+      </button>
         <!--end::Primary button-->
 </div>
 <!--end::Actions-->
@@ -400,7 +401,100 @@ $(document).ready(function() {
         <!--end::Toolbar container-->
     </div>
 <!--end::Toolbar-->                                        
-                    
+                   
+
+
+<form action="/cobro/agregarcomercio" id="kt_invoice_form" method="POST">
+    @csrf
+    @method('GET')
+
+<!--end::Toolbar-->
+<div class="modal fade" id="kt_modal_create_app" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"> 
+                <h5 class="modal-title" id="exampleModalLabel">Agregar Comercio</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Aquí puedes poner el contenido del formulario o cualquier otra información -->
+                <form>
+                    <div class="row mb-6">
+                        <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Nombre del comercio" />
+                            <div class="invalid-feedback">Este campo es obligatorio.</div>
+                        </div>
+                    </div> 
+
+                    <div class="row mb-6">
+                        <label class="col-lg-3 col-form-label">Dirección del comercio</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" placeholder="Dirección del comercio" />
+                        </div>
+                    </div>
+                    <div class="row mb-6">
+                        <label class="col-lg-3 col-form-label">Telefono</label>
+                        <div class="col-lg-8">
+                            <input id="kt_inputmask_2" type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                        </div>
+                    </div>
+                    <div class="row mb-6">
+                        <label class="col-lg-3 col-form-label">Tipo de comercio</label>
+                        <div class="col-lg-8">
+                            <select name="tipo" id="Tipo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de comercio" required>
+                                <option value="Emprendedor">Emprendedor</option>
+                                <option value="Comercio Mediano">Comercio Mediano</option>
+                                <option value="Empresa">Empresa</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-6">
+                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Estado de comercio</label>
+                        <div class="col-lg-8">
+                            <select name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
+                                <option value="Alta">Alta</option>
+                                <option value="baja">Baja</option>
+                                <option value="Lista_negra">Lista negra</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-6">
+                        <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
+                        <div class="col-lg-8">
+                            <select name="agencia_registro" id="Agencia_registro" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Agencia de registro" required>
+                                <option value="San_Salvador">San Salvador</option>
+                                <option value="San_Miguel">San Miguel</option>
+                                <option value="Santa_ana">Santa Ana</option>
+                                <option value="Centro de distribucion">Centro de distribucion</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-6">
+                        <label class="col-lg-3 col-form-label">Correo Electrónico</label>
+                        <div class="col-lg-8">
+                            <input type="email" name="email" class="form-control form-control-lg form-control-solid" placeholder="Email" />
+                        </div>
+                    </div>
+                    <div class="row mb-6">
+                        <label class="col-lg-3 col-form-label">Nota</label>
+                        <div class="col-lg-8">
+                            <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+
+
 <!--begin::Content-->
 <div id="kt_app_content" class="app-content  flex-column-fluid " >
     
@@ -550,7 +644,7 @@ $(document).ready(function() {
                                                         </div>
                                                         <div class="col-4">
                                                             <button type="submit" class="btn btn-primary mb-3" >Agregar</button>
-                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                            <span style="font-weight: 200;font-family: 'Roboto', serif;font-size:13px; color: #dc3545;"> {{ $nota }} &nbsp; </span>
                                                         </div>
  
                                                         </div>

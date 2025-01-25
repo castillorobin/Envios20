@@ -17,9 +17,9 @@ class PagoController extends Controller
 {
     /**
      * Display a listing of the resource.
-     */
+     */ 
     public function index()
-    { 
+    {  
        // $pedidos = Cobro::all();
         $comercios = Comercio::all(); 
         $nota = " ";

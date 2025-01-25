@@ -302,7 +302,7 @@
     <x-default-layout>
 
 
-
+<input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
 
 
 
@@ -364,11 +364,15 @@
 
 
                             <!--begin::Secondary button-->
-                            <!--end::Secondary button-->
+                            <!--end::Secondary button
 
                             <a class="btn btn-primary" href="/comercio/crearcomercio">
                                 Agregar comercio
                             </a>
+-->
+                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_create_app">
+                                Agregar comercio
+                              </button>
 
                             <!--end::Primary button-->
                         </div>
@@ -627,7 +631,7 @@
                                                                         </div>
                                                                         <div class="col-4">
                                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                                            <span style="font-size:12px; color: #dc3545;"> {{ $nota }} &nbsp; </span>
                                                                         </div>
 
                                                                     </div>
