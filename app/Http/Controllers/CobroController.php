@@ -643,6 +643,7 @@ class CobroController extends Controller
         $comercio->comercio = $request->input('fname');
         $comercio->direccion = $request->input('direccion');
         $comercio->telefono = $request->input('telefono');
+        $comercio->whatsapp = $request->input('whatsapp');
         $comercio->tipo = $request->input('tipo');
         $comercio->estado = $request->input('estado');
         $comercio->agencia = $request->input('agencia_registro');
