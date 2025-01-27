@@ -654,8 +654,9 @@
                                                                 </td>
 
                                                                 <td>
+
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar1()"><i class="fas fa-broom"></i></button>
+                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar1()" disabled><i class="fas fa-broom"></i></button>
                                                                 </td>
 
 
@@ -701,7 +702,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar2()"><i class="fas fa-broom"></i></button>
+                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar2()" disabled><i class="fas fa-broom"></i></button>
                                                                 </td>
 
                                                             </tr>
@@ -736,7 +737,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar3()"><i class="fas fa-broom"></i></button>
+                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar3()" disabled><i class="fas fa-broom" ></i></button>
                                                                 </td>
 
 
@@ -772,7 +773,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar4()"><i class="fas fa-broom"></i></button>
+                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar4()" disabled><i class="fas fa-broom"></i></button>
                                                                 </td>
 
                                                             </tr>
@@ -805,7 +806,7 @@
 
                                                                 <td>
                                                                     <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar5()"><i class="fas fa-broom"></i></button>
+                                                                    <button type="button" class="btn btn-primary mt-9" onclick="limpiar5()" disabled><i class="fas fa-broom"></i></button>
                                                                 </td>
 
                                                             </tr>

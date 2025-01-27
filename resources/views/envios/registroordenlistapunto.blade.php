@@ -670,8 +670,13 @@ $(document).ready(function() {
                                 </td>
                                 
                                 <td >
-                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar1()"><i class="fas fa-broom"></i></button>
+                                <input type="text" value="{{ $tipo11='Personalizado'; }}" class="visually-hidden" name="tipo11" id="tipo11">
+                                    
+
+                                    <a href="/cobro/limpieza/{{ $tipo11}}/{{$ticketactual[0]->codigo}}">
+                                    <button type="button" class="btn btn-primary mt-9" ><i class="fas fa-broom"></i></button>
+
+                                    </a>
                                 </td>
                                 
 
@@ -707,8 +712,13 @@ $(document).ready(function() {
                                 
                                 
                                 <td >
-                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar2()"><i class="fas fa-broom"></i></button>
+                                <input type="text" value="{{ $tipo11='Personalizado departamental'; }}" class="visually-hidden" name="tipo11" id="tipo11">
+                                    
+
+                                    <a href="/cobro/limpieza/{{ $tipo11}}/{{$ticketactual[0]->codigo}}">
+                                    <button type="button" class="btn btn-primary mt-9" ><i class="fas fa-broom"></i></button>
+
+                                    </a>
                                 </td>
                                 
                             </tr>     
@@ -742,8 +752,13 @@ $(document).ready(function() {
                                 </td>
                                 
                                 <td >
-                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar3()"><i class="fas fa-broom"></i></button>
+                                <input type="text" value="{{ $tipo11='Punto fijo'; }}" class="visually-hidden" name="tipo11" id="tipo11">
+                                    
+
+                                    <a href="/cobro/limpieza/{{ $tipo11}}/{{$ticketactual[0]->codigo}}">
+                                    <button type="button" class="btn btn-primary mt-9" ><i class="fas fa-broom"></i></button>
+
+                                    </a>
                                 </td>
 
                                 
@@ -778,8 +793,13 @@ $(document).ready(function() {
                                 
                                 
                                 <td >
-                                <label class="form-label fs-6 fw-bold text-gray-700 mt-3"> &nbsp;</label>
-                                <button type="button" class="btn btn-primary mt-9" onclick="limpiar4()"><i class="fas fa-broom"></i></button>
+                                <input type="text" value="{{ $tipo11='Casillero'; }}" class="visually-hidden" name="tipo11" id="tipo11">
+                                    
+
+                                    <a href="/cobro/limpieza/{{ $tipo11}}/{{$ticketactual[0]->codigo}}">
+                                    <button type="button" class="btn btn-primary mt-9" ><i class="fas fa-broom"></i></button>
+
+                                    </a>
                                 </td>
                                 
                             </tr>       
