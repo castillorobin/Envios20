@@ -134,6 +134,11 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 <td>CAMBIO:</td>
                 <td >${{ $ticketact[0]->cambio }}</td>
             </tr>
+            <tr>
+                <td></td>
+                <td>METODO DE PAGO:</td>
+                <td >${{ $ticketact[0]->metodo }}</td>
+            </tr>
         </tbody>
 
     </thead>
