@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             <tr >
                 <td></td>
                 <td>SUBTOTAL</td>
-                <td >${{ $ticketact[0]->persoi + $ticketact[0]->puntoi + $ticketact[0]->casili + $ticketact[0]->depari + $ticketact[0]->guias }}
+                <td style="text-align: left; padding-left: 25px;">${{ $ticketact[0]->persoi + $ticketact[0]->puntoi + $ticketact[0]->casili + $ticketact[0]->depari + $ticketact[0]->guias }}
                  
                 </td>
                 
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
             <tr >
                 <td></td>
                 <td>DESCUENTO</td>
-                <td >${{ $ticketact[0]->descuento }}
+                <td style="text-align: left; padding-left: 25px;">${{ $ticketact[0]->descuento }}
                  
                 </td>
                 
@@ -122,22 +122,22 @@ document.addEventListener("DOMContentLoaded", function(event) {
             <tr>
                 <td></td>
                 <td style="font-weight: bolder;">TOTAL</td>
-                <td >${{ $ticketact[0]->total }}</td>
+                <td style="text-align: left; padding-left: 25px;">${{ $ticketact[0]->total }}</td>
             </tr>
             <tr>
                 
                 <td colspan="2" style="text-align: right;">ENTREGA EFECTIVO:</td>
-                <td >${{ $ticketact[0]->entrega }}</td>
+                <td style="text-align: left; padding-left: 25px;">${{ $ticketact[0]->entrega }}</td>
             </tr>
-            <tr>
+            <tr >
                 <td></td>
                 <td>CAMBIO:</td>
-                <td >${{ $ticketact[0]->cambio }}</td>
+                <td style="text-align: left; padding-left: 25px;">${{ $ticketact[0]->cambio }}</td>
             </tr>
             <tr>
-                <td></td>
-                <td>METODO DE PAGO:</td>
-                <td >${{ $ticketact[0]->metodo }}</td>
+               
+                <td colspan="2" style="text-align: right;">METODO DE PAGO:</td>
+                <td style="text-align: left; padding-left: 25px;">{{ $ticketact[0]->metodo }}</td>
             </tr>
         </tbody>
 
