@@ -103,6 +103,16 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 <td style="border-bottom: 2px solid black;">{{ $ticketact[0]->guias }}</td>
                 <td style="border-bottom: 2px solid black;">${{ $ticketact[0]->guias }}<</td>
             </tr>
+            <tr style="text-align: left;">
+                    
+                    
+                    <td style=" " >Método de pago: {{ $ticketact[0]->metodo }} </td>
+                    <td style="" class="centrar">
+                     
+                    </td>
+                    
+                    
+                </tr>
             <tr >
                 <td></td>
                 <td>SUBTOTAL</td>
@@ -134,11 +144,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 <td>CAMBIO:</td>
                 <td style="text-align: left; padding-left: 25px;">${{ $ticketact[0]->cambio }}</td>
             </tr>
-            <tr>
-               
-                <td colspan="2" style="text-align: right;">METODO DE PAGO:</td>
-                <td style="text-align: left; padding-left: 25px;">{{ $ticketact[0]->metodo }}</td>
-            </tr>
+           
         </tbody>
 
     </thead>
