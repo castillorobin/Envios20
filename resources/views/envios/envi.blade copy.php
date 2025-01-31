@@ -10,23 +10,18 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <!--end::Global Stylesheets Bundle-->
-    <style> 
+    <style>
         .table th,
         .table td {
             padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
         }
 
-       
-.dataTables_filter {
+        .dataTables_filter {
             display: none;
         }
-        .paginate_button {
-            display: none;
-        }
- 
+
         .dataTables_length {
             display: none;
         }
@@ -37,134 +32,39 @@
         #kt_ecommerce_report_shipping_table_next{
             display: none;
         }
-
-        #kt_ecommerce_report_shipping_table_next{
-            display: none;
-        }
-
-        .dt-length{
-            display: none;
-        }
-        .dt-search{
-            display: none;
-        }
-        
-
-        
-
-
-
-   
-		
-
     </style>
 
-
 </head>
-
-
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script>
-    function doSearch()
+    $(document).ready(function() {
 
-{
+        $("#kt_ecommerce_report_shipping_daterangepicker").change(function() {
 
-const tableReg = document.getElementById('kt_ecommerce_report_shipping_table');
+            const subtotal = $(this).val();
+         document.getElementById("rangolimp").value = subtotal ;
+            
 
-const searchText = document.getElementById('searchTerm').value.toLowerCase();
+            
 
-let total = 0;
+        });
 
+  
 
+        
+    });
 
-// Recorremos todas las filas con contenido de la tabla
-
-for (let i = 1; i < tableReg.rows.length; i++) {
-
-    // Si el td tiene la clase "noSearch" no se busca en su cntenido
-
-    if (tableReg.rows[i].classList.contains("noSearch")) {
-
-        continue;
-
-    }
-
-
-
-    let found = false;
-
-    const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
-
-    // Recorremos todas las celdas
-
-    for (let j = 0; j < cellsOfRow.length && !found; j++) {
-
-        const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
-
-        // Buscamos el texto en el contenido de la celda
-
-        if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
-
-            found = true;
-
-            total++;
-
-        }
-
-    }
-
-    if (found) {
-
-        tableReg.rows[i].style.display = '';
-
-    } else {
-
-       
-
-        tableReg.rows[i].style.display = 'none';
-
-    }
-
-}
-
-
-
-// mostramos las coincidencias
-
-const lastTR=tableReg.rows[tableReg.rows.length-1];
-
-const td=lastTR.querySelector("td");
-
-lastTR.classList.remove("hide", "red");
-
-if (searchText == "") {
-
-    lastTR.classList.add("hide");
-
-} else if (total) {
-
-    td.innerHTML="";
-
-} else {
-
-    lastTR.classList.add("red");
-
-    td.innerHTML="";
-
-}
-
-}
+    window.onload = function() { // también puede usar window.addEventListener('load', (event) => {
+       const subtotal = document.getElementById("kt_ecommerce_report_shipping_daterangepicker").value
+    document.getElementById("rangolimp").value = subtotal ;
+  };
 </script>
-
-
-
-
-
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid" style="margin-top: -300px; ">
+            <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
@@ -196,7 +96,9 @@ if (searchText == "") {
 
                         <!--begin::Actions-->
                         <div class="d-flex gap-2 gap-lg-3" style="float: right;">
-                            
+                        @can('ordenes-crear')
+                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
+                            @endcan
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -216,57 +118,36 @@ if (searchText == "") {
                                 <div class="card-title">
                                     <!--begin::Search-->
                                     <div class="d-flex align-items-center position-relative my-1">
-                                        <!---->
                                         <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" onkeyup="doSearch()" />
-                                         
+                                       
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
                                     <!--end::Export buttons-->
-                                    <form action="envios/filtrandoenvios2" method="GET" id="myForm" >
+                                    <form action="envios/filtrandoenvios" method="GET" id="myForm" >
                                         @method('GET') 
                                 </div>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" value="{{ $rangol }}" name="rango" disabled/>
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
-                                        <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" name="estado"  data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" >
-                                             
-                                            <option value="todo"> Todo</option>
-                                            <option value="Creado">Creado</option>
-                                            <option value="En ruta">En ruta</option>
-                                            <option value="Entregado">Entregado</option>
-                                            <option value="No entregado">No entregado</option>
-                                            <option value="Reprogramado">Reprogramado</option>
-                                            <option value="Reenvio">Reenvio</option>
-                                            <option value="Devuelto al comercio">Devuelto al comercio</option>
-                                            <option value="Recepcionado">Recepcionado</option>
-                                        </select>
-                                        <input type="text" id="rangolimp" name="rangolimp" value="{{ $rangol }}" hidden>
-                                        <!--end::Select2-->
-                                    </div>
-
+                                    
+                                    <input type="text" id="rangolimp" name="rangolimp" hidden>
                                     <!--end::Filter-->
                                     <button type="submit" class="btn btn-primary" >Filtrar</button>
                                     <!--end::Export dropdown-->
-                                    
                                 </form>
                                 
-                                <a href="envios/lista">
-                                <button class="btn btn-danger" type="submit">Limpiar</button>
-                                </a>
-                        
+                                    <button class="btn btn-danger" disabled>Limpiar</button>
+                                
                                 </div>
 
                                 <!--end::Card toolbar-->
@@ -274,40 +155,49 @@ if (searchText == "") {
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
-                                <!-- Empty list item to push elements to the right  -->
 
-			 		
-			  	
                                 <!--begin::Table-->
-                                <div class="table-responsive" >
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" style="font-size: 12px;" id="kt_ecommerce_report_shipping_table">
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
-                                            <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0 text-center" >
-                                                <th class="min-w-80px"># de guía</th>
-                                                <th class="min-w-50px text-center">Comercio</th>
-                                                <th class="min-w-150px text-center">Destinatario</th>
-                                                <th class="min-w-150px ">Dirección</th>                                                 
-                                                <th class="min-w-100px text-center">Tipo de envío</th>
-                                                <th class="min-w-150px text-center">Fecha de entrega</th>                                                
-                                                <th class="min-w-50px text-center">Estado</th>                                                                                      
-                                                <th class="min-w-50px text-center">Total</th>  
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th class="min-w-80px "># de guía</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-150px">Destinatario</th>
+                                                <th class="min-w-150px">Dirección</th> 
+                                                <th class="min-w-150px">Fecha de entrega</th>
+                                                <th class="min-w-100px">Tipo de envío</th>
+                                                <th class="min-w-50px text-center">Cobro de envio</th>
+                                                <th class="min-w-50px text-center">Estado</th>
+                                                <th class="min-w-50px text-center">Sub estado</th>
+                                                <th class="min-w-50px text-center">Fecha estado</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Ruta</th>
+                                                <th class="min-w-100px text-center">Nota </th>
+                                                <th class="min-w-100px text-center">Nota de repartidor</th>
+                                                <th class="min-w-150px">Ubicación</th>
                                             </tr> 
                                         </thead>
                                         <tbody class="fw-semibold text-gray-400">
                                             @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
                                                 <td>
-                                                    <a href="/envios/detalle/{{ $envio->guia }}" class="text-gray-900 text-hover-primary">
+                                                    <a href="/envios/detalle" class="text-gray-900 text-hover-primary">
                                                         {{ $envio->guia }}
                                                     </a>
                                                 </td>
-                                                <td style="text-align: center;">{{ $envio->comercio }}</td>
-                                                <td style="text-align: center;">{{ $envio->destinatario }}</td>
+                                                <td>{{ $envio->comercio }}</td>
+                                                <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
-                                                <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
                                                 <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
-                                                
-                                               
+                                                <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
+                                                <td style="text-align: center;">
+                                                    @if( $envio->cobro == 'Pagado')
+                                                    <span class="badge badge-success">{{ $envio->cobro}}</span>
+                                                    @else
+                                                    <span class="badge badge-danger">{{ $envio->cobro }}</span>
+                                                    @endif
+                                                </td>
                                                 <td style="text-align: center;">
                                                     @if( $envio->estado == 'No entregado')
                                                     <span class="badge badge-danger">{{ $envio->estado }}</span>
@@ -325,26 +215,28 @@ if (searchText == "") {
                                                     <span class="badge badge-light">{{ $envio->estado }}</span>
                                                     @endif
                                                 </td>
-                                               
-                                                <td class="text-center">${{ $envio->total }}</td>
-                                              
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center">{{ $envio->total }}</td>
+                                                <td style="text-align: center;">2</td>
+                                                <td  style="text-align: center;">{{ $envio->nota }}</td>
+                                                <td>no respondio</td>
+                                                <td>Santa ana, el salvador</td>
                                             </tr>
                                             @endforeach
                                         </tbody>
                                     </table>
 
+
                                 </div>
                                 <!--end::Table-->
-
-
- 
-
-
-
-
-
-
-
+<!-- Empty list item to push elements to the right  -->
+<ul class="pagination">
+    <li style="margin-left:auto"></li> 
+    <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
+    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+    <li class="page-item next"><a href="#" class="page-link">Next</a></li>
+</ul>
                             </div>
                             <!--end::Table-->
                         </div>
@@ -369,22 +261,11 @@ if (searchText == "") {
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <!--end::Global Javascript Bundle-->
-    <!--begin::Vendors Javascript(used for this page only)   <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script> -->
-    
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
-
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
-
-    <script>
-        import DataTable from 'datatables.net-dt';
-        import language from 'datatables.net-plugins/i18n/es-MX.mjs';
- 
- let table = new DataTable('#kt_ecommerce_report_shipping_table', {
-    language,
- });
-    </script>
 
 </body>
 <!--end::Body-->

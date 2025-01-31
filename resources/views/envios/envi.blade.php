@@ -59,18 +59,18 @@
     document.getElementById("rangolimp").value = subtotal ;
   };
 </script>
-<body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
+<body>
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div >
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid">
+            <div style="margin-top: -300px; ">
                 <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                <div >
                     <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                        <div class="">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Listado de envios</h1>
                             <!--end::Title-->
@@ -96,9 +96,7 @@
 
                         <!--begin::Actions-->
                         <div class="d-flex gap-2 gap-lg-3" style="float: right;">
-                        @can('ordenes-crear')
-                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" style="float: right;" data-bs-target="#kt_modal_create_app">Crear envio</a>
-                            @endcan
+                       
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -118,12 +116,9 @@
                                 <div class="card-title">
                                     <!--begin::Search-->
                                     <div class="d-flex align-items-center position-relative my-1">
-                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
+                                       
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="dt-search-0" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                       
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
@@ -164,18 +159,11 @@
                                                 <th class="min-w-80px "># de guía</th>
                                                 <th class="min-w-50px">Comercio</th>
                                                 <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-150px">Dirección</th> 
-                                                <th class="min-w-150px">Fecha de entrega</th>
+                                                <th class="min-w-150px">Dirección</th>                                                 
                                                 <th class="min-w-100px">Tipo de envío</th>
-                                                <th class="min-w-50px text-center">Cobro de envio</th>
-                                                <th class="min-w-50px text-center">Estado</th>
-                                                <th class="min-w-50px text-center">Sub estado</th>
-                                                <th class="min-w-50px text-center">Fecha estado</th>
-                                                <th class="min-w-50px">Total</th>
-                                                <th class="min-w-50px">Ruta</th>
-                                                <th class="min-w-100px text-center">Nota </th>
-                                                <th class="min-w-100px text-center">Nota de repartidor</th>
-                                                <th class="min-w-150px">Ubicación</th>
+                                                <th class="min-w-150px">Fecha de entrega</th>                                                
+                                                <th class="min-w-50px text-center">Estado</th>                                                                                      
+                                                <th class="min-w-50px">Total</th>                                              
                                             </tr> 
                                         </thead>
                                         <tbody class="fw-semibold text-gray-400">
@@ -189,15 +177,10 @@
                                                 <td>{{ $envio->comercio }}</td>
                                                 <td>{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
-                                                <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
                                                 <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
-                                                <td style="text-align: center;">
-                                                    @if( $envio->cobro == 'Pagado')
-                                                    <span class="badge badge-success">{{ $envio->cobro}}</span>
-                                                    @else
-                                                    <span class="badge badge-danger">{{ $envio->cobro }}</span>
-                                                    @endif
-                                                </td>
+                                                <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
+                                                
+                                               
                                                 <td style="text-align: center;">
                                                     @if( $envio->estado == 'No entregado')
                                                     <span class="badge badge-danger">{{ $envio->estado }}</span>
@@ -215,13 +198,9 @@
                                                     <span class="badge badge-light">{{ $envio->estado }}</span>
                                                     @endif
                                                 </td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
+                                                
                                                 <td class="text-center">{{ $envio->total }}</td>
-                                                <td style="text-align: center;">2</td>
-                                                <td  style="text-align: center;">{{ $envio->nota }}</td>
-                                                <td>no respondio</td>
-                                                <td>Santa ana, el salvador</td>
+                                               
                                             </tr>
                                             @endforeach
                                         </tbody>
