@@ -290,7 +290,7 @@ if(tipo=='suelto'){
                                             </div>
                                             <!--end::Close-->
 
-                                            <form action="/stocks/guardarasignarreaprtidor/" method="GET">
+                                            <form action="/stocks/guardarasignarrepartidor/" method="GET">
 
                                         </div>
                                         <div class="modal-body">
