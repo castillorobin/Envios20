@@ -82,7 +82,7 @@
                                     <!--begin: Pic-->
                                     <div class="me-7 mb-4">
                                         <div class="symbol symbol-100px symbol-lg-160px symbol-fixed position-relative">
-                                            <img src="/fotos/expertos.png" alt="image" />
+                                            <img src="/assets/media/avatars/300-1.jpg" alt="image" />
                                             <div class="position-absolute translate-middle bottom-0 start-100 mb-6 bg-success rounded-circle border border-4 border-body h-20px w-20px"></div>
                                         </div>
                                     </div>
@@ -92,7 +92,7 @@
                                         <div class="d-flex justify-content-between align-items-start flex-wrap mb-2">
                                             <div class="d-flex flex-column">
                                                 <div class="row">
-                                                    <div class="col-lg-8 mb-2">
+                                                    <div class="col-lg-6 mb-2">
                                                         <div class="d-flex align-items-center">
                                                             <a href="#" class="text-gray-900 text-hover-primary fs-3 fw-bold me-1" style="white-space: nowrap;">
                                                                 
@@ -107,36 +107,28 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class=" fw-semibold">
-
-                                                <table style="font-size:16px;">
-                                                    <tr >
-                                                        <td style="width: 150px;">
-                                                Telefono:  
-                                               </td>
-                                                        <td >{{ $comercio[0]->telefono }} </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>WhatsApp:</td>
-                                                        <td>{{ $comercio[0]->whatsapp }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Correo: </td>
-                                                        <td>{{ $comercio[0]->correo }}</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>Dirección:</td>
-                                                        <td> {{ $comercio[0]->direccion }}</td>
-                                                    </tr>
-                                                </table>
-                                               
-                                               
-                                                
-                                                  
+                                                <div class="d-flex flex-wrap fw-semibold">
+                                                    <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
+                                                        <i class="ki-duotone ki-profile-circle fs-4 me-1">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                            <span class="path3"></span>
+                                                        </i> {{ $comercio[0]->telefono }}</a>
+                                                    <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary me-5 mb-2">
+                                                        <i class="ki-duotone ki-geolocation fs-5 me-1">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                        </i> {{ $comercio[0]->agencia }}</a>
+                                                    <a href="#" class="d-flex align-items-center text-gray-400 text-hover-primary mb-2">
+                                                        <i class="ki-duotone ki-sms fs-5 me-1">
+                                                            <span class="path1"></span>
+                                                            <span class="path2"></span>
+                                                        </i>{{ $comercio[0]->correo }}</a>
                                                 </div>
                                             </div>
                                             <div class="d-flex my-1">
-                                                
+                                                <a href="#" class="btn btn-sm btn-light-success me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_">Creado</a>
+                                                <button class="btn btn-sm btn-danger me-3">Eliminar</button>
                                             </div>
 
 
@@ -147,8 +139,53 @@
                                                 <!--begin::Stats-->
                                                 <div class="d-flex flex-wrap">
                                                     <!--begin::Stat-->
-                                                    
-                                                       
+                                                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                        <!--begin::Number-->
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="ki-duotone ki-arrow-up fs-3 text-success me-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="{{ $enviostotal }}">0</div>
+                                                        </div>
+                                                        <!--end::Number-->
+                                                        <!--begin::Label-->
+                                                        <div class="fw-semibold fs-6 text-gray-400">Paquetes totales</div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Stat-->
+                                                    <!--begin::Stat-->
+                                                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                        <!--begin::Number-->
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="ki-duotone ki-arrow-down fs-3 text-success me-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="{{ $entregados }}">0</div>
+                                                        </div>
+                                                        <!--end::Number-->
+                                                        <!--begin::Label-->
+                                                        <div class="fw-semibold fs-6 text-gray-400">Realizados con exito</div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Stat-->
+                                                    <!--begin::Stat-->
+                                                    <div class="border border-gray-300 border-dashed rounded min-w-125px py-3 px-4 me-6 mb-3">
+                                                        <!--begin::Number-->
+                                                        <div class="d-flex align-items-center">
+                                                            <i class="ki-duotone ki-arrow-up fs-3 text-danger me-2">
+                                                                <span class="path1"></span>
+                                                                <span class="path2"></span>
+                                                            </i>
+                                                            <div class="fs-2 fw-bold" data-kt-countup="true" data-kt-countup-value="{{ $noentregados }}" >0</div>
+                                                        </div>
+                                                        <!--end::Number-->
+                                                        <!--begin::Label-->
+                                                        <div class="fw-semibold fs-6 text-gray-400">No retirados</div>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Stat-->
                                                 </div>
                                                 <!--end::Stats-->
                                             </div>
