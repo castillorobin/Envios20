@@ -146,11 +146,7 @@ class EnvioController extends Controller
         }
 */
         $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
-
         ->get();
-
-       //$comercios = Comercio::all(); 
-       //$comercioset = Comercio::where('comercio', $comerset)->get();
        return view('envios.envifiltrado', compact( 'envios','rangol'));
 
 

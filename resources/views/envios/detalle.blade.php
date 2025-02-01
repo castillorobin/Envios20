@@ -206,7 +206,7 @@
                                
                             <table style="font-size:16px;">
                                                     <tr >
-                                                        <td style="width: 175px;">
+                                                        <td style="width: 150px;">
                                                 Destinatario:  
                                                </td>
                                                         <td >{{ $envio[0]->destinatario }} </td>
@@ -265,8 +265,15 @@
                                                         <td> {{ $envio[0]->nota }}</td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Estado:</td>
-                                                        <td> {{ $envio[0]->estado }}</td>
+                                                        <td>Estado del pago:</td>
+                                                        <td> 
+                                                           
+                                                            @if( $envio[0]->pago == 'Por pagar')
+                                                            <span class="badge badge-danger">{{ $envio[0]->pago }}</span>
+                                                            @elseif( $envio[0]->pago == 'Pagado')
+                                                            <span class="badge badge-success">{{ $envio[0]->pago }}</span>
+                                                            @endif
+                                                        </td>
                                                     </tr>
                                                 </table>
                                                
@@ -279,84 +286,18 @@
                             <div class="card-header cursor-pointer">
                                 <!--begin::Card title-->
                                 <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">OTROS DATOS</h3>
+                                    <h3 class="fw-bold m-0">Fotos del paquete</h3>
                                 </div>
                                 <!--end::Card title-->
                             </div>
                             <!--begin::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body p-9">
-                                <!--begin::Row-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold ">Fecha de creación</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8" >
-                                        <span class="delabase">14-mayo-2024</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Row-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold ">Usuario</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row" >
-                                        <span class="delabase">Melvin</span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                                <div class="row mb-7">
-                                    <!--begin::Label-->
-                                    <label class="col-lg-4 fw-semibold ">Agencia de registro</label>
-                                    <!--end::Label-->
-                                    <!--begin::Col-->
-                                    <div class="col-lg-8 fv-row" >
-                                        <span class="delabase">Santa Ana </span>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                <!--end::Input group-->
-                            </div>
-                            <!--end::Card body-->
-
-
-                            
-
-                            
-
-
-
-
-
-                        </div>
-                        <!--end::details View-->
-
-
-
-                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
-                            <!--begin::Card header-->
-                            <div class="card-header cursor-pointer">
-                                <!--begin::Card title-->
-                                <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">FOTOS</h3>
-                                </div>
-                                <!--end::Card title-->
-                            </div>
-                            <!--begin::Card header-->
-                            <!--begin::Card body-->
-                            <div class="card-body p-9">
-                                <!--begin::Row-->
                                 <div class="row mb-7 text-center">
                                     <!--begin::Label-->
                                  <div class="col-sm-2">                                 
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto1}})"></div>
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/expertos.png"></div>
                                     </div>
                                 </div>  
                                 <div class="col-sm-2">  
@@ -384,18 +325,185 @@
                                     <!--end::Col-->
                                 </div>
                             </div>
-                                <!--end::Row-->
-                                <!--begin::Input group-->
-                               
-                                <!--end::Input group-->
-                                <!--begin::Input group-->
-                              
-                                <!--end::Input group-->
+                            <!--end::Card body-->
+                        </div>
+                    </div>
+                        <!--end::details View-->
+
+
+
+                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                            <!--begin::Card header-->
+                            <div class="card-header cursor-pointer">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bold m-0">Datos de la entrega</h3>
+                                </div>
+                                <!--end::Card title-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body p-9">
+                                <table style="font-size:16px;">
+                                    <tr >
+                                        <td style="width: 160px;">
+                                        Repartidor:  
+                               </td>
+                                        <td >{{ $envio[0]->repartidor }} </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nota del repartidor:</td>
+                                        <td>{{ $envio[0]->nota }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ruta: </td>
+                                        <td>{{ $envio[0]->ruta }}</td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                                
                             </div>
 
 
 
 
+                            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                <!--begin::Card header-->
+                                <div class="card-header cursor-pointer">
+                                    <!--begin::Card title-->
+                                    <div class="card-title m-0">
+                                        <h3 class="fw-bold m-0">Comprobante de la entrega</h3>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--begin::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body p-9">
+                                    <div class="row mb-7 text-center">
+                                        <!--begin::Label-->
+                                     <div class="col-sm-2">                                 
+                                        <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/expertos.png"></div>
+                                        </div>
+                                    </div>  
+                                </div>
+                                </div>
+                                   
+                                </div>
+
+
+
+
+                                
+
+                            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                <!--begin::Card header-->
+                                <div class="card-header cursor-pointer">
+                                    <!--begin::Card title-->
+                                    <div class="card-title m-0">
+                                        <h3 class="fw-bold m-0">Datos de creación</h3>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--begin::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body p-9">
+                                   
+                                    <table style="font-size:16px;">
+                                        <tr >
+                                            <td style="width: 160px;">
+                                            Usuario:  
+                                   </td>
+                                            <td >{{ $envio[0]->usuario }} </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fecha de creación:</td>
+                                            <td>
+                                                {{date('d-m-Y',strtotime($envio[0]->created_at))}}
+                                                
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Agencia de registro: </td>
+                                            <td>{{ $envio[0]->foto1 }}</td>
+                                        </tr>
+                                    </table>
+                                    
+                                </div>
+                                  
+                                </div>
+
+
+
+
+
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                    <!--begin::Card header-->
+                                    <div class="card-header cursor-pointer">
+                                        <!--begin::Card title-->
+                                        <div class="card-title m-0">
+                                            <h3 class="fw-bold m-0">Ubicación</h3>
+                                        </div>
+                                        <!--end::Card title-->
+                                    </div>
+                                    <!--begin::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body p-9">
+                                        <table style="font-size:16px;">
+                                            <tr >
+                                                <td style="width: 160px;">
+                                                Caja:  
+                                       </td>
+                                                <td >{{ $envio[0]->caja }} </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rack:</td>
+                                                <td>
+                                                    {{$envio[0]->rack}}
+                                                    
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nivel: </td>
+                                                <td>{{ $envio[0]->nivel }}</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tarima: </td>
+                                                <td>{{ $envio[0]->tarima }}</td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </div>
+                                      
+                                    </div>
+
+
+
+                                    
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                    <!--begin::Card header-->
+                                    <div class="card-header cursor-pointer">
+                                        <!--begin::Card title-->
+                                        <div class="card-title m-0">
+                                            <h3 class="fw-bold m-0">Fotos de cambios</h3>
+                                        </div>
+                                        <!--end::Card title-->
+                                    </div>
+                                    <!--begin::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body p-9">
+                                        <div class="row mb-7 text-center">
+                                            <!--begin::Label-->
+                                         <div class="col-sm-2">                                 
+                                            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/expertos.png"></div>
+                                            </div>
+                                        </div>  
+                                        
+                                    </div>
+                                        
+                                    </div>
 
                         
                     </div>
