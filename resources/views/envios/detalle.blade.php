@@ -435,9 +435,6 @@
                                 </div>
 
 
-
-
-
                                 <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                                     <!--begin::Card header-->
                                     <div class="card-header cursor-pointer">
@@ -504,6 +501,40 @@
                                     </div>
                                         
                                     </div>
+
+                                </div>
+                                         
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                  
+                                    <div class="card-body p-9">
+                                        <div class="row mb-7 text-center">
+                                            <!--begin::Label-->
+                                         <div class="col-sm-2">                                 
+                                           
+
+                                            
+                                        
+                                        </div>  
+                                    </div>
+                                    <h3 >Reprogramado</h3>
+                                    <span style="font-size:14px;">Fecha:</span>
+                                    <p></p>
+                                    <h3 >Reenvio</h3>
+                                    <span style=" font-size:14px;">Fecha:</span>
+                                    
+                                    <p></p>
+                                    <h3 >No entregado</h3>
+                                    <span style=" font-size:14px;">Fecha:</span>
+
+                                    <p></p>
+                                    <h3 >Cambio de ubicación</h3>
+                                    <span style=" font-size:14px;">Fecha:</span>
+
+                                    <p></p>
+                                    <h3 >Usuario</h3>
+                                    <span style=" font-size:14px;">xxxxx</span>
+                                   
+
 
                         
                     </div>
