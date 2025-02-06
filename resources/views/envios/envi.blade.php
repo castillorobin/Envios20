@@ -21,7 +21,7 @@
         .dataTables_filter {
             display: none;
         }
-
+ 
         .dataTables_length {
             display: none;
         }

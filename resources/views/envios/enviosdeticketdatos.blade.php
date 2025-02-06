@@ -25,6 +25,13 @@
         .dataTables_length {
             display: none;
         }
+
+        #kt_ecommerce_report_shipping_table_previous{
+            display: none;
+        }
+        #kt_ecommerce_report_shipping_table_next{
+            display: none;
+        }
     </style>
 
 
@@ -246,48 +253,32 @@ if (searchText == "") {
                                 <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
                                     <table  class="table align-middle table-row-dashed gy-5" style="font-size: 12px;" id="shipping_table">
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold text-uppercase gs-0 ">
-                                                <th class="min-w-80px "># de guía</th>
-                                                <th class="min-w-100px">Comercio</th>
-                                                <th class="min-w-100px">Dirección Comercio</th>
-                                                <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-150px">Dirección destinatario</th>
-                                                <th class="min-w-150px">Fecha de entrega</th>
-                                                <th class="min-w-100px text-center" >Tipo de envío</th>
-                                                <th class="min-w-50px text-center">Cobro de envio</th>
-                                                <th class="min-w-50px text-center">Estado</th>
-                                                <th class="min-w-100px text-center">Nota </th>
-                                                <th class="min-w-50px text-center">Sub estado</th>
-                                                <th class="min-w-50px text-center">Fecha estado</th>
-                                                <th class="min-w-50px">Total</th>
-                                                <th class="min-w-100px">Repartidor</th>
-                                                <th class="min-w-50px">Ruta</th>
-                                                
-                                                <th class="min-w-100px text-center">Nota de repartidor</th>
-                                                <th class="min-w-150px">Ubicación</th>
-                                            </tr>
+                                        <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0 text-center" >
+                                                <th class="min-w-80px"># de guía</th>
+                                                <th class="min-w-50px text-center">Comercio</th>
+                                                <th class="min-w-150px text-center">Destinatario</th>
+                                                <th class="min-w-150px ">Dirección</th>                                                 
+                                                <th class="min-w-100px text-center">Tipo de envío</th>
+                                                <th class="min-w-150px text-center">Fecha de entrega</th>                                                
+                                                <th class="min-w-50px text-center">Estado</th>                                                                                      
+                                                <th class="min-w-50px text-center">Total</th>  
+                                            </tr> 
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-                                            @foreach ($envios as $index => $envio)
+                                        @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
                                                 <td>
-                                                    <a href="/envios/detalle" class="text-gray-900 text-hover-primary">
+                                                    <a href="/envios/detalle/{{ $envio->guia }}" class="text-gray-900 text-hover-primary">
                                                         {{ $envio->guia }}
                                                     </a>
                                                 </td>
-                                                <td>{{ $envio->comercio }}</td>
-                                                <td>{{ $envio->dircomercio }}</td>
-                                                <td>{{ $envio->destinatario }}</td>
+                                                <td style="text-align: center;">{{ $envio->comercio }}</td>
+                                                <td style="text-align: center;">{{ $envio->destinatario }}</td>
                                                 <td>{{ $envio->direccion }}</td>
-                                                <td>{{ $envio->fecha_entrega}}</td>
                                                 <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
-                                                <td style="text-align: center;">
-                                                    @if( $envio->cobro == 'Pagado')
-                                                    <span class="badge badge-success">{{ $envio->cobro}}</span>
-                                                    @else
-                                                    <span class="badge badge-danger">{{ $envio->cobro }}</span>
-                                                    @endif
-                                                </td>
+                                                <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
+                                                
+                                               
                                                 <td style="text-align: center;">
                                                     @if( $envio->estado == 'No entregado')
                                                     <span class="badge badge-danger">{{ $envio->estado }}</span>
@@ -305,15 +296,9 @@ if (searchText == "") {
                                                     <span class="badge badge-light">{{ $envio->estado }}</span>
                                                     @endif
                                                 </td>
-                                                <td  style="text-align: center;">{{ $envio->nota }}</td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
+                                               
                                                 <td class="text-center">${{ $envio->total }}</td>
-                                                <td style="text-align: center;">{{ $envio->repartidor }}</td>
-                                                <td style="text-align: center;"></td>
-                                                
-                                                <td></td>
-                                                <td></td>
+                                              
                                             </tr>
                                             @endforeach
                                         </tbody>

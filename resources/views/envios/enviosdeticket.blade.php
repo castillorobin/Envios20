@@ -20,9 +20,16 @@
 
         .dataTables_filter {
             display: none;
-        }
+        } 
 
         .dataTables_length {
+            display: none;
+        }
+
+        #kt_ecommerce_report_shipping_table_previous{
+            display: none;
+        }
+        #kt_ecommerce_report_shipping_table_next{
             display: none;
         }
     </style>
@@ -85,13 +92,7 @@
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <div class="d-flex align-items-center position-relative my-1">
-                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
-                                    </div>
+                                    
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
@@ -127,23 +128,16 @@
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" >
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                        <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-80px "># de guía</th>
                                                 <th class="min-w-50px">Comercio</th>
                                                 <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-150px">Dirección</th>
-                                                <th class="min-w-150px">Fecha de entrega</th>
+                                                <th class="min-w-150px">Dirección</th>                                                 
                                                 <th class="min-w-100px">Tipo de envío</th>
-                                                <th class="min-w-50px text-center">Cobro de envio</th>
-                                                <th class="min-w-50px text-center">Estado</th>
-                                                <th class="min-w-50px text-center">Sub estado</th>
-                                                <th class="min-w-50px text-center">Fecha estado</th>
-                                                <th class="min-w-50px">Total</th>
-                                                <th class="min-w-50px">Ruta</th>
-                                                <th class="min-w-100px text-center">Nota </th>
-                                                <th class="min-w-100px text-center">Nota de repartidor</th>
-                                                <th class="min-w-150px">Ubicación</th>
-                                            </tr>
+                                                <th class="min-w-150px">Fecha de entrega</th>                                                
+                                                <th class="min-w-50px text-center">Estado</th>                                                                                      
+                                                <th class="min-w-50px">Total</th>                                              
+                                            </tr> 
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
 
@@ -155,14 +149,7 @@
                                             <td class="text-star"><span class="badge badge-light-success"></span></td>
                                             <td></td>
                                             <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-
+                                     
 
                                             </tr>
                                         </tbody>
@@ -173,7 +160,7 @@
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
                                             <i class="ki-duotone ki-exit-up fs-2">
                                                 <span class="path1"></span>
                                                 <span class="path2"></span>

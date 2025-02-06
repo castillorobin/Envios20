@@ -107,7 +107,7 @@ class PagoController extends Controller
         $nota = " ";
         return view('envios.pagoslistaticket', compact('nota'));
     }
-
+ 
     public function enviosdeticket()
     {
        // $pedidos = Cobro::all();
