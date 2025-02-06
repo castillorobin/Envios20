@@ -164,7 +164,7 @@ if (searchText == "") {
     <x-default-layout>
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid" style="margin-top: -300px; ">
+            <div class="d-flex flex-column flex-column-fluid" style="margin-top: 0%; ">
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
@@ -172,7 +172,7 @@ if (searchText == "") {
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Listado de envios</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda manual</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -187,7 +187,7 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Listado de envios</li>
+                                <li class="breadcrumb-item text-muted">Busqueda manual</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
