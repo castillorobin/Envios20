@@ -55,7 +55,7 @@
                                 <li class="breadcrumb-item text-muted">Perfil del paquete</li>
                                 <!--end::Item-->
                             </ul>
-                            <!--end::Breadcrumb-->
+                            <!--end::Breadcrumb--> 
                         </div>
                         <!--end::Page title-->
                         <!--begin::Actions-->

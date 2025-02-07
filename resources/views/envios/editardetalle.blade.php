@@ -159,7 +159,19 @@
                             </tr>
                             <tr>
                                 <td>Tipo de envio: </td>
-                                <td><input type="text" name="tipo" id="tipo" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->tipo }}"   /></td>
+                                <td>
+                            
+                                <select class="form-select form-select-solid mi-selector" data-control="select2" name="tipo" id="tipo" >
+                                    <option value="{{ $envio[0]->tipo }}">{{ $envio[0]->tipo }}</option>
+                                   
+                                    <option value="Personalizado">Personalizado </option>
+                                    <option value="Personalizado departamental">Personalizado departamental</option>
+                                    <option value="Casillero">Casillero</option>
+                                    <option value="Punto fijo">Punto fijo</option>
+                                    
+                                </select>
+                            
+                            </td>
                             </tr>
                             <tr>
                                 <td>Fecha de entrega:</td>
@@ -220,43 +232,9 @@
                     <!--begin::details View-->
                     <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                         <!--begin::Card header-->
-                        <div class="card-header cursor-pointer">
-                            <!--begin::Card title-->
-                            <div class="card-title m-0">
-                                <h3 class="fw-bold m-0">OTROS DATOS</h3>
-                            </div>
-                            <!--end::Card title-->
-                        </div>
-                        <!--begin::Card header-->
-                        <!--begin::Card body-->
-                        <div class="card-body p-9">
-                            <!--begin::Row-->
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de creación</label>
-                                <div class="col-lg-8">
-                                    <input type="date" name="fecha_alta" id="fecha_alta" class="form-control form-control-lg form-control-solid"  />
-                                    <div class="invalid-feedback">Este campo es obligatorio.</div>
-                                </div>
-                            </div>
-                            <!--end::Row-->
-                            <!--begin::Input group-->
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label">Usuario </label>
-                                <div class="col-lg-8">
-                                    <input type="text" name="Usuario" id="Usuario" class="form-control form-control-lg form-control-solid" />
-                                </div>
-                            </div>
-                            <!--end::Input group-->
-                            <!--begin::Input group-->
-                            <div class="row mb-6">
-                                <label class="col-lg-3 col-form-label">Agencia de registro</label>
-                                <div class="col-lg-8">
-                                    <input type="text" name="Usuario" id="Usuario" class="form-control form-control-lg form-control-solid" />
-                                </div>
-                            </div>
-                            <!--end::Input group-->
-                        </div>
-                        <!--end::Card body-->
+                    
+                       
+                   
                     </div>
                     <!--end::details View-->
                     <!--begin::details View-->
