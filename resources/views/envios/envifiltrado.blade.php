@@ -164,7 +164,7 @@ if (searchText == "") {
     <x-default-layout>
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid" style="margin-top: 0%; ">
+            <div class="d-flex flex-column flex-column-fluid" style="margin-top: 0% ;display: flex;  ">
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
