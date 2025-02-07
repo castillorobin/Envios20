@@ -50,7 +50,7 @@
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Paquetes por ticket</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda por ticket</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
                                     <a href="/" class="text-muted text-hover-primary">Inicio</a>
@@ -58,11 +58,9 @@
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
-                                <li class="breadcrumb-item text-muted">Facturacion</li>
-                                <li class="breadcrumb-item">
-                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
-                                </li>
-                                <li class="breadcrumb-item text-muted">Tickets</li>
+                                <li class="breadcrumb-item text-muted">Busqueda por ticket</li>
+                                
+                                
                             </ul>
                         </div>
                         <form action="enviosdeticketdatos" id="kt_invoice_form" method="POST"> 
@@ -107,12 +105,7 @@
                                     <!--begin::Filter-->
                                     <div class="w-150px">
                                         <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status" disabled>
-                                            <option></option>
-                                            <option value="Todos">Todos</option>
-                                            <option value="Alta">Alta</option>
-                                            <option value="Baja">Baja</option>
-                                        </select>
+                                     
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -160,11 +153,7 @@
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
-                                            <i class="ki-duotone ki-exit-up fs-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                            </i>Exportar Reporte</button>
+                                        
                                         <!--begin::Menu-->
                                         <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
                                             <!--begin::Menu item
