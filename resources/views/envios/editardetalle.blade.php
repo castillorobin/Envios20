@@ -222,10 +222,10 @@
                         </table>
 
 
+                        
 
 
-
-
+                        </div>
                        
                     </div>
                     <!--begin::Sign-in Method-->
@@ -236,6 +236,125 @@
                        
                    
                     </div>
+
+                    <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                            <!--begin::Card header-->
+                            <div class="card-header cursor-pointer">
+                                <!--begin::Card title-->
+                                <div class="card-title m-0">
+                                    <h3 class="fw-bold m-0">Datos de la entrega</h3>
+                                </div>
+                                <!--end::Card title-->
+                            </div>
+                            <!--begin::Card header-->
+                            <!--begin::Card body-->
+                            <div class="card-body p-9">
+                                <table style="font-size:16px;">
+                                    <tr >
+                                        <td style="width: 160px;">
+                                        Repartidor:  
+                               </td>
+                                        <td ><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->repartidor }}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nota del repartidor:</td>
+                                        <td><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->nota}}" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ruta: </td>
+                                        <td><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->ruta }}" /></td>
+                                    </tr>
+                                </table>
+                                
+                            </div>
+                                
+                            </div>
+
+                            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                <!--begin::Card header-->
+                                <div class="card-header cursor-pointer">
+                                    <!--begin::Card title-->
+                                    <div class="card-title m-0">
+                                        <h3 class="fw-bold m-0">Datos de creación</h3>
+                                    </div>
+                                    <!--end::Card title-->
+                                </div>
+                                <!--begin::Card header-->
+                                <!--begin::Card body-->
+                                <div class="card-body p-9">
+                                   
+                                    <table style="font-size:16px;">
+                                        <tr >
+                                            <td style="width: 160px;">
+                                            Usuario:  
+                                   </td>
+                                            <td ><input type="text" name="usuario" id="usuario" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->usuario }}" /> </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Fecha de creación:</td>
+                                            <td>
+                                                
+                                                <input type="text" name="creacion" id="creacion" class="form-control form-control-lg form-control-solid" value="{{date('d-m-Y',strtotime($envio[0]->created_at))}}" />
+                                                </td>
+                                        </tr>
+                                        <tr>
+                                            <td>Agencia de registro: </td>
+                                            <td>
+                                            <input type="text" name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->foto1 }}" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    
+                                </div>
+                                  
+                                </div>
+
+
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                    <!--begin::Card header-->
+                                    <div class="card-header cursor-pointer">
+                                        <!--begin::Card title-->
+                                        <div class="card-title m-0">
+                                            <h3 class="fw-bold m-0">Ubicación</h3>
+                                        </div>
+                                        <!--end::Card title-->
+                                    </div>
+                                    <!--begin::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body p-9">
+                                        <table style="font-size:16px;">
+                                            <tr >
+                                                <td style="width: 160px;">
+                                                Caja:  
+                                       </td>
+                                                <td >
+                                                <input type="text" name="caja" id="caja" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->caja }} " />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Rack:</td>
+                                                <td>
+                                                    
+                                                    <input type="text" name="rack" id="rack" class="form-control form-control-lg form-control-solid" value="{{$envio[0]->rack}} " />
+                                                    </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Nivel: </td>
+                                                <td>
+                                                <input type="text" name="nivel" id="nivel" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->nivel }} " />
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Tarima: </td>
+                                                <td>
+                                                <input type="text" name="tarima" id="tarima" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->tarima }} " />/td>
+                                            </tr>
+                                        </table>
+                                        
+                                    </div>
+                                      
+                                    </div>
+
                     <!--end::details View-->
                     <!--begin::details View-->
                    
@@ -244,7 +363,7 @@
                         <button type="submit" class="btn btn-primary" >Editar </button>
                         
                     </div>
-                </div>
+                
             </form>
                 <!--end::Sign-in Method-->
     </x-default-layout>
