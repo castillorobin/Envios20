@@ -151,7 +151,7 @@
                                 <td style="width: 150px;">
                         Destinatario:  
                        </td>
-                                <td ><input type="text" name="destinatario" id="destinatario" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->destinatario }}" /></td>
+                                <td style="width: 550px;"><input type="text" name="destinatario" id="destinatario" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->destinatario }}" /></td>
                             </tr>
                             <tr>
                                 <td>Direccion:</td>
@@ -175,13 +175,13 @@
                             </tr>
                             <tr>
                                 <td>Fecha de entrega:</td>
-                                <td>  <input type="date" name="fechae" id="fechae" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->fecha_entrega }}"  /></td>
+                                <td>  <input type="date" style="width: 250px;" name="fechae" id="fechae" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->fecha_entrega }}"  /></td>
                             </tr>
                             <tr>
                                 <td>Estado:</td>
                                 <td>
-                                    <select name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar agencia">
-                                        <option value="Creado">{{ $envio[0]->estado }}</option>
+                                    <select style="width: 250px;" name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-placeholder="Seleccionar agencia">
+                                        <option value="{{ $envio[0]->estado }}">{{ $envio[0]->estado }}</option>
                                         <option value="Creado">Creado</option>
                                                 <option value="En ruta">En ruta</option>
                                                 <option value="Entregado">Entregado</option>
@@ -194,20 +194,20 @@
                             </tr>
                             <tr>
                                 <td>Precio: </td>
-                                <td><input type="text" name="precio" id="precio" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->precio }}"   /></td>
+                                <td><input type="text" style="width: 250px;" name="precio" id="precio" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->precio }}"   /></td>
                             </tr>
                             <tr>
                                 <td>Envio:</td>
-                                <td> <input type="text" name="envio" id="envio" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->envio }}"  /></td>
+                                <td> <input type="text" style="width: 250px;" name="envio" id="envio" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->envio }}"  /></td>
                             </tr>
 
                             <tr>
                                 <td>Total:</td>
-                                <td><input type="text" name="total" id="total" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->total }}"  /></td>
+                                <td><input type="text" style="width: 250px;" name="total" id="total" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->total }}"  /></td>
                             </tr>
                             <tr>
                                 <td>Cobro: </td>
-                                <td><input type="text" name="cobro" id="cobro" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->cobro }}"   /></td>
+                                <td><input type="text" style="width: 250px;" name="cobro" id="cobro" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->cobro }}"   /></td>
                             </tr>
                             <tr>
                                 <td>Nota:</td>
@@ -216,7 +216,15 @@
                             <tr>
                                 <td>Estado del pago:</td>
                                 <td> 
-                                    <input type="text" name="pago" id="pago" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->pago }}" />
+                                    
+
+                                    <select style="width: 250px;" name="pago" id="pago" class="form-control form-control-lg form-control-solid" data-placeholder="Seleccionar agencia">
+                                        <option value="{{ $envio[0]->pago }}">{{ $envio[0]->pago }}</option>
+                                        <option value="Por pagar">Por pagar</option>
+                                                <option value="Pagado">Pagado</option>
+                                                
+                                                
+                                    </select>
                                 </td>
                             </tr>
                         </table>
