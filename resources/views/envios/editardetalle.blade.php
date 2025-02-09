@@ -161,7 +161,7 @@
                                 <td>Tipo de envio: </td>
                                 <td>
                             
-                                <select class="form-select form-select-solid mi-selector" data-control="select2" name="tipo" id="tipo" >
+                                <select class="form-select form-select-solid mi-selector" name="tipo" id="tipo" onchange="cambiotipo()" >
                                     <option value="{{ $envio[0]->tipo }}">{{ $envio[0]->tipo }}</option>
                                    
                                     <option value="Personalizado">Personalizado </option>
@@ -244,6 +244,72 @@
                        
                    
                     </div>
+
+                    <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                        <!--begin::Card header-->
+                        <div class="card-header cursor-pointer">
+                            <!--begin::Card title-->
+                            <div class="card-title m-0">
+                                <h3 class="fw-bold m-0">Fotos del paquete</h3>
+                            </div>
+                            <!--end::Card title-->
+                        </div>
+                        <!--begin::Card header-->
+                        <!--begin::Card body-->
+                        <div class="card-body p-9">
+                            <div class="row mb-7 text-center">
+                                <!--begin::Label-->
+                             <div class="col-sm-2">                                 
+                                
+                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                        <div class="image-input-wrapper w-100px h-100px" style="background-image: url(/fotos/expertos.png"></div>
+                                        <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" title="Change avatar">
+                                            <i class="ki-duotone ki-pencil fs-7">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                            <input type="file" name="foto" accept=".png, .jpg, .jpeg" capture="camera" /> <!-- Agregar capture="camera" -->
+                                            <input type="hidden" name="avatar_remove" />
+                                        </label>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" title="Cancel avatar">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                        <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" title="Quitar imagen">
+                                            <i class="ki-duotone ki-cross fs-2">
+                                                <span class="path1"></span>
+                                                <span class="path2"></span>
+                                            </i>
+                                        </span>
+                                    </div>
+                                    <div class="form-text">Tipos: png, jpg, jpeg.</div>
+                                </div>
+                            <div class="col-sm-2">  
+                                <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto2}})"></div>
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <div class="col-sm-2">  
+                                <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto3}})"></div>
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                            <div class="col-sm-2">  
+                                <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto4}})"></div>
+                                </div>
+                                <!--end::Col-->
+                            </div>
+                           
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                </div>
+                    <!--end::details View-->
 
                     <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                             <!--begin::Card header-->
@@ -355,7 +421,8 @@
                                             <tr>
                                                 <td>Tarima: </td>
                                                 <td>
-                                                <input type="text" name="tarima" id="tarima" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->tarima }} " />/td>
+                                                <input type="text" name="tarima" id="tarima" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->tarima }} " />
+                                            </td>
                                             </tr>
                                         </table>
                                         
@@ -400,6 +467,24 @@
                     window.location.href = url;
                 }
             });
+        }
+
+        function cambiotipo(){
+            //alert("Hola mundo")
+            const precio = parseFloat(document.getElementById("precio").value);
+            const envio = parseFloat(document.getElementById("envio").value);
+            const total = precio - envio;
+           // const total2 = precio ;
+
+            const tipo = document.getElementById("tipo").value;
+//alert(tipo);
+            if (tipo == "Personalizado") {
+                document.getElementById("total").value = total;
+            }else{
+                document.getElementById("total").value = precio;
+            }
+            
+            
         }
     </script>
 </body>
