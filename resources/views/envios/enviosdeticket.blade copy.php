@@ -40,11 +40,16 @@
 
     <x-default-layout>
 
-        
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 
-           
+            <!--begin::Content wrapper-->
+            <div class="d-flex flex-column flex-column-fluid">
 
-                        <div >
+                <!--begin::Content-->
+                <div id="kt_app_content" class="app-content flex-column-fluid">
+                    <!--begin::Content container-->
+                    <div id="kt_app_content_container" class="app-container">
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda por ticket</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
@@ -79,9 +84,9 @@
 
                         <br>
                         <!--begin::Products-->
-                        <div class="card ">
+                        <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header">
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
@@ -111,7 +116,7 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 450px;  ">
+                            <div class="card-body pt-0">
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" >
@@ -560,8 +565,14 @@
                             <!--end::Table-->
                         </div>
                         <!--end::Card body-->
-                  
-                
+                    </div>
+                    <!--end::Products-->
+                </div>
+                <!--end::Content container-->
+            </div>
+            <!--end::Content-->
+        </div>
+        <!--end::Content wrapper-->
     </x-default-layout>
     <!--begin::Javascript-->
     <script>

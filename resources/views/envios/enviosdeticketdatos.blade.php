@@ -10,6 +10,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
     <!--end::Global Stylesheets Bundle-->
     <style>
         .table th,
@@ -229,7 +230,7 @@ if (searchText == "") {
                                         <div class="col-md-auto align-self-center mb-3">
                                             <button type="submit" class="btn btn-primary btn-kg">Filtrar</button>
                                         </form>
-                                        <a href="/envios/limpiarticket/{{ $comercio }}" class="btn btn-danger">
+                                        <a href="/enviosdeticketdatos" class="btn btn-danger">
                                             Limpiar
                                         </a>
                                         </div>
@@ -245,12 +246,12 @@ if (searchText == "") {
                             </div>
                             <!--end::Card header       fs-8 -->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0 ">
+                            <div class="card-body pt-0 " style="background-color:white; min-height: 450px;  ">
                                 <!--begin::Table-->
-                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-                                    <table  class="table align-middle table-row-dashed gy-5" style="font-size: 12px;" id="shipping_table">
-                                        <thead>
-                                        <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0 text-center" >
+                                <div class="table-responsive" >
+                                    <table  class="table align-middle table-row-dashed fs-6 gy-5" style="font-size: 12px;" id="shipping_table">
+                                    <thead>
+                                            <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0 text-center" >
                                                 <th class="min-w-80px"># de guía</th>
                                                 <th class="min-w-50px text-center">Comercio</th>
                                                 <th class="min-w-150px text-center">Destinatario</th>
@@ -261,8 +262,8 @@ if (searchText == "") {
                                                 <th class="min-w-50px text-center">Total</th>  
                                             </tr> 
                                         </thead>
-                                        <tbody class="fw-semibold text-black-400">
-                                        @foreach ($envios as $index => $envio)
+                                        <tbody class="fw-semibold text-gray-400">
+                                            @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
                                                 <td>
                                                     <a href="/envios/detalle/{{ $envio->guia }}" class="text-gray-900 text-hover-primary">
@@ -749,6 +750,17 @@ if (searchText == "") {
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
+
+
+   
+    <!--end::Custom Javascript-->
+    <!--end::Javascript-->
+
+    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+
+
+
+
     <script>
         document.getElementById('pago').addEventListener('click', function() {
             var myModal = new bootstrap.Modal(document.getElementById('modalPago'));
@@ -786,6 +798,15 @@ if (searchText == "") {
         }
         // Llamar a la función para establecer la fecha y hora actual al cargar la página
         establecerFechaEntrega();
+    </script>
+
+<script>
+        import DataTable from 'datatables.net-dt';
+        import language from 'datatables.net-plugins/i18n/es-MX.mjs';
+ 
+ let table = new DataTable('#kt_ecommerce_report_shipping_table', {
+    language,
+ });
     </script>
 </body>
 <!--end::Body-->

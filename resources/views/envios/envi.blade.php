@@ -64,7 +64,7 @@
     <x-default-layout>
         <div >
             <!--begin::Content wrapper-->
-            <div style="margin-top: -300px; ">
+            <div >
                 <!--begin::Toolbar-->
                 <div >
                     <!--begin::Toolbar container-->
@@ -149,7 +149,7 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 450px;  ">
 
                                 <!--begin::Table-->
                                 <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
@@ -210,12 +210,7 @@
                                 </div>
                                 <!--end::Table-->
 <!-- Empty list item to push elements to the right  -->
-<ul class="pagination">
-    <li style="margin-left:auto"></li> 
-    <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-    <li class="page-item active"><a href="#" class="page-link">1</a></li>
-    <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-</ul>
+
                             </div>
                             <!--end::Table-->
                         </div>

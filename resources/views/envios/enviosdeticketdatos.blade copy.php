@@ -20,7 +20,7 @@
 
         .dataTables_filter {
             display: none;
-        } 
+        }
 
         .dataTables_length {
             display: none;
@@ -34,17 +34,115 @@
         }
     </style>
 
+
 </head>
+
+<script>
+    function doSearch()
+
+{
+
+const tableReg = document.getElementById('shipping_table');
+
+const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+let total = 0;
+
+
+
+// Recorremos todas las filas con contenido de la tabla
+
+for (let i = 1; i < tableReg.rows.length; i++) {
+
+    // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+    if (tableReg.rows[i].classList.contains("noSearch")) {
+
+        continue;
+
+    }
+
+
+
+    let found = false;
+
+    const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+    // Recorremos todas las celdas
+
+    for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+        const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+        // Buscamos el texto en el contenido de la celda
+
+        if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+            found = true;
+
+            total++;
+
+        }
+
+    }
+
+    if (found) {
+
+        tableReg.rows[i].style.display = '';
+
+    } else {
+
+       
+
+        tableReg.rows[i].style.display = 'none';
+
+    }
+
+}
+
+
+
+// mostramos las coincidencias
+
+const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+const td=lastTR.querySelector("td");
+
+lastTR.classList.remove("hide", "red");
+
+if (searchText == "") {
+
+    lastTR.classList.add("hide");
+
+} else if (total) {
+
+    td.innerHTML="";
+
+} else {
+
+    lastTR.classList.add("red");
+
+    td.innerHTML="";
+
+}
+
+}
+</script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
 
-        
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 
-           
+            <!--begin::Content wrapper-->
+            <div class="d-flex flex-column flex-column-fluid">
 
-                        <div >
+                <!--begin::Content-->
+                <div id="kt_app_content" class="app-content flex-column-fluid">
+                    <!--begin::Content container-->
+                    <div id="kt_app_content_container" class="app-container">
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda por ticket</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
@@ -55,7 +153,6 @@
                                 </li>
                                 <li class="breadcrumb-item text-muted">Busqueda por ticket</li>
                                 
-                                
                             </ul>
                         </div>
                         <form action="enviosdeticketdatos" id="kt_invoice_form" method="POST"> 
@@ -64,6 +161,8 @@
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
                             <div class="col-md-3 m-2 mb-4">
                                 <input type="text" class="form-control form-control-solid" placeholder="Ingrese # ticket" name="ticket" id="ticket" />
+
+                                
                             </div> 
                             <div class="col-md-auto align-self-center mb-3">
                                 <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
@@ -79,13 +178,19 @@
 
                         <br>
                         <!--begin::Products-->
-                        <div class="card ">
+                        <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header">
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    
+                                    <div class="d-flex align-items-center position-relative my-1">
+                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar" onkeyup="doSearch()" />
+                                    </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
@@ -98,84 +203,146 @@
                                     
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
+                                    <form action="enviosdeticketfiltro" id="kt_invoice_form" method="POST"> 
+                                        @csrf
+                                        @method('GET')
+                                    <div class="row w-550px">
+                                       
                                         <!--begin::Select2-->
-                                     
+                                        <div class="col-md-7 align-self-center mb-3">
+                                        <select class="form-select form-select-solid" data-control="select2" name="filtro" id="filtro" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
+                                            <option></option>
+                                            
+                                            <option value="Creado">Creado</option>
+                                            <option value="En ruta">En ruta</option>
+                                            <option value="Entregado">Entregado</option>
+                                            <option value="No entregado">No entregado</option>
+                                            <option value="Reprogramado">Reprogramado</option>
+                                            <option value="Reenvio">Reenvio</option>
+                                            <option value="Devuelto al comercio">Devuelto al comercio</option>
+                                            <option value="Recepcionado">Recepcionado</option>
+                                        </select>
+                                        
+                                        <input type="text" value="{{ $comercio }}" name="ticketn" id="ticketn" hidden>
+                                    </div>
                                         <!--end::Select2-->
+                                        <div class="col-md-auto align-self-center mb-3">
+                                            <button type="submit" class="btn btn-primary btn-kg">Filtrar</button>
+                                        </form>
+                                        <a href="/enviosdeticketdatos" class="btn btn-danger">
+                                            Limpiar
+                                        </a>
+                                        </div>
+                                   
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
                                     
+                                    <!--end::Menu-->
+                                    <!--end::Export dropdown-->
                                 </div>
                                 <!--end::Card toolbar-->
                             </div>
-                            <!--end::Card header-->
+                            <!--end::Card header       fs-8 -->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 450px;  ">
+                            <div class="card-body pt-0 ">
                                 <!--begin::Table-->
-                                <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
+                                <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
+                                    <table  class="table align-middle table-row-dashed gy-5" style="font-size: 12px;" id="shipping_table">
                                         <thead>
-                                        <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-80px "># de guía</th>
-                                                <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-150px">Destinatario</th>
-                                                <th class="min-w-150px">Dirección</th>                                                 
-                                                <th class="min-w-100px">Tipo de envío</th>
-                                                <th class="min-w-150px">Fecha de entrega</th>                                                
+                                        <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0 text-center" >
+                                                <th class="min-w-80px"># de guía</th>
+                                                <th class="min-w-50px text-center">Comercio</th>
+                                                <th class="min-w-150px text-center">Destinatario</th>
+                                                <th class="min-w-150px ">Dirección</th>                                                 
+                                                <th class="min-w-100px text-center">Tipo de envío</th>
+                                                <th class="min-w-150px text-center">Fecha de entrega</th>                                                
                                                 <th class="min-w-50px text-center">Estado</th>                                                                                      
-                                                <th class="min-w-50px">Total</th>                                              
+                                                <th class="min-w-50px text-center">Total</th>  
                                             </tr> 
                                         </thead>
                                         <tbody class="fw-semibold text-black-400">
-
-                                            <td><a href="#" class="text-gray-900 text-hover-primary"></a></td>
-                                            <td><a href="#" class="text-gray-900 text-hover-primary"> </a></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                     
-
+                                        @foreach ($envios as $index => $envio)
+                                            <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">
+                                                <td>
+                                                    <a href="/envios/detalle/{{ $envio->guia }}" class="text-gray-900 text-hover-primary">
+                                                        {{ $envio->guia }}
+                                                    </a>
+                                                </td>
+                                                <td style="text-align: center;">{{ $envio->comercio }}</td>
+                                                <td style="text-align: center;">{{ $envio->destinatario }}</td>
+                                                <td>{{ $envio->direccion }}</td>
+                                                <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
+                                                <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
+                                                
+                                               
+                                                <td style="text-align: center;">
+                                                    @if( $envio->estado == 'No entregado')
+                                                    <span class="badge badge-danger">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Creado')
+                                                    <span class="badge badge-warning">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Entregado')
+                                                    <span class="badge badge-success">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'En ruta')
+                                                    <span class="badge badge-info">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Reprogramado')
+                                                    <span class="badge badge-dark">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Devuelto al comercio')
+                                                    <span class="badge badge-primary">{{ $envio->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-light">{{ $envio->estado }}</span>
+                                                    @endif
+                                                </td>
+                                               
+                                                <td class="text-center">${{ $envio->total }}</td>
+                                              
                                             </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
 
                                 </div>
+                                <ul class="pagination">
+                                    <li style="margin-left:auto"></li> 
+                                    <li class="page-item previous disabled"><a href="#" class="page-link">Anterior</a></li>
+                                    <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                    <li class="page-item next"><a href="#" class="page-link">Siguiente</a></li>
+                                </ul>
                                 <br>
+
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        
-                                        <!--begin::Menu-->
-                                        <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                            <!--begin::Menu item
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                            </div>
-                                            -->
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
-                                            </div>
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                            </div>
-                                            -->
-                                            <!--end::Menu item-->
-                                            <!--begin::Menu item-->
-                                            <div class="menu-item px-3">
-                                                <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
-                                            </div>
-                                            <!--end::Menu item-->
+                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                        <i class="ki-duotone ki-exit-up fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>Exportar Reporte</button>
+                                    <!--begin::Menu-->
+                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                                        <!--begin::Menu item
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
                                         </div>
-                                        <!--end::Menu-->
-                                        <!--end::Export dropdown-->
+                                        -->
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
+                                        </div>
+                                        -->
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
                                     </div>
                                 </div>
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">
@@ -560,8 +727,14 @@
                             <!--end::Table-->
                         </div>
                         <!--end::Card body-->
-                  
-                
+                    </div>
+                    <!--end::Products-->
+                </div>
+                <!--end::Content container-->
+            </div>
+            <!--end::Content-->
+        </div>
+        <!--end::Content wrapper-->
     </x-default-layout>
     <!--begin::Javascript-->
     <script>
