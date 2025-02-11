@@ -336,7 +336,8 @@ if(tipo=='suelto'){
                                            
                                           
                                         </div>
-                                        <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum2" id="asignum2">
+                                        <input type="text" value="{{$pedidos[0]->guia}}" class="visually-hidden" name="guia2" id="guia2">
+
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
                                             <button type="submit" class="btn btn-primary">Asignar</button>

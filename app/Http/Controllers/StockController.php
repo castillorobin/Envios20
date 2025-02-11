@@ -366,6 +366,31 @@ class StockController extends Controller
         $usuario = $request->get('usuario');
         $agencia = $request->get('agencia');
         $repartidor = $request->get('repartidor');
+        $guia = $request->get('guia2');
+
+
+        $envios = Envio::where('guia', $guia)
+        ->get();
+
+
+        foreach($envios as $envio){
+
+            $envio->repartidor = $repartidor;
+            $envio->estado = "En ruta";
+
+            $envio->save();
+        }
+        
+       // return view('stocks.asignarrepartidorcaja');
+
+       $nota = " "; 
+        return view('stocks.asignarrepartidor', compact('nota'));
+    }
+    public function guardarasignarrepartidorcaja(Request $request)
+    {
+        $usuario = $request->get('usuario');
+        $agencia = $request->get('agencia');
+        $repartidor = $request->get('repartidor');
         $caja = $request->get('caja6');
 
 
