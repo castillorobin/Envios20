@@ -252,7 +252,7 @@ Route::get('/stocks/cambiarguia', [App\Http\Controllers\StockController::class, 
 Route::get('/stocks/agregarmascambiarguia', [App\Http\Controllers\StockController::class, 'agregarmascambiarguia'] )->name('agregarmascambiarguia') ;
 Route::get('/stocks/guardarcambiarguia', [App\Http\Controllers\StockController::class, 'guardarcambiarguia'] )->name('guardarcambiarguia');
 Route::get('/stocks/asignarrepartidor', [App\Http\Controllers\StockController::class, 'asignarrepartidor'] )->name('asignarrepartidor');
-Route::get('/stocks/agregarrepartidor', [App\Http\Controllers\StockController::class, 'agregarrepartidor'] )->name('agregarrepartidor');
+
 
 Route::get('/stocks/asignarrepartidorcaja', [App\Http\Controllers\StockController::class, 'asignarrepartidorcaja'] )->name('asignarrepartidorcaja');
 Route::get('/stocks/agregarrepartidorcaja', [App\Http\Controllers\StockController::class, 'agregarrepartidorcaja'] )->name('agregarrepartidorcaja');

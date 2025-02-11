@@ -306,7 +306,7 @@ class StockController extends Controller
     public function asignarrepartidor()
     {
         $nota = " "; 
-        return view('stocks.asignarrepartidor');
+        return view('stocks.asignarrepartidor', compact('nota'));
     }
     public function agregarrepartidor(Request $request)
     {
