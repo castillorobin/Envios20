@@ -305,6 +305,7 @@ class StockController extends Controller
 
     public function asignarrepartidor()
     {
+        $nota = " "; 
         return view('stocks.asignarrepartidor');
     }
     public function agregarrepartidor(Request $request)
@@ -319,6 +320,12 @@ class StockController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            return view('stocks.asignarrepartidor', compact('nota'));
+        }
  
         $envioid= $envio[0]->id ;
 
