@@ -482,8 +482,13 @@
                                     <!--begin::Card header-->
                                     <div class="card-header cursor-pointer">
                                         <!--begin::Card title-->
-                                        <div class="card-title m-0">
-                                            <h3 class="fw-bold m-0">Fotos de cambios</h3>
+                                        <div class="card-title m-0" style="width: 100%;">
+                                            <div style="float:left; width: 70%;">
+                                            <h3 class="fw-bold m-0" >Fotos de cambios</h3>
+                                            </div>
+                                            <div style="float: inline-end;">
+                                            <h3 >Guia: {{$envio[0]->guiacambio}}</h3>
+                                            </div>
                                         </div>
                                         <!--end::Card title-->
                                     </div>
