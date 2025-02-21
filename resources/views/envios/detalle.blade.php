@@ -297,7 +297,7 @@
                                     <!--begin::Label-->
                                  <div class="col-sm-2">                                 
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/expertos.png"></div>
+                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto1}})"></div>
                                     </div>
                                 </div>  
                                 <div class="col-sm-2">  
@@ -521,23 +521,28 @@
                                         
                                         </div>  
                                     </div>
-                                    <h3 >Reprogramado</h3>
-                                    <span style="font-size:14px;">Fecha:</span>
+                                    @if($envio[0]->estado == "Fallido")
+                                    <h3 >Fallido</h3>
+                                    <span style="font-size:14px;">{{$envio[0]->motivofallo}}</span>
                                     <p></p>
-                                    <h3 >Reenvio</h3>
-                                    <span style=" font-size:14px;">Fecha:</span>
-                                    
+                                    <span style="font-size:14px;">Nota: {{$envio[0]->notafallido}}</span>
                                     <p></p>
+                                    @if($envio[0]->motivofallo == "reprogramado")
+                                    <h4 >Reprogramado</h4>
+
+                                    <span style="font-size:14px;">{{$envio[0]->fechareprogra}}</span>
+                                    @endif
+                                    @endif
+                                  
+
+
+                                    @if($envio[0]->estado == "No entregado")
                                     <h3 >No entregado</h3>
-                                    <span style=" font-size:14px;">Fecha:</span>
-
+                                    
+                                    <span style="font-size:14px;">Nota: {{$envio[0]->notanoentre}}</span>
                                     <p></p>
-                                    <h3 >Cambio de ubicación</h3>
-                                    <span style=" font-size:14px;">Fecha:</span>
-
-                                    <p></p>
-                                    <h3 >Usuario</h3>
-                                    <span style=" font-size:14px;">xxxxx</span>
+                                    
+                                    @endif
                                    
 
 

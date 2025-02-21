@@ -12,6 +12,7 @@ use App\Models\Asignar;
 use App\Models\Empleado;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
 
 class StockController extends Controller
 {
@@ -377,7 +378,8 @@ class StockController extends Controller
 
             $envio->repartidor = $repartidor;
             $envio->estado = "En ruta";
-
+           // dd( Carbon::today());
+            $envio->fechaasigna = Carbon::today();
             $envio->save();
         }
         
@@ -402,7 +404,7 @@ class StockController extends Controller
 
             $envio->repartidor = $repartidor;
             $envio->estado = "En ruta";
-
+            $envio->fechaasigna = Carbon::today();
             $envio->save();
         }
         
