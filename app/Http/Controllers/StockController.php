@@ -10,6 +10,7 @@ use App\Models\Envio;
 use App\Models\Rutas;
 use App\Models\Asignar;
 use App\Models\Empleado;
+use App\Models\Hestado;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
@@ -381,6 +382,12 @@ class StockController extends Controller
            // dd( Carbon::today());
             $envio->fechaasigna = Carbon::today();
             $envio->save();
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "En ruta";
+            $hesta->save();
+
         }
         
        // return view('stocks.asignarrepartidorcaja');

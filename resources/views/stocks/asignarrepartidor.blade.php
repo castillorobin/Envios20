@@ -103,7 +103,7 @@
                                     <!--begin::Search-->
                                     
                                     <form action="/stocks/agregarrepartidor" class="row g-2" method="GET">
-                                                   
+                                                    
                                         <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Guía</label>
                                             <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia">
