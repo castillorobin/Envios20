@@ -128,7 +128,7 @@ if(tipo=='suelto'){
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <form action="/stocks/agregarmasrepartidor/" class="row g-2" method="GET">
+                                    <form action="/stocks/agregarrepartidor" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto">
                                             <label for="guia" class="visually-hidden">Guía</label>
