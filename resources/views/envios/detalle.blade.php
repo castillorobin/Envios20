@@ -511,16 +511,41 @@
                                          
                                 <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                                   
-                                    <div class="card-body p-9">
-                                        <div class="row mb-7 text-center">
-                                            <!--begin::Label-->
-                                         <div class="col-sm-2">                                 
-                                           
-
-                                            
-                                        
-                                        </div>  
+                                <div class="card-header cursor-pointer">
+                                        <!--begin::Card title-->
+                                        <div class="card-title m-0">
+                                            <h3 class="fw-bold m-0">Historial</h3>
+                                        </div>
+                                        <!--end::Card title-->
+                                       
                                     </div>
+                                    <div class="card-body p-9">
+                                    @foreach($historial as $histo)
+                                   
+                                    @if($histo->estado == "En ruta")
+                                    <h3 >En ruta</h3>
+                                    
+                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    <p></p>
+                                    
+                                    @endif
+
+                                    @if($histo->estado == "Entregado")
+                                    <h3 >Entregado</h3>
+                                    
+                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    <p></p>
+                                    
+                                    @endif
+
+                                    
+
+
+
+
+                                   
+                                    @endforeach
+
                                     @if($envio[0]->estado == "Fallido")
                                     <h3 >Fallido</h3>
                                     <span style="font-size:14px;">{{$envio[0]->motivofallo}}</span>
@@ -543,6 +568,9 @@
                                     <p></p>
                                     
                                     @endif
+                                    </div>
+                                  
+                                    </div>
                                    
 
 

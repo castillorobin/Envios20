@@ -8,11 +8,13 @@ use App\Models\Vendedor;
 use App\Models\Empleado;
 use App\Models\Comercio;
 use App\Models\Rutas;
+use App\Models\Hestado;
 use Carbon\Carbon;
+
 use Illuminate\Support\Str;
 use App\Models\Ticketc;
 use App\Models\User;
-
+ 
 class EnvioController extends Controller
 { 
     /**
@@ -51,6 +53,7 @@ class EnvioController extends Controller
     {
 
         $envio = Envio::where('guia', $id)->get();
+        $idhisto = $envio[0]->id;
         $comer = $envio[0]->comercio;
         $comercio = Comercio::where('comercio', $comer)->get();
         //$vendedores = Vendedor::all();
@@ -59,9 +62,9 @@ class EnvioController extends Controller
                        where('estado', "Entregado")->get()->count();
         $noentregados = Envio::where('comercio', $comer)->
                        where('estado', "No entregado")->get()->count();
+        $historial = Hestado::where('idenvio', $idhisto)->get();
 
-
-        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
+        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados', 'historial'));
     }
     public function editardetalle($id)
     {
