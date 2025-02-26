@@ -525,7 +525,8 @@
                                    
                                     @if($histo->estado == "En ruta")
                                     <h3 >En ruta</h3>
-                                    
+                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <p></p>
                                     <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
                                     <p></p>
                                     
@@ -533,7 +534,8 @@
 
                                     @if($histo->estado == "Entregado")
                                     <h3 >Entregado</h3>
-                                    
+                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <p></p>
                                     <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
                                     <p></p>
                                     
@@ -541,32 +543,38 @@
 
                                     @if($histo->estado == "Fallido")
                                     <h3 >Fallido</h3>
-                                    <span style="font-size:14px;">{{$histo->motivofallo}}</span>
+                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <p></p>
+                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    <p></p>
+                                    <span style="font-size:14px;">Nota: {{$histo->motivofallo}}</span>
                                     <p></p>
                                     <span style="font-size:14px;">Nota: {{$histo->notafallido}}</span>
                                     <p></p>
                                     @if($histo->motivofallo == "reprogramado")
-                                    <h4 >Reprogramado</h4>
-
-                                    <span style="font-size:14px;">{{$histo->fechareprogra}}</span>
+                                    <span style="font-size:14px;">Fecha de reprogramacion: {{date('d-m-Y',strtotime($histo->fechareprogra))}}</span>
                                     @endif
                                     @endif
                                   
+                                    @if($envio[0]->estado == "No entregado")
+                                    <h3 >No entregado</h3>
+                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <p></p>
+                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    <p></p>
 
+                                    <span style="font-size:14px;">Nota: {{$envio[0]->notanoentre}}</span>
+                                    <p></p>
                                     
+                                    @endif
+
                                    
                                     @endforeach
 
                                     
 
 
-                                    @if($envio[0]->estado == "No entregado")
-                                    <h3 >No entregado</h3>
                                     
-                                    <span style="font-size:14px;">Nota: {{$envio[0]->notanoentre}}</span>
-                                    <p></p>
-                                    
-                                    @endif
                                     </div>
                                   
                                     </div>
