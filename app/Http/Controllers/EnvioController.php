@@ -105,6 +105,11 @@ class EnvioController extends Controller
 
         $envios->save();
 
+        $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = $request->get('estado');
+        $hesta->save();
+
         $guia = $request->get('guia');
 
         $envio = Envio::where('guia', $guia)->get();
@@ -117,8 +122,8 @@ class EnvioController extends Controller
         $noentregados = Envio::where('comercio', $comer)->
                        where('estado', "No entregado")->get()->count();
 
-
-        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados'));
+        $historial = Hestado::where('idenvio', $id)->get();
+        return view('envios.detalle', compact('envio', 'comercio', 'enviostotal', 'entregados', 'noentregados', 'historial'));
 
     }
     public function filtrandoenvios(Request $request)
