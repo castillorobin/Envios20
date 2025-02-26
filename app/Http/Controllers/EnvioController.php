@@ -99,6 +99,7 @@ class EnvioController extends Controller
          $envios->cobro = $request->get('cobro');
          $envios->estado = $request->get('estado');
          $envios->pago = $request->get('pago');
+         $envios->cambioasi = 0;
         //$envio->punto = $request->get('punto');
          $envios->fecha_entrega = $request->get('fechae');
          $envios->nota = $request->get('nota');

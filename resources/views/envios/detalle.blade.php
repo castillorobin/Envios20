@@ -539,27 +539,25 @@
                                     
                                     @endif
 
-                                    
-
-
-
-
-                                   
-                                    @endforeach
-
-                                    @if($envio[0]->estado == "Fallido")
+                                    @if($histo->estado == "Fallido")
                                     <h3 >Fallido</h3>
-                                    <span style="font-size:14px;">{{$envio[0]->motivofallo}}</span>
+                                    <span style="font-size:14px;">{{$histo->motivofallo}}</span>
                                     <p></p>
-                                    <span style="font-size:14px;">Nota: {{$envio[0]->notafallido}}</span>
+                                    <span style="font-size:14px;">Nota: {{$histo->notafallido}}</span>
                                     <p></p>
-                                    @if($envio[0]->motivofallo == "reprogramado")
+                                    @if($histo->motivofallo == "reprogramado")
                                     <h4 >Reprogramado</h4>
 
-                                    <span style="font-size:14px;">{{$envio[0]->fechareprogra}}</span>
+                                    <span style="font-size:14px;">{{$histo->fechareprogra}}</span>
                                     @endif
                                     @endif
                                   
+
+                                    
+                                   
+                                    @endforeach
+
+                                    
 
 
                                     @if($envio[0]->estado == "No entregado")
