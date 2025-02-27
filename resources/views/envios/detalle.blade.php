@@ -525,7 +525,7 @@
                                    
                                     @if($histo->estado == "En ruta")
                                     <h3 >En ruta</h3>
-                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
                                     <p></p>
                                     <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
                                     <p></p>
@@ -534,7 +534,7 @@
 
                                     @if($histo->estado == "Entregado")
                                     <h3 >Entregado</h3>
-                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
                                     <p></p>
                                     <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
                                     <p></p>
@@ -543,7 +543,7 @@
 
                                     @if($histo->estado == "Fallido")
                                     <h3 >Fallido</h3>
-                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
                                     <p></p>
                                     <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
                                     <p></p>
@@ -558,7 +558,7 @@
                                   
                                     @if($envio[0]->estado == "No entregado")
                                     <h3 >No entregado</h3>
-                                    <span style="font-size:14px;">Repartidor: {{$histo->repartidor}}</span>
+                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
                                     <p></p>
                                     <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
                                     <p></p>
