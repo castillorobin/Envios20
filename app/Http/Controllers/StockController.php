@@ -379,6 +379,7 @@ class StockController extends Controller
 
             $envio->repartidor = $repartidor;
             $envio->estado = "En ruta";
+            $envio->cambioasi = 0;
            // dd( Carbon::today());
             $envio->fechaasigna = Carbon::today();
             $envio->save();
@@ -411,8 +412,14 @@ class StockController extends Controller
 
             $envio->repartidor = $repartidor;
             $envio->estado = "En ruta";
+            $envio->cambioasi = 0;
             $envio->fechaasigna = Carbon::today();
             $envio->save();
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "En ruta";
+            $hesta->save();
         }
         
         return view('stocks.asignarrepartidorcaja');

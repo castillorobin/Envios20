@@ -60,7 +60,7 @@
   };
 </script>
 <body>
-
+<input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
         <div >
             <!--begin::Content wrapper-->
