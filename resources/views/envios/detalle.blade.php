@@ -609,7 +609,7 @@
                                     </tr>
                                     <tr>
                                     <td> 
-                                    <span style="font-size:14px;">Nota: 
+                                    <span style="font-size:14px;">Motivo: 
                                     </td>
                                     <td> 
                                     {{$histo->motivofallo}}</span>
@@ -624,8 +624,17 @@
                                     </td>
                                     </tr>
                                     @if($histo->motivofallo == "reprogramado")
-                                    <span style="font-size:14px;">Fecha de reprogramacion: {{date('d-m-Y',strtotime($histo->fechareprogra))}}</span>
+                                    <tr>
+                                    <td>    
+                                    <span style="font-size:14px;">Fecha de reprogramacion: 
+                                    </td>
+                                    <td> 
+                                    {{date('d-m-Y',strtotime($histo->fechareprogra))}}</span>
+                                    </td>
+                                    </tr>
                                     @endif
+
+
                                     @endif
                                   
                                     @if($histo->estado == "No entregado")
