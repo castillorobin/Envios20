@@ -522,50 +522,144 @@
                                        
                                     </div>
                                     <div class="card-body p-9">
+
+                                    <table>
+
+                                        
                                     @foreach($historial as $histo)
                                    
                                     @if($histo->estado == "En ruta")
+
+                                    <tr>
+                                        <td style="width: 150px;">
                                     <h3 >En ruta</h3>
-                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
-                                    <p></p>
-                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
-                                    <p></p>
+                                    </td>
+
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                    <span style="font-size:14px;">Repartidor: 
+                                    </td>
+                                    <td>{{ $envio[0]->repartidor }}</span>
+                                    
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td>
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+
+                                    <td>{{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    
+                                    </td>
+                                    </tr>
                                     
                                     @endif
 
                                     @if($histo->estado == "Entregado")
+                                    <tr>
+                                        <td style="width: 150px;">
                                     <h3 >Entregado</h3>
-                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
-                                    <p></p>
-                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
-                                    <p></p>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Repartidor:</td>
+                                    <td> 
+                                    {{ $envio[0]->repartidor }}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
                                     
                                     @endif
 
                                     @if($histo->estado == "Fallido")
+                                    <tr>
+                                        <td style="width: 150px;">
                                     <h3 >Fallido</h3>
-                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
-                                    <p></p>
-                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
-                                    <p></p>
-                                    <span style="font-size:14px;">Nota: {{$histo->motivofallo}}</span>
-                                    <p></p>
-                                    <span style="font-size:14px;">Nota: {{$histo->notafallido}}</span>
-                                    <p></p>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Repartidor: 
+                                    </td>
+                                    <td> 
+                                    {{ $envio[0]->repartidor }}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td> 
+                                    {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Nota: 
+                                    </td>
+                                    <td> 
+                                    {{$histo->motivofallo}}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Nota: 
+                                    </td>
+                                    <td> 
+                                    {{$histo->notafallido}}</span>
+                                    </td>
+                                    </tr>
                                     @if($histo->motivofallo == "reprogramado")
                                     <span style="font-size:14px;">Fecha de reprogramacion: {{date('d-m-Y',strtotime($histo->fechareprogra))}}</span>
                                     @endif
                                     @endif
                                   
-                                    @if($envio[0]->estado == "No entregado")
+                                    @if($histo->estado == "No entregado")
+                                    <tr>
+                                        <td style="width: 150px;">
                                     <h3 >No entregado</h3>
-                                    <span style="font-size:14px;">Repartidor: {{ $envio[0]->repartidor }}</span>
-                                    <p></p>
-                                    <span style="font-size:14px;">Fecha: {{date('d-m-Y',strtotime($histo->created_at))}}</span>
-                                    <p></p>
-
-                                    <span style="font-size:14px;">Nota: {{$envio[0]->notanoentre}}</span>
-                                    <p></p>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Repartidor: 
+                                    </td>
+                                    <td> 
+                                    {{ $envio[0]->repartidor }}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    
+                                    <td> 
+                                    {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Nota:
+                                    </td>
+                                    <td> 
+                                    {{$histo->notanoentre}}</span>
+                                    </td>
+                                    </tr>
                                     
                                     @endif
 
@@ -573,6 +667,7 @@
                                     @endforeach
 
                                     
+                                    </table>
 
 
                                     
