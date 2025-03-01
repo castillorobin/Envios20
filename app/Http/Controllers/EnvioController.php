@@ -89,6 +89,16 @@ class EnvioController extends Controller
         $envios = Envio::find($id);
 
         //$envio->guia = $request->get('n_guia');
+
+        if ($envios->estado != $request->get('estado')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = $request->get('estado');
+        $hesta->save();
+         }
+
+
+
          $envios->destinatario = $request->get('destinatario');
          $envios->direccion = $request->get('direccion');
         //$envio->telefono = $request->get('telefonop');
@@ -104,12 +114,11 @@ class EnvioController extends Controller
          $envios->fecha_entrega = $request->get('fechae');
          $envios->nota = $request->get('nota');
 
+         
+
         $envios->save();
 
-        $hesta = new Hestado();
-        $hesta->idenvio = $id;
-        $hesta->estado = $request->get('estado');
-        $hesta->save();
+        
 
         $guia = $request->get('guia');
 
