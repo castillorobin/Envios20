@@ -368,7 +368,7 @@
                                     </tr>
                                     <tr>
                                         <td>Nota del repartidor:</td>
-                                        <td>{{ $envio[0]->nota }}</td>
+                                        <td>{{ $envio[0]->notarepa }}</td>
                                     </tr>
                                     <tr>
                                         <td>Ruta: </td>
@@ -681,6 +681,41 @@
                                     </td>
                                     <td> 
                                     {{$histo->notanoentre}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    @endif
+
+                                    @if($histo->estado == "Cambio")
+                                    <tr>
+                                        <td style="width: 150px;">
+                                    <h3 >Cambio</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Repartidor: 
+                                    </td>
+                                    <td> 
+                                    {{ $envio[0]->repartidor }}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    
+                                    <td> 
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+                                    <span style="font-size:14px;">Guia de cambio:
+                                    </td>
+                                    <td> 
+                                    {{$histo->nota}}</span>
                                     </td>
                                     </tr>
                                     
