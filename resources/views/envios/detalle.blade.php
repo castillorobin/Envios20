@@ -296,35 +296,49 @@
                             <div class="card-body p-9">
                                 <div class="row mb-7 text-center">
                                     <!--begin::Label-->
+                                    @if ($envio[0]->foto1 != Null)
+                                        
+                                    
                                  <div class="col-sm-2">                                 
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto1}})"></div>
                                     </div>
                                 </div>  
+                                @endif
+                                @if ($envio[0]->foto2 != Null)
                                 <div class="col-sm-2">  
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto2}})"></div>
                                     </div>
                                     <!--end::Col-->
                                 </div>
+                                @endif
+                                @if ($envio[0]->foto3 != Null)
                                 <div class="col-sm-2">  
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto3}})"></div>
                                     </div>
                                     <!--end::Col-->
                                 </div>
+                                @endif
+                                @if ($envio[0]->foto4 != Null)
                                 <div class="col-sm-2">  
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto4}})"></div>
                                     </div>
                                     <!--end::Col-->
                                 </div>
+                                @endif
+                                @if ($envio[0]->foto5 != Null)
+
                                 <div class="col-sm-2">  
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto5}})"></div>
                                     </div>
                                     <!--end::Col-->
                                 </div>
+                                @endif
+
                             </div>
                             <!--end::Card body-->
                         </div>
