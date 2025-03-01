@@ -307,6 +307,7 @@ class StockController extends Controller
 
     public function asignarrepartidor()
     {
+       // dd( Carbon::today());
         $nota = " "; 
         return view('stocks.asignarrepartidor', compact('nota'));
     }
