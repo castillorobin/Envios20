@@ -550,7 +550,7 @@
                                     <span style="font-size:14px;">Fecha: 
                                     </td>
 
-                                    <td>{{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    <td>{{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     
                                     </td>
                                     </tr>
@@ -577,7 +577,7 @@
                                     <span style="font-size:14px;">Fecha: 
                                     </td>
                                     <td>
-                                    {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
                                     
@@ -604,7 +604,7 @@
                                     <span style="font-size:14px;">Fecha: 
                                     </td>
                                     <td> 
-                                    {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
                                     <tr>
@@ -629,7 +629,7 @@
                                     <span style="font-size:14px;">Fecha de reprogramacion: 
                                     </td>
                                     <td> 
-                                    {{date('d-m-Y',strtotime($histo->fechareprogra))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->fechareprogra))}}</span>
                                     </td>
                                     </tr>
                                     @endif
@@ -658,7 +658,7 @@
                                     </td>
                                     
                                     <td> 
-                                    {{date('d-m-Y',strtotime($histo->created_at))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
                                     <tr>
