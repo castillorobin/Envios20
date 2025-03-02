@@ -370,7 +370,7 @@ class StockController extends Controller
         $agencia = $request->get('agencia');
         $repartidor = $request->get('repartidor');
         $guia = $request->get('guia2');
-
+        $ruta = $request->get('ruta');
 
         $envios = Envio::where('guia', $guia)
         ->get();
@@ -381,6 +381,7 @@ class StockController extends Controller
             $envio->repartidor = $repartidor;
             $envio->estado = "En ruta";
             $envio->cambioasi = 0;
+            $envio->ruta = $ruta;
            // dd( Carbon::today());
             $envio->fechaasigna = Carbon::today();
             $envio->save();

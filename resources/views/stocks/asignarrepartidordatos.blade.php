@@ -331,9 +331,22 @@ if(tipo=='suelto'){
                                                 </div>
                                                
                                             </div>
+
+                                            <div class="row my-2 mx-2 justify-content-center">
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <select class="form-select form-select-solid" name="ruta" id="ruta" aria-label="Floating label select example" >
+                                                       
+                                                        <option value="Ruta 1">Ruta 1</option>
+                                                        <option value="Ruta 2">Ruta 2</option>
+                                                        <option value="Ruta 3">Ruta 3</option>
+                                                    </select>
+                                                    <label for="cenvio" style="padding-left: 25px;">Ruta</label>
+                                                </div>
+                                               
+                                            </div>
                                                                
                                           
-                                           
+                                            
                                           
                                         </div>
                                         <input type="text" value="{{$pedidos[0]->guia}}" class="visually-hidden" name="guia2" id="guia2">
