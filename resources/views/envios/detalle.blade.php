@@ -196,6 +196,9 @@
                                     
                                     <h3 class="fw-bold m-0" >Detalles del destinatario</h3>
                                 </div>
+                                <div style="float: inline-end; padding-top: 20px;">
+                                            <h3 >Guia: {{$envio[0]->guia}}</h3>
+                                            </div>
                                 <!--end::Card title-->
                                 <!--begin::Action-->
                                
