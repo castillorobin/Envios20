@@ -12,7 +12,7 @@ use App\Models\Envio;
 use App\Models\Ticktpago;
 use PDF; 
 use Illuminate\Support\Str;
-
+ 
 class PagoController extends Controller
 {
     /**

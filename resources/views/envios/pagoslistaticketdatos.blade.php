@@ -231,7 +231,7 @@ $("#pago").prop('disabled',true)
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
 
-                <!--begin::Content-->
+                <!--begin::Content--> 
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container">
@@ -379,12 +379,11 @@ $("#pago").prop('disabled',true)
                                                 <th class="min-w-100px text-center">Estado del envío</th>
                                                 <th class="min-w-100px text-center">Fecha de entrega</th>
                                                 <th class="min-w-100px text-center">Estado del pago</th>
-                                                <th class="min-w-100px text-center">Precio del paquete</th>
-                                                <th class="min-w-100px text-center">Precio de envío</th>
+                                                <th class="min-w-50px text-center">Precio del paquete</th>
+                                                <th class="min-w-50px text-center">Precio de envío</th>
                                                 <th class="min-w-50px text-center">Total </th>
-                                                <th class="min-w-50px text-center">Nota</th>
-                                                <th class="min-w-50px text-center">Nota de repartidor</th>
-                                                <th class="min-w-50px">Ubicación</th>
+                                                <th class="min-w-100px text-center">Nota</th>
+                                             
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold text-black-400" style="font-size: 10px;">
@@ -439,8 +438,7 @@ $("#pago").prop('disabled',true)
                                                 <td class="text-center">${{$pedido->total}}</td>
                                                 <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <td class="text-center">{{$pedido->nota}}</td>
-                                                <td></td>
-                                                <td></td>
+                                                
                                             </tr>
                                             <span hidden >  {{ $total4 = $total4 + $pedido->total}}</span>
                                             @endforeach
