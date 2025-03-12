@@ -383,6 +383,9 @@ $("#pago").prop('disabled',true)
                                                 <th class="min-w-50px text-center">Precio de envío</th>
                                                 <th class="min-w-50px text-center">Total </th>
                                                 <th class="min-w-100px text-center">Nota</th>
+                                                <th class="min-w-100px text-center">Acción</th>
+
+                                                
                                              
                                             </tr>
                                         </thead>
@@ -402,7 +405,11 @@ $("#pago").prop('disabled',true)
                                                     </td>
 
 
-                                                <td>{{$pedido->guia}}</td>
+                                                <td>
+                                                <a href="/envios/detalle/{{ $pedido->guia }}" class="text-gray-900 text-hover-primary">
+                                                    {{$pedido->guia}}
+                                                    </a>
+                                                </td>
                                                 <td>{{$pedido->comercio}}</td>
                                                 <td>{{$pedido->destinatario}}</td>
                                                 <td>{{$pedido->direccion}}</td>
@@ -438,6 +445,36 @@ $("#pago").prop('disabled',true)
                                                 <td class="text-center">${{$pedido->total}}</td>
                                                 <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <td class="text-center">{{$pedido->nota}}</td>
+                                                <td class="text-center">
+                                                <button class="btn btn-primary edit " value="{{$pedido->id}}" id="kt_drawer_example_basic_button" >Ver</button>
+                                                </td>
+
+                                                <span hidden id="gu{{ $pedido->id }}"> {{ $pedido->guia }}</span>
+                                                <span hidden id="co{{ $pedido->id }}"> {{ $pedido->comercio }}</span>
+                                                <span hidden id="de{{ $pedido->id }}"> {{ $pedido->destinatario }}</span>
+                                                <span hidden id="di{{ $pedido->id }}"> {{ $pedido->direccion }}</span>
+                                                <span hidden id="ti{{ $pedido->id }}"> {{ $pedido->tipo }}</span>
+                                                <span hidden id="fe{{ $pedido->id }}"> {{ $pedido->fecha_entrega }}</span>
+                                                <span hidden id="es{{ $pedido->id }}"> {{ $pedido->estado }}</span>
+                                                <span hidden id="pr{{ $pedido->id }}"> {{ $pedido->precio }}</span>
+                                                <span hidden id="en{{ $pedido->id }}"> {{ $pedido->envio }}</span>
+                                                <span hidden id="to{{ $pedido->id }}"> {{ $pedido->total }}</span>
+                                                <span hidden id="cob{{ $pedido->id }}"> {{ $pedido->cobro }}</span>
+                                                <span hidden id="no{{ $pedido->id }}"> {{ $pedido->nota }}</span>
+                                                <span hidden id="est{{ $pedido->id }}"> {{ $pedido->pago }}</span>
+                                                <span hidden id="re{{ $pedido->id }}"> {{ $pedido->repartidor }}</span>
+                                                <span hidden id="not{{ $pedido->id }}"> {{ $pedido->notarepa }}</span>
+                                                <span hidden id="ru{{ $pedido->id }}"> {{ $pedido->ruta }}</span>
+                                                <span hidden id="us{{ $pedido->id }}"> {{ $pedido->usuario }}</span>
+                                                <span hidden id="cr{{ $pedido->id }}"> {{ $pedido->created_at }}</span>
+                                                <span hidden id="ag{{ $pedido->id }}"> {{ $pedido->agencia }}</span>
+
+                                                <span hidden id="ca{{ $pedido->id }}"> {{ $pedido->caja }}</span>
+                                                <span hidden id="ra{{ $pedido->id }}"> {{ $pedido->rack }}</span>
+                                                <span hidden id="ni{{ $pedido->id }}"> {{ $pedido->nivel }}</span>
+                                                <span hidden id="ta{{ $pedido->id }}"> {{ $pedido->tarima }}</span>
+
+                                                
                                                 
                                             </tr>
                                             <span hidden >  {{ $total4 = $total4 + $pedido->total}}</span>
@@ -478,389 +515,285 @@ $("#pago").prop('disabled',true)
                                     </div>
 
 
-
-                                </div>
-
-
-                                <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">
-                                    <div class="modal-dialog modal-fullscreen">
-                                        <div class="modal-content shadow-none">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title">Detalles del cobro</h5>
-
-                                                <!--begin::Close-->
-                                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                                                    <i class="ki-duotone ki-cross"><span class="path1"></span><span class="path2"></span></i>
-                                                </div>
-                                                <!--end::Close-->
-                                            </div>
-
-                                            <div class="modal-body">
-                                                <div class="modal-body">
-                                                    <div class="row">
-                                                        <div class="col-lg-7">
-                                                            <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
-                                                                <h3 style="margin-bottom: 20px;">Datos del comercio</h3>
-                                                                <div class="row ">
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right m-0">
-                                                                        <label class="text-muted mb-0">Nombre</label>
-                                                                    </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">{{$comercioset[0]->comercio}}</p>
-                                                                    </div>
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right mb-0">
-                                                                        <label class="text-muted mb-0">Teléfono</label>
-                                                                    </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center mb-0">
-                                                                        <p class="mb-0">{{$comercioset[0]->telefono}}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px mb-0">Dirección</label>
-                                                                    </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">{{$comercioset[0]->direccion}}</p>
-                                                                    </div>
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px mb-0">Whatsapp</label>
-                                                                    </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">{{$comercioset[0]->whatsapp}}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row ">
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px mb-0">Correo</label>
-                                                                    </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">{{$comercioset[0]->correo}}</p>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <br>
-                                                            <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
-                                                                <!--begin::Card-->
-                                                                <div class="card pt-2 mb-6 mb-xl-9">
-                                                                    <!--begin::Card header-->
-                                                                    <div class="card-header border-0">
-                                                                        <!--begin::Card title-->
-                                                                        <div class="card-title">
-                                                                            <h2 class="fw-bold mb-0" style="margin-left: -30px;">Datos bancarios</h2>
-                                                                        </div>
-                                                                        <!--end::Card title-->
-                                                                        <!--begin::Card toolbar-->
-                                                                        <div class="card-toolbar">
-                                                                            <a href="#" class="btn btn-sm btn-flex btn-light-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">
-                                                                                <i class="ki-duotone ki-plus-square fs-3">
-                                                                                    <span class="path1"></span>
-                                                                                    <span class="path2"></span>
-                                                                                    <span class="path3"></span>
-                                                                                </i>Agregar nuevo metodo</a>
-                                                                        </div>
-                                                                        <!--end::Card toolbar-->
-                                                                    </div>
-                                                                    <!--end::Card header-->
-                                                                    <!--begin::Card body-->
-                                                                    <div id="kt_customer_view_payment_method" class="card-body pt-0">
-                                                                        <!--begin::Option-->
-                                                                        <div class="py-0" data-kt-customer-payment-method="row">
-                                                                            <!--begin::Header-->
-                                                                            <div class="py-3 d-flex flex-stack flex-wrap">
-                                                                                <!--begin::Toggle-->
-                                                                                <div class="d-flex align-items-center collapsible rotate" data-bs-toggle="collapse" href="#kt_customer_view_payment_method_1" role="button" aria-expanded="false" aria-controls="kt_customer_view_payment_method_1">
-                                                                                    <!--begin::Logo-->
-                                                                                    <img src="assets/media/svg/card-logos/mastercard.svg" class="w-40px me-3" alt="" />
-                                                                                    <!--end::Logo-->
-                                                                                    <!--begin::Summary-->
-                                                                                    <div class="me-3">
-                                                                                        <div class="d-flex align-items-center">
-                                                                                            <div class="text-gray-800 fw-bold">{{$comercioset[0]->comercio}}</div>
-                                                                                            <div class="badge badge-light-primary ms-5">{{$comercioset[0]->estado}}</div>
-                                                                                        </div>
-                                                                                        <div class="text-muted"></div>
-                                                                                    </div>
-                                                                                    <!--end::Summary-->
-                                                                                </div>
-                                                                                <!--end::Toggle-->
-                                                                                <!--begin::Toolbar-->
-                                                                                <div class="d-flex my-3 ms-9">
-                                                                                    <!--begin::Edit-->
-                                                                                    <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="modal" data-bs-target="#kt_modal_new_card">
-                                                                                        <span data-bs-toggle="tooltip" data-bs-trigger="hover" title="Edit">
-                                                                                            <i class="ki-duotone ki-pencil fs-3">
-                                                                                                <span class="path1"></span>
-                                                                                                <span class="path2"></span>
-                                                                                            </i>
-                                                                                        </span>
-                                                                                    </a>
-                                                                                    <!--end::Edit-->
-                                                                                    <!--begin::Delete-->
-                                                                                    <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px me-3" data-bs-toggle="tooltip" title="Delete" data-kt-customer-payment-method="delete">
-                                                                                        <i class="ki-duotone ki-trash fs-3">
-                                                                                            <span class="path1"></span>
-                                                                                            <span class="path2"></span>
-                                                                                            <span class="path3"></span>
-                                                                                            <span class="path4"></span>
-                                                                                            <span class="path5"></span>
-                                                                                        </i>
-                                                                                    </a>
-                                                                                    <!--end::Delete-->
-                                                                                    <!--begin::More-->
-                                                                                    <a href="#" class="btn btn-icon btn-active-light-primary w-30px h-30px" data-bs-toggle="tooltip" title="More Options" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                                                                        <i class="ki-duotone ki-setting-3 fs-3">
-                                                                                            <span class="path1"></span>
-                                                                                            <span class="path2"></span>
-                                                                                            <span class="path3"></span>
-                                                                                            <span class="path4"></span>
-                                                                                            <span class="path5"></span>
-                                                                                        </i>
-                                                                                    </a>
-                                                                                    <!--begin::Menu-->
-                                                                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold w-150px py-3" data-kt-menu="true">
-                                                                                        <!--begin::Menu item-->
-                                                                                        <div class="menu-item px-3">
-                                                                                            <a href="#" class="menu-link px-3" data-kt-payment-mehtod-action="set_as_primary"></a>
-                                                                                        </div>
-                                                                                        <!--end::Menu item-->
-                                                                                    </div>
-                                                                                    <!--end::Menu-->
-                                                                                    <!--end::More-->
-                                                                                </div>
-                                                                                <!--end::Toolbar-->
-                                                                            </div>
-                                                                            <!--end::Header-->
-
-                                                                            <!--begin::Body-->
-                                                                            <div id="kt_customer_view_payment_method_1" class="collapse show fs-6 ps-10" data-bs-parent="#kt_customer_view_payment_method">
-                                                                                <!--begin::Details-->
-                                                                                <div class="d-flex flex-wrap py-5">
-                                                                                    <!--begin::Col-->
-                                                                                    <div class="flex-equal me-5">
-                                                                                        <table class="table table-flush gy-1 table-with-spacing" style="margin-left: -30px;"> <!-- Ajusta el valor de margen según tus necesidades -->
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-120px">Titular</td>
-                                                                                                <td ><p>{{$comercioset[0]->titular}}</p></td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">Banco</td>
-                                                                                                <td >{{$comercioset[0]->banco}}</td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">Numero de cuenta</td>
-                                                                                                <td class="text-gray-800">{{$comercioset[0]->cuenta}}</td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">DUI</td>
-                                                                                                <td class="text-gray-800">{{$comercioset[0]->dui}}</td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">Tipo de cuenta</td>
-                                                                                                <td class="text-gray-800">{{$comercioset[0]->tipo_cuenta}}</td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">Empresa</td>
-                                                                                                <td class="text-gray-800">{{$comercioset[0]->empresa}}</td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </div>
-                                                                                    <!--end::Col-->
-                                                                                    <!--begin::Col-->
-                                                                                    <div class="flex-equal">
-                                                                                        <table class="table table-flush gy-1 table-with-spacing" style="margin-left: -40px;"> <!-- Ajusta el valor de margen según tus necesidades -->
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">Tipo de Contribuyente</td>
-                                                                                                <td class="text-gray-800">{{$comercioset[0]->tipo_contri}}</td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">Giro</td>
-                                                                                                <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->giro}}</a>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">NCR</td>
-                                                                                                <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->nrc}}</a>
-                                                                                                </td>
-                                                                                            </tr>
-                                                                                            <tr>
-                                                                                                <td class="text-muted min-w-125px w-125px">Direccion fiscal</td>
-                                                                                                <td class="text-gray-800">
-                                                                                                    <a href="#" class="text-gray-900 text-hover-primary">{{$comercioset[0]->d_fiscal}}</a>
-                                                                                                </td>
-                                                                                            </tr>
-
-
-                                                                                        </table>
-                                                                                    </div>
-                                                                                    <!--end::Col-->
-                                                                                </div>
-                                                                                <!--end::Details-->
-                                                                            </div>
-                                                                            <!--end::Body-->
-                                                                        </div>
-                                                                        <!--end::Option-->
-                                                                    </div>
-                                                                    <!--end::Card body-->
-                                                                </div>
-                                                                <!--end::Card-->
-                                                            </div>
-                                                            <br>
-                                                            <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
-                                                                <h3 style="margin-bottom: 20px;">Otros metodos de pagos</h3>
-
-                                                                <div class="row mb-1">
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Chivo wallet</label>
-                                                                    </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">{{$comercioset[0]->chivo}}</p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="row mb-1">
-                                                                    <div class="col-lg-2 d-flex align-items-center justify-content-right">
-                                                                        <label class="text-muted min-w-125px w-125px col-form-label mb-0">Tigo Money</label>
-                                                                    </div>
-                                                                    <div class="col-lg-4 d-flex align-items-center">
-                                                                        <p class="mb-0">{{$comercioset[0]->tigo}}</p>
-                                                                    </div>
-                                                                </div>
-
-
-
-                                                            </div>
-                                                        </div>
-                                                        <br>
-                                                        <div class="col-lg-5">
-                                                            <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
-
-                                                                <div class="table-responsive mb-8">
-                                                                    <!--begin::Table-->
-                                                                    <table class="table align-middle gs-0 gy-4 my-0">
-                                                                        <!--begin::Table head-->
-                                                                        <thead>
-                                                                            <tr>
-                                                                                <th class="min-w-100px"></th>
-                                                                                <th class="w-200px"></th>
-                                                                                <th class="w-60px"></th>
-                                                                            </tr>
-                                                                        </thead>
-                                                                        <!--end::Table head-->
-                                                                        <!--begin::Table body-->
-                                                                        
-                                                                        <tbody>
-                                                                            <h2>Datos de pagar</h2>
-                                                                            <br>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
-                                                                                <label for="Cajero">Cajero</label>
-                                                                                <div id="CajeroValidationFeedback" class="invalid-feedback">
-                                                                                    Por favor ingrese el destinatario.
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <select class="form-select form-select-solid" name="metodo" id="metodo" required>
-                                                                                    <option value="Efectivo">Efectivo</option>
-                                                                                    <option value="Deposito">Deposito</option>
-                                                                                    <option value="Transferencia_empresa">Transferencia a la empresa</option>
-                                                                                    <option value="Transferencia_comercio">Transferencia al comercio</option>
-                                                                                    <option value="Tigo_money">Tigo money</option>
-                                                                                    <option value="Chivo">Chivo</option>
-                                                                                </select>
-                                                                                <label for="estado_envio">Método de pago</label>
-                                                                                <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
-                                                                                    Por favor seleccione el método de pago.
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
-                                                                                <label for="fecha_entrega">Fecha de entrega</label>
-                                                                                <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
-                                                                                    Por favor seleccione una fecha de entrega.
-                                                                                </div>
-                                                                            </div>
-                                                                            <!-- Campo para la cantidad de descuento -->
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" />
-                                                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
-                                                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                                            </div>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
-                                                                                <label for="nota" style="padding-left: 25px;">Nota</label>
-                                                                            </div>
-                                                                            
-                                                                        </tbody>
-                                                                        <!--end::Table body-->
-                                                                    </table>
-                                                                    <!--end::Table-->
-                                                                </div>
-                                                                <!-- Summary -->
-                                                                <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
-                                                                    <!-- Content -->
-                                                                    <div class="fs-6 fw-bold text-white">
-                                                                        <span class="d-block lh-1 mb-2">Subtotal</span>
-                                                                        <span class="d-block mb-2">Descuento</span>
-                                                                        <span class="d-block fs-2qx lh-1">Total</span>
-                                                                    </div>
-                                                                    <!-- Content -->
-                                                                    <div class="fs-6 fw-bold text-white text-end">
-                                                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                                                        <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$0.00</span>
-                                                                    </div>
-                                                                </div>
-                                                                <!-- End of Summary -->
-                                                                <!-- Payment and Change -->
-                                                                <div class="row justify-content-end">
-                                                                    <label class="col-lg-3 col-form-label ">Pago</label>
-                                                                    <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="entrega" id="entrega" value="0.00" onClick="this.select()"/>
-                                                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
-                                                                    </div>
-                                                                </div>
-                                                                <br>
-                                                                <div class="row justify-content-end">
-                                                                    <label class="col-lg-3 col-form-label ">Cambio</label>
-                                                                    <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" value="0.00"  />
-                                                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
-                                                                    </div>
-                                                                </div>
-                                                                <input type="text" value="{{$comercioset[0]->comercio}}" name="comercio" hidden>
-                                                                <input type="text" name="tota" id="tota" hidden>
-                                                                <input type="text" name="stota" id="stota" hidden>
-                                                                <!-- End of Payment and Change -->
-                                                                <br>
-                                                                <div class="modal-footer">
-                                                                    <div class="d-flex justify-content-between w-100">
-                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="submit" id="botonpagar" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Cobrar</button>
-                                            </div>
-                                        </div>
                                     </div>
-                                </div>
-                                </form>
+                                    </div>
+                                    </div>
+                                    </div>
+                                    </div>
 
-                            </div>
-                            <!--end::Table-->
-                        </div>
-                        <!--end::Card body-->
-                    </div>
-                    <!--end::Products-->
-                </div>
-                <!--end::Content container-->
-            </div>
-            <!--end::Content-->
-        </div>
-    </div>
+
+
+
+                                </div>
+
+
+
+
+
+
+
+                                
+
+        <!--begin::Ticket-->
+<div
+    id="kt_drawer_example_basic"
+
+    class="bg-white"
+    data-kt-drawer="true"
+    data-kt-drawer-activate="true"
+    data-kt-drawer-toggle="#kt_drawer_example_basic_button"
+    data-kt-drawer-close="#kt_drawer_example_basic_close"
+    data-kt-drawer-width="500px"
+>
+    
+
+
+
+
+<div style="width:100%; margin: 10px;" >
+    
+
+<table style="font-size: 10px;">
+    <thead>
+        <tr>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td colspan="2">
+               <strong> DATOS DEL PAQUETE </strong>
+                <hr style="width: 500px;">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Guia: </td>
+            <td><label for="" id="guia"></label></td>
+        </tr>
+        <tr>
+            <td>Comercio: </td>
+            <td><label for="" id="come"></label></td>
+        </tr>
+        <tr>
+            <td>Destinatario: </td>
+            <td><label for="" id="dest"></label></td>
+        </tr>
+        <tr>
+            <td>Direccion: </td>
+            <td><label for="" id="dire"></label></td>
+        </tr>
+        <tr>
+            <td>Tipo de envio: </td>
+            <td><label for="" id="tipo"></label></td>
+        </tr>
+        <tr>
+            <td>Fecha de entrega: </td>
+            <td><label for="" id="fech"></label></td>
+        </tr>
+        <tr>
+            <td>Estado: </td>
+            <td><label for="" id="esta"></label></td>
+        </tr>
+        <tr>
+            <td>Precio: </td>
+            <td><label for="" id="prec">$</label></td>
+        </tr>
+        <tr>
+            <td>Envio: </td>
+            <td><label for="" id="envi">$</label></td>
+        </tr>
+        <tr>
+            <td>Total: </td>
+            <td><label for="" id="tota">$</label></td>
+        </tr>
+        <tr>
+            <td>Cobro de envio: </td>
+            <td><label for="" id="cobro">$</label></td>
+        </tr>
+        <tr>
+            <td>Nota: </td>
+            <td><label for="" id="nota">$</label></td>
+        </tr>
+       
+        <tr>
+            <td>Estado del pago: </td>
+            <td><label for="" id="estad">$</label></td>
+        </tr>
+
+        <tr >
+            <td colspan="2" >
+            <p></p>
+               <strong> DATOS DEL REPARTIDOR </strong>
+                <hr style="width: 500px;">
+            </td>
+        </tr>
+        <tr>
+            <td>Repartidor: </td>
+            <td><label for="" id="repa">$</label></td>
+        </tr>
+        <tr>
+            <td>Nota del repartidor: </td>
+            <td><label for="" id="notar">$</label></td>
+        </tr>
+        <tr>
+            <td>Ruta: </td>
+            <td><label for="" id="ruta">$</label></td>
+        </tr>
+        <tr >
+            <td colspan="2" >
+            <p></p>
+               <strong> DATOS DE CREACION </strong>
+                <hr style="width: 500px;">
+            </td>
+        </tr>
+        <tr>
+            <td>Usuario: </td>
+            <td><label for="" id="usua">$</label></td>
+        </tr>
+        <tr>
+            <td>Fecha de creacion: </td>
+            <td><label for="" id="crea">$</label></td>
+        </tr>
+        <tr>
+            <td>Agencia de registro: </td>
+            <td><label for="" id="agen">$</label></td>
+        </tr>
+        <tr >
+            <td colspan="2" >
+            <p></p>
+               <strong> UBICACION </strong>
+                <hr style="width: 500px;">
+            </td>
+        </tr>
+        <tr>
+            <td>Caja: </td>
+            <td><label for="" id="caja">$</label></td>
+        </tr>
+        <tr>
+            <td>Rack: </td>
+            <td><label for="" id="rack">$</label></td>
+        </tr>
+        <tr>
+            <td>Nivel: </td>
+            <td><label for="" id="nive">$</label></td>
+        </tr>
+        <tr>
+            <td>Tarima: </td>
+            <td><label for="" id="tari">$</label></td>
+        </tr>
+        <tr >
+            <td colspan="2" >
+            <p></p>
+               <strong> FOTO </strong>
+                <hr style="width: 500px;">
+            </td>
+        </tr>
+    </tbody>
+    
+</table>
+
+
+
+
+<hr>
+
+<button type="button" class="btn btn-secondary text-center" data-kt-drawer-dismiss="true">Cerrar</button>
+
+
 </div>
-</div>
-</div>
-</div>
+<!--end::Ticket-->
+
+
+                                
         <!--end::Content wrapper-->
     </x-default-layout>
+
+
+
+
+
+    <script>
+       
+        
+       $(document).ready(function(){
+           $(document).on('click', '.edit', function(){
+              var cod=$(this).val();
+              var iden=$('#gu'+cod).text();
+              var com=$('#co'+cod).text();
+              var des=$('#de'+cod).text();
+              var dir=$('#di'+cod).text();
+              var tip=$('#ti'+cod).text();
+              var fec=$('#fe'+cod).text();
+              var est=$('#es'+cod).text();
+              var pre=$('#pr'+cod).text();
+              var env=$('#en'+cod).text();
+              var tot=$('#to'+cod).text();
+              var cobr=$('#cob'+cod).text();
+              var not=$('#no'+cod).text();
+              var esta=$('#est'+cod).text();
+              var rep=$('#re'+cod).text();
+              var nott=$('#not'+cod).text();
+              var rut=$('#ru'+cod).text();
+              var usu=$('#us'+cod).text();
+              var cre=$('#cr'+cod).text();
+              var age=$('#ag'+cod).text();
+
+              var caj=$('#ca'+cod).text();
+              var rac=$('#ra'+cod).text();
+              var niv=$('#ni'+cod).text();
+              var tar=$('#ta'+cod).text();
+                     
+       
+               
+           
+               //$('#edit').modal('show');
+              $('#guia').text(iden);
+              $('#come').text(com);
+              $('#dest').text(des);
+              $('#dire').text(dir);
+              $('#tipo').text(tip);
+              $('#fech').text(fec);
+              $('#esta').text(est);
+              $('#prec').text('$'+pre);
+              $('#envi').text('$'+env);
+              $('#tota').text('$'+tot);
+              $('#cobro').text(cobr);
+              $('#nota').text(not);
+              $('#estad').text(esta);
+              $('#repa').text(rep);
+              $('#notar').text(nott);
+              $('#ruta').text(rut);
+              $('#usua').text(usu);
+              $('#crea').text(cre);
+              $('#agen').text(age);
+              $('#caja').text(caj);
+              $('#rack').text(rac);
+              $('#nive').text(niv);
+              $('#tari').text(tar);
+           
+           });
+       });
+        
+       
+       
+       
+       
+       
+       
+           </script>
+
+
+
+
+
+
+
+
+
+
+
     <!--begin::Javascript-->
     <script>
         var hostUrl = "assets/";
@@ -888,7 +821,7 @@ $("#pago").prop('disabled',true)
             var offset = ahora.getTimezoneOffset();
             ahora.setMinutes(ahora.getMinutes() - (offset - timeZoneOffset));
             return ahora;
-        }
+        } 
         // Función para formatear la fecha
         function formatearFecha(fecha) {
             var meses = ['enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre'];

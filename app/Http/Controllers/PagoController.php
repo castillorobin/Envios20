@@ -9,7 +9,7 @@ use App\Models\Cobro;
 use App\Models\Ticketc;
 use Carbon\Carbon;
 use App\Models\Envio;
-use App\Models\Ticktpago;
+use App\Models\Ticktpago; 
 use PDF; 
 use Illuminate\Support\Str;
  
