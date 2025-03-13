@@ -109,10 +109,10 @@
                                                     </div>
                                                 </div>
                                                 <div class=" fw-semibold">
-
-                                                <table style="font-size:16px;">
+<div class="table-responsive">
+                                                <table style="font-size:16px;" >
                                                     <tr >
-                                                        <td style="width: 150px;">
+                                                        <td style="width: 25%;">
                                                 Telefono:  
                                                </td>
                                                         <td >{{ $comercio[0]->telefono }} </td>
@@ -131,7 +131,7 @@
                                                     </tr>
                                                 </table>
                                                
-                                               
+                                            </div>
                                                 
                                                   
                                                 </div>
@@ -368,7 +368,7 @@
                                         Repartidor:  
                                </td>
                                         <td >{{ $envio[0]->repartidor }} </td>
-                                    </tr>
+                                    </tr> 
                                     <tr>
                                         <td>Nota del repartidor:</td>
                                         <td>{{ $envio[0]->notarepa }}</td>
