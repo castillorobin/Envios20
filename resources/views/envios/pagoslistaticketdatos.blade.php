@@ -553,7 +553,7 @@ $("#pago").prop('disabled',true)
 <div style="width:100%; margin: 10px;" >
     
 
-<table style="font-size: 10px;">
+<table style="font-size: 14px;">
     <thead>
         <tr>
             <th></th>
@@ -586,7 +586,7 @@ $("#pago").prop('disabled',true)
         </tr>
         <tr>
             <td>Tipo de envio: </td>
-            <td><label for="" id="tipo"></label></td>
+            <td><span class="badge badge-dark"><label for="" id="tipo"></label></span></td>
         </tr>
         <tr>
             <td>Fecha de entrega: </td>
@@ -594,7 +594,7 @@ $("#pago").prop('disabled',true)
         </tr>
         <tr>
             <td>Estado: </td>
-            <td><label for="" id="esta"></label></td>
+            <td><span class="badge badge-dark"><label for="" id="esta"></label></span></td>
         </tr>
         <tr>
             <td>Precio: </td>
@@ -745,7 +745,7 @@ $("#pago").prop('disabled',true)
               var niv=$('#ni'+cod).text();
               var tar=$('#ta'+cod).text();
                      
-       
+         //     alert(est);
                
            
                //$('#edit').modal('show');
@@ -761,6 +761,7 @@ $("#pago").prop('disabled',true)
               $('#tota').text('$'+tot);
               $('#cobro').text(cobr);
               $('#nota').text(not);
+
               $('#estad').text(esta);
               $('#repa').text(rep);
               $('#notar').text(nott);
