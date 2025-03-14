@@ -610,7 +610,7 @@ $("#pago").prop('disabled',true)
         </tr>
         <tr>
             <td>Cobro de envio: </td>
-            <td><label for="" id="cobro">$</label></td>
+            <td><span class="badge badge-dark"><label for="" id="cobro">$</label></span></td>
         </tr>
         <tr>
             <td>Nota: </td>
@@ -619,7 +619,7 @@ $("#pago").prop('disabled',true)
        
         <tr>
             <td>Estado del pago: </td>
-            <td><label for="" id="estad">$</label></td>
+            <td><span class="badge badge-dark"><label for="" id="estad">$</label></span></td>
         </tr>
 
         <tr >
