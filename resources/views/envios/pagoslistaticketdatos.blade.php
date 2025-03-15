@@ -458,9 +458,9 @@ $("#pago").prop('disabled',true)
                                                 <span hidden id="es{{ $pedido->id }}"> {{ $pedido->estado }}</span>
                                                 <span hidden id="pr{{ $pedido->id }}"> {{ $pedido->precio }}</span>
                                                 <span hidden id="en{{ $pedido->id }}"> {{ $pedido->envio }}</span>
-                                                <span hidden id="to{{ $pedido->id }}"> {{ $pedido->total }}</span>
+                                                <span hidden id="to2{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <span hidden id="cob{{ $pedido->id }}"> {{ $pedido->cobro }}</span>
-                                                <span hidden id="no{{ $pedido->id }}"> {{ $pedido->nota }}</span>
+                                                <span hidden id="no2{{ $pedido->id }}"> {{ $pedido->nota }}</span>
                                                 <span hidden id="est{{ $pedido->id }}"> {{ $pedido->pago }}</span>
                                                 <span hidden id="re{{ $pedido->id }}"> {{ $pedido->repartidor }}</span>
                                                 <span hidden id="not{{ $pedido->id }}"> {{ $pedido->notarepa }}</span>
@@ -987,7 +987,7 @@ $("#pago").prop('disabled',true)
         </tr>
         <tr>
             <td>Total: </td>
-            <td><label for="" id="tota">$</label></td>
+            <td><label for="" id="tota2">$</label></td>
         </tr>
         <tr>
             <td>Cobro de envio: </td>
@@ -995,7 +995,7 @@ $("#pago").prop('disabled',true)
         </tr>
         <tr>
             <td>Nota: </td>
-            <td><label for="" id="nota">$</label></td>
+            <td><label for="" id="nota2"></label></td>
         </tr>
        
         <tr>
@@ -1016,7 +1016,7 @@ $("#pago").prop('disabled',true)
         </tr>
         <tr>
             <td>Nota del repartidor: </td>
-            <td><label for="" id="notar">$</label></td>
+            <td><label for="" id="notar"></label></td>
         </tr>
         <tr>
             <td>Ruta: </td>
@@ -1110,9 +1110,9 @@ $("#pago").prop('disabled',true)
               var est=$('#es'+cod).text();
               var pre=$('#pr'+cod).text();
               var env=$('#en'+cod).text();
-              var tot=$('#to'+cod).text();
+              var tot2=$('#to2'+cod).text();
               var cobr=$('#cob'+cod).text();
-              var not=$('#no'+cod).text();
+              var not2=$('#no2'+cod).text();
               var esta=$('#est'+cod).text();
               var rep=$('#re'+cod).text();
               var nott=$('#not'+cod).text();
@@ -1139,9 +1139,9 @@ $("#pago").prop('disabled',true)
               $('#esta').text(est);
               $('#prec').text('$'+pre);
               $('#envi').text('$'+env);
-              $('#tota').text('$'+tot);
+              $('#tota2').text('$'+tot2);
               $('#cobro').text(cobr);
-              $('#nota').text(not);
+              $('#nota2').text(not2);
 
               $('#estad').text(esta);
               $('#repa').text(rep);

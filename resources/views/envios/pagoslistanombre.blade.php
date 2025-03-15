@@ -381,7 +381,10 @@ $("#pago").prop('disabled',true)
                                                     </td>
 
 
-                                                <td>{{$pedido->guia}}</td>
+                                                <td> <a href="/envios/detalle/{{ $pedido->guia }}" class="text-gray-900 text-hover-primary">
+                                                    {{$pedido->guia}}
+                                                    </a>
+                                                </td>
                                                 <td>{{$pedido->comercio}}</td>
                                                 <td>{{$pedido->destinatario}}</td>
                                                 <td>{{$pedido->direccion}}</td>
@@ -432,9 +435,9 @@ $("#pago").prop('disabled',true)
                                                 <span hidden id="es{{ $pedido->id }}"> {{ $pedido->estado }}</span>
                                                 <span hidden id="pr{{ $pedido->id }}"> {{ $pedido->precio }}</span>
                                                 <span hidden id="en{{ $pedido->id }}"> {{ $pedido->envio }}</span>
-                                                <span hidden id="to{{ $pedido->id }}"> {{ $pedido->total }}</span>
+                                                <span hidden id="to2{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <span hidden id="cob{{ $pedido->id }}"> {{ $pedido->cobro }}</span>
-                                                <span hidden id="no{{ $pedido->id }}"> {{ $pedido->nota }}</span>
+                                                <span hidden id="no2{{ $pedido->id }}"> {{ $pedido->nota }}</span>
                                                 <span hidden id="est{{ $pedido->id }}"> {{ $pedido->pago }}</span>
                                                 <span hidden id="re{{ $pedido->id }}"> {{ $pedido->repartidor }}</span>
                                                 <span hidden id="not{{ $pedido->id }}"> {{ $pedido->notarepa }}</span>
@@ -953,20 +956,20 @@ data-kt-drawer-width="500px"
     </tr>
     <tr>
         <td>Total: </td>
-        <td><label for="" id="tota">$</label></td>
+        <td><label for="" id="tota2">$</label></td>
     </tr>
     <tr>
         <td>Cobro de envio: </td>
-        <td><span class="badge badge-dark"><label for="" id="cobro">$</label></span></td>
+        <td><span class="badge badge-dark"><label for="" id="cobro"></label></span></td>
     </tr>
     <tr>
         <td>Nota: </td>
-        <td><label for="" id="nota">$</label></td>
+        <td><label for="" id="nota2"></label></td>
     </tr>
    
     <tr>
         <td>Estado del pago: </td>
-        <td><span class="badge badge-dark"><label for="" id="estad">$</label></span></td>
+        <td><span class="badge badge-dark"><label for="" id="estad"></label></span></td>
     </tr>
 
     <tr >
@@ -978,15 +981,15 @@ data-kt-drawer-width="500px"
     </tr>
     <tr>
         <td>Repartidor: </td>
-        <td><label for="" id="repa">$</label></td>
+        <td><label for="" id="repa"></label></td>
     </tr>
     <tr>
         <td>Nota del repartidor: </td>
-        <td><label for="" id="notar">$</label></td>
+        <td><label for="" id="notar"></label></td>
     </tr>
     <tr>
         <td>Ruta: </td>
-        <td><label for="" id="ruta">$</label></td>
+        <td><label for="" id="ruta"></label></td>
     </tr>
     <tr >
         <td colspan="2" >
@@ -1016,19 +1019,19 @@ data-kt-drawer-width="500px"
     </tr>
     <tr>
         <td>Caja: </td>
-        <td><label for="" id="caja">$</label></td>
+        <td><label for="" id="caja"></label></td>
     </tr>
     <tr>
         <td>Rack: </td>
-        <td><label for="" id="rack">$</label></td>
+        <td><label for="" id="rack"></label></td>
     </tr>
     <tr>
         <td>Nivel: </td>
-        <td><label for="" id="nive">$</label></td>
+        <td><label for="" id="nive"></label></td>
     </tr>
     <tr>
         <td>Tarima: </td>
-        <td><label for="" id="tari">$</label></td>
+        <td><label for="" id="tari"></label></td>
     </tr>
     <tr >
         <td colspan="2" >
@@ -1129,9 +1132,9 @@ data-kt-drawer-width="500px"
            var est=$('#es'+cod).text();
            var pre=$('#pr'+cod).text();
            var env=$('#en'+cod).text();
-           var tot=$('#to'+cod).text();
+           var tot2=$('#to2'+cod).text();
            var cobr=$('#cob'+cod).text();
-           var not=$('#no'+cod).text();
+           var not2=$('#no2'+cod).text();
            var esta=$('#est'+cod).text();
            var rep=$('#re'+cod).text();
            var nott=$('#not'+cod).text();
@@ -1158,9 +1161,9 @@ data-kt-drawer-width="500px"
            $('#esta').text(est);
            $('#prec').text('$'+pre);
            $('#envi').text('$'+env);
-           $('#tota').text('$'+tot);
+           $('#tota2').text('$'+tot2);
            $('#cobro').text(cobr);
-           $('#nota').text(not);
+           $('#nota2').text(not2);
 
            $('#estad').text(esta);
            $('#repa').text(rep);
