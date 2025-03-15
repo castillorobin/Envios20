@@ -891,12 +891,29 @@ $("#pago").prop('disabled',true)
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    
 
+                                                </div>
+                                            </div>
 
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
 
-
-                                
+                            </div>
+                            <!--end::Table-->
+                        </div>
+                        <!--end::Card body-->
+                    </div>
+                    <!--end::Products-->
+                </div>
+                
+                <!--end::Content container-->
+            </div>
+            <!--end::Content-->
+        </div>
+        <!--end::Content wrapper-->
 
         <!--begin::Ticket-->
 <div
