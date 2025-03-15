@@ -55,7 +55,7 @@
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
-                                <li class="breadcrumb-item text-muted">Pagar</li>
+                                <li class="breadcrumb-item text-muted">Pagar por ticket</li>
                             </ul>
                         </div>
                         <form action="/pago/conticket" id="kt_invoice_form" method="POST"> 
@@ -161,7 +161,7 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 450px;  ">
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">

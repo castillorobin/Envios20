@@ -228,7 +228,7 @@ $("#pago").prop('disabled',true)
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
-                                <li class="breadcrumb-item text-muted">Pagar</li>
+                                <li class="breadcrumb-item text-muted">Pagar por comercio</li>
                             </ul>
                         </div>
                         <form action="/pago/connombre" id="kt_invoice_form" method="POST"> 
@@ -364,6 +364,7 @@ $("#pago").prop('disabled',true)
                                                 <th class="min-w-50px text-center">Precio de envío</th>
                                                 <th class="min-w-50px text-center">Total </th>
                                                 <th class="min-w-100px text-center">Nota</th>
+                                                <th class="min-w-100px text-center">Acción</th>
                                                
                                             </tr>
                                         </thead>
@@ -418,7 +419,35 @@ $("#pago").prop('disabled',true)
                                                 <td class="text-center">${{$pedido->total}}</td>
                                                 <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <td class="text-center">{{$pedido->nota}}</td>
-                                                
+                                                <td class="text-center">
+                                                    <button class="btn btn-primary edit " value="{{$pedido->id}}" id="kt_drawer_example_basic_button" >Ver</button>
+                                                    </td>
+                                                    
+                                                    <span hidden id="gu{{ $pedido->id }}"> {{ $pedido->guia }}</span>
+                                                <span hidden id="co{{ $pedido->id }}"> {{ $pedido->comercio }}</span>
+                                                <span hidden id="de{{ $pedido->id }}"> {{ $pedido->destinatario }}</span>
+                                                <span hidden id="di{{ $pedido->id }}"> {{ $pedido->direccion }}</span>
+                                                <span hidden id="ti{{ $pedido->id }}"> {{ $pedido->tipo }}</span>
+                                                <span hidden id="fe{{ $pedido->id }}"> {{ $pedido->fecha_entrega }}</span>
+                                                <span hidden id="es{{ $pedido->id }}"> {{ $pedido->estado }}</span>
+                                                <span hidden id="pr{{ $pedido->id }}"> {{ $pedido->precio }}</span>
+                                                <span hidden id="en{{ $pedido->id }}"> {{ $pedido->envio }}</span>
+                                                <span hidden id="to{{ $pedido->id }}"> {{ $pedido->total }}</span>
+                                                <span hidden id="cob{{ $pedido->id }}"> {{ $pedido->cobro }}</span>
+                                                <span hidden id="no{{ $pedido->id }}"> {{ $pedido->nota }}</span>
+                                                <span hidden id="est{{ $pedido->id }}"> {{ $pedido->pago }}</span>
+                                                <span hidden id="re{{ $pedido->id }}"> {{ $pedido->repartidor }}</span>
+                                                <span hidden id="not{{ $pedido->id }}"> {{ $pedido->notarepa }}</span>
+                                                <span hidden id="ru{{ $pedido->id }}"> {{ $pedido->ruta }}</span>
+                                                <span hidden id="us{{ $pedido->id }}"> {{ $pedido->usuario }}</span>
+                                                <span hidden id="cr{{ $pedido->id }}"> {{ $pedido->created_at }}</span>
+                                                <span hidden id="ag{{ $pedido->id }}"> {{ $pedido->agencia }}</span>
+
+                                                <span hidden id="ca{{ $pedido->id }}"> {{ $pedido->caja }}</span>
+                                                <span hidden id="ra{{ $pedido->id }}"> {{ $pedido->rack }}</span>
+                                                <span hidden id="ni{{ $pedido->id }}"> {{ $pedido->nivel }}</span>
+                                                <span hidden id="ta{{ $pedido->id }}"> {{ $pedido->tarima }}</span>
+
                                             </tr>
                                             <span hidden >  {{ $total4 = $total4 + $pedido->total}}</span>
                                             @endforeach
@@ -429,6 +458,7 @@ $("#pago").prop('disabled',true)
                                 
                                     </div>
                                 <!--end::Table-->
+                                
                                 <div class="row justify-content-end">
                                     <ul class="pagination" style="margin-bottom: 15px;">
                                         <li style="margin-left:auto"></li> 
@@ -457,6 +487,7 @@ $("#pago").prop('disabled',true)
                                     </div>
                                     
                                 </div>
+                                
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">
                                     <div class="modal-dialog modal-fullscreen">
                                         <div class="modal-content shadow-none">
@@ -843,6 +874,190 @@ $("#pago").prop('disabled',true)
             <!--end::Content-->
         </div>
         <!--end::Content wrapper-->
+
+
+
+
+
+
+        
+        <!--begin::Ticket-->
+<div
+id="kt_drawer_example_basic"
+
+class="bg-white"
+data-kt-drawer="true"
+data-kt-drawer-activate="true"
+data-kt-drawer-toggle="#kt_drawer_example_basic_button"
+data-kt-drawer-close="#kt_drawer_example_basic_close"
+data-kt-drawer-width="500px"
+>
+
+
+
+
+
+<div style="width:100%; margin: 10px;" >
+
+
+<table style="font-size: 14px;">
+<thead>
+    <tr>
+        <th></th>
+        <th></th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+        <td colspan="2">
+           <strong> DATOS DEL PAQUETE </strong>
+            <hr style="width: 500px;">
+        </td>
+    </tr>
+
+    <tr>
+        <td>Guia: </td>
+        <td><label for="" id="guia"></label></td>
+    </tr>
+    <tr>
+        <td>Comercio: </td>
+        <td><label for="" id="come"></label></td>
+    </tr>
+    <tr>
+        <td>Destinatario: </td>
+        <td><label for="" id="dest"></label></td>
+    </tr>
+    <tr>
+        <td>Direccion: </td>
+        <td><label for="" id="dire"></label></td>
+    </tr>
+    <tr>
+        <td>Tipo de envio: </td>
+        <td><span class="badge badge-dark"><label for="" id="tipo"></label></span></td>
+    </tr>
+    <tr>
+        <td>Fecha de entrega: </td>
+        <td><label for="" id="fech"></label></td>
+    </tr>
+    <tr>
+        <td>Estado: </td>
+        <td><span class="badge badge-dark"><label for="" id="esta"></label></span></td>
+    </tr>
+    <tr>
+        <td>Precio: </td>
+        <td><label for="" id="prec">$</label></td>
+    </tr>
+    <tr>
+        <td>Envio: </td>
+        <td><label for="" id="envi">$</label></td>
+    </tr>
+    <tr>
+        <td>Total: </td>
+        <td><label for="" id="tota">$</label></td>
+    </tr>
+    <tr>
+        <td>Cobro de envio: </td>
+        <td><span class="badge badge-dark"><label for="" id="cobro">$</label></span></td>
+    </tr>
+    <tr>
+        <td>Nota: </td>
+        <td><label for="" id="nota">$</label></td>
+    </tr>
+   
+    <tr>
+        <td>Estado del pago: </td>
+        <td><span class="badge badge-dark"><label for="" id="estad">$</label></span></td>
+    </tr>
+
+    <tr >
+        <td colspan="2" >
+        <p></p>
+           <strong> DATOS DEL REPARTIDOR </strong>
+            <hr style="width: 500px;">
+        </td>
+    </tr>
+    <tr>
+        <td>Repartidor: </td>
+        <td><label for="" id="repa">$</label></td>
+    </tr>
+    <tr>
+        <td>Nota del repartidor: </td>
+        <td><label for="" id="notar">$</label></td>
+    </tr>
+    <tr>
+        <td>Ruta: </td>
+        <td><label for="" id="ruta">$</label></td>
+    </tr>
+    <tr >
+        <td colspan="2" >
+        <p></p>
+           <strong> DATOS DE CREACION </strong>
+            <hr style="width: 500px;">
+        </td>
+    </tr>
+    <tr>
+        <td>Usuario: </td>
+        <td><label for="" id="usua">$</label></td>
+    </tr>
+    <tr>
+        <td>Fecha de creacion: </td>
+        <td><label for="" id="crea">$</label></td>
+    </tr>
+    <tr>
+        <td>Agencia de registro: </td>
+        <td><label for="" id="agen">$</label></td>
+    </tr>
+    <tr >
+        <td colspan="2" >
+        <p></p>
+           <strong> UBICACION </strong>
+            <hr style="width: 500px;">
+        </td>
+    </tr>
+    <tr>
+        <td>Caja: </td>
+        <td><label for="" id="caja">$</label></td>
+    </tr>
+    <tr>
+        <td>Rack: </td>
+        <td><label for="" id="rack">$</label></td>
+    </tr>
+    <tr>
+        <td>Nivel: </td>
+        <td><label for="" id="nive">$</label></td>
+    </tr>
+    <tr>
+        <td>Tarima: </td>
+        <td><label for="" id="tari">$</label></td>
+    </tr>
+    <tr >
+        <td colspan="2" >
+        <p></p>
+           <strong> FOTO </strong>
+            <hr style="width: 500px;">
+        </td>
+    </tr>
+</tbody>
+
+</table>
+
+
+
+
+<hr>
+
+<button type="button" class="btn btn-secondary text-center" data-kt-drawer-dismiss="true">Cerrar</button>
+
+
+</div>
+<!--end::Ticket-->
+
+
+
+
+
+
+
     </x-default-layout>
     <!--begin::Javascript-->
     <script>
@@ -895,6 +1110,85 @@ $("#pago").prop('disabled',true)
         // Llamar a la función para establecer la fecha y hora actual al cargar la página
         establecerFechaEntrega();
     </script>
+
+
+
+
+<script>
+       
+        
+    $(document).ready(function(){
+        $(document).on('click', '.edit', function(){
+           var cod=$(this).val();
+           var iden=$('#gu'+cod).text();
+           var com=$('#co'+cod).text();
+           var des=$('#de'+cod).text();
+           var dir=$('#di'+cod).text();
+           var tip=$('#ti'+cod).text();
+           var fec=$('#fe'+cod).text();
+           var est=$('#es'+cod).text();
+           var pre=$('#pr'+cod).text();
+           var env=$('#en'+cod).text();
+           var tot=$('#to'+cod).text();
+           var cobr=$('#cob'+cod).text();
+           var not=$('#no'+cod).text();
+           var esta=$('#est'+cod).text();
+           var rep=$('#re'+cod).text();
+           var nott=$('#not'+cod).text();
+           var rut=$('#ru'+cod).text();
+           var usu=$('#us'+cod).text();
+           var cre=$('#cr'+cod).text();
+           var age=$('#ag'+cod).text();
+
+           var caj=$('#ca'+cod).text();
+           var rac=$('#ra'+cod).text();
+           var niv=$('#ni'+cod).text();
+           var tar=$('#ta'+cod).text();
+                  
+      //     alert(est);
+            
+        
+            //$('#edit').modal('show');
+           $('#guia').text(iden);
+           $('#come').text(com);
+           $('#dest').text(des);
+           $('#dire').text(dir);
+           $('#tipo').text(tip);
+           $('#fech').text(fec);
+           $('#esta').text(est);
+           $('#prec').text('$'+pre);
+           $('#envi').text('$'+env);
+           $('#tota').text('$'+tot);
+           $('#cobro').text(cobr);
+           $('#nota').text(not);
+
+           $('#estad').text(esta);
+           $('#repa').text(rep);
+           $('#notar').text(nott);
+           $('#ruta').text(rut);
+           $('#usua').text(usu);
+           $('#crea').text(cre);
+           $('#agen').text(age);
+           $('#caja').text(caj);
+           $('#rack').text(rac);
+           $('#nive').text(niv);
+           $('#tari').text(tar);
+        
+        });
+    });
+     
+    
+    
+    
+    
+    
+    
+        </script>
+
+
+
+
+
 </body>
 <!--end::Body-->
 
