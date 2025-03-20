@@ -350,38 +350,7 @@
 
 
 
-                        <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
-                            <!--begin::Card header-->
-                            <div class="card-header cursor-pointer">
-                                <!--begin::Card title-->
-                                <div class="card-title m-0">
-                                    <h3 class="fw-bold m-0">Datos de la entrega</h3>
-                                </div>
-                                <!--end::Card title-->
-                            </div>
-                            <!--begin::Card header-->
-                            <!--begin::Card body-->
-                            <div class="card-body p-9">
-                                <table style="font-size:16px;">
-                                    <tr >
-                                        <td style="width: 160px;">
-                                        Repartidor:  
-                               </td>
-                                        <td >{{ $envio[0]->repartidor }} </td>
-                                    </tr> 
-                                    <tr>
-                                        <td>Nota del repartidor:</td>
-                                        <td>{{ $envio[0]->notarepa }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Ruta: </td>
-                                        <td>{{ $envio[0]->ruta }}</td>
-                                    </tr>
-                                </table>
-                                
-                            </div>
-                                
-                            </div>
+                       
 
 
 
@@ -571,6 +540,11 @@
                                     
                                     </td>
                                     </tr>
+
+                                    <tr>
+                                        <td>Ruta: </td>
+                                        <td>{{ $envio[0]->ruta }}</td>
+                                    </tr>
                                     
                                     @endif
 
@@ -597,7 +571,10 @@
                                     {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
-                                    
+                                    <tr>
+                                        <td>Ruta: </td>
+                                        <td>{{ $envio[0]->ruta }}</td>
+                                    </tr>
                                     @endif
 
                                     @if($histo->estado == "Fallido")
@@ -632,13 +609,10 @@
                                     {{$histo->motivofallo}}</span>
                                     </td>
                                     </tr>
+                                    
                                     <tr>
-                                    <td> 
-                                    <span style="font-size:14px;">Nota: 
-                                    </td>
-                                    <td> 
-                                    {{$histo->notafallido}}</span>
-                                    </td>
+                                        <td>Ruta: </td>
+                                        <td>{{ $envio[0]->ruta }}</td>
                                     </tr>
                                     @if($histo->motivofallo == "reprogramado")
                                     <tr>
@@ -648,6 +622,10 @@
                                     <td> 
                                     {{date('d-m-Y H:i',strtotime($histo->fechareprogra))}}</span>
                                     </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ruta: </td>
+                                        <td>{{ $envio[0]->ruta }}</td>
                                     </tr>
                                     @endif
 
@@ -686,7 +664,10 @@
                                     {{$histo->notanoentre}}</span>
                                     </td>
                                     </tr>
-                                    
+                                    <tr>
+                                        <td>Ruta: </td>
+                                        <td>{{ $envio[0]->ruta }}</td>
+                                    </tr>
                                     @endif
 
                                     @if($histo->estado == "Cambio")
@@ -721,7 +702,10 @@
                                     {{$histo->nota}}</span>
                                     </td>
                                     </tr>
-                                    
+                                    <tr>
+                                        <td>Ruta: </td>
+                                        <td>{{ $envio[0]->ruta }}</td>
+                                    </tr>
                                     @endif
 
                                    
