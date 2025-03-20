@@ -261,7 +261,7 @@ if (searchText == "") {
                                                 <th class="min-w-50px text-center">Estado</th>                                                                                      
                                                 <th class="min-w-50px text-center">Total</th>  
                                             </tr> 
-                                        </thead>
+                                        </thead> 
                                         <tbody class="fw-semibold text-gray-400">
                                             @foreach ($envios as $index => $envio)
                                             <tr class="{{ $index % 2 == 0 ? 'table-row-gray' : 'table-row-white' }}">

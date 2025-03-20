@@ -180,51 +180,67 @@ if(tipo=='suelto'){
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
-                                        <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0 text-center" >
-                                                <th class="min-w-80px"># de guía</th>
-                                                <th class="min-w-50px text-center">Comercio</th>
-                                                <th class="min-w-150px text-center">Destinatario</th>
-                                                <th class="min-w-150px ">Dirección</th>                                                 
-                                                <th class="min-w-100px text-center">Tipo de envío</th>
-                                                <th class="min-w-150px text-center">Fecha de entrega</th>                                                
-                                                <th class="min-w-50px text-center">Estado</th>                                                                                      
-                                                <th class="min-w-50px text-center">Total</th>  
-                                            </tr> 
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th class="min-w-50px"># de guía</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-50px">Destinatario</th>
+                                                <th class="min-w-50px">Dirección</th>
+                                                <th class="text-center min-w-50px">Tipo de envio</th>
+                                                <th class="min-w-50px">Precio</th>
+                                                <th class="text-center min-w-50px">Estado del envio</th>
+                                                <th class="min-w-50px">Fecha de entrega</th>
+                                                <th class="min-w-50px">Ubicacion</th>
+                                                <th class="min-w-50px">Tipo de ubicacion</th>
+                                                <th class="min-w-50px">Rack</th>
+                                                <th class="min-w-50px">Nivel</th>
+                                                <th class="min-w-50px">Caja</th>
+                                                <th class="min-w-50px">Tarima</th>
+                                                
+                                               
+                                            </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($pedidos as $pedido) 
                                             <tr class="'table-row-gray' : 'table-row-white' }}">
-                                            <td>
-                                                    <a href="/envios/detalle/{{ $pedido->guia }}" class="text-gray-900 text-hover-primary">
-                                                        {{ $pedido->guia }}
+                                                <td>
+                                                    <a href="/envios/detalle" class="text-gray-900 text-hover-primary">
+                                                        {{$pedido->guia}}
                                                     </a>
                                                 </td>
-                                                <td style="text-align: center;">{{ $pedido->comercio }}</td>
-                                                <td style="text-align: center;">{{ $pedido->destinatario }}</td>
-                                                <td>{{ $pedido->direccion }}</td>
-                                                <td style="text-align: center;"><span class="badge badge-dark">{{ $pedido->tipo}}</span></td>
-                                                <td style="text-align: center;">{{ $pedido->fecha_entrega}}</td>
-                                                
-                                               
-                                                <td style="text-align: center;">
-                                                    @if( $pedido->estado == 'No entregado')
-                                                    <span class="badge badge-danger">{{ $pedido->estado }}</span>
-                                                    @elseif( $pedido->estado == 'Creado')
-                                                    <span class="badge badge-warning">{{ $pedido->estado }}</span>
-                                                    @elseif( $pedido->estado == 'Entregado')
-                                                    <span class="badge badge-success">{{ $pedido->estado }}</span>
-                                                    @elseif( $pedido->estado == 'En ruta')
-                                                    <span class="badge badge-info">{{ $pedido->estado }}</span>
-                                                    @elseif( $pedido->estado == 'Reprogramado')
-                                                    <span class="badge badge-dark">{{ $pedido->estado }}</span>
-                                                    @elseif( $pedido->estado == 'Devuelto al comercio')
-                                                    <span class="badge badge-primary">{{ $pedido->estado }}</span>
-                                                    @else
-                                                    <span class="badge badge-light">{{ $pedido->estado }}</span>
-                                                    @endif
+                                                <td>{{$pedido->comercio}}</td>
+                                                <td> {{$pedido->destinatario}}</td>
+                                                <td>{{$pedido->direccion}}</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-dark">{{$pedido->tipo}} </span>
                                                 </td>
+                                                <td class="text-center">${{$pedido->precio}}</td>
+                                                <td class="text-center">
+                                                    @if( $pedido->estado == 'No entregado')
+                                                                <span class="badge badge-danger">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Creado')
+                                                                <span class="badge badge-warning">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Entregado')
+                                                                <span class="badge badge-success">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'En ruta')
+                                                                <span class="badge badge-info">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Reprogramado')
+                                                                <span class="badge badge-dark">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Devuelto al comercio')
+                                                                <span class="badge badge-primary">{{ $pedido->estado }}</span>
+                                                                @else
+                                                                <span class="badge badge-light">{{ $pedido->estado }}</span>
+                                                                @endif
+                                                </td>
+                                                <td class="text-center">{{$pedido->fecha_entrega}}</td>
+                                                <td class="text-center">{{$pedido->agencia}}</td>
+                                                <td class="text-center">{{$pedido->ubicacion}}</td>
+                                                <td class="text-center">{{$pedido->rack}}</td>
+                                                <td class="text-center">{{$pedido->nivel}}</td>
+                                                <td class="text-center">{{$pedido->caja}}</td>
+                                                <td class="text-center">{{$pedido->tarima}}</td>
+                                                <td class="text-center">
                                                
-                                                <td class="text-center">${{ $pedido->total }}</td>
+                                            </td>
                                             </tr>
                                             @endforeach
                                         </tbody>
@@ -327,7 +343,7 @@ if(tipo=='suelto'){
                                             
                                           
                                         </div>
-                                        <input type="text" value="{{$actual}}" class="visually-hidden" name="guia2" id="guia2">
+                                        <input type="text" value="{{$pedidos[0]->guia}}" class="visually-hidden" name="guia2" id="guia2">
 
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>

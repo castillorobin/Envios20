@@ -309,7 +309,7 @@ class StockController extends Controller
     {
        // dd( Carbon::today());
         $nota = " "; 
-        return view('stocks.asignarrepartidor', compact('nota'));
+        return view('stocks.asignarrepartidor', compact('nota')); 
     }
     public function agregarrepartidor(Request $request)
     {
@@ -337,12 +337,48 @@ class StockController extends Controller
         
         $ticketc->save();
 
-        $pedidos = Envio::where('guia', $guia)
+        $pedidos = Envio::where('cambiando', $actual)
         ->get();
 
         $empleados = Empleado::all(); 
 
-        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados' ));
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota' ));
+    }
+
+    public function agregarrepartidorlote(Request $request)
+    {
+        $guia = $request->get('guia') ;
+        
+        $actual = $request->get('asignum') ;;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+
+            $pedidos = Envio::where('cambiando', $actual)
+        ->get();
+        $empleados = Empleado::all(); 
+            //return view('stocks.asignarrepartidor', compact('nota'));
+            return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota' ));
+            
+        }
+ 
+        $envioid= $envio[0]->id ;
+
+        $ticketc = Envio::find($envioid);
+        $ticketc->cambiando = $actual;
+        
+        $ticketc->save();
+
+        $pedidos = Envio::where('cambiando', $actual)
+        ->get();
+
+        $empleados = Empleado::all(); 
+
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota' ));
     }
 
 
@@ -372,7 +408,7 @@ class StockController extends Controller
         $guia = $request->get('guia2');
         $ruta = $request->get('ruta');
 
-        $envios = Envio::where('guia', $guia)
+        $envios = Envio::where('cambiando', $guia)
         ->get();
 
 
