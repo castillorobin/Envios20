@@ -521,7 +521,7 @@
                                     <h3 >En ruta</h3>
                                     </td>
 
-                                    <td></td>
+                                    <td></td> 
                                     </tr>
                                     <tr>
                                     <td>
@@ -610,25 +610,22 @@
                                     </td>
                                     </tr>
                                     
-                                    <tr>
-                                        <td>Ruta: </td>
-                                        <td>{{ $envio[0]->ruta }}</td>
-                                    </tr>
-                                    @if($histo->motivofallo == "reprogramado")
+                                   
+                                    @if($histo->motivofallo == "Reprogramado")
                                     <tr>
                                     <td>    
                                     <span style="font-size:14px;">Fecha de reprogramacion: 
                                     </td>
                                     <td> 
-                                    {{date('d-m-Y H:i',strtotime($histo->fechareprogra))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
                                     </td>
                                     </tr>
+                                 
+                                    @endif
                                     <tr>
                                         <td>Ruta: </td>
                                         <td>{{ $envio[0]->ruta }}</td>
                                     </tr>
-                                    @endif
-
 
                                     @endif
                                   
