@@ -658,7 +658,7 @@
                                     <span style="font-size:14px;">Nota:
                                     </td>
                                     <td> 
-                                    {{$histo->notanoentre}}</span>
+                                    {{$histo->nota}}</span>
                                     </td>
                                     </tr>
                                     <tr>
