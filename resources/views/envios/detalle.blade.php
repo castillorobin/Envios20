@@ -413,7 +413,7 @@
                                         </tr>
                                         <tr>
                                             <td>Agencia de registro: </td>
-                                            <td></td>
+                                            <td>{{ $envio[0]->agencia }}</td>
                                         </tr>
                                     </table>
                                     
