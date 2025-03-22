@@ -421,34 +421,11 @@
 									<span class="menu-title">Seleccion por punto</span>
 								</a>
 							</div>
-
-							<div class="menu-item">
-								<a class="menu-link py-3" href="/stocks/agregarfoto" style="background-color: transparent;">
-									<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-								</span>
-								<span class="menu-title">Agregar foto</span>
-								</a>
-							</div>
-
-
 						</div>
 					</div>
-
-
-
-					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
-						<a href="#" class="menu-link py-3" style="background-color: transparent;">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Ubicaciones</span>
-							<span class="menu-arrow"></span>
-						</a>
-						<div class="menu-sub menu-sub-accordion">
-
-						<div class="menu-item">
-						<a class="menu-link py-3" href="/stocks/asignar" style="background-color: transparent;">
+					@can('stock-editar')
+					<div class="menu-item">
+						<a class="menu-link" href="/stocks/asignar">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -456,38 +433,15 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link py-3" href="/stocks/cambiar" style="background-color: transparent;">
+						<a class="menu-link" href="/stocks/cambiar">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
 							<span class="menu-title">Cambiar ubicaciones</span>
 						</a>
 					</div>
-				</div>
-				</div>
-
-
-
-
-
-					@can('stock-editar')
-
-
-					
-
-					<div class="menu-item menu-accordion" data-kt-menu-trigger="click">
-						<a href="#" class="menu-link py-3" style="background-color: transparent;">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Asignación</span>
-							<span class="menu-arrow"></span>
-						</a>
-						<div class="menu-sub menu-sub-accordion">
-
-					
 					<div class="menu-item">
-						<a class="menu-link py-3" href="/stocks/asignarrepartidor" style="background-color: transparent;">
+						<a class="menu-link" href="/stocks/asignarrepartidor">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -495,7 +449,7 @@
 						</a>
 					</div>
 					<div class="menu-item">
-						<a class="menu-link py-3" href="/stocks/asignarrepartidorcaja" style="background-color: transparent;">
+						<a class="menu-link" href="/stocks/asignarrepartidorcaja">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -504,7 +458,7 @@
 					</div>
 
 					<div class="menu-item">
-						<a class="menu-link py-3" href="/stocks/asignarestado" style="background-color: transparent;">
+						<a class="menu-link" href="/stocks/asignarestado">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
@@ -513,24 +467,25 @@
 					</div>
 
 
-
-				</div>
-				</div>
-
-
-
-
-
-
-					
-					
-
-
-					
+					<div class="menu-item">
+						<a class="menu-link" href="/stocks/agregarfoto">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Agregar foto</span>
+						</a>
+					</div>
 					@endcan
 
 
-					
+					<div class="menu-item">
+						<a class="menu-link" href="#">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">ver ubicacion</span>
+						</a>
+					</div>
 				</div>
 			</div>
 			@endcan
