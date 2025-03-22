@@ -301,8 +301,9 @@ class StockController extends Controller
         }
 
         $envio->save();
+        $nota = " "; 
         
-        return view('stocks.cambiarasignar');
+        return view('stocks.cambiarasignar', compact('nota' ));
     }
 
     public function asignarrepartidor()

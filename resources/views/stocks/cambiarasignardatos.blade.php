@@ -67,7 +67,7 @@ if(tipo=='suelto'){
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main" style="margin-top: -355px;">
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
@@ -171,7 +171,7 @@ if(tipo=='suelto'){
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
 
 
                                 <!--begin::Table-->
@@ -201,7 +201,7 @@ if(tipo=='suelto'){
                                             @foreach ($pedidos as $pedido) 
                                             <tr class="'table-row-gray' : 'table-row-white' }}">
                                                 <td>
-                                                    <a href="/envios/detalle" class="text-gray-900 text-hover-primary">
+                                                    <a href="/envios/detalle/{{$pedido->guia}}" class="text-gray-900 text-hover-primary">
                                                         {{$pedido->guia}}
                                                     </a>
                                                 </td>
