@@ -193,9 +193,9 @@ class StockController extends Controller
 
             $envio->save();
         }
+        $nota = " "; 
 
-
-        return view('stocks.asignar');
+        return view('stocks.asignar', compact('nota' ));
 
 
 
