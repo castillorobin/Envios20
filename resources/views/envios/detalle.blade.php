@@ -413,7 +413,7 @@
                                         </tr>
                                         <tr>
                                             <td>Agencia de registro: </td>
-                                            <td>{{ $envio[0]->foto1 }}</td>
+                                            <td></td>
                                         </tr>
                                     </table>
                                     
@@ -618,6 +618,17 @@
                                     </td>
                                     <td> 
                                     {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
+                                    </td>
+                                    </tr>
+                                 
+                                    @endif
+                                    @if($histo->motivofallo == "Otro")
+                                    <tr>
+                                    <td>    
+                                    <span style="font-size:14px;">Nota: 
+                                    </td>
+                                    <td> 
+                                    {{date('d-m-Y H:i',strtotime($histo->notafallo))}}</span>
                                     </td>
                                     </tr>
                                  
