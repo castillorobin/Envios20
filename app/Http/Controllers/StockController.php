@@ -184,7 +184,7 @@ class StockController extends Controller
             if($cajasuelto=="suelto"){
             $envio->rack = $racks;
             $envio->nivel = $nivels;
-            //$envio->caja = $caja;
+            $envio->caja = NULL;
             $envio->tarima = $tarimas;
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
@@ -269,10 +269,16 @@ class StockController extends Controller
         $usuario = $request->get('usuario');
         $agencia = $request->get('agencia');
         $cajasuelto = $request->get('cajasuelto');
+
+        
         $caja = $request->get('caja');
         $rack = $request->get('rack');
         $nivel = $request->get('nivel');
         $tarima = $request->get('tarima');
+
+        $racks = $request->get('racks');
+        $nivels = $request->get('nivels');
+        $tarimas = $request->get('tarimas');
         $id = $request->get('asignum2');
 
         $envio = Envio::find($id);
@@ -281,11 +287,13 @@ class StockController extends Controller
             $envio->caja = $caja;
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
+           
         }
         if($rack){
             $envio->rack = $rack;
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
+           
         }
 
         if($nivel){
@@ -298,6 +306,28 @@ class StockController extends Controller
             $envio->tarima = $tarima;
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
+            dd($cajasuelto);
+        }
+
+/*suelto*/////////
+        if($racks){
+            $envio->rack = $racks;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
+           
+        }
+
+        if($nivels){
+            $envio->nivel = $nivels;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
+        }
+
+        if($tarimas){
+            $envio->tarima = $tarimas;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
+          //  dd($cajasuelto);
         }
 
         $envio->save();

@@ -398,7 +398,7 @@ if(tipo=='suelto'){
                                             </div>
                                             <div class="row my-2 mx-2 justify-content-center">
                                                 <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid" name="cajasuelto" id="cajasuelto" aria-label="Floating label select example" onchange="elegircajasuelto()">
+                                                    <select class="form-select form-select-solid" name="cajasuelto" id="cajasuelto" onchange="elegircajasuelto()">
                                                        
                                                         <option value="caja">Caja</option>
                                                         <option value="suelto">Suelto</option>
@@ -432,7 +432,7 @@ if(tipo=='suelto'){
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-                                            <div class="row my-2 mx-2 justify-content-center" name="caja1" id="suelto1" hidden>
+                                            <div class="row my-2 mx-2 justify-content-center" name="suelto1" id="suelto1" hidden>
                                                 <div class="form-floating col-lg-6 mb-4">
                                                     <input type="text" class="form-control form-control-solid" name="racks" id="racks" placeholder="# de nivel" />
                                                     <label for="nivel" style="padding-left: 25px;">Rack</label>
@@ -444,7 +444,7 @@ if(tipo=='suelto'){
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-                                            <div class="row my-2 mx-2 " name="caja1" id="suelto2" hidden>
+                                            <div class="row my-2 mx-2 " name="suelto2" id="suelto2" hidden>
                                                 <div class="form-floating col-lg-6 mb-4">
                                                     <input type="text" class="form-control form-control-solid" name="tarimas" id="tarimas" placeholder="# de tarima"  />
                                                     <label for="tarima" style="padding-left: 25px;">Tarima</label>
