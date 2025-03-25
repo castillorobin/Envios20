@@ -491,7 +491,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Asignar repartidor por guia</span>
+							<span class="menu-title">Asignar guia</span>
 						</a>
 					</div>
 					<div class="menu-item">
@@ -499,7 +499,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Asignar repartidor por caja</span>
+							<span class="menu-title">Asignar caja</span>
 						</a>
 					</div>
 
