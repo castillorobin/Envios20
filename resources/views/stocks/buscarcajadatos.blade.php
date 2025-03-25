@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es">
 <!--begin::Head-->
 
 <head>
@@ -9,7 +9,7 @@
     <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
     <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale" content="es_SV" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
     <meta property="og:url" content="https://keenthemes.com/metronic" />
@@ -39,21 +39,45 @@
     </style>
 
 </head>
+<script>
+    function elegircajasuelto() {
+var tipo =  document.getElementById('cajasuelto').value;
+if(tipo=='caja'){
+   // alert("elegiste caja");
+   document.getElementById('caja1').hidden = false;
+   document.getElementById('caja2').hidden = false;
+   document.getElementById('suelto1').hidden = true;
+   document.getElementById('suelto2').hidden = true;
+}
+if(tipo=='suelto'){
+    document.getElementById('caja1').hidden = true;
+    document.getElementById('caja2').hidden = true;
+    document.getElementById('suelto1').hidden = false;
+   document.getElementById('suelto2').hidden = false;
+}
+//document.getElementById('total1').innerText = 0;
+//document.getElementById('totalito').innerText = 0;
+//document.getElementById('stotal').innerText = 0;
+//document.getElementById("tota").value = 0;
+////document.getElementById("stota").value = 0;
+//alert(total5);
 
+}
+</script>
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
-    <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div id="kkt_content" class="content flex-column-fluid">
+                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center ">
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor por caja</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Buscar por caja</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -76,7 +100,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Asignar repartidor por caja</li>
+                                <li class="breadcrumb-item text-muted">Buscar por caja</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -84,25 +108,27 @@
                         <!--end::Page title-->
 
                         <!--begin::Actions-->
-                        
+                        <div class="d-flex align-items-center gap-2 gap-lg-3">
+                          
+                            <!--end::Primary button-->
+                        </div>
                         <!--end::Actions-->
                     </div>
                     <!--end::Toolbar container-->
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_content" class="content flex-column-fluid " >
+                <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_content_container" class="">
+                    <div id="kt_app_content_container" class="">
                         <!--begin::Products-->
-                        <div class="card card-flush ">
+                        <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center">
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
                                 <!--begin::Card title-->
-                                <div class="card-title ">
+                                <div class="card-title">
                                     <!--begin::Search-->
-                                    
-                                    <form action="/stocks/agregarrepartidorcaja/" class="row g-2" method="GET">
+                                    <form action="/stocks/buscarcajadatos/" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Caja</label>
@@ -127,13 +153,16 @@
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                       
+                                    
                                         <!--end::Select2-->
                                     </div>
                                     <!--begin::Filter-->
                                     <div class="w-190px">
-                                        <!--begin::Select2-->
-                                        
+                                        <!--begin::Select2
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
+                                            Asignar en lote
+                                        </button>
+                                        -->
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -160,105 +189,97 @@
                                                 <th class="min-w-50px">Precio</th>
                                                 <th class="text-center min-w-50px">Estado del envio</th>
                                                 <th class="min-w-50px">Fecha de entrega</th>
+                                                <th class="min-w-50px">Repartidor</th>
                                                 <th class="min-w-50px">Ubicacion</th>
                                                 <th class="min-w-50px">Tipo de ubicacion</th>
                                                 <th class="min-w-50px">Rack</th>
                                                 <th class="min-w-50px">Nivel</th>
                                                 <th class="min-w-50px">Caja</th>
                                                 <th class="min-w-50px">Tarima</th>
-                                                <th class="min-w-50px">Accion</th>
+                                               
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
-
+                                            @foreach ($pedidos as $pedido) 
                                             <tr class="'table-row-gray' : 'table-row-white' }}">
                                                 <td>
-                                                   
+                                                    <a href="/envios/detalle/{{$pedido->guia}}" class="text-gray-900 text-hover-primary">
+                                                        {{$pedido->guia}}
+                                                    </a>
                                                 </td>
-                                                <td></td>
-                                                <td> </td>
-                                                <td></td>
-                                                <td></td>
-                                                <td>
-                                                   
+                                                <td>{{$pedido->comercio}}</td>
+                                                <td> {{$pedido->destinatario}}</td>
+                                                <td>{{$pedido->direccion}}</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-dark">{{$pedido->tipo}} </span>
                                                 </td>
-                                                <td class="text-end"></td>
-                                                <td>
-                                                    
+                                                <td class="text-center">${{$pedido->precio}}</td>
+                                                <td class="text-center">
+                                                    @if( $pedido->estado == 'No entregado')
+                                                                <span class="badge badge-danger">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Creado')
+                                                                <span class="badge badge-warning">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Entregado')
+                                                                <span class="badge badge-success">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'En ruta')
+                                                                <span class="badge badge-info">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Reprogramado')
+                                                                <span class="badge badge-dark">{{ $pedido->estado }}</span>
+                                                                @elseif( $pedido->estado == 'Devuelto al comercio')
+                                                                <span class="badge badge-primary">{{ $pedido->estado }}</span>
+                                                                @else
+                                                                <span class="badge badge-light">{{ $pedido->estado }}</span>
+                                                                @endif
                                                 </td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td>
-                                                   
-                                                </td>
+                                                <td class="text-center">{{$pedido->fecha_entrega}}</td>
+                                                <td class="text-center">{{$pedido->repartidor}}</td>
+                                                <td class="text-center">{{$pedido->agencia}}</td>
+                                                <td class="text-center">{{$pedido->ubicacion}}</td>
+                                                <td class="text-center">{{$pedido->rack}}</td>
+                                                <td class="text-center">{{$pedido->nivel}}</td>
+                                                <td class="text-center">{{$pedido->caja}}</td>
+                                                <td class="text-center">{{$pedido->tarima}}</td>
+                                                
 
                                             </tr>
-
+                                            @endforeach
                                         </tbody>
 
                                     </table>
                                     
+                                   
+                                  
 
-                                    <ul class="pagination">
-                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                    </ul>
+                                 
+                                   
+
+
+
+
                                 </div>
+                                <div class="row">
+                                    <div class="col-12 mb-3" >
+                                        <a href="/stocks/buscarcaja">
+                                        <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
+                                    </a>
+                                    </div>
+                                    
+                                </div>
+                                <div class="row">
+                                    <div class="col-12" >
+                                        <ul class="pagination"style="float: right;" >
+                                            <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
+                                            <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
+                                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
+                                            <li class="page-item next"><a href="#" class="page-link">Next</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
                                 <!--end::Table-->
                             </div>
                             <!--end::Table-->
-
-                            <div class="modal fade" tabindex="-1" id="kt_modal_1">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h3 class="modal-title">Asignar paquete</h3>
-                                            <!--begin::Close-->
-                                            <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                                                <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
-                                            </div>
-                                            <!--end::Close-->
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="row my-4 mx-4 justify-content-center">
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="rack" id="rack" placeholder="# de rack" pattern="[0-9]+" required />
-                                                    <label for="rack" style="padding-left: 25px;">Rack</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="nivel" id="nivel" placeholder="# de nivel" pattern="[0-9]+" required />
-                                                    <label for="nivel" style="padding-left: 25px;">Nivel</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                            </div>
-                                            <div class="row my-4 mx-4 justify-content-center">
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="caja" id="caja" placeholder="# de caja" pattern="[0-9]+" required />
-                                                    <label for="caja" style="padding-left: 25px;">Caja</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                                <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="tarima" id="tarima" placeholder="# de tarima" pattern="[0-9]+" required />
-                                                    <label for="tarima" style="padding-left: 25px;">Tarima</label>
-                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                            <button type="button" class="btn btn-primary">Asignar</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            
                         </div>
                         <!--end::Card body-->
                     </div>

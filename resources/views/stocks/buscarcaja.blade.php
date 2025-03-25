@@ -53,7 +53,7 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor por caja</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Buscar por caja</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -76,7 +76,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Asignar repartidor por caja</li>
+                                <li class="breadcrumb-item text-muted">Buscar por caja</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -102,7 +102,7 @@
                                 <div class="card-title ">
                                     <!--begin::Search-->
                                     
-                                    <form action="/stocks/agregarrepartidorcaja/" class="row g-2" method="GET">
+                                    <form action="/stocks/buscarcajadatos/" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Caja</label>

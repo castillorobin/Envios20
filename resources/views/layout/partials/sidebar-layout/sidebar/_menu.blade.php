@@ -504,6 +504,15 @@
 					</div>
 
 					<div class="menu-item">
+						<a class="menu-link py-3" href="/stocks/buscarcaja" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Buscar por caja</span>
+						</a>
+					</div>
+
+					<div class="menu-item">
 						<a class="menu-link py-3" href="/stocks/asignarestado" style="background-color: transparent;">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>

@@ -26,6 +26,20 @@ class StockController extends Controller
         $nota = " ";
         return view('stocks.seleccionarzona', compact('nota')); 
     }
+    public function buscarcaja() 
+    {
+       
+        $nota = " ";
+        return view('stocks.buscarcaja'); 
+    }
+    public function buscarcajadatos(Request $request) 
+    {
+        $id = $request->get('guia') ;
+        $pedidos = Envio::where('caja', $id)->get();
+       
+        $nota = " ";
+        return view('stocks.buscarcajadatos', compact('pedidos')); 
+    }
     public function zonadatos(Request $request)
     {
         $id = $request->get('guia') ;
