@@ -43,7 +43,7 @@
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
-    <div class="app-main flex-column flex-row-fluid" id="kt_app_main" style="margin-top: -355px;">
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
@@ -53,7 +53,7 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor por caja</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor por cajaaaaa</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -144,7 +144,7 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
 
 
                                 <!--begin::Table-->

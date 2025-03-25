@@ -408,7 +408,7 @@ class StockController extends Controller
         ->get();
 
         $empleados = Empleado::all(); 
-
+ 
         return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota' ));
     }
 
@@ -424,7 +424,13 @@ class StockController extends Controller
 
         $pedidos = Envio::where('caja', $guia)
         ->get();
- 
+        
+        if($pedidos->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            //return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+            return view('stocks.asignarrepartidorcaja');
+        }
         
         $empleados = Empleado::all(); 
 
