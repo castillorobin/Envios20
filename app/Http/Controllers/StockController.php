@@ -40,6 +40,27 @@ class StockController extends Controller
         $empleados = Empleado::all(); 
         return view('stocks.paquetesasignados', compact('empleados')); 
     }
+
+    public function paquetesasignadosdatos(Request $request) 
+    {
+        $desde = $request->input('desde');
+        $hasta = $request->input('hasta');
+        $repartidorsolo = $request->input('repartidor');
+
+        $envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])
+        ->get();
+
+        if ($repartidorsolo !="todos"){
+            // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
+           // $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
+             //where('tipo', $tipo)->get();
+             $envios = $envios->intersect(Envio::whereIn('repartidor', [$repartidorsolo])->get());
+         }
+       
+        $nota = " ";
+        $empleados = Empleado::all(); 
+        return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios')); 
+    }
     
     public function buscarcajadatos(Request $request) 
     {

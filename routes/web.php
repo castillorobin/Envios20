@@ -266,6 +266,7 @@ Route::get('/stocks/buscarcaja', [App\Http\Controllers\StockController::class, '
 Route::get('/stocks/buscarcajadatos', [App\Http\Controllers\StockController::class, 'buscarcajadatos'] )->name('buscarcajadatos');
 
 Route::get('/stocks/paquetesasignados', [App\Http\Controllers\StockController::class, 'paquetesasignados'] )->name('paquetesasignados');
+Route::get('/stocks/paquetesasignadosdatos', [App\Http\Controllers\StockController::class, 'paquetesasignadosdatos'] )->name('paquetesasignadosdatos');
 
 
 //Rutas
