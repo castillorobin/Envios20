@@ -47,14 +47,18 @@ class StockController extends Controller
         $hasta = $request->input('hasta');
         $repartidorsolo = $request->input('repartidor');
 
-        $envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])
-        ->get();
+        //$envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])
+        //->get();
 
         if ($repartidorsolo !="todos"){
             // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
-           // $envios = Envio::whereBetween('fecha_entrega', [$desde, $hasta])->
-             //where('tipo', $tipo)->get();
-             $envios = $envios->intersect(Envio::whereIn('repartidor', [$repartidorsolo])->get());
+            $envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])->
+             where('repartidor', $repartidorsolo)->get();
+            // dd($repartidorsolo);
+            // $envios = $envios->intersect(Envio::whereIn('repartidor', [$repartidorsolo])->get());
+         }else{
+            $envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])
+        ->get();
          }
        
         $nota = " ";
