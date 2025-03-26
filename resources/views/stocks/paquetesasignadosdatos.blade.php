@@ -201,7 +201,8 @@ if(tipo=='suelto'){
                                                 <th class="min-w-150px text-center">Destinatario</th>
                                                 <th class="min-w-150px ">Dirección</th>                                                 
                                                 <th class="min-w-100px text-center">Tipo de envío</th>
-                                                <th class="min-w-150px text-center">Fecha de entrega</th>                                                
+                                                <th class="min-w-150px text-center">Fecha de entrega</th>      
+                                                <th class="min-w-50px text-center">Repartidor</th>                                            
                                                 <th class="min-w-50px text-center">Estado</th>                                                                                      
                                                 <th class="min-w-50px text-center">Total</th>  
                                             </tr> 
@@ -219,7 +220,7 @@ if(tipo=='suelto'){
                                                 <td>{{ $envio->direccion }}</td>
                                                 <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
                                                 <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
-                                                
+                                                <td style="text-align: center;">{{ $envio->repartidor}}</td>
                                                
                                                 <td style="text-align: center;">
                                                     @if( $envio->estado == 'No entregado')
