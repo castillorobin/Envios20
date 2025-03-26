@@ -32,6 +32,15 @@ class StockController extends Controller
         $nota = " ";
         return view('stocks.buscarcaja'); 
     }
+
+    public function paquetesasignados() 
+    {
+       
+        $nota = " ";
+        $empleados = Empleado::all(); 
+        return view('stocks.paquetesasignados', compact('empleados')); 
+    }
+    
     public function buscarcajadatos(Request $request) 
     {
         $id = $request->get('guia') ;

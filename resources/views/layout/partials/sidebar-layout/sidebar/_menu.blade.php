@@ -513,6 +513,15 @@
 					</div>
 
 					<div class="menu-item">
+						<a class="menu-link py-3" href="/stocks/paquetesasignados" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Paquetes asignados</span>
+						</a>
+					</div>
+
+					<div class="menu-item">
 						<a class="menu-link py-3" href="/stocks/asignarestado" style="background-color: transparent;">
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>

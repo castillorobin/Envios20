@@ -265,6 +265,8 @@ Route::get('/stocks/guardarestado', [App\Http\Controllers\StockController::class
 Route::get('/stocks/buscarcaja', [App\Http\Controllers\StockController::class, 'buscarcaja'] )->name('buscarcaja');
 Route::get('/stocks/buscarcajadatos', [App\Http\Controllers\StockController::class, 'buscarcajadatos'] )->name('buscarcajadatos');
 
+Route::get('/stocks/paquetesasignados', [App\Http\Controllers\StockController::class, 'paquetesasignados'] )->name('paquetesasignados');
+
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;
