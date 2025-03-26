@@ -160,7 +160,7 @@ if(tipo=='suelto'){
                                     <div class="w-190px">
                                         <!--begin::Select2-->
                                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
-                                            Asignar en lote
+                                            Asignar
                                         </button>
                                         <!--end::Select2-->
                                     </div>
@@ -276,7 +276,7 @@ if(tipo=='suelto'){
                                 </div>
                                 
                                 <!--end::Table-->
-                            </div>
+                            </div> 
                             <!--end::Table-->
                             <div class="modal fade" tabindex="-1" id="kt_modal_1">
                            
@@ -290,7 +290,7 @@ if(tipo=='suelto'){
                                             </div>
                                             <!--end::Close-->
 
-                                            <form action="/stocks/guardarasignarrepartidor/" method="GET">
+                                            <form action="/stocks/guardarasignarrepartidorcaja/" method="GET">
 
                                         </div>
                                         <div class="modal-body">

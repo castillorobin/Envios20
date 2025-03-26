@@ -525,14 +525,13 @@ class StockController extends Controller
         $agencia = $request->get('agencia');
         $repartidor = $request->get('repartidor');
         $caja = $request->get('caja6');
-
+//dd($caja);
 
         $envios = Envio::where('caja', $caja)
         ->get();
 
 
         foreach($envios as $envio){
-
             $envio->repartidor = $repartidor;
             $envio->estado = "En ruta";
             $envio->cambioasi = 0;
