@@ -208,7 +208,7 @@ class StockController extends Controller
         $rack = $request->get('rack');
         $nivel = $request->get('nivel');
         $tarima = $request->get('tarima');
-
+//dd($tarima);
         $racks = $request->get('racks');
         $nivels = $request->get('nivels');
         $tarimas = $request->get('tarimas');
@@ -240,6 +240,14 @@ class StockController extends Controller
             
 
             $envio->save();
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Asignado";
+            $hesta->usuario = $usuario;
+            $hesta->save();
+
+
         }
         $nota = " "; 
 
@@ -354,7 +362,7 @@ class StockController extends Controller
             $envio->tarima = $tarima;
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
-            dd($cajasuelto);
+           // dd($cajasuelto);
         }
 
 /*suelto*/////////
@@ -379,6 +387,14 @@ class StockController extends Controller
         }
 
         $envio->save();
+
+        $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Cambiada";
+            $hesta->usuario = $usuario;
+            $hesta->save();
+
+
         $nota = " "; 
         
         return view('stocks.cambiarasignar', compact('nota' ));

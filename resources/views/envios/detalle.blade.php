@@ -517,6 +517,60 @@
 
                                         
                                     @foreach($historial as $histo)
+
+                                    @if($histo->estado == "Asignado")
+                                  
+                                    <tr >
+                                        <td style="width: 150px; " colspan="2">
+                                    <h3 >Ubicación asignada:</h3>
+                                    </td>
+                                    
+                                    </tr>
+                                    <tr>
+                                    <td>    
+                                    <span style="font-size:14px;">Usuario: 
+                                    </td>
+                                    <td> 
+                                    {{$histo->usuario}}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td>    
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td> 
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                 
+                                    @endif
+
+                                    @if($histo->estado == "Cambiada")
+                                  
+                                    <tr >
+                                        <td style="width: 150px; " colspan="2">
+                                    <h3 >Ubicación Cambiada:</h3>
+                                    </td>
+                                    
+                                    </tr>
+                                    <tr>
+                                    <td>    
+                                    <span style="font-size:14px;">Usuario: 
+                                    </td>
+                                    <td> 
+                                    {{$histo->usuario}}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                    <td>    
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td> 
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                 
+                                    @endif
                                    
                                     @if($histo->estado == "En ruta")
 
