@@ -232,7 +232,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="numero" value="" data-kt-ecommerce-settings-type="tagify" />
+                                                    <input type="text" class="form-control form-control-solid" name="nruta" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                                 </div>
@@ -278,7 +278,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="numero" value="" data-kt-ecommerce-settings-type="tagify" />
+                                                    <input type="text" class="form-control form-control-solid" name="nfijo" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                             </div>

@@ -16,7 +16,8 @@ return new class extends Migration
             $table->string('zona')->nullable();
             $table->string('ruta')->nullable();
             $table->string('punto')->nullable();
-            $table->integer('numero')->nullable();
+            $table->integer('nfijo')->nullable();
+            $table->integer('nruta')->nullable();
             $table->string('color')->nullable();
             $table->timestamps();
         });
