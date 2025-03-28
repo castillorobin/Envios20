@@ -553,7 +553,7 @@
 			</div>
 			@endcan
 
-			@can('configurar-ver')
+			
 			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
 				<span class="menu-link">
 					<span class="menu-icon">{!! getIcon('setting-3', 'fs-2') !!}</span>
@@ -574,7 +574,7 @@
 				
 
 			</div>
-			@endcan
+			
 		</div>
 	</div>
 </div>
