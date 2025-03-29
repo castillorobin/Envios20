@@ -95,7 +95,7 @@ Route::get('/stocks/asignar', function () {
 
 Route::get('/stocks/seleccionarpunto', function () {
     $nota = " ";
-    return view('stocks.seleccionarpunto', compact('nota'));
+    return view('ruta.listapuntos', compact('nota'));
 });
 
 Route::get('/envios/registroconguia', function () {
@@ -279,6 +279,8 @@ Route::get('/stocks/agregarfoto', [App\Http\Controllers\StockController::class, 
 Route::get('/stocks/agregarguiafoto', [App\Http\Controllers\StockController::class, 'agregarguiafoto'] )->name('agregarguiafoto');
 Route::get('/stocks/guardarfoto', [App\Http\Controllers\StockController::class, 'guardarfoto'] )->name('aguardarfoto');
 Route::get('/guardandofoto', [App\Http\Controllers\StockController::class, 'guardandofoto'] )->name('guardandofoto');
+
+
 
 /*
 

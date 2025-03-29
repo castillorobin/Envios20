@@ -113,30 +113,15 @@ class StockController extends Controller
         if($envio->isEmpty()){
             //dd("no hay envio");
             $nota = "La Guía que se ingreso no existe"; 
-            return view('stocks.seleccionarpunto', compact('nota'));
+            return view('ruta.listapuntos', compact('nota'));
 
         }
 
         $idpunto = $envio[0]->punto;
-        $punto = Rutas::where('id', $idpunto)->get();
+        $pedidos = Rutas::where('id', $idpunto)->get();
         $nota = " ";
-        return view('stocks.puntodatos', compact('envio', 'punto', 'nota'));
-/*
-        if($envio[0]->punto != NULL){
-        
-        return view('stocks.zonadatos', compact('envio', 'punto'));
-        }else{
+        return view('ruta.listapuntosdatos', compact('envio', 'pedidos', 'nota'));
 
-            $punto[0]->id = 1;
-            $punto[0]->zona = " "; 
-            $punto[0]->ruta = " ";
-            $punto[0]->punto = " ";
-            $punto[0]->numero = " ";
-
-            return view('stocks.zonadatos', compact('envio', 'punto'));
-        }
-
-*/
     }
 
     public function agregarguia(Request $request)
