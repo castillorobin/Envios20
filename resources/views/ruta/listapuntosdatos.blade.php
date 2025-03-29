@@ -221,7 +221,7 @@ if(tipo=='suelto'){
 
                                             </tr>
                                             <tr>
-                                                <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> {{strtoupper(substr($pedido->zona, 0, 3)) }}  {{$pedido->nruta}} - {{$pedido->nfijo}} </span></td>
+                                                <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{strtoupper(substr($pedido->zona, 0, 3)) }}  {{$pedido->nruta}} - {{$pedido->nfijo}} </span></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
