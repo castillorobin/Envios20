@@ -194,7 +194,7 @@ if(tipo=='suelto'){
                                             <tr class="'table-row-gray' : 'table-row-white' }}">
                                                 
                                                 <td class="text-center">{{$envio[0]->tipo}}</td>
-                                                <td class="text-center"> {{strtoupper(substr($pedido->zona, 0, 3)) }}</td>
+                                                <td class="text-center"> {{$pedido->zona }}</td>
                                                 <td class="text-center">{{$pedido->nruta}}</td>
                                                 <td class="text-center">
                                                     {{$pedido->nfijo}} 
@@ -219,6 +219,9 @@ if(tipo=='suelto'){
                                                 </td>
                                               
 
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> {{strtoupper(substr($pedido->zona, 0, 3)) }}  {{$pedido->nruta}} - {{$pedido->nfijo}} </span></td>
                                             </tr>
                                             @endforeach
                                         </tbody>
