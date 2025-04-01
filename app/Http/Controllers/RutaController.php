@@ -34,6 +34,31 @@ class RutaController extends Controller
         return view('ruta.ajustes', compact('rutas'));
     }
 
+    public function editarruta($id)
+    {
+        $ruta = Rutas::find($id);
+
+        return view('ruta.editarajustes', compact('ruta'));
+    }
+    
+    public function editandoruta(Request $request)
+    {
+        $id = $request->get('id');
+        $ruta = Rutas::find($id);
+        
+        $ruta->zona = $request->get('zona');
+        $ruta->ruta = $request->get('ruta');
+        $ruta->punto = $request->get('punto');
+        $ruta->nfijo = $request->get('nfijo');
+        $ruta->nruta = $request->get('nruta');
+
+        $ruta->save();
+        
+        $rutas = Rutas::all();
+
+        return view('ruta.ajustes', compact('rutas'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
@@ -77,8 +102,9 @@ class RutaController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function eliminarruta($id)
     {
-        //
+        Rutas::find($id)->delete();
+        return redirect()->back();
     }
 }

@@ -281,6 +281,11 @@ Route::get('/stocks/guardarfoto', [App\Http\Controllers\StockController::class, 
 Route::get('/guardandofoto', [App\Http\Controllers\StockController::class, 'guardandofoto'] )->name('guardandofoto');
 
 
+Route::get('/ruta/editar/{id}', [App\Http\Controllers\RutaController::class, 'editarruta'] )->name('editarruta') ;
+Route::get('/ruta/editandoruta', [App\Http\Controllers\RutaController::class, 'editandoruta'] )->name('editandoruta') ;
+Route::get('/ruta/eliminar/{id}', [App\Http\Controllers\RutaController::class, 'eliminarruta'] )->name('eliminarruta') ;
+
+
 
 /*
 

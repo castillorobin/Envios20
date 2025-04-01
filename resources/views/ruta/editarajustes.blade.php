@@ -53,7 +53,7 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Configuracion de ruta</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Editar ruta</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -76,7 +76,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Configuracion de ruta</li>
+                                <li class="breadcrumb-item text-muted">Editar ruta</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -107,19 +107,12 @@
                                     <!--begin:::Tab item-->
                                     <li class="nav-item">
                                         <a class="nav-link text-active-primary d-flex align-items-center pb-5 active" data-bs-toggle="tab" href="#kt_ecommerce_settings_general">
-                                            <i class="ki-duotone ki-home fs-2 me-2"></i>General</a>
+                                            <i class="ki-duotone ki-home fs-2 me-2"></i>Editar</a>
                                     </li>
                                     <!--end:::Tab item-->
                                     <!--begin:::Tab item-->
                                     <li class="nav-item">
-                                        <a class="nav-link text-active-primary d-flex align-items-center pb-5" data-bs-toggle="tab" href="#kt_ecommerce_settings_store">
-                                            <i class="ki-duotone ki-shop fs-2 me-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                                <span class="path3"></span>
-                                                <span class="path4"></span>
-                                                <span class="path5"></span>
-                                            </i>Listado</a>
+                                        
                                     </li>
                                     
                                     <!--begin:::Tab item-->
@@ -133,17 +126,18 @@
                                     <!--begin:::Tab pane-->
                                     <div class="tab-pane fade show active" id="kt_ecommerce_settings_general" role="tabpanel">
                                         <!--begin::Form-->
-                                        <form action="/ruta/agregar" id="kt_invoice_form" method="POST"> 
+                                        <form action="/ruta/editandoruta" id="kt_invoice_form" method="POST"> 
                                             @csrf
                                             @method('GET')
                                             <!--begin::Heading-->
                                             <div class="row mb-7">
                                                 <div class="col-md-9 offset-md-3">
-                                                    <h2>Configuraciones de ruta</h2>
+                                                    <h2>Editar ruta</h2>
                                                 </div>
                                             </div>
                                             <!--end::Heading-->
                                             <!--begin::Input group-->
+                                            <input type="text" class="form-control form-control-solid" name="id" value="{{$ruta->id}}"  hidden/>
 
                                             <div class="row fv-row mb-7">
                                                 <div class="col-md-3 text-md-end">
@@ -163,9 +157,9 @@
                                                 <div class="col-md-9">
                                                     <div class="w-100">
                                                         <!--begin::Select2-->
-                                                        <select class="form-select form-select-solid" name="zona" data-control="select2" data-hide-search="true" data-placeholder="Select a layout" required>
-                                                            <option></option>
-                                                            <option value="Occidente" selected="selected">Occidente</option>
+                                                        <select class="form-select form-select-solid" name="zona" data-control="select2" data-hide-search="true" data-placeholder="Select a layout">
+                                                            <option value="{{$ruta->zona}}">{{$ruta->zona}}</option>
+                                                            <option value="Occidente" >Occidente</option>
                                                             <option value="Zona central">Zona central</option>
                                                             <option value="Zona paracentral">Zona paracentral</option>
                                                             <option value="Oriente">Oriente</option>
@@ -194,7 +188,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="ruta" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="ruta" value="{{$ruta->ruta}}" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
 
@@ -219,7 +213,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="nruta" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="nruta" value="{{$ruta->nruta}}" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                                 </div>
@@ -242,7 +236,7 @@
                                                 </div>
                                                 <div class="col-md-9">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="punto" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="punto" value="{{$ruta->punto}}" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                             </div>
@@ -265,7 +259,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="nfijo" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="nfijo" value="{{$ruta->nfijo}}" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                             </div>
@@ -276,11 +270,12 @@
                                                 <div class="col-md-9 offset-md-3">
                                                     <div class="d-flex">
                                                         <!--begin::Button-->
-                                                        <button type="reset" data-kt-ecommerce-settings-type="cancel" class="btn btn-light me-3">Cancelar</button>
+                                                        <a href="/configuraciones/ajustes">
+                                                        <button type="button" class="btn btn-light me-3">Cancelar</button></a>
                                                         <!--end::Button-->
                                                         <!--begin::Button-->
                                                         <button type="submit" data-kt-ecommerce-settings-type="submit" class="btn btn-primary">
-                                                            <span class="indicator-label">Guardar</span>
+                                                            <span class="indicator-label">Editar</span>
                                                             <span class="indicator-progress">Please wait...
                                                                 <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                                                         </button>
@@ -304,52 +299,13 @@
                                        
                                             <!--begin::Heading-->
                                             <div class="row mb-7">
-                                                <div class="col-md-9 offset-md-3">
-                                                    <h2>Listado de rutas</h2>
-                                                </div>
+                                              
                                             </div>
                                             <!--end::Heading-->
                                             
                                             <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
-                                        <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px">ID</th>
-                                                <th class="min-w-50px">Zona</th>
-                                                <th class="min-w-50px">Ruta</th>
-                                                <th class="min-w-50px"># Ruta</th>
-                                                <th class="min-w-50px">Punto</th>
-                                                <th class="min-w-50px"># Punto</th>
-                                                <th class="min-w-100px">Acción</th>
-
-                                              
-                                                
-                                            </tr>
-                                        </thead>
-                                        <tbody class="fw-semibold ">
-                                            @foreach ($rutas as $ruta) 
-                                            <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> #{{$ruta->id}}</td>
-                                                <td>{{ $ruta->zona }}</td>
-                                                <td>{{$ruta->ruta}}</td>
-                                                <td>{{$ruta->nruta}}</td>
-                                                <td>{{$ruta->punto}}</td>
-                                                <td>{{$ruta->nfijo}}</td>
-                                               
-                                                <td>
-                                                    <a href="/ruta/editar/{{$ruta->id}}">
-                                                <button type="button" class="btn btn-warning">Editar</button></a>
-                                                <a href="/ruta/eliminar/{{$ruta->id}}">
-                                                <button type="button" class="btn btn-danger">Eliminar</button></a>
-                                            </td>
-                                                
-                                                
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-
-                                    </table>
+                                    
                                     <ul class="pagination">
                                         <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
                                         <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
