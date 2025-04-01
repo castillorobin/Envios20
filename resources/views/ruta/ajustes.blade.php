@@ -198,21 +198,8 @@
                                                     <!--end::Input-->
                                                 </div>
 
-                                                <div class="col-md-1">
-                                                    <!--begin::Label-->
-                                                    <label class=" fw-semibold form-label mt-3">
-                                                        <span> &nbsp; &nbsp; Color</span>
-                                                       
-                                                    </label>
-                                                    <!--end::Label-->
-                                                </div>
-                                                
-                                                <div class="col-md-1 ms-1">
-                                                    <!--begin::Input-->
-                                                    
-                                                    <input type="color" id="colo" name="colo" value="#ff0000">
-                                                    <!--end::Input-->
-                                                </div>
+                                               
+                                            
 
                                             </div>
                                             <div class="row fv-row mb-7">
@@ -331,8 +318,10 @@
                                                 <th class="min-w-100px">ID</th>
                                                 <th class="min-w-50px">Zona</th>
                                                 <th class="min-w-50px">Ruta</th>
+                                                <th class="min-w-50px"># Ruta</th>
                                                 <th class="min-w-50px">Punto</th>
-                                                <th class="min-w-50px">Numero</th>
+                                                <th class="min-w-50px"># Punto</th>
+                                              
                                                 
                                             </tr>
                                         </thead>
@@ -342,8 +331,10 @@
                                                 <td> #{{$ruta->id}}</td>
                                                 <td>{{ $ruta->zona }}</td>
                                                 <td>{{$ruta->ruta}}</td>
+                                                <td>{{$ruta->nruta}}</td>
                                                 <td>{{$ruta->punto}}</td>
-                                                <td>{{$ruta->numero}}</td>
+                                                <td>{{$ruta->nfijo}}</td>
+                                               
 
                                                 
                                                 
