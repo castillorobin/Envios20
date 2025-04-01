@@ -364,7 +364,7 @@ class EnvioController extends Controller
 
         //$envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatariop');
-        $envio->direccion = $request->get('direccionp');
+        $envio->direccion = $request->get('punto');
         $envio->telefono = $request->get('telefonop');
        // $envio->cobro = $request->get('cenvio');
         $envio->precio = $request->get('precio');

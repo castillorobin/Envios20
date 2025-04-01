@@ -239,10 +239,10 @@
 
                                     @if ($pedido[0]->tipo == "Punto fijo" )
                                     <div class="form-floating col-lg-7 mb-4" style="height: 50px;" >
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="direccionp" id="direccionp"  >
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="punto" id="punto"  >
                                         <option value="" style="height: 50px;"> </option>
                                         @foreach ($puntos as $punto)
-                                        <option value="{{$punto->punto}}">{{$punto->punto}} </option>
+                                        <option value="{{$punto->id}}">{{$punto->punto}} </option>
                                         @endforeach
                                     </select>
                                     <label for="direccionp" style="padding-left: 25px; height: 50px;">Buscar punto</label>

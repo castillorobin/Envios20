@@ -195,9 +195,9 @@ if(tipo=='suelto'){
                                                 
                                                 <td class="text-center">{{$envio[0]->tipo}}</td>
                                                 <td class="text-center"> {{$pedido->zona }}</td>
-                                                <td class="text-center">{{$pedido->nruta}}</td>
+                                                <td class="text-center">{{$pedido->ruta}}</td>
                                                 <td class="text-center">
-                                                    {{$pedido->nfijo}} 
+                                                    {{$pedido->punto}} 
                                                 </td>
                                                 <td class="text-center">{{$envio[0]->fecha_entrega}}</td>
                                                 <td class="text-center">
