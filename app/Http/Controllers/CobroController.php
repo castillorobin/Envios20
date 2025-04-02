@@ -20,7 +20,7 @@ class CobroController extends Controller
     {
         $pedidos = Cobro::all();
         $comercios = Comercio::all(); 
-        $nota="";
+        $nota=""; 
 
         $comer=" ";
         $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
@@ -328,10 +328,39 @@ class CobroController extends Controller
 
     public function ticketcabeza(Request $request)
     {
+
        
         $guia = $request->get('guia');
         $hayguia = Envio::where('guia', $guia)->exists();
         
+        if ($hayguia== 0) {
+
+            $nota="Guía Duplicada";
+            $pedidos = Cobro::all();
+            $comercios = Comercio::all(); 
+            
+    
+            $comer=" ";
+            $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
+            $cobrodepa = $cobrodepa->count();
+            $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
+                $cobroperdepa = $cobroperdepa->count();
+                $cobropfijo = Cobro::where('tipo', "Punto fijo")->get();
+                $cobropfijo = $cobropfijo->count();
+                $cobrocasi = Cobro::where('tipo', "Casillero")->get();
+                $cobrocasi = $cobrocasi->count();
+    
+                $ultimoid = Ticketc::latest('id')->first();
+                $idcompr = $ultimoid->id + 1;
+         
+                $date = Carbon::now();
+                $date = $date->format('Y');
+                $factura = "$date".$idcompr;
+         
+            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+
+           
+        }
 
         $codigo= $request->get('codigo');
         $comercios = Comercio::all(); 

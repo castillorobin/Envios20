@@ -607,6 +607,7 @@
                                                 <!--begin::Table wrapper-->
                                                 <div class="table-responsive mb-10">
                                                     <!--begin::Table-->
+                                                    <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                                                     <table class="table g-5 gs-0 mb-0 fw-bold text-gray-700" data-kt-element="items">
                                                         <!--begin::Table head-->
                                                         <thead>
@@ -619,7 +620,7 @@
 
                                                             </tr>
                                                         </thead>
-                                                        <!--end::Table head-->
+                                                        <!--end::Table head--> 
                                                       
                                                         <!--begin::Table body-->
                                                         <tbody>
@@ -637,7 +638,7 @@
                                                                         </div>
                                                                         <div class="col-4">
                                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                            <span style="font-size:12px; color: #dc3545;"> {{ $nota }} &nbsp; </span>
+                                                                            
                                                                         </div>
 
                                                                     </div>
@@ -674,7 +675,7 @@
                                                                         </div>
                                                                         <div class="col-4">
                                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                                            
                                                                             
                                                                         </div>
 
@@ -718,7 +719,7 @@
                                                                         </div>
                                                                         <div class="col-4">
                                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                                           
                                                                            
                                                                         </div>
 
@@ -754,7 +755,7 @@
                                                                         </div>
                                                                         <div class="col-4">
                                                                             <button type="submit" class="btn btn-primary mb-3">Agregar</button>
-                                                                            <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
+                                                                            
                                                                         </div>
 
                                                                     </div>

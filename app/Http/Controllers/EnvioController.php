@@ -69,7 +69,7 @@ class EnvioController extends Controller
     public function editardetalle($id)
     {
 
-        $envio = Envio::where('guia', $id)->get();
+        $envio = Envio::where('guia', $id)->get(); 
         $comer = $envio[0]->comercio;
         $comercio = Comercio::where('comercio', $comer)->get();
         //$vendedores = Vendedor::all();
