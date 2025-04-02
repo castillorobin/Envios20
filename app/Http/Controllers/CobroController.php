@@ -332,8 +332,105 @@ class CobroController extends Controller
        
         $guia = $request->get('guia');
         $hayguia = Envio::where('guia', $guia)->exists();
-        
-        if ($hayguia== 0) {
+
+        $guia2 = $request->get('guia2');
+        $hayguia2 = Envio::where('guia', $guia2)->exists();
+
+        $guia3 = $request->get('guia3');
+        $hayguia3 = Envio::where('guia', $guia3)->exists();
+
+        $guia4 = $request->get('guia4');
+        $hayguia4 = Envio::where('guia', $guia4)->exists();
+
+       // dd($hayguia);
+        if ($hayguia== true) {
+
+            $nota="Guía Duplicada";
+            $pedidos = Cobro::all();
+            $comercios = Comercio::all(); 
+            
+    
+            $comer=" ";
+            $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
+            $cobrodepa = $cobrodepa->count();
+            $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
+                $cobroperdepa = $cobroperdepa->count();
+                $cobropfijo = Cobro::where('tipo', "Punto fijo")->get();
+                $cobropfijo = $cobropfijo->count();
+                $cobrocasi = Cobro::where('tipo', "Casillero")->get();
+                $cobrocasi = $cobrocasi->count();
+    
+                $ultimoid = Ticketc::latest('id')->first();
+                $idcompr = $ultimoid->id + 1;
+         
+                $date = Carbon::now();
+                $date = $date->format('Y');
+                $factura = "$date".$idcompr;
+         
+            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+
+           
+        }
+
+        if ($hayguia2== true) {
+
+            $nota="Guía Duplicada";
+            $pedidos = Cobro::all();
+            $comercios = Comercio::all(); 
+            
+    
+            $comer=" ";
+            $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
+            $cobrodepa = $cobrodepa->count();
+            $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
+                $cobroperdepa = $cobroperdepa->count();
+                $cobropfijo = Cobro::where('tipo', "Punto fijo")->get();
+                $cobropfijo = $cobropfijo->count();
+                $cobrocasi = Cobro::where('tipo', "Casillero")->get();
+                $cobrocasi = $cobrocasi->count();
+    
+                $ultimoid = Ticketc::latest('id')->first();
+                $idcompr = $ultimoid->id + 1;
+         
+                $date = Carbon::now();
+                $date = $date->format('Y');
+                $factura = "$date".$idcompr;
+         
+            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+
+           
+        }
+
+        if ($hayguia3== true) {
+
+            $nota="Guía Duplicada";
+            $pedidos = Cobro::all();
+            $comercios = Comercio::all(); 
+            
+    
+            $comer=" ";
+            $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
+            $cobrodepa = $cobrodepa->count();
+            $cobroperdepa = Cobro::where('tipo', "Personalizado Departamental")->get();
+                $cobroperdepa = $cobroperdepa->count();
+                $cobropfijo = Cobro::where('tipo', "Punto fijo")->get();
+                $cobropfijo = $cobropfijo->count();
+                $cobrocasi = Cobro::where('tipo', "Casillero")->get();
+                $cobrocasi = $cobrocasi->count();
+    
+                $ultimoid = Ticketc::latest('id')->first();
+                $idcompr = $ultimoid->id + 1;
+         
+                $date = Carbon::now();
+                $date = $date->format('Y');
+                $factura = "$date".$idcompr;
+         
+            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+
+           
+        }
+
+        if ($hayguia4== true) {
 
             $nota="Guía Duplicada";
             $pedidos = Cobro::all();
