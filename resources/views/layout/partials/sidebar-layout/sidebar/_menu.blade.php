@@ -499,7 +499,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Asignar caja</span>
+							<span class="menu-title">Asignación de caja</span>
 						</a>
 					</div>
 
