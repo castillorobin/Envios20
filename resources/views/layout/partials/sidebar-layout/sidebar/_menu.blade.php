@@ -491,7 +491,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Asignar guia</span>
+							<span class="menu-title">Asignación de guía</span>
 						</a>
 					</div>
 					<div class="menu-item">

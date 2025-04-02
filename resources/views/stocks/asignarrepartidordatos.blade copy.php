@@ -4,7 +4,7 @@
 <head>
     <base href="../../../" />
     <link rel="icon" type="image/png" href="{{ asset('fotos/logo.png') }}">
-    <title>Melo Express</title>
+    <title>Melo Express</title> 
     <meta charset="utf-8" />
     <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
     <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
@@ -71,13 +71,13 @@ if(tipo=='suelto'){
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                        <div class="page-title d-flex flex-column justify-content-center  ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignación de guía</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -100,18 +100,14 @@ if(tipo=='suelto'){
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Asignacion de repartidor</li>
+                                <li class="breadcrumb-item text-muted">AAsignación de guía</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
                         </div>
                         <!--end::Page title-->
 
-                        <!--begin::Actions-->
-                        <div class="d-flex align-items-center gap-2 gap-lg-3">
-                          
-                            <!--end::Primary button-->
-                        </div>
+                      
                         <!--end::Actions-->
                     </div>
                     <!--end::Toolbar container-->
@@ -124,7 +120,7 @@ if(tipo=='suelto'){
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                            <div class="card-header align-items-center">
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->

@@ -53,13 +53,13 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de repartidor</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignación de guía</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -76,7 +76,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Asignar repartidor</li>
+                                <li class="breadcrumb-item text-muted">Asignación de guía</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -144,30 +144,14 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 605px;  ">
 
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-50px"># de guía</th>
-                                                <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-50px">Destinatario</th>
-                                                <th class="min-w-50px">Dirección</th>
-                                                <th class="text-center min-w-50px">Tipo de envio</th>
-                                                <th class="min-w-50px">Precio</th>
-                                                <th class="text-center min-w-50px">Estado del envio</th>
-                                                <th class="min-w-50px">Fecha de entrega</th>
-                                                <th class="min-w-50px">Ubicacion</th>
-                                                <th class="min-w-50px">Tipo de ubicacion</th>
-                                                <th class="min-w-50px">Rack</th>
-                                                <th class="min-w-50px">Nivel</th>
-                                                <th class="min-w-50px">Caja</th>
-                                                <th class="min-w-50px">Tarima</th>
-                                                <th class="min-w-50px">Accion</th>
-                                            </tr>
+                                            
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
 
