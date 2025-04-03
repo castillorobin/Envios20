@@ -43,8 +43,16 @@ class StockController extends Controller
 
     public function paquetesasignadosdatos(Request $request) 
     {
-        $desde = $request->input('desde');
-        $hasta = $request->input('hasta');
+        $rango = $request->input('rango');
+       // $desde = $request->input('desde');
+       // $hasta = $request->input('hasta');
+       $rangol = $rango;
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
         $repartidorsolo = $request->input('repartidor');
 
         //$envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])
@@ -52,12 +60,13 @@ class StockController extends Controller
 
         if ($repartidorsolo !="todos"){
             // $envios = $envios->intersect(Envio::whereIn('estado', $estado)->get());
-            $envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])->
+           // $envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])
+            $envios = Envio::whereBetween('fechaasigna', [$fechacam1, $fechacam2])->
              where('repartidor', $repartidorsolo)->get();
             // dd($repartidorsolo);
             // $envios = $envios->intersect(Envio::whereIn('repartidor', [$repartidorsolo])->get());
          }else{
-            $envios = Envio::whereBetween('fechaasigna', [$desde, $hasta])
+            $envios = Envio::whereBetween('fechaasigna', [$fechacam1, $fechacam2])
         ->get();
          }
        

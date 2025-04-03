@@ -138,7 +138,7 @@ class EnvioController extends Controller
     }
     public function filtrandoenvios(Request $request)
     {
-        $rango = $request->input('rango');
+        $rango = $request->input('rango'); 
         $estado = $request->input('estado');
         $rangol = $rango;
         $parte1 = Str::of($rango)->explode('-');

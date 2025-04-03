@@ -517,7 +517,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Paquetes asignados</span>
+							<span class="menu-title">Busqueda por repartidor</span>
 						</a>
 					</div>
 

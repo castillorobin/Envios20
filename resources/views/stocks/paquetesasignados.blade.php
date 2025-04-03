@@ -2,32 +2,14 @@
 <!--begin::Head-->
 
 <head>
-    <base href="../../../" />
+<base href="../../../" />
     <link rel="icon" type="image/png" href="{{ asset('fotos/logo.png') }}">
     <title>Melo Express</title>
     <meta charset="utf-8" />
-    <meta name="description" content="The most advanced Bootstrap 5 Admin Theme with 40 unique prebuilt layouts on Themeforest trusted by 100,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel versions. Grab your copy now and get life-time updates for free." />
-    <meta name="keywords" content="metronic, bootstrap, bootstrap 5, angular, VueJs, React, Asp.Net Core, Rails, Spring, Blazor, Django, Express.js, Node.js, Flask, Symfony & Laravel starter kits, admin themes, web design, figma, web development, free templates, free admin themes, bootstrap theme, bootstrap template, bootstrap dashboard, bootstrap dak mode, bootstrap button, bootstrap datepicker, bootstrap timepicker, fullcalendar, datatables, flaticon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="article" />
-    <meta property="og:title" content="Metronic - Bootstrap Admin Template, HTML, VueJS, React, Angular. Laravel, Asp.Net Core, Ruby on Rails, Spring Boot, Blazor, Django, Express.js, Node.js, Flask Admin Dashboard Theme & Template" />
-    <meta property="og:url" content="https://keenthemes.com/metronic" />
-    <meta property="og:site_name" content="Keenthemes | Metronic" />
-    <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <!--begin::Fonts(mandatory for all pages)-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700" />
-    <!--end::Fonts-->
-    <!--begin::Vendor Stylesheets(used for this page only) 
-    <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
-   -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
 
-    <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
-    <link href="assets/plugins/plugins.bundle.css" rel="stylesheet" type="text/css" />
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-    <script src="assets/plugins/js/plugins.bundle.js"></script> 
    
     <!--end::Global Stylesheets Bundle-->
     <style>
@@ -38,28 +20,84 @@
         }
     </style>
 
+<style>
+        .table th,
+        .table td {
+            padding: 0.10rem;
+            /* Ajusta el valor según sea necesario */
+        }
+
+        .dataTables_filter {
+            display: none;
+        }
+
+        .dataTables_length {
+            display: none;
+        }
+
+        #kt_ecommerce_report_shipping_table_previous{
+            display: none;
+        }
+        #kt_ecommerce_report_shipping_table_next{
+            display: none;
+        }
+    </style>
+
+
 </head>
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+
+
+
 
 <script>
     $("#kt_daterangepicker_1").daterangepicker();
 </script>
+<script src="{{ asset('plugins/global/plugins.bundle.js') }}"></script>
+
+<script>
+
+
+
+    var start = moment().subtract(29, "days");
+var end = moment();
+
+function cb(start, end) {
+    $("#kt_daterangepicker_4").html(start.format("MMMM D, YYYY") + " - " + end.format("MMMM D, YYYY"));
+}
+
+$("#kt_daterangepicker_4").daterangepicker({
+    startDate: start,
+    endDate: end,
+    ranges: {
+    "Today": [moment(), moment()],
+    "Yesterday": [moment().subtract(1, "days"), moment().subtract(1, "days")],
+    "Last 7 Days": [moment().subtract(6, "days"), moment()],
+    "Last 30 Days": [moment().subtract(29, "days"), moment()],
+    "This Month": [moment().startOf("month"), moment().endOf("month")],
+    "Last Month": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
+    }
+}, cb);
+
+cb(start, end);
+</script>
+
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
-
-
     <x-default-layout>
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div id="kkt_content" class="content flex-column-fluid">
+                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center ">
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Paquetes asignados</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda por repartidor</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -82,7 +120,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Paquetes asignados</li>
+                                <li class="breadcrumb-item text-muted">Busqueda por repartidor</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -111,15 +149,12 @@
                                     <form action="/stocks/paquetesasignadosdatos/" class="row g-2" method="GET">
                                                    
                                         <div class="row">
-                                            <div class="col-6 mt-2 d-flex justify-content-between align-items-center">
-                                                Desde
-                                                <input type="date" name="desde" id="desde" class="form-control " style="margin-right: 10px;"> 
-                                                Hasta
-                                                <input type="date" name="hasta" id="hasta" class="form-control  " >
-                                                    
-                                                
+                                          
+                                            <div class="col-5 mt-5 d-flex justify-content-between align-items-center">
+                                                Rango: 
+                                                <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                             </div>
-                                            <div class="form-floating  col-3 mt-2">
+                                            <div class="form-floating  col-3 mt-5 ">
                                                 <select class="form-select form-select-solid mi-selector" name="repartidor" id="repartidor"  >
                                                     <option value="todos" style="height: 60px;">TODOS</option>
                                                     @foreach ($empleados as $empleado)
@@ -129,7 +164,7 @@
                                                 <label for="cenvio" style="padding-left: 25px;">Repartidor</label>
                                             </div>
                                             <div class="col-2 mt-2">
-                                                <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                                                <button type="submit" class="btn btn-primary mt-5 ">Buscar</button>
                                                
                                             </div>
                                         </div>
@@ -164,29 +199,15 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
 
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
-                                        <tr class="text-gray-400 fw-bold fs-7 text-uppercase gs-0 text-center" >
-                                                <th class="min-w-80px"># de guía</th>
-                                                <th class="min-w-50px text-center">Comercio</th>
-                                                <th class="min-w-150px text-center">Destinatario</th>
-                                                <th class="min-w-150px ">Dirección</th>                                                 
-                                                <th class="min-w-100px text-center">Tipo de envío</th>
-                                                <th class="min-w-150px text-center">Fecha de entrega</th>                                                
-                                                <th class="min-w-50px text-center">Estado</th>                                                                                      
-                                                <th class="min-w-50px text-center">Total</th>  
-                                            </tr> 
-                                        </thead>
-                                        <tbody class="fw-semibold  text-gray-400">
-
-                                            <tr class="'table-row-gray' : 'table-row-white' }}">
-                                                <td>
-                                                   
+                                        <tr>
+                                        <td>                                                 
                                                 </td>
                                                 <td></td>
                                                 <td> </td>
@@ -205,9 +226,34 @@
                                                 <td class="text-center"></td>
                                                 <td class="text-center"></td>
                                                 <td class="text-center"></td>
+                                                <td></td>
+
+                                        </tr>
+                                        
+                                        </thead>
+                                        <tbody class="fw-semibold  text-gray-400">
+
+                                            <tr class="'table-row-gray' : 'table-row-white' }}">
+                                                <td>                                                 
+                                                </td>
+                                                <td></td>
+                                                <td> </td>
+                                                <td></td>
+                                                <td></td>
                                                 <td>
                                                    
                                                 </td>
+                                                <td class="text-end"></td>
+                                                <td>
+                                                    
+                                                </td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td></td>
 
                                             </tr>
 
@@ -216,12 +262,6 @@
                                     </table>
                                     
 
-                                    <ul class="pagination">
-                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                    </ul>
                                 </div>
                                 <!--end::Table-->
                             </div>
@@ -286,16 +326,18 @@
 
 
     </x-default-layout>
-    <!--begin::Javascript-->
     <script>
-
+        var hostUrl = "assets/";
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
-    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
- 
-
+    <!--end::Global Javascript Bundle-->
+    <!--begin::Vendors Javascript(used for this page only)-->
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
+    <!--end::Custom Javascript-->
+    <!--end::Javascript-->
 </body>
 <!--end::Body-->
 
