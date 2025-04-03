@@ -508,7 +508,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Buscar por caja</span>
+							<span class="menu-title">Busqueda por caja</span>
 						</a>
 					</div>
 

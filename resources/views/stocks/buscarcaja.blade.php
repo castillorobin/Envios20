@@ -53,13 +53,13 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Buscar por caja</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda por caja</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -76,7 +76,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Buscar por caja</li>
+                                <li class="breadcrumb-item text-muted">Busqueda por caja</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -106,7 +106,7 @@
                                                    
                                         <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Caja</label>
-                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar caja">
+                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar caja" required>
                                             <input type="text" value="Departamental" class="visually-hidden" name="asignar" id="asignar">
                                             <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar guia">
                                         </div>
@@ -151,23 +151,7 @@
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-50px"># de guía</th>
-                                                <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-50px">Destinatario</th>
-                                                <th class="min-w-50px">Dirección</th>
-                                                <th class="text-center min-w-50px">Tipo de envio</th>
-                                                <th class="min-w-50px">Precio</th>
-                                                <th class="text-center min-w-50px">Estado del envio</th>
-                                                <th class="min-w-50px">Fecha de entrega</th>
-                                                <th class="min-w-50px">Ubicacion</th>
-                                                <th class="min-w-50px">Tipo de ubicacion</th>
-                                                <th class="min-w-50px">Rack</th>
-                                                <th class="min-w-50px">Nivel</th>
-                                                <th class="min-w-50px">Caja</th>
-                                                <th class="min-w-50px">Tarima</th>
-                                                <th class="min-w-50px">Accion</th>
-                                            </tr>
+                                           
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
 
@@ -203,12 +187,6 @@
                                     </table>
                                     
 
-                                    <ul class="pagination">
-                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                    </ul>
                                 </div>
                                 <!--end::Table-->
                             </div>
