@@ -42,11 +42,15 @@ var KTAppEcommerceReportShipping = function () {
             ranges: {
                 "Ahora": [moment(), moment()],
                 "Ayer": [moment().subtract(1, "days"), moment().subtract(1, "days")],
-                "últimos 7 dias": [moment().subtract(6, "days"), moment()],
+                "últimos 15 dias": [moment().subtract(14, "days"), moment()],
                 "últimos 30 dias": [moment().subtract(29, "days"), moment()],
                 "Mes actual": [moment().startOf("month"), moment().endOf("month")],
-                "último mes": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
-            }
+                "Mes pasado": [moment().subtract(1, "month").startOf("month"), moment().subtract(1, "month").endOf("month")]
+            },
+            locale: {
+        
+        "customRangeLabel": "Personalizado",
+  }
         }, cb);
 
         cb(start, end);

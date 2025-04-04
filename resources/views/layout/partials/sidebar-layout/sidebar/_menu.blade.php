@@ -526,7 +526,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Asignar Estado</span>
+							<span class="menu-title">Asignar un estado</span>
 						</a>
 					</div>
 

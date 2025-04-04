@@ -34,13 +34,14 @@
         .dataTables_length {
             display: none;
         }
-
+/*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
         }
         #kt_ecommerce_report_shipping_table_next{
             display: none;
         }
+            */
     </style>
 
 

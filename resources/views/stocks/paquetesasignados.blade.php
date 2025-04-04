@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="es">
 <!--begin::Head-->
 
 <head>
@@ -34,13 +34,14 @@
         .dataTables_length {
             display: none;
         }
-
+/*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
         }
         #kt_ecommerce_report_shipping_table_next{
             display: none;
         }
+            */
     </style>
 
 
@@ -326,7 +327,7 @@ cb(start, end);
 
 
     </x-default-layout>
-    <script>
+    <script> 
         var hostUrl = "assets/";
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
