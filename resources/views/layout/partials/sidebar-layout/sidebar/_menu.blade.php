@@ -404,21 +404,14 @@
 						</a>
 
 						<div class="menu-sub menu-sub-accordion">
-							<div class="menu-item">
-								<a href="/stocks/seleccionarzona" class="menu-link py-3" style="background-color: transparent;">
-									<span class="menu-bullet">
-										<span class="bullet bullet-dot"></span>
-									</span>
-									<span class="menu-title">Seleccion por zona</span>
-								</a>
-							</div>
+							
 
 							<div class="menu-item">
 								<a href="/stocks/seleccionarpunto" class="menu-link py-3" style="background-color: transparent;">
 									<span class="menu-bullet">
 										<span class="bullet bullet-dot"></span>
 									</span>
-									<span class="menu-title">Seleccion por punto</span>
+									<span class="menu-title">Seleccion de paqueteria</span>
 								</a>
 							</div>
 

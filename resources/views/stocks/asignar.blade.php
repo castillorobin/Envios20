@@ -43,15 +43,15 @@
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
-    <div class="app-main flex-column flex-row-fluid" id="kt_app_main" style="margin-top: -355px;">
+    <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid" >
+            <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div id="kkt_content" class="content flex-column-fluid">
+                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center ">
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Asignacion de ubicación</h1>
                             <!--end::Title-->
@@ -64,7 +64,7 @@
                                 <!--end::Item-->
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item">
-                                    <span class="bullet bg-gray-400 w-5px h-2px"></span> 
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -76,7 +76,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Asignar ubicación</li>
+                                <li class="breadcrumb-item text-muted">Asignacion de ubicación</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -84,22 +84,25 @@
                         <!--end::Page title-->
 
                         <!--begin::Actions-->
-                        
+                        <div class="d-flex align-items-center gap-2 gap-lg-3">
+                          
+                            <!--end::Primary button-->
+                        </div>
                         <!--end::Actions-->
                     </div>
                     <!--end::Toolbar container-->
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_content" class="content flex-column-fluid " >
+                <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_content_container" class="">
+                    <div id="kt_app_content_container" class="">
                         <!--begin::Products-->
-                        <div class="card card-flush ">
+                        <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center">
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
                                 <!--begin::Card title-->
-                                <div class="card-title ">
+                                <div class="card-title">
                                     <!--begin::Search-->
                                     
                                     <form action="/stocks/agregarguia/" class="row g-2" method="GET">
@@ -144,7 +147,7 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
 
 
                                 <!--begin::Table-->
@@ -152,21 +155,21 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-50px"># de guía</th>
-                                                <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-50px">Destinatario</th>
-                                                <th class="min-w-50px">Dirección</th>
-                                                <th class="text-center min-w-50px">Tipo de envio</th>
-                                                <th class="min-w-50px">Precio</th>
-                                                <th class="text-center min-w-50px">Estado del envio</th>
-                                                <th class="min-w-50px">Fecha de entrega</th>
-                                                <th class="min-w-50px">Ubicacion</th>
-                                                <th class="min-w-50px">Tipo de ubicacion</th>
-                                                <th class="min-w-50px">Rack</th>
-                                                <th class="min-w-50px">Nivel</th>
-                                                <th class="min-w-50px">Caja</th>
-                                                <th class="min-w-50px">Tarima</th>
-                                                <th class="min-w-50px">Accion</th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="text-center min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="text-center min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-50px"></th>
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
@@ -201,12 +204,7 @@
                                         </tbody>
 
                                     </table>
-                                    <ul class="pagination">
-                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                    </ul>
+                                   
                                 </div>
                                 <!--end::Table-->
                             </div>

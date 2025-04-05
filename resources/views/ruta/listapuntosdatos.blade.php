@@ -83,7 +83,7 @@ if(tipo=='suelto'){
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -229,15 +229,7 @@ if(tipo=='suelto'){
                                     </table>
                                     
                                 </div>
-                                <div class="row">
-                                    <div class="col-12 mb-3" >
-                                        <a href="/stocks/asignar">
-                                        <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
-                                    </a>
-                                    </div>
-                                    
-                                </div>
-                                <div class="row">
+                                <div class="row mt-7">
                                     <div class="col-12" >
                                         <ul class="pagination"style="float: right;" >
                                             <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
@@ -247,8 +239,15 @@ if(tipo=='suelto'){
                                         </ul>
                                     </div>
                                 </div>
-                                <!--end::Table-->
-                            </div>
+
+                                <div class="row mt-7">
+                                    <div class="col-12 mb-3" >
+                                        <a href="/stocks/asignar">
+                                        <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
+                                    </a>
+                                    </div>
+                                    
+                                </div>
                             <!--end::Table-->
                             
 

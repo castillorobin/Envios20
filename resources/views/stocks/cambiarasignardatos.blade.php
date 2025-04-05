@@ -259,15 +259,7 @@ if(tipo=='suelto'){
                                     </table>
                                    
                                 </div>
-                                <div class="row">
-                                    <div class="col-12 mb-3" >
-                                        <a href="/stocks/cambiar">
-                                        <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
-                                    </a>
-                                    </div>
-                                    
-                                </div>
-                                <div class="row">
+                                <div class="row mt-7">
                                     <div class="col-12" >
                                         <ul class="pagination"style="float: right;" >
                                             <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
@@ -276,6 +268,15 @@ if(tipo=='suelto'){
                                             <li class="page-item next"><a href="#" class="page-link">Next</a></li>
                                         </ul>
                                     </div>
+                                </div>
+
+                                <div class="row mt-7">
+                                    <div class="col-12 mb-3" >
+                                        <a href="/stocks/cambiar">
+                                        <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
+                                    </a>
+                                    </div>
+                                    
                                 </div>
                                 <!--end::Table-->
                             </div>
