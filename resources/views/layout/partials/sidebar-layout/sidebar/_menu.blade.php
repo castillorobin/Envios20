@@ -339,7 +339,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Cobrar</span>
+							<span class="menu-title">Recepción de paquete</span>
 						</a>
 					</div>
 					<div class="menu-item">
@@ -347,7 +347,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Pagar por Comercio</span>
+							<span class="menu-title">Pago por Comercio</span>
 						</a>
 					</div>
 					<div class="menu-item">
@@ -355,7 +355,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Pagar por Ticket</span>
+							<span class="menu-title">Pago por Ticket</span>
 						</a>
 					</div>
 					<div class="menu-item">
@@ -363,7 +363,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Entregar</span>
+							<span class="menu-title">Entrega de paquete</span>
 						</a>
 					</div>
 					<div class="menu-item">
@@ -385,6 +385,54 @@
 					
 				</div>
 			</div>
+
+
+			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('setting-3', 'fs-2') !!}</span>
+					<span class="menu-title">Reportes</span>
+					<span class="menu-arrow"></span>
+				</span>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Reporte de recepcón</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Reporte de pagos</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Reporte de entregas</span>
+						</a>
+					</div>
+				</div>
+				
+
+			</div>
+
+
+
+
 			@endcan
 			@can('stock-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-6" class="menu-item menu-accordion">
