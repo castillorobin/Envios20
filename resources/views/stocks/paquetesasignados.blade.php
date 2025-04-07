@@ -98,7 +98,7 @@ cb(start, end);
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda por repartidor</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de repartidor</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -121,7 +121,7 @@ cb(start, end);
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Busqueda por repartidor</li>
+                                <li class="breadcrumb-item text-muted">Reporte de repartidor</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -153,7 +153,7 @@ cb(start, end);
                                           
                                             <div class="col-5 mt-5 d-flex justify-content-between align-items-center">
                                                 Rango: 
-                                                <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                                <input style="line-height: 28px;" class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                             </div>
                                             <div class="form-floating  col-3 mt-5 ">
                                                 <select class="form-select form-select-solid mi-selector" name="repartidor" id="repartidor"  >

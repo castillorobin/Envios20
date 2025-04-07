@@ -558,7 +558,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Busqueda por repartidor</span>
+							<span class="menu-title">Reporte de repartidor</span>
 						</a>
 					</div>
 
