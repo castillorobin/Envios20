@@ -198,6 +198,7 @@ Route::get('pago/exportarcomercio/{comercio}', [App\Http\Controllers\PagoControl
 
 //Administracion Tickets
 Route::get('/envios/listadoticket', [App\Http\Controllers\PagoController::class, 'listadoticket'] )->name('listadoticket') ;
+Route::get('/envios/ticketdatos', [App\Http\Controllers\PagoController::class, 'ticketdatos'] )->name('ticketdatos') ;
 Route::get('/envios/detalleticket/{id}', [App\Http\Controllers\PagoController::class, 'detalleticket'] )->name('detalleticket') ;
 Route::get('/envios/personalizadoticket/{id}', [App\Http\Controllers\PagoController::class, 'personalizadoticket'] )->name('personalizadoticket') ;
 Route::get('/envios/puntoticket/{id}', [App\Http\Controllers\PagoController::class, 'puntoticket'] )->name('puntoticket') ;

@@ -32,6 +32,24 @@ class PagoController extends Controller
         return view('envios.listadoticket');
     }
 
+    public function ticketdatos(Request $request)
+    {
+       
+        $rango = $request->input('rango');
+
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+
+        $tickets = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2])
+        ->get();
+
+        return view('envios.listadoticketdatos', compact('tickets'));
+    }
+
     public function detalleticket($id)
     {
        // $pedidos = Cobro::all();

@@ -50,14 +50,18 @@
         .dataTables_length {
             display: none;
         }
-/*
+        #kt_ecommerce_report_shipping_table_paginate {
+            display: none;
+        }
+
+
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
         }
         #kt_ecommerce_report_shipping_table_next{
             display: none;
         }
-            */
+            
     </style>
 
     <!--end::Global Stylesheets Bundle-->
@@ -243,46 +247,36 @@ if (searchText == "") {
                                             <span class="path2"></span>
                                         </i>
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" disabled />
                                     </div>
-
-
-
-
-
-
-
-
-
-
-
-
                                     <!--end::Search-->
-                                    <!--begin::Export buttons-->
-                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                  
                                     <!--end::Export buttons-->
                                 </div>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
+                                <div class="row">
+                                <form action="/envios/ticketdatos" class="row g-2" method="GET">
+                                <div class="col-8">
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                              
+
                                     <!--begin::Daterangepicker-->
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
-                                    <button type="submit" class="btn btn-primary ">Filtrar</button>
-                                        <!--begin::Select2
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
-                                            <option></option>
-                                            <option value="all">Todo</option>
-                                            <option value="Creado">Creado</option>
-                                            <option value="Entregado">Entregado</option>
-                                            <option value="Fallido">Fallido</option>
-                                            <option value="En transito">En transito</option>
-                                        </select>
-                                        -->
-                                        <!--end::Select2-->
                                     </div>
+                                    </div>
+
+                                    <div class="col-3 ">
+                                    <div class="w-150px card-toolbar flex-row-fluid gap-5">
+                                    <button type="submit" class="btn btn-primary ">Filtrar</button>
+                                    </div>
+                                    </div>
+                                    </form>
+
+                                    </div>
+                                    
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
                                     <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
@@ -293,10 +287,7 @@ if (searchText == "") {
                                     <!--begin::Menu-->
                                     <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
                                         <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                        </div>
-
+                                     
                                         -->
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
@@ -304,11 +295,8 @@ if (searchText == "") {
                                             <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
                                         </div>
                                         <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                        </div>
-                                        -->
+                                       
+                                      
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
@@ -318,9 +306,16 @@ if (searchText == "") {
                                     </div>
                                     <!--end::Menu-->
                                     <!--end::Export dropdown-->
+
+
+
+
+                                    
                                 </div>
+
                                 <!--end::Card toolbar-->
                             </div>
+
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 590px;  ">
@@ -328,7 +323,7 @@ if (searchText == "") {
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-100px"></th>
@@ -344,10 +339,7 @@ if (searchText == "") {
                                         <tbody class="fw-semibold  text-gray-400">
                                            
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> 
-                                                    
-                                                    
-                                                    </td>
+                                                <td>                                   </td>
                                                 <td></td> 
                                                 <td></td>
                                                 <td></td>
@@ -360,7 +352,7 @@ if (searchText == "") {
                                                    
 
 
-                                                </td>
+                                               
                                             </tr>
                                             
                                         </tbody>

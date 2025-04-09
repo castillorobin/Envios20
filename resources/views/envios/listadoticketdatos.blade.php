@@ -21,7 +21,7 @@
     <!--begin::Vendor Stylesheets(used for this page only) 
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
    -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
 
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
@@ -93,7 +93,7 @@
 
 {
 
-const tableReg = document.getElementById('tenvios');
+const tableReg = document.getElementById('kt_ecommerce_report_shipping_table');
 
 const searchText = document.getElementById('searchTerm').value.toLowerCase();
 
@@ -244,48 +244,38 @@ if (searchText == "") {
                                         </i>
 
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
-                                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
+                                        </div>
                                     <!--end::Search-->
-                                    <!--begin::Export buttons-->
-                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
+                                  
                                     <!--end::Export buttons-->
                                 </div>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
+                                <div class="row">
+                                <form action="/envios/ticketdatos" class="row g-2" method="GET">
+                                <div class="col-8">
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                              
+
                                     <!--begin::Daterangepicker-->
                                     <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
-                                    <div class="w-150px">
-                                    <button type="submit" class="btn btn-primary ">Filtrar</button>
-                                        <!--begin::Select2
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
-                                            <option></option>
-                                            <option value="all">Todo</option>
-                                            <option value="Creado">Creado</option>
-                                            <option value="Entregado">Entregado</option>
-                                            <option value="Fallido">Fallido</option>
-                                            <option value="En transito">En transito</option>
-                                        </select>
-                                        -->
-                                        <!--end::Select2-->
                                     </div>
+                                    </div>
+
+                                    <div class="col-3 ">
+                                    <div class="w-150px card-toolbar flex-row-fluid gap-5">
+                                    <button type="submit" class="btn btn-primary ">Filtrar</button>
+                                    </div>
+                                    </div>
+                                    </form>
+
+                                    </div>
+                                    
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
@@ -293,10 +283,7 @@ if (searchText == "") {
                                     <!--begin::Menu-->
                                     <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
                                         <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                        </div>
-
+                                     
                                         -->
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
@@ -304,23 +291,26 @@ if (searchText == "") {
                                             <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
                                         </div>
                                         <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                        </div>
-                                        -->
+                                       
+                                      
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
                                         </div>
                                         <!--end::Menu item-->
                                     </div>
                                     <!--end::Menu-->
                                     <!--end::Export dropdown-->
+
+
+
+
+                                    
                                 </div>
+
                                 <!--end::Card toolbar-->
-                            </div>
+                         
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 590px;  ">
@@ -377,7 +367,7 @@ if (searchText == "") {
                                                     <span hidden id="cam{{ $ticket->codigo }}"> {{ $ticket->cambio }}</span>
 
 
-                                                </td>
+                                                
                                             </tr>
                                             @endforeach
                                         </tbody>
