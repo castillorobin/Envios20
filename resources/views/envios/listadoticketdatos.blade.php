@@ -285,7 +285,7 @@ if (searchText == "") {
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
@@ -312,7 +312,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
+                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
                                         </div>
                                         <!--end::Menu item-->
                                     </div>
@@ -328,41 +328,58 @@ if (searchText == "") {
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-100px"># de ticket</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-50px">Usuario</th>
+                                                <th class="min-w-50px">Agencia</th>
+                                                <th class="min-w-50px">Descuento</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Fecha de recepcion</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
-                                           
+                                            @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> 
-                                                    
+                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->codigo}}" id="kt_drawer_example_basic_button" >#{{$ticket->codigo}}</button>
                                                     
                                                     </td>
-                                                <td></td> 
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td>{{$ticket->comercio}}</td> 
+                                                <td>{{$ticket->cajero}}</td>
+                                                <td>{{$ticket->local}}</td>
+                                                <td>${{$ticket->descuento}}</td>
                                                
-                                                <td></td>
-                                                <td></td>
+                                                <td>${{$ticket->total}}</td>
+                                                <td>{{$ticket->created_at}}</td>
                                                
                                                     
-                                                   
+                                                    <span hidden id="id{{ $ticket->codigo }}"> {{ $ticket->id }}</span>
+                                                    <span hidden id="com{{ $ticket->codigo }}"> {{ $ticket->comercio }}</span>
+                                                    <span hidden id="fec{{ $ticket->codigo }}"> {{date('d/m/Y', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="hor{{ $ticket->codigo }}"> {{ date('H:i:s', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="per{{ $ticket->codigo }}"> {{ $ticket->perso }}</span>
+                                                    <span hidden id="pei{{ $ticket->codigo }}"> {{ $ticket->persoi }}</span>
+                                                    <span hidden id="pun{{ $ticket->codigo }}"> {{ $ticket->punto }}</span>
+                                                    <span hidden id="pui{{ $ticket->codigo }}"> {{ $ticket->puntoi }}</span>
+                                                    <span hidden id="cas{{ $ticket->codigo }}"> {{ $ticket->casil }}</span>
+                                                    <span hidden id="cai{{ $ticket->codigo }}"> {{ $ticket->casili }}</span>
+                                                    <span hidden id="dep{{ $ticket->codigo }}"> {{ $ticket->depar }}</span>
+                                                    <span hidden id="dei{{ $ticket->codigo }}"> {{ $ticket->depari }}</span>
+                                                    <span hidden id="gui{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="gii{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="sub{{ $ticket->codigo }}"> {{ $ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guias }}</span>
+                                                    <span hidden id="tot{{ $ticket->codigo }}"> {{ $ticket->total }}</span>
+                                                    <span hidden id="ent{{ $ticket->codigo }}"> {{ $ticket->entrega }}</span>
+                                                    <span hidden id="cam{{ $ticket->codigo }}"> {{ $ticket->cambio }}</span>
 
 
                                                 </td>
                                             </tr>
-                                            
+                                            @endforeach
                                         </tbody>
 
                                     </table>

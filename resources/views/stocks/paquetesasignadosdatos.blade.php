@@ -108,7 +108,7 @@
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center ">
+                            <div class="card-header align-items-center ">   
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->

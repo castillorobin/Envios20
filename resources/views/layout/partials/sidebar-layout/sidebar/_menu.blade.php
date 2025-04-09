@@ -374,14 +374,7 @@
 							<span class="menu-title">Listado de entregas</span>
 						</a>
 					</div>
-					<div class="menu-item">
-						<a class="menu-link" href="/envios/listadoticket">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Listado de ticket</span>
-						</a>
-					</div>
+					
 					
 				</div>
 			</div>
@@ -393,6 +386,15 @@
 					<span class="menu-title">Reportes</span>
 					<span class="menu-arrow"></span>
 				</span>
+
+				<div class="menu-sub menu-sub-accordion">
+						<a class="menu-link" href="/envios/listadoticket">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Reporte de cobro</span>
+						</a>
+					</div>
 
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
