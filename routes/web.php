@@ -218,6 +218,9 @@ Route::get('/envios/reportegananciasdatos', [App\Http\Controllers\EnvioControlle
 Route::get('/envios/reporteingresos', [App\Http\Controllers\EnvioController::class, 'reporteingresos'] )->name('reporteingresos') ;
 Route::get('/envios/reporteingresosdatos', [App\Http\Controllers\EnvioController::class, 'reporteingresosdatos'] )->name('reporteingresosdatos') ;
 
+Route::get('/envios/reportepago', [App\Http\Controllers\PagoController::class, 'reportepago'] )->name('reportepago') ;
+Route::get('/envios/rpagodatos', [App\Http\Controllers\PagoController::class, 'rpagodatos'] )->name('rpagodatos') ;
+
 
 
 /*

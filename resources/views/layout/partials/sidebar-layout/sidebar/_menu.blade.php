@@ -396,6 +396,17 @@
 						</a>
 					</div>
 
+					<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/envios/reportepago">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Reporte de pagos</span>
+						</a>
+					</div>
+				</div>
+
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
 						<a class="menu-link" href="/">
@@ -407,16 +418,7 @@
 					</div>
 				</div>
 
-				<div class="menu-sub menu-sub-accordion">
-					<div class="menu-item">
-						<a class="menu-link" href="/">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Reporte de pagos</span>
-						</a>
-					</div>
-				</div>
+				
 
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
