@@ -12,6 +12,7 @@ use App\Models\Envio;
 use App\Models\Ticktpago; 
 use PDF; 
 use Illuminate\Support\Str;
+use App\Models\User;
  
 class PagoController extends Controller
 {
@@ -29,7 +30,8 @@ class PagoController extends Controller
     {
        // $pedidos = Cobro::all(); 
        // $tickets = Ticketc::all(); 
-        return view('envios.listadoticket');
+       $repartidores = User::all();
+        return view('envios.listadoticket', compact('repartidores'));
     }
 
     public function ticketdatos(Request $request)
@@ -46,15 +48,16 @@ class PagoController extends Controller
 
         $tickets = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2])
         ->get();
-
-        return view('envios.listadoticketdatos', compact('tickets'));
+        $repartidores = User::all();
+        return view('envios.listadoticketdatos', compact('tickets', 'repartidores'));
     }
 
     public function reportepago()
     {
        // $pedidos = Cobro::all(); 
        // $tickets = Ticketc::all(); 
-        return view('envios.reportepago');
+       $repartidores = User::all();
+        return view('envios.reportepago', compact('repartidores'));
     }
 
     public function rpagodatos(Request $request)
@@ -70,8 +73,8 @@ class PagoController extends Controller
 
         $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
         ->get();
-
-        return view('envios.rpagodatos', compact('tickets'));
+        $repartidores = User::all();
+        return view('envios.rpagodatos', compact('tickets', 'repartidores'));
     }
 
     public function detalleticket($id)

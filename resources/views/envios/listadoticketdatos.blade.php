@@ -261,6 +261,18 @@ if (searchText == "") {
                                     <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
   </div>
   </td>
+  <td style="width: 120%;">
+                                    <div class="col-auto">
+
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="width: 420px;">
+                                   
+                                    <option value="Todos" >Todos</option>
+                                    @foreach ($repartidores as $repartidor)
+                                    <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
+                                    @endforeach
+                                </select>
+  </div>
+  </td>
   <td >
   <div class="col-auto">
   <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
