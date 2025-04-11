@@ -47,7 +47,7 @@
                     <div id="kt_app_content_container" class="app-container ">
                         
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de Ingresos</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de Ingresosssss</h1>
                             
                         </div>
                         <form action="/envios/reporteingresosdatos" id="kt_invoice_form" method="POST"> 

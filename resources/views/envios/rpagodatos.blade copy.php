@@ -21,7 +21,7 @@
     <!--begin::Vendor Stylesheets(used for this page only) 
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
    -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
 
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
@@ -50,18 +50,14 @@
         .dataTables_length {
             display: none;
         }
-        #kt_ecommerce_report_shipping_table_paginate {
-            display: none;
-        }
-
-
+/*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
         }
         #kt_ecommerce_report_shipping_table_next{
             display: none;
         }
-            
+            */
     </style>
 
     <!--end::Global Stylesheets Bundle-->
@@ -97,7 +93,7 @@
 
 {
 
-const tableReg = document.getElementById('tenvios');
+const tableReg = document.getElementById('kt_ecommerce_report_shipping_table');
 
 const searchText = document.getElementById('searchTerm').value.toLowerCase();
 
@@ -237,60 +233,54 @@ if (searchText == "") {
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class=" ">
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
                                 <!--begin::Card title-->
-                                <div class="p-5">
-
-                                <div class="row" >
-
-                                <!--primera colummna-->
-                                    <div class="col-3" >
+                                <div class="card-title">
+                                    <!--begin::Search-->
                                     <div class="d-flex align-items-center position-relative my-1">
                                         <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" disabled />
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
+                                        </div>
+                                    <!--end::Search-->
+                                  
+                                    <!--end::Export buttons-->
+                                </div>
+                                <!--end::Card title-->
+                                <!--begin::Card toolbar-->
+                                <div class="row">
+                                <form action="/envios/rpagodatos" class="row g-2" method="GET">
+                                <div class="col-8">
+                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
+                              
+
+                                    <!--begin::Daterangepicker-->
+                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                    <!--end::Daterangepicker-->
+                                    <!--begin::Filter-->
                                     </div>
                                     </div>
-<!-- fin primera colummna-->
-<!--segunda colummna-->
-                                    <div class="col-7">
-                                    <form action="/envios/rpagodatos" method="GET">
-                                        <table  style="float:right;">
-                                            <tr>
-                                                <td>
-                                    <div class="col-auto">
-                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
-  </div>
-  </td>
-  <td >
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
-  </div>
-  </td>
-  <td >
-    <a href="/envios/reportepago">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
-    </a>
-</td>
-  </tr>
-  </table>
-          
-                                   
+
+                                    <div class="col-3 ">
+                                    <div class="w-150px card-toolbar flex-row-fluid gap-5">
+                                    <button type="submit" class="btn btn-primary ">Filtrar</button>
+                                    </div>
+                                    </div>
                                     </form>
+
                                     </div>
-                                    <!-- fin segunda colummna-->
-                                     <!--tercera colummna-->
-                                    <div class="col-2">
+                                    
+                                    <!--end::Filter-->
+                                    <!--begin::Export dropdown-->
                                     <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>Exportar Reporte</button>
                                     <!--begin::Menu-->
-                                    
                                     <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
                                         <!--begin::Menu item
                                      
@@ -310,31 +300,17 @@ if (searchText == "") {
                                         </div>
                                         <!--end::Menu item-->
                                     </div>
-                                    </div>
-                                    <!--fin tercera colummna-->
-                                </div>
+                                    <!--end::Menu-->
+                                    <!--end::Export dropdown-->
 
 
-
-
-                                    <!--begin::Search-->
-                                   
-                                    <!--end::Search-->
-                                  
-                                    <!--end::Export buttons-->
-                                </div>
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                                          
-                                   
 
 
                                     
                                 </div>
 
                                 <!--end::Card toolbar-->
-                            </div>
-
+                         
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 590px;  ">
@@ -345,35 +321,55 @@ if (searchText == "") {
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
-                                                <th class="min-w-50px"></th>
+                                                <th class="min-w-100px"># de ticket</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-50px">Usuario</th>
+                                                <th class="min-w-50px">Agencia</th>
+                                                <th class="min-w-50px">Descuento</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Fecha de recepcion</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
-                                           
+                                            @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td>                                   </td>
-                                                <td></td> 
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
+                                                <td> 
+                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->id}}" id="kt_drawer_example_basic_button" ># {{$ticket->id}}</button>
+                                                    
+                                                    </td>
+                                                <td>{{$ticket->comercio}}</td> 
+                                                <td>{{$ticket->cajero}}</td>
+                                                <td>{{$ticket->nota}}</td>
+                                                <td>${{$ticket->descuento}}</td>
                                                
-                                                <td></td>
-                                                <td></td>
+                                                <td>${{$ticket->total}}</td>
+                                                <td>{{$ticket->created_at}}</td>
                                                
                                                     
-                                                   
+                                                    <span hidden id="id{{ $ticket->id }}"> {{ $ticket->id }}</span>
+                                                    <span hidden id="com{{ $ticket->id }}"> {{ $ticket->comercio }}</span>
+                                                    <span hidden id="fec{{ $ticket->id }}"> {{date('d/m/Y', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="hor{{ $ticket->id }}"> {{ date('H:i:s', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="per{{ $ticket->id }}"> {{ $ticket->perso }}</span>
+                                                    <span hidden id="pei{{ $ticket->id }}"> {{ $ticket->persoi }}</span>
+                                                    <span hidden id="pun{{ $ticket->id }}"> {{ $ticket->punto }}</span>
+                                                    <span hidden id="pui{{ $ticket->id }}"> {{ $ticket->puntoi }}</span>
+                                                    <span hidden id="cas{{ $ticket->id }}"> {{ $ticket->casil }}</span>
+                                                    <span hidden id="cai{{ $ticket->id }}"> {{ $ticket->casili }}</span>
+                                                    <span hidden id="dep{{ $ticket->id }}"> {{ $ticket->depar }}</span>
+                                                    <span hidden id="dei{{ $ticket->id }}"> {{ $ticket->depari }}</span>
+                                                    <span hidden id="gui{{ $ticket->id }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="gii{{ $ticket->id }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="sub{{ $ticket->id }}"> {{ $ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guias }}</span>
+                                                    <span hidden id="tot{{ $ticket->id }}"> {{ $ticket->total }}</span>
+                                                    <span hidden id="ent{{ $ticket->id }}"> {{ $ticket->entrega }}</span>
+                                                    <span hidden id="cam{{ $ticket->id }}"> {{ $ticket->cambio }}</span>
 
 
-                                               
+                                                
                                             </tr>
-                                            
+                                            @endforeach
                                         </tbody>
 
                                     </table>

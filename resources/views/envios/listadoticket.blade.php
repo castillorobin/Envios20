@@ -237,54 +237,60 @@ if (searchText == "") {
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                            <div class=" ">
                                 <!--begin::Card title-->
-                                <div class="card-title">
-                                    <!--begin::Search-->
+                                <div class="p-5">
+
+                                <div class="row" >
+
+                                <!--primera colummna-->
+                                    <div class="col-3" >
                                     <div class="d-flex align-items-center position-relative my-1">
                                         <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-250px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" disabled />
-                                    </div>
-                                    <!--end::Search-->
-                                  
-                                    <!--end::Export buttons-->
-                                </div>
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                <div class="row">
-                                <form action="/envios/ticketdatos" class="row g-2" method="GET">
-                                <div class="col-8">
-                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                              
-
-                                    <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
-                                    <!--end::Daterangepicker-->
-                                    <!--begin::Filter-->
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" disabled />
                                     </div>
                                     </div>
-
-                                    <div class="col-3 ">
-                                    <div class="w-150px card-toolbar flex-row-fluid gap-5">
-                                    <button type="submit" class="btn btn-primary ">Filtrar</button>
-                                    </div>
-                                    </div>
+<!-- fin primera colummna-->
+<!--segunda colummna-->
+                                    <div class="col-7">
+                                    <form action="/envios/ticketdatos" method="GET">
+                                        <table  style="float:right;">
+                                            <tr>
+                                                <td>
+                                    <div class="col-auto">
+                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+  </div>
+  </td>
+  <td >
+  <div class="col-auto">
+  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
+  </div>
+  </td>
+  <td >
+    <a href="/envios/listadoticket">
+    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+    </a>
+</td>
+  </tr>
+  </table>
+          
+                                   
                                     </form>
-
                                     </div>
-                                    
-                                    <!--end::Filter-->
-                                    <!--begin::Export dropdown-->
+                                    <!-- fin segunda colummna-->
+                                     <!--tercera colummna-->
+                                    <div class="col-2">
                                     <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>Exportar Reporte</button>
                                     <!--begin::Menu-->
+                                    
                                     <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
                                         <!--begin::Menu item
                                      
@@ -304,17 +310,31 @@ if (searchText == "") {
                                         </div>
                                         <!--end::Menu item-->
                                     </div>
-                                    <!--end::Menu-->
-                                    <!--end::Export dropdown-->
+                                    </div>
+                                    <!--fin tercera colummna-->
+                                </div>
 
 
+
+
+                                    <!--begin::Search-->
+                                   
+                                    <!--end::Search-->
+                                  
+                                    <!--end::Export buttons-->
+                                </div>
+                                <!--end::Card title-->
+                                <!--begin::Card toolbar-->
+                                                          
+                                   
 
 
                                     
                                 </div>
 
                                 <!--end::Card toolbar-->
-                            </div>
+                           
+
 
                             <!--end::Card header-->
                             <!--begin::Card body-->
