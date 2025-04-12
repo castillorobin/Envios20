@@ -244,7 +244,7 @@ if (searchText == "") {
                                 <div class="row" >
 
                                 <!--primera colummna-->
-                                    <div class="col-3" >
+                                    <div class="col-12 col-md-3" >
                                     <div class="d-flex align-items-center position-relative my-1">
                                         <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
                                             <span class="path1"></span>
@@ -256,19 +256,19 @@ if (searchText == "") {
                                     </div>
 <!-- fin primera colummna-->
 <!--segunda colummna-->
-                                    <div class="col-7">
+                                    <div class="col-12 col-md-7">
                                     <form action="/envios/rpagodatos" method="GET">
                                         <table  style="float:right;">
                                             <tr>
                                                 <td>
-                                    <div class="col-auto">
+                                    <div class="col-auto" style="margin-right: 15px;">
                                     <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
   </div>
   </td>
   <td style="width: 120%;">
-                                    <div class="col-auto">
+                                    <div class="col-auto ">
 
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="width: 420px;">
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
                                    
                                     <option value="Todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
@@ -295,7 +295,7 @@ if (searchText == "") {
                                     </div>
                                     <!-- fin segunda colummna-->
                                      <!--tercera colummna-->
-                                    <div class="col-2">
+                                    <div class="col-12 col-md-2">
                                     <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>

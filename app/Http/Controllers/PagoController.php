@@ -38,7 +38,7 @@ class PagoController extends Controller
     {
        
         $rango = $request->input('rango');
-
+        $usuario = $request->input('usuario');
         $parte1 = Str::of($rango)->explode('-');
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
@@ -46,8 +46,18 @@ class PagoController extends Controller
         $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
         $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
 
-        $tickets = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2])
-        ->get();
+        if($usuario == "todos")
+        {
+            $tickets = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+      
         $repartidores = User::all();
         return view('envios.listadoticketdatos', compact('tickets', 'repartidores'));
     }
@@ -63,7 +73,7 @@ class PagoController extends Controller
     public function rpagodatos(Request $request)
     {
         $rango = $request->input('rango');
-
+        $usuario = $request->input('usuario');
         $parte1 = Str::of($rango)->explode('-');
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
@@ -71,8 +81,19 @@ class PagoController extends Controller
         $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
         $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
 
-        $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
-        ->get();
+        if($usuario == "todos")
+        {
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+       
+
         $repartidores = User::all();
         return view('envios.rpagodatos', compact('tickets', 'repartidores'));
     }
