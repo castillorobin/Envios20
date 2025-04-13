@@ -368,6 +368,7 @@ class EnvioController extends Controller
         $envio->telefono = $request->get('telefonop');
        // $envio->cobro = $request->get('cenvio');
         $envio->precio = $request->get('precio');
+        $envio->direccion = $request->get('direccionp');
         $envio->envio = $request->get('envio');
         $envio->total = $request->get('total'); 
         $envio->estado = "Creado";
