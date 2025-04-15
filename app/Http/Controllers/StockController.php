@@ -280,7 +280,7 @@ class StockController extends Controller
         }
  
         $envioid= $envio[0]->id ;
-
+ 
         $ticketc = Envio::find($envioid);
         $ticketc->cambiando = $actual;
         
@@ -364,13 +364,14 @@ class StockController extends Controller
             $envio->rack = $racks;
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
-           
+            $envio->caja = NULL;
         }
 
         if($nivels){
             $envio->nivel = $nivels;
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
+            $envio->caja = NULL;
         }
 
         if($tarimas){
@@ -378,6 +379,7 @@ class StockController extends Controller
             $envio->agencia = $agencia;
             $envio->ubicacion = $cajasuelto;
           //  dd($cajasuelto);
+          $envio->caja = NULL;
         }
 
         $envio->save();

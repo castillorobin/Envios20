@@ -359,16 +359,33 @@ class EnvioController extends Controller
     }
     public function guardarconguia(Request $request, $id)
     {
+        $punto = $request->get('punto');
         
         $envio = Envio::find($id);
 
+        
+
+        if ($punto) {
+           // dd($punto);
+            $rutas = Rutas::where('id', $punto)->get();
+            $envio->punto = $request->get('punto');
+            $envio->direccion = $rutas[0]->punto;
+
+        }else{
+            $envio->direccion = $request->get('direccionp');
+        }
+
+
+
+
+
         //$envio->guia = $request->get('n_guia');
         $envio->destinatario = $request->get('destinatariop');
-        $envio->direccion = $request->get('punto');
+        
         $envio->telefono = $request->get('telefonop');
        // $envio->cobro = $request->get('cenvio');
         $envio->precio = $request->get('precio');
-        $envio->direccion = $request->get('direccionp');
+        
         $envio->envio = $request->get('envio');
         $envio->total = $request->get('total'); 
         $envio->estado = "Creado";
