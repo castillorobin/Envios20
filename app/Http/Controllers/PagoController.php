@@ -36,7 +36,7 @@ class PagoController extends Controller
 
     public function ticketdatos(Request $request)
     {
-       
+        
         $rango = $request->input('rango');
         $usuario = $request->input('usuario');
         $parte1 = Str::of($rango)->explode('-');
