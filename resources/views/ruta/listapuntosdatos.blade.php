@@ -190,7 +190,9 @@ if(tipo=='suelto'){
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
+                                            
                                             @foreach ($pedidos as $pedido) 
+                                            @if($envio[0]->tipo = "Punto fijo")
                                             <tr class="'table-row-gray' : 'table-row-white' }}">
                                                 
                                                 <td class="text-center">{{$envio[0]->tipo}}</td>
@@ -223,7 +225,35 @@ if(tipo=='suelto'){
                                             <tr>
                                                 <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{strtoupper(substr($pedido->zona, 0, 3)) }}  {{$pedido->nruta}} - {{$pedido->nfijo}} </span></td>
                                             </tr>
+
+                                           
+                                           
+                                           
+
+                                            @endif
                                             @endforeach
+
+                                            @if($envio[0]->tipo !== 'Punto fijo')
+
+                                            <tr class="'table-row-gray' : 'table-row-white' }}">
+                                                
+                                                <td class="text-center">{{$envio[0]->tipo}}</td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+                                                <td class="text-center"></td>
+
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
+                                            </tr>
+                                            
+                                            @endif
+
+
+
+
                                         </tbody>
 
                                     </table>

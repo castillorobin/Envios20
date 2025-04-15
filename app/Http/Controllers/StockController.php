@@ -120,7 +120,7 @@ class StockController extends Controller
         $id = $request->get('guia') ;
         $envio = Envio::where('guia', $id)->get();
         if($envio->isEmpty()){
-            //dd("no hay envio");
+            //dd("no hay envio"); 
             $nota = "La Guía que se ingreso no existe"; 
             return view('ruta.listapuntos', compact('nota'));
 
