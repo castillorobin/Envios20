@@ -270,7 +270,7 @@ if (searchText == "") {
 
                                     <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
                                    
-                                    <option value="Todos" >Todos</option>
+                                    <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
                                     @endforeach
