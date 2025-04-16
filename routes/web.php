@@ -243,6 +243,7 @@ Route::get('/entrega/agregarparte', [App\Http\Controllers\EntregaController::cla
 Route::get('/entrega/limpiar/{id}', [App\Http\Controllers\EntregaController::class, 'limpiar'] )->name('limpiar') ;
 Route::get('/entrega/ticketentrega', [App\Http\Controllers\EntregaController::class, 'ticketentrega'] )->name('ticketentrega') ;
 Route::get('/listadoentregas', [App\Http\Controllers\EntregaController::class, 'listadoentregas'] )->name('listadoentregas') ;
+Route::get('/envios/entregadatos', [App\Http\Controllers\EntregaController::class, 'entregadatos'] )->name('entregadatos') ;
 
 //Stock
 Route::get('/stocks/seleccionarzona', [App\Http\Controllers\StockController::class, 'index'] )->name('indexstock') ;

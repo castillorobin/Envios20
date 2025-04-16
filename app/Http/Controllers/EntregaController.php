@@ -6,6 +6,8 @@ use App\Models\Entrega;
 use App\Models\Envio;
 use Illuminate\Http\Request;
 use PDF; 
+use App\Models\User;
+use Illuminate\Support\Str;
 //use App\Models\Entrega;
 
 class EntregaController extends Controller
@@ -22,8 +24,37 @@ class EntregaController extends Controller
     public function listadoentregas()
     {
         $tickets = Entrega::all();
+        $repartidores = User::all();
         
-        return view('envios.listadoentregas', compact('tickets'));
+        return view('envios.reporteentrega', compact('tickets', 'repartidores'));
+    }
+
+    public function entregadatos(Request $request)
+    {
+        $rango = $request->input('rango');
+        $usuario = $request->input('usuario');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+
+        if($usuario == "todos")
+        {
+            $tickets = Entrega::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = Entrega::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+       
+
+        $repartidores = User::all();
+        return view('envios.reporteentregadatos', compact('tickets', 'repartidores'));
     }
 
 
