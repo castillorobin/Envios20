@@ -358,7 +358,7 @@
 							<span class="menu-title">Pago por Ticket</span>
 						</a>
 					</div>
-					<!--
+					
 					<div class="menu-item">
 						<a class="menu-link" href="/entregas">
 							<span class="menu-bullet">
@@ -367,7 +367,7 @@
 							<span class="menu-title">Entrega de paquete</span>
 						</a>
 					</div>
-				-->
+				
 					
 				</div>
 			</div>
