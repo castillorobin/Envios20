@@ -13,6 +13,7 @@ use App\Models\Ticktpago;
 use PDF; 
 use Illuminate\Support\Str;
 use App\Models\User;
+use DateInterval;
  
 class PagoController extends Controller
 {
@@ -43,8 +44,10 @@ class PagoController extends Controller
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
         //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
-        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
-        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
+
+       // dd($fechacam1, $fechacam2);
 
         if($usuario == "todos")
         {
@@ -78,8 +81,8 @@ class PagoController extends Controller
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
         //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
-        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
-        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
 
         if($usuario == "todos")
         {
@@ -241,8 +244,8 @@ class PagoController extends Controller
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
         //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
-        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
-        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
        //return ($fechacam);
        $nota = " ";
        if($estado == "todos")
