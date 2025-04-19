@@ -23,7 +23,7 @@
 <body class="">
     <x-default-layout>
         <!--begin::Container-->
-        <div style=" margin-top:-300px">
+        <div >
             <!--begin::Post-->
             <div >
                 <div >
@@ -93,27 +93,27 @@
                                         </div>
                                         <!--end::Card header-->
                                         <!--begin::Card body-->
-                                        <div class="card-body pt-0 align-items-end">
+                                        <div class="card-body pt-0 align-items-end" style="background-color:white; min-height: 590px;  ">
                                             <!--begin::Table-->
                                             <div class="table-responsive">
                                                 <table class="table table-hover table-rounded table-striped border gy-7 gs-7">
                                                     <thead>
                                                         <tr class="fw-semibold fs-6 text-gray-400 fw-bold ">
-                                                        <th># De guia</th>
-                                                <th>Comercio</th>
-                                                <th>Destinatario</th>
-                                                <th>Direccion</th>
+                                                        <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
                                                 
-                                                <th class="text-center">Tipo de envío</th>
-                                                <th class="text-center">Estado del envío</th>
-                                                <th class="text-center">Fecha de entrega</th>
-                                                <th class="text-center">Estado del pago</th>
-                                                <th class="text-center">Precio del paquete</th>
-                                                <th class="text-center">Precio de envío</th>
-                                                <th>Total </th>
-                                                <th>Nota</th>
-                                                <th>Nota de repartidor</th>
-                                                            <th class="text-center">Borrar</th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th class="text-center"></th>
+                                                <th></th>
+                                                <th></th>
+                                                <th></th>
+                                                            <th class="text-center"></th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>

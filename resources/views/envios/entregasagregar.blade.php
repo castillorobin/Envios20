@@ -165,7 +165,7 @@ $(document).ready(function() {
                                         </div>
                                         <!--end::Card header-->
                                         <!--begin::Card body-->
-                                        <div class="card-body pt-0 align-items-end">
+                                        <div class="card-body pt-0 align-items-end" style="background-color:white; min-height: 590px;  ">
                                             <!--begin::Table-->
                                             <div class="table-responsive">
                                                 <table class="table table-hover table-rounded table-striped border gy-7 gs-7">

@@ -500,7 +500,7 @@
                                                     <!--begin::Date-->
                                                     <div class="fs-6 fw-bold text-gray-700 text-nowrap">Fecha:</div>
                                                     <!--end::Date-->
-
+ 
                                                     <!--begin::Input-->
                                                     <div class="position-relative d-flex align-items-center w-150px">
                                                         <!--begin::Datepicker-->
@@ -524,7 +524,7 @@
                                                 <div class="d-flex align-items-center justify-content-end flex-equal order-3 fw-row" data-bs-toggle="tooltip" data-bs-trigger="hover">
                                                     <!--begin::Date-->
                                                     <span class="fs-2x fw-bold text-gray-800">Ticket #</span>
-                                                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="{{ $factura }}" name="codigo" id="codigo" />
+                                                    <input type="text" class="form-control form-control-flush fw-bold text-muted fs-3 w-125px" value="{{ $codigo11 }}" name="codigo" id="codigo" />
 
                                                     <!--end::Input-->
                                                 </div>
@@ -547,7 +547,7 @@
                                                         <!--begin::Input group-->
                                                         <div class="mb-5">
                                                             <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" onchange="valor()" required>
-                                                                <option value="">Buscar Comercio</option>
+                                                                <option value="{{ $comercio11 }}">{{ $comercio11 }}</option>
                                                                 @foreach ($comercios as $comercio)
                                                                 <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
                                                                 @endforeach
@@ -566,7 +566,7 @@
 
                                                         <!--begin::Input group-->
                                                         <div class="mb-5">
-                                                            <input type="text" class="form-control form-control-solid" placeholder="Correo" name="correo" id="correo" />
+                                                            <input type="text" class="form-control form-control-solid" value="{{ $correo11 }}" placeholder="Correo" name="correo" id="correo" />
                                                         </div>
                                                         <!--end::Input group-->
 
@@ -584,13 +584,13 @@
 
                                                         <!--begin::Input group-->
                                                         <div class="mb-5">
-                                                            <input type="text" class="form-control form-control-solid" placeholder="Direccion" name="direccion" id="direccion" />
+                                                            <input type="text" class="form-control form-control-solid" value="{{ $direccion11 }}" placeholder="Direccion" name="direccion" id="direccion" />
                                                         </div>
                                                         <!--end::Input group-->
 
                                                         <!--begin::Input group-->
                                                         <div class="mb-5">
-                                                            <input type="text" class="form-control form-control-solid" placeholder="Telefono" name="telefono" id="telefono" />
+                                                            <input type="text" class="form-control form-control-solid" value="{{ $telefono11 }}" placeholder="Telefono" name="telefono" id="telefono" />
                                                         </div>
                                                         <!--end::Input group-->
 

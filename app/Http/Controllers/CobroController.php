@@ -21,6 +21,11 @@ class CobroController extends Controller
         $pedidos = Cobro::all();
         $comercios = Comercio::all(); 
         $nota=""; 
+        
+        $comercio11 = "";
+        $correo11 = "";
+        $direccion11 = "";
+        $telefono11 = "";
 
         $comer=" ";
         $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
@@ -38,8 +43,9 @@ class CobroController extends Controller
             $date = Carbon::now();
             $date = $date->format('Y');
             $factura = "$date".$idcompr;
+            $codigo11 = "$date".$idcompr;
      
-        return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+        return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
     
     public function limpieza($tipo11, $ticketactual)
@@ -342,6 +348,13 @@ class CobroController extends Controller
         $guia4 = $request->get('guia4');
         $hayguia4 = Envio::where('guia', $guia4)->exists();
 
+        $codigo11 = $request->get('codigo');
+        $comercio11 = $request->get('comercio');
+        $correo11 = $request->get('correo');
+        $direccion11 = $request->get('direccion');
+        $telefono11 = $request->get('telefono');
+        
+
        // dd($hayguia);
         if ($hayguia== true) {
 
@@ -367,7 +380,7 @@ class CobroController extends Controller
                 $date = $date->format('Y');
                 $factura = "$date".$idcompr;
          
-            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }
@@ -396,7 +409,7 @@ class CobroController extends Controller
                 $date = $date->format('Y');
                 $factura = "$date".$idcompr;
          
-            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }
@@ -425,7 +438,7 @@ class CobroController extends Controller
                 $date = $date->format('Y');
                 $factura = "$date".$idcompr;
          
-            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }
@@ -436,7 +449,7 @@ class CobroController extends Controller
             $pedidos = Cobro::all();
             $comercios = Comercio::all(); 
             
-    
+     
             $comer=" ";
             $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
             $cobrodepa = $cobrodepa->count();
@@ -454,7 +467,7 @@ class CobroController extends Controller
                 $date = $date->format('Y');
                 $factura = "$date".$idcompr;
          
-            return view('envios.registroorden', compact('comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }

@@ -561,7 +561,7 @@ $(document).ready(function() {
             <div class="separator separator-dashed my-10"></div>
             <!--end::Separator-->         
 
-            <!--begin::Wrapper-->
+            <!--begin::Wrapper--> 
             <div class="mb-0">
                 <!--begin::Row-->
                 <div class="row gx-10 mb-5">
