@@ -347,7 +347,7 @@ if (searchText == "") {
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->cajero}}</td>
-                                                <td>{{$ticket->nota}}</td>
+                                                <td>{{$ticket->agencia}}</td>
                                                 <td>${{$ticket->descuento}}</td>
                                                
                                                 <td>${{$ticket->total}}</td>

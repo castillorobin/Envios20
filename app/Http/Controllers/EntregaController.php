@@ -37,8 +37,8 @@ class EntregaController extends Controller
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
         //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
-        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
-        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
 
         if($usuario == "todos")
         {
@@ -160,6 +160,7 @@ class EntregaController extends Controller
         $sutota = $request->get('sutota');
         $nota = $request->get('nota');
         $tota = $request->get('tota');
+        $agencia = $request->get('agencia');
 
 
         $pedido = Entrega::find($identrega);
@@ -169,6 +170,7 @@ class EntregaController extends Controller
         $pedido->nota = $nota;
         $pedido->subtotal = $sutota;
         $pedido->total = $tota;
+        $pedido->agencia = $agencia;
         $pedido->entrega = $request->get('entrega3');
         $pedido->cambio = $request->get('cambio');
         $pedido->save();

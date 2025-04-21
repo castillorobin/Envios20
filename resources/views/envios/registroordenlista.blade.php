@@ -932,7 +932,22 @@ $(document).ready(function() {
             <!--end::Select-->
         </div>
         <!--end::Input group-->
+        <div class="mb-8">
+                                        
+            <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack mb-5">
+                <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
+                    Agencia
+                </span>
 
+            </label>
+            <select name="agencia" id="agencia" class="form-select form-select-solid" >
+                <option value="San_Salvador">San Salvador</option>
+                <option value="San_Miguel">San Miguel</option>
+                <option value="Santa_ana">Santa Ana</option>
+                <option value="Centro de distribucion">Centro de distribucion</option>
+            </select>
+           
+    </div>
         <!--begin::Separator-->
         <div class="separator separator-dashed mb-8"></div>
         <!--end::Separator--> 

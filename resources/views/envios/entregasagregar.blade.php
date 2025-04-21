@@ -309,7 +309,7 @@ $(document).ready(function() {
                             <!--begin::Table-->
                             <table class="table align-middle gs-0 gy-4 my-0">
                                 <!--begin::Table head-->
-                                <thead>
+                                <thead> 
                                     <tr>
                                         <th class="min-w-175px"></th>
                                         <th class="w-125px"></th>
@@ -346,6 +346,17 @@ $(document).ready(function() {
                                         <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione una fecha de entrega.
                                         </div>
+                                    </div> 
+                                    <div class="form-floating col-lg-12 mb-4">
+                                        
+                                        
+                                            <select name="agencia" id="agencia" class="form-select form-select-solid" data-placeholder="Seleccionar Agencia" >
+                                                <option value="San_Salvador">San Salvador</option>
+                                                <option value="San_Miguel">San Miguel</option>
+                                                <option value="Santa_ana">Santa Ana</option>
+                                                <option value="Centro de distribucion">Centro de distribucion</option>
+                                            </select>
+                                            <label class="col-lg-3 col-form-label fw-semibold fs-6">Agencia de registro</label>
                                     </div>
                                     <!-- Campo para la cantidad de descuento -->
                                     <div class="form-floating col-lg-12 mb-4">

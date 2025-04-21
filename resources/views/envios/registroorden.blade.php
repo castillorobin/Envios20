@@ -547,7 +547,7 @@
                                                         <!--begin::Input group-->
                                                         <div class="mb-5">
                                                             <select class="form-select form-select-solid mi-selector" data-control="select2" name="comercio" id="comercio" onchange="valor()" required>
-                                                                <option value="{{ $comercio11 }}">{{ $comercio11 }}</option>
+                                                                <option value="{{ $comercio11 }}">{{ $comercio11 }} &nbsp;</option>
                                                                 @foreach ($comercios as $comercio)
                                                                 <option value="{{$comercio->comercio}}">{{$comercio->comercio}}</option>
                                                                 @endforeach
@@ -900,6 +900,25 @@
                                     <!--end::Select-->
                                 </div>
                                 <!--end::Input group-->
+
+                                
+
+                                <div class="mb-8">
+                                        
+                                    <label class="form-check form-switch form-switch-sm form-check-custom form-check-solid flex-stack mb-5">
+                                        <span class="form-check-label ms-0 fw-bold fs-6 text-gray-700">
+                                            Agencia
+                                        </span>
+
+                                    </label>
+                                    <select name="agencia" id="agencia" class="form-select form-select-solid" >
+                                        <option value="San_Salvador">San Salvador</option>
+                                        <option value="San_Miguel">San Miguel</option>
+                                        <option value="Santa_ana">Santa Ana</option>
+                                        <option value="Centro de distribucion">Centro de distribucion</option>
+                                    </select>
+                                   
+                            </div>
 
                                 <!--begin::Separator-->
                                 <div class="separator separator-dashed mb-8"></div>

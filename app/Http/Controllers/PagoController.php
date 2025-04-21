@@ -16,7 +16,7 @@ use App\Models\User;
 use DateInterval;
  
 class PagoController extends Controller
-{
+{ 
     /**
      * Display a listing of the resource.
      */ 
@@ -353,6 +353,7 @@ class PagoController extends Controller
         $sutota = $request->get('stota');
         $nota = $request->get('nota');
         $tota = $request->get('tota');
+        $agencia = $request->get('agencia');
         $comercio = $request->get('comercio');
 
 
@@ -367,6 +368,7 @@ class PagoController extends Controller
         $pedido->cambio = $request->get('cambio');
         $pedido->cajero = $cajero;
         $pedido->nota = $nota;
+        $pedido->agencia = $agencia;
         $pedido->save();
 
         $ticketact = Ticktpago::latest('id')->first();
@@ -401,6 +403,7 @@ class PagoController extends Controller
         $sutota = $request->get('stota');
         $nota = $request->get('nota');
         $tota = $request->get('tota');
+        $agencia = $request->get('agencia');
         $comercio = $request->get('comercio');
 
 
@@ -414,6 +417,7 @@ class PagoController extends Controller
         $pedido->cambio = $request->get('cambio');
         $pedido->cajero = $cajero;
         $pedido->nota = $nota;
+        $pedido->agencia = $agencia;
         $pedido->save();
 
         $ticketact = Ticktpago::latest('id')->first();
