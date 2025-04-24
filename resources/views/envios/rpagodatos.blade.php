@@ -471,7 +471,7 @@ if (searchText == "") {
    Comercio 
    <br>
    
-   <hr>
+   <hr style="margin-right:10%; margin-left:10%;">
    </div>
    
    <div class="fecha ">
@@ -481,7 +481,7 @@ if (searchText == "") {
 
     
    <div class="centrar">
-    <table class="centrar" style="width: 100%; display:table; " >
+    <table class="centrar" style="margin-left:10%; width: 80%;" >
         <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
             <tr>
             <th style="width: 250px; text-align: left;">DESCRIPCION</th>
