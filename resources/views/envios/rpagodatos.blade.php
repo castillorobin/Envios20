@@ -445,7 +445,7 @@ if (searchText == "") {
 <div style="width:100%; " class="text-center centrar"> 
     <img src="/fotos/logo24.png" width="150px">
     <br>
-            <div class="margen"> <span >Pago por Ticket</span></div>
+            <div class="margen"> <span >Expertos en paqueteria</span></div>
             
            <!-- <img alt="image" src="/public/img/logo.png" > -->
            
