@@ -311,7 +311,7 @@ class CobroController extends Controller
         $ticketc->metodo = $request->get('metodo');
         $ticketc->entrega = $request->get('pago');
         $ticketc->cambio = $request->get('cambio');
-        $pedido->agencia = $agencia;
+        $ticketc->agencia = $agencia;
         //$ticketc->iva = $ ;
         $ticketc->save();
         $ticketact = Ticketc::where('codigo', $ticketnum)
