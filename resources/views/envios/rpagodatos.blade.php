@@ -340,9 +340,9 @@ if (searchText == "") {
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> 
+                                                <td> <a href="/envios/lisdopagosdatos/{{$ticket->id}}">
                                                     <button class="btn btn-active-light-secondary edit " value="{{$ticket->id}}" id="kt_drawer_example_basic_button" ># {{$ticket->id}}</button>
-                                                    
+                                                    </a>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->cajero}}</td>
@@ -353,24 +353,7 @@ if (searchText == "") {
                                                 <td>{{$ticket->created_at}}</td>
                                                
                                                     
-                                                    <span hidden id="id{{ $ticket->id }}"> {{ $ticket->id }}</span>
-                                                    <span hidden id="com{{ $ticket->id }}"> {{ $ticket->comercio }}</span>
-                                                    <span hidden id="fec{{ $ticket->id }}"> {{date('d/m/Y', strtotime($ticket->created_at)) }}</span>
-                                                    <span hidden id="hor{{ $ticket->id }}"> {{ date('H:i:s', strtotime($ticket->created_at)) }}</span>
-                                                    <span hidden id="per{{ $ticket->id }}"> {{ $ticket->perso }}</span>
-                                                    <span hidden id="pei{{ $ticket->id }}"> {{ $ticket->persoi }}</span>
-                                                    <span hidden id="pun{{ $ticket->id }}"> {{ $ticket->punto }}</span>
-                                                    <span hidden id="pui{{ $ticket->id }}"> {{ $ticket->puntoi }}</span>
-                                                    <span hidden id="cas{{ $ticket->id }}"> {{ $ticket->casil }}</span>
-                                                    <span hidden id="cai{{ $ticket->id }}"> {{ $ticket->casili }}</span>
-                                                    <span hidden id="dep{{ $ticket->id }}"> {{ $ticket->depar }}</span>
-                                                    <span hidden id="dei{{ $ticket->id }}"> {{ $ticket->depari }}</span>
-                                                    <span hidden id="gui{{ $ticket->id }}"> {{ $ticket->guias }}</span>
-                                                    <span hidden id="gii{{ $ticket->id }}"> {{ $ticket->guias }}</span>
-                                                    <span hidden id="sub{{ $ticket->id }}"> {{ $ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guias }}</span>
-                                                    <span hidden id="tot{{ $ticket->id }}"> {{ $ticket->total }}</span>
-                                                    <span hidden id="ent{{ $ticket->id }}"> {{ $ticket->entrega }}</span>
-                                                    <span hidden id="cam{{ $ticket->id }}"> {{ $ticket->cambio }}</span>
+                                                   
 
 
                                                 
@@ -428,175 +411,6 @@ if (searchText == "") {
 
 
 
-        <!--begin::Ticket-->
-<div
-    id="kt_drawer_example_basic"
-
-    class="bg-white"
-    data-kt-drawer="true"
-    data-kt-drawer-activate="true"
-    data-kt-drawer-toggle="#kt_drawer_example_basic_button"
-    data-kt-drawer-close="#kt_drawer_example_basic_close"
-    data-kt-drawer-width="500px"
->
-    
-
-
-<div style="width:100%; " class="text-center centrar"> 
-    <img src="/fotos/logo24.png" width="150px">
-    <br>
-            <div class="margen"> <span >Expertos en paqueteria</span></div>
-            
-           <!-- <img alt="image" src="/public/img/logo.png" > -->
-           
-           <div class="margenint " style="background-color: black; color:white; width:80%; margin-left:10%;">  <span style="background-color: black; color:white; width:100%;">Comprobante de pago</span> </div>
-           
-           <br>
-           <span>Centro Comercial Metrogaleria
-           local 3-9 <br> San Salvador </span>
-           <br>
-           
-     
-
-        <div style="margin-top:10px;" class="centrar">
-           <span >WWW.MELOEXPRESS.COM.SV</span></div>
-    
-
-                        <div class="fecha centrar " style="font-weight: bolder;">
-                            <br>
-   TICKET Nº 
-   </div>
-   <br>
-   <div class="fecha " style="font-weight: bolder;">
-   Comercio 
-   <br>
-   
-   <hr style="margin-right:10%; margin-left:10%;">
-   </div>
-   
-   <div class="fecha ">
-   <span > Fecha: {{ now()->Format('d/m/Y')}} </span>
-   <span style="float:right; ">Hora: {{ now()->Format('H:i A')}}</span> 
-   </div>
-
-    
-   <div class="centrar">
-    <table class="centrar" style="margin-left:10%; width: 80%;" >
-        <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
-            <tr>
-            <th style="width: 250px; text-align: left;">DESCRIPCION</th>
-           
-            <th>IMPORTE</th>
-            </tr>
-        </thead>
-        
-            <tbody style=" height: 500px;">
-            
-                
-                    
-                
-                <tr >
-                    <td style="text-align: left;"><span style="font-weight: bolder;"></span><br><span style="font-size: 12px;">  </span></td>
-                    <td>$</td>
-                   
-                </tr>
-                
-                
-                
-
-                <tr >   
-                    <td > &nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-
-               
-                <tr style="text-align: left;">
-                    
-                    
-                    <td style="border-top: 2px solid black; " >Método de pago:  </td>
-                    <td style="border-top: 2px solid black;" class="centrar">
-                     
-                    </td>
-                    
-                    
-                </tr>
-                <tr class="izqui">
-                    
-                    Método de pago: 
-                    <td  > <span style="margin-right: -45px;"> SUBTOTAL </span></td>
-                    <td style="text-align: left; padding-left: 55px;">$
-                     
-                    </td>
-                    
-                    
-                </tr>
-                <tr class="izqui">
-                    
-                    <td><span style="margin-right: -45px;"> DESCUENTO</span></td>
-                    <td style="text-align: left; padding-left: 55px;">$
-                     
-                    </td>
-                    
-                </tr>
-                <tr class="izqui">
-                    
-                    <td style="font-weight: bolder;"><span style="margin-right: -45px;"> TOTAL</span></td>
-                    <td style="font-weight: bolder; text-align: left; padding-left: 55px;">$</td>
-                   
-                </tr>
-                <tr class="izqui">
-                
-                    <td style="text-align: right;"><span style="margin-right: -45px;"> ENTREGA:</span></td>
-                    <td style="text-align: left; padding-left: 55px;" >$</td>
-                </tr>
-                <tr class="izqui">
-                    
-                    <td><span style="margin-right: -45px;"> CAMBIO:</span></td>
-                    <td style="text-align: left; padding-left: 55px;">$</td>
-                </tr>
-                    
-                
-
-            </tbody>
-            
-    </table>
-   
-   <div class="">
-
-
-   
-    
-
-<br>
-<div class="centrar">Le atendio: {{ Auth::user()->name }}o</div>
-<hr>
-<div class="centrar">¡¡GRACIAS POR PREFERIRNOS!!</div>
-<hr>
-<div style="padding-left:85px;"> {!! DNS1D::getBarcodeHTML(202201 , 'C39') !!} <span style="padding-right: 90px; font-weight: bolder;">  </span></div>
-</div>
-
-
-
-
-<!--end::Ticket-->
-
-
 
 
 
@@ -628,66 +442,6 @@ if (searchText == "") {
 
 <script>
        
-        
-    $(document).ready(function(){
-        $(document).on('click', '.edit', function(){
-           var cod=$(this).val();
-           var iden=$('#id'+cod).text();
-           var comer=$('#com'+cod).text();
-           var fecha=$('#fec'+cod).text();
-           var horas=$('#hor'+cod).text();
-           var perso=$('#per'+cod).text();
-           var persi=$('#pei'+cod).text();
-           var punto=$('#pun'+cod).text();
-           var punti=$('#pui'+cod).text();
-           var casil=$('#cas'+cod).text();
-           var casill=$('#cai'+cod).text();
-           var depar=$('#dep'+cod).text();
-           var depai=$('#dei'+cod).text();
-           var guias=$('#gui'+cod).text();
-           var guiai=$('#gii'+cod).text();
-           var subto=$('#sub'+cod).text();
-           var total=$('#tot'+cod).text();
-           var entre=$('#ent'+cod).text();
-           var cambi=$('#cam'+cod).text();
-            
-    //alert("HOla");
-            
-        
-            //$('#edit').modal('show');
-           $('#codigo').text(cod);
-           $('#come').text(comer);
-           $('#fech').text(fecha);
-           $('#hora').text(horas);
-           $('#pers').text(perso);
-           $('#peri').text(persi);
-           $('#punt').text(punto);
-           $('#puni').text(punti);
-           $('#casi').text(casil);
-           $('#caii').text(casill);
-           $('#depa').text(depar);
-           $('#depi').text(depai);
-           $('#guia').text(guias);
-           $('#guii').text(guiai);
-           $('#subt').text(subto);
-           $('#tota').text(total);
-           $('#entr').text(entre);
-           $('#camb').text(cambi);
-           $('#cod2').text(cod);
-          
-           var ide = '/cobro/ticketlistado/'+cod ;
-		   document.getElementById("impri").href = ide;
-    
-            
-    
-            //$('#impri a').prop("href", ide);
-            //$('.paginacion a').prop('href','http://nuevaUrl.com');
-    
-           // document.getElementById("impri").href = ide;
-        });
-    });
-     
-    
     
     
     

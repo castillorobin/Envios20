@@ -220,6 +220,7 @@ Route::get('/envios/reporteingresosdatos', [App\Http\Controllers\EnvioController
 
 Route::get('/envios/reportepago', [App\Http\Controllers\PagoController::class, 'reportepago'] )->name('reportepago') ;
 Route::get('/envios/rpagodatos', [App\Http\Controllers\PagoController::class, 'rpagodatos'] )->name('rpagodatos') ;
+Route::get('/envios/lisdopagosdatos/{id}', [App\Http\Controllers\PagoController::class, 'lisdopagosdatos'] )->name('lisdopagosdatos') ;
 
 
 

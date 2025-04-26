@@ -27,7 +27,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-
+ 
     <style>
         .table th,
         .table td { 
@@ -83,7 +83,6 @@
     text-align: center;
 }
     </style>
-
 
 
 </head>
@@ -192,7 +191,7 @@ if (searchText == "") {
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de cobro</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de pago</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -207,7 +206,7 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Reporte de cobro</li>
+                                <li class="breadcrumb-item text-muted">Reporte de pago</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -253,7 +252,7 @@ if (searchText == "") {
 <!-- fin primera colummna-->
 <!--segunda colummna-->
                                     <div class="col-12 col-md-9">
-                                    <form action="/envios/ticketdatos" method="GET">
+                                    <form action="/envios/rpagodatos" method="GET">
                                         <table  style="float:right;">
                                             <tr>
                                                 <td>
@@ -262,7 +261,7 @@ if (searchText == "") {
   </div>
   </td>
   <td style="width: 30%;">
-                                    <div class="col-auto">
+                                    <div class="">
 
                                     <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="width: 420px;">
                                    
@@ -279,7 +278,7 @@ if (searchText == "") {
   </div>
   </td>
   <td >
-    <a href="/envios/listadoticket">
+    <a href="/envios/reportepago">
     <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
     </a>
 </td>
@@ -291,7 +290,7 @@ if (searchText == "") {
                                     </div>
                                     <!-- fin segunda colummna-->
                                      <!--tercera colummna-->
-                                   
+                                    
                                     <!--fin tercera colummna-->
                                 </div>
 
@@ -315,11 +314,12 @@ if (searchText == "") {
 
                                 <!--end::Card toolbar-->
                            
+
                                 <!--end::Card toolbar-->
                          
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 590px; max-height: 590px; overflow-y: scroll">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 590px;  max-height: 590px; overflow-y: scroll">
 
 
                                 <!--begin::Table-->
@@ -334,7 +334,6 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Descuento</th>
                                                 <th class="min-w-50px">Total</th>
                                                 <th class="min-w-50px">Fecha de recepcion</th>
-                                                <th class="min-w-50px">Nota</th>
                                                 
                                             </tr>
                                         </thead>
@@ -342,7 +341,7 @@ if (searchText == "") {
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> 
-                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->codigo}}" id="kt_drawer_example_basic_button" >#{{$ticket->codigo}}</button>
+                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->id}}" id="kt_drawer_example_basic_button" ># {{$ticket->id}}</button>
                                                     
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
@@ -352,27 +351,26 @@ if (searchText == "") {
                                                
                                                 <td>${{$ticket->total}}</td>
                                                 <td>{{$ticket->created_at}}</td>
-                                                <td>{{$ticket->nota}}</td>
                                                
                                                     
-                                                    <span hidden id="id{{ $ticket->codigo }}"> {{ $ticket->id }}</span>
-                                                    <span hidden id="com{{ $ticket->codigo }}"> {{ $ticket->comercio }}</span>
-                                                    <span hidden id="fec{{ $ticket->codigo }}"> {{date('d/m/Y', strtotime($ticket->created_at)) }}</span>
-                                                    <span hidden id="hor{{ $ticket->codigo }}"> {{ date('H:i:s', strtotime($ticket->created_at)) }}</span>
-                                                    <span hidden id="per{{ $ticket->codigo }}"> {{ $ticket->perso }}</span>
-                                                    <span hidden id="pei{{ $ticket->codigo }}"> {{ $ticket->persoi }}</span>
-                                                    <span hidden id="pun{{ $ticket->codigo }}"> {{ $ticket->punto }}</span>
-                                                    <span hidden id="pui{{ $ticket->codigo }}"> {{ $ticket->puntoi }}</span>
-                                                    <span hidden id="cas{{ $ticket->codigo }}"> {{ $ticket->casil }}</span>
-                                                    <span hidden id="cai{{ $ticket->codigo }}"> {{ $ticket->casili }}</span>
-                                                    <span hidden id="dep{{ $ticket->codigo }}"> {{ $ticket->depar }}</span>
-                                                    <span hidden id="dei{{ $ticket->codigo }}"> {{ $ticket->depari }}</span>
-                                                    <span hidden id="gui{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
-                                                    <span hidden id="gii{{ $ticket->codigo }}"> {{ $ticket->guias }}</span>
-                                                    <span hidden id="sub{{ $ticket->codigo }}"> {{ $ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guias }}</span>
-                                                    <span hidden id="tot{{ $ticket->codigo }}"> {{ $ticket->total }}</span>
-                                                    <span hidden id="ent{{ $ticket->codigo }}"> {{ $ticket->entrega }}</span>
-                                                    <span hidden id="cam{{ $ticket->codigo }}"> {{ $ticket->cambio }}</span>
+                                                    <span hidden id="id{{ $ticket->id }}"> {{ $ticket->id }}</span>
+                                                    <span hidden id="com{{ $ticket->id }}"> {{ $ticket->comercio }}</span>
+                                                    <span hidden id="fec{{ $ticket->id }}"> {{date('d/m/Y', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="hor{{ $ticket->id }}"> {{ date('H:i:s', strtotime($ticket->created_at)) }}</span>
+                                                    <span hidden id="per{{ $ticket->id }}"> {{ $ticket->perso }}</span>
+                                                    <span hidden id="pei{{ $ticket->id }}"> {{ $ticket->persoi }}</span>
+                                                    <span hidden id="pun{{ $ticket->id }}"> {{ $ticket->punto }}</span>
+                                                    <span hidden id="pui{{ $ticket->id }}"> {{ $ticket->puntoi }}</span>
+                                                    <span hidden id="cas{{ $ticket->id }}"> {{ $ticket->casil }}</span>
+                                                    <span hidden id="cai{{ $ticket->id }}"> {{ $ticket->casili }}</span>
+                                                    <span hidden id="dep{{ $ticket->id }}"> {{ $ticket->depar }}</span>
+                                                    <span hidden id="dei{{ $ticket->id }}"> {{ $ticket->depari }}</span>
+                                                    <span hidden id="gui{{ $ticket->id }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="gii{{ $ticket->id }}"> {{ $ticket->guias }}</span>
+                                                    <span hidden id="sub{{ $ticket->id }}"> {{ $ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guias }}</span>
+                                                    <span hidden id="tot{{ $ticket->id }}"> {{ $ticket->total }}</span>
+                                                    <span hidden id="ent{{ $ticket->id }}"> {{ $ticket->entrega }}</span>
+                                                    <span hidden id="cam{{ $ticket->id }}"> {{ $ticket->cambio }}</span>
 
 
                                                 
@@ -426,7 +424,7 @@ if (searchText == "") {
 
 
 
-
+   
 
 
 
@@ -444,142 +442,159 @@ if (searchText == "") {
     
 
 
-
-
-<div style="width:100%; " class="text-center centrar">
+<div style="width:100%; " class="text-center centrar"> 
     <img src="/fotos/logo24.png" width="150px">
-    
-    <div class="margen "> <span>Expertos en paqueteria</span></div>
-
-    <div class="margenint " style="background-color: black; color:white; width:80%; margin-left:10%;">  <span style="background-color: black; color:white; width:100%;">Comprobante de cobro</span> </div>
-
     <br>
+            <div class="margen"> <span >Expertos en paqueteria</span></div>
+            
+           <!-- <img alt="image" src="/public/img/logo.png" > -->
+           
+           <div class="margenint " style="background-color: black; color:white; width:80%; margin-left:10%;">  <span style="background-color: black; color:white; width:100%;">Comprobante de pago</span> </div>
+           
+           <br>
            <span>Centro Comercial Metrogaleria
            local 3-9 <br> San Salvador </span>
            <br>
+           
+     
 
-           <div style="margin-top:10px;" class="centrar">
+        <div style="margin-top:10px;" class="centrar">
            <span >WWW.MELOEXPRESS.COM.SV</span></div>
-       <br>
+    
 
                         <div class="fecha centrar " style="font-weight: bolder;">
-   TICKET Nº <label for="" id="codigo"></label>
-  
+                            <br>
+   TICKET Nº 
+   </div>
+   <br>
+   <div class="fecha " style="font-weight: bolder;">
+   Comercio 
+   <br>
    
-   </div>
-   <div style="text-align: left; margin-left:10%;">
-   Comercio: <span style="font-weight: bolder;"><label for="" id="come"></label></span> 
-   </div>
    <hr style="margin-right:10%; margin-left:10%;">
+   </div>
    
-   <div style="text-align: left; margin-right:10%; margin-left:10%;">
-   <span > Fecha: <label for="" id="fech"></label> </span>
-   <span style="float:right; ">Hora: <label for="" id="hora"></label></span> 
+   <div class="fecha ">
+   <span > Fecha: {{ now()->Format('d/m/Y')}} </span>
+   <span style="float:right; ">Hora: {{ now()->Format('H:i A')}}</span> 
    </div>
 
-
+    
    <div class="centrar">
-<table class="centrar" style="margin-left:10%; width: 80%;">
-    <thead class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black;">
-        <tr>
-        <th style="width: 200px;">DESCRIPCION</th>
-        <TH>CANT</TH>
-        <TH>IMPORTE</TH>
-        </tr>
+    <table class="centrar" style="margin-left:10%; width: 80%;" >
+        <thead  class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
+            <tr>
+            <th style="width: 250px; text-align: left;">DESCRIPCION</th>
+           
+            <th>IMPORTE</th>
+            </tr>
+        </thead>
+        
+            <tbody style=" height: 500px;">
+            
+                
+                    
+                
+                <tr >
+                    <td style="text-align: left;"><span style="font-weight: bolder;"></span><br><span style="font-size: 12px;">  </span></td>
+                    <td>$</td>
+                   
+                </tr>
+                
+                
+                
 
-        <tbody>
-            <tr>
-                <td style="text-align: left;">Personalizado</td>
-                <td><label for="" id="pers"></label></td>
-                <td>$<label for="" id="peri"></label></td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Punto fijo</td>
-                <td><label for="" id="punt"></label></td>
-                <td>$<label for="" id="puni"></label></td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Casillero</td>
-                <td><label for="" id="casi"></label></td>
-                <td>$<label for="" id="caii"></label></td>
-            </tr>
-            <tr>
-                <td style="text-align: left;">Personalizado Departamental</td>
-                <td><label for="" id="depa"></label></td>
-                <td>$<label for="" id="depi"></label></td>
-            </tr>
-            <tr >
-                <td style="text-align: left; border-bottom: 2px solid black;"> Guias</td>
-                <td style="border-bottom: 2px solid black;"><label for="" id="guia"></label></td>
-                <td style="border-bottom: 2px solid black;">$<label for="" id="guii"></label></td>
-            </tr>
-            <tr >
-                <td></td>
-                <td>SUBTOTAL</td>
-                <td >$<label for="" id="subt"> </label>
-                 
-                </td>
-                
-            </tr>
-            <tr >
-                <td></td>
-                <td>DESCUENTO</td>
-                <td>$
-                 
-                </td>
-                
-            </tr>
-            <tr>
-                <td></td>
-                <td style="font-weight: bolder;">TOTAL</td>
-                <td >$<label for="" id="tota"> </label></td>
-            </tr>
-            <tr>
-                
-                <td colspan="2" style="text-align: right;">ENTREGA EFECTIVO:</td>
-                <td >$<label for="" id="entr"> </label></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>CAMBIO:</td>
-                <td >$<label for="" id="camb"> </label></td>
-            </tr>
-        </tbody>
+                <tr >   
+                    <td > &nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
+                <tr >   
+                    <td >&nbsp;</td>
+                    <td >&nbsp;</td> 
+                </tr>
 
-    </thead>
-</table>
+               
+                <tr style="text-align: left;">
+                    
+                    
+                    <td style="border-top: 2px solid black; " >Método de pago:  </td>
+                    <td style="border-top: 2px solid black;" class="centrar">
+                     
+                    </td>
+                    
+                    
+                </tr>
+                <tr class="izqui">
+                    
+                    Método de pago: 
+                    <td  > <span style="margin-right: -45px;"> SUBTOTAL </span></td>
+                    <td style="text-align: left; padding-left: 55px;">$
+                     
+                    </td>
+                    
+                    
+                </tr>
+                <tr class="izqui">
+                    
+                    <td><span style="margin-right: -45px;"> DESCUENTO</span></td>
+                    <td style="text-align: left; padding-left: 55px;">$
+                     
+                    </td>
+                    
+                </tr>
+                <tr class="izqui">
+                    
+                    <td style="font-weight: bolder;"><span style="margin-right: -45px;"> TOTAL</span></td>
+                    <td style="font-weight: bolder; text-align: left; padding-left: 55px;">$</td>
+                   
+                </tr>
+                <tr class="izqui">
+                
+                    <td style="text-align: right;"><span style="margin-right: -45px;"> ENTREGA:</span></td>
+                    <td style="text-align: left; padding-left: 55px;" >$</td>
+                </tr>
+                <tr class="izqui">
+                    
+                    <td><span style="margin-right: -45px;"> CAMBIO:</span></td>
+                    <td style="text-align: left; padding-left: 55px;">$</td>
+                </tr>
+                    
+                
+
+            </tbody>
+            
+    </table>
+   
+   <div class="">
 
 
    
+    
+
 <br>
-<div>Le atendio: {{ Auth::user()->name }}</div>
+<div class="centrar">Le atendio: {{ Auth::user()->name }}o</div>
 <hr>
-<div>¡¡GRACIAS POR PREFERIRNOS!!</div>
+<div class="centrar">¡¡GRACIAS POR PREFERIRNOS!!</div>
 <hr>
-<div style="padding-left: 125px;"> {!! DNS1D::getBarcodeHTML(202401 , 'C39') !!} <span style="padding-right: 80px; font-weight: bolder;"> <label for="" id="cod2"> </label></span></div>
-
-
-
-
-
-
+<div style="padding-left:85px;"> {!! DNS1D::getBarcodeHTML(202201 , 'C39') !!} <span style="padding-right: 90px; font-weight: bolder;">  </span></div>
 </div>
 
 
-<br>
-<p></p>
-
-<button type="button" class="btn btn-secondary" data-kt-drawer-dismiss="true">Cerrar</button>
-&nbsp; &nbsp;
-<a id="impri" target="_blank">
-<button type="button" class="btn btn-dark">Imprimir</button>
-</a>
 
 
-
-</div>
 <!--end::Ticket-->
-
 
 
 
