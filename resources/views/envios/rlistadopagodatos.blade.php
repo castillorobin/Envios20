@@ -181,15 +181,15 @@ if (searchText == "") {
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div  >
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid">
+            <div >
                 <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                <div >
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                        <div >
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de pago</h1>
                             <!--end::Title-->
@@ -226,7 +226,7 @@ if (searchText == "") {
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container ">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -261,9 +261,7 @@ if (searchText == "") {
   
   
   <td >
-    <a href="/envios/reportepago">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
-    </a>
+  
 </td>
   </tr>
   </table>
@@ -306,8 +304,8 @@ if (searchText == "") {
 
 
                                 <!--begin::Table-->
-                                <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                <div class="table-responsive" >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table" >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                
@@ -316,6 +314,7 @@ if (searchText == "") {
                                                 <th class="min-w-100px">Cliente</th>
                                                 <th class="min-w-50px">Usuario</th>
                                                 <th class="min-w-50px">Agencia</th>
+                                                <th class="min-w-50px text-center">Estado del pago</th>
                                                 <th class="min-w-50px">Tipo</th>
                                                 <th class="min-w-50px">Total</th>
                                                 <th class="min-w-50px">Fecha de pago</th>
@@ -333,6 +332,14 @@ if (searchText == "") {
                                                 <td>{{$ticket->destinatario}}</td> 
                                                 <td>{{$pago[0]->cajero}}</td>
                                                 <td>{{$pago[0]->agencia}}</td>
+                                                <td class="text-center">
+                                                    @if( $ticket->pago == 'Pagado')
+                                                    <span class="badge badge-success">{{ $ticket->pago}}</span>
+                                                    @else
+                                                    <span class="badge badge-danger">{{ $ticket->pago }}</span>
+                                                    @endif
+
+                                                </td>
                                                 <td>{{$ticket->tipo}}</td>
                                                
                                                 <td>${{$ticket->total}}</td>
@@ -347,8 +354,13 @@ if (searchText == "") {
                                         </tbody>
 
                                     </table>
-                                    <div style="float:right">
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
+                                    <div style="float:right; margin-top:30px;">
+                                    <a href="/envios/reportepago">
+    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+    </a>
+
+
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
