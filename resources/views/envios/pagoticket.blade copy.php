@@ -80,15 +80,13 @@
                 @foreach ($envios as $envio)
                     
                 
-               
-                    {{ $i++ }}
-              
-                @endforeach
                 <tr >
-                    <td style="text-align: left;"><span style="font-weight: bolder;">Total de guias: {{ $i }} </td>
-                    <td>${{ $ticketact->subtotal }}</td>
+                    <td style="text-align: left;"><span style="font-weight: bolder;">{{ $envio->guia }} </span><br><span style="font-size: 12px;"> {{ $envio->destinatario }} </span></td>
+                    <td>${{ $envio->total }}</td>
                     {{ $i++ }}
                 </tr>
+                @endforeach
+                
                 @if($i < 5)
 
                 <tr >   
