@@ -10,6 +10,7 @@ use App\Models\Ticketc;
 use Carbon\Carbon;
 use App\Models\Envio;
 use App\Models\Ticktpago; 
+use App\Models\Entrega; 
 use PDF; 
 use Illuminate\Support\Str;
 use App\Models\User;
@@ -495,6 +496,32 @@ class PagoController extends Controller
 
     }
 
+    public function exportarticketentre( $ticketc)
+    {
+        //Alert::message('Mensaje', 'Título opcional');
+
+        $pedidos = Envio::where('entrega2', $ticketc)->get();
+        $comercio = $pedidos[0]->comercio;
+        $total = 0;
+        $cantidad = 0;
+        $pagototal = Entrega::where('id', $ticketc)->get();
+        $total = $pagototal[0]->total  ;
+        foreach($pedidos as $pedido){
+            
+           
+            
+            $cantidad = $cantidad + 1;
+            }
+
+        $comerset = Comercio::where('comercio', $comercio)->get();
+
+        $pdf = PDF::loadView('envios.exportarentregaticketrepo', ['pedidos'=>$pedidos, 'comerset'=>$comerset, 'total'=>$total, 'cantidad'=>$cantidad]);
+            $pdf->setPaper('letter', 'landscape');
+            return $pdf->stream();
+
+
+    }
+
     public function exportarcomercio( $ticketc)
     {
         
@@ -531,6 +558,18 @@ class PagoController extends Controller
         $tickets = Envio::where('pagoticket', $id)
         ->get();
         return view('envios.rlistadopagodatos', compact('tickets', 'pago'));
+    }
+
+    public function lisdoentregadatos($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        $pago = Entrega::where('id', $id)->get();
+        //return ($id);
+       // $rango = $request->input('rango');
+        $tickets = Envio::where('entrega2', $id)
+        ->get();
+        return view('envios.rlistadoentregadatos', compact('tickets', 'pago'));
     }
 
     /**

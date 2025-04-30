@@ -197,6 +197,7 @@ Route::get('pago/exportarticket/{ticketc}', [App\Http\Controllers\PagoController
 Route::get('pago/exportarcomercio/{comercio}', [App\Http\Controllers\PagoController::class, 'exportarcomercio'] )->name('exportarcomercio') ;
 
 Route::get('pago/exportarticketrepo/{ticketc}', [App\Http\Controllers\PagoController::class, 'exportarticketrepo'] )->name('exportarticketrepo') ;
+Route::get('pago/exportarticketentre/{ticketc}', [App\Http\Controllers\PagoController::class, 'exportarticketentre'] )->name('exportarticketentre') ;
 
 //Administracion Tickets
 Route::get('/envios/listadoticket', [App\Http\Controllers\PagoController::class, 'listadoticket'] )->name('listadoticket') ;
@@ -223,6 +224,7 @@ Route::get('/envios/reporteingresosdatos', [App\Http\Controllers\EnvioController
 Route::get('/envios/reportepago', [App\Http\Controllers\PagoController::class, 'reportepago'] )->name('reportepago') ;
 Route::get('/envios/rpagodatos', [App\Http\Controllers\PagoController::class, 'rpagodatos'] )->name('rpagodatos') ;
 Route::get('/envios/lisdopagosdatos/{id}', [App\Http\Controllers\PagoController::class, 'lisdopagosdatos'] )->name('lisdopagosdatos') ;
+Route::get('/envios/lisdoentregadatos/{id}', [App\Http\Controllers\PagoController::class, 'lisdoentregadatos'] )->name('lisdoentregadatos') ;
 
 
 

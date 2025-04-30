@@ -84,7 +84,7 @@ class EntregaController extends Controller
            
         }
        
-
+ 
         $envioid= $envio[0]->id ;
 
         $ticketc = Envio::find($envioid);

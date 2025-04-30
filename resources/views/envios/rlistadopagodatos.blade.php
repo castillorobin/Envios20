@@ -326,7 +326,10 @@ if (searchText == "") {
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> 
                                                     
+                                                
+                                                <a href="/envios/detalle/{{$ticket->guia}}" class="text-gray-900 text-hover-primary">
                                                 {{$ticket->guia}}
+                                                    </a>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->destinatario}}</td> 
@@ -354,7 +357,9 @@ if (searchText == "") {
                                         </tbody>
 
                                     </table>
-                                    <div style="float:right; margin-top:30px;">
+                                    
+                                </div> </div> <div style="width: 100%; float:right;">
+                                <div style="width: 25%; float:right; margin-top:10px;margin-bottom:20px; " >
                                     <a href="/envios/reportepago">
     <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
     </a>
@@ -387,9 +392,9 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                     </div>
                                     </div>
-                                </div>
+                                    </div>
                                 <!--end::Table-->
-                            </div>
+                           
                             <!--end::Table-->
                         </div>
                         <!--end::Card body-->
