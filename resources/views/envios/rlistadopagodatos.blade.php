@@ -382,7 +382,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
+                                            <a href="/pago/exportarticketrepo/{{$tickets[0]->pagoticket}}" class="menu-link px-3" target="_blank">Exportar a PDF</a>
                                         </div>
                                         <!--end::Menu item-->
                                     </div>
