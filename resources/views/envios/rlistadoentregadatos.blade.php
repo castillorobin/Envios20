@@ -314,6 +314,7 @@ if (searchText == "") {
                                                 <th class="min-w-100px">Cliente</th>
                                                 <th class="min-w-50px">Usuario</th>
                                                 <th class="min-w-50px">Agencia</th>
+                                                <th class="min-w-50px">Estado</th>
                                                 <th class="min-w-50px text-center">Estado del pago</th>
                                                 <th class="min-w-50px">Tipo</th>
                                                 <th class="min-w-50px">Total</th>
@@ -335,6 +336,7 @@ if (searchText == "") {
                                                 <td>{{$ticket->destinatario}}</td> 
                                                 <td>{{$pago[0]->cajero}}</td>
                                                 <td>{{$pago[0]->agencia}}</td>
+                                                <td>{{$ticket->estado}}</td> 
                                                 <td class="text-center">
                                                     @if( $ticket->pago == 'Pagado')
                                                     <span class="badge badge-success">{{ $ticket->pago}}</span>

@@ -55,7 +55,7 @@
 <thead >
     <tr style='background: #223161; color:white; font-size:13px; text-align: center;'>
         
-    <th scope="col">ID</th>
+    <th scope="col">Guía</th>
     <th scope="col">Comercio</th>
         <th scope="col">Destinatario</th>
         <th scope="col">Direccion</th>
@@ -74,7 +74,7 @@
     @foreach($pedidos as $pedido)
     <tr style='border-bottom: 1px solid; font-size: 12px'>
     
-    <td >{{ $pedido->id }}</td>
+    <td >{{ $pedido->guia }}</td>
     <td >{{ $pedido->comercio }}</td>
     <td >{{ $pedido->destinatario }}</td>
     <td>{{ $pedido->direccion }}</td>
