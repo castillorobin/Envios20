@@ -65,12 +65,12 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Telefono</label>
                                     <div class="col-lg-3">
-                                        <input id="kt_inputmask_2" type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
+                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" placeholder="Telefono" />
                                     </div>
 
                                     <label class="col-lg-2 col-form-label">WhatsApp</label>
                                     <div class="col-lg-3">
-                                        <input id="kt_inputmask_3" type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
+                                        <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" placeholder="WhatsApp" />
                                     </div>
                                 </div>
                                 <div class="row mb-6">
