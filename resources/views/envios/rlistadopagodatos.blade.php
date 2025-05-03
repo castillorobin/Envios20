@@ -336,7 +336,23 @@ if (searchText == "") {
                                                 <td>{{$ticket->destinatario}}</td> 
                                                 <td>{{$pago[0]->cajero}}</td>
                                                 <td>{{$pago[0]->agencia}}</td>
-                                                <td>{{$ticket->estado}}</td> 
+                                                <td style="text-align: center;">
+                                                    @if( $envio->estado == 'No entregado')
+                                                    <span class="badge badge-danger">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Creado')
+                                                    <span class="badge badge-warning">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Entregado')
+                                                    <span class="badge badge-success">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'En ruta')
+                                                    <span class="badge badge-info">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Reprogramado')
+                                                    <span class="badge badge-dark">{{ $envio->estado }}</span>
+                                                    @elseif( $envio->estado == 'Devuelto al comercio')
+                                                    <span class="badge badge-primary">{{ $envio->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-light">{{ $envio->estado }}</span>
+                                                    @endif
+                                                </td>
                                                 <td class="text-center">
                                                     @if( $ticket->pago == 'Pagado')
                                                     <span class="badge badge-success">{{ $ticket->pago}}</span>
