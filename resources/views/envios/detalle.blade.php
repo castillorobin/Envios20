@@ -552,8 +552,12 @@
 
 
                                  @if($histo->estado == "Creado")
-                                 <tr>
-                                     <td style="width: 150px;">
+                                <tr>
+                                    <td> &nbsp; </td>
+                                </tr>
+                                 <tr >
+
+                                     <td style="width: 150px; margin-top:10px;">
                                  <h3 >Creado</h3>
                                  </td>
                                  <td></td>
