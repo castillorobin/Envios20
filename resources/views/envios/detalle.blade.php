@@ -518,6 +518,65 @@
                                         
                                     @foreach($historial as $histo)
 
+                                <!-- inicia Recepcionado -->
+
+                                
+                                @if($histo->estado == "Recepcionado")
+                                    <tr>
+                                        <td style="width: 150px;">
+                                    <h3 >Recepcionado</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                    @endif
+
+
+
+                                <!-- Termina Recepcionado -->
+
+                                 <!-- Inicia Creado -->
+
+
+                                 @if($histo->estado == "Creado")
+                                 <tr>
+                                     <td style="width: 150px;">
+                                 <h3 >Creado</h3>
+                                 </td>
+                                 <td></td>
+                                 </tr>
+                               
+                                 <tr>
+                                 <td> 
+
+                                 <span style="font-size:14px;">Fecha: 
+                                 </td>
+                                 <td>
+                                 {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                 </td>
+                                 </tr>
+                                 <tr>
+                                     <td>Usuario: </td>
+                                     <td>{{ $histo->usuario }}</td>
+                                 </tr>
+                                 @endif
+
+                                  <!-- Termina Creado -->
+
+
                                     @if($histo->estado == "Asignado")
                                   
                                     <tr >

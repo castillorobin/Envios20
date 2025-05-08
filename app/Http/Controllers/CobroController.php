@@ -10,6 +10,7 @@ use App\Models\Ticketc;
 use Carbon\Carbon;
 use App\Models\Envio;
 use PDF;
+use App\Models\Hestado;
 
 class CobroController extends Controller
 { 
@@ -510,7 +511,13 @@ class CobroController extends Controller
         $envio->comercio = $request->get('comercio');
         $envio->entrega = $request->get('direccion');
         $envio->save();
-            }
+
+        $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
+            } 
 
         $cobroperso = Envio::where('ticketc', $codigo)
         ->where('tipo', "Personalizado")
@@ -550,6 +557,13 @@ class CobroController extends Controller
             $envio->comercio = $request->get('comercio');
             $envio->entrega = $request->get('direccion');
             $envio->save();
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
+            
             }
 
             $cobroperso = Envio::where('ticketc', $codigo)
@@ -591,6 +605,13 @@ class CobroController extends Controller
                 $envio->comercio = $request->get('comercio');
                 $envio->entrega = $request->get('direccion');
                 $envio->save();
+
+                $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
+            
                 }
 
                 
@@ -632,6 +653,12 @@ class CobroController extends Controller
                     $envio->comercio = $request->get('comercio');
                     $envio->entrega = $request->get('direccion');
                     $envio->save();
+
+                    $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
                 }
 
                     $cobroperso = Envio::where('ticketc', $codigo)
@@ -708,6 +735,12 @@ class CobroController extends Controller
         $envio->comercio = $request->get('comercio');
         $envio->entrega = $request->get('direccion');
         $envio->save();
+
+        $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
     }
         
         $cobroperso = Envio::where('ticketc', $codigo)
@@ -749,6 +782,12 @@ class CobroController extends Controller
             $envio->comercio = $request->get('comercio');
             $envio->entrega = $request->get('direccion');
             $envio->save();
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
             }
             $cobroperso = Envio::where('ticketc', $codigo)
         ->where('tipo', "Personalizado")
@@ -788,6 +827,12 @@ class CobroController extends Controller
                 $envio->comercio = $request->get('comercio');
                 $envio->entrega = $request->get('direccion');
                 $envio->save();
+
+                $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
                 }
 
                 $cobroperso = Envio::where('ticketc', $codigo)
@@ -829,6 +874,12 @@ class CobroController extends Controller
                     $envio->comercio = $request->get('comercio');
                     $envio->entrega = $request->get('direccion');
                     $envio->save();
+
+                    $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Recepcionado";
+            $hesta->usuario = " ";
+            $hesta->save();
                 }
                     
                 $cobroperso = Envio::where('ticketc', $codigo)

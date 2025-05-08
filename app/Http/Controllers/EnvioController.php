@@ -396,7 +396,11 @@ class EnvioController extends Controller
         $envio->registro = 1;
         $envio->save();
        // return redirect('/envios/lista');
-
+       $hesta = new Hestado();
+       $hesta->idenvio = $envio->id;
+       $hesta->estado = "Creado";
+       $hesta->usuario = " ";
+       $hesta->save();
         
         //$pedido = Envio::where('guia', $guia)->get();
         $nota = " ";
