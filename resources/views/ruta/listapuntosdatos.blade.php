@@ -248,6 +248,12 @@ if(tipo=='suelto'){
                                             <tr>
                                                 <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
                                             </tr>
+
+                                            @if($envio[0]->tipo == 'Casillero')
+                                            <tr>
+                                                <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:15px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->direccion}} </span></td>
+                                            </tr>
+                                            @endif
                                             
                                             @endif
 
