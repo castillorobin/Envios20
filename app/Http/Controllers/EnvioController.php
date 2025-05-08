@@ -360,6 +360,7 @@ class EnvioController extends Controller
     public function guardarconguia(Request $request, $id)
     {
         $punto = $request->get('punto');
+        $usuario = $request->get('usuario');
         
         $envio = Envio::find($id);
 
@@ -399,7 +400,7 @@ class EnvioController extends Controller
        $hesta = new Hestado();
        $hesta->idenvio = $envio->id;
        $hesta->estado = "Creado";
-       $hesta->usuario = " ";
+       $hesta->usuario = $usuario;
        $hesta->save();
         
         //$pedido = Envio::where('guia', $guia)->get();

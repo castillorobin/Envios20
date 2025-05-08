@@ -202,7 +202,7 @@
                                         
                                         <label for="n_guia" style="padding-left: 25px;">Buscar # de guía</label>
                                         
-                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                        <div class="invalid-feedback">Este campo es obligatorio</div>
                                        
                                     </div>
                                     <div class="form-floating col-lg-5 mb-4">
@@ -225,6 +225,8 @@
                                         <input type="text" class="form-control form-control-solid" name="destinatariop" id="destinatariop" placeholder="Direccion de recolecta" value="{{$pedido[0]->entrega}}" />
                                         <label for="destinatariop" style="padding-left: 25px;">Direccion de recolecta</label>
                                     </div> 
+
+                                    <input type="text" value="{{ Auth::user()->name }}" name="usuario" hidden>
                                 </div>
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-12 mb-4">
@@ -282,7 +284,7 @@
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-4 mb-4">
-                                        <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" value="0" onClick="this.select()" />
+                                        <input type="text" class="form-control form-control-solid precio-moneda" name="total" id="total" value="0" onClick="this.select()" readonly/>
                                         <label for="total" style="padding-left: 25px;">Total a pagar</label>
                                         <div id="totalValidationFeedback" class="invalid-feedback">
                                             Por favor ingrese un total válido a pagar.

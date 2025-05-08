@@ -528,7 +528,7 @@ $(document).ready(function() {
                     <!--begin::Date-->
                     <div class="fs-6 fw-bold text-gray-700 text-nowrap">Fecha:</div>  
                     <!--end::Date-->                    
-
+                    <input type="text" name="cajero1" class="form-control form-control-solid text-end" value="{{ Auth::user()->name }}" hidden>
                     <!--begin::Input-->
                     <div class="position-relative d-flex align-items-center w-150px">
                         <!--begin::Datepicker-->
@@ -940,9 +940,9 @@ $(document).ready(function() {
 
             </label>
             <select name="agencia" id="agencia" class="form-select form-select-solid" >
-                <option value="San_Salvador">San Salvador</option>
-                <option value="San_Miguel">San Miguel</option>
-                <option value="Santa_ana">Santa Ana</option>
+                <option value="San Salvador">San Salvador</option>
+                <option value="San Miguel">San Miguel</option>
+                <option value="Santa Ana">Santa Ana</option>
                 <option value="Centro de distribucion">Centro de distribucion</option>
             </select>
            

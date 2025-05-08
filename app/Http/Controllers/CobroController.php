@@ -286,6 +286,7 @@ class CobroController extends Controller
         foreach($envios as $envio){
             
             $envio->usuario = $cajero;
+            $envio->agencia = $agencia;
             $envio->save();
             }
 
@@ -355,9 +356,9 @@ class CobroController extends Controller
         $correo11 = $request->get('correo');
         $direccion11 = $request->get('direccion');
         $telefono11 = $request->get('telefono');
-        
+        $cajero = $request->get('cajero1');
 
-       // dd($hayguia);
+     //   dd($cajero);
         if ($hayguia== true) {
 
             $nota="Guía Duplicada";
@@ -408,7 +409,7 @@ class CobroController extends Controller
                 $idcompr = $ultimoid->id + 1;
          
                 $date = Carbon::now();
-                $date = $date->format('Y');
+                $date = $date->format('Y'); 
                 $factura = "$date".$idcompr;
          
             return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
@@ -515,7 +516,7 @@ class CobroController extends Controller
         $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
             } 
 
@@ -561,7 +562,7 @@ class CobroController extends Controller
             $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
             
             }
@@ -609,7 +610,7 @@ class CobroController extends Controller
                 $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
             
                 }
@@ -657,7 +658,7 @@ class CobroController extends Controller
                     $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
                 }
 
@@ -716,7 +717,7 @@ class CobroController extends Controller
         $precio3= $request->get('precio3');
         $precio4= $request->get('precio4');
         $precio5= $request->get('precio5');
-
+        $cajero = $request->get('cajero1');
         $nota="Guia Duplicada";
 
         if ($request->filled('guia')) {
@@ -739,7 +740,7 @@ class CobroController extends Controller
         $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
     }
         
@@ -786,7 +787,7 @@ class CobroController extends Controller
             $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
             }
             $cobroperso = Envio::where('ticketc', $codigo)
@@ -831,7 +832,7 @@ class CobroController extends Controller
                 $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
                 }
 
@@ -878,7 +879,7 @@ class CobroController extends Controller
                     $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Recepcionado";
-            $hesta->usuario = " ";
+            $hesta->usuario = $cajero;
             $hesta->save();
                 }
                     

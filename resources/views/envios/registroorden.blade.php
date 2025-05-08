@@ -446,9 +446,9 @@
                                         <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
                                         <div class="col-lg-8">
                                             <select name="agencia_registro" id="Agencia_registro" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Agencia de registro" required>
-                                                <option value="San_Salvador">San Salvador</option>
-                                                <option value="San_Miguel">San Miguel</option>
-                                                <option value="Santa_ana">Santa Ana</option>
+                                                <option value="San Salvador">San Salvador</option>
+                                                <option value="San Miguel">San Miguel</option>
+                                                <option value="Santa Ana">Santa Ana</option>
                                                 <option value="Centro de distribucion">Centro de distribucion</option>
                                             </select>
                                         </div>
@@ -500,7 +500,7 @@
                                                     <!--begin::Date-->
                                                     <div class="fs-6 fw-bold text-gray-700 text-nowrap">Fecha:</div>
                                                     <!--end::Date-->
- 
+                                                    <input type="text" name="cajero1" class="form-control form-control-solid text-end" value="{{ Auth::user()->name }}" hidden>
                                                     <!--begin::Input-->
                                                     <div class="position-relative d-flex align-items-center w-150px">
                                                         <!--begin::Datepicker-->
