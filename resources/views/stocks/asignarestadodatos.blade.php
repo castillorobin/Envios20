@@ -130,7 +130,7 @@ if(tipo=='suelto'){
                                                    
                                         <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Caja</label>
-                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar caja">
+                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar caja" autofocus>
                                             <input type="text" value="{{$actual}} " class="visually-hidden" name="actual" id="actual">
                                             <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar guia">
                                         </div>
