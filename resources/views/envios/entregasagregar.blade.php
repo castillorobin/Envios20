@@ -145,7 +145,7 @@ $(document).ready(function() {
                                                    
                                                         <div class="col-auto">
                                                             <label for="guia" class="visually-hidden">Guía</label>
-                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia">
+                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia" autofocus>
                                                             <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
                                                             <input type="text" class="visually-hidden" name="entrega" id="entrega" value="{{$actual}}">
                                                         </div>

@@ -27,7 +27,9 @@
     <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" style="visibility: hidden;">
     
     <div>
+        
  <img src="../public/fotos/logo24.png" alt="" width="10%">
+        
             <h3 class="page__heading">Melo Express</h3>
             <div style="width:100%; text-align: right; " >
    Fecha: {{ now()->Format('d/m/Y')}} Hora: {{ date("H:i:s")}}
@@ -99,7 +101,7 @@
 <table style="width:100%;  ">
    
 <tr >
-       <td style="width:80%; ">&nbsp;</td>
+       <td style="width:85%; ">&nbsp;</td>
        
        <td >  </td>
        
@@ -107,12 +109,12 @@
 
    <tr  >
    <td>&nbsp;</td>
-   
+  
        <td >  
        Total Pagado:  $ {{ $total }}
        <br>
      
-      
+    </td>
        
    </tr>
   </table>   

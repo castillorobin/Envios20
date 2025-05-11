@@ -25,6 +25,7 @@
     </style>
     {{date_default_timezone_set('America/El_Salvador') }}
     <div>
+        
  <img src="../public/fotos/logo24.png" alt="" width="10%">
             <h3 class="page__heading">Melo Express</h3>
             <div style="width:100%; text-align: right; " >
@@ -110,7 +111,7 @@
        Total Pagado:  $ {{ $total }}
        <br>
      
-      
+    </td>
        
    </tr>
   </table>   
