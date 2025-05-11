@@ -233,6 +233,7 @@
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th style="min-width: 120px;">ID</th>
+                                                <th style="min-width: 120px;">Titular</th>
                                                 <th style="min-width: 120px;">Comercio</th>
                                                 <th style="min-width: 120px;">Numero</th>
                                                 <th style="min-width: 120px;">Whatsapp</th>
@@ -247,6 +248,7 @@
 
                                             <tr>
                                                 <td><a href="#" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
+                                                <td>{{$comercio->titular}}</td>
                                                 <td>{{$comercio->comercio}}</td>
                                                 <td>{{$comercio->telefono}}</td>
                                                 <td>{{$comercio->whatsapp}}</td>
