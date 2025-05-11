@@ -75,11 +75,7 @@
                             <!--begin::Filter menu-->
                             <div class="m-0">
                                 <!--begin::Menu toggle-->
-                                <a href="#" class="btn btn-sm btn-flex bg-body btn-color-gray-700 btn-active-color-primary fw-bold" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                    <i class="ki-duotone ki-filter fs-6 text-muted me-1">
-                                        <span class="path1"></span>
-                                        <span class="path2"></span>
-                                    </i>Filter</a>
+                               
                                 <!--end::Menu toggle-->
                                 <!--begin::Menu 1-->
                                 <div class="menu menu-sub menu-sub-dropdown w-250px w-md-300px" data-kt-menu="true" id="kt_menu_641ac417f0d97">
@@ -162,9 +158,9 @@
                             <!--begin::Secondary button-->
                             <!--end::Secondary button-->
                             <!--begin::Primary button-->
-                            <div >
+                            <div style=" width:1150px;">
                             @can('comercios-crear')
-                            <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary">Agregar</a>
+                            <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary" style="float: right; ">Agregar</a>
                             @endcan
                         </div>
                             <!--end::Primary button-->
