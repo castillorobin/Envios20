@@ -180,7 +180,7 @@
                             <tr>
                                 <td>Estado:</td>
                                 <td>
-                                    <select style="width: 250px;" name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-placeholder="Seleccionar agencia">
+                                    <select style="width: 250px;" name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-placeholder="Seleccionar agencia" disabled>
                                         <option value="{{ $envio[0]->estado }}">{{ $envio[0]->estado }}</option>
                                         <option value="Creado">Creado</option>
                                                 <option value="En ruta">En ruta</option>
@@ -328,15 +328,15 @@
                                         <td style="width: 160px;">
                                         Repartidor:  
                                </td>
-                                        <td ><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->repartidor }}" /></td>
+                                        <td ><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->repartidor }}" readonly /></td>
                                     </tr>
                                     <tr>
                                         <td>Nota del repartidor:</td>
-                                        <td><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->nota}}" /></td>
+                                        <td><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->nota}}" readonly/></td>
                                     </tr>
                                     <tr>
                                         <td>Ruta: </td>
-                                        <td><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->ruta }}" /></td>
+                                        <td><input type="text" name="repartidor" id="repartidor" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->ruta }}" readonly /></td>
                                     </tr>
                                 </table>
                                 
@@ -362,19 +362,19 @@
                                             <td style="width: 160px;">
                                             Usuario:  
                                    </td>
-                                            <td ><input type="text" name="usuario" id="usuario" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->usuario }}" /> </td>
+                                            <td ><input type="text" name="usuario" id="usuario" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->usuario }}" readonly /> </td>
                                         </tr>
                                         <tr>
                                             <td>Fecha de creación:</td>
                                             <td>
                                                 
-                                                <input type="text" name="creacion" id="creacion" class="form-control form-control-lg form-control-solid" value="{{date('d-m-Y',strtotime($envio[0]->created_at))}}" />
+                                                <input type="text" name="creacion" id="creacion" class="form-control form-control-lg form-control-solid" value="{{date('d-m-Y',strtotime($envio[0]->created_at))}}" readonly />
                                                 </td>
                                         </tr>
                                         <tr>
                                             <td>Agencia de registro: </td>
                                             <td>
-                                            <input type="text" name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->foto1 }}" />
+                                            <input type="text" name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->agencia }}" readonly />
                                             </td>
                                         </tr>
                                     </table>
@@ -402,26 +402,26 @@
                                                 Caja:  
                                        </td>
                                                 <td >
-                                                <input type="text" name="caja" id="caja" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->caja }} " />
+                                                <input type="text" name="caja" id="caja" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->caja }} " readonly/>
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Rack:</td>
                                                 <td>
                                                     
-                                                    <input type="text" name="rack" id="rack" class="form-control form-control-lg form-control-solid" value="{{$envio[0]->rack}} " />
+                                                    <input type="text" name="rack" id="rack" class="form-control form-control-lg form-control-solid" value="{{$envio[0]->rack}} " readonly/>
                                                     </td>
                                             </tr>
                                             <tr>
                                                 <td>Nivel: </td>
                                                 <td>
-                                                <input type="text" name="nivel" id="nivel" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->nivel }} " />
+                                                <input type="text" name="nivel" id="nivel" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->nivel }} " readonly />
                                                 </td>
                                             </tr>
                                             <tr>
                                                 <td>Tarima: </td>
                                                 <td>
-                                                <input type="text" name="tarima" id="tarima" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->tarima }} " />
+                                                <input type="text" name="tarima" id="tarima" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->tarima }} " readonly />
                                             </td>
                                             </tr>
                                         </table>
