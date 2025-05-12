@@ -373,34 +373,6 @@
                                     </div>  
                                 </div>
                                 </div>
-
-
-                                <div class="card-header cursor-pointer">
-                                        <!--begin::Card title-->
-                                        <div class="card-title m-0" style="width: 100%;">
-                                            <div style="float:left; width: 70%;">
-                                            <h3 class="fw-bold m-0" >Fotos de cambios</h3>
-                                            </div>
-                                            <div style="float: inline-end;">
-                                            <h3 >Guia: {{$envio[0]->guiacambio}}</h3>
-                                            </div>
-                                        </div>
-                                        <!--end::Card title-->
-                                    </div>
-                                    <!--begin::Card header-->
-                                    <!--begin::Card body-->
-                                    <div class="card-body p-9">
-                                        <div class="row mb-7 text-center">
-                                            <!--begin::Label-->
-                                         <div class="col-sm-2">                                 
-                                            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://www.meloexpressdomicilios.site/fotos/{{$envio[0]->fotocambio}})"></div>
-                                            </div>
-                                        </div>  
-                                        
-                                    </div>
-                                        
-                                    </div>
                     </div>
                         <!--end::details View-->
 
@@ -408,7 +380,19 @@
 
                        
 
-                              
+
+
+
+                            <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                <!--begin::Card header-->
+                                
+                                   
+                                </div>
+
+
+
+
+                                
 
                             <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                                 <!--begin::Card header-->
@@ -493,7 +477,40 @@
                                     </div>
 
                                     
+
+
+                                    
+                                <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+                                    <!--begin::Card header-->
+                                    <div class="card-header cursor-pointer">
+                                        <!--begin::Card title-->
+                                        <div class="card-title m-0" style="width: 100%;">
+                                            <div style="float:left; width: 70%;">
+                                            <h3 class="fw-bold m-0" >Fotos de cambios</h3>
+                                            </div>
+                                            <div style="float: inline-end;">
+                                            <h3 >Guia: {{$envio[0]->guiacambio}}</h3>
+                                            </div>
+                                        </div>
+                                        <!--end::Card title-->
+                                    </div>
+                                    <!--begin::Card header-->
+                                    <!--begin::Card body-->
+                                    <div class="card-body p-9">
+                                        <div class="row mb-7 text-center">
+                                            <!--begin::Label-->
+                                         <div class="col-sm-2">                                 
+                                            <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
+                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://www.meloexpressdomicilios.site/fotos/{{$envio[0]->fotocambio}})"></div>
+                                            </div>
+                                        </div>  
                                         
+                                    </div>
+                                        
+                                    </div>
+
+                                </div>
+                                         
                                 <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
                                   
                                 <div class="card-header cursor-pointer">
