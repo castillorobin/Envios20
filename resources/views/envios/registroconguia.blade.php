@@ -67,7 +67,7 @@
 
                                 <div class="row my-4 mx-4">
                                     <div class="form-floating col-lg-3 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[A-Za-z0-9' ]+" required />
+                                        <input type="text" class="form-control form-control-solid" name="n_guia" id="n_guia" placeholder="# de guia" pattern="[A-Za-z0-9' ]+" required autofocus/>
                                         <label for="n_guia" style="padding-left: 25px;">Buscar # de guía</label>
                                         <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números, letras y algunos caracteres especiales.</div>
                                     </div>

@@ -207,7 +207,15 @@
                             </tr>
                             <tr>
                                 <td>Cobro: </td>
-                                <td><input type="text" style="width: 250px;" name="cobro" id="cobro" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->cobro }}"   /></td>
+                                <td>
+                                 <select style="width: 250px;" name="cobro" id="cobro" class="form-control form-control-lg form-control-solid" data-placeholder="Seleccionar agencia">
+                                        <option value="{{ $envio[0]->cobro }}">{{ $envio[0]->cobro }}</option>
+                                        <option value="Por pagar">Pagado</option>
+                                                <option value="Pagado">Pendiente</option>
+                                                
+                                                
+                                    </select>    
+                                </td>
                             </tr>
                             <tr>
                                 <td>Nota:</td>
@@ -487,6 +495,42 @@
             
         }
     </script>
+
+    
+<script>
+    $(document).ready(function() {
+
+        // Función para calcular el total
+        function calcularTotal() {
+            const precioPaquete = parseFloat($("#precio").val()) || 0;
+            const precioEnvio = parseFloat($("#envio").val()) || 0;
+            const estadoCobro = $("#cenvio").val();
+            const estadoPago = $("#estado_pago").val();
+
+            let total = precioPaquete + precioEnvio;
+
+            if (estadoCobro === "Pendiente") {
+                total -= precioEnvio;
+            }
+
+            if (estadoPago === "Por pagar") {
+                total -= precioPaquete;
+            }
+
+            $("#total").val(total.toFixed(2));
+        }
+
+        // Calcular total al cargar la página
+        calcularTotal();
+        $("#precio").change(calcularTotal);
+        $("#envio").change(calcularTotal);
+        $("#cenvio").change(calcularTotal);
+        $("#estado_pago").change(calcularTotal);
+
+        $("#envio").keyup(calcularTotal);
+
+    });
+</script>
 </body>
 
 </html>
