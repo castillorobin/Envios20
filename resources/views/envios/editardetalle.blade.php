@@ -510,7 +510,15 @@
                 total -= precioPaquete;
             }
 
-            $("#total").val(total.toFixed(2));
+            const tipo = document.getElementById("tipo").value;
+
+             if (tipo == "Personalizado") {
+                $("#total").val(precioPaquete.toFixed(2) - precioEnvio.toFixed(2));
+            }else{
+                 $("#total").val(recioPaquete.toFixed(2));
+            }
+
+           
         }
 
         // Calcular total al cargar la página
