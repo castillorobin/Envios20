@@ -296,7 +296,7 @@
                             </div>
                             <!--begin::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body p-9">
+                            <div class="card-body p-9" style="min-height: 150px;">
                                 <div class="row mb-7 text-center">
                                     <!--begin::Label-->
                                     @if ($envio[0]->foto1 != Null)
@@ -363,7 +363,7 @@
                                 </div>
                                 <!--begin::Card header-->
                                 <!--begin::Card body-->
-                                <div class="card-body p-9">
+                                <div class="card-body p-9" style="min-height: 150px;">
                                     <div class="row mb-7 text-center">
                                         <!--begin::Label-->
                                      <div class="col-sm-2">                                 
@@ -389,7 +389,7 @@
                                     </div>
                                     <!--begin::Card header-->
                                     <!--begin::Card body-->
-                                    <div class="card-body p-9">
+                                    <div class="card-body p-9" style="min-height: 150px;">
                                         <div class="row mb-7 text-center">
                                             <!--begin::Label-->
                                          <div class="col-sm-2">                                 

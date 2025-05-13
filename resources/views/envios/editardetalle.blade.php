@@ -178,18 +178,11 @@
                                 <td>  <input type="date" style="width: 250px;" name="fechae" id="fechae" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->fecha_entrega }}"  /></td>
                             </tr>
                             <tr>
-                                <td>Estado:</td>
+                                <td>Estado:</td>        
                                 <td>
-                                    <select style="width: 250px;" name="estado" id="estado" class="form-control form-control-lg form-control-solid" data-placeholder="Seleccionar agencia" disabled>
-                                        <option value="{{ $envio[0]->estado }}">{{ $envio[0]->estado }}</option>
-                                        <option value="Creado">Creado</option>
-                                                <option value="En ruta">En ruta</option>
-                                                <option value="Entregado">Entregado</option>
-                                                <option value="No entregado">No entregado</option>
-                                                <option value="Reprogramado">Reprogramado</option>
-                                                <option value="Reenvio">Reenvio</option>
-                                                <option value="Devuelto al comercio">Devuelto al comercio</option>
-                                    </select>
+                                    
+                                        
+                                      <input type="text" style="width: 250px;" name="estado" id="estado" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->estado }}"  readonly />
                                 </td>
                             </tr>
                             <tr>
@@ -264,8 +257,8 @@
                         </div>
                         <!--begin::Card header-->
                         <!--begin::Card body-->
-                        <div class="card-body p-9">
-                            <div class="row mb-7 text-center">
+                        <div class="card-body p-9" >
+                            <div class="row mb-7 text-center" >
                                 <!--begin::Label-->
                              <div class="col-sm-2">                                 
                                 
