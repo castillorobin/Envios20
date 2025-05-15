@@ -151,7 +151,9 @@
                                 <td style="width: 150px;">
                         Destinatario:  
                        </td>
-                                <td style="width: 550px;"><input type="text" name="destinatario" id="destinatario" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->destinatario }}" /></td>
+                                <td style="width: 550px;"><input type="text" name="destinatario" id="destinatario" class="form-control form-control-lg form-control-solid" value="{{ $envio[0]->destinatario }}" />
+                                
+                            </td>
                             </tr>
                             <tr>
                                 <td>Direccion:</td>
@@ -228,6 +230,7 @@
                                     </select>
                                 </td>
                             </tr>
+                            <input type="text" name="cajero" id="cajero" class="form-control form-control-lg form-control-solid" value="{{ Auth::user()->name }}" hidden/>
                         </table>
 
 

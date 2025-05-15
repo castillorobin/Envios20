@@ -830,6 +830,47 @@
                                     </tr>
                                     @endif
 
+
+                                    <!-- inicia Edicion -->
+
+                                
+                                @if($histo->estado == "Editado")
+                                    <tr>
+                                        <td style="width: 150px;">
+                                    <h3 >Editado</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Campo: 
+                                    </td>
+                                    <td>
+                                    {{$histo->nota}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    @endif
+
+
+
+                                <!-- Termina Edicion -->
+
                                    
                                     @endforeach
 

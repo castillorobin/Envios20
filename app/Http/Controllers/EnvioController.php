@@ -85,6 +85,7 @@ class EnvioController extends Controller
     public function detalleeditando(Request $request)
     {
         $id = $request->get('iden');
+       // $id = $request->get('iden');
 
         $envios = Envio::find($id);
 
@@ -94,6 +95,101 @@ class EnvioController extends Controller
             $hesta = new Hestado();
         $hesta->idenvio = $id;
         $hesta->estado = $request->get('estado');
+
+        $hesta->save();
+         }
+
+         if ($envios->destinatario != $request->get('destinatario')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Destinatario";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         if ($envios->direccion != $request->get('direccion')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Direccion";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         if ($envios->tipo != $request->get('tipo')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Tipo";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         if ($envios->fecha_entrega != $request->get('fechae')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Direccion";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         if ($envios->precio != $request->get('precio')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Precio";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+         
+         if ($envios->envio != $request->get('envio')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Envio";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         
+         if ($envios->total != $request->get('total')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Total";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         
+         if ($envios->cobro != $request->get('cobro')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Cobro";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         
+         if ($envios->nota != $request->get('nota')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Nota";
+        $hesta->usuario = $request->get('cajero');
+        $hesta->save();
+         }
+
+         
+         if ($envios->pago != $request->get('pago')) {
+            $hesta = new Hestado();
+        $hesta->idenvio = $id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Estado del pago";
+        $hesta->usuario = $request->get('cajero');
         $hesta->save();
          }
 
