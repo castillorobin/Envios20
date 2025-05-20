@@ -400,7 +400,7 @@
 					</div>
 				</div>
 
-				
+				 
 
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
@@ -601,6 +601,86 @@
 				
 
 			</div>
+
+			
+			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('setting-3', 'fs-2') !!}</span>
+					<span class="menu-title">Devoluciones</span>
+					<span class="menu-arrow"></span>
+				</span>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Entregar no retirado</span>
+						</a>
+					</div>
+				</div>
+				
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Solicitar no retirado</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Asignar devolución</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+			
+			<div data-kt-menu-trigger="click" id="menu-item-7" class="menu-item menu-accordion">
+				<span class="menu-link">
+					<span class="menu-icon">{!! getIcon('setting-3', 'fs-2') !!}</span>
+					<span class="menu-title">Reenvíos</span>
+					<span class="menu-arrow"></span>
+				</span>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Solicitar reenvío</span>
+						</a>
+					</div>
+				</div>
+				
+				
+				
+
+			</div>
+
+
+
+
+
+
+
+
+
+
 			
 		</div>
 	</div>
