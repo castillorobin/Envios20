@@ -278,6 +278,11 @@ Route::get('/stocks/buscarcajadatos', [App\Http\Controllers\StockController::cla
 Route::get('/stocks/paquetesasignados', [App\Http\Controllers\StockController::class, 'paquetesasignados'] )->name('paquetesasignados');
 Route::get('/stocks/paquetesasignadosdatos', [App\Http\Controllers\StockController::class, 'paquetesasignadosdatos'] )->name('paquetesasignadosdatos');
 
+//Devoluciones
+Route::get('/stocks/entreganoret', [App\Http\Controllers\StockController::class, 'entreganoret'] )->name('entreganoret');
+Route::get('/stocks/entreganoretdatos', [App\Http\Controllers\StockController::class, 'entreganoretdatos'] )->name('entreganoretdatos');
+
+
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;

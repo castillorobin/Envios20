@@ -821,7 +821,28 @@ class StockController extends Controller
         return view('stocks.asignarestado');
     }
 
+    public function entreganoret()
+    {
+        $nota = " ";
+         return view('stocks.entreganoret', compact('nota'));
+    }
 
+    public function entreganoretdatos(Request $request)
+    {
+        $nota = " ";
+
+
+        $guia = $request->get('guia') ;
+
+        $envio = Envio::where('guia', $guia)
+        ->get();
+
+
+
+
+
+         return view('stocks.entreganoret', compact('nota'));
+    }
     
 
     /**
