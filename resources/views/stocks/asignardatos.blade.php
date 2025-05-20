@@ -133,12 +133,13 @@ if(tipo=='suelto'){
                                         <div class="col-auto">
                                             <label for="guia" class="visually-hidden">Guía</label>
                                             <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia" autofocus>
-                                           
+                                            
                                             
                                         </div>
                                         <div class="col-auto">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
                                             <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum" id="asignum">
+                                            <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                         </div>
 
                                     </form>

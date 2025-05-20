@@ -178,6 +178,18 @@ class StockController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            //return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+            $pedidos = Envio::where('asignado', $actual)
+        ->get();
+
+        
+        return view('stocks.asignardatos', compact('pedidos', 'actual', 'nota' ));
+        }
  
         $envioid= $envio[0]->id ;
 
@@ -190,7 +202,7 @@ class StockController extends Controller
         ->get();
 
         
-        return view('stocks.asignardatos', compact('pedidos', 'actual' ));
+        return view('stocks.asignardatos', compact('pedidos', 'actual', 'nota' ));
     }
 
     public function guardarasignar(Request $request)
@@ -291,7 +303,7 @@ class StockController extends Controller
 
         
 
-        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual' ));
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota'  ));
     }
     public function agregarmascambiarguia(Request $request)
     {
@@ -300,6 +312,18 @@ class StockController extends Controller
 
         $envio = Envio::where('guia', $guia)
         ->get();
+
+         $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+            //return view('envios.registroconguia', compact('nota'));
+            //return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
+            $pedidos = Envio::where('cambiando', $actual)
+        ->get();
+
+        
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota'  ));
+        }
  
         $envioid= $envio[0]->id ;
 
@@ -312,7 +336,7 @@ class StockController extends Controller
         ->get();
 
         
-        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual' ));
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota' ));
     }
     public function guardarcambiarguia(Request $request)
     {
@@ -669,7 +693,9 @@ class StockController extends Controller
 
     public function asignarestado()
     {
-        return view('stocks.asignarestado');
+         $nota = " "; 
+        
+        return view('stocks.asignarestado', compact('nota'));
     }
 
     public function asignarestadodatos(Request $request)
@@ -679,6 +705,17 @@ class StockController extends Controller
         $envio = Envio::where('guia', $guia)
         ->get();
         $actual = Str::slug(time());
+        
+        $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+
+            $pedidos = Envio::where('cestado', $actual)
+        ->get();
+            //return view('stocks.asignarrepartidor', compact('nota'));
+            return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
+            
+        }
  //dd($actual);
         $envioid= $envio[0]->id ;
 
@@ -692,7 +729,7 @@ class StockController extends Controller
 
         //$empleados = Empleado::all(); 
 
-        return view('stocks.asignarestadodatos', compact('pedidos', 'actual' ));
+        return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
     }
 
     public function agregarestado(Request $request)
@@ -702,6 +739,17 @@ class StockController extends Controller
         $envio = Envio::where('guia', $guia)
         ->get();
         $actual = $request->get('actual') ;
+
+         $nota = " "; 
+        if($envio->isEmpty()){
+            $nota = "La Guía que se ingreso no existe"; 
+
+            $pedidos = Envio::where('cestado', $actual)
+        ->get();
+            //return view('stocks.asignarrepartidor', compact('nota'));
+            return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
+            
+        }
  //dd($actual);
         $envioid= $envio[0]->id ;
 
@@ -715,7 +763,7 @@ class StockController extends Controller
 
         //$empleados = Empleado::all(); 
 
-        return view('stocks.asignarestadodatos', compact('pedidos', 'actual' ));
+        return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
     }
 
     public function guardarestado(Request $request)

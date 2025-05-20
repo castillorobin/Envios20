@@ -136,7 +136,7 @@ if(tipo=='suelto'){
                                         </div>
                                         <div class="col-auto">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                                           
+                                            <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                         </div>
 
                                     </form>
@@ -306,17 +306,9 @@ if(tipo=='suelto'){
                                             </div>
                                             <div class="row my-2 mx-2 justify-content-center">
                                                 <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid mi-selector" name="estado" id="estado" data-control="select2" >
+                                                    <select class="form-select form-select-solid mi-selector" name="estado" id="estado"  >
                                                         <option value="No entregado">No entregado</option>
-                                                        <option value="Todos" >Estado</option>    
-                                                        <option value="Todos" >Todos</option>
-                                                        <option value="Creado">Creado</option>
-                                                        <option value="En ruta">En ruta</option>
-                                                        <option value="Entregado">Entregado</option>
                                                         
-                                                        <option value="Reprogramado">Reprogramado</option>
-                                                        <option value="Devuelto al comercio">Devuelto al comercio</option>
-                                                        <option value="Recepcionado">Recepcionado</option>
                                                     </select>
                                                 </div>
                                                
@@ -331,6 +323,7 @@ if(tipo=='suelto'){
                                                         <option value="San Miguel">San Miguel</option>
                                                     </select>
                                                     <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
                                                 </div>
                                                 <div class="row my-2 mx-2 justify-content-center">
                                                     <div class="form-floating col-lg-12 mb-4">

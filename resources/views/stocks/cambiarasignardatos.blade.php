@@ -139,7 +139,7 @@ if(tipo=='suelto'){
                                         <div class="col-auto">
                                             <input type="text" value="{{$actual}}" class="visually-hidden" name="asignum" id="asignum">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                                           
+                                           <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                         </div>
 
                                     </form>
@@ -172,8 +172,10 @@ if(tipo=='suelto'){
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
-
-
+<button type="button" value="" class="btn btn-primary btn-sm edit" id="kt_drawer_example_basic_button" style="float: right; margin-bottom: 15px;"> 
+                                                        Cambiar
+                                                    </button>
+<p></p>
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
@@ -193,7 +195,7 @@ if(tipo=='suelto'){
                                                 <th class="min-w-50px">Nivel</th>
                                                 <th class="min-w-50px">Caja</th>
                                                 <th class="min-w-50px">Tarima</th>
-                                                <th class="min-w-50px">Acción</th>
+                                                
                                                
                                             </tr>
                                         </thead>
@@ -236,12 +238,7 @@ if(tipo=='suelto'){
                                                 <td class="text-center">{{$pedido->nivel}}</td>
                                                 <td class="text-center">{{$pedido->caja}}</td>
                                                 <td class="text-center">{{$pedido->tarima}}</td>
-                                                <td class="text-center">
-                                                    <button type="button" value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" id="kt_drawer_example_basic_button">
-                                                        Cambiar
-                                                    </button>
-
-                                                </td>
+                                            
                                                 
                                                 <span hidden id="id{{ $pedido->id }}"> {{ $pedido->id }}</span>
                                                 <span hidden id="ub{{ $pedido->id }}"> {{ $pedido->ubicacion }}</span>

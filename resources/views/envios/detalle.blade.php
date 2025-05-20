@@ -516,7 +516,7 @@
                                 
                                 @if($histo->estado == "Recepcionado")
                                     <tr>
-                                        <td style="width: 150px;">
+                                        <td style="width: 150px; padding-top: 15px;">
                                     <h3 >Recepcionado</h3>
                                     </td>
                                     <td></td>
@@ -550,7 +550,7 @@
                                 </tr>
                                  <tr >
 
-                                     <td style="width: 150px; margin-top:10px;">
+                                     <td style="width: 150px; padding-top: 15px;">
                                  <h3 >Creado</h3>
                                  </td>
                                  <td></td>
@@ -577,7 +577,7 @@
                                     @if($histo->estado == "Asignado")
                                   
                                     <tr >
-                                        <td style="width: 150px; " colspan="2">
+                                        <td style="width: 150px; padding-top: 15px;" colspan="2">
                                     <h3 >Ubicación asignada:</h3>
                                     </td>
                                     
@@ -604,7 +604,7 @@
                                     @if($histo->estado == "Cambiada")
                                   
                                     <tr >
-                                        <td style="width: 150px; " colspan="2">
+                                        <td style="width: 150px; padding-top: 15px;" colspan="2">
                                     <h3 >Ubicación Cambiada:</h3>
                                     </td>
                                     
@@ -631,7 +631,7 @@
                                     @if($histo->estado == "En ruta")
 
                                     <tr>
-                                        <td style="width: 150px;">
+                                        <td style="width: 150px; padding-top: 15px;">
                                     <h3 >En ruta</h3>
                                     </td>
 
@@ -664,7 +664,7 @@
 
                                     @if($histo->estado == "Entregado")
                                     <tr>
-                                        <td style="width: 150px;">
+                                        <td style="width: 150px; padding-top: 15px;">
                                     <h3 >Entregado</h3>
                                     </td>
                                     <td></td>
@@ -693,7 +693,7 @@
 
                                     @if($histo->estado == "Fallido")
                                     <tr>
-                                        <td style="width: 150px;">
+                                        <td style="width: 150px; padding-top: 15px;">
                                     <h3 >Fallido</h3>
                                     </td>
                                     <td></td>
@@ -756,7 +756,7 @@
                                   
                                     @if($histo->estado == "No entregado")
                                     <tr>
-                                        <td style="width: 150px;">
+                                        <td style="width: 150px; padding-top: 15px;">
                                     <h3 >No entregado</h3>
                                     </td>
                                     <td></td>
@@ -794,7 +794,7 @@
 
                                     @if($histo->estado == "Cambio")
                                     <tr>
-                                        <td style="width: 150px;">
+                                        <td style="width: 150px; padding-top: 15px;">
                                     <h3 >Cambio</h3>
                                     </td>
                                     <td></td>
@@ -836,7 +836,7 @@
                                 
                                 @if($histo->estado == "Editado")
                                     <tr>
-                                        <td style="width: 150px;">
+                                        <td style="width: 150px; padding-top: 15px;">
                                     <h3 >Editado</h3>
                                     </td>
                                     <td></td>
