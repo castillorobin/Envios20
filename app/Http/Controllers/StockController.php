@@ -11,6 +11,8 @@ use App\Models\Rutas;
 use App\Models\Asignar;
 use App\Models\Empleado;
 use App\Models\Hestado;
+use App\Models\User;
+use App\Models\devolucion;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
@@ -831,28 +833,89 @@ class StockController extends Controller
     {
         $nota = " ";
 
-
         $guia = $request->get('guia') ;
-
-        $envio = Envio::where('guia', $guia)
+        $pedidos = Envio::where('pagoticket', $guia)
+        ->where('estado', "No retirado")
         ->get();
 
-
-
-
-
-         return view('stocks.entreganoret', compact('nota'));
+         return view('stocks.entreganoretdatos', compact('pedidos', 'nota'));
     }
     
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function guardarentrega(Request $request)
     {
-        //
+        $ticket = $request->get('ticket') ;
+        $usuario = $request->get('usuario') ;
+        $nota = $request->get('nota') ;
+        $nombre = $request->get('nombre') ;
+        $pedidos = Envio::where('pagoticket', $ticket)
+        ->where('estado', "No retirado")
+        ->get();
+
+        $entrega = new devolucion();
+        $entrega->comercio = $pedidos[0]->comercio;
+        $entrega->usuario = $usuario;
+        $entrega->agencia = $pedidos[0]->agencia;
+        $entrega->nombre = $nombre;
+        $entrega->nota = $nota;
+        $entrega->save();
+
+        $ultimoid = devolucion::latest('id')->first();
+        $iddevo = $ultimoid->id;
+
+        foreach ($pedidos as $pedido ) {
+            $pedido->devo = $iddevo;
+
+            $pedido->save();
+        }
+$nota = " ";
+         return view('stocks.entreganoret', compact('nota'));
+        
     }
 
+     public function reportedevo()
+    {
+         $repartidores = User::all();
+        return view('reportes.reportedevo', compact('repartidores'));
+    }
+
+    public function reportedevodatos(Request $request)
+    {
+
+        
+        $rango = $request->input('rango');
+        $usuario = $request->input('usuario');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
+
+        if($usuario == "todos")
+        {
+            $tickets = devolucion::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = devolucion::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('usuario', $usuario)
+            ->get();
+        }
+
+       
+
+       
+         $repartidores = User::all();
+        return view('reportes.reportedevodatos', compact('repartidores', 'tickets'));
+    }
+
+
+
+    
     /**
      * Store a newly created resource in storage.
      */
