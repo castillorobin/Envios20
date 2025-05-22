@@ -182,15 +182,15 @@ if (searchText == "") {
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+       <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                        <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de devoluciones</h1>
                             <!--end::Title-->
@@ -207,37 +207,42 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
+                                <li class="breadcrumb-item text-muted">Control de stocks</li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item">
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">Reporte de devoluciones</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
                         </div>
-                        <!--end::Page title--> 
+                        <!--end::Page title-->
 
                         <!--begin::Actions-->
-                        <div class="d-flex align-items-center gap-2 gap-lg-3">
-                        @can('ordenes-crear')
-                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
-                            @endcan
-                            <!--end::Primary button-->
-                        </div>
+                        
                         <!--end::Actions-->
                     </div>
                     <!--end::Toolbar container-->
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid">
+                <div id="kt_content" class="content flex-column-fluid " >
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_content_container" class="">
                         <!--begin::Products-->
-                        <div class="card card-flush">
+                        <div class="card card-flush ">
                             <!--begin::Card header-->
-                            <div class=" ">
+                            <div class="card-header align-items-center">
                                 <!--begin::Card title-->
-                                <div class="p-5">
+                                <div style=" width: 100%">
 
-                                <div class="row" >
+
+
+                                <div class="row" style=" width: 100%">
 
                                 <!--primera colummna-->
                                     <div class="col-12 col-md-3" >
