@@ -840,7 +840,7 @@ class StockController extends Controller
 
          if($pedidos->isEmpty()){
             //dd("no hay envio");
-            $nota = "La Guía que se ingreso no existe"; 
+            $nota = "El ticket que se ingreso no existe"; 
             return view('stocks.entreganoret', compact('nota'));
 
         }
