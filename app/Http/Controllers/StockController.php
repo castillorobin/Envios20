@@ -838,6 +838,13 @@ class StockController extends Controller
         ->where('estado', "No retirado")
         ->get();
 
+         if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "La Guía que se ingreso no existe"; 
+            return view('stocks.entreganoret', compact('nota'));
+
+        }
+
          return view('stocks.entreganoretdatos', compact('pedidos', 'nota'));
     }
     
