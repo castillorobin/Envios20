@@ -834,7 +834,7 @@ class StockController extends Controller
         $nota = " ";
 
         $guia = $request->get('guia') ;
-        $pedidos = Envio::where('pagoticket', $guia)
+        $pedidos = Envio::where('ticketc', $guia)
         ->where('estado', "No retirado")
         ->get();
 
@@ -858,7 +858,7 @@ class StockController extends Controller
         $usuario = $request->get('usuario') ;
         $nota = $request->get('nota') ;
         $nombre = $request->get('nombre') ;
-        $pedidos = Envio::where('pagoticket', $ticket)
+        $pedidos = Envio::where('ticketc', $ticket)
         ->where('estado', "No retirado")
         ->get();
 
