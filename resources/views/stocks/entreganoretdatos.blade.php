@@ -244,7 +244,7 @@ if(tipo=='suelto'){
                                                 </td>
                                                 <td style="width:150px; font-weight: bolder;">TARIMA:</td>
                                                 <TD style="width:100px;">{{$pedido->tarima}} </TD>
-                                                <td class="text-center"><button type="button" class="btn btn-primary">Entregar</button></td>
+                                                <td class="text-center"><button type="button"  value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Entregar</button></td>
                                                     
                                             </tr>
                                             
@@ -299,7 +299,7 @@ if(tipo=='suelto'){
                                                 </div>
                                             </div>
                                             
-                                            <input type="text" value="{{ $pedidos[0]->pagoticket }}" name="ticket" hidden>
+                                            <input type="text" name="ticket" id="ticket" hidden>
 
                                             
                                                 <div class="row my-2 mx-2 justify-content-center" name="caja1" id="caja1">
@@ -340,9 +340,44 @@ if(tipo=='suelto'){
 
     </x-default-layout>
     <!--begin::Javascript-->
-    <script>
+   
+<script>
+       
+        
+    $(document).ready(function(){
+        $(document).on('click', '.edit', function(){
+           var cod=$(this).val();
+          // var iden=$('#id'+cod).text();
+         
+            
+    //alert("HOla");
+            
+        
+            //$('#edit').modal('show');
+         //  $('#codigo').text(cod);
 
-    </script>
+           document.getElementById("ticket").value = cod;
+      /*
+          
+           var ide = '/cobro/ticketlistado/'+cod ;
+		   document.getElementById("impri").href = ide;
+    
+            */
+    
+            //$('#impri a').prop("href", ide);
+            //$('.paginacion a').prop('href','http://nuevaUrl.com');
+    
+           // document.getElementById("impri").href = ide;
+        });
+    });
+     
+    
+    
+    
+    
+    
+    
+        </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>

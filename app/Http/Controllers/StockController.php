@@ -855,6 +855,8 @@ class StockController extends Controller
     public function guardarentrega(Request $request)
     {
         $ticket = $request->get('ticket') ;
+
+       // dd($ticket);
         $usuario = $request->get('usuario') ;
         $nota = $request->get('nota') ;
         $nombre = $request->get('nombre') ;
@@ -879,6 +881,7 @@ class StockController extends Controller
             $pedido->save();
         }
 $nota = " ";
+
          return view('stocks.entreganoret', compact('nota'));
         
     }
