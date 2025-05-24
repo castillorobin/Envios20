@@ -32,8 +32,8 @@
     <!--end::Global Stylesheets Bundle-->
     <style>
         .table th,
-        table td {
-            padding: 7px;
+        .table td {
+            padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
         }
     </style>
@@ -157,7 +157,9 @@ if(tipo=='suelto'){
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        
+                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
+                                            Entregar
+                                        </button>
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -172,91 +174,86 @@ if(tipo=='suelto'){
 
 
                                 <!--begin::Table-->
-                                
+                                <div class="table-responsive">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
+                                        <thead>
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                                <th class="min-w-50px"># de guía</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-50px">Destinatario</th>
+                                                <th class="min-w-50px">Dirección</th>
+                                                <th class="text-center min-w-50px">Tipo de envio</th>
+                                                <th class="min-w-50px">Precio</th>
+                                                <th class="text-center min-w-50px">Estado del envio</th>
+                                                <th class="min-w-50px">Fecha de entrega</th>
+                                                <th class="min-w-50px">Repartidor</th>
+                                                <th class="min-w-50px">Ubicacion</th>
+                                                <th class="min-w-50px">Tipo de ubicacion</th>
+                                                <th class="min-w-50px">Rack</th>
+                                                <th class="min-w-50px">Nivel</th>
+                                                <th class="min-w-50px">Caja</th>
+                                                <th class="min-w-50px">Tarima</th>
+                                               
+                                            </tr>
+                                        </thead>
+                                        <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($pedidos as $pedido) 
-
-                                                <div style="border: 1px solid;border-color: #edece8;border-radius: 10px; margin-top: 5px; padding:15px; width: 100%;">
-                                                <div class="table-responsive"> 
-                                                <table>
-                                                        <tr><td style="width:200px; font-weight: bolder;">
-                                               NUMERO DE GUIA:  
+                                            <tr class="'table-row-gray' : 'table-row-white' }}">
+                                                <td>
+                                                    <a href="/envios/detalle" class="text-gray-900 text-hover-primary">
+                                                        {{$pedido->guia}}
+                                                    </a>
                                                 </td>
-                                                <td style="width:300px;"> {{$pedido->guia}}</td>
-                                                <td style="width:150px; font-weight: bolder;">UBICACION:</td>
-                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$pedido->entrega}} </span></TD>
-                                                <td style="width:500px; " class="text-center" rowspan="5">
-                                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-200px h-200px" style="background-image: url(/fotos/{{$pedido->foto1}})"></div>
-                                    </div>
-                                            </td>    
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               COMERCIO:  
+                                                <td>{{$pedido->comercio}}</td>
+                                                <td> {{$pedido->destinatario}}</td>
+                                                <td>{{$pedido->direccion}}</td>
+                                                <td class="text-center">
+                                                    <span class="badge badge-dark">{{$pedido->tipo}} </span>
                                                 </td>
-                                                <td style="width:300px;"> {{$pedido->comercio}}</td>
-                                                <td style="width:200px; font-weight: bolder;">TIPO DE UBICACION:</td>
-                                                <TD style="width:100px;">{{$pedido->ubicacion}} </TD>
-                                                  
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               DESTINATARIO:  
-                                                </td>
-                                                <td style="width:300px;"> {{$pedido->destinatario}}</td>
-                                                <td style="width:150px; font-weight: bolder;">RACK:</td>
-                                                <TD style="width:100px;">{{$pedido->rack}} </TD>
-                                                 
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               DIRECCION:  
-                                                </td>
-                                                <td style="width:300px;"> {{$pedido->direccion}}</td>
-                                                <td style="width:150px; font-weight: bolder;">NIVEL:</td>
-                                                <TD style="width:100px;">{{$pedido->nivel}} </TD>
-                                                
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               TIPO:  
-                                                </td>
-                                                <td style="width:300px;"> {{$pedido->tipo}}</td>
-                                                <td style="width:150px; font-weight: bolder;">CAJA:</td>
-                                                <TD style="width:100px;">{{$pedido->caja}} </TD>
-                                                 
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               ESTADO:  
-                                                </td>
-                                                <td style="width:300px; font-size: 15px;"> 
+                                                <td class="text-center">${{$pedido->precio}}</td>
+                                                <td class="text-center">
                                                     @if( $pedido->estado == 'No entregado')
-                                                                <span class="badge badge-danger" style="font-size: 15px;">{{ $pedido->estado }}</span>
+                                                                <span class="badge badge-danger">{{ $pedido->estado }}</span>
                                                                 @elseif( $pedido->estado == 'Creado')
-                                                                <span class="badge badge-warning" style="font-size: 15px;">{{ $pedido->estado }}</span>
+                                                                <span class="badge badge-warning">{{ $pedido->estado }}</span>
                                                                 @elseif( $pedido->estado == 'Entregado')
-                                                                <span class="badge badge-success" style="font-size: 15px;">{{ $pedido->estado }}</span>
+                                                                <span class="badge badge-success">{{ $pedido->estado }}</span>
                                                                 @elseif( $pedido->estado == 'En ruta')
-                                                                <span class="badge badge-info" style="font-size: 15px;">{{ $pedido->estado }}</span>
+                                                                <span class="badge badge-info">{{ $pedido->estado }}</span>
                                                                 @elseif( $pedido->estado == 'Reprogramado')
-                                                                <span class="badge badge-dark" style="font-size: 15px;">{{ $pedido->estado }}</span>
+                                                                <span class="badge badge-dark">{{ $pedido->estado }}</span>
                                                                 @elseif( $pedido->estado == 'Devuelto al comercio')
-                                                                <span class="badge badge-primary" style="font-size: 15px;">{{ $pedido->estado }}</span>
+                                                                <span class="badge badge-primary">{{ $pedido->estado }}</span>
                                                                 @else
-                                                                <span class="badge badge-light" style="font-size: 15px;">{{ $pedido->estado }}</span>
+                                                                <span class="badge badge-light">{{ $pedido->estado }}</span>
                                                                 @endif
                                                 </td>
-                                                <td style="width:150px; font-weight: bolder;">TARIMA:</td>
-                                                <TD style="width:100px;">{{$pedido->tarima}} </TD>
-                                                <td class="text-center"><button type="button" class="btn btn-primary">Entregar</button></td>
-                                                    
+                                                <td class="text-center">{{$pedido->fecha_entrega}}</td>
+                                                <td class="text-center">{{$pedido->repartidor}}</td>
+                                                <td class="text-center">{{$pedido->agencia}}</td>
+                                                <td class="text-center">{{$pedido->ubicacion}}</td>
+                                                <td class="text-center">{{$pedido->rack}}</td>
+                                                <td class="text-center">{{$pedido->nivel}}</td>
+                                                <td class="text-center">{{$pedido->caja}}</td>
+                                                <td class="text-center">{{$pedido->tarima}}</td>
+                                                
+
                                             </tr>
-                                            
-                                                </table>
-                                                </div>
-                                                </div>
-
-
-
-
-                                           
                                             @endforeach
+                                        </tbody>
+
+                                    </table>
+                                    
+                                   
+                                  
+
+                                 
+                                   
+
+
+
+
+                                </div>
                                 
 
                                 <div class="row mt-7">
