@@ -932,6 +932,19 @@ $nota = " ";
     }
 
 
+    public function filtrarnotre(Request $request)
+    {
+        $estado = $request->input('estado');
+        $ticket = $request->input('ticketc');
+        $pedidos = Envio::where('ticketc', $ticket)
+        ->where('estado', $estado)
+        ->get();
+
+        $nota = " ";
+
+         return view('stocks.entreganoretdatos', compact('pedidos', 'nota'));
+        
+    }
 
     
     /**

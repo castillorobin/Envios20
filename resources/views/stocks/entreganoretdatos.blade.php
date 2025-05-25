@@ -156,14 +156,14 @@ if(tipo=='suelto'){
                                     </div>
                                     <!--begin::Filter-->
                                  
-                                      <form action="pago/filtrandonombre" method="GET"  >
+                                      <form action="stocks/filtrarnotre" method="GET"  >
                                         @method('GET') 
                                       
                                 
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                
+                                <input type="text" value="{{$pedidos[0]->ticketc}}" class="visually-hidden" name="ticketc" id="ticketc">
                                     
                                     <div class="w-150px"> 
                                         <!--begin::Select2-->

@@ -284,7 +284,7 @@ Route::get('/stocks/entreganoretdatos', [App\Http\Controllers\StockController::c
 Route::get('/stocks/guardarentrega', [App\Http\Controllers\StockController::class, 'guardarentrega'] )->name('guardarentrega');
 Route::get('/stocks/reportedevo', [App\Http\Controllers\StockController::class, 'reportedevo'] )->name('reportedevo');
 Route::get('/stocks/reportedevodatos', [App\Http\Controllers\StockController::class, 'reportedevodatos'] )->name('reportedevodatos');
-
+Route::get('/stocks/filtrarnotre', [App\Http\Controllers\StockController::class, 'filtrarnotre'] )->name('filtrarnotre');
 
 
 //Rutas
