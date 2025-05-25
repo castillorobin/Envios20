@@ -871,6 +871,35 @@
 
                                 <!-- Termina Edicion -->
 
+                                
+                                @if($histo->estado == "Devuelto al comercio")
+                                    <tr>
+                                        <td style="width: 250px; padding-top: 15px;">
+                                    <h3 >Devuelto al comercio</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    @endif
+
+
+
+                                <!-- Termina Devuelto -->
+
                                    
                                     @endforeach
 
