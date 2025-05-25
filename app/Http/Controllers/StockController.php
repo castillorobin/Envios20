@@ -887,6 +887,8 @@ class StockController extends Controller
             $hesta->idenvio = $ticket;
             $hesta->estado = "Devuelto al comercio";
             $hesta->usuario = $usuario;
+            $hesta->nota = $nota;
+            $hesta->nombre = $nombre;
             $hesta->save();
 $nota = " ";
 

@@ -892,6 +892,14 @@
                                     {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
+                                    <tr>
+                                        <td>Nombre quien recibe: </td>
+                                        <td>{{ $histo->nombre }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Nota: </td>
+                                        <td>{{ $histo->nota }}</td>
+                                    </tr>
                                     @endif
 
 
