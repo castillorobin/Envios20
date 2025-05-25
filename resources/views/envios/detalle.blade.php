@@ -404,9 +404,7 @@
                     </div>
                         <!--end::details View-->
 
-
-
-                       
+             
 
                               
 

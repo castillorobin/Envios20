@@ -835,7 +835,7 @@ class StockController extends Controller
 
         $guia = $request->get('guia') ;
         $pedidos = Envio::where('ticketc', $guia)
-        ->where('estado', "No retirado")
+        ->where('estado', "No entregado")
         ->get();
 
          if($pedidos->isEmpty()){
