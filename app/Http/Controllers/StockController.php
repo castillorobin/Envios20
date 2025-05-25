@@ -860,8 +860,7 @@ class StockController extends Controller
         $usuario = $request->get('usuario') ;
         $nota = $request->get('nota') ;
         $nombre = $request->get('nombre') ;
-        $pedidos = Envio::where('ticketc', $ticket)
-        ->where('estado', "No retirado")
+        $pedidos = Envio::where('id', $ticket)
         ->get();
 
         $entrega = new devolucion();
@@ -870,6 +869,7 @@ class StockController extends Controller
         $entrega->agencia = $pedidos[0]->agencia;
         $entrega->nombre = $nombre;
         $entrega->nota = $nota;
+        $entrega->idenvio = $ticket;
         $entrega->save();
 
         $ultimoid = devolucion::latest('id')->first();
@@ -877,9 +877,17 @@ class StockController extends Controller
 
         foreach ($pedidos as $pedido ) {
             $pedido->devo = $iddevo;
+            $pedido->estado = "Devuelto al comercio";
 
             $pedido->save();
         }
+            
+
+        $hesta = new Hestado();
+            $hesta->idenvio = $ticket;
+            $hesta->estado = "Devuelto al comercio";
+            $hesta->usuario = $usuario;
+            $hesta->save();
 $nota = " ";
 
          return view('stocks.entreganoret', compact('nota'));
