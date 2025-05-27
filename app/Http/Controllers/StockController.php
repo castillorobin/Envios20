@@ -355,9 +355,18 @@ class StockController extends Controller
         $racks = $request->get('racks');
         $nivels = $request->get('nivels');
         $tarimas = $request->get('tarimas');
+
         $id = $request->get('asignum2');
 
-        $envio = Envio::find($id);
+        //dd($id);
+
+        $envios = Envio::where('cambiando', $id)
+        ->get();
+
+
+        foreach ($envios as $envio) {
+            # code...
+      
         //$envio->cambiando = $actual;
         if($caja){
             $envio->caja = $caja;
@@ -415,6 +424,11 @@ class StockController extends Controller
             $hesta->estado = "Cambiada";
             $hesta->usuario = $usuario;
             $hesta->save();
+
+  }
+
+
+
 
 
         $nota = " "; 
@@ -854,12 +868,19 @@ class StockController extends Controller
      */
     public function guardarentrega(Request $request)
     {
-        $ticket = $request->get('ticket') ;
+        $tickets = $request->get('selec') ;
 
-       // dd($ticket);
+       //dd($ticket);
+
         $usuario = $request->get('usuario') ;
         $nota = $request->get('nota') ;
         $nombre = $request->get('nombre') ;
+
+
+foreach ($tickets as $ticket) {
+    //dd($ticket);
+
+
         $pedidos = Envio::where('id', $ticket)
         ->get();
 
@@ -875,12 +896,12 @@ class StockController extends Controller
         $ultimoid = devolucion::latest('id')->first();
         $iddevo = $ultimoid->id;
 
-        foreach ($pedidos as $pedido ) {
-            $pedido->devo = $iddevo;
-            $pedido->estado = "Devuelto al comercio";
+        
+            $pedidos[0]->devo = $iddevo;
+            $pedidos[0]->estado = "Devuelto al comercio";
 
-            $pedido->save();
-        }
+            $pedidos[0]->save();
+        
             
 
         $hesta = new Hestado();
@@ -890,6 +911,8 @@ class StockController extends Controller
             $hesta->nota = $nota;
             $hesta->nombre = $nombre;
             $hesta->save();
+
+            }
 $nota = " ";
 
          return view('stocks.entreganoret', compact('nota'));
@@ -938,9 +961,28 @@ $nota = " ";
     {
         $estado = $request->input('estado');
         $ticket = $request->input('ticketc');
-        $pedidos = Envio::where('ticketc', $ticket)
+        
+
+         if ($estado !="todos"){
+            $pedidos = Envio::where('ticketc', $ticket)
         ->where('estado', $estado)
         ->get();
+         }else{
+            $pedidos = Envio::where('ticketc', $ticket)
+       
+        ->get();
+         }
+
+$numti = $ticket;
+
+if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "No hay envios con el estado seleccionado"; 
+
+            return view('stocks.entreganoretdatos2', compact('numti', 'nota')); 
+
+        }
+
 
         $nota = " ";
 

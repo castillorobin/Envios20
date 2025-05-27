@@ -197,7 +197,7 @@ if(tipo=='suelto'){
                                                 <th class="min-w-50px">Tarima</th>
                                                 
                                                
-                                            </tr>
+                                            </tr> 
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($pedidos as $pedido) 
@@ -401,7 +401,7 @@ if(tipo=='suelto'){
                                             </div>
                                        
                                         </div>
-                                        <input type="text" class="visually-hidden" name="asignum2" id="asignum2">
+                                        <input type="text" class="visually-hidden" name="asignum2" id="asignum2" value="{{$actual}}">
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
                                             &nbsp;  &nbsp; &nbsp;

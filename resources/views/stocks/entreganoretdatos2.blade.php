@@ -163,7 +163,7 @@ if(tipo=='suelto'){
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                <input type="text" value="{{$pedidos[0]->ticketc}}" class="visually-hidden" name="ticketc" id="ticketc">
+                                <input type="text" value="{{$numti}}" class="visually-hidden" name="ticketc" id="ticketc">
                                     
                                     <div class="w-150px"> 
                                         <!--begin::Select2-->
@@ -199,96 +199,7 @@ if(tipo=='suelto'){
  <form action="/stocks/guardarentrega/" method="GET">
                                 <!--begin::Table-->
                                 
-                                            @foreach ($pedidos as $pedido) 
-
-                                                <div style="border: 1px solid;border-color: #edece8;border-radius: 10px; margin-top: 5px; padding:15px; width: 100%;">
-                                                <div class="table-responsive"> 
-                                                <table>
-                                                        <tr><td style="width:200px; font-weight: bolder;">
-                                               NUMERO DE GUIA:  
-                                                </td>
-                                                <td style="width:300px;"> 
-                                                    <a href="/envios/detalle/{{$pedido->guia}}" class="text-gray-900 text-hover-primary">{{$pedido->guia}} </a></td>
-                                                <td style="width:150px; font-weight: bolder;">UBICACION:</td>
-                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$pedido->agencia}} </span></TD>
-                                                <td style="width:500px; " class="text-center" rowspan="5">
-                                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-200px h-200px" style="background-image: url(/fotos/{{$pedido->foto1}})"></div>
-                                    </div>
-                                            </td>  
                                             
-                                            <td class="text-center" rowspan="5">
-                                                <!--    
-                                                <button type="button"  value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Entregar</button>
--->                                                 <input type="checkbox" name="selec[]" id="selec[]" value="{{$pedido->id}}">
-                                                 </td>
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               COMERCIO:  
-                                                </td>
-                                                <td style="width:300px;"> {{$pedido->comercio}}</td>
-                                                <td style="width:200px; font-weight: bolder;">TIPO DE UBICACION:</td>
-                                                <TD style="width:100px;">{{$pedido->ubicacion}} </TD>
-                                                  
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               DESTINATARIO:  
-                                                </td>
-                                                <td style="width:300px;"> {{$pedido->destinatario}}</td>
-                                                <td style="width:150px; font-weight: bolder;">RACK:</td>
-                                                <TD style="width:100px;">{{$pedido->rack}} </TD>
-                                                 
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               DIRECCION:  
-                                                </td>
-                                                <td style="width:300px;"> {{$pedido->direccion}}</td>
-                                                <td style="width:150px; font-weight: bolder;">NIVEL:</td>
-                                                <TD style="width:100px;">{{$pedido->nivel}} </TD>
-                                                
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               TIPO:  
-                                                </td>
-                                                <td style="width:300px;"> {{$pedido->tipo}}</td>
-                                                <td style="width:150px; font-weight: bolder;">CAJA:</td>
-                                                <TD style="width:100px;">{{$pedido->caja}} </TD>
-                                                 
-                                            </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               ESTADO:  
-                                                </td>
-                                                <td style="width:300px; font-size: 15px;"> 
-                                                    @if( $pedido->estado == 'No entregado')
-                                                                <span class="badge badge-danger" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Creado')
-                                                                <span class="badge badge-warning" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Entregado')
-                                                                <span class="badge badge-success" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'En ruta')
-                                                                <span class="badge badge-info" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Reprogramado')
-                                                                <span class="badge badge-dark" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Devuelto al comercio')
-                                                                <span class="badge badge-primary" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @else
-                                                                <span class="badge badge-light" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @endif
-                                                </td>
-                                                <td style="width:150px; font-weight: bolder;">TARIMA:</td>
-                                                <TD style="width:100px;">{{$pedido->tarima}} </TD>
-                                                
-                                            </tr>
-                                            
-                                                </table>
-                                                </div>
-                                                </div>
-
-
-
-
-                                           
-                                            @endforeach
                                 
 
                                 <div class="row mt-7">
