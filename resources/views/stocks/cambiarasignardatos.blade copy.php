@@ -303,15 +303,66 @@ if(tipo=='suelto'){
                                             
 
                                         </div>
-                                        
-                                        <div class="modal-body" style="margin-top: 5px; padding-top: 5px;">
-                                           
+                                        <form action="/stocks/guardarcambiarguia/" method="GET">
+                                        <div class="modal-body">
+                                            <div class="row my-2 mx-2 justify-content-center">
 
-                                                <form action="/stocks/guardarcambiarguia/" method="GET">
+                                                
                                                 
 
 
+                                                <h3 class="modal-title mb-3" >Ubicación actual</h3>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="usuario5" id="usuario5" value="{{ Auth::user()->name }}" readonly />
+                                                    <label for="rack" style="padding-left: 25px;">Usuario</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="fecha5" id="fecha5" value="{{ now()->Format('d/m/Y H:i A')}}" readonly/>
+                                                    <label for="nivel" style="padding-left: 25px;">Fecha y hora</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center">
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" value="Santa Ana" name="agencia5" id="agencia5"  readonly/>
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
                                                
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center">
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="cajasuelto5" id="cajasuelto5" readonly />
+                                                    <label for="cenvio" style="padding-left: 25px;">Tipo de ubicación</label>
+                                                </div>
+                                               
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center" >
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="caja5" id="caja5" placeholder="# de rack" readonly />
+                                                    <label for="rack" style="padding-left: 25px;">Caja</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="rack5" id="rack5" placeholder="# de nivel" readonly />
+                                                    <label for="nivel" style="padding-left: 25px;">Rack</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div> 
+                                            </div>
+                                            <div class="row my-2 mx-2 justify-content-center" >
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="nivel5" id="nivel5" placeholder="# de caja" readonly />
+                                                    <label for="caja" style="padding-left: 25px;">Nivel</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="tarima5" id="tarima5" placeholder="# de tarima"  readonly/>
+                                                    <label for="tarima" style="padding-left: 25px;">Tarima</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            
+
 
 
 
@@ -398,12 +449,11 @@ if(tipo=='suelto'){
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-                                       
+                                        
                                         </div>
                                         <input type="text" class="visually-hidden" name="asignum2" id="asignum2">
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
-                                            &nbsp;  &nbsp; &nbsp;
                                             <button type="submit" class="btn btn-primary">Cambiar</button>
                                         </div>
                                     </div>

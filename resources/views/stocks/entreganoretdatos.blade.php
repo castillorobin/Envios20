@@ -215,7 +215,13 @@ if(tipo=='suelto'){
                                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-200px h-200px" style="background-image: url(/fotos/{{$pedido->foto1}})"></div>
                                     </div>
-                                            </td>    
+                                            </td>  
+                                            
+                                            <td class="text-center" rowspan="5">
+                                                <!--    
+                                                <button type="button"  value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Entregar</button>
+-->                                                 <input type="checkbox" name="" id="">
+                                                 </td>
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                COMERCIO:  
@@ -271,8 +277,7 @@ if(tipo=='suelto'){
                                                 </td>
                                                 <td style="width:150px; font-weight: bolder;">TARIMA:</td>
                                                 <TD style="width:100px;">{{$pedido->tarima}} </TD>
-                                                <td class="text-center"><button type="button"  value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Entregar</button></td>
-                                                    
+                                                
                                             </tr>
                                             
                                                 </table>
@@ -289,9 +294,14 @@ if(tipo=='suelto'){
                                 <div class="row mt-7">
                                     <div class="col-12 mb-3" >
                                         <a href="/stocks/asignarestado">
-                                        <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
+                                        <button type="button" class="btn btn-secondary mb-3" style="float: right; margin-left:10px; ">Cancelar</button>
+                                    </a>
+                                   
+                                     <a href="/stocks/asignarestado" >
+                                        <button type="button" class="btn btn-primary edit mb-3" style="float: right; margin-left:10px; ">Entregar</button>
                                     </a>
                                     </div>
+
                                     
                                 </div>
                                 <!--end::Table-->
