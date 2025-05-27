@@ -288,10 +288,11 @@ if(tipo=='suelto'){
     data-kt-drawer-toggle="#kt_drawer_example_basic_button"
     data-kt-drawer-close="#kt_drawer_example_basic_close"
     data-kt-drawer-width="500px"
+ 
 >
                            
-                                <div class="modal-dialog modal-dialog-centered ">
-                                    <div class="modal-content">
+                                <div class="modal-dialog modal-dialog " >
+                                    <div class="modal-content" >
                                         <div class="modal-header mt-5 m-5" >
                                             
                                             <!--begin::Close-->
