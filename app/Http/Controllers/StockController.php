@@ -869,7 +869,7 @@ class StockController extends Controller
     public function guardarentrega(Request $request)
     {
         $tickets = $request->get('selec') ;
-
+        $idtic = $request->input('idtic');
        //dd($ticket);
 
         $usuario = $request->get('usuario') ;
@@ -915,7 +915,22 @@ foreach ($tickets as $ticket) {
             }
 $nota = " ";
 
-         return view('stocks.entreganoret', compact('nota'));
+$numti = $request->input('idtic');
+
+ $pedidos = Envio::where('ticketc', $idtic)
+        ->where('estado', "No entregado")
+        ->get();
+
+if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "No hay envios con el estado seleccionado"; 
+
+            return view('stocks.entreganoretdatos2', compact('numti', 'nota')); 
+
+        }
+
+
+         return view('stocks.entreganoretdatos', compact('pedidos', 'nota'));
         
     }
 

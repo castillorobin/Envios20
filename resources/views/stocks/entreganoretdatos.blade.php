@@ -352,7 +352,8 @@ if(tipo=='suelto'){
                                                
                                             </div>
 
-                                            <input type="text" value=" " class="visually-hidden" name="actual2" id="actual2">
+                                            <input type="text" value=" " class="visually-hidden" name="actual2" id="actual2" >
+                                            <input type="text" value="{{$pedidos[0]->ticketc}}" class="visually-hidden" name="idtic" id="idtic"> 
                                        
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
