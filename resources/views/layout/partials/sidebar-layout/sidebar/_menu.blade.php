@@ -568,6 +568,17 @@
 						</a>
 					</div>
 
+					
+					<div class="menu-item">
+						<a class="menu-link py-3" href="/" style="background-color: transparent;">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Asignar devolución</span>
+						</a>
+					</div>
+				
+
 
 
 				</div>
@@ -638,21 +649,12 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Solicitar no retirado</span>
+							<span class="menu-title">Generar Picking</span>
 						</a>
 					</div>
 				</div>
 
-				<div class="menu-sub menu-sub-accordion">
-					<div class="menu-item">
-						<a class="menu-link" href="/">
-							<span class="menu-bullet">
-								<span class="bullet bullet-dot"></span>
-							</span>
-							<span class="menu-title">Asignar devolución</span>
-						</a>
-					</div>
-				</div>
+				
 
 			</div>
 
