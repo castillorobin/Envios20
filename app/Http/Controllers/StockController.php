@@ -832,9 +832,9 @@ class StockController extends Controller
             $envio->save();
         }
 
-       
+       $nota = " ";
 
-        return view('stocks.asignarestado');
+        return view('stocks.asignarestado', compact('nota'));
     }
 
     public function entreganoret()
