@@ -1005,6 +1005,32 @@ if($pedidos->isEmpty()){
         
     }
 
+     public function generarp()
+    {
+        $nota = " ";
+         return view('stocks.generarp', compact('nota'));
+    }
+
+    public function generarpdatos(Request $request)
+    {
+        $nota = " ";
+
+        $guia = $request->get('guia') ;
+
+        $pedidos = Envio::where('ticketc', $guia)
+        ->where('estado', "No entregado")
+        ->get();
+
+         if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "El ticket que se ingreso no existe"; 
+            return view('stocks.generarp', compact('nota'));
+
+        }
+
+         return view('stocks.generarpdatos', compact('pedidos', 'nota'));
+    }
+
     
     /**
      * Store a newly created resource in storage.

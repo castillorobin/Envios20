@@ -286,6 +286,11 @@ Route::get('/stocks/reportedevo', [App\Http\Controllers\StockController::class, 
 Route::get('/stocks/reportedevodatos', [App\Http\Controllers\StockController::class, 'reportedevodatos'] )->name('reportedevodatos');
 Route::get('/stocks/filtrarnotre', [App\Http\Controllers\StockController::class, 'filtrarnotre'] )->name('filtrarnotre');
 
+//Devoluciones
+Route::get('/stocks/generarp', [App\Http\Controllers\StockController::class, 'generarp'] )->name('generarp');
+Route::get('/stocks/generarpdatos', [App\Http\Controllers\StockController::class, 'generarpdatos'] )->name('generarpdatos');
+
+
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;
