@@ -286,9 +286,11 @@ Route::get('/stocks/reportedevo', [App\Http\Controllers\StockController::class, 
 Route::get('/stocks/reportedevodatos', [App\Http\Controllers\StockController::class, 'reportedevodatos'] )->name('reportedevodatos');
 Route::get('/stocks/filtrarnotre', [App\Http\Controllers\StockController::class, 'filtrarnotre'] )->name('filtrarnotre');
 
-//Devoluciones
+//Picking
 Route::get('/stocks/generarp', [App\Http\Controllers\StockController::class, 'generarp'] )->name('generarp');
 Route::get('/stocks/generarpdatos', [App\Http\Controllers\StockController::class, 'generarpdatos'] )->name('generarpdatos');
+Route::get('/stocks/guardarreenvio', [App\Http\Controllers\StockController::class, 'guardarreenvio'] )->name('guardarreenvio');
+Route::get('/stocks/guardardevol', [App\Http\Controllers\StockController::class, 'guardardevol'] )->name('guardardevol');
 
 
 

@@ -13,6 +13,7 @@ use App\Models\Empleado;
 use App\Models\Hestado;
 use App\Models\User;
 use App\Models\devolucion;
+use App\Models\Orden;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
@@ -1029,6 +1030,101 @@ if($pedidos->isEmpty()){
         }
 
          return view('stocks.generarpdatos', compact('pedidos', 'nota'));
+    }
+
+
+    public function guardarreenvio(Request $request)
+    {
+        $usuario = $request->get('usuario') ;
+        $reenvi = $request->get('reenvi') ;
+        $nota = $request->get('nota') ;
+        $idenvio = $request->get('idenvio') ;
+        $reenvi = $request->get('reenvi') ;
+
+        //dd($idenvio);
+
+        $envio = Envio::find($idenvio);
+        $envio->estado = "Reenviado";
+        $envio->save();
+
+
+       // dd($envio->comercio);
+
+        $entrega = new Orden();
+        $entrega->comercio = $envio->comercio;
+        $entrega->guia = $envio->guia;
+        $entrega->destinatario = $envio->destinatario;
+        $entrega->tipo = "Reenvio";
+        $entrega->fecha_pro = $reenvi;
+        $entrega->ubicacion = $envio->entrega;
+        $entrega->estado = "Pendiente";
+        $entrega->nota = $nota;
+        $entrega->save();
+
+$nota = " ";
+
+        $tick = $envio->ticketc ;
+
+        $pedidos = Envio::where('ticketc', $tick)
+        ->where('estado', "No entregado")
+        ->get();
+
+         if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "El ticket que se ingreso no existe"; 
+            return view('stocks.generarp', compact('nota'));
+
+        }
+
+         return view('stocks.generarpdatos', compact('pedidos', 'nota'));
+
+    }
+
+     public function guardardevol(Request $request)
+    {
+        $usuario = $request->get('usuario') ;
+        $reenvi = $request->get('reenvi') ;
+        $nota = $request->get('nota') ;
+        $idenvio = $request->get('idenvio2') ;
+        $reenvi = $request->get('reenvi') ;
+
+        //dd($idenvio);
+
+        $envio = Envio::find($idenvio);
+        $envio->estado = "Reenviado";
+        $envio->save();
+
+
+       // dd($envio->comercio);
+
+        $entrega = new Orden();
+        $entrega->comercio = $envio->comercio;
+        $entrega->guia = $envio->guia;
+        $entrega->destinatario = $envio->destinatario;
+        $entrega->tipo = "Reenvio";
+        $entrega->fecha_pro = $reenvi;
+        $entrega->ubicacion = $envio->entrega;
+        $entrega->estado = "Pendiente";
+        $entrega->nota = $nota;
+        $entrega->save();
+
+$nota = " ";
+
+        $tick = $envio->ticketc ;
+
+        $pedidos = Envio::where('ticketc', $tick)
+        ->where('estado', "No entregado")
+        ->get();
+
+         if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "El ticket que se ingreso no existe"; 
+            return view('stocks.generarp', compact('nota'));
+
+        }
+
+         return view('stocks.generarpdatos', compact('pedidos', 'nota'));
+
     }
 
     

@@ -64,6 +64,109 @@ if(tipo=='suelto'){
 
 }
 </script>
+<script>
+    /*
+    flatpickr("#reenvi", {
+        dateFormat: 'Y-m-d',
+    });
+*/
+    
+    $("#reenvi").flatpickr();
+</script>
+
+<script>
+    function doSearch()
+
+{
+
+const tableReg = document.getElementById('shipping_table');
+
+const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+let total = 0;
+
+
+
+// Recorremos todas las filas con contenido de la tabla
+
+for (let i = 1; i < tableReg.rows.length; i++) {
+
+    // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+    if (tableReg.rows[i].classList.contains("noSearch")) {
+
+        continue;
+
+    }
+
+
+
+    let found = false;
+
+    const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+    // Recorremos todas las celdas
+
+    for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+        const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+        // Buscamos el texto en el contenido de la celda
+
+        if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+            found = true;
+
+            total++;
+
+        }
+
+    }
+
+    if (found) {
+
+        tableReg.rows[i].style.display = '';
+
+    } else {
+
+       
+
+        tableReg.rows[i].style.display = 'none';
+
+    }
+
+}
+
+
+
+// mostramos las coincidencias
+
+const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+const td=lastTR.querySelector("td");
+
+lastTR.classList.remove("hide", "red");
+
+if (searchText == "") {
+
+    lastTR.classList.add("hide");
+
+} else if (total) {
+
+    td.innerHTML="";
+
+} else {
+
+    lastTR.classList.add("red");
+
+    td.innerHTML="";
+
+}
+
+}
+</script>
+
+
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
@@ -130,7 +233,7 @@ if(tipo=='suelto'){
                                                    
                                          <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Ticket</label>
-                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar" autofocus>
+                                            <input type="text" class="form-control " id="searchTerm" name="searchTerm" placeholder="Buscar" autofocus onkeyup="doSearch()">
                                             <input type="text" value="Departamental" class="visually-hidden" name="asignar" id="asignar">
                                             <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar">
                                         </div>
@@ -192,14 +295,14 @@ if(tipo=='suelto'){
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
 
- <form action="/stocks/guardarentrega/" method="GET">
+ 
                                 <!--begin::Table-->
                                 
                                             @foreach ($pedidos as $pedido) 
 
                                                 <div style="border: 1px solid;border-color: #edece8;border-radius: 10px; margin-top: 5px; padding:15px; width: 100%;">
                                                 <div class="table-responsive"> 
-                                                <table>
+                                                <table id="shipping_table" name="shipping_table"> 
                                                         <tr><td style="width:200px; font-weight: bolder;">
                                                NUMERO DE GUIA:  
                                                 </td>
@@ -282,12 +385,12 @@ if(tipo=='suelto'){
 
                                                 
                                             <div class="col-12 mb-3 ;" >
-                                        <a href="/stocks/entreganoret">
-                                        <button type="button" class="btn btn-secondary mb-3" style="float: right; margin-left:10px; margin-top:20px">Cancelar</button>
-                                    </a>
+                                        
+                                        <button type="button" class="btn btn-secondary mb-3 edit2" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_2">Devolución</button>
+                                    
                                    
                                      
-                                        <button type="button" class="btn btn-primary edit mb-3" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Reenvio</button>
+                                        <button type="button" class="btn btn-primary edit mb-3" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Reenvio</button>
                                     
                                     </div>
                                                 </div>
@@ -303,13 +406,15 @@ if(tipo=='suelto'){
                                
                                 <!--end::Table-->
                             </div>
-                            <!--end::Table-->
+
+                            <form action="/stocks/guardarreenvio/" method="GET">
+                            <!--Start::Reenvio-->
                             <div class="modal fade" tabindex="-1" id="kt_modal_1">
                            
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
                                         <div class="modal-header mt-5 m-5" >
-                                            <h3 class="modal-title">Entregar</h3>
+                                            <h3 class="modal-title">Reenvio</h3>
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
@@ -333,12 +438,13 @@ if(tipo=='suelto'){
                                                 </div>
                                             </div>
                                             
-                                            <input type="text" name="ticket" id="ticket" hidden>
+                                            <input type="text" name="idenvio" id="idenvio" hidden>
 
                                             
                                                 <div class="row my-2 mx-2 justify-content-center" name="caja1" id="caja1">
                                                     <div class="form col-lg-12 mb-4">
-                                                        <input type="text" class="form-control form-control-solid" name="nombre" id="nombre" placeholder="Nombre de quien recibe"  />
+                                                      
+                                                         <input class="form-control form-control-solid" placeholder="Fecha de reenvio" id="kt_datepicker_1" name="reenvi"/>
                                                        <p></p>
                                                         <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
                                                         
@@ -349,8 +455,75 @@ if(tipo=='suelto'){
                                                
                                             </div>
 
-                                            <input type="text" value=" " class="visually-hidden" name="actual2" id="actual2" >
-                                            <input type="text" value="{{$pedidos[0]->ticketc}}" class="visually-hidden" name="idtic" id="idtic"> 
+                                            
+                                       
+                                        <div class="modal-footer m-5">
+                                            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
+                                            <button type="submit" class="btn btn-primary">Guardar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
+                            
+                        </div>
+                        <!--end::Card body-->
+</form>
+
+
+
+
+
+
+
+<form action="/stocks/guardardevol/" method="GET">
+                         <!--Start::Devolucion-->
+                            <div class="modal fade" tabindex="-1" id="kt_modal_2">
+                           
+                                <div class="modal-dialog modal-dialog-centered ">
+                                    <div class="modal-content">
+                                        <div class="modal-header mt-5 m-5" >
+                                            <h3 class="modal-title">Devolución</h3>
+                                            <!--begin::Close-->
+                                            <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                                                <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
+                                            </div>
+                                            <!--end::Close-->
+
+                                           
+
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row my-2 mx-2 justify-content-center" >
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="usuario" id="usuario" value="{{ Auth::user()->name }}" readonly />
+                                                    <label for="rack" style="padding-left: 25px;">Usuario</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                                <div class="form-floating col-lg-6 mb-4">
+                                                    <input type="text" class="form-control form-control-solid" name="fecha" id="fecha" value="{{ now()->Format('d/m/Y H:i A')}}" readonly/>
+                                                    <label for="nivel" style="padding-left: 25px;">Fecha y hora</label>
+                                                    <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                </div>
+                                            </div>
+                                            
+                                            <input type="text" name="idenvio2" id="idenvio2" hidden>
+
+                                            
+                                                <div class="row my-2 mx-2 justify-content-center" name="caja1" id="caja1">
+                                                    <div class="form col-lg-12 mb-4">
+                                                      <input type="text" class="form-control form-control-solid" placeholder="Lugar de devolución" id="lugar" name="lugar">
+                                                      <br>
+                                                         <input class="form-control form-control-solid" placeholder="Fecha de devolución" id="kt_datepicker_2" name="devolucion"/>
+                                                       <p></p>
+                                                        <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
+                                                        
+                                                    </div>
+                                              
+                                                </div>
+                                               
+                                               
+                                            </div>
+
                                        
                                         <div class="modal-footer m-5">
                                             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cerrar</button>
@@ -362,6 +535,8 @@ if(tipo=='suelto'){
                             </form>
                         </div>
                         <!--end::Card body-->
+
+
                     </div>
                     <!--end::Products-->
                 </div>
@@ -382,32 +557,25 @@ if(tipo=='suelto'){
     $(document).ready(function(){
         $(document).on('click', '.edit', function(){
            var cod=$(this).val();
-          // var iden=$('#id'+cod).text();
          
-            
-    //alert("HOla");
-            
-        
-            //$('#edit').modal('show');
-         //  $('#codigo').text(cod);
 
-           document.getElementById("ticket").value = cod;
-      /*
-          
-           var ide = '/cobro/ticketlistado/'+cod ;
-		   document.getElementById("impri").href = ide;
-    
-            */
-    
-            //$('#impri a').prop("href", ide);
-            //$('.paginacion a').prop('href','http://nuevaUrl.com');
-    
-           // document.getElementById("impri").href = ide;
+           document.getElementById("idenvio").value = cod;
+           
+      
         });
     });
      
     
-    
+     $(document).ready(function(){
+        $(document).on('click', '.edit2', function(){
+           var cod=$(this).val();
+         
+
+           document.getElementById("idenvio2").value = cod;
+           
+      
+        });
+    });
     
     
     
@@ -417,6 +585,15 @@ if(tipo=='suelto'){
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+<script src="assets/plugins/global/plugins.bundle.js"></script>
+
+<script>
+    $("#kt_datepicker_1" ).flatpickr();
+    $("#kt_datepicker_2" ).flatpickr();
+</script>
 
 </body>
 <!--end::Body-->
