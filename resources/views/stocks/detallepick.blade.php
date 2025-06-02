@@ -252,36 +252,15 @@ if (searchText == "") {
                                     </div>
                                     <!--begin::Filter-->
                                  
-                                      <form action="stocks/filtrarnotre" method="GET"  >
-                                        @method('GET') 
-                                      
                                 
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                <input type="text" value="{{$pedidos[0]->ticketc}}" class="visually-hidden" name="ticketc" id="ticketc">
-                                    
-                                    <div class="w-150px"> 
-                                        <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
-                                            <option value="todos" >Todos</option>
-                                        <option value="Creado">Creado</option>
-                                        <option value="En ruta">En ruta</option>
-                                        <option value="Entregado">Entregado</option>
-                                        <option value="No entregado">No entregado</option>
-                                        <option value="Reprogramado">Reprogramado</option>
-                                        <option value="Devuelto al comercio">Devuelto al comercio</option>
-                                        <option value="Recepcionado">Recepcionado</option>
-                                        <option value="Fallido">Fallido</option>
-                                        </select>
-                                        <!--end::Select2-->
-                                        
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" >Filtrar</button>
+                               
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
                                    
-                                </form>                                    </div>
+                                                              </div>
                                     <!--end::Filter-->
 
                                 </div>
@@ -295,7 +274,7 @@ if (searchText == "") {
  
                                 <!--begin::Table-->
                                 
-                                            @foreach ($pedidos as $pedido) 
+                                            
 
                                                 <div style="border: 1px solid;border-color: #edece8;border-radius: 10px; margin-top: 5px; padding:15px; width: 100%;">
                                                 <div class="table-responsive"> 
@@ -304,12 +283,12 @@ if (searchText == "") {
                                                NUMERO DE GUIA:  
                                                 </td>
                                                 <td style="width:300px;"> 
-                                                    <a href="/envios/detalle/{{$pedido->guia}}" class="text-gray-900 text-hover-primary">{{$pedido->guia}} </a></td>
+                                                    <a href="/envios/detalle/{{$pedidos[0]->guia}}" class="text-gray-900 text-hover-primary">{{$pedidos[0]->guia}} </a></td>
                                                 <td style="width:150px; font-weight: bolder;">UBICACION:</td>
-                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$pedido->agencia}} </span></TD>
+                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$pedidos[0]->agencia}} </span></TD>
                                                 <td style="width:500px; " class="text-center" rowspan="5">
                                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-200px h-200px" style="background-image: url(/fotos/{{$pedido->foto1}})"></div>
+                                        <div class="image-input-wrapper w-200px h-200px" style="background-image: url(/fotos/{{$pedidos[0]->foto1}})"></div>
                                     </div>
                                             
                                             
@@ -324,33 +303,33 @@ if (searchText == "") {
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                COMERCIO:  
                                                 </td>
-                                                <td style="width:300px;"> {{$pedido->comercio}}</td>
+                                                <td style="width:300px;"> {{$pedidos[0]->comercio}}</td>
                                                 <td style="width:200px; font-weight: bolder;">TIPO DE UBICACION:</td>
-                                                <TD style="width:100px;">{{$pedido->ubicacion}} </TD>
+                                                <TD style="width:100px;">{{$pedidos[0]->ubicacion}} </TD>
                                                   
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                DESTINATARIO:  
                                                 </td>
-                                                <td style="width:300px;"> {{$pedido->destinatario}}</td>
+                                                <td style="width:300px;"> {{$pedidos[0]->destinatario}}</td>
                                                 <td style="width:150px; font-weight: bolder;">RACK:</td>
-                                                <TD style="width:100px;">{{$pedido->rack}} </TD>
+                                                <TD style="width:100px;">{{$pedidos[0]->rack}} </TD>
                                                  
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                DIRECCION:  
                                                 </td>
-                                                <td style="width:300px;"> {{$pedido->direccion}}</td>
+                                                <td style="width:300px;"> {{$pedidos[0]->direccion}}</td>
                                                 <td style="width:150px; font-weight: bolder;">NIVEL:</td>
-                                                <TD style="width:100px;">{{$pedido->nivel}} </TD>
+                                                <TD style="width:100px;">{{$pedidos[0]->nivel}} </TD>
                                                 
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                TIPO:  
                                                 </td>
-                                                <td style="width:300px;"> {{$pedido->tipo}}</td>
+                                                <td style="width:300px;"> {{$pedidos[0]->tipo}}</td>
                                                 <td style="width:150px; font-weight: bolder;">CAJA:</td>
-                                                <TD style="width:100px;">{{$pedido->caja}} </TD>
+                                                <TD style="width:100px;">{{$pedidos[0]->caja}} </TD>
                                                  
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
@@ -358,11 +337,11 @@ if (searchText == "") {
                                                 </td>
                                                 <td style="width:300px; font-size: 20px;"> 
                                                    
-                                                    <span style="background-color: yellow">{{ $pedido->tipo }}</span>
+                                                    <span style="background-color: yellow">{{ $pedidos[0]->tipo }}</span>
                                                    
                                                 </td>
                                                 <td style="width:200px; font-weight: bolder;">FECHA:</td>
-                                                <TD style="width:150px;background-color: yellow;" class="text-center">{{$pedido->fecha_pro}} </TD>
+                                                <TD style="width:150px;background-color: yellow;" class="text-center">{{$pedidos[0]->fecha_pro}} </TD>
                                                 
                                             </tr>
                                             
@@ -371,12 +350,12 @@ if (searchText == "") {
                                                 
                                             <div class="col-12 mb-3 ;" >
                                         
-                                        <button type="button" class="btn btn-secondary mb-3 edit2" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_2">Cancelar</button>
+                                        <button type="button" class="btn btn-secondary mb-3 edit2" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_2">Cancelar</button>
                                     
-                                   
+                                   <a href="/stocks/realizado/{{$pedidos[0]->id}}">
                                      
-                                        <button type="button" class="btn btn-primary edit mb-3" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Realizado</button>
-                                    
+                                        <button type="button" class="btn btn-primary edit mb-3"  style="float: right; margin-left:10px; margin-top:20px" >Realizado</button>
+                                    </a>
                                     </div>
                                                 </div>
                                                 </div>
@@ -385,7 +364,7 @@ if (searchText == "") {
 
 
                                            
-                                            @endforeach
+                                        
                                 
 
                                

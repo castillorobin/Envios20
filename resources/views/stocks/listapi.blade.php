@@ -186,14 +186,14 @@
                                                 </td>
 
                                                 <td style="text-align: center;">{{ $envio->fecha_pro}}</td>
-                                                <td style="text-align: center;">{{ $envio->fecha_ubicacion}}</td>
+                                                <td style="text-align: center;">{{ $envio->ubicacion}}</td>
                                                 
                                                 
                                                 <td class="text-center">
                                                      @if( $envio->estado == 'Pendiente')
                                                     <span class="badge badge-danger">{{ $envio->estado }}</span>
                                                  @else 
-                                                    <span class="badge badge-danger">{{ $envio->estado}}</span>
+                                                    <span class="badge badge-success">{{ $envio->estado}}</span>
                                                     @endif
                                                 </td>
                                                

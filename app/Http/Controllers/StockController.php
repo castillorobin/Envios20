@@ -1085,7 +1085,8 @@ $nota = " ";
         $reenvi = $request->get('reenvi') ;
         $nota = $request->get('nota') ;
         $idenvio = $request->get('idenvio2') ;
-        $reenvi = $request->get('reenvi') ;
+        $reenvi = $request->get('devolucion') ;
+        $lugar = $request->get('lugar') ;
 
         //dd($idenvio);
 
@@ -1097,11 +1098,12 @@ $nota = " ";
         $entrega->comercio = $envio->comercio;
         $entrega->guia = $envio->guia;
         $entrega->destinatario = $envio->destinatario;
-        $entrega->tipo = "Reenvio";
+        $entrega->tipo = "Devolucion";
         $entrega->fecha_pro = $reenvi;
         $entrega->ubicacion = $envio->entrega;
         $entrega->estado = "Pendiente";
         $entrega->nota = $nota;
+        $entrega->lugar = $lugar;
         $entrega->save();
 
 $nota = " ";
@@ -1139,6 +1141,24 @@ $nota = " ";
         ->get();
 
          return view('stocks.detallepick', compact('pedidos'));
+    }
+
+     public function realizado($guia)
+    {
+     
+
+         $ticketc = Orden::find($guia);
+        $ticketc->estado = "Realizado";
+        
+        $ticketc->save();
+
+
+        $nota = " ";
+         $envios = Orden::whereDate('fecha_pro', Carbon::tomorrow())->get();
+
+         return view('stocks.listapi', compact('envios', 'nota'));
+
+      //   return view('stocks.detallepick', compact('pedidos'));
     }
 
     
