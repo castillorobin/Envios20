@@ -1044,8 +1044,7 @@ if($pedidos->isEmpty()){
         //dd($idenvio);
 
         $envio = Envio::find($idenvio);
-        $envio->estado = "Reenviado";
-        $envio->save();
+        
 
 
        // dd($envio->comercio);
@@ -1091,9 +1090,6 @@ $nota = " ";
         //dd($idenvio);
 
         $envio = Envio::find($idenvio);
-        $envio->estado = "Reenviado";
-        $envio->save();
-
 
        // dd($envio->comercio);
 
@@ -1125,6 +1121,24 @@ $nota = " ";
 
          return view('stocks.generarpdatos', compact('pedidos', 'nota'));
 
+    }
+
+
+    public function listapi()
+    {
+        $nota = " ";
+         $envios = Orden::whereDate('fecha_pro', Carbon::tomorrow())->get();
+
+         return view('stocks.listapi', compact('envios', 'nota'));
+    }
+
+     public function detallepick($guia)
+    {
+      $pedidos = Orden::where('guia', $guia)
+        
+        ->get();
+
+         return view('stocks.detallepick', compact('pedidos'));
     }
 
     

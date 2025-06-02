@@ -292,6 +292,10 @@ Route::get('/stocks/generarpdatos', [App\Http\Controllers\StockController::class
 Route::get('/stocks/guardarreenvio', [App\Http\Controllers\StockController::class, 'guardarreenvio'] )->name('guardarreenvio');
 Route::get('/stocks/guardardevol', [App\Http\Controllers\StockController::class, 'guardardevol'] )->name('guardardevol');
 
+Route::get('/stocks/listapi', [App\Http\Controllers\StockController::class, 'listapi'] )->name('listapi');
+
+Route::get('/stocks/detallepick/{id}', [App\Http\Controllers\StockController::class, 'detallepick'] )->name('detallepick');
+
 
 
 //Rutas

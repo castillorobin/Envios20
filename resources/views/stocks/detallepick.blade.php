@@ -180,7 +180,7 @@ if (searchText == "") {
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Generar picking</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Detalle de picking</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -203,7 +203,7 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Generar picking</li>
+                                <li class="breadcrumb-item text-muted">Detalle de picking</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -232,10 +232,7 @@ if (searchText == "") {
                                     
                                                    
                                          <div class="col-auto ">
-                                            <label for="guia" class="visually-hidden">Ticket</label>
-                                            <input type="text" class="form-control " id="searchTerm" name="searchTerm" placeholder="Buscar" autofocus onkeyup="doSearch()">
-                                            <input type="text" value="Departamental" class="visually-hidden" name="asignar" id="asignar">
-                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar">
+                                            
                                         </div>
                                        
                                    
@@ -357,27 +354,15 @@ if (searchText == "") {
                                                  
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
-                                               ESTADO:  
+                                               Orden:  
                                                 </td>
-                                                <td style="width:300px; font-size: 15px;"> 
-                                                    @if( $pedido->estado == 'No entregado')
-                                                                <span class="badge badge-danger" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Creado')
-                                                                <span class="badge badge-warning" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Entregado')
-                                                                <span class="badge badge-success" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'En ruta')
-                                                                <span class="badge badge-info" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Reprogramado')
-                                                                <span class="badge badge-dark" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @elseif( $pedido->estado == 'Devuelto al comercio')
-                                                                <span class="badge badge-primary" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @else
-                                                                <span class="badge badge-light" style="font-size: 15px;">{{ $pedido->estado }}</span>
-                                                                @endif
+                                                <td style="width:300px; font-size: 20px;"> 
+                                                   
+                                                    <span style="background-color: yellow">{{ $pedido->tipo }}</span>
+                                                   
                                                 </td>
-                                                <td style="width:150px; font-weight: bolder;">TARIMA:</td>
-                                                <TD style="width:100px;">{{$pedido->tarima}} </TD>
+                                                <td style="width:200px; font-weight: bolder;">FECHA:</td>
+                                                <TD style="width:150px;background-color: yellow;" class="text-center">{{$pedido->fecha_pro}} </TD>
                                                 
                                             </tr>
                                             
@@ -386,11 +371,11 @@ if (searchText == "") {
                                                 
                                             <div class="col-12 mb-3 ;" >
                                         
-                                        <button type="button" class="btn btn-secondary mb-3 edit2" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_2">Devolución</button>
+                                        <button type="button" class="btn btn-secondary mb-3 edit2" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_2">Cancelar</button>
                                     
                                    
                                      
-                                        <button type="button" class="btn btn-primary edit mb-3" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Reenvio</button>
+                                        <button type="button" class="btn btn-primary edit mb-3" value="{{$pedido->id}}" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Realizado</button>
                                     
                                     </div>
                                                 </div>
