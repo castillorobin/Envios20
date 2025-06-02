@@ -59,6 +59,102 @@
     document.getElementById("rangolimp").value = subtotal ;
   };
 </script>
+
+
+
+<script>
+    function doSearch()
+
+{
+
+const tableReg = document.getElementById('kt_ecommerce_report_shipping_table');
+
+const searchText = document.getElementById('searchTerm').value.toLowerCase();
+
+let total = 0;
+
+
+
+// Recorremos todas las filas con contenido de la tabla
+
+for (let i = 1; i < tableReg.rows.length; i++) {
+
+    // Si el td tiene la clase "noSearch" no se busca en su cntenido
+
+    if (tableReg.rows[i].classList.contains("noSearch")) {
+
+        continue;
+
+    }
+
+
+
+    let found = false;
+
+    const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
+
+    // Recorremos todas las celdas
+
+    for (let j = 0; j < cellsOfRow.length && !found; j++) {
+
+        const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
+
+        // Buscamos el texto en el contenido de la celda
+
+        if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
+
+            found = true;
+
+            total++;
+
+        }
+
+    }
+
+    if (found) {
+
+        tableReg.rows[i].style.display = '';
+
+    } else {
+
+       
+
+        tableReg.rows[i].style.display = 'none';
+
+    }
+
+}
+
+
+
+// mostramos las coincidencias
+
+const lastTR=tableReg.rows[tableReg.rows.length-1];
+
+const td=lastTR.querySelector("td");
+
+lastTR.classList.remove("hide", "red");
+
+if (searchText == "") {
+
+    lastTR.classList.add("hide");
+
+} else if (total) {
+
+    td.innerHTML="";
+
+} else {
+
+    lastTR.classList.add("red");
+
+    td.innerHTML="";
+
+}
+
+}
+</script>
+
+
 <body>
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
@@ -115,11 +211,12 @@
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <div class="d-flex align-items-center position-relative my-1">
-                                       
-
-                                       
-                                    </div>
+                                    <div class="col-auto ">
+                                            <label for="guia" class="visually-hidden">Ticket</label>
+                                            <input type="text" class="form-control " id="searchTerm" name="searchTerm" placeholder="Buscar" autofocus onkeyup="doSearch()">
+                                            <input type="text" value="Departamental" class="visually-hidden" name="asignar" id="asignar">
+                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar">
+                                        </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
