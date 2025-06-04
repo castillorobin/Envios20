@@ -1055,7 +1055,7 @@ if($pedidos->isEmpty()){
         $entrega->destinatario = $envio->destinatario;
         $entrega->tipo = "Reenvio";
         $entrega->fecha_pro = $reenvi;
-        $entrega->ubicacion = $envio->entrega;
+        $entrega->ubicacion = $envio->agencia;
         $entrega->estado = "Pendiente";
         $entrega->nota = $nota;
         $entrega->save();
@@ -1100,7 +1100,7 @@ $nota = " ";
         $entrega->destinatario = $envio->destinatario;
         $entrega->tipo = "Devolucion";
         $entrega->fecha_pro = $reenvi;
-        $entrega->ubicacion = $envio->entrega;
+        $entrega->ubicacion = $envio->agencia;
         $entrega->estado = "Pendiente";
         $entrega->nota = $nota;
         $entrega->lugar = $lugar;
