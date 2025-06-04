@@ -936,10 +936,7 @@
                                     {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
-                                    <tr>
-                                        <td>Nombre quien recibe: </td>
-                                        <td>{{ $histo->nombre }}</td>
-                                    </tr>
+                                    
                                     <tr>
                                         <td>Nota: </td>
                                         <td>{{ $histo->nota }}</td>
@@ -948,7 +945,83 @@
 
 
 
-                                <!-- Termina Devuelto -->
+                                <!-- Termina Reenvio -->
+
+
+                                @if($histo->estado == "Devolucion")
+                                    <tr>
+                                        <td style="width: 250px; padding-top: 15px;">
+                                    <h3 >Devolucion</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha de devolucion: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td>Nota: </td>
+                                        <td>{{ $histo->nota }}</td>
+                                    </tr>
+                                    @endif
+
+
+
+                                <!-- Termina Devolucion -->
+
+                                
+                                @if($histo->estado == "Realizado")
+                                    <tr>
+                                        <td style="width: 250px; padding-top: 15px;">
+                                    <h3 >Realizado</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td>Nota: </td>
+                                        <td>{{ $histo->nota }}</td>
+                                    </tr>
+                                    @endif
+
+
+
+                                <!-- Termina Devolucion -->
 
                                    
                                     @endforeach
