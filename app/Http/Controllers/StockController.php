@@ -1020,6 +1020,7 @@ if($pedidos->isEmpty()){
 
         $pedidos = Envio::where('ticketc', $guia)
         ->where('estado', "No entregado")
+        ->where('ordenado', 0)
         ->get();
 
          if($pedidos->isEmpty()){
@@ -1044,10 +1045,18 @@ if($pedidos->isEmpty()){
         //dd($idenvio);
 
         $envio = Envio::find($idenvio);
-        
-
+        $envio->ordenado = 1;
+        $envio->save();
 
        // dd($envio->comercio);
+
+        $ticketc = Orden::where('guia', $envio->guia)
+        ->get();
+
+        foreach ($ticketc as $tick) {
+          $tickid = $tick->id;
+            Orden::find($tickid)->delete();
+        }
 
         $entrega = new Orden();
         $entrega->comercio = $envio->comercio;
@@ -1066,6 +1075,7 @@ $nota = " ";
 
         $pedidos = Envio::where('ticketc', $tick)
         ->where('estado', "No entregado")
+        ->where('ordenado', 0)
         ->get();
 
          if($pedidos->isEmpty()){
@@ -1074,6 +1084,15 @@ $nota = " ";
             return view('stocks.generarp', compact('nota'));
 
         }
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $idenvio;
+            $hesta->estado = "Reenvio";
+            $hesta->usuario = $usuario;
+            $hesta->nota = $nota;
+            $hesta->freprogra = $reenvi;
+            $hesta->save();
+
 
          return view('stocks.generarpdatos', compact('pedidos', 'nota'));
 
@@ -1091,8 +1110,17 @@ $nota = " ";
         //dd($idenvio);
 
         $envio = Envio::find($idenvio);
-
+        $envio->ordenado = 1;
+        $envio->save();
        // dd($envio->comercio);
+
+ $ticketc = Orden::where('guia', $envio->guia)
+        ->get();
+
+        foreach ($ticketc as $tick) {
+          $tickid = $tick->id;
+            Orden::find($tickid)->delete();
+        }
 
         $entrega = new Orden();
         $entrega->comercio = $envio->comercio;
@@ -1112,6 +1140,7 @@ $nota = " ";
 
         $pedidos = Envio::where('ticketc', $tick)
         ->where('estado', "No entregado")
+        ->where('ordenado', 0)
         ->get();
 
          if($pedidos->isEmpty()){
@@ -1120,6 +1149,15 @@ $nota = " ";
             return view('stocks.generarp', compact('nota'));
 
         }
+
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $idenvio;
+            $hesta->estado = "Devolucion";
+            $hesta->usuario = $usuario;
+            $hesta->nota = $nota;
+            $hesta->freprogra = $reenvi;
+            $hesta->save();
 
          return view('stocks.generarpdatos', compact('pedidos', 'nota'));
 
@@ -1145,13 +1183,30 @@ $nota = " ";
 
      public function realizado($guia)
     {
-     
 
+     
          $ticketc = Orden::find($guia);
         $ticketc->estado = "Realizado";
-        
         $ticketc->save();
 
+        $idguia = $ticketc->guia;
+        $pedido = Envio::where('guia', $idguia)->get();
+        $pedidoid = $pedido[0]->id;
+        //dd($pedidoid);
+        $envi = Envio::find($pedidoid);
+        if ($ticketc->tipo == "Reenvio") {
+           $envi->estado = "Reenvio";
+        }else {
+            $envi->estado = "Devolucion";
+        }
+
+        $envi->save();
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $pedidoid;
+            $hesta->estado = "Realizado";
+            $hesta->usuario = $ticketc->usuario;
+            $hesta->save();
 
         $nota = " ";
          $envios = Orden::whereDate('fecha_pro', Carbon::tomorrow())->get();
