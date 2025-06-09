@@ -1204,7 +1204,13 @@ $nota = " ";
 
             $hesta = new Hestado();
             $hesta->idenvio = $pedidoid;
-            $hesta->estado = "Realizado";
+            if ($ticketc->tipo == "Reenvio") {
+           $hesta->estado = "Reenvio";
+        }else {
+            
+            $hesta->estado = "Devolucion";
+        }
+            
             $hesta->usuario = $ticketc->usuario;
             $hesta->save();
 
@@ -1214,6 +1220,40 @@ $nota = " ";
          return view('stocks.listapi', compact('envios', 'nota'));
 
       //   return view('stocks.detallepick', compact('pedidos'));
+    }
+
+
+    public function filtrarpicking(Request $request)
+    {
+        $estado = $request->input('estado');
+        $ticket = $request->input('ticketc');
+        
+
+         if ($estado !="todos"){
+            $pedidos = Envio::where('ticketc', $ticket)
+        ->where('estado', $estado)
+        ->get();
+         }else{
+            $pedidos = Envio::where('ticketc', $ticket)
+       
+        ->get();
+         }
+
+$numti = $ticket;
+
+if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "No hay envios con el estado seleccionado"; 
+
+            return view('stocks.generarpdatos2', compact('numti', 'nota')); 
+
+        }
+
+
+        $nota = " ";
+
+         return view('stocks.generarpdatos', compact('pedidos', 'nota'));
+        
     }
 
     

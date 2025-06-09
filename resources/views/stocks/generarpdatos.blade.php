@@ -255,7 +255,7 @@ if (searchText == "") {
                                     </div>
                                     <!--begin::Filter-->
                                  
-                                      <form action="stocks/filtrarnotre" method="GET"  >
+                                      <form action="stocks/filtrarpicking" method="GET"  >
                                         @method('GET') 
                                       
                                 

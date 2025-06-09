@@ -987,7 +987,7 @@
 
 
 
-                                <!-- Termina Devolucion -->
+                                <!-- Termina Devolucion 
 
                                 
                                 @if($histo->estado == "Realizado")
@@ -1018,7 +1018,7 @@
                                         <td>{{ $histo->nota }}</td>
                                     </tr>
                                     @endif
-
+-->
 
 
                                 <!-- Termina Devolucion -->
