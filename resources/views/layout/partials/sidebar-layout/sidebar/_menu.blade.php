@@ -564,7 +564,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Asignar un estado</span>
+							<span class="menu-title">Asignar No retirado</span>
 						</a>
 					</div>
 
