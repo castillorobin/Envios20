@@ -1218,7 +1218,13 @@ $nota = " ";
         
         ->get();
 
-         return view('stocks.detallepick', compact('pedidos'));
+        $envio = Envio::where('guia', $guia)
+        
+        ->get();
+
+
+
+         return view('stocks.detallepick', compact('pedidos', 'envio'));
     }
 
      public function realizado($guia)

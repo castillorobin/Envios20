@@ -351,7 +351,7 @@ if (searchText == "") {
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                TIPO:  
                                                 </td>
-                                                <td style="width:300px;"> {{$pedido->tipo}}</td>
+                                                <td style="width:300px;"><span class="badge text-bg-dark" style="padding:10px;"> {{$pedido->tipo}}</span></td>
                                                 <td style="width:150px; font-weight: bolder;">CAJA:</td>
                                                 <TD style="width:100px;">{{$pedido->caja}} </TD>
                                                  
