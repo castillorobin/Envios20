@@ -210,6 +210,7 @@ class StockController extends Controller
 
     public function guardarasignar(Request $request)
     {
+       
         $usuario = $request->get('usuario');
         $agencia = $request->get('agencia');
         $cajasuelto = $request->get('cajasuelto');
@@ -785,6 +786,7 @@ class StockController extends Controller
 
     public function guardarestado(Request $request)
     {
+       // dd("Aqui entro");
        
         $agencia = $request->get('agencia');
         $cajasuelto = $request->get('cajasuelto');
@@ -797,6 +799,9 @@ class StockController extends Controller
         //$envio = Envio::find($id);
         //$envio->cambiando = $actual;
         
+        $racks = $request->get('racks');
+        $nivels = $request->get('nivels');
+        $tarimas = $request->get('tarimas');
        
         $estado = $request->get('estado') ;
         $actual = $request->get('actual2') ;
@@ -805,8 +810,43 @@ class StockController extends Controller
         
         foreach($envios as $envio){
 
+
+
+             $envio->ubicacion = $cajasuelto;
+
+            if($cajasuelto=="caja"){
+                $envio->rack = $rack;
+            $envio->nivel = $nivel;
+            $envio->caja = $caja;
+            $envio->tarima = $tarima;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
+            } 
+
+            if($cajasuelto=="suelto"){
+            $envio->rack = $racks;
+            $envio->nivel = $nivels;
+            $envio->caja = NULL;
+            $envio->tarima = $tarimas;
+            $envio->agencia = $agencia;
+            $envio->ubicacion = $cajasuelto;
+            } 
+
+
+
+
+
+
+
+
+
+
+
+
             $envio->estado = $estado;
-            //$envio->estado = "En ruta";
+
+            /*
+            
             if($caja){
                 $envio->caja = $caja;
                 $envio->agencia = $agencia;
@@ -829,7 +869,7 @@ class StockController extends Controller
                 $envio->agencia = $agencia;
                 $envio->ubicacion = $cajasuelto;
             }
-
+*/
             $envio->save();
         }
 
