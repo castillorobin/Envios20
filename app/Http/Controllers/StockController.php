@@ -837,12 +837,6 @@ class StockController extends Controller
 
 
 
-
-
-
-
-
-
             $envio->estado = $estado;
             $envio->ordenado = 0;
 

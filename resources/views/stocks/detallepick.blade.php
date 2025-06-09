@@ -284,8 +284,8 @@ if (searchText == "") {
                                                 </td>
                                                 <td style="width:300px;"> 
                                                     <a href="/envios/detalle/{{$pedidos[0]->guia}}" class="text-gray-900 text-hover-primary">{{$pedidos[0]->guia}} </a></td>
-                                                <td style="width:150px; font-weight: bolder;">UBICACION:</td>
-                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$envio[0]->agencia}} </span></TD>
+                                                 <td style="width:200px; font-weight: bolder;">TIPO DE UBICACION:</td>
+                                                <TD style="width:100px;">{{$envio[0]->ubicacion}} </TD>
                                                 <td style="width:500px; " class="text-center" rowspan="5">
                                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-200px h-200px" style="background-image: url(/fotos/{{$pedidos[0]->foto1}})"></div>
@@ -304,24 +304,34 @@ if (searchText == "") {
                                                COMERCIO:  
                                                 </td>
                                                 <td style="width:300px;"> {{$pedidos[0]->comercio}}</td>
-                                                <td style="width:200px; font-weight: bolder;">TIPO DE UBICACION:</td>
-                                                <TD style="width:100px;">{{$envio[0]->ubicacion}} </TD>
+                                                <td style="width:150px; font-weight: bolder;">RACK:</td>
+                                                <TD style="width:100px;">{{$envio[0]->rack}} </TD>
+                                                 
                                                   
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                DESTINATARIO:  
                                                 </td>
                                                 <td style="width:300px;"> {{$pedidos[0]->destinatario}}</td>
-                                                <td style="width:150px; font-weight: bolder;">RACK:</td>
-                                                <TD style="width:100px;">{{$envio[0]->rack}} </TD>
+                                                <td style="width:150px; font-weight: bolder;">CAJA:</td>
+                                                <TD style="width:100px;">{{$envio[0]->caja}} </TD>
                                                  
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
                                                DIRECCION:  
                                                 </td>
                                                 <td style="width:300px;"> {{$envio[0]->direccion}}</td>
+
                                                 <td style="width:150px; font-weight: bolder;">NIVEL:</td>
                                                 <TD style="width:100px;">{{$envio[0]->nivel}} </TD>
+                                                
+                                            </tr>
+                                             </tr>
+                                                 <tr><td style="width:150px; font-weight: bolder;">UBICACION:</td>
+                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$envio[0]->agencia}} </span></TD>
+                                                
+                                                <td style="width:150px; font-weight: bolder;">TARIMA:</td>
+                                                <TD style="width:100px;">{{$envio[0]->tarima}} </TD>
                                                 
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
