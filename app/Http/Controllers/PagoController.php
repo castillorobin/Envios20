@@ -215,6 +215,16 @@ class PagoController extends Controller
         $envios = Envio::where('ticketc', $comercio)
         ->where('estado', $estado)->get();
 
+
+        if($estado == "todos")
+       {
+        $envios = Envio::where('ticketc', $comercio)->get();
+
+       }else{
+         $envios = Envio::where('ticketc', $comercio)
+        ->where('estado', $estado)->get();
+       }
+
        // $enviop = Envio::where('ticketc', $comercio)
       //  ->where('estado', $estado)->exists();
 /*

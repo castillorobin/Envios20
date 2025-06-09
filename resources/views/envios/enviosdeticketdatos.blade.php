@@ -213,7 +213,7 @@ if (searchText == "") {
                                         <div class="col-md-7 align-self-center mb-3">
                                         <select class="form-select form-select-solid" data-control="select2" name="filtro" id="filtro" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
                                             <option></option>
-                                            
+                                            <option value="todos">Todos</option>
                                             <option value="Creado">Creado</option>
                                             <option value="En ruta">En ruta</option>
                                             <option value="Entregado">Entregado</option>
