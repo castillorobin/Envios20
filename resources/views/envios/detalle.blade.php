@@ -913,17 +913,17 @@
                                 @if($histo->estado == "Reenvio")
                                     <tr>
                                         <td style="width: 250px; padding-top: 15px;">
-                                    <h3 >Reenvio</h3>
+                                    <h3 >Reenvio preparado</h3>
                                     </td>
                                     <td></td>
                                     </tr>
                                   <tr>
                                     <td> 
 
-                                    <span style="font-size:14px;">Fecha de reenvio: 
+                                    <span style="font-size:14px;">Fecha de preparacion: 
                                     </td>
                                     <td>
-                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
                                     
@@ -934,10 +934,10 @@
                                     <tr>
                                     <td> 
 
-                                    <span style="font-size:14px;">Fecha: 
+                                    <span style="font-size:14px;">Fecha de reenvio: 
                                     </td>
                                     <td>
-                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
                                     </td>
                                     </tr>
                                     
@@ -955,17 +955,17 @@
                                 @if($histo->estado == "Devolucion")
                                     <tr>
                                         <td style="width: 250px; padding-top: 15px;">
-                                    <h3 >Devolucion</h3>
+                                    <h3 >Devolucion preparada</h3>
                                     </td>
                                     <td></td>
                                     </tr>
                                   <tr>
                                     <td> 
 
-                                    <span style="font-size:14px;">Fecha de devolucion: 
+                                    <span style="font-size:14px;">Fecha de preparacion: 
                                     </td>
                                     <td>
-                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
                                     </td>
                                     </tr>
                                     
@@ -976,10 +976,10 @@
                                     <tr>
                                     <td> 
 
-                                    <span style="font-size:14px;">Fecha: 
+                                    <span style="font-size:14px;">Fecha de devolucion: 
                                     </td>
                                     <td>
-                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
                                     </td>
                                     </tr>
                                    

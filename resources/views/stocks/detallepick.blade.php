@@ -342,35 +342,41 @@ if (searchText == "") {
                                                 <TD style="width:100px;">{{$envio[0]->caja}} </TD>
                                                  
                                             </tr>
-                                                 <tr><td style="width:200px; font-weight: bolder;">
-                                               Orden:  
-                                                </td>
-                                                <td style="width:300px; font-size: 20px;"> 
-                                                   
-                                                    <span style="background-color: yellow">{{ $pedidos[0]->tipo }}</span>
-                                                   
-                                                </td>
-                                                <td style="width:200px; font-weight: bolder;">FECHA:</td>
-                                                <TD style="width:150px;background-color: yellow;" class="text-center">{{$pedidos[0]->fecha_pro}} </TD>
-                                                
-                                            </tr>
+                                                 
                                             
                                                 </table>
 
+                                            
+                                                </div>
+
                                                 
-                                            <div class="col-12 mb-3 ;" >
+                                                </div>
+
+ <div style="border: 1px solid;border-color: #edece8;border-radius: 10px; margin-top: 5px; padding:15px; width: 100%;">
+                                                      <div> 
+                                                       <span style="width:250px;background-color: yellow; font-size: 40px; font-weight: bolder;"> Orden: {{ $pedidos[0]->tipo }} </span>
+                                                        </div>
+
+                                                        <div> 
+                                                       <span style="width:250px; font-size: 40px; "> Fecha programada: </span> <span style="width:250px; font-size: 40px; font-weight: bolder;">{{ $pedidos[0]->fecha_pro }} </span>
+                                                        </div>
+                                                        <div> 
+                                                       <span style="width:250px; font-size: 40px; "> Nota: </span> <span style="width:250px; font-size: 40px; font-weight: bolder;">{{ $pedidos[0]->nota }} </span>
+                                                        </div>
+
+                                            <div class="col-12 mb-12" >
                                         
-                                        <button type="button" class="btn btn-secondary mb-3 edit2" style="float: right; margin-left:10px; margin-top:20px" data-bs-toggle="modal" data-bs-target="#kt_modal_2">Cancelar</button>
+                                        <button type="button" class="btn btn-secondary  edit2" style="float: right; margin-left:10px; " data-bs-toggle="modal" data-bs-target="#kt_modal_2">Cancelar</button>
                                     
                                    <a href="/stocks/realizado/{{$pedidos[0]->id}}">
                                      
-                                        <button type="button" class="btn btn-primary edit mb-3"  style="float: right; margin-left:10px; margin-top:20px" >Realizado</button>
+                                        <button type="button" class="btn btn-primary edit "  style="float: right; margin-left:10px; " >Realizado</button>
                                     </a>
                                     </div>
-                                                </div>
-                                                </div>
 
 
+
+                                                    </div>
 
 
                                            
