@@ -357,6 +357,12 @@ if (searchText == "") {
                                                        <span style="width:250px;background-color: yellow; font-size: 40px; font-weight: bolder;"> Orden: {{ $pedidos[0]->tipo }} </span>
                                                         </div>
 
+                                                        @if ($pedidos[0]->tipo = "Devolucion")
+                                                            <div> 
+                                                       <span style="width:250px; font-size: 40px; "> Lugar de Devolucion: </span> <span style="width:250px; font-size: 40px; font-weight: bolder;">{{ $pedidos[0]->lugar }} </span>
+                                                        </div>
+                                                        @endif
+
                                                         <div> 
                                                        <span style="width:250px; font-size: 40px; "> Fecha programada: </span> <span style="width:250px; font-size: 40px; font-weight: bolder;">{{ $pedidos[0]->fecha_pro }} </span>
                                                         </div>
