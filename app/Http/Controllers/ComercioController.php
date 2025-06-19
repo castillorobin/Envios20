@@ -43,7 +43,7 @@ class ComercioController extends Controller
         $comercio->agencia = $request->input('agencia_registro');
         $comercio->correo = $request->input('email');
         $comercio->nota = $request->input('nota');
-        $comercio->titular = $request->input('titular');
+        $comercio->titular = $request->input('ftitu');
         $comercio->banco = $request->input('banco');
         $comercio->cuenta = $request->input('cuenta');
         $comercio->dui = $request->input('dui');
