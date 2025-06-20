@@ -97,11 +97,7 @@
                                 <div class="card-title">
                                     <!--begin::Search-->
                                     <div class="d-flex align-items-center position-relative my-1">
-                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-                                        <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" />
+                                        
                                     </div>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
@@ -112,7 +108,7 @@
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
                                     <!--begin::Daterangepicker-->
-                                    <input class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" disabled/>
+                                    
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter--> 
                                     <div class="w-150px">
@@ -122,36 +118,7 @@
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
-                                        <i class="ki-duotone ki-exit-up fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>Exportar Reporte</button>
-                                    <!--begin::Menu-->
-                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="copy">Copy to clipboard</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="csv">Exportar a CSV</a>
-                                        </div>
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
+                                    
                                     <!--end::Menu-->
                                     <!--end::Export dropdown-->
                                 </div>
@@ -162,49 +129,13 @@
                             <div class="card-body pt-0" style="background-color:white; min-height: 450px;  ">
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
-                                        <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th># De guia</th>
-                                                <th>Comercio</th>
-                                                <th>Destinatario</th>
-                                                <th>Dirección </th>
-                                                <th class="text-center">Tipo de envío</th>
-                                                <th class="text-center">Estado del envío</th>
-                                                <th class="text-center">Fecha de entrega</th>
-                                                <th class="text-center">Estado del pago</th>
-                                                <th class="text-center">Precio del paquete</th>
-                                                <th class="text-center">Precio de envío</th>
-                                                <th>Total </th>
-                                                <th>Nota</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="fw-semibold text-black-400">
-
-                                            <td><a href="#" class="text-gray-900 text-hover-primary"></a></td>
-                                            <td><a href="#" class="text-gray-900 text-hover-primary"> </a></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td></td>
-                                            <td class="text-star"><span class="badge badge-light-success"></span></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-
-
-                                            </tr>
-                                        </tbody>
-                                    </table>
-
+                                    
                                 </div>
                                 <br>
                                 <!--end::Table-->
                                 <div class="row justify-content-end">
                                     <div class="col-auto align-self-end text-end">
-                                        <button type="submit" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
+                                       
                                     </div>
                                 </div>
                                 <div class="modal bg-body fade" tabindex="-1" id="kt_modal_2">
