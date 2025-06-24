@@ -62,6 +62,12 @@ class ComercioController extends Controller
 
     }
 
+     public function vercomercio($id)
+    {
+        $comercio = Comercio::find($id);
+        return view('comercio.vercomercio', compact('comercio'));
+    }
+
     /**
      * Display the specified resource.
      */

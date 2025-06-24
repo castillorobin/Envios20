@@ -178,6 +178,7 @@ Route::get('cobro/imprimir', [App\Http\Controllers\CobroController::class, 'impr
 Route::get('comercio', [App\Http\Controllers\ComercioController::class, 'index'] )->name('indexco') ;
 Route::get('comercio/crearcomercio', [App\Http\Controllers\ComercioController::class, 'create'] )->name('createco') ;
 Route::get('comercio/guardar', [App\Http\Controllers\ComercioController::class, 'store'] )->name('storeco') ;
+Route::get('comercio/vercomercio/{id}', [App\Http\Controllers\ComercioController::class, 'vercomercio'] )->name('vercomercio') ;
  
 //facturacion - Pago
 Route::get('listapagos', [App\Http\Controllers\PagoController::class, 'index'] )->name('indexpago') ;

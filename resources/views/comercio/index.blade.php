@@ -247,7 +247,7 @@
 
 
                                             <tr>
-                                                <td><a href="#" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
+                                                <td><a href="/comercio/vercomercio/{{$comercio->id}}" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
                                                 <td>{{$comercio->titular}}</td>
                                                 <td>{{$comercio->comercio}}</td>
                                                 <td>{{$comercio->telefono}}</td>
