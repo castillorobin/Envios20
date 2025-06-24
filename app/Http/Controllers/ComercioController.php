@@ -68,6 +68,42 @@ class ComercioController extends Controller
         return view('comercio.vercomercio', compact('comercio'));
     }
 
+     public function editando(Request $request)
+    {
+        $id = $request->input('idco');
+
+        $comercio = Comercio::find($id);
+        $comercio->titular = $request->input('ftitu');
+        $comercio->comercio = $request->input('fname');
+        $comercio->direccion = $request->input('direccion');
+        $comercio->telefono = $request->input('telefono');
+        $comercio->whatsapp = $request->input('whatsapp');
+        $comercio->f_alta = $request->input('fecha_alta');
+        $comercio->f_baja = $request->input('fecha_baja');
+        $comercio->tipo = $request->input('tipo');
+        $comercio->estado = $request->input('estado');
+        $comercio->agencia = $request->input('agencia_registro');
+        $comercio->correo = $request->input('email');
+        $comercio->nota = $request->input('nota');
+        $comercio->titular = $request->input('ftitu');
+        $comercio->banco = $request->input('banco');
+        $comercio->cuenta = $request->input('cuenta');
+        $comercio->dui = $request->input('dui');
+        $comercio->tipo_cuenta = $request->input('tipo_cuenta');
+        $comercio->chivo = $request->input('chivo');
+        $comercio->tigo = $request->input('tigo');
+        $comercio->empresa = $request->input('empresa');
+        $comercio->tipo_contri = $request->input('tipo_contribuyente');
+        $comercio->giro = $request->input('giro');
+        $comercio->iva = $request->input('nit');
+        $comercio->nrc = $request->input('ncr');
+        $comercio->d_fiscal = $request->input('direccionf');
+
+        $comercio->save();
+
+        return view('comercio.vercomercio', compact('comercio'));
+    }
+
     /**
      * Display the specified resource.
      */

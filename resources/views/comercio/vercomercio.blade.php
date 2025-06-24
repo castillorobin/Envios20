@@ -311,6 +311,8 @@
  <form action="/comercio/editando" method="POST" id="kt_account_profile_details_form" class="form">
                             @csrf
                             @method('GET')
+
+                            <input type="text" name="idco" value="{{ $comercio->id }} " hidden>
                             <div class="card-body border-top p-9">
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del titular</label>
@@ -367,7 +369,7 @@
                                     </div>
                                     <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado de comercio</label>
                                     <div class="col-lg-3">
-                                        <select name="Estado_comercio" id="Estado_comercio" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
+                                        <select name="estado" id="Estado_comercio" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Estado de comercioo" required>
                                         <option value="{{ $comercio->estado }}">{{ $comercio->estado }}   </option> 
                                         <option value="Alta">Alta</option>{{ $comercio->estado }}
                                             <option value="Baja">Baja</option>
