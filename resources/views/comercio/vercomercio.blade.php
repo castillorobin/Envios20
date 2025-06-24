@@ -7,6 +7,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('assets/css/perfil.css') }}">
+    <style>
+        span {
+            font-weight: bolder;
+        }
+    </style>
 </head>
 
 <body>
@@ -124,9 +129,177 @@
                 
 <!--begin::Additional details-->
 <div class="d-flex flex-column gap-5 mt-7">
-    <!--begin::Company name-->
+    <!--begin::Informacion-->
    Información
-    <!--end::Notes-->
+
+
+
+
+
+
+                            <div class="card-body border-top p-9">
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del titular</label>
+                                    <div class="col-lg-8">
+                                     <span>{{ $comercio->titular }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
+                                    <div class="col-lg-8">
+                                        <span>{{ $comercio->comercio }}</span>
+                                    </div>
+                                </div>
+
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Dirección del comercio</label>
+                                    <div class="col-lg-8">
+                                        <span>{{ $comercio->direccion }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Telefono</label>
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->telefono }}</span>
+                                    </div>
+
+                                    <label class="col-lg-2 col-form-label">WhatsApp</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->whatsapp }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->f_alta }}</span>
+                                    </div>
+
+                                    <label class="col-lg-2 col-form-label">Fecha de baja</label>
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->f_baja }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Tipo de comercio</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->tipo }}</span>
+                                    </div>
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado de comercio</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->estado }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
+                                    <div class="col-lg-8">
+                                        <span>{{ $comercio->agencia }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Correo Electrónico</label>
+                                    <div class="col-lg-8">
+                                       <span>{{ $comercio->correo }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Nota</label>
+                                    <div class="col-lg-8">
+                                        <span>{{ $comercio->nota }}</span>
+                                    </div>
+                                </div>
+                                <div class="separator my-10"></div>
+                                <h4 class="text-center">
+                                    Datos Bancarios
+                                </h4>
+                                <br>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Nombre del titular de la cuenta</label>
+                                    <div class="col-lg-8">
+                                        <span>{{ $comercio->titular }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Nombre del banco</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->banco }}</span>
+                                    </div>
+                                    <label class="col-lg-2 col-form-label">Numero de cuenta</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->cuenta }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Numero de DUI</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->dui }}</span>
+                                    </div>
+                                    <label class="col-lg-2 col-form-label">Tipo de cuenta</label>
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->tipo_cuenta }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Cuenta de chivo</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->chivo }}</span>
+                                    </div>
+                                    <label class="col-lg-2 col-form-label">Cuenta tigo money</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->tigo }}</span>
+                                    </div>
+                                </div>
+                                <div class="separator my-10"></div>
+                                <h4 class="text-center">
+                                    Datos de la empresa
+                                </h4>
+                                <br>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Nombre de la empresa</label>
+                                    <div class="col-lg-8">
+                                        <span>{{ $comercio->empresa }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Tipo de contribuyente</label>
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->tipo_cuenta }}</span>
+                                    </div>
+                                    <label class="col-lg-2 col-form-label">Giro</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->giro }}</span>
+                                    </div>
+
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Numero de IVA</label>
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->iva }}</span>
+                                    </div>
+                                    <label class="col-lg-2 col-form-label">Numero de regristro (NCR)</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->nrc }}</span>
+                                    </div>
+                                </div>
+                                <div class="row mb-6">
+                                    <label class="col-lg-3 col-form-label">Dirección Fisical</label>
+                                    <div class="col-lg-8">
+                                        <span>{{ $comercio->d_fiscal }}</span>
+                                    </div>
+                                </div>
+                                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                                    <a href="/comercio" class="btn btn-primary btn-active-light-primary me-2">Cancelar</a>
+                                    
+                                </div>
+                            </div>
+                      
+
+
+
+
+
+
+
+    <!--end::Informacion-->
 </div>
 <!--end::Additional details-->            </div>
             <!--end:::Tab pane-->
