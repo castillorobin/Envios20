@@ -159,9 +159,7 @@
                             <!--end::Secondary button-->
                             <!--begin::Primary button-->
                             <div style=" width:1150px;">
-                            @can('comercios-crear')
-                            <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary" style="float: right; ">Agregar</a>
-                            @endcan
+                         
                         </div>
                             <!--end::Primary button-->
                         </div>
@@ -213,6 +211,10 @@
                                         </select>
                                         -->
                                         <!--end::Select2-->
+
+                                         @can('comercios-crear')
+                            <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary" style="float: right; ">Agregar</a>
+                            @endcan
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
