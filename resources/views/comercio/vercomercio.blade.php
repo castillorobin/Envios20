@@ -114,11 +114,6 @@
         </a>
     </li>
 
-     <li class="nav-item" role="presentation">
-        <a class="nav-link text-active-primary d-flex align-items-center pb-4" data-bs-toggle="tab" href="#nota" aria-selected="false" tabindex="-1" role="tab">
-            <i class="fas fa-book"></i>     &nbsp;      Nota
-        </a>
-    </li>
     <!--end:::Tab item-->
 </ul>
 <!--end:::Tabs-->
@@ -654,7 +649,7 @@
         
                     <!--begin::Action-->
             <a href="#" class="btn btn-primary px-6 align-self-center text-nowrap" data-bs-toggle="modal" data-bs-target="#kt_modal_two_factor_authentication"> 
-                Activar            </a>
+                Activar          </a>
             <!--end::Action-->
             </div>
     <!--end::Wrapper-->  
@@ -675,10 +670,7 @@
             <!--end:::Tab pane-->
         </div>
         <!--end::Tab content-->
- <div class="tab-pane fade" id="nota" role="tabpanel">
-             Nota
-            <!--end:::Tab pane-->
-        </div>
+ 
         
     </div>
     <!--end::Card body-->
