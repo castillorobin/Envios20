@@ -544,7 +544,7 @@ $("#pago").prop('disabled',true)
                                             <div class="modal-body">
                                                 <div class="modal-body">
                                                     <div class="row" >
-                                                        <div class="col-lg-7" style="border: 1px solid black; border-radius: 10px; box-shadow: 2px 2px 2px 2px gray ;">
+                                                        <div class="col-lg-7" style="border: 1px solid gray; border-radius: 10px; box-shadow: 2px 2px 2px 2px gray ;">
                                                             <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
                                                                 <h3 style="margin-bottom: 20px;"><i class="ki-duotone ki-badge fs-1 me-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>     Datos del comercio</h3>
                                                               
@@ -684,8 +684,8 @@ $("#pago").prop('disabled',true)
                                                         
                                                           </div>
                                                         <br>
-                                                        <div class="col-lg-5">
-                                                            <div style="border: 2px solid white; border-radius: 30px; padding: 20px;">
+                                                        <div class="col-lg-4">
+                                                            <div class="card card-flush mb-0" data-kt-sticky="true" data-kt-sticky-name="subscription-summary" data-kt-sticky-left="auto" data-kt-sticky-top="150px" data-kt-sticky-animation="false" data-kt-sticky-zindex="95" style="z-index: 95; position: fixed; top: 150px; width: 400px; left: 1150px;" data-kt-sticky-enabled="true" style="border: 2px solid white; border-radius: 30px; padding: 20px;">
 
                                                                 <div class="table-responsive mb-8">
                                                                     <!--begin::Table-->
