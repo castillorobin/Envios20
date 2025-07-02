@@ -25,6 +25,10 @@
         .dataTables_length {
             display: none;
         }
+
+        .sinfondo {
+  background-color: transparent; border: none; outline: none;
+}
 /*
         .dataTables_paginate {
   
@@ -589,26 +593,26 @@ $("#pago").prop('disabled',true)
                             <div class="card-body border-top">
                                 <div class="row mb-4">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del titular</label>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="font-weight: bolder; text-transform: uppercase;">
                                      <span>{{ $comercioset[0]->titular }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->comercio }}</span>
                                     </div>
                                 </div>
 
                                 <div class="row mb-4">
                                     <label class="col-lg-3 col-form-label">Dirección del comercio</label>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->direccion }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-2">
                                     <label class="col-lg-3 col-form-label">Correo Electrónico</label>
-                                    <div class="col-lg-8">
+                                    <div class="col-lg-8" style="font-weight: bolder; ">
                                        <span>{{ $comercioset[0]->correo }}</span>
                                     </div>
                                 </div>
@@ -620,13 +624,13 @@ $("#pago").prop('disabled',true)
 
                                 <div class="row mb-4">
                                     <label class="col-lg-2 col-form-label">Titular de la cuenta</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->titular }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <label class="col-lg-2 col-form-label">Nombre del banco</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->banco }}</span>
                                     </div>
                                     
@@ -634,34 +638,34 @@ $("#pago").prop('disabled',true)
 
                                  <div class="row mb-4">
                                     <label class="col-lg-2 col-form-label">Numero de cuenta</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->cuenta }}</span>
                                     </div>
                                 </div>
 
                                 <div class="row mb-4">
                                     <label class="col-lg-2 col-form-label">Numero de DUI</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->dui }}</span>
                                     </div>
                                    
                                 </div>
                                 <div class="row mb-4">
                                     <label class="col-lg-2 col-form-label">Tipo de cuenta</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4" style="font-weight: bolder; text-transform: uppercase;">
                                        <span>{{ $comercioset[0]->tipo_cuenta }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-4">
                                     <label class="col-lg-2 col-form-label">Cuenta de chivo</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->chivo }}</span>
                                     </div>
                                     
                                 </div>
                                  <div class="row mb-4">
                                   <label class="col-lg-2 col-form-label">Cuenta tigo money</label>
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-4" style="font-weight: bolder; text-transform: uppercase;">
                                         <span>{{ $comercioset[0]->tigo }}</span>
                                     </div>
                                 </div>
@@ -684,8 +688,8 @@ $("#pago").prop('disabled',true)
                                                         
                                                           </div>
                                                         <br>
-                                                        <div class="col-lg-4">
-                                                            <div class="card card-flush mb-0" data-kt-sticky="true" data-kt-sticky-name="subscription-summary" data-kt-sticky-left="auto" data-kt-sticky-top="150px" data-kt-sticky-animation="false" data-kt-sticky-zindex="95" style="z-index: 95; position: fixed; top: 150px; width: 400px; left: 1150px;" data-kt-sticky-enabled="true" style="border: 2px solid white; border-radius: 30px; padding: 20px;">
+                                                        <div class="col-lg-5">
+                                                            <div class="card card-flush mb-0" data-kt-sticky="true" data-kt-sticky-name="subscription-summary" data-kt-sticky-left="auto" data-kt-sticky-top="150px" data-kt-sticky-animation="false" data-kt-sticky-zindex="95" style="z-index: 95; position: fixed; top: 150px; width: 430px; left: 1250px; border: 1px solid gray; border-radius: 10px; box-shadow: 2px 2px 2px 2px gray ; padding: 10px;" data-kt-sticky-enabled="true" >
 
                                                                 <div class="table-responsive mb-8">
                                                                     <!--begin::Table-->
@@ -703,12 +707,36 @@ $("#pago").prop('disabled',true)
                                                                         <tbody>
                                                                          
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
-                                                                                <label for="Cajero">Cajero</label>
-                                                                                <div id="CajeroValidationFeedback" class="invalid-feedback">
-                                                                                    Por favor ingrese el destinatario.
-                                                                                </div>
+                                                                                <div class="row">
+                                                                                    <div class="col-4">
+                                                                                    <label for="Cajero">Cajero</label>
+                                                                                    </div>
+                                                                                
+                                                                                    <div class="col-8">
+                                                                                    <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly style="background-color: transparent; border: none; outline: none; font-weight: bolder; text-transform: uppercase; padding: 0px; " />
+                                                                                    </div>
+                                                                                 </div>
+                                                                               
                                                                             </div>
+
+                                                                            <div class="form-floating col-lg-12 mb-4">
+
+                                                                            <div class="row">
+                                                                                    <div class="col-4">
+                                                                                    <label for="fecha_entrega">Fecha de pago</label>
+                                                                                    </div>
+                                                                                
+                                                                                    <div class="col-8">
+                                                                                    <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly style="background-color: transparent; border: none; outline: none; font-weight: bolder; text-transform: uppercase; padding: 0px; "/>
+                                                                                    </div>
+                                                                                 </div>
+
+                                                                            </div>
+
+
+
+
+
                                                                             <div class="form-floating col-lg-12 mb-4">
                                                                                 <select class="form-select form-select-solid" name="metodo" id="metodo" required>
                                                                                     <option value="Efectivo">Efectivo</option>
@@ -723,13 +751,9 @@ $("#pago").prop('disabled',true)
                                                                                     Por favor seleccione el método de pago.
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
-                                                                                <label for="fecha_entrega">Fecha de entrega</label>
-                                                                                <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
-                                                                                    Por favor seleccione una fecha de entrega.
-                                                                                </div>
-                                                                            </div>
+
+                                                                           
+                                                                            
 
                                                                             <div class="form-floating col-lg-12 mb-4">
                                         
@@ -742,6 +766,12 @@ $("#pago").prop('disabled',true)
                                                                                 </select>
                                                                                 <label class="col-lg-3 col-form-label fw-semibold fs-6">Agencia de registro</label>
                                                                         </div>
+                                                                         <div class="form-floating col-lg-12 mb-4">
+                                                                               
+                                                                                 <span id="stotal" name="stotal" class="form-control form-control-solid" data-kt-pos-element="total">$0.00</span>
+                                                                                <label for="descuento" style="padding-left: 25px;">Subtotal</label>
+                                                                                
+                                                                            </div>
                                                                             <!-- Campo para la cantidad de descuento -->
                                                                             <div class="form-floating col-lg-12 mb-4">
                                                                                 <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0" onClick="this.select()"/>
@@ -750,8 +780,20 @@ $("#pago").prop('disabled',true)
                                                                             </div>
                                                                             <div class="form-floating col-lg-12 mb-4">
                                                                                 <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
-                                                                                <label for="nota" style="padding-left: 25px;">Nota</label>
+                                                                                <label for="nota" style="padding-left: 25px;">Nota de descuento</label>
                                                                             </div>
+                                                                            <div class="row">
+                                                                                <div class="col-12" >
+                                                                                    <label for="descuento" style="padding-left: 25px;">Estado del pago:</label>
+                                                                                    <br>
+                                                                                    <div class="" style="float: right;">                                                                                    
+                                                                                    <label style="padding: 5px;"> Pagado &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <input type="radio" name="payment" value="credit"> </label><br>
+                                                                            <label style="padding: 5px;">Verificado &nbsp;&nbsp; &nbsp; &nbsp;<input type="radio" name="payment" value="paypal"> </label><br>
+                                                                            <label style="padding: 5px;">En revisión &nbsp; &nbsp; &nbsp;<input type="radio" name="payment" value="cash"> </label><br>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            
                                                                             
                                                                         </tbody>
                                                                         <!--end::Table body-->
@@ -759,19 +801,19 @@ $("#pago").prop('disabled',true)
                                                                     <!--end::Table-->
                                                                 </div>
                                                                 <!-- Summary -->
-                                                                <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
+                                                                <div class="d-flex flex-stack rounded-3 p-6 mb-5">
                                                                     <!-- Content -->
-                                                                    <div class="fs-6 fw-bold text-white">
-                                                                        <span class="d-block lh-1 mb-2">Subtotal</span>
-                                                                        <span class="d-block mb-2">Descuento</span>
-                                                                        <span class="d-block fs-2qx lh-1">Total</span>
+                                                                    <div class="fs-6 fw-bold ">
+                                                                        
+                                                                       
+                                                                        <span class="d-block fs-2qx lh-1">Total a pagar</span>
                                                                     </div>
                                                                     <!-- Content -->
-                                                                    <div class="fs-6 fw-bold text-white text-end">
+                                                                    <div class="fs-6 fw-bold text-end">
                                                                         
-                                                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
-                                                                        <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$0.00</span>
+                                                                        
+                                                        
+                                                                      <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$0.00</span>
                                                                        
                                                                         
                                                                         
@@ -779,21 +821,7 @@ $("#pago").prop('disabled',true)
                                                                 </div>
                                                                 <!-- End of Summary -->
                                                                 <!-- Payment and Change -->
-                                                                <div class="row justify-content-end">
-                                                                    <label class="col-lg-3 col-form-label ">Pago</label>
-                                                                    <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="entrega" id="entrega" value="0.00" onClick="this.select()"/>
-                                                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
-                                                                    </div>
-                                                                </div>
-                                                                <br>
-                                                                <div class="row justify-content-end">
-                                                                    <label class="col-lg-3 col-form-label ">Cambio</label>
-                                                                    <div class="col-lg-5">
-                                                                        <input type="text" class="form-control form-control-solid" name="cambio" id="cambio" value="0.00"  />
-                                                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
-                                                                    </div>
-                                                                </div>
+                                                                
                                                                 <input type="text" value="{{$comercioset[0]->comercio}}" name="comercio" hidden>
                                                                 <input type="text" name="tota" id="tota" hidden>
                                                                 <input type="text" name="stota" id="stota" hidden>
@@ -801,8 +829,8 @@ $("#pago").prop('disabled',true)
                                                                 <br>
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
-                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Cobrar</button>
+                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2 color: white;" data-bs-dismiss="modal">Cancelar</button>
+                                                                        <button type="submit" style="margin: 10px; background-color: #16a0cd; color: white;" class="btn flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Pagar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
