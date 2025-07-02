@@ -70,7 +70,7 @@
             <!--begin::Contact details-->
             <div class="d-flex flex-column gap-2">
                 <!--begin::Name-->
-                <h3 class="mb-0">{{ $comercio->comercio }}</h3>
+                <h3 class="mb-0">{{ $comercio->comercio }}</h3> 
                 <!--end::Name-->
 
                 <!--begin::Email-->
