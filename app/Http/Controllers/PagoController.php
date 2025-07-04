@@ -367,6 +367,12 @@ class PagoController extends Controller
         $agencia = $request->get('agencia');
         $comercio = $request->get('comercio');
 
+        $pagado = $request->get('pagado');
+        
+        $activo = $request->has('pagado') ? 1 : 0;
+         $verificado = $request->has('verificado') ? 1 : 0;
+          $revision = $request->has('enrevision') ? 1 : 0;
+
 
 
         $pedido = new Ticktpago();
@@ -392,7 +398,21 @@ class PagoController extends Controller
         foreach($envios as $envio){
             
             $envio->pagoticket = $ticketact->id;
-            $envio->pago = "Pagado";
+
+            if ($activo== 1) {
+                $envio->pago = "Pagado";
+            }
+            if ($verificado== 1) {
+                $envio->pago = "Verificado";
+            }
+
+            if ($revision== 1) {
+                $envio->pago = "En revision";
+            }
+
+
+
+            
             $envio->save();
 
             }

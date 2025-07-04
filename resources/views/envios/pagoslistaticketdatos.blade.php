@@ -218,7 +218,20 @@ document.getElementById("tota").value = 0;
 $("#pago").prop('disabled',true)
 }
 
+function calcularsub() {
+    //alert("Helo");
+document.getElementById("tota").value = 0;
+//document.getElementById("stotal").text = 0;
+const subtotal = document.getElementById("sutota").value;
+ const miSpan = document.getElementById("stotal");
+ miSpan.textContent = subtotal; 
 
+ const miSpanto = document.getElementById("totalito");
+ miSpanto.textContent = subtotal; 
+
+
+
+}
 
 
 
@@ -808,7 +821,7 @@ $("#pago").prop('disabled',true)
 
 
                                                                              <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="" y />
+                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="" onchange="calcularsub()"/>
                                                                                 <label for="Cajero">Subtotal</label>
                                                                                 <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                                                     Por favor ingrese el destinatario.
@@ -864,7 +877,7 @@ $("#pago").prop('disabled',true)
                                                                         <label class="form-check-label" for="">
                                                                             Pagado &nbsp; &nbsp;
                                                                         </label>
-                                                                        <input class="form-check-input" type="checkbox" value="" />
+                                                                        <input class="form-check-input" type="checkbox" name="pagado" value="1" />
                                                                     </div>
 
                                                                     
@@ -880,7 +893,7 @@ $("#pago").prop('disabled',true)
                                                                         <label class="form-check-label" for="">
                                                                             Verificado &nbsp; &nbsp;
                                                                         </label>
-                                                                        <input class="form-check-input" type="checkbox" value="" />
+                                                                        <input class="form-check-input" type="checkbox" name="verificado" value="1"  />
                                                                     </div>
 
                                                                     
@@ -894,7 +907,7 @@ $("#pago").prop('disabled',true)
                                                                         <label class="form-check-label" for="">
                                                                             En revision &nbsp; &nbsp;
                                                                         </label>
-                                                                        <input class="form-check-input" type="checkbox" value=""  />
+                                                                        <input class="form-check-input" type="checkbox" name="enrevision" value="1"   />
                                                                     </div>
 
                                                                     
