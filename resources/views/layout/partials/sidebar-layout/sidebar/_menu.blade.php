@@ -367,6 +367,15 @@
 							<span class="menu-title">Entrega de paquete</span>
 						</a>
 					</div>
+
+					<div class="menu-item">
+						<a class="menu-link" href="/envios/reportepagoticket">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Lista de pagos</span>
+						</a>
+					</div>
 				
 					
 				</div>

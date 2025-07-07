@@ -228,7 +228,7 @@ Route::get('/envios/rpagodatos', [App\Http\Controllers\PagoController::class, 'r
 Route::get('/envios/lisdopagosdatos/{id}', [App\Http\Controllers\PagoController::class, 'lisdopagosdatos'] )->name('lisdopagosdatos') ;
 Route::get('/envios/lisdoentregadatos/{id}', [App\Http\Controllers\PagoController::class, 'lisdoentregadatos'] )->name('lisdoentregadatos') ;
 
-
+Route::get('/envios/reportepagoticket', [App\Http\Controllers\PagoController::class, 'reportepagoticket'] )->name('reportepagoticket') ;
 
 /*
 envios/detalleeditando

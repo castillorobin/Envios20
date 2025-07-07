@@ -102,6 +102,14 @@ class PagoController extends Controller
         return view('envios.rpagodatos', compact('tickets', 'repartidores'));
     }
 
+    public function reportepagoticket()
+    {
+       // $pedidos = Cobro::all(); 
+       // $tickets = Ticketc::all(); 
+       $repartidores = User::all();
+        return view('envios.reportepagoticket', compact('repartidores'));
+    }
+
     public function detalleticket($id)
     {
        // $pedidos = Cobro::all();
