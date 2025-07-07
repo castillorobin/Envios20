@@ -110,6 +110,34 @@ class PagoController extends Controller
         return view('envios.reportepagoticket', compact('repartidores'));
     }
 
+    public function rpagodatosticket(Request $request)
+    {
+        $rango = $request->input('rango');
+        $usuario = $request->input('usuario');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
+
+        if($usuario == "todos")
+        {
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+       
+
+        $repartidores = User::all();
+        return view('envios.rpagodatosticket', compact('tickets', 'repartidores'));
+    }
+
     public function detalleticket($id)
     {
        // $pedidos = Cobro::all();
