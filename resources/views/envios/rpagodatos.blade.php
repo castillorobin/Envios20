@@ -329,6 +329,7 @@ if (searchText == "") {
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-100px"># de ticket</th>
                                                 <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-50px">Estado</th>
                                                 <th class="min-w-50px">Usuario</th>
                                                 <th class="min-w-50px">Agencia</th>
                                                 <th class="min-w-50px">Descuento</th>
@@ -346,6 +347,7 @@ if (searchText == "") {
                                                     </a>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
+                                                <td>{{$ticket->estado}}</td> 
                                                 <td>{{$ticket->cajero}}</td>
                                                 <td>{{$ticket->agencia}}</td>
                                                 <td>${{$ticket->descuento}}</td>

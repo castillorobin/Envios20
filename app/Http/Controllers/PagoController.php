@@ -394,27 +394,33 @@ class PagoController extends Controller
         $checked = $request->input('checked');
        $envios = Envio::query()->find($checked);
 
+        $idinforme = Ticktpago::query()->find($ticketact->id);
+
        if($envios){
+       
         foreach($envios as $envio){
             
             $envio->pagoticket = $ticketact->id;
 
             if ($activo== 1) {
                 $envio->pago = "Pagado";
+                $idinforme->estado = "Pagado";
             }
             if ($verificado== 1) {
                 $envio->pago = "Verificado";
+                $idinforme->estado = "Verificado";
             }
 
             if ($revision== 1) {
                 $envio->pago = "En revision";
+                $idinforme->estado = "En revision";
             }
 
 
-
+$idinforme->save();
             
             $envio->save();
-
+            
             }
        }
 
