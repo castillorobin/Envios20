@@ -644,6 +644,19 @@ $idinforme->save();
         return view('envios.rlistadoentregadatos', compact('tickets', 'pago'));
     }
 
+
+    public function lisdopagosdatosticket($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        $pago = Ticktpago::where('id', $id)->get();
+        //return ($id);
+       // $rango = $request->input('rango');
+        $tickets = Envio::where('pagoticket', $id)
+        ->get();
+        return view('envios.rlistadopagodatosticket', compact('tickets', 'pago'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */

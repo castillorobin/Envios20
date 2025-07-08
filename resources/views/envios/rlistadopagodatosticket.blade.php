@@ -181,17 +181,17 @@ if (searchText == "") {
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div  >
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid">
+            <div >
                 <!--begin::Toolbar-->
-                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
+                <div >
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
+                        <div >
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de tickets de pago</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de pago</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -206,7 +206,7 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Reporte de tickets de pago</li>
+                                <li class="breadcrumb-item text-muted">Reporte de pago</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -215,9 +215,7 @@ if (searchText == "") {
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                        @can('ordenes-crear')
-                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
-                            @endcan
+                       
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -228,7 +226,7 @@ if (searchText == "") {
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container ">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -257,30 +255,13 @@ if (searchText == "") {
                                             <tr>
                                                 <td>
                                     <div class="col-auto" style="margin-right: 15px;">
-                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                         <td><button type="button" class="btn btn-primary">Pagar</button></td>               
   </div>
   </td>
-  <td style="width: 30%;">
-                                    <div class="">
-
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="width: 420px;">
-                                   
-                                    <option value="todos" >Todos</option>
-                                    @foreach ($repartidores as $repartidor)
-                                    <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
-                                    @endforeach
-                                </select>
-  </div>
-  </td>
+  
+  
   <td >
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
-  </div>
-  </td>
-  <td >
-    <a href="/envios/reportepago">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
-    </a>
+  
 </td>
   </tr>
   </table>
@@ -323,45 +304,81 @@ if (searchText == "") {
 
 
                                 <!--begin::Table-->
-                                <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                <div class="table-responsive" >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table" >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px"># de ticket</th>
-                                                <th class="min-w-50px">Comercio</th>
-                                                
-                                                <th class="min-w-50px">Usuario verifico</th>
-                                                <th class="min-w-50px">Fecha verificacion</th>
-                                                <th class="min-w-50px">Usuario de pago</th>
-                                                <th class="min-w-50px">Fecha de pago</th>
-                                                <th class="min-w-50px">Estado</th>
-                                                <th class="min-w-50px">Nota</th>
+                                               <th><div class="form-group form-check" style="width: 5px;">
                                                
-                                                
+                                                   
+                                                    
+                                                    
+                                                   </div></th>
+                                                <th class="min-w-100px"># de Guía</th>
+                                                <th class="min-w-50px">Comercio</th>
+                                                <th class="min-w-100px">Cliente</th>
+                                                <th class="min-w-50px">Usuario</th>
+                                                <th class="min-w-50px">Agencia</th>
+                                                <th class="min-w-50px">Estado</th>
+                                                <th class="min-w-50px text-center">Estado del pago</th>
+                                                <th class="min-w-50px">Tipo</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Fecha de pago</th>
                                                 
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> <a href="/envios/lisdopagosdatosticket/{{$ticket->id}}">
-                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->id}}" id="kt_drawer_example_basic_button" ># {{$ticket->id}}</button>
+                                                <td >
+                                                    <div class="form-group form-check" style="width: 5px;">
+                                                     <input type="checkbox" value="{{ $ticket->id }}" class="form-check-input" id="check3" name="checked[]" value="1" checked>
+                                                     
+                                                    </div>
+                                                    </td>
+                                                <td> 
+                                                    
+                                                
+                                                <a href="/envios/detalle/{{$ticket->guia}}" class="text-gray-900 text-hover-primary">
+                                                {{$ticket->guia}}
                                                     </a>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
-                                                <td>{{$ticket->cajero}}</td>
-                                                
-                                                <td>{{$ticket->created_at}}</td>
-                                                <td>{{$ticket->userpago}}</td>
-                                                <td>{{$ticket->fechapago}}</td>
-                                                <td>{{$ticket->estado}}</td> 
-                                               <td>{{$ticket->nota}}</td>
-                                            
-                                                
+                                                <td>{{$ticket->destinatario}}</td> 
+                                                <td>{{$pago[0]->cajero}}</td>
+                                                <td>{{$pago[0]->agencia}}</td>
+                                                <td style="text-align: center;">
+                                                    @if( $ticket->estado == 'No entregado')
+                                                    <span class="badge badge-danger">{{ $ticket->estado }}</span>
+                                                    @elseif( $ticket->estado == 'Creado')
+                                                    <span class="badge badge-warning">{{ $ticket->estado }}</span>
+                                                    @elseif( $ticket->estado == 'Entregado')
+                                                    <span class="badge badge-success">{{ $ticket->estado }}</span>
+                                                    @elseif( $ticket->estado == 'En ruta')
+                                                    <span class="badge badge-info">{{ $ticket->estado }}</span>
+                                                    @elseif( $ticket->estado == 'Reprogramado')
+                                                    <span class="badge badge-dark">{{ $ticket->estado }}</span>
+                                                    @elseif( $ticket->estado == 'Devuelto al comercio')
+                                                    <span class="badge badge-primary">{{ $ticket->estado }}</span>
+                                                    @else
+                                                    <span class="badge badge-light">{{ $ticket->estado }}</span>
+                                                    @endif
+                                                </td>
+                                                <td class="text-center">
+                                                    @if( $ticket->pago == 'Pagado')
+                                                    <span class="badge badge-success">{{ $ticket->pago}}</span>
+                                                    @else
+                                                    <span class="badge badge-danger">{{ $ticket->pago }}</span>
+                                                    @endif
+
+                                                </td>
+                                                <td>{{$ticket->tipo}}</td>
+                                               
+                                                <td>${{$ticket->total}}</td>
+                                                <td>{{$pago[0]->created_at}}</td>
                                                
                                                     
-                                                   
-
+                                                  
 
                                                 
                                             </tr>
@@ -369,8 +386,15 @@ if (searchText == "") {
                                         </tbody>
 
                                     </table>
-                                    <div style="float:right">
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
+                                    
+                                </div> </div> <div style="width: 100%; float:right;">
+                                <div style="width: 25%; float:right; margin-top:10px;margin-bottom:20px; " >
+                                    <a href="/envios/reportepago">
+    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+    </a>
+
+
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
@@ -392,14 +416,14 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
+                                            <a href="/pago/exportarticketrepo/{{$tickets[0]->pagoticket}}" class="menu-link px-3" target="_blank">Exportar a PDF</a>
                                         </div>
                                         <!--end::Menu item-->
                                     </div>
                                     </div>
-                                </div>
+                                    </div>
                                 <!--end::Table-->
-                            </div>
+                           
                             <!--end::Table-->
                         </div>
                         <!--end::Card body-->
@@ -415,6 +439,7 @@ if (searchText == "") {
 
 
    
+
 
 
 
@@ -449,6 +474,7 @@ if (searchText == "") {
 
 <script>
        
+   
     
     
     
