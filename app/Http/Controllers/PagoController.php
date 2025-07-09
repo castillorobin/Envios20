@@ -674,7 +674,7 @@ $idinforme->save();
         foreach($envios as $envio){
             
             //$envio->pagoticket = $ticketact->id;
-            $envio->pago = "Pagadosssss";
+            $envio->pago = "Pagado";
             $envio->save();
 
             }
