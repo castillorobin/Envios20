@@ -250,13 +250,20 @@ if (searchText == "") {
 <!-- fin primera colummna-->
 <!--segunda colummna-->
                                     <div class="col-12 col-md-9">
-                                    <form action="/envios/rpagodatos" method="GET">
+                                   
                                         <table  style="float:right;">
                                             <tr>
                                                 <td>
-                                    <div class="col-auto" style="margin-right: 15px;">
-                         <td><button type="button" class="btn btn-primary">Pagar</button></td>               
-  </div>
+                                    <div class="col-auto" style="margin-right: 15px;">´
+
+                                    
+                         <td>
+                            <a href="/envios/pagartodo/{{$pago[0]->id}}">
+                                <button type="button" class="btn btn-primary">Pagar</button>
+                             </a>
+                            </td>               
+                        
+  </div>                
   </td>
   
   
@@ -267,7 +274,7 @@ if (searchText == "") {
   </table>
           
                                    
-                                    </form>
+                                   
                                     </div>
                                     <!-- fin segunda colummna-->
                                      <!--tercera colummna-->
@@ -317,8 +324,7 @@ if (searchText == "") {
                                                 <th class="min-w-100px"># de Guía</th>
                                                 <th class="min-w-50px">Comercio</th>
                                                 <th class="min-w-100px">Cliente</th>
-                                                <th class="min-w-50px">Usuario</th>
-                                                <th class="min-w-50px">Agencia</th>
+                                                
                                                 <th class="min-w-50px">Estado</th>
                                                 <th class="min-w-50px text-center">Estado del pago</th>
                                                 <th class="min-w-50px">Tipo</th>
@@ -345,8 +351,7 @@ if (searchText == "") {
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->destinatario}}</td> 
-                                                <td>{{$pago[0]->cajero}}</td>
-                                                <td>{{$pago[0]->agencia}}</td>
+                                               
                                                 <td style="text-align: center;">
                                                     @if( $ticket->estado == 'No entregado')
                                                     <span class="badge badge-danger">{{ $ticket->estado }}</span>

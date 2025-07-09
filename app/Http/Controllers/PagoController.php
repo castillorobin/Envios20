@@ -657,6 +657,29 @@ $idinforme->save();
         return view('envios.rlistadopagodatosticket', compact('tickets', 'pago'));
     }
 
+     public function pagotodo($id)
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+        $envios = Envios::where('pagoticket', $id)->get();
+        //return ($id);
+       // $rango = $request->input('rango');
+       // $tickets = Envio::where('pagoticket', $id)
+        //->get();
+
+        if($envios){
+        foreach($envios as $envio){
+            
+            //$envio->pagoticket = $ticketact->id;
+            $envio->pago = "Pagado";
+            $envio->save();
+
+            }
+       }
+        $repartidores = User::all();
+        return view('envios.reportepagoticket', compact('repartidores'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
