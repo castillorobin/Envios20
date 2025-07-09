@@ -657,21 +657,24 @@ $idinforme->save();
         return view('envios.rlistadopagodatosticket', compact('tickets', 'pago'));
     }
 
-     public function pagotodo($id)
+     public function pagotodo(Request $request)
     {
        // $pedidos = Cobro::all();
         //$tickets = Ticketc::all(); 
-        $envios = Envios::where('pagoticket', $id)->get();
-        //return ($id);
-       // $rango = $request->input('rango');
-       // $tickets = Envio::where('pagoticket', $id)
-        //->get();
+        //$envios = Envios::where('pagoticket', $id)->get();
+
+
+       $checked = $request->input('checked');
+     //  $checked2 = $request->input('pruebita');
+       $envios = Envio::query()->find($checked);
+
+      // dd($checked);
 
         if($envios){
         foreach($envios as $envio){
             
             //$envio->pagoticket = $ticketact->id;
-            $envio->pago = "Pagado";
+            $envio->pago = "Pagadosssss";
             $envio->save();
 
             }

@@ -258,9 +258,11 @@ if (searchText == "") {
 
                                     
                          <td>
+                            <!--
                             <a href="/envios/pagartodo/{{$pago[0]->id}}">
                                 <button type="button" class="btn btn-primary">Pagar</button>
                              </a>
+                             -->
                             </td>               
                         
   </div>                
@@ -294,8 +296,7 @@ if (searchText == "") {
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                                           
-                                   
-
+                                 
 
                                     
                                 </div>
@@ -304,12 +305,13 @@ if (searchText == "") {
                            
 
                                 <!--end::Card toolbar-->
-                         
+                          
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 590px;  max-height: 590px; overflow-y: scroll">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 490px;  max-height: 590px; overflow-y: scroll">
 
-
+  <form action="/envios/pagotodo" method="POST">
+                                         @csrf
                                 <!--begin::Table-->
                                 <div class="table-responsive" >
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table" >
@@ -332,13 +334,15 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Fecha de pago</th>
                                                 
                                             </tr>
-                                        </thead>
+                                        </thead>´
+                                        
+
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
-                                                     <input type="checkbox" value="{{ $ticket->id }}" class="form-check-input" id="check3" name="checked[]" value="1" checked>
+                                                     <input type="checkbox" value="{{ $ticket->id }}" name="checked[]" class="form-check-input" id="check_{{ $ticket->id }}">
                                                      
                                                     </div>
                                                     </td>
@@ -382,7 +386,7 @@ if (searchText == "") {
                                                 <td>${{$ticket->total}}</td>
                                                 <td>{{$pago[0]->created_at}}</td>
                                                
-                                                    
+                                                   
                                                   
 
                                                 
@@ -391,44 +395,15 @@ if (searchText == "") {
                                         </tbody>
 
                                     </table>
-                                    
-                                </div> </div> <div style="width: 100%; float:right;">
-                                <div style="width: 25%; float:right; margin-top:10px;margin-bottom:20px; " >
-                                    <a href="/envios/reportepago">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
-    </a>
+                                     <div style="width: 100%; margin-top:10px;margin-bottom:20px; " >
+                                    <button type="submit" class="btn btn-primary" style="float:right; ">Pagar</button>
+                                    </div>
+                                </div> </div> 
 
 
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-                                        <i class="ki-duotone ki-exit-up fs-2">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>Exportar Reporte</button>
-                                    <!--begin::Menu-->
-                                    
-                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                        <!--begin::Menu item
-                                     
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                       
-                                      
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="/pago/exportarticketrepo/{{$tickets[0]->pagoticket}}" class="menu-link px-3" target="_blank">Exportar a PDF</a>
-                                        </div>
-                                        <!--end::Menu item-->
-                                    </div>
-                                    </div>
-                                    </div>
+                                    </form>
                                 <!--end::Table-->
-                           
+                          
                             <!--end::Table-->
                         </div>
                         <!--end::Card body-->
