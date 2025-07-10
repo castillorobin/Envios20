@@ -349,11 +349,11 @@ if (searchText == "") {
                                                     </a>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
-                                                <td>{{$ticket->cajeroveri}}</td>
+                                                <td>{{$ticket->cajeroi}}</td>
                                                 
-                                                <td>{{$ticket->fechaveri}}</td>
-                                                <td>{{$ticket->cajero}}</td>
                                                 <td>{{$ticket->created_at}}</td>
+                                                <td>{{$ticket->userpago}}</td>
+                                                <td>{{$ticket->fechapago}}</td>
                                                 <td>{{$ticket->estado}}</td> 
                                                <td>{{$ticket->nota}}</td>
                                             

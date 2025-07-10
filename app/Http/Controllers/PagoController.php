@@ -667,7 +667,13 @@ $idinforme->save();
        $checked = $request->input('checked');
      //  $checked2 = $request->input('pruebita');
        $envios = Envio::query()->find($checked);
+       $quienpago = $envios[0]->pagoticket;
 
+       $tickepago = Ticktpago::query()->find($quienpago);
+        $tickepago->userpago = "Eugenia Bosco";
+        $tickepago->userpago = Carbon::today();
+
+        $tickepago->save();
       // dd($checked);
 
         if($envios){
