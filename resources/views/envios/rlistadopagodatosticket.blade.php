@@ -178,6 +178,25 @@ if (searchText == "") {
 
 }
 </script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+    $(document).on('click', '#check3', function(){
+
+//alert("dunciona");
+$("#pago").prop('disabled',false)
+   
+
+
+
+
+});
+
+
+</script>
+
+
+
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
@@ -334,7 +353,7 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Fecha de pago</th>
                                                 
                                             </tr>
-                                        </thead>´
+                                        </thead>
                                         
 
                                         <tbody class="fw-semibold  text-gray-400">
@@ -342,7 +361,7 @@ if (searchText == "") {
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
-                                                     <input type="checkbox" value="{{ $ticket->id }}" name="checked[]" class="form-check-input" id="check_{{ $ticket->id }}">
+                                                     <input type="checkbox" value="{{ $ticket->id }}" name="checked[]" class="form-check-input" id="check3">
                                                      
                                                     </div>
                                                     </td>
@@ -396,7 +415,7 @@ if (searchText == "") {
 
                                     </table>
                                      <div style="width: 100%; margin-top:10px;margin-bottom:20px; " >
-                                    <button type="submit" class="btn btn-primary" style="float:right; ">Pagar</button>
+                                    <button type="submit" class="btn btn-primary" id="pago" style="float:right; " disabled>Pagar</button>
                                     </div>
                                 </div> </div> 
 
