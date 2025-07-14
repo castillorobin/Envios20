@@ -252,7 +252,7 @@ if (searchText == "") {
 <!-- fin primera colummna-->
 <!--segunda colummna-->
                                     <div class="col-12 col-md-9">
-                                    <form action="/envios/rpagodatos" method="GET">
+                                    <form action="/envios/rpagodatosticket" method="GET">
                                         <table  style="float:right;">
                                             <tr>
                                                 <td>

@@ -193,6 +193,16 @@ $("#pago").prop('disabled',false)
 });
 
 
+ function redireccionarPagina(){
+    window.setTimeout( abrirURL, 2000 ); // 3 segundos
+};
+    
+function abrirURL(){
+    
+   window.location = "http://127.0.0.1:8000/envios/reportepagoticket";
+   //window.location = "https://meloexpress.site/envios/reportepagoticket";
+};
+
 </script>
 
 
@@ -415,7 +425,7 @@ $("#pago").prop('disabled',false)
 
                                     </table>
                                      <div style="width: 100%; margin-top:10px;margin-bottom:20px; " >
-                                    <button type="submit" class="btn btn-primary" id="pago" style="float:right; " disabled>Pagar</button>
+                                    <button type="submit" class="btn btn-primary" id="pago" style="float:right; "onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
                                     </div>
                                 </div> </div> 
 

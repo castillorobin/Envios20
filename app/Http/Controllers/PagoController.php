@@ -670,6 +670,7 @@ $idinforme->save();
        $quienpago = $envios[0]->pagoticket;
 
        $tickepago = Ticktpago::query()->find($quienpago);
+       $ticketact = Ticktpago::query()->find($quienpago);
         $tickepago->userpago = "Eugenia Bosco";
         $tickepago->userpago = Carbon::today();
 
@@ -685,8 +686,17 @@ $idinforme->save();
 
             }
        }
+
+
         $repartidores = User::all();
-        return view('envios.reportepagoticket', compact('repartidores'));
+
+        $pdf = PDF::loadView('envios.pagoticketlista', ['ticketact'=>$ticketact, 'envios'=>$envios]);
+       
+        $customPaper = array(0,0,360,750);
+       
+        $pdf->setPaper($customPaper );
+        return $pdf->stream();
+        //return view('envios.reportepagoticket', compact('repartidores'));
     }
 
     /**
