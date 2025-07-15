@@ -86,33 +86,10 @@
                 @endforeach
                 <tr >
                     <td style="text-align: left;"><span style="font-weight: bolder;">Total de guias: {{ $i }} </td>
-                    <td>${{ $ticketact->total }}</td>
+                   
                     {{ $i++ }}
                 </tr>
-                @if($i < 5)
-
-                <tr >   
-                    <td > &nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-                <tr >   
-                    <td >&nbsp;</td>
-                    <td >&nbsp;</td> 
-                </tr>
-
-                @endif
+               
                 <tr style="text-align: left;">
                     
                     

@@ -549,7 +549,7 @@ const subtotal = document.getElementById("sutota").value;
                                     <div class="modal-dialog modal-fullscreen">
                                         <div class="modal-content shadow-none">
                                             <div class="modal-header">
-                                                <h5 class="modal-title">Detalles del cobro</h5>
+                                                <h5 class="modal-title">Detalles del pago</h5>
 
                                                 <!--begin::Close-->
                                                 <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -927,7 +927,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Cobrar</button>
+                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Pagar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>

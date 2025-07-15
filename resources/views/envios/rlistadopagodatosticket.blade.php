@@ -199,8 +199,8 @@ $("#pago").prop('disabled',false)
     
 function abrirURL(){
     
-   window.location = "http://127.0.0.1:8000/envios/reportepagoticket";
-   //window.location = "https://meloexpress.site/envios/reportepagoticket";
+   //window.location = "http://127.0.0.1:8000/envios/reportepagoticket";
+   window.location = "https://meloexpress.site/envios/reportepagoticket";
 };
 
 </script>

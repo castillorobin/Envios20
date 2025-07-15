@@ -445,11 +445,22 @@ class PagoController extends Controller
             if ($verificado== 1) {
                 $envio->pago = "Verificado";
                 $idinforme->estado = "Verificado";
+                $idinforme->save();
+            
+            $envio->save();
+               
+               $nota = " ";
+        return view('envios.pagoslistaticket', compact('nota'));
             }
 
             if ($revision== 1) {
                 $envio->pago = "En revision";
                 $idinforme->estado = "En revision";
+                $idinforme->save();
+            
+            $envio->save();
+               $nota = " ";
+        return view('envios.pagoslistaticket', compact('nota'));
             }
 
 
