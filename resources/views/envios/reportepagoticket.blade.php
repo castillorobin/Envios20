@@ -283,7 +283,7 @@ if (searchText == "") {
   </div>
   </td>
   <td >
-    <a href="/envios/reportepago">
+    <a href="/envios/reportepagoticket">
     <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
     </a>
 </td>
