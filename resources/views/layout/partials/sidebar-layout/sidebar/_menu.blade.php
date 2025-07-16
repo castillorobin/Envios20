@@ -373,7 +373,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Lista de pagos</span>
+							<span class="menu-title">Estado de tickets</span>
 						</a>
 					</div>
 				

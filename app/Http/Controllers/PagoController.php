@@ -123,13 +123,29 @@ class PagoController extends Controller
 
         if($usuario == "todos")
         {
+            /*
             $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
             ->get();
+            */
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+                    ->orderBy('created_at', 'desc') // ordena del más reciente al más antiguo
+                    ->take(20)                      // limita a los últimos 20
+                    ->get();
+                    $tickets = $tickets->sortBy('created_at');
  
         }else{
+            /*
             $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
             ->where('cajero', $usuario)
             ->get();
+            */
+
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+                    ->where('cajero', $usuario)
+                    ->orderBy('created_at', 'desc') // ordena del más reciente al más antiguo
+                    ->take(20)                      // limita a los últimos 20
+                    ->get();
+                    $tickets = $tickets->sortBy('created_at');
         }
 
        

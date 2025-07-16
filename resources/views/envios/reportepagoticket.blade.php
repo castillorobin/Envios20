@@ -196,7 +196,7 @@ if (searchText == "") {
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de tickets de pago</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Estado de tickets</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -206,12 +206,12 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item">
-                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                 <li class="breadcrumb-item text-muted">
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Facturación</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Reporte de tickets de pago</li>
+                                <li class="breadcrumb-item text-muted">Estado de tickets</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -220,9 +220,7 @@ if (searchText == "") {
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                        @can('ordenes-crear')
-                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
-                            @endcan
+                       
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -246,12 +244,8 @@ if (searchText == "") {
                                 <!--primera colummna-->
                                     <div class="col-12 col-md-3" >
                                     <div class="d-flex align-items-center position-relative my-1">
-                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
-
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" disabled />
+    
+                                       
                                     </div>
                                     </div>
 <!-- fin primera colummna-->
