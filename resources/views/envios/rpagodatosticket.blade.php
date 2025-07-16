@@ -197,12 +197,12 @@ if (searchText == "") {
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Home -</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
                                <li class="breadcrumb-item text-muted">
-                                    <a href="/dashboard" class="text-muted text-hover-primary">Facturación</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Facturación -</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->

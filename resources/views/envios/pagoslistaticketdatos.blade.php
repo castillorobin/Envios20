@@ -71,6 +71,48 @@ tbody td {
 
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 
+
+<script>
+    $(document).on('click', '#veri', function(){
+
+//alert("dunciona");
+$("#pagadito").prop('disabled',false)
+   
+
+
+
+
+});
+ $(document).on('click', '#paga', function(){
+
+//alert("dunciona");
+$("#pagadito").prop('disabled',false)
+   
+
+
+
+
+});
+
+ $(document).on('click', '#enre', function(){
+
+//alert("dunciona");
+$("#pagadito").prop('disabled',false)
+   
+
+
+
+
+});
+
+
+</script>
+
+
+
+
+
+
 <script>
     $(document).on('click', '#check3', function(){
 
@@ -877,7 +919,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                         <label class="form-check-label" for="">
                                                                             Pagado &nbsp; &nbsp;
                                                                         </label>
-                                                                        <input class="form-check-input" type="checkbox" name="pagado" value="1" />
+                                                                        <input class="form-check-input" type="checkbox" name="pagado" value="1" id="paga"/>
                                                                     </div>
 
                                                                     
@@ -893,7 +935,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                         <label class="form-check-label" for="">
                                                                             Verificado &nbsp; &nbsp;
                                                                         </label>
-                                                                        <input class="form-check-input" type="checkbox" name="verificado" value="1"  />
+                                                                        <input class="form-check-input" type="checkbox" name="verificado" value="1" id="veri" />
                                                                     </div>
 
                                                                     
@@ -907,7 +949,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                         <label class="form-check-label" for="">
                                                                             En revision &nbsp; &nbsp;
                                                                         </label>
-                                                                        <input class="form-check-input" type="checkbox" name="enrevision" value="1"   />
+                                                                        <input class="form-check-input" type="checkbox" name="enrevision" value="1" id="enre" />
                                                                     </div>
 
                                                                     
@@ -927,7 +969,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="submit" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Pagar</button>
+                                                                        <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
