@@ -699,7 +699,7 @@ $idinforme->save();
        $tickepago = Ticktpago::query()->find($quienpago);
        $ticketact = Ticktpago::query()->find($quienpago);
         $tickepago->userpago = "Eugenia Bosco";
-        $tickepago->userpago = Carbon::today();
+        $tickepago->fechapago = Carbon::today();
 
         $tickepago->save();
       // dd($checked);

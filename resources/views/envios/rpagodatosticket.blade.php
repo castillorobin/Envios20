@@ -347,7 +347,7 @@ if (searchText == "") {
                                                     </a>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
-                                                <td>{{$ticket->cajeroi}}</td>
+                                                <td>{{$ticket->cajero}}</td>
                                                 
                                                 <td>{{$ticket->created_at}}</td>
                                                 <td>{{$ticket->userpago}}</td>
