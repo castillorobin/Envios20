@@ -128,7 +128,7 @@ $("#pagadito").prop('disabled',false)
             $('#totalito').text(total);
             document.getElementById("stota").value = total.toFixed(2);
            document.getElementById("sutota").value = total.toFixed(2);
-          // document.getElementById("totalito").value = total.toFixed(2);
+          document.getElementById("tota").value = total.toFixed(2);
            //alert("Hola mundo");
             $('#stotal').text(total);
 //document.getElementById("tota").value = total.toFixed(2);

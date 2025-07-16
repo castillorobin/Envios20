@@ -416,6 +416,8 @@ class PagoController extends Controller
         $sutota = $request->get('stota');
         $nota = $request->get('nota');
         $tota = $request->get('tota');
+
+        //dd($tota);
         $agencia = $request->get('agencia');
         $comercio = $request->get('comercio');
 
