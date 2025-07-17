@@ -34,6 +34,12 @@
             padding: 0.10rem;
             /* Ajusta el valor según sea necesario */
         }
+
+        .colorea{ 
+            color: #000;
+            font-size: 26px;
+            /* Ajusta el valor según sea necesario */
+        }
     </style>
 
 <style>
@@ -353,18 +359,18 @@ if (searchText == "") {
                                                 <td>{{$ticket->userpago}}</td>
                                                 <td>{{$ticket->fechapago}}</td>
                                                  @if($ticket->estado == "Pagado" )
-                                                 <td>
-                                                    <span class="badge text-bg-success">{{$ticket->estado}}</span>
+                                                 <td > 
+                                                    <span class="badge text-bg-success "  > <span style="color:white; font-weight:bolder;">{{$ticket->estado}}</span></span>
                                                 </td> 
                                                 @endif
                                                 @if($ticket->estado == "Verificado" )
                                                  <td>
-                                                    <span class="badge text-bg-warning">{{$ticket->estado}}</span>
+                                                    <span class="badge text-bg-warning"><span style="color:white; font-weight:bolder;">{{$ticket->estado}}</span></span>
                                                 </td> 
                                                 @endif
                                                 @if($ticket->estado == "En revision" )
                                                  <td>
-                                                    <span class="badge text-bg-danger">{{$ticket->estado}}</span>
+                                                    <span class="badge text-bg-danger"><span style="color:white; font-weight:bolder;">{{$ticket->estado}}</span></span>
                                                 </td> 
                                                 @endif
 
