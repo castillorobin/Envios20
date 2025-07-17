@@ -352,7 +352,25 @@ if (searchText == "") {
                                                 <td>{{$ticket->created_at}}</td>
                                                 <td>{{$ticket->userpago}}</td>
                                                 <td>{{$ticket->fechapago}}</td>
-                                                <td>{{$ticket->estado}}</td> 
+                                                 @if($ticket->estado == "Pagado" )
+                                                 <td>
+                                                    <span class="badge text-bg-success">{{$ticket->estado}}</span>
+                                                </td> 
+                                                @endif
+                                                @if($ticket->estado == "Verificado" )
+                                                 <td>
+                                                    <span class="badge text-bg-warning">{{$ticket->estado}}</span>
+                                                </td> 
+                                                @endif
+                                                @if($ticket->estado == "En revision" )
+                                                 <td>
+                                                    <span class="badge text-bg-danger">{{$ticket->estado}}</span>
+                                                </td> 
+                                                @endif
+
+
+                                                 
+                                                
                                                <td>{{$ticket->nota}}</td>
                                             
                                                 
