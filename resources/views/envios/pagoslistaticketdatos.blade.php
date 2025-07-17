@@ -76,9 +76,9 @@ tbody td {
     $(document).on('click', '#veri', function(){
 
 //alert("dunciona");
-$("#pagadito").prop('disabled',false)
+$("#pagadito").prop('hidden',true)
    
-
+$("#pagadito2").prop('hidden',false)
 
 
 
@@ -87,8 +87,8 @@ $("#pagadito").prop('disabled',false)
 
 //alert("dunciona");
 $("#pagadito").prop('disabled',false)
-   
-
+   $("#pagadito").prop('hidden',false)
+$("#pagadito2").prop('hidden',true)
 
 
 
@@ -97,7 +97,9 @@ $("#pagadito").prop('disabled',false)
  $(document).on('click', '#enre', function(){
 
 //alert("dunciona");
-$("#pagadito").prop('disabled',false)
+$("#pagadito").prop('hidden',true)
+   
+$("#pagadito2").prop('hidden',false)
    
 
 
@@ -970,6 +972,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
                                                                         <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
+                                                                        <button type="submit" id="pagadito2" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" hidden>Pagar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
