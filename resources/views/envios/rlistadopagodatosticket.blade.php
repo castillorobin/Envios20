@@ -360,7 +360,7 @@ function abrirURL(){
                                                 <th class="min-w-50px text-center">Estado del pago</th>
                                                 <th class="min-w-50px">Tipo</th>
                                                 <th class="min-w-50px">Total</th>
-                                                <th class="min-w-50px">Fecha de pago</th>
+                                                <th class="min-w-50px">Fecha de verificacion</th>
                                                 
                                             </tr>
                                         </thead>
