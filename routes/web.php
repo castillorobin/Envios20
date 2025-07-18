@@ -321,6 +321,9 @@ Route::get('/ruta/eliminar/{id}', [App\Http\Controllers\RutaController::class, '
 
 
 
+//Caja
+Route::get('/caja/cajero', [App\Http\Controllers\CajaController::class, 'cajero'] )->name('cajero') ;
+
 /*
 
 Rutas 
