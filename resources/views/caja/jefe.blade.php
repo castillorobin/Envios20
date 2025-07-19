@@ -213,7 +213,7 @@ if (searchText == "") {
 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
     <!--begin::Title-->
     <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
-        Reporte de cajeros
+        Reporte de Jefe de cajeros
             </h1>
     <!--end::Title-->
 
@@ -244,7 +244,7 @@ if (searchText == "") {
                                         
                             <!--begin::Item-->
                                     <li class="breadcrumb-item text-muted">
-                                                    Reporte de cajeros                                           </li>
+                                                    Reporte de Jefe de cajeros                                           </li>
                                 <!--end::Item-->
                                         
                     </ul>
@@ -319,17 +319,50 @@ if (searchText == "") {
 
         <!--begin::Card toolbar-->
         <div class="card-toolbar flex-row-fluid justify-content-end gap-5" >
-            <!--begin::Daterangepicker-->
- <a href="#" class="btn btn-sm fw-bold btn-primary" data-bs-toggle="modal" data-bs-target="#kt_modal_stacked_1">
-            Crear        </a>
-<!--end::Daterangepicker-->
 
-<!--begin::Export dropdown-->
-<button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
-    <i class="ki-duotone ki-exit-up fs-2"><span class="path1"></span><span class="path2"></span></i>    Exportar Reporte
-</button>
 
-<!--end::Export dropdown-->        </div>
+<div class="col-12 col-md-9">
+                                    <form action="/caja/jefedatos" method="GET">
+                                        <table  style="float:right;">
+                                            <tr>
+                                                <td>
+                                    <div class="col-auto" style="margin-right: 15px;">
+                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+  </div>
+  </td>
+  <td style="width: 30%;">
+                                    <div class=" ">
+
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
+                                   
+                                    <option value="todos" >Todos</option>
+                                    @foreach ($repartidores as $repartidor)
+                                    <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
+                                    @endforeach
+                                </select>
+  </div>
+  </td>
+  <td >
+  <div class="col-auto">
+  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
+  </div>
+  </td>
+  <td >
+    <a href="/caja/jefe">
+    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+    </a>
+</td>
+  </tr>
+  </table>
+          
+                                   
+                                    </form>
+                                    </div>
+
+
+
+
+    </div>
         <!--end::Card toolbar-->
     </div>
     <!--end::Card header-->

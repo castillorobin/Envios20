@@ -401,7 +401,7 @@
 
 				<div class="menu-sub menu-sub-accordion">
 					<div class="menu-item">
-						<a class="menu-link" href="/caja/cajero">
+						<a class="menu-link" href="/caja/jefe">
 							<span class="menu-bullet">
 								<span class="fas fa-user-alt"></span>
 							</span>

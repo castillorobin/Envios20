@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Caja;
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class CajaController extends Controller
 {
@@ -19,6 +20,12 @@ class CajaController extends Controller
     {
          return view('caja.cajero');
     }
+    public function jefe()
+    {
+          $repartidores = User::all();
+        return view('caja.jefe', compact('repartidores'));
+    }
+
 
 
     /**
