@@ -342,48 +342,57 @@ if (searchText == "") {
     <table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_returns_table" style="width: 100%;"><colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
     <thead>
         <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-            <th class="min-w-100px dt-orderable-asc dt-orderable-desc" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
+            <th class="min-w-100px dt-orderable-asc dt-orderable-desc text-center" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Fecha</span><span class="dt-column-order"></span>
             </th>
 
-            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="1" rowspan="1" colspan="1" aria-label="No. Orders Returned: Activate to sort" tabindex="0">
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="1" rowspan="1" colspan="1" aria-label="No. Orders Returned: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Concepto</span><span class="dt-column-order"></span>
             </th>
             
-            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="2" rowspan="1" colspan="1" aria-label="No. Orders Refunded: Activate to sort" tabindex="0">
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="2" rowspan="1" colspan="1" aria-label="No. Orders Refunded: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Entrada</span><span class="dt-column-order"></span>
             </th>
             
-            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="3" rowspan="1" colspan="1" aria-label="No. Orders Replaced: Activate to sort" tabindex="0">
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="3" rowspan="1" colspan="1" aria-label="No. Orders Replaced: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Salida</span><span class="dt-column-order"></span>
             </th>
             
-            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
+            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Saldo</span><span class="dt-column-order"></span>
             </th>
             
-            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="5" rowspan="1" colspan="1" aria-label="Total Replaced: Activate to sort" tabindex="0">
+            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="5" rowspan="1" colspan="1" aria-label="Total Replaced: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Cajero</span><span class="dt-column-order"></span>
             </th>
         </tr>
     </thead>
     <tbody class="fw-semibold text-gray-600">
-        <tr>
-                <td data-order="2025-12-20T00:00:00-06:00">
-                    18/07/2025               </td>    
-                <td class="text-end pe-0 dt-type-numeric">
-                    Caja inicial                </td>
-                <td class="text-end pe-0 dt-type-numeric">
-                    $2,500                </td>
-                <td class="text-end pe-0 dt-type-numeric">
-                    $0.00                </td>
-                <td class="text-end pe-0 dt-type-numeric">
-                    $2,500
-                </td>
-                <td class="text-end dt-type-numeric">
-                    Robin Castillo
-                </td>
-        </tr>
+      
+         @foreach ($cajas as $caja) 
+             <tr class="'table-row-gray' : 'table-row-white' ">
+                    <td class="text-center"> 
+                    {{ date('d/m/Y', strtotime($caja->created_at)) }}
+                    </td>
+                    <td class="text-center">{{ $caja->concepto }}</td>
+                    <td class="text-center">
+                        @if ($caja->tipo == "Entrada")
+                           $ {{ $caja->valor }}
+                        @else
+                            $ 0.00
+                        @endif
+                    </td>
+                    <td class="text-center">
+                         @if ($caja->tipo == "Salida")
+                           $ {{ $caja->valor }}
+                        @else
+                            $ 0.00
+                        @endif
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="text-center">{{$caja->cajero}}</td>
+                    </tr>
+                    @endforeach
         </tbody>
 <tfoot></tfoot></table></div><div id="" class="row">
     <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" style="float:bottom;">

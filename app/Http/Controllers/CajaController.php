@@ -19,7 +19,8 @@ class CajaController extends Controller
 
     public function cajero()
     {
-         return view('caja.cajero');
+        $cajas = Detallecaja::all();
+         return view('caja.cajero', compact('cajas'));
     }
     public function jefe()
     {
