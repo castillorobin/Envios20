@@ -402,22 +402,31 @@ if (searchText == "") {
         </tr>
     </thead>
     <tbody class="fw-semibold text-gray-600">
-        <tr>
-                <td data-order="2025-12-20T00:00:00-06:00">
-                    18/07/2025               </td>    
-                <td class="text-end pe-0 dt-type-numeric">
-                    Caja inicial                </td>
-                <td class="text-end pe-0 dt-type-numeric">
-                    $2,500                </td>
-                <td class="text-end pe-0 dt-type-numeric">
-                    $0.00                </td>
-                <td class="text-end pe-0 dt-type-numeric">
-                    $2,500
-                </td>
-                <td class="text-end dt-type-numeric">
-                    Robin Castillo
-                </td>
-        </tr>
+       
+         @foreach ($cajas as $caja) 
+             <tr class="'table-row-gray' : 'table-row-white' ">
+                    <td class="text-center"> 
+                    {{ date('d/m/Y', strtotime($caja->created_at)) }}
+                    </td>
+                    <td class="text-center">{{ $caja->concepto }}</td>
+                    <td class="text-center">
+                        @if ($caja->tipo == "Entrada")
+                           $ {{ $caja->valor }}
+                        @else
+                            $ 0.00
+                        @endif
+                    </td>
+                    <td class="text-center">
+                         @if ($caja->tipo == "Salida")
+                           $ {{ $caja->valor }}
+                        @else
+                            $ 0.00
+                        @endif
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="text-center">{{$caja->cajero}}</td>
+                    </tr>
+                    @endforeach
         </tbody>
 <tfoot></tfoot></table></div><div id="" class="row">
     <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" style="float:bottom;">

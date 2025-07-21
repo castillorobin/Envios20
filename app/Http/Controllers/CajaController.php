@@ -24,8 +24,9 @@ class CajaController extends Controller
     }
     public function jefe()
     {
+        $cajas = Detallecaja::all();
           $repartidores = User::all();
-        return view('caja.jefe', compact('repartidores'));
+        return view('caja.jefe', compact('repartidores', 'cajas'));
     }
 
 
