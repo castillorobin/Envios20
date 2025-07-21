@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Detallecaja extends Model
 {
+    protected $fillable = [
+        'cajero',
+        'agencia',
+        'tipo',
+        'concepto',
+        'valor',
+        'idcaja'
+    ];
+
     use HasFactory;
 }

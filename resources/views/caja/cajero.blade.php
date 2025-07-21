@@ -198,7 +198,7 @@ if (searchText == "") {
 
     <x-default-layout>
      
-
+<input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <div class="d-flex flex-column flex-column-fluid">
                                             
 <!--begin::Toolbar-->
@@ -405,10 +405,12 @@ if (searchText == "") {
 
 <div class="modal fade" tabindex="-1" id="kt_modal_stacked_1">
 <div class="modal-dialog modal-dialog-centered">
+     
     <div class="modal-content">
         <div class="modal-header">
             <h3 class="modal-title">Crear Movimiento</h3>
-
+<form action="/caja/guardar" method="GET">
+     
             <!--begin::Close-->
             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
@@ -417,14 +419,15 @@ if (searchText == "") {
         </div>
 
         <div class="modal-body">
-           <input type="text" class="form-control form-control-solid" placeholder="Cajero"/>
+            
+           <input type="text" name="cajero" class="form-control form-control-solid" value="{{ Auth::user()->name }}" readonly />
            <br>
-            <input type="date" class="form-control form-control-solid" placeholder="Fecha"/>
+            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}"/>
             
             <br>
-            <input type="text" class="form-control form-control-solid" placeholder="Agencia"/>
+            <input type="text" name="agencia" class="form-control form-control-solid" placeholder="Agencia"/>
             <br>
-            <select class="form-select form-select-solid" aria-label="Select example">
+            <select class="form-select form-select-solid" aria-label="Select example" name="tipo">
     <option>Tipo</option>
     <option value="Caja inicial">Caja inicial</option>
     <option value="Entrada">Entrada</option>
@@ -432,9 +435,9 @@ if (searchText == "") {
     <option value="Cierre de caja">Cierre de caja</option>
 </select>
             <br>
-            <input type="text" class="form-control form-control-solid" placeholder="Concepto"/>
+            <input type="text" class="form-control form-control-solid" placeholder="Concepto" name="concepto" />
             <br>
-            <input type="text" class="form-control form-control-solid" placeholder="$0.00"/>
+            <input type="text" class="form-control form-control-solid" placeholder="$0.00" name="valor" />
             
 
 
@@ -443,7 +446,7 @@ if (searchText == "") {
 
         <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
     </div>
 </div>

@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('detallecajas', function (Blueprint $table) {
             $table->id();
+            $table->string('cajero')->nullable();
+            $table->string('agencia')->nullable();
+            $table->string('tipo')->nullable();
+            $table->string('concepto')->nullable();
+            $table->double('valor')->nullable(); 
+            $table->integer('idcaja')->nullable();
             $table->timestamps();
         });
     }

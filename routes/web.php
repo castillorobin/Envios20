@@ -324,6 +324,7 @@ Route::get('/ruta/eliminar/{id}', [App\Http\Controllers\RutaController::class, '
 //Caja
 Route::get('/caja/cajero', [App\Http\Controllers\CajaController::class, 'cajero'] )->name('cajero') ;
 Route::get('/caja/jefe', [App\Http\Controllers\CajaController::class, 'jefe'] )->name('jefe') ;
+Route::get('/caja/guardar', [App\Http\Controllers\CajaController::class, 'store'])->name('caja.store');
 
 /*
 
