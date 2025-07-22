@@ -108,7 +108,7 @@
 
 {
 
-const tableReg = document.getElementById('tenvios');
+const tableReg = document.getElementById('kt_ecommerce_report_returns_table');
 
 const searchText = document.getElementById('searchTerm').value.toLowerCase();
 
@@ -307,7 +307,7 @@ if (searchText == "") {
         <div class="card-title" >
             <!--begin::Search-->
             <div class="d-flex align-items-center position-relative my-1">
-                <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4"><span class="path1"></span><span class="path2"></span></i>                <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" spellcheck="false" data-ms-editor="true">
+                <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4"><span class="path1"></span><span class="path2"></span></i>                <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" spellcheck="false" data-ms-editor="true" id="searchTerm" onkeyup="doSearch()">
             </div>
             <!--end::Search-->
 

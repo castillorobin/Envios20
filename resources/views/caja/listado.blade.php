@@ -108,7 +108,7 @@
 
 {
 
-const tableReg = document.getElementById('tenvios');
+const tableReg = document.getElementById('kt_ecommerce_report_returns_table');
 
 const searchText = document.getElementById('searchTerm').value.toLowerCase();
 
@@ -307,7 +307,7 @@ if (searchText == "") {
         <div class="card-title" >
             <!--begin::Search-->
             <div class="d-flex align-items-center position-relative my-1">
-                <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4"><span class="path1"></span><span class="path2"></span></i>                <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" spellcheck="false" data-ms-editor="true">
+                <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4"><span class="path1"></span><span class="path2"></span></i>                <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" spellcheck="false" data-ms-editor="true" id="searchTerm" onkeyup="doSearch()">
             </div>
             <!--end::Search-->
 
@@ -337,7 +337,8 @@ if (searchText == "") {
         
 <!--begin::Table-->
 <div  id="kt_ecommerce_report_returns_table_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer"><div id="" class="table-responsive">
-    <table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_returns_table" style="width: 100%;"><colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
+    <table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_returns_table" style="width: 100%;">
+        <colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
     <thead>
         <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
             <th class="min-w-100px dt-orderable-asc dt-orderable-desc text-center" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
