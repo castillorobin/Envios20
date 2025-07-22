@@ -378,18 +378,22 @@ if (searchText == "") {
                     <td class="text-center">
                         @if ($caja->tipo == "Entrada")
                            $ {{ $caja->valor }}
+                        @elseif ($caja->tipo == "Caja inicial")
+                            $ {{ $caja->valor }}
                         @else
                             $ 0.00
                         @endif
                     </td>
                     <td class="text-center">
-                         @if ($caja->tipo == "Salida")
+                          @if ($caja->tipo == "Salida")
                            $ {{ $caja->valor }}
+                        @elseif ($caja->tipo == "Cierre de caja")
+                            $ {{ $caja->valor }}
                         @else
                             $ 0.00
                         @endif
                     </td>
-                    <td class="text-center"></td>
+                    <td class="text-center">$ {{$caja->saldo}}</td>
                     <td class="text-center">{{$caja->cajero}}</td>
                     </tr>
                     @endforeach

@@ -66,24 +66,57 @@ class CajaController extends Controller
         ->where('estado', 0)
         ->get();
 
+        $ultimoMovi = Detallecaja::where('idcaja', $idcaja[0]->id)
+                ->latest('id') // o cualquier columna de ordenamiento como created_at
+                ->first();
+
+       //  dd($ultimoMovi->tipo);
+       if ($tipo == "Caja inicial") {
+        $saldomovi = $request->get('valor') ;
+       }else {
+        $saldomovi = $ultimoMovi->saldo;
+       }
+       
+$saldo = 0;
+     //  dd($ultimoMovi);
 
     $movimiento = new Detallecaja();
+    
     $movimiento->cajero = $request->get('cajero') ;
     $movimiento->agencia = $request->get('agencia') ;
     $movimiento->tipo = $request->get('tipo') ;
     $movimiento->concepto = $request->get('concepto') ;
     $movimiento->valor = $request->get('valor') ;
+    
+    
+    if ($tipo == "Caja inicial") {
+        $movimiento->saldo = $saldomovi;
+        $saldo = $saldomovi;
+    }
+    if ($tipo == "Entrada") {
+        $movimiento->saldo = $saldomovi + $request->get('valor') ;
+        $saldo = $saldomovi + $request->get('valor');
+    }
+    if ($tipo == "Salida") {
+        $movimiento->saldo = $saldomovi - $request->get('valor') ;
+        $saldo = $saldomovi - $request->get('valor') ;
+    }
+    if ($tipo == "Cierre de caja") {
+        $movimiento->saldo = $saldomovi - $request->get('valor') ;
+        $saldo = $saldomovi - $request->get('valor') ;
+    }
+
     $movimiento->idcaja = $idcaja[0]->id ;
     $movimiento->save();
 
     $movis = Detallecaja::where('idcaja', $idcaja[0]->id)
         ->get();
 
-        $saldo = 0;
+        
     if ($tipo == "Cierre de caja") {
           $idcaja2= Caja::find($idcaja[0]->id);
            $idcaja2->estado = 1 ;
-            
+            /*
            foreach ($movis as $movi) {
 
                 if ($movi->tipo == "Caja inicial") {
@@ -96,7 +129,7 @@ class CajaController extends Controller
                     $saldo -= $movi->valor;
                 }
            }
-
+*/
            $idcaja2->saldo = $saldo ;
 
            $idcaja2->save();

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('concepto')->nullable();
             $table->double('valor')->nullable(); 
             $table->integer('idcaja')->nullable();
+            $table->double('saldo')->nullable(); 
             $table->timestamps();
         });
     }
