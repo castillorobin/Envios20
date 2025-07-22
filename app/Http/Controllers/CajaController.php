@@ -6,6 +6,7 @@ use App\Models\Caja;
 use App\Models\Detallecaja;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Support\Str;
 
 class CajaController extends Controller
 {
@@ -65,6 +66,16 @@ class CajaController extends Controller
         $idcaja = Caja::where('cajero', $cajero)
         ->where('estado', 0)
         ->get();
+
+        if($idcaja->isEmpty()){
+
+           // dd("se fue");
+
+           return redirect()->back()->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+           
+        }
+
+
 
         $ultimoMovi = Detallecaja::where('idcaja', $idcaja[0]->id)
                 ->latest('id') // o cualquier columna de ordenamiento como created_at
@@ -136,6 +147,37 @@ $saldo = 0;
         }
     // Redirigir o mostrar mensaje
     return redirect()->back()->with('success', 'Registro guardado correctamente');
+    }
+
+
+    public function listadofiltro(Request $request)
+    {
+        
+        $rango = $request->input('rango');
+        $usuario = $request->input('usuario');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
+
+       // dd($fechacam1, $fechacam2);
+
+        if($usuario == "todos")
+        {
+            $cajas = Caja::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $cajas = Caja::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+      
+        $repartidores = User::all();
+        return view('caja.jefe', compact('repartidores', 'cajas'));
     }
 
     /**

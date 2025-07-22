@@ -108,7 +108,7 @@
 
 {
 
-const tableReg = document.getElementById('kt_ecommerce_report_returns_table');
+const tableReg = document.getElementById('kt_ecommerce_report_shipping_table');
 
 const searchText = document.getElementById('searchTerm').value.toLowerCase();
 
@@ -197,8 +197,7 @@ if (searchText == "") {
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-     
-
+      
     <div class="d-flex flex-column flex-column-fluid">
                                             
 <!--begin::Toolbar-->
@@ -322,7 +321,7 @@ if (searchText == "") {
 
 
 <div class="col-12 col-md-9">
-                                    <form action="/caja/jefedatos" method="GET">
+                                    <form action="/caja/listadofiltro" method="GET">
                                         <table  style="float:right;">
                                             <tr>
                                                 <td>
@@ -373,7 +372,7 @@ if (searchText == "") {
 <!--begin::Table-->
 <div  id="kt_ecommerce_report_returns_table_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer"><div id="" class="table-responsive">
     
-<table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_returns_table" style="width: 100%;"><colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
+<table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_shipping_table" style="width: 100%;"><colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
     <thead>
         <tr class="text-center text-gray-500 fw-bold fs-7 text-uppercase gs-0">
             <th class="text-center min-w-100px dt-orderable-asc dt-orderable-desc" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
@@ -512,6 +511,7 @@ if (searchText == "") {
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
    
+
 
 
 

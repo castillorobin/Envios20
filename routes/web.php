@@ -326,6 +326,7 @@ Route::get('/caja/cajero', [App\Http\Controllers\CajaController::class, 'cajero'
 Route::get('/caja/jefe', [App\Http\Controllers\CajaController::class, 'jefe'] )->name('jefe') ;
 Route::get('/caja/guardar', [App\Http\Controllers\CajaController::class, 'store'])->name('caja.store');
 Route::get('/caja/listado/{id}', [App\Http\Controllers\CajaController::class, 'listado'])->name('caja.listado');
+Route::get('/caja/listadofiltro', [App\Http\Controllers\CajaController::class, 'listadofiltro'])->name('caja.listadofiltro');
 
 /*
 
