@@ -24,11 +24,18 @@ class CajaController extends Controller
     }
     public function jefe()
     {
-        $cajas = Detallecaja::all();
-          $repartidores = User::all();
+        $cajas = Caja::all();
+        $repartidores = User::all();
         return view('caja.jefe', compact('repartidores', 'cajas'));
     }
 
+    public function listado($id)
+    {
+
+        $cajas = Detallecaja::where('idcaja', $id)
+        ->get();
+         return view('caja.listado', compact('cajas'));
+    }
 
 
     /**
@@ -44,28 +51,56 @@ class CajaController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->get('cajero'));
-       // dd("entro");
-        // Validar datos
-        /*
-    $validated = $request->validate([
-        'cajero' => 'required|string|max:255',
-        'agencia' => 'required|string|max:255',
-        'tipo' => 'required|string|max:255',
-        'concepto' => 'required|string|max:255',
-        'valor' => 'required|double|max:255',
-        
-    ]);  */
-//dd($request);
-    // Guardar en la base de datos
-    //Detallecaja::create($request);
+        $tipo = $request->get('tipo') ;
+        $cajero = $request->get('cajero') ;
+
+        if ($tipo == "Caja inicial") {
+           // dd("Caja inicial");
+           $caja = new Caja();
+           $caja->cajero = $request->get('cajero') ;
+           $caja->save();
+        }
+
+
+        $idcaja = Caja::where('cajero', $cajero)
+        ->where('estado', 0)
+        ->get();
+
+
     $movimiento = new Detallecaja();
     $movimiento->cajero = $request->get('cajero') ;
     $movimiento->agencia = $request->get('agencia') ;
     $movimiento->tipo = $request->get('tipo') ;
     $movimiento->concepto = $request->get('concepto') ;
     $movimiento->valor = $request->get('valor') ;
+    $movimiento->idcaja = $idcaja[0]->id ;
     $movimiento->save();
+
+    $movis = Detallecaja::where('idcaja', $idcaja[0]->id)
+        ->get();
+
+        $saldo = 0;
+    if ($tipo == "Cierre de caja") {
+          $idcaja2= Caja::find($idcaja[0]->id);
+           $idcaja2->estado = 1 ;
+            
+           foreach ($movis as $movi) {
+
+                if ($movi->tipo == "Caja inicial") {
+                    $saldo += $movi->valor;
+                }
+                if ($movi->tipo == "Entrada") {
+                    $saldo += $movi->valor;
+                }
+                if ($movi->tipo == "Salida") {
+                    $saldo -= $movi->valor;
+                }
+           }
+
+           $idcaja2->saldo = $saldo ;
+
+           $idcaja2->save();
+        }
     // Redirigir o mostrar mensaje
     return redirect()->back()->with('success', 'Registro guardado correctamente');
     }

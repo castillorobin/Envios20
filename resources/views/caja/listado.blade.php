@@ -198,7 +198,7 @@ if (searchText == "") {
 
     <x-default-layout>
      
-
+<input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <div class="d-flex flex-column flex-column-fluid">
                                             
 <!--begin::Toolbar-->
@@ -213,7 +213,7 @@ if (searchText == "") {
 <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
     <!--begin::Title-->
     <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
-        Reporte de Jefe de cajeros
+        Listado de movimientos
             </h1>
     <!--end::Title-->
 
@@ -244,7 +244,7 @@ if (searchText == "") {
                                         
                             <!--begin::Item-->
                                     <li class="breadcrumb-item text-muted">
-                                                    Reporte de Jefe de cajeros                                           </li>
+                                                    Listado de movimientos                                           </li>
                                 <!--end::Item-->
                                         
                     </ul>
@@ -319,50 +319,15 @@ if (searchText == "") {
 
         <!--begin::Card toolbar-->
         <div class="card-toolbar flex-row-fluid justify-content-end gap-5" >
+            <!--begin::Daterangepicker-->
+ <a href="/caja/jefe" class="btn btn-sm fw-bold btn-primary" >
+            Regresar       </a>
+<!--end::Daterangepicker-->
+
+<!--begin::Export dropdown-->
 
 
-<div class="col-12 col-md-9">
-                                    <form action="/caja/jefedatos" method="GET">
-                                        <table  style="float:right;">
-                                            <tr>
-                                                <td>
-                                    <div class="col-auto" style="margin-right: 15px;">
-                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
-  </div>
-  </td>
-  <td style="width: 30%;">
-                                    <div class=" ">
-
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
-                                   
-                                    <option value="todos" >Todos</option>
-                                    @foreach ($repartidores as $repartidor)
-                                    <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
-                                    @endforeach
-                                </select>
-  </div>
-  </td>
-  <td >
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
-  </div>
-  </td>
-  <td >
-    <a href="/caja/jefe">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
-    </a>
-</td>
-  </tr>
-  </table>
-          
-                                   
-                                    </form>
-                                    </div>
-
-
-
-
-    </div>
+<!--end::Export dropdown-->        </div>
         <!--end::Card toolbar-->
     </div>
     <!--end::Card header-->
@@ -372,54 +337,58 @@ if (searchText == "") {
         
 <!--begin::Table-->
 <div  id="kt_ecommerce_report_returns_table_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer"><div id="" class="table-responsive">
-    
-<table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_returns_table" style="width: 100%;"><colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
+    <table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_returns_table" style="width: 100%;"><colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
     <thead>
-        <tr class="text-center text-gray-500 fw-bold fs-7 text-uppercase gs-0">
-            <th class="text-center min-w-100px dt-orderable-asc dt-orderable-desc" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">ID</span><span class="dt-column-order"></span>
-            </th>
-
-            <th class="text-center min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="1" rowspan="1" colspan="1" aria-label="No. Orders Returned: Activate to sort" tabindex="0">
+        <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+            <th class="min-w-100px dt-orderable-asc dt-orderable-desc text-center" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Fecha</span><span class="dt-column-order"></span>
             </th>
-            
-            <th class="text-center min-w-175px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="2" rowspan="1" colspan="1" aria-label="No. Orders Refunded: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Cajero</span><span class="dt-column-order"></span>
+
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="1" rowspan="1" colspan="1" aria-label="No. Orders Returned: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Concepto</span><span class="dt-column-order"></span>
             </th>
             
-            <th class="text-center min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="3" rowspan="1" colspan="1" aria-label="No. Orders Replaced: Activate to sort" tabindex="0">
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="2" rowspan="1" colspan="1" aria-label="No. Orders Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Entrada</span><span class="dt-column-order"></span>
+            </th>
+            
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="3" rowspan="1" colspan="1" aria-label="No. Orders Replaced: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Salida</span><span class="dt-column-order"></span>
+            </th>
+            
+            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Saldo</span><span class="dt-column-order"></span>
             </th>
             
-            <th class="text-center min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Estado</span><span class="dt-column-order"></span>
+            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="5" rowspan="1" colspan="1" aria-label="Total Replaced: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Cajero</span><span class="dt-column-order"></span>
             </th>
-            
-           
         </tr>
     </thead>
     <tbody class="fw-semibold text-gray-600">
-       
+      
          @foreach ($cajas as $caja) 
              <tr class="'table-row-gray' : 'table-row-white' ">
                     <td class="text-center"> 
-                        <a href="/caja/listado/{{ $caja->id }}" class="form-control-plaintext">
-                    {{ $caja->id }}
-                    </a>
+                    {{ date('d/m/Y', strtotime($caja->created_at)) }}
                     </td>
-                    <td class="text-center">{{ date('d/m/Y', strtotime($caja->created_at)) }}</td>
-                    <td class="text-center">{{$caja->cajero}}</td>
-                    <td class="text-center">$ {{$caja->saldo}}</td>
+                    <td class="text-center">{{ $caja->concepto }}</td>
                     <td class="text-center">
-                        @if($caja->estado == 0)
-                        <span class="badge text-bg-success">Abierta</span>
-                        @endif
-                        @if($caja->estado == 1)
-                        <span class="badge text-bg-danger">Cerrada</span>
+                        @if ($caja->tipo == "Entrada")
+                           $ {{ $caja->valor }}
+                        @else
+                            $ 0.00
                         @endif
                     </td>
-                    
+                    <td class="text-center">
+                         @if ($caja->tipo == "Salida")
+                           $ {{ $caja->valor }}
+                        @else
+                            $ 0.00
+                        @endif
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="text-center">{{$caja->cajero}}</td>
                     </tr>
                     @endforeach
         </tbody>
@@ -443,10 +412,12 @@ if (searchText == "") {
 
 <div class="modal fade" tabindex="-1" id="kt_modal_stacked_1">
 <div class="modal-dialog modal-dialog-centered">
+     
     <div class="modal-content">
         <div class="modal-header">
             <h3 class="modal-title">Crear Movimiento</h3>
-
+<form action="/caja/guardar" method="GET">
+     
             <!--begin::Close-->
             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
@@ -455,14 +426,15 @@ if (searchText == "") {
         </div>
 
         <div class="modal-body">
-           <input type="text" class="form-control form-control-solid" placeholder="Cajero"/>
+            
+           <input type="text" name="cajero" class="form-control form-control-solid" value="{{ Auth::user()->name }}" readonly />
            <br>
-            <input type="date" class="form-control form-control-solid" placeholder="Fecha"/>
+            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}"/>
             
             <br>
-            <input type="text" class="form-control form-control-solid" placeholder="Agencia"/>
+            <input type="text" name="agencia" class="form-control form-control-solid" placeholder="Agencia"/>
             <br>
-            <select class="form-select form-select-solid" aria-label="Select example">
+            <select class="form-select form-select-solid" aria-label="Select example" name="tipo">
     <option>Tipo</option>
     <option value="Caja inicial">Caja inicial</option>
     <option value="Entrada">Entrada</option>
@@ -470,9 +442,9 @@ if (searchText == "") {
     <option value="Cierre de caja">Cierre de caja</option>
 </select>
             <br>
-            <input type="text" class="form-control form-control-solid" placeholder="Concepto"/>
+            <input type="text" class="form-control form-control-solid" placeholder="Concepto" name="concepto" />
             <br>
-            <input type="text" class="form-control form-control-solid" placeholder="$0.00"/>
+            <input type="text" class="form-control form-control-solid" placeholder="$0.00" name="valor" />
             
 
 
@@ -481,7 +453,7 @@ if (searchText == "") {
 
         <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-            <button type="button" class="btn btn-primary">Guardar</button>
+            <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
     </div>
 </div>

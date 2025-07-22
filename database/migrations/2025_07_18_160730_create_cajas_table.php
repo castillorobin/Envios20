@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('cajas', function (Blueprint $table) {
             $table->id();
             $table->string('cajero')->nullable();
+            $table->double('saldo')->nullable();
+            $table->integer('estado')->nullable(); 
             $table->timestamps();
         });
     }
