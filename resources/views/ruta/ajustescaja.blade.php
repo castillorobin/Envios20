@@ -162,10 +162,10 @@
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px">Tipo</th>
-                                                <th class="min-w-150px">Concepto</th>
+                                                <th class="min-w-100px text-center">Tipo</th>
+                                                <th class="min-w-150px text-center">Concepto</th>
                                                 
-                                                <th class="min-w-100px">Acción</th>
+                                                <th class="min-w-100px text-center">Acción</th>
 
                                               
                                                 
@@ -174,12 +174,12 @@
                                         <tbody class="fw-semibold ">
                                             @foreach ($cajas as $ruta) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> {{$ruta->tipo}}</td>
-                                                <td>{{ $ruta->concepto }}</td>
+                                                <td class="text-center"> {{$ruta->tipo}}</td>
+                                                <td class="text-center">{{ $ruta->concepto }}</td>
                                            
                                                 
                                                
-                                                <td>
+                                                <td class="text-center">
                                                     <a href="/caja/editar/{{$ruta->id}}">
                                                 <button type="button" class="btn btn-warning">Editar</button></a>
                                                 <a href="/caja/eliminar/{{$ruta->id}}">
