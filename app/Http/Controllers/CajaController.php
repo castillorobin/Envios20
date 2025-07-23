@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Caja;
 use App\Models\Detallecaja;
+use App\Models\Conceptocaja;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
@@ -37,14 +38,54 @@ class CajaController extends Controller
         ->get();
          return view('caja.listado', compact('cajas'));
     }
+    public function ajustes()
+    {
+        $cajas = Conceptocaja::all();
+         return view('ruta.ajustescaja', compact('cajas'));
+    }
+
+    public function guardarconcepto(Request $request)
+    {
+        $tipo = $request->get('tipo') ;
+        $concepto = $request->get('concepto') ;
+
+        $conce = new Conceptocaja();
+        $conce->tipo = $tipo ;
+        $conce->concepto = $concepto ;
+        $conce->save();
+        return redirect()->back()->with('success', 'Registro guardado correctamente');
+    }
 
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function editar($id)
     {
-        //
+         $ruta = Conceptocaja::find($id);
+         return view('ruta.editarajustecaja', compact('ruta'));
+    }
+
+    public function editandoconcepto(Request $request)
+    {
+        $id = $request->get('id') ;
+        $tipo = $request->get('tipo') ;
+        $concepto = $request->get('concepto') ;
+        $conce = Conceptocaja::find($id);
+        $conce->tipo = $tipo ;
+        $conce->concepto = $concepto ;
+        $conce->save();
+         
+         $cajas = Conceptocaja::all();
+         return view('ruta.ajustescaja', compact('cajas'));
+    }
+    public function eliminar($id)
+    {
+        $ruta = Conceptocaja::find($id);
+         $ruta->delete();
+    
+      $cajas = Conceptocaja::all();
+        return redirect()->back()->with('success', 'Registro Eliminado correctamente');
     }
 
     /**

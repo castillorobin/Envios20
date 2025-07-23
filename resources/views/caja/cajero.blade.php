@@ -455,7 +455,7 @@ if (searchText == "") {
 
 
 
-
+<!--inicia::Modal-->	
 
 <div class="modal fade" tabindex="-1" id="kt_modal_stacked_1">
 <div class="modal-dialog modal-dialog-centered">
@@ -476,7 +476,7 @@ if (searchText == "") {
             
            <input type="text" name="cajero" class="form-control form-control-solid" value="{{ Auth::user()->name }}" readonly />
            <br>
-            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}"/>
+            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}" />
             
             <br>
             <input type="text" name="agencia" class="form-control form-control-solid" placeholder="Agencia"/>
