@@ -481,14 +481,13 @@ if (searchText == "") {
             <br>
             <input type="text" name="agencia" class="form-control form-control-solid" placeholder="Agencia"/>
             <br>
-            <select class="form-select form-select-solid" aria-label="Select example" name="tipo">
-    <option>Tipo</option>
+          
+              <select class="form-select form-select-solid" aria-label="Select example" name="concepto">
+    <option>Concepto</option>
     @foreach ($conceptos as $concepto)
-    <option value="{{$concepto->tipo}}">{{$concepto->tipo}}</option>
+    <option value="{{$concepto->concepto}}">{{$concepto->concepto}}</option>
     @endforeach
 </select>
-            <br>
-            <input type="text" class="form-control form-control-solid" placeholder="Concepto" name="concepto" />
             <br>
             <input type="text" class="form-control form-control-solid" placeholder="$0.00" name="valor" />
             
