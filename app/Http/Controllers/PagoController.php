@@ -453,6 +453,7 @@ class PagoController extends Controller
        $envios = Envio::query()->find($checked);
 
         $idinforme = Ticktpago::query()->find($ticketact->id);
+
  if ($activo== 1) {
          //guardar movimiento
         $idcaja = Caja::where('cajero', $cajero)
@@ -492,6 +493,7 @@ class PagoController extends Controller
                 $envio->pago = "Pagado";
                 $idinforme->estado = "Pagado";
             }
+
             if ($verificado== 1) {
                 $envio->pago = "Verificado";
                 $idinforme->estado = "Verificado";
@@ -514,11 +516,12 @@ class PagoController extends Controller
             }
 
 
-$idinforme->save();
+
             
             $envio->save();
             
             }
+            $idinforme->save();
        }
 
         $pdf = PDF::loadView('envios.pagoticket', ['ticketact'=>$ticketact, 'envios'=>$envios]);

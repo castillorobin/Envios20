@@ -291,7 +291,7 @@ class CobroController extends Controller
         $idcaja = Caja::where('cajero', $cajero)
         ->where('estado', 0)
         ->get();
-
+ 
         if($idcaja->isEmpty()){
            $conceptos = Conceptocaja::all();
         $cajas = Detallecaja::all();

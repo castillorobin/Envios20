@@ -94,10 +94,18 @@ class CajaController extends Controller
      */
     public function store(Request $request)
     {
-        $tipo = $request->get('tipo') ;
+       // $tipo = $request->get('tipo') ;
         $cajero = $request->get('cajero') ;
 
-        if ($request->get('concepto') == "Caja inicial") {
+        $conce = $request->get('concepto');
+
+        $conceptoreg = Conceptocaja::find($conce);
+
+       $tipo = $conceptoreg->tipo;
+
+      //  dd($conceptoreg->tipo);
+
+        if ($conceptoreg->concepto == "Apertura de caja") {
            // dd("Caja inicial");
            $caja = new Caja();
            $caja->cajero = $request->get('cajero') ;
@@ -124,7 +132,7 @@ class CajaController extends Controller
                 ->first();
 
        //  dd($ultimoMovi->tipo);
-       if ($request->get('concepto') == "Caja inicial") {
+       if ($conceptoreg->concepto == "Apertura de caja") {
         $saldomovi = $request->get('valor') ;
        }else {
         $saldomovi = $ultimoMovi->saldo;
@@ -137,19 +145,21 @@ $saldo = 0;
     
     $movimiento->cajero = $request->get('cajero') ;
     $movimiento->agencia = $request->get('agencia') ;
-    $movimiento->tipo = $request->get('tipo') ;
-    $movimiento->concepto = $request->get('concepto') ;
+    $movimiento->tipo = $conceptoreg->tipo ;
+    $movimiento->concepto = $conceptoreg->concepto ;
     $movimiento->valor = $request->get('valor') ;
     
     
-    if ($tipo == "Caja inicial") {
-        $movimiento->saldo = $saldomovi;
-        $saldo = $saldomovi;
-    }
+    
     if ($tipo == "Entrada") {
         $movimiento->saldo = $saldomovi + $request->get('valor') ;
         $saldo = $saldomovi + $request->get('valor');
     }
+    if ($conceptoreg->concepto == "Apertura de caja") {
+        $movimiento->saldo = $saldomovi;
+        $saldo = $saldomovi;
+    }
+
     if ($tipo == "Salida") {
         $movimiento->saldo = $saldomovi - $request->get('valor') ;
         $saldo = $saldomovi - $request->get('valor') ;

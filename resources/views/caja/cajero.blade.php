@@ -419,7 +419,7 @@ if (searchText == "") {
                     <td class="text-center">
                         @if ($caja->tipo == "Entrada")
                            $ {{ $caja->valor }}
-                        @elseif ($caja->tipo == "Caja inicial")
+                        @elseif ($caja->tipo == "Apertura de caja")
                             $ {{ $caja->valor }}
                         @else
                             $ 0.00
@@ -485,7 +485,7 @@ if (searchText == "") {
               <select class="form-select form-select-solid" aria-label="Select example" name="concepto">
     <option>Concepto</option>
     @foreach ($conceptos as $concepto)
-    <option value="{{$concepto->concepto}}">{{$concepto->concepto}}</option>
+    <option value="{{$concepto->id}}">{{$concepto->concepto}}</option>
     @endforeach
 </select>
             <br>

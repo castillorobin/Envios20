@@ -223,7 +223,7 @@ class EntregaController extends Controller
     $movimiento->cajero = $request->get('cajero') ;
     $movimiento->agencia = $request->get('agencia') ;
     $movimiento->tipo =  "Entrada";
-    $movimiento->concepto =  "Cobro de guia";
+    $movimiento->concepto =  "Entrega ticket " . $identrega;
     $movimiento->valor =  $tota;
     $movimiento->saldo = $saldomovi + $tota;
     $movimiento->idcaja = $idcaja[0]->id ;

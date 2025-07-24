@@ -344,6 +344,9 @@ if (searchText == "") {
             <th class="min-w-100px dt-orderable-asc dt-orderable-desc text-center" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Fecha</span><span class="dt-column-order"></span>
             </th>
+            <th class="min-w-100px dt-orderable-asc dt-orderable-desc text-center" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Hora</span><span class="dt-column-order"></span>
+            </th>
 
             <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="1" rowspan="1" colspan="1" aria-label="No. Orders Returned: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Concepto</span><span class="dt-column-order"></span>
@@ -373,6 +376,8 @@ if (searchText == "") {
                     <td class="text-center"> 
                     {{ date('d/m/Y', strtotime($caja->created_at)) }}
                     </td>
+                    <td class="text-center">{{ date('h:i A', strtotime($caja->created_at)) }}</td>
+                    
                     <td class="text-center">{{ $caja->concepto }}</td>
                     <td class="text-center">
                        @if ($caja->tipo == "Entrada")
