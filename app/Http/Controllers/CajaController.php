@@ -97,7 +97,7 @@ class CajaController extends Controller
         $tipo = $request->get('tipo') ;
         $cajero = $request->get('cajero') ;
 
-        if ($tipo == "Caja inicial") {
+        if ($request->get('concepto') == "Caja inicial") {
            // dd("Caja inicial");
            $caja = new Caja();
            $caja->cajero = $request->get('cajero') ;
@@ -124,7 +124,7 @@ class CajaController extends Controller
                 ->first();
 
        //  dd($ultimoMovi->tipo);
-       if ($tipo == "Caja inicial") {
+       if ($request->get('concepto') == "Caja inicial") {
         $saldomovi = $request->get('valor') ;
        }else {
         $saldomovi = $ultimoMovi->saldo;

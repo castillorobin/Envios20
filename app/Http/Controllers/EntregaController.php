@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
  
 use App\Models\Entrega;
 use App\Models\Envio;
+use App\Models\Caja;
+use App\Models\Detallecaja;
+use App\Models\Conceptocaja;
 use Illuminate\Http\Request;
 use PDF; 
 use App\Models\User;
@@ -12,7 +15,7 @@ use Illuminate\Support\Str;
 
 class EntregaController extends Controller
 {
-    /**
+    /** 
      * Display a listing of the resource.
      */
     public function index()
@@ -182,6 +185,7 @@ class EntregaController extends Controller
 
         
 
+
         foreach($envios as $envio){
             $envioid = $envio->id;
             if($metodo == "Efectivo"){
@@ -198,6 +202,32 @@ class EntregaController extends Controller
 
         $ticketact = Entrega::where('id', $identrega)
         ->get();
+
+        //guardar movimiento
+        $idcaja = Caja::where('cajero', $cajero)
+        ->where('estado', 0)
+        ->get();
+
+        if($idcaja->isEmpty()){
+           $conceptos = Conceptocaja::all();
+        $cajas = Detallecaja::all();
+         return view('caja.cajero', compact('cajas', 'conceptos'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        }
+        $ultimoMovi = Detallecaja::where('idcaja', $idcaja[0]->id)
+                ->latest('id') // o cualquier columna de ordenamiento como created_at
+                ->first();
+        $saldomovi = $ultimoMovi->saldo;
+
+        $movimiento = new Detallecaja();
+    
+    $movimiento->cajero = $request->get('cajero') ;
+    $movimiento->agencia = $request->get('agencia') ;
+    $movimiento->tipo =  "Entrada";
+    $movimiento->concepto =  "Cobro de guia";
+    $movimiento->valor =  $tota;
+    $movimiento->saldo = $saldomovi + $tota;
+    $movimiento->idcaja = $idcaja[0]->id ;
+    $movimiento->save();
 
         $pdf = PDF::loadView('envios.ticketentrega', ['ticketact'=>$ticketact, 'envios'=>$envios]);
         //return view('envios.ticketpagos');

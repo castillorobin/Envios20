@@ -11,6 +11,9 @@ use Carbon\Carbon;
 use App\Models\Envio;
 use App\Models\Ticktpago; 
 use App\Models\Entrega; 
+use App\Models\Caja;
+use App\Models\Detallecaja;
+use App\Models\Conceptocaja;
 use PDF; 
 use Illuminate\Support\Str;
 use App\Models\User;
@@ -429,6 +432,7 @@ class PagoController extends Controller
 
 
 
+
         $pedido = new Ticktpago();
         $pedido->comercio = $comercio;
         $pedido->descuento = $descu;
@@ -449,6 +453,34 @@ class PagoController extends Controller
        $envios = Envio::query()->find($checked);
 
         $idinforme = Ticktpago::query()->find($ticketact->id);
+ if ($activo== 1) {
+         //guardar movimiento
+        $idcaja = Caja::where('cajero', $cajero)
+        ->where('estado', 0)
+        ->get();
+
+        if($idcaja->isEmpty()){
+           $conceptos = Conceptocaja::all();
+        $cajas = Detallecaja::all();
+         return view('caja.cajero', compact('cajas', 'conceptos'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        }
+        $ultimoMovi = Detallecaja::where('idcaja', $idcaja[0]->id)
+                ->latest('id') // o cualquier columna de ordenamiento como created_at
+                ->first();
+        $saldomovi = $ultimoMovi->saldo;
+
+        $movimiento = new Detallecaja();
+    
+    $movimiento->cajero = $request->get('cajero') ;
+    $movimiento->agencia = $request->get('agencia') ;
+    $movimiento->tipo =  "Salida";
+    $movimiento->concepto =  "Pago del ticket " . $ticketact->id;
+    $movimiento->valor =  $tota;
+    $movimiento->saldo = $saldomovi + $tota;
+    $movimiento->idcaja = $idcaja[0]->id ;
+    $movimiento->save();
+}
+
 
        if($envios){
        

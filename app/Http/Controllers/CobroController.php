@@ -11,6 +11,9 @@ use Carbon\Carbon;
 use App\Models\Envio;
 use PDF;
 use App\Models\Hestado;
+use App\Models\Caja;
+use App\Models\Detallecaja;
+use App\Models\Conceptocaja;
 
 class CobroController extends Controller
 { 
@@ -283,12 +286,42 @@ class CobroController extends Controller
 
         $envios = Envio::where('ticketc', $ticketnum)->get();
 
+
+        //guardar movimiento
+        $idcaja = Caja::where('cajero', $cajero)
+        ->where('estado', 0)
+        ->get();
+
+        if($idcaja->isEmpty()){
+           $conceptos = Conceptocaja::all();
+        $cajas = Detallecaja::all();
+         return view('caja.cajero', compact('cajas', 'conceptos'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        }
+        $ultimoMovi = Detallecaja::where('idcaja', $idcaja[0]->id)
+                ->latest('id') // o cualquier columna de ordenamiento como created_at
+                ->first();
+        $saldomovi = $ultimoMovi->saldo;
+
+        $movimiento = new Detallecaja();
+    
+    $movimiento->cajero = $request->get('cajero') ;
+    $movimiento->agencia = $request->get('agencia') ;
+    $movimiento->tipo =  "Entrada";
+    $movimiento->concepto =  "Cobro del ticket " . $ticketnum;
+    $movimiento->valor =  $request->get('total2');
+    $movimiento->saldo = $saldomovi + $request->get('total2');
+    $movimiento->idcaja = $idcaja[0]->id ;
+    $movimiento->save();
+
         foreach($envios as $envio){
             
             $envio->usuario = $cajero;
             $envio->agencia = $agencia;
             $envio->save();
             }
+
+
+
 
 
 
