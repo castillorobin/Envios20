@@ -237,9 +237,9 @@ class PagoController extends Controller
 
         $idcaja = Caja::where('cajero', $nombreCajero)->where('estado', 0)->get();
         if($idcaja->isEmpty()){
-             $nota = "Se debe de abrir caja antes de realizar un Pago";
-        return view('envios.pagoslistaticket', compact('nota'));
-           
+             $nota = " ";
+       session()->flash('error', 'Recuerda que antes de realizar un pago tienes que aperturar caja');
+           return view('envios.pagoslistaticket', compact('nota'));
         }
 
         $nota = " ";

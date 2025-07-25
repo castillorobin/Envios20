@@ -33,6 +33,7 @@
 
     <x-default-layout>
 
+
         <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
 
             <!--begin::Content wrapper-->
@@ -80,9 +81,28 @@
                                         <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">$0.00</span>
                                     </div>
                                 </div>
+                                
+@if (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show z-3 position-absolute" role="alert" id="alert-error" style="margin-left: 35px; margin-bottom: 15px; font-size: 14px;">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        // Espera 4 segundos (4000 ms) y luego oculta el mensaje
+        setTimeout(function () {
+            let alertBox = document.getElementById('alert-error');
+            if (alertBox) {
+                alertBox.classList.remove('show');
+                alertBox.classList.add('fade');
+                alertBox.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+@endif
                                 <span style="font-size:18px; color: red;"> {{ $nota }} &nbsp; </span>
                             </div>
-                            
+  
                         </div>
                        
                         <br>
