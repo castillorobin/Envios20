@@ -17,6 +17,7 @@ use App\Models\Conceptocaja;
 use PDF; 
 use Illuminate\Support\Str;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use DateInterval;
  
 class PagoController extends Controller
@@ -229,6 +230,18 @@ class PagoController extends Controller
     {
        // $pedidos = Cobro::all();
         //$comercios = Comercio::all(); 
+
+        $nombreCajero = auth()->user()->name;
+
+       // dd($nombreCajero);
+
+        $idcaja = Caja::where('cajero', $nombreCajero)->where('estado', 0)->get();
+        if($idcaja->isEmpty()){
+             $nota = "Se debe de abrir caja antes de realizar un Pago";
+        return view('envios.pagoslistaticket', compact('nota'));
+           
+        }
+
         $nota = " ";
         return view('envios.pagoslistaticket', compact('nota'));
     }
