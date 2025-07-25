@@ -73,17 +73,15 @@
                         </form>
                            
                             <div class="col-md-7 m-2 mb-4">
-                                <div class="d-flex flex-stack bg-success rounded-4 p-3 float-end" style="width: 250px;">
+                                <div class="d-flex flex-stack rounded-4 p-3 float-end" style="width: 250px;">
                                     <div class="fs-6 fw-bold text-white">
-                                        <span class="d-block fs-1 lh-1">Total</span>
+                                        
                                     </div>
-                                    <div class="fs-6 fw-bold text-white text-end">
-                                        <span id="total1" name="total1" class="d-block fs-1 lh-1" data-kt-pos-element="grant-total">$0.00</span>
-                                    </div>
+                                   
                                 </div>
                                 
 @if (session('error'))
-    <div class="alert alert-danger alert-dismissible fade show z-3 position-absolute" role="alert" id="alert-error" style="margin-left: 35px; margin-bottom: 15px; font-size: 14px;">
+    <div class="alert alert-danger alert-dismissible fade show " role="alert" id="alert-error" style="margin-left: 35px; margin-top: 35px; font-size: 14px;">
         {{ session('error') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
