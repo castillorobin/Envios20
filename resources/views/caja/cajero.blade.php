@@ -435,7 +435,9 @@ if (searchText == "") {
                             $ 0.00
                         @endif
                     </td>
-                    <td class="text-center">$ {{$caja->saldo}}</td>
+                    <td class="text-center">
+                        
+                    $ {{$caja->saldo}}</td>
                     <td class="text-center">{{$caja->cajero}}</td>
                     </tr>
                     @endforeach
@@ -446,6 +448,9 @@ if (searchText == "") {
     
             <select name="kt_ecommerce_report_returns_table_length" aria-controls="kt_ecommerce_report_returns_table" class="form-select form-select-solid form-select-sm" id="dt-length-0"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><label for="dt-length-0"></label></div></div><div id="" class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"><div class="dt-paging paging_simple_numbers"><nav aria-label="pagination"><ul class="pagination"><li class="dt-paging-button page-item disabled"><button class="page-link previous" role="link" type="button" aria-controls="kt_ecommerce_report_returns_table" aria-disabled="true" aria-label="Previous" data-dt-idx="previous" tabindex="-1"><i class="previous"></i></button></li><li class="dt-paging-button page-item active"><button class="page-link" role="link" type="button" aria-controls="kt_ecommerce_report_returns_table" aria-current="page" data-dt-idx="0">1</button></li></ul></nav></div></div></div></div>
 <!--end::Table-->    </div>
+
+
+
     <!--end::Card body-->
 </div>
 <!--end::Products-->        </div>
@@ -494,27 +499,42 @@ if (searchText == "") {
              <div id="input-cierre-wrapper3" class="mt-3">
             <input type="text" class="form-control form-control-solid" placeholder="$0.00" name="valor" />
             </div>
+            
             <div class="row">
                 <div class="col">
                     <div id="input-cierre-wrapper2" style="display: none;" class="mt-3">
    
-    <input type="text" name="valor_caja" id="valor_caja" class="form-control form-control-solid" placeholder="Saldo caja" value="{{$caja->saldo}}">
+                        <input type="text" name="valor_caja" id="valor_caja" class="form-control form-control-solid" placeholder="Saldo caja" value="{{$caja->saldo}}">
 
-</div>
+                    </div>
                 </div>
                 <div class="col">
             <!-- Input oculto al principio -->
-<div id="input-cierre-wrapper" style="display: none;" class="mt-3">
+                    <div id="input-cierre-wrapper" style="display: none;" class="mt-3">
    
-    <input type="text" name="valor_cierre" id="valor_cierre" class="form-control form-control-solid" placeholder="Saldo cajero">
+                        <input type="text" name="valor_cierre" id="valor_cierre" class="form-control form-control-solid" placeholder="Saldo cajero">
 
-</div>
-</div>
+                    </div>
+                </div>
 
-</div>
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+
+            <div id="input-saldo-final-wrapper" style="display: none;" class="mt-3">
+               
+                    <input type="number" name="saldo_final" id="saldo_final" class="form-control form-control-solid" placeholder="$0.00" readonly>
+            </div>
+
+              </div>
+            </div>
+
 
 
         </div>
+
+
 
         <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
@@ -562,6 +582,10 @@ if (searchText == "") {
         const inputWrapper = document.getElementById('input-cierre-wrapper');
         const inputWrapper2 = document.getElementById('input-cierre-wrapper2');
         const inputWrapper3 = document.getElementById('input-cierre-wrapper3');
+        const inputSaldoFinal = document.getElementById('saldo_final');
+        const inputSaldoFinalWrapper = document.getElementById('input-saldo-final-wrapper');
+        const inputCierre = document.getElementById('valor_cierre');
+        const inputcaja = document.getElementById('valor_caja');
 
         selectConcepto.addEventListener('change', function () {
             // Obtener el texto de la opción seleccionada
@@ -573,12 +597,25 @@ if (searchText == "") {
                 inputWrapper.style.display = 'block'; // Mostrar input
                 inputWrapper2.style.display = 'block';
                 inputWrapper3.style.display = 'none';
+                inputSaldoFinalWrapper.style.display = 'block';
 
             } else {
                 inputWrapper.style.display = 'none'; // Ocultar input
                 inputWrapper2.style.display = 'none';
                 inputWrapper3.style.display = 'block';
+                inputSaldoFinalWrapper.style.display = 'none';
+                inputSaldoFinal.value = '';
             }
+        });
+
+
+         // Calcular saldo final en tiempo real
+        inputCierre.addEventListener('input', function () {
+            const saldoCaja = parseFloat(inputcaja.value) || 0;
+            const valorCierre = parseFloat(inputCierre.value) || 0;
+            const saldoFinal = saldoCaja - valorCierre;
+
+            inputSaldoFinal.value = saldoFinal.toFixed(2);
         });
     });
 </script>

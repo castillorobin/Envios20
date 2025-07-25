@@ -37,7 +37,9 @@ class CajaController extends Controller
 
         $cajas = Detallecaja::where('idcaja', $id)
         ->get();
-         return view('caja.listado', compact('cajas'));
+        $cajapr = Caja::where('id', $id)
+        ->get();
+         return view('caja.listado', compact('cajas', 'cajapr'));
     }
     public function ajustes()
     {
@@ -98,6 +100,8 @@ class CajaController extends Controller
         $cajero = $request->get('cajero') ;
 
         $conce = $request->get('concepto');
+        $saldocajero = $request->get('valor_cierre');
+        $saldofinal = $request->get('saldo_final');
 
         $conceptoreg = Conceptocaja::find($conce);
 
@@ -164,10 +168,14 @@ $saldo = 0;
         $movimiento->saldo = $saldomovi - $request->get('valor') ;
         $saldo = $saldomovi - $request->get('valor') ;
     }
-    if ($tipo == "Cierre de caja") {
-        $movimiento->saldo = $saldomovi - $request->get('valor') ;
-        $saldo = $saldomovi - $request->get('valor') ;
+    
+    if ($conceptoreg->concepto == "Cierre de caja") {
+
+       $movimiento->valor = $saldocajero ;
+       $movimiento->saldo = $saldofinal;
+        
     }
+        
 
     $movimiento->idcaja = $idcaja[0]->id ;
     $movimiento->save();
@@ -176,25 +184,16 @@ $saldo = 0;
         ->get();
 
         
-    if ($tipo == "Cierre de caja") {
-          $idcaja2= Caja::find($idcaja[0]->id);
-           $idcaja2->estado = 1 ;
-            /*
-           foreach ($movis as $movi) {
+    if ($conceptoreg->concepto == "Cierre de caja") {
 
-                if ($movi->tipo == "Caja inicial") {
-                    $saldo += $movi->valor;
-                }
-                if ($movi->tipo == "Entrada") {
-                    $saldo += $movi->valor;
-                }
-                if ($movi->tipo == "Salida") {
-                    $saldo -= $movi->valor;
-                }
-           }
-*/
+          $idcaja2= Caja::find($idcaja[0]->id);
+
+           $idcaja2->estado = 1 ;
+           
            $idcaja2->saldo = $saldo ;
 
+           $idcaja2->saldocajero = $saldocajero ; 
+            $idcaja2->descuadre = $saldofinal;
            $idcaja2->save();
         }
     // Redirigir o mostrar mensaje
