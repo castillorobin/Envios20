@@ -126,7 +126,8 @@ class CajaController extends Controller
 
            // dd("se fue");
 
-           return redirect()->back()->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+          // return redirect()->back()->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+           return redirect()->route('cajero')->with('Error', 'Debe de abrir caja antes de agregar movimientos');
            
         }
 
@@ -202,10 +203,15 @@ $saldo = 0;
            $customPaper = array(0,0,360,750);
        
            $pdf->setPaper($customPaper );
-        return $pdf->stream();
+        //return $pdf->stream('cierrecaja.pdf');
+        return $pdf->download('cierrecaja.pdf');
+       
         }
+
     // Redirigir o mostrar mensaje
-    return redirect()->back()->with('success', 'Registro guardado correctamente');
+    //return redirect()->back()->with('success', 'Registro guardado correctamente');
+    return redirect()->route('cajero')->with('success', 'Registro guardado correctamente');
+
     }
 
 
