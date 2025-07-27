@@ -8,6 +8,7 @@ use App\Models\Conceptocaja;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
+use PDF; 
 
 class CajaController extends Controller
 {
@@ -195,6 +196,13 @@ $saldo = 0;
            $idcaja2->saldocajero = $saldocajero ; 
             $idcaja2->descuadre = $saldofinal;
            $idcaja2->save();
+
+
+           $pdf = PDF::loadView('caja.cierreticket', ['idcaja2'=>$idcaja2]);
+           $customPaper = array(0,0,360,750);
+       
+           $pdf->setPaper($customPaper );
+        return $pdf->stream();
         }
     // Redirigir o mostrar mensaje
     return redirect()->back()->with('success', 'Registro guardado correctamente');
