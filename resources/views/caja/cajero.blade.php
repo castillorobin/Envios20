@@ -483,10 +483,10 @@ if (searchText == "") {
             
            <input type="text" name="cajero" class="form-control form-control-solid" value="{{ Auth::user()->name }}" readonly />
            <br>
-            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}" />
+            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}" readonly />
             
             <br>
-            <input type="text" name="agencia" class="form-control form-control-solid" placeholder="Agencia"/>
+            <input type="text" name="agencia" class="form-control form-control-solid" value="{{$empleado[0]->agencia}}" readonly/>
             <br>
           
               <select class="form-select form-select-solid" aria-label="Select example" name="concepto" id="select-concepto"> 
@@ -503,8 +503,12 @@ if (searchText == "") {
             <div class="row">
                 <div class="col">
                     <div id="input-cierre-wrapper2" style="display: none;" class="mt-3">
-   
-                        <input type="text" name="valor_caja" id="valor_caja" class="form-control form-control-solid" placeholder="Saldo caja" value="{{$caja->saldo}}">
+                         
+
+                            @isset($caja->saldo)
+                               <input type="text" name="valor_caja" id="valor_caja" class="form-control form-control-solid" placeholder="Saldo caja" value="{{$caja->saldo}}">
+                            @endisset
+
 
                     </div>
                 </div>

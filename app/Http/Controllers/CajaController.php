@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Str;
 use PDF; 
+use Carbon\Carbon;
+use App\Models\Empleado;
+
+use Illuminate\Support\Facades\Auth;
 
 class CajaController extends Controller
 {
@@ -23,8 +27,18 @@ class CajaController extends Controller
     public function cajero()
     {
          $conceptos = Conceptocaja::all();
-        $cajas = Detallecaja::all();
-         return view('caja.cajero', compact('cajas', 'conceptos'));
+       // $cajas = Detallecaja::all();
+        
+        //$cajas = Detallecaja::where('created_at', Carbon::today());
+
+        $cajas = Detallecaja::whereDate('created_at', Carbon::today())
+    ->where('cajero', Auth::user()->name)
+    ->get();
+
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+
+       // dd($empleado);
+         return view('caja.cajero', compact('cajas', 'conceptos', 'empleado'));
     }
     public function jefe()
     {
