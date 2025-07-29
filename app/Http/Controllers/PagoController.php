@@ -490,7 +490,7 @@ class PagoController extends Controller
     $movimiento->tipo =  "Salida";
     $movimiento->concepto =  "Pago del ticket " . $ticketact->id;
     $movimiento->valor =  $tota;
-    $movimiento->saldo = $saldomovi + $tota;
+    $movimiento->saldo = $saldomovi - $tota;
     $movimiento->idcaja = $idcaja[0]->id ;
     $movimiento->save();
 }
