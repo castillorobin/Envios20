@@ -211,7 +211,7 @@ $saldo = 0;
            $idcaja2->saldocajero = $saldocajero ; 
             $idcaja2->descuadre = $saldofinal;
            $idcaja2->save();
-
+/*
 
            $pdf = PDF::loadView('caja.cierreticket', ['idcaja2'=>$idcaja2]);
            $customPaper = array(0,0,360,750);
@@ -219,7 +219,7 @@ $saldo = 0;
            $pdf->setPaper($customPaper );
         //return $pdf->stream('cierrecaja.pdf');
         return $pdf->download('cierrecaja.pdf');
-       
+       */
         }
 
     // Redirigir o mostrar mensaje

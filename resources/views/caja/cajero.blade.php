@@ -365,11 +365,11 @@ if (searchText == "") {
             Crear        </a>
 <!--end::Daterangepicker-->
 
-<!--begin::Export dropdown-->
+<!--begin::Export dropdown
 <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
     <i class="ki-duotone ki-exit-up fs-2"><span class="path1"></span><span class="path2"></span></i>    Exportar Reporte
 </button>
-
+-->
 <!--end::Export dropdown-->        </div>
         <!--end::Card toolbar-->
     </div>
@@ -504,9 +504,9 @@ if (searchText == "") {
                 <div class="col">
                     <div id="input-cierre-wrapper2" style="display: none;" class="mt-3">
                          
-
+                             <label for="valor_caja" class="form-label">Saldo en caja</label>
                             @isset($caja->saldo)
-                               <input type="text" name="valor_caja" id="valor_caja" class="form-control form-control-solid" placeholder="Saldo caja" value="{{$caja->saldo}}">
+                               <input type="text" name="valor_caja" id="valor_caja" class="form-control form-control-solid" placeholder="Saldo caja" value="{{$caja->saldo}}" readonly>
                             @endisset
 
 
@@ -515,7 +515,7 @@ if (searchText == "") {
                 <div class="col">
             <!-- Input oculto al principio -->
                     <div id="input-cierre-wrapper" style="display: none;" class="mt-3">
-   
+                        <label for="valor_cierre" class="form-label">Saldo de cajero</label>
                         <input type="text" name="valor_cierre" id="valor_cierre" class="form-control form-control-solid" placeholder="Saldo cajero">
 
                     </div>
@@ -525,9 +525,9 @@ if (searchText == "") {
 
             <div class="row">
                 <div class="col-6">
-
+                
             <div id="input-saldo-final-wrapper" style="display: none;" class="mt-3">
-               
+               <label for="saldo_final" class="form-label">Descuadre</label>
                     <input type="number" name="saldo_final" id="saldo_final" class="form-control form-control-solid" placeholder="$0.00" readonly>
             </div>
 
