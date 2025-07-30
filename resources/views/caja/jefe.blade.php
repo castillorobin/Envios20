@@ -399,7 +399,7 @@ if (searchText == "") {
         </tr>
     </thead>
     <tbody class="fw-semibold text-gray-600">
-       
+       @isset($cajas)
          @foreach ($cajas as $caja) 
              <tr class="'table-row-gray' : 'table-row-white' ">
                     <td class="text-center"> 
@@ -421,6 +421,7 @@ if (searchText == "") {
                     
                     </tr>
                     @endforeach
+            @endisset
         </tbody>
 <tfoot></tfoot></table></div><div id="" class="row">
     <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" style="float:bottom;">
