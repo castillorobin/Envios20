@@ -31,7 +31,7 @@
 <div style="width:100%; " class="text-center centrar"> 
     <img src="../public/fotos/logo24.png" alt="" width="35%">
     <br>
-            <div class="margen "> <span class="page__heading melo" >Cuadred e caja</span></div>
+            <div class="margen "> <span class="page__heading melo" >Cuadre de caja</span></div>
             
            <!-- <img alt="image" src="/public/img/logo.png" > -->
            
@@ -123,7 +123,7 @@
     
 
 <br>
-<div class="centrar">Le atendio: </div>
+<div class="centrar"></div>
 <hr>
 <div class="centrar">¡¡GRACIAS POR PREFERIRNOS!!</div>
 <hr>

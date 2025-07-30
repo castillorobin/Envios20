@@ -106,6 +106,29 @@ class CajaController extends Controller
         return redirect()->back()->with('success', 'Registro Eliminado correctamente');
     }
 
+    public function exportarticket($id)
+    {
+/*
+        $idcaja = Caja::where('cajero', $cajero)
+        ->where('estado', 0)
+        ->get();
+*/
+         $idcaja2= Caja::find($id);
+
+        $pdf = PDF::loadView('caja.cierreticket', ['idcaja2'=>$idcaja2]);
+           $customPaper = array(0,0,360,750);
+       
+           $pdf->setPaper($customPaper );
+        return $pdf->stream();
+       // return $pdf->download('cierrecaja.pdf');
+        
+    /*
+        $cajas = Conceptocaja::all();
+        return redirect()->back()->with('success', 'Registro Eliminado correctamente');
+        */
+    }
+
+
     /**
      * Store a newly created resource in storage.
      */
@@ -126,6 +149,19 @@ class CajaController extends Controller
 
         if ($conceptoreg->concepto == "Apertura de caja") {
            // dd("Caja inicial");
+           
+        $idcaja = Caja::where('cajero', $cajero)
+        ->where('estado', 0)
+        ->get();
+
+        if(!$idcaja->isEmpty()){
+
+           // dd("se fue");
+
+          // return redirect()->back()->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+           return redirect()->route('cajero')->with('Error', 'Ya existe una sesion de caja abierta');
+           
+        }
            $caja = new Caja();
            $caja->cajero = $request->get('cajero') ;
            $caja->save();
