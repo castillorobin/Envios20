@@ -120,12 +120,27 @@ class CajaController extends Controller
        
            $pdf->setPaper($customPaper );
         return $pdf->stream();
-       // return $pdf->download('cierrecaja.pdf');
+     
+    }
+
+    public function exportarpdf($id)
+    {
+/*
+        $idcaja = Caja::where('cajero', $cajero)
+        ->where('estado', 0)
+        ->get();
+*/
+         $idcaja2= Caja::find($id);
+
+        $cajas = Detallecaja::where('idcaja', $id)
+        ->get();
         
-    /*
-        $cajas = Conceptocaja::all();
-        return redirect()->back()->with('success', 'Registro Eliminado correctamente');
-        */
+        $pdf = PDF::loadView('caja.ticketpdf', ['idcaja2'=>$idcaja2, 'cajas'=>$cajas])->setPaper('letter', 'landscape');
+         //  $customPaper = array(0,0,360,750);
+       
+           //$pdf->setPaper($customPaper );
+        return $pdf->stream();
+     
     }
 
 
