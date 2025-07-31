@@ -15,7 +15,9 @@ use App\Models\Empleado;
 use App\Exports\ReporteCajasExport;
 use Maatwebsite\Excel\Facades\Excel;
 
+
 use Illuminate\Support\Facades\Auth;
+
 
 class CajaController extends Controller
 {
@@ -145,9 +147,23 @@ class CajaController extends Controller
      
     }
 
-    public function exportarExcel($idcaja)
+    public function exportarExcel($id)
     {
-    return Excel::download(new ReporteCajasExport($idcaja), 'detalle_caja_'.$idcaja.'.xlsx');
+
+         $caja = Caja::findOrFail($id);
+
+    return Excel::download(
+        new ReporteCajasExport(
+            $id,
+            $caja->saldo,
+            $caja->descuadre,
+            $caja->cajero,
+            $caja->created_at->format('d/m/Y H:i A')
+        ),
+        'detalle_caja_' . $id . '.xlsx'
+    );
+
+    //return Excel::download(new ReporteCajasExport($idcaja), 'detalle_caja_'.$idcaja.'.xlsx');
     }
 
 
