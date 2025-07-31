@@ -340,6 +340,7 @@ Route::get('/caja/eliminar/{id}', [App\Http\Controllers\CajaController::class, '
 Route::get('/caja/editandoconcepto', [App\Http\Controllers\CajaController::class, 'editandoconcepto'])->name('caja.editandoconcepto');
 Route::get('/caja/exportarticket/{id}', [App\Http\Controllers\CajaController::class, 'exportarticket'])->name('caja.exportarticket');
 Route::get('/caja/exportarpdf/{id}', [App\Http\Controllers\CajaController::class, 'exportarpdf'])->name('caja.exportarpdf');
+Route::get('/caja/exportarexcel/{id}', [App\Http\Controllers\CajaController::class, 'exportarExcel'])->name('caja.exportarExcel');
 /*
 
 Rutas 

@@ -12,6 +12,9 @@ use PDF;
 use Carbon\Carbon;
 use App\Models\Empleado;
 
+use App\Exports\ReporteCajasExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 use Illuminate\Support\Facades\Auth;
 
 class CajaController extends Controller
@@ -23,7 +26,7 @@ class CajaController extends Controller
     {
         //
     } 
-
+    
     public function cajero()
     {
          $conceptos = Conceptocaja::all();
@@ -132,8 +135,7 @@ class CajaController extends Controller
 */
          $idcaja2= Caja::find($id);
 
-        $cajas = Detallecaja::where('idcaja', $id)
-        ->get();
+        $cajas = Detallecaja::where('idcaja', $id)->get();
         
         $pdf = PDF::loadView('caja.ticketpdf', ['idcaja2'=>$idcaja2, 'cajas'=>$cajas])->setPaper('letter', 'landscape');
          //  $customPaper = array(0,0,360,750);
@@ -142,6 +144,12 @@ class CajaController extends Controller
         return $pdf->stream();
      
     }
+
+    public function exportarExcel($idcaja)
+    {
+    return Excel::download(new ReporteCajasExport($idcaja), 'detalle_caja_'.$idcaja.'.xlsx');
+    }
+
 
 
     /**

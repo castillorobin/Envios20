@@ -344,7 +344,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel" target="_blank">Exportar a Excel</a>
+                                            <a href="/caja/exportarexcel/{{ $cajas[0]->idcaja }}" class="menu-link px-3" data-kt-ecommerce-export="excel" target="_blank">Exportar a Excel</a>
                                         </div>
                                         
                                         <!--begin::Menu item-->
