@@ -432,7 +432,6 @@ class PagoController extends Controller
         $sutota = $request->get('stota');
         $nota = $request->get('nota');
         $tota = $request->get('tota');
-
         //dd($tota);
         $agencia = $request->get('agencia');
         $comercio = $request->get('comercio');
@@ -442,10 +441,6 @@ class PagoController extends Controller
         $activo = $request->has('pagado') ? 1 : 0;
          $verificado = $request->has('verificado') ? 1 : 0;
           $revision = $request->has('enrevision') ? 1 : 0;
-
-
-
-
         $pedido = new Ticktpago();
         $pedido->comercio = $comercio;
         $pedido->descuento = $descu;
@@ -458,21 +453,50 @@ class PagoController extends Controller
         $pedido->nota = $nota;
         $pedido->agencia = $agencia;
         $pedido->save();
-
         $ticketact = Ticktpago::latest('id')->first();
-
-
         $checked = $request->input('checked');
        $envios = Envio::query()->find($checked);
 
         $idinforme = Ticktpago::query()->find($ticketact->id);
 
+
+
+       if($envios){     
+        foreach($envios as $envio){        
+            $envio->pagoticket = $ticketact->id;
+            if ($activo== 1) {
+                $envio->pago = "Pagado";
+                $idinforme->estado = "Pagado";
+            }
+            if ($verificado== 1) {
+                $envio->pago = "Verificado";
+                $idinforme->estado = "Verificado";
+                $idinforme->save();      
+            $envio->save();          
+               $nota = " ";
+        return view('envios.pagoslistaticket', compact('nota'));
+            }
+            if ($revision== 1) {
+                $envio->pago = "En revision";
+                $idinforme->estado = "En revision";
+                $idinforme->save();     
+            $envio->save();
+               $nota = " ";
+        return view('envios.pagoslistaticket', compact('nota'));
+            } 
+                  
+            $envio->save();   
+
+            }
+            $idinforme->save();
+       }
+
+       
  if ($activo== 1) {
          //guardar movimiento
         $idcaja = Caja::where('cajero', $cajero)
         ->where('estado', 0)
         ->get();
-
         if($idcaja->isEmpty()){
            $conceptos = Conceptocaja::all();
         $cajas = Detallecaja::all();
@@ -482,9 +506,7 @@ class PagoController extends Controller
                 ->latest('id') // o cualquier columna de ordenamiento como created_at
                 ->first();
         $saldomovi = $ultimoMovi->saldo;
-
         $movimiento = new Detallecaja();
-    
     $movimiento->cajero = $request->get('cajero') ;
     $movimiento->agencia = $request->get('agencia') ;
     $movimiento->tipo =  "Salida";
@@ -495,48 +517,6 @@ class PagoController extends Controller
     $movimiento->save();
 }
 
-
-       if($envios){
-       
-        foreach($envios as $envio){
-            
-            $envio->pagoticket = $ticketact->id;
-
-            if ($activo== 1) {
-                $envio->pago = "Pagado";
-                $idinforme->estado = "Pagado";
-            }
-
-            if ($verificado== 1) {
-                $envio->pago = "Verificado";
-                $idinforme->estado = "Verificado";
-                $idinforme->save();
-            
-            $envio->save();
-               
-               $nota = " ";
-        return view('envios.pagoslistaticket', compact('nota'));
-            }
-
-            if ($revision== 1) {
-                $envio->pago = "En revision";
-                $idinforme->estado = "En revision";
-                $idinforme->save();
-            
-            $envio->save();
-               $nota = " ";
-        return view('envios.pagoslistaticket', compact('nota'));
-            }
-
-
-
-            
-            $envio->save();
-            
-            }
-            $idinforme->save();
-       }
-
         $pdf = PDF::loadView('envios.pagoticket', ['ticketact'=>$ticketact, 'envios'=>$envios]);
        
         $customPaper = array(0,0,360,750);
@@ -544,6 +524,12 @@ class PagoController extends Controller
         $pdf->setPaper($customPaper );
         return $pdf->stream();
     }
+
+
+
+
+
+
     public function pagoticket2(Request $request)
     {
         $identrega = $request->get('entrega');

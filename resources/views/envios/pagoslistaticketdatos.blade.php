@@ -204,8 +204,8 @@ $('#totalito').text(total);
     
 function abrirURL(){
     
-   //window.location = "http://127.0.0.1:8000/listapagos";
-   window.location = "https://meloexpress.site/listapagosticket";
+   window.location = "http://127.0.0.1:8000/listapagosticket";
+   //window.location = "https://meloexpress.site/listapagosticket";
 };
 </script>
 
@@ -421,8 +421,8 @@ const subtotal = document.getElementById("sutota").value;
                                 <!--begin::Table-->
                                 
                                 <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-                                    <form action="/pago/pagoticket/" method="GET" name="f1" id="formElement" >
-                                    
+                                    <form action="/pago/pagoticket/" method="POST" name="f1" id="formElement">
+  @csrf
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table" data-ordering="false">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
@@ -971,7 +971,11 @@ const subtotal = document.getElementById("sutota").value;
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
+                                                                        <button type="button" id="pagadito" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()">Pagar</button>
+
+<!--
                                                                         <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
+                                                                        -->
                                                                         <button type="submit" id="pagadito2" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" hidden>Pagar</button>
                                                                     </div>
                                                                 </div>
@@ -1314,6 +1318,25 @@ const subtotal = document.getElementById("sutota").value;
         // Llamar a la función para establecer la fecha y hora actual al cargar la página
         establecerFechaEntrega();
     </script>
+
+
+<script>
+    function submitAndRedirect() {
+    // Establece el target del formulario para que se abra en una nueva pestaña
+    const form = document.getElementById('formElement');
+    form.setAttribute('target', '_blank'); // para el PDF
+    form.setAttribute('method', 'POST');
+    form.setAttribute('action', '/pago/pagoticket');
+    
+    form.submit(); // envía el formulario y abre el PDF en nueva pestaña
+
+    // Redirige la página actual después de 2 segundos
+    setTimeout(function() {
+        window.location.href = "/listapagosticket";
+    }, 2000);
+}
+    
+</script>
 </body>
 <!--end::Body-->
 
