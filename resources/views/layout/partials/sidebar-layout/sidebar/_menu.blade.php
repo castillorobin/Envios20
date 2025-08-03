@@ -428,7 +428,7 @@
 							<span class="menu-bullet">
 								<span class="bullet bullet-dot"></span>
 							</span>
-							<span class="menu-title">Reporte de cobro</span>
+							<span class="menu-title">Reporte de recepción</span>
 						</a>
 					</div>
 
