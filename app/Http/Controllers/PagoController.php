@@ -500,7 +500,8 @@ class PagoController extends Controller
         if($idcaja->isEmpty()){
            $conceptos = Conceptocaja::all();
         $cajas = Detallecaja::all();
-         return view('caja.cajero', compact('cajas', 'conceptos'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+         return view('caja.cajero', compact('empleado', 'cajas', 'conceptos'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
         }
         $ultimoMovi = Detallecaja::where('idcaja', $idcaja[0]->id)
                 ->latest('id') // o cualquier columna de ordenamiento como created_at
