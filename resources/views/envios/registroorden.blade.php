@@ -504,11 +504,11 @@
                                                     <!--begin::Input-->
                                                     <div class="position-relative d-flex align-items-center w-150px">
                                                         <!--begin::Datepicker-->
-                                                        <input class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="fecha" />
+                                                        <input type="text" class="form-control form-control-transparent fw-bold pe-5" value="{{ date("d-m-Y") }}" name="fecha" />
                                                         <!--end::Datepicker-->
 
                                                         <!--begin::Icon-->
-                                                        <i class="ki-duotone ki-down fs-4 position-absolute ms-4 end-0"></i> <!--end::Icon-->
+                                                         <!--end::Icon-->
                                                     </div>
                                                     <!--end::Input-->
                                                 </div>
@@ -911,13 +911,8 @@
                                         </span>
 
                                     </label>
-                                    <select name="agencia" id="agencia" class="form-select form-select-solid" >
-                                        <option value="San_Salvador">San Salvador</option>
-                                        <option value="San_Miguel">San Miguel</option>
-                                        <option value="Santa_ana">Santa Ana</option>
-                                        <option value="Centro de distribucion">Centro de distribucion</option>
-                                    </select>
-                                   
+                                  
+                                   <input type="text" class="form-control form-control-solid" name="agencia" id="agencia" value="{{$empleado[0]->agencia}}" readonly>
                             </div>
 
                                 <!--begin::Separator-->

@@ -14,6 +14,9 @@ use App\Models\Hestado;
 use App\Models\Caja;
 use App\Models\Detallecaja;
 use App\Models\Conceptocaja;
+use App\Models\Empleado;
+use Illuminate\Support\Facades\Auth;
+
 
 class CobroController extends Controller
 { 
@@ -48,8 +51,8 @@ class CobroController extends Controller
             $date = $date->format('Y');
             $factura = "$date".$idcompr;
             $codigo11 = "$date".$idcompr;
-     
-        return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+      $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.registroorden', compact('empleado','codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
     
     public function limpieza($tipo11, $ticketactual)
@@ -101,8 +104,9 @@ class CobroController extends Controller
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
 
         $comercios = Comercio::all(); 
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
  
-        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+        return view('envios.registroordenlista', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
 
@@ -140,8 +144,9 @@ class CobroController extends Controller
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
 
         $comercios = Comercio::all(); 
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
  
-        return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+        return view('envios.registroordenlistadepa', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
 
@@ -179,8 +184,8 @@ class CobroController extends Controller
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
 
         $comercios = Comercio::all(); 
- 
-        return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.registroordenlistapunto', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
         /// Casillero
@@ -217,8 +222,8 @@ class CobroController extends Controller
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
 
         $comercios = Comercio::all(); 
- 
-        return view('envios.registroordenlistacasi', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+            $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.registroordenlistacasi', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
 
@@ -415,8 +420,8 @@ class CobroController extends Controller
                 $date = Carbon::now();
                 $date = $date->format('Y');
                 $factura = "$date".$idcompr;
-         
-            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+         $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroorden', compact('empleado', 'codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }
@@ -444,8 +449,8 @@ class CobroController extends Controller
                 $date = Carbon::now();
                 $date = $date->format('Y'); 
                 $factura = "$date".$idcompr;
-         
-            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+         $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroorden', compact('empleado', 'codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }
@@ -473,8 +478,8 @@ class CobroController extends Controller
                 $date = Carbon::now();
                 $date = $date->format('Y');
                 $factura = "$date".$idcompr;
-         
-            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+         $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroorden', compact('empleado', 'codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }
@@ -502,8 +507,8 @@ class CobroController extends Controller
                 $date = Carbon::now();
                 $date = $date->format('Y');
                 $factura = "$date".$idcompr;
-         
-            return view('envios.registroorden', compact('codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+         $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroorden', compact('empleado', 'codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
            
         }
@@ -573,8 +578,8 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
-
-        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+            $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.registroordenlista', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
 
@@ -620,8 +625,8 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
-
-        return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+            $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.registroordenlistadepa', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
     
             }
@@ -669,8 +674,8 @@ class CobroController extends Controller
             ->get();
             $cobrocasi =  $cobrocasi->count();
     
-    
-            return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+                $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroordenlistapunto', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
         
                 }
             
@@ -715,8 +720,8 @@ class CobroController extends Controller
                 ->get();
                 $cobrocasi =  $cobrocasi->count();
         
-        
-                return view('envios.registroordenlistacasi', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+                return view('envios.registroordenlistacasi', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
             
                     }
 
@@ -797,8 +802,8 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
- 
-        return view('envios.registroordenlista', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.registroordenlista', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
         }
         $nota="Guia Duplicada";
@@ -843,8 +848,8 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
-
-        return view('envios.registroordenlistadepa', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+            $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.registroordenlistadepa', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
     
             }
             $nota="Guia Duplicada";
@@ -889,8 +894,8 @@ class CobroController extends Controller
             ->get();
             $cobrocasi =  $cobrocasi->count();
     
-    
-            return view('envios.registroordenlistapunto', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+    $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroordenlistapunto', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
         
                 }
                 $nota="Guia Duplicada";
@@ -936,8 +941,8 @@ class CobroController extends Controller
                 ->get();
                 $cobrocasi =  $cobrocasi->count();
         
-        
-                return view('envios.registroordenlistacasi', compact('comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+                return view('envios.registroordenlistacasi', compact('empleado', 'comercios', 'ticketactual','nota', 'cobroperso', 'cobroperdepa', 'cobropfijo','cobrocasi', 'precio1', 'precio2', 'precio3' , 'precio4', 'precio5'));
 
             
                     }
@@ -965,8 +970,8 @@ class CobroController extends Controller
             $cobrocasi = Cobro::where('tipo', "Casillero")->get();
             $cobrocasi = $cobrocasi->count();
             $comer = $request->get('comerci');
-
-            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroorden', compact('empleado', 'pedidos', 'nota','comercios', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
 
         }else{
@@ -987,7 +992,8 @@ class CobroController extends Controller
             $pedidos = Cobro::all();
             $comercios = Comercio::all();
             $comer = $request->get('comerci');
-            return view('envios.registroorden', compact('pedidos', 'nota','comercios', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
+            $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('envios.registroorden', compact('empleado', 'pedidos', 'nota','comercios', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
 
 
         }

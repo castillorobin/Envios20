@@ -939,12 +939,7 @@ $(document).ready(function() {
                 </span>
 
             </label>
-            <select name="agencia" id="agencia" class="form-select form-select-solid" >
-                <option value="San Salvador">San Salvador</option>
-                <option value="San Miguel">San Miguel</option>
-                <option value="Santa Ana">Santa Ana</option>
-                <option value="Centro de distribucion">Centro de distribucion</option>
-            </select>
+            <input type="text" class="form-control form-control-solid" name="agencia" id="agencia" value="{{$empleado[0]->agencia}}" readonly>
            
     </div>
         <!--begin::Separator-->
