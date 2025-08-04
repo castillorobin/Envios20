@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use DateInterval;
+use App\Models\Empleado;
  
 class PagoController extends Controller
 { 
@@ -425,6 +426,26 @@ class PagoController extends Controller
 
     public function pagoticket(Request $request)
     {
+        $activo = $request->has('pagado') ? 1 : 0;
+        if ($activo== 1) {
+         //guardar movimiento
+        $idcaja = Caja::where('cajero', Auth::user()->name)
+        ->where('estado', 0)
+        ->get();
+        if($idcaja->isEmpty()){
+           $conceptos = Conceptocaja::all();
+        $cajas = Detallecaja::whereDate('created_at', Carbon::today())
+    ->where('cajero', Auth::user()->name)
+    ->get();
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+       //  return view('caja.cajero', compact('empleado', 'cajas', 'conceptos'))->with('error', 'Debe de abrir caja antes de agregar movimientos');
+       return redirect()->route('cajero')->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        }
+        }
+
+       
+
+
         $identrega = $request->get('entrega');
         $cajero = $request->get('cajero');
         $metodo = $request->get('metodo');
@@ -438,7 +459,7 @@ class PagoController extends Controller
 
         $pagado = $request->get('pagado');
         
-        $activo = $request->has('pagado') ? 1 : 0;
+        
          $verificado = $request->has('verificado') ? 1 : 0;
           $revision = $request->has('enrevision') ? 1 : 0;
         $pedido = new Ticktpago();

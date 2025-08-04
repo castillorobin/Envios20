@@ -394,7 +394,7 @@
 							<span class="menu-bullet">
 								<span class="fas fa-cash-register"></span>
 							</span>
-							<span class="menu-title">Cajero</span>
+							<span class="menu-title">Movimientos de caja</span>
 						</a>
 					</div>
 				</div>
@@ -405,7 +405,7 @@
 							<span class="menu-bullet">
 								<span class="fas fa-user-alt"></span>
 							</span>
-							<span class="menu-title">Jefe de cajeros</span>
+							<span class="menu-title">Cuadre de caja</span>
 						</a>
 					</div>
 				</div>
