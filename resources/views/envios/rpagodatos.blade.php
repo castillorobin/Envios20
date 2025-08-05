@@ -194,6 +194,7 @@ if (searchText == "") {
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de pago</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
+                        
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
@@ -212,7 +213,27 @@ if (searchText == "") {
                             <!--end::Breadcrumb-->
                         </div>
                         <!--end::Page title--> 
+    <div class="col-6">                         
+                          @if (session('Error'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert-error" style="margin-left: 25px;">
+        {{ session('Error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
 
+    <script>
+        // Espera 4 segundos (4000 ms) y luego oculta el mensaje
+        setTimeout(function () {
+            let alertBox = document.getElementById('alert-error');
+            if (alertBox) {
+                alertBox.classList.remove('show');
+                alertBox.classList.add('fade');
+                alertBox.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+@endif         
+
+</div>
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
                         @can('ordenes-crear')
@@ -305,10 +326,7 @@ if (searchText == "") {
                                 </div>
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
-                                                          
-                                   
-
-
+                                 
                                     
                                 </div>
 
@@ -358,7 +376,7 @@ if (searchText == "") {
                                                
                                                     
                                                    
-
+ 
 
                                                 
                                             </tr>

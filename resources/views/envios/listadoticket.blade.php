@@ -92,97 +92,7 @@
 
 </head>
 
-<script>
-    function doSearch()
 
-{
-
-const tableReg = document.getElementById('tenvios');
-
-const searchText = document.getElementById('searchTerm').value.toLowerCase();
-
-let total = 0;
-
-
-
-// Recorremos todas las filas con contenido de la tabla
-
-for (let i = 1; i < tableReg.rows.length; i++) {
-
-    // Si el td tiene la clase "noSearch" no se busca en su cntenido
-
-    if (tableReg.rows[i].classList.contains("noSearch")) {
-
-        continue;
-
-    }
-
-
-
-    let found = false;
-
-    const cellsOfRow = tableReg.rows[i].getElementsByTagName('td');
-
-    // Recorremos todas las celdas
-
-    for (let j = 0; j < cellsOfRow.length && !found; j++) {
-
-        const compareWith = cellsOfRow[j].innerHTML.toLowerCase();
-
-        // Buscamos el texto en el contenido de la celda
-
-        if (searchText.length == 0 || compareWith.indexOf(searchText) > -1) {
-
-            found = true;
-
-            total++;
-
-        }
-
-    }
-
-    if (found) {
-
-        tableReg.rows[i].style.display = '';
-
-    } else {
-
-       
-
-        tableReg.rows[i].style.display = 'none';
-
-    }
-
-}
-
-
-
-// mostramos las coincidencias
-
-const lastTR=tableReg.rows[tableReg.rows.length-1];
-
-const td=lastTR.querySelector("td");
-
-lastTR.classList.remove("hide", "red");
-
-if (searchText == "") {
-
-    lastTR.classList.add("hide");
-
-} else if (total) {
-
-    td.innerHTML="";
-
-} else {
-
-    lastTR.classList.add("red");
-
-    td.innerHTML="";
-
-}
-
-}
-</script>
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
@@ -196,7 +106,7 @@ if (searchText == "") {
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de cobro</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de recepcion</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -211,7 +121,7 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Reporte de cobro</li>
+                                <li class="breadcrumb-item text-muted">Reporte de recepcion</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -253,17 +163,16 @@ if (searchText == "") {
 <!--segunda colummna-->
                                     <div class="col-12 col-md-9">
                                     <form action="/envios/ticketdatos" method="GET">
-                                        <table  style="float:right;">
-                                            <tr>
-                                                <td>
-                                    <div class="col-auto" style="margin-right: 15px;">
-                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                        <div class="row"  >
+                                            
+                                    <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
+                                    <input style="width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
   </div>
-  </td>
-  <td style="width: 30%;">
-                                    <div class="">
 
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="width: 420px;">
+  
+                                    <div class="col-12 col-sm-4 pt-1">
+
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px;">
                                    
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
@@ -271,22 +180,21 @@ if (searchText == "") {
                                     @endforeach
                                 </select>
   </div>
-  </td>
-  <td >
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
+  
+
+ 
+
+  <div class="col-12 col-sm-2 pt-1">
+  <button type="submit" class="btn btn-primary " >Filtrar</button>
   </div>
-  </td>
-  <td >
-    <a href="/envios/listadoticket">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+ <div class="col-12 col-sm-1 pt-1" >
+    <a href="/envios/listadoticket" >
+    <button type="button" class="btn btn-secondary " >Cancelar</button>
     </a>
-</td>
-  </tr>
-  </table>
-          
-                                   
-                                    </form>
+</div>
+        
+           </div>                        
+                              </form>      
                                     </div>
                                     <!-- fin segunda colummna-->
                                      <!--tercera colummna-->
@@ -323,7 +231,7 @@ if (searchText == "") {
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" >
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-100px"></th>

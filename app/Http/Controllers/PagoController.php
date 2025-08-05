@@ -709,11 +709,25 @@ class PagoController extends Controller
     {
        // $pedidos = Cobro::all();
         //$tickets = Ticketc::all(); 
+
         $pago = Ticktpago::where('id', $id)->get();
+
         //return ($id);
        // $rango = $request->input('rango');
         $tickets = Envio::where('pagoticket', $id)
         ->get();
+
+        if($tickets->isEmpty()){
+
+           // dd("se fue");
+
+          // return redirect()->back()->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+          // return redirect()->route('cajero')->with('Error', 'El ticket no contiene datos');
+           return redirect()->back()->with('Error', 'El ticket no contiene datos');
+           
+        }
+
+
         return view('envios.rlistadopagodatos', compact('tickets', 'pago'));
     }
 
