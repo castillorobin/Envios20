@@ -356,7 +356,7 @@ if (searchText == "") {
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->cajero}}</td>
                                                 <td>{{$ticket->agencia}}</td>
-                                                <td>${{$ticket->total - $ticket->descuento}}</td>
+                                                <td>${{$ticket->total - $ticket->descuento - $ticket->iva}}</td>
                                                 <td>
                                                     @if ($ticket->iva == NULL)
                                                         $0
