@@ -376,6 +376,18 @@ class CobroController extends Controller
     public function ticketcabeza(Request $request)
     {
 
+        $idcaja = Caja::where('cajero', Auth::user()->name)
+        ->where('estado', 0)
+        ->get();
+        if($idcaja->isEmpty()){
+         //  $conceptos = Conceptocaja::all();
+       // $cajas = Detallecaja::whereDate('created_at', Carbon::today())
+   // ->where('cajero', Auth::user()->name)
+   // ->get();
+    //    $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+       //  return view('caja.cajero', compact('empleado', 'cajas', 'conceptos'))->with('error', 'Debe de abrir caja antes de agregar movimientos');
+       return redirect()->route('cajero')->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        }
        
         $guia = $request->get('guia');
         $hayguia = Envio::where('guia', $guia)->exists();
