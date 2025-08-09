@@ -188,11 +188,11 @@ if (searchText == "") {
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de cobro</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de recepcion</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -207,8 +207,15 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Reporte de cobro</li>
+                                <li class="breadcrumb-item text-muted">Reportes</li>
                                 <!--end::Item-->
+
+                                <li class="breadcrumb-item">
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-muted">Reporte de recepcion</li>
                             </ul>
                             <!--end::Breadcrumb-->
                         </div>
@@ -216,9 +223,7 @@ if (searchText == "") {
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                        @can('ordenes-crear')
-                            <a href="/envios/registroconguia" class="btn btn-sm fw-bold btn-primary" data-bs-target="#kt_modal_create_app">Crear envio</a>
-                            @endcan
+                       
                             <!--end::Primary button-->
                         </div>
                         <!--end::Actions-->
@@ -229,7 +234,7 @@ if (searchText == "") {
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container ">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -331,10 +336,13 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Comercio</th>
                                                 <th class="min-w-50px">Usuario</th>
                                                 <th class="min-w-50px">Agencia</th>
+                                                <th class="min-w-50px">Subtotal</th>
+                                                <th class="min-w-50px">IVA</th>
                                                 <th class="min-w-50px">Descuento</th>
-                                                <th class="min-w-50px">Total</th>
-                                                <th class="min-w-50px">Fecha de recepcion</th>
                                                 <th class="min-w-50px">Nota</th>
+                                                <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Fecha</th>
+                                                
                                                 
                                             </tr>
                                         </thead>
@@ -348,11 +356,24 @@ if (searchText == "") {
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->cajero}}</td>
                                                 <td>{{$ticket->agencia}}</td>
-                                                <td>${{$ticket->descuento}}</td>
-                                               
+                                                <td>${{$ticket->total - $ticket->descuento}}</td>
+                                                <td>
+                                                    @if ($ticket->iva == NULL)
+                                                        $0
+                                                    @else
+                                                        ${{$ticket->iva}}
+                                                    @endif
+                                                    
+                                                </td>
+                                                <td>@if ($ticket->descuento == NULL)
+                                                        $0
+                                                    @else
+                                                        ${{$ticket->descuento}}
+                                                    @endif</td>
+                                                <td>{{$ticket->nota}} </td>
                                                 <td>${{$ticket->total}}</td>
-                                                <td>{{$ticket->created_at}}</td>
-                                                <td>{{$ticket->nota}}</td>
+                                                <td>{{ date('d/m/Y', strtotime($ticket->created_at))}} </td>
+                                                
                                                
                                                     
                                                     <span hidden id="id{{ $ticket->codigo }}"> {{ $ticket->id }}</span>
