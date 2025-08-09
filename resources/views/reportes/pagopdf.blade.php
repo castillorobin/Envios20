@@ -35,7 +35,7 @@
             
      
            
-           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Reporte de caja</span> </div>
+           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Reporte de recepcion</span> </div>
            
            <br>
            <span>Centro Comercial Metrogaleria
