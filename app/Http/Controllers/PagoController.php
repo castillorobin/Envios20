@@ -68,7 +68,7 @@ class PagoController extends Controller
 
       
         $repartidores = User::all();
-        return view('envios.listadoticketdatos', compact('tickets', 'repartidores'));
+        return view('envios.listadoticketdatos', compact('tickets', 'repartidores', 'rango', 'usuario'));
     }
 
     public function reportepago()

@@ -16,7 +16,7 @@ use App\Models\Detallecaja;
 use App\Models\Conceptocaja;
 use App\Models\Empleado;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Str;
 
 class CobroController extends Controller
 { 
@@ -54,6 +54,41 @@ class CobroController extends Controller
       $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         return view('envios.registroorden', compact('empleado','codigo11', 'comercio11', 'correo11', 'direccion11', 'telefono11', 'comercios','idcompr', 'factura', 'nota', 'pedidos', 'cobrodepa', 'comer', 'cobroperdepa', 'cobropfijo','cobrocasi'));
     }
+
+    public function exportarrecepcion(Request $request)
+    {
+        // $idcaja2= Caja::find($id);
+
+        $rango = $request->input('rango2');
+        $usuario = $request->input('usuario2');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
+
+       // dd($fechacam1, $fechacam2);
+
+        if($usuario == "todos")
+        {
+            $tickets = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+        $pdf = PDF::loadView('reportes.pagopdf', ['cajas'=>$tickets])->setPaper('letter', 'landscape');
+          // $customPaper = array(0,0,360,750);
+       
+         //  $pdf->setPaper();
+        return $pdf->stream();
+     
+    }
+    
     
     public function limpieza($tipo11, $ticketactual)
     {
@@ -351,6 +386,7 @@ class CobroController extends Controller
         $ticketc->metodo = $request->get('metodo');
         $ticketc->entrega = $request->get('pago');
         $ticketc->cambio = $request->get('cambio');
+        $ticketc->nota = $request->get('notad');
         $ticketc->agencia = $agencia;
         //$ticketc->iva = $ ;
         $ticketc->save();

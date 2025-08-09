@@ -237,6 +237,8 @@ Route::get('/envios/reportepagoticket', [App\Http\Controllers\PagoController::cl
 Route::get('/envios/rpagodatosticket', [App\Http\Controllers\PagoController::class, 'rpagodatosticket'] )->name('rpagodatosticket') ;
 Route::get('/envios/lisdopagosdatosticket/{id}', [App\Http\Controllers\PagoController::class, 'lisdopagosdatosticket'] )->name('lisdopagosdatosticket') ;
 Route::post('/envios/pagotodo/', [App\Http\Controllers\PagoController::class, 'pagotodo'] )->name('pagotodo') ;
+
+Route::get('/reporte/exportarrecepcion/', [App\Http\Controllers\CobroController::class, 'exportarrecepcion'] )->name('exportarrecepcion') ;
 /*
 envios/detalleeditando
 
