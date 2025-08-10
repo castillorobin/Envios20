@@ -173,13 +173,13 @@
                                         <div class="row"  >
                                             
                                     <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
-                                    <input style="width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
+                                    <input style="min-width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
   </div>
 
   
-                                    <div class="col-12 col-sm-4 pt-1">
+                                    <div class="col-12 col-sm-3 pt-1" >
 
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px;">
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px; float: right">
                                    
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
@@ -191,12 +191,12 @@
 
  
 
-  <div class="col-12 col-sm-2 pt-1">
-  <button type="submit" class="btn btn-primary " >Filtrar</button>
+  <div class="col-12 col-sm-2 pt-1" >
+  <button type="submit" class="btn btn-primary " style="float: right; width:100%;">Filtrar</button>
   </div>
- <div class="col-12 col-sm-1 pt-1" >
+ <div class="col-12 col-sm-2 pt-1" >
     <a href="/envios/listadoticket" >
-    <button type="button" class="btn btn-secondary " >Cancelar</button>
+    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
     </a>
 </div>
         
