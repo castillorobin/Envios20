@@ -404,7 +404,7 @@ if (searchText == "") {
                                     </table>
                                     <div style="float:right">
                                        
-                                             <form action="/reporte/exportarrecepcion" method="GET">
+                                             <form action="/reporte/exportarrecepcion" method="GET" target="_blank">
                                         <input type="text" value="{{$rango}}" name="rango2" hidden>
                                         <input type="text" value="{{$usuario}}" name="usuario2" hidden>
                                     <button type="submit" class="btn btn-light-primary" data-kt-menu-placement="bottom-end" >
