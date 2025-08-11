@@ -204,7 +204,7 @@ if (searchText == "") {
 <div id="kt_app_toolbar" class="app-toolbar  py-3 py-lg-6 ">
 
             <!--begin::Toolbar container-->
-        <div id="kt_app_toolbar_container" class="app-container  container-xxl d-flex flex-stack ">
+        <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack ">
             
     
 
@@ -297,7 +297,7 @@ if (searchText == "") {
     
            
         <!--begin::Content container-->
-        <div id="kt_app_content_container" class="app-container  container-xxl " >
+        <div id="kt_app_content_container" class="app-container " >
             <!--begin::Products-->
 <div class="card card-flush" >
     <!--begin::Card header-->
@@ -311,28 +311,25 @@ if (searchText == "") {
             <!--end::Search-->
 
             <!--begin::Export buttons-->
-            <div id="kt_ecommerce_report_returns_export" class="d-none"><div class="dt-buttons btn-group flex-wrap">      <button class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="kt_ecommerce_report_returns_table" type="button"><span>Copy</span></button> <button class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="kt_ecommerce_report_returns_table" type="button"><span>Excel</span></button> <button class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="kt_ecommerce_report_returns_table" type="button"><span>CSV</span></button> <button class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="kt_ecommerce_report_returns_table" type="button"><span>PDF</span></button> </div></div>
+
             <!--end::Export buttons-->
         </div>
         <!--end::Card title-->
 
         <!--begin::Card toolbar-->
         <div class="card-toolbar flex-row-fluid justify-content-end gap-5" >
-
-
-<div class="col-12 col-md-9">
+ <div class="col-12 col-md-9">
                                     <form action="/caja/listadofiltro" method="GET">
-                                        <table  style="float:right;">
-                                            <tr>
-                                                <td>
-                                    <div class="col-auto" style="margin-right: 15px;">
-                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                        <div class="row"  >
+                                            
+                                    <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
+                                    <input style="min-width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
   </div>
-  </td>
-  <td style="width: 30%;"> 
-                                    <div class=" ">
 
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
+  
+                                    <div class="col-12 col-sm-3 pt-1" >
+
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px; float: right">
                                    
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
@@ -340,22 +337,21 @@ if (searchText == "") {
                                     @endforeach
                                 </select>
   </div>
-  </td>
-  <td >
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
+  
+
+ 
+
+  <div class="col-12 col-sm-2 pt-1" >
+  <button type="submit" class="btn btn-primary " style="float: right; width:100%;">Filtrar</button>
   </div>
-  </td>
-  <td >
-    <a href="/caja/jefe">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+ <div class="col-12 col-sm-2 pt-1" >
+    <a href="/caja/jefe" >
+    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
     </a>
-</td>
-  </tr>
-  </table>
-          
-                                   
-                                    </form>
+</div>
+        
+           </div>                        
+                              </form> 
                                     </div>
 
 
