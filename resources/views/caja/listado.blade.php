@@ -458,16 +458,20 @@ if (searchText == "") {
             </tr>
              <tr>
                 <td style="width: 200px;">Descuadre</td>
+                @if($cajapr[0]->descuadre > 0 )
+                <td style="color:red;"> $ -{{$cajapr[0]->descuadre}} </td>
+                @else
                 <td > $ {{$cajapr[0]->descuadre}} </td>
+                @endif
             </tr>
         </table>
     </div>
 </div>
   <div style="float: right;">
-
+@if($caja->concepto != "Cierre de caja" )
  <a href="#" class="btn btn-sm fw-bold btn-danger" data-bs-toggle="modal" data-bs-target="#kt_modal_stacked_1">
             Cerrar caja       </a>
-
+@endif
 
  <a href="/caja/jefe" class="btn btn-sm fw-bold btn-primary" >
             Regresar       </a>
