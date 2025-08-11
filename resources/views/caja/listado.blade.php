@@ -319,10 +319,7 @@ if (searchText == "") {
 
         <!--begin::Card toolbar-->
         <div class="card-toolbar flex-row-fluid justify-content-end gap-5" >
-            <!--begin::Daterangepicker-->
- <a href="/caja/jefe" class="btn btn-sm fw-bold btn-primary" >
-            Regresar       </a>
-<!--end::Daterangepicker-->
+          
 
 <!--begin::Export dropdown-->
 
@@ -466,12 +463,24 @@ if (searchText == "") {
         </table>
     </div>
 </div>
+  <div style="float: right;">
 
+ <a href="#" class="btn btn-sm fw-bold btn-danger" data-bs-toggle="modal" data-bs-target="#kt_modal_stacked_1">
+            Cerrar caja       </a>
+
+
+ <a href="/caja/jefe" class="btn btn-sm fw-bold btn-primary" >
+            Regresar       </a>
+<!--end::Regresar-->
+
+
+
+    </div>
 
 </div>
     <!--end::Card body-->
+  <!--begin::Regresar-->
 
-    
 </div>
 <!--end::Products-->        </div>
         <!--end::Content container-->
@@ -489,7 +498,7 @@ if (searchText == "") {
      
     <div class="modal-content">
         <div class="modal-header">
-            <h3 class="modal-title">Crear Movimiento</h3>
+           <h3 class="modal-title">Cerrar caja</h3>
 <form action="/caja/guardar" method="GET">
      
             <!--begin::Close-->
@@ -503,27 +512,63 @@ if (searchText == "") {
             
            <input type="text" name="cajero" class="form-control form-control-solid" value="{{ Auth::user()->name }}" readonly />
            <br>
-            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}"/>
+            <input type="text" class="form-control form-control-solid" value="{{ date("d/m/Y") }}" readonly />
             
             <br>
-            <input type="text" name="agencia" class="form-control form-control-solid" placeholder="Agencia"/>
+            <input type="text" name="agencia" class="form-control form-control-solid" value="{{$empleado[0]->agencia}}" readonly/>
             <br>
-            <select class="form-select form-select-solid" aria-label="Select example" name="tipo">
-    <option>Tipo</option>
-    <option value="Caja inicial">Caja inicial</option>
-    <option value="Entrada">Entrada</option>
-    <option value="Salida">Salida</option>
-    <option value="Cierre de caja">Cierre de caja</option>
+          
+              <select class="form-select form-select-solid" aria-label="Select example" name="concepto" id="select-concepto"> 
+    
+    
+     @foreach ($conceptos as $concepto)
+     @if($concepto->concepto == "Cierre de caja")
+    <option value="{{$concepto->id}}">{{$concepto->concepto}}</option>
+    @endif
+    @endforeach
+   
 </select>
             <br>
-            <input type="text" class="form-control form-control-solid" placeholder="Concepto" name="concepto" />
-            <br>
-            <input type="text" class="form-control form-control-solid" placeholder="$0.00" name="valor" />
-            
+                       
+            <div class="row">
+                <div class="col">
+                    <div id="input-cierre-wrapper2" class="mt-3">
+                         
+                             <label for="valor_caja" class="form-label">Saldo en caja</label>
+                            @isset($caja->saldo)
+                               <input type="text" name="valor_caja" id="valor_caja" class="form-control form-control-solid" placeholder="Saldo caja" value="{{$caja->saldo}}" readonly>
+                            @endisset
+
+
+                    </div>
+                </div>
+                <div class="col">
+            <!-- Input oculto al principio -->
+                    <div id="input-cierre-wrapper"  class="mt-3">
+                        <label for="valor_cierre" class="form-label">Saldo de cajero</label>
+                        <input type="text" name="valor_cierre" id="valor_cierre" class="form-control form-control-solid" placeholder="Saldo cajero">
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-6">
+                
+            <div id="input-saldo-final-wrapper" class="mt-3">
+               <label for="saldo_final" class="form-label">Descuadre</label>
+                    <input type="number" name="saldo_final" id="saldo_final" class="form-control form-control-solid" placeholder="$0.00" readonly>
+            </div>
+
+              </div>
+            </div>
 
 
 
         </div>
+
+
 
         <div class="modal-footer">
             <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
@@ -559,6 +604,51 @@ if (searchText == "") {
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
    
 
+
+    
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const selectConcepto = document.getElementById('select-concepto');
+        const inputWrapper = document.getElementById('input-cierre-wrapper');
+        const inputWrapper2 = document.getElementById('input-cierre-wrapper2');
+        const inputWrapper3 = document.getElementById('input-cierre-wrapper3');
+        const inputSaldoFinal = document.getElementById('saldo_final');
+        const inputSaldoFinalWrapper = document.getElementById('input-saldo-final-wrapper');
+        const inputCierre = document.getElementById('valor_cierre');
+        const inputcaja = document.getElementById('valor_caja');
+
+        selectConcepto.addEventListener('change', function () {
+            // Obtener el texto de la opción seleccionada
+            const selectedText = selectConcepto.options[selectConcepto.selectedIndex].text;
+            
+
+            // Verificar si contiene "Cierre de caja"
+            if (selectedText.includes('Cierre de caja')) {
+                inputWrapper.style.display = 'block'; // Mostrar input
+                inputWrapper2.style.display = 'block';
+                inputWrapper3.style.display = 'none';
+                inputSaldoFinalWrapper.style.display = 'block';
+
+            } else {
+                inputWrapper.style.display = 'none'; // Ocultar input
+                inputWrapper2.style.display = 'none';
+                inputWrapper3.style.display = 'block';
+                inputSaldoFinalWrapper.style.display = 'none';
+                inputSaldoFinal.value = '';
+            }
+        });
+
+
+         // Calcular saldo final en tiempo real
+        inputCierre.addEventListener('input', function () {
+            const saldoCaja = parseFloat(inputcaja.value) || 0;
+            const valorCierre = parseFloat(inputCierre.value) || 0;
+            const saldoFinal = saldoCaja - valorCierre;
+
+            inputSaldoFinal.value = saldoFinal.toFixed(2);
+        });
+    });
+</script>
 
 
 

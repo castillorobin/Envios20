@@ -54,12 +54,13 @@ class CajaController extends Controller
 
     public function listado($id)
     {
-
+         $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+         $conceptos = Conceptocaja::all();
         $cajas = Detallecaja::where('idcaja', $id)
         ->get();
         $cajapr = Caja::where('id', $id)
         ->get();
-         return view('caja.listado', compact('cajas', 'cajapr'));
+         return view('caja.listado', compact('cajas', 'cajapr', 'empleado', 'conceptos'));
     }
     public function ajustes()
     {
