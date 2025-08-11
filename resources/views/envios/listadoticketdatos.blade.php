@@ -257,19 +257,18 @@ if (searchText == "") {
                                     </div>
 <!-- fin primera colummna-->
 <!--segunda colummna-->
-                                    <div class="col-12 col-md-9">
+                                   <div class="col-12 col-md-9">
                                     <form action="/envios/ticketdatos" method="GET">
-                                        <table  style="float:right;">
-                                            <tr>
-                                                <td>
-                                    <div class="col-auto" style="margin-right: 15px;">
-                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+                                        <div class="row"  >
+                                            
+                                    <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
+                                    <input style="min-width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
   </div>
-  </td>
-  <td style="width: 30%;">
-                                    <div class="col-auto">
 
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="width: 420px;">
+  
+                                    <div class="col-12 col-sm-3 pt-1" >
+
+                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px; float: right">
                                    
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
@@ -277,22 +276,21 @@ if (searchText == "") {
                                     @endforeach
                                 </select>
   </div>
-  </td>
-  <td >
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
+  
+ 
+ 
+
+  <div class="col-12 col-sm-2 pt-1" >
+  <button type="submit" class="btn btn-primary " style="float: right; width:100%;">Filtrar</button>
   </div>
-  </td>
-  <td >
-    <a href="/envios/listadoticket">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+ <div class="col-12 col-sm-2 pt-1" >
+    <a href="/envios/listadoticket" >
+    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
     </a>
-</td>
-  </tr>
-  </table>
-          
-                                   
-                                    </form>
+</div>
+        
+           </div>                        
+                              </form>      
                                     </div>
                                     <!-- fin segunda colummna-->
                                      <!--tercera colummna-->
