@@ -20,9 +20,21 @@ var KTAppEcommerceReportShipping = function () {
 
         // Init datatable --- more info on datatables: https://datatables.net/manual/
         datatable = $(table).DataTable({
+             dom:
+  "<'row'<'col-12'tr>>" +
+  "<'row align-items-center mt-3'<'col-md-4'l><'col-md-4 text-center'i><'col-md-4 d-flex justify-content-end'p>>",
             "info": false,
             'order': [],
             'pageLength': 10,
+            language: {
+    // Opción A: archivo local (pon el JSON en /public/vendor/datatables/i18n/es-ES.json)
+   url: "https://cdn.datatables.net/plug-ins/2.0.0/i18n/es-ES.json"
+    // Opción B (alternativa): CDN oficial (ajusta a tu versión 1.x o 2.x)
+    // url: "https://cdn.datatables.net/plug-ins/2.0.0/i18n/es-ES.json"
+    // url: "https://cdn.datatables.net/plug-ins/1.13.8/i18n/es-ES.json"
+
+    
+  }
         });
     }
 

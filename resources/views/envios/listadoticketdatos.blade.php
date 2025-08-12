@@ -46,10 +46,14 @@
         .dataTables_filter {
             display: none;
         }
-
-        .dataTables_length {
+/*
+        .dataTables_length label{
             display: none;
         }
+        .dataTables_length select{
+             display: block;
+        }
+            */
 /*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
@@ -179,6 +183,8 @@ if (searchText == "") {
 
 }
 </script>
+
+
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
@@ -661,9 +667,6 @@ if (searchText == "") {
     
     
         </script>
-
-
-
 
 
 
