@@ -262,11 +262,11 @@ if (searchText == "") {
                                         <div class="row"  >
                                             
                                     <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
-                                    <input style="min-width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
+                                    <input style="min-width: 150px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
   </div>
 
   
-                                    <div class="col-12 col-sm-3 pt-1" >
+                                    <div class="col-12 col-sm-4 pt-1" >
 
                                     <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px; float: right">
                                    
@@ -280,14 +280,10 @@ if (searchText == "") {
  
  
 
-  <div class="col-12 col-sm-2 pt-1" >
+  <div class="col-12 col-sm-3 pt-1" >
   <button type="submit" class="btn btn-primary " style="float: right; width:100%;">Filtrar</button>
   </div>
- <div class="col-12 col-sm-2 pt-1" >
-    <a href="/envios/listadoticket" >
-    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
-    </a>
-</div>
+
         
            </div>                        
                               </form>      
@@ -400,7 +396,12 @@ if (searchText == "") {
                                         </tbody>
 
                                     </table>
-                                    <div style="float:right">
+                                     <div style="float:right" >
+    <a href="/envios/listadoticket" >
+    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
+    </a>
+</div>
+                                    <div style="float:right; margin-right: 15px;">
                                        
                                              <form action="/reporte/exportarrecepcion" method="GET" target="_blank">
                                         <input type="text" value="{{$rango}}" name="rango2" hidden>

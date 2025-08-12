@@ -102,7 +102,7 @@
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
@@ -148,7 +148,7 @@
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -172,7 +172,7 @@
                                     <form action="/envios/ticketdatos" method="GET">
                                         <div class="row"  >
                                             
-                                    <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
+                                    <div class="col-12 col-sm-5 pt-1" style="margin-right: 15px;" >
                                     <input style="min-width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
   </div>
 
@@ -191,14 +191,10 @@
  
  
 
-  <div class="col-12 col-sm-2 pt-1" >
+  <div class="col-12 col-sm-3 pt-1" >
   <button type="submit" class="btn btn-primary " style="float: right; width:100%;">Filtrar</button>
   </div>
- <div class="col-12 col-sm-2 pt-1" >
-    <a href="/envios/listadoticket" >
-    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
-    </a>
-</div>
+
         
            </div>                        
                               </form>      
@@ -276,6 +272,7 @@
                                   
                                 </div>
                                 <!--end::Table-->
+  
                             </div>
                             <!--end::Table-->
                         </div>
