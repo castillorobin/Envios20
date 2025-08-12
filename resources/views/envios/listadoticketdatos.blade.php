@@ -232,85 +232,59 @@ if (searchText == "") {
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid">
+                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container ">
+                    <div id="kt_app_content_container" class="app-container">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class=" ">
-                                <!--begin::Card title-->
-                                <div class="p-5">
-
-                                <div class="row" >
-
-                                <!--primera colummna-->
-                                    <div class="col-12 col-md-3" >
-                                    <div class="d-flex align-items-center position-relative my-1">
-                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5" data-select2-id="select2-data-123-8u6f">
+        <!--begin::Card title-->
+        <div class="card-title">
+            <form action="/envios/ticketdatos" method="GET">
+            <!--begin::Search-->
+            <div class="d-flex align-items-center position-relative my-1">
+                 <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
 
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
-                                    </div>
-                                    </div>
-<!-- fin primera colummna-->
-<!--segunda colummna-->
-                                   <div class="col-12 col-md-9">
-                                    <form action="/envios/ticketdatos" method="GET">
-                                        <div class="row"  >
-                                            
-                                    <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
-                                    <input style="min-width: 150px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
-  </div>
 
-  
-                                    <div class="col-12 col-sm-4 pt-1" >
+            </div>
+            <!--end::Search-->
+        </div>
+        <!--end::Card title-->
 
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px; float: right">
+        <!--begin::Card toolbar-->
+        <div class="card-toolbar flex-row-fluid justify-content-end gap-5" data-select2-id="select2-data-122-79op">
+            <!--begin::Flatpickr-->
+             
+            <div class="input-group w-250px">
+            <input class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+            </div>
+            <!--end::Flatpickr-->
+
+            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
+                                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
                                    
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
                                     @endforeach
                                 </select>
-  </div>
-  
- 
- 
 
-  <div class="col-12 col-sm-3 pt-1" >
-  <button type="submit" class="btn btn-primary " style="float: right; width:100%;">Filtrar</button>
-  </div>
+            </div>
 
-        
-           </div>                        
-                              </form>      
-                                    </div>
-                                    <!-- fin segunda colummna-->
-                                     <!--tercera colummna-->
-                                   
-                                    <!--fin tercera colummna-->
-                                </div>
-
-
-
-
-                                    <!--begin::Search-->
-                                   
-                                    <!--end::Search-->
-                                  
-                                    <!--end::Export buttons-->
-                                </div>
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                                          
-                                   
-
-
-                                    
-                                </div>
+            <!--begin::Add product-->
+              <button type="submit" class="btn btn-primary " >Filtrar</button>
+            <!--end::Add product-->
+                
+        </div>
+          
+        <!--end::Card toolbar-->
+    </div>
+     </form>
 
                                 <!--end::Card toolbar-->
                            
