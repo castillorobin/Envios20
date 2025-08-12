@@ -223,8 +223,7 @@ if (searchText == "") {
 
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                       
-                            <!--end::Primary button-->
+      
                         </div>
                         <!--end::Actions-->
                     </div>
@@ -370,49 +369,29 @@ if (searchText == "") {
                                         </tbody>
 
                                     </table>
-                                     <div style="float:right" >
+                                    </div>
+                                    </div>
+                                     <div style="float:right; margin-bottom: 15px;"  >
     <a href="/envios/listadoticket" >
-    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
+    <button type="button" class="btn btn-secondary " style="float: right; ">Cancelar</button>
     </a>
-</div>
-                                    <div style="float:right; margin-right: 15px;">
-                                       
+    
                                              <form action="/reporte/exportarrecepcion" method="GET" target="_blank">
                                         <input type="text" value="{{$rango}}" name="rango2" hidden>
                                         <input type="text" value="{{$usuario}}" name="usuario2" hidden>
-                                    <button type="submit" class="btn btn-light-primary" data-kt-menu-placement="bottom-end" >
+                                    <button type="submit" class="btn btn-light-primary" data-kt-menu-placement="bottom-end" style="float: right; margin-right: 15px;">
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>Exportar Reporte</button>
                                     <!--begin::Menu-->
-                                     <form >
+                                    </form >
                                   
-                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
-                                        <!--begin::Menu item
-                                     
-                                        -->
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
-                                        </div>
-
-                                        -->
-                                        <!--end::Menu item-->
+</div>
+                                  
                                        
-                                      
-                                        <!--end::Menu item-->
-                                        <!--begin::Menu item
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
-                                        </div>
-
-                                        -->
-                                        <!--end::Menu item-->
-                                    </div>
-                                    </div>
-                                </div>
+                                    
+                                
                                 <!--end::Table-->
                             </div>
                             <!--end::Table-->
