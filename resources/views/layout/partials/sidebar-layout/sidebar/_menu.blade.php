@@ -342,6 +342,7 @@
 							<span class="menu-title">Recepción de paquete</span>
 						</a>
 					</div>
+ <!--end::Table
 					<div class="menu-item">
 						<a class="menu-link" href="/listapagos">
 							<span class="menu-bullet">
@@ -350,6 +351,7 @@
 							<span class="menu-title">Pago por Comercio</span>
 						</a>
 					</div>
+-->
 					<div class="menu-item">
 						<a class="menu-link" href="/listapagosticket">
 							<span class="menu-bullet">
