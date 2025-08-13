@@ -298,6 +298,8 @@ class CobroController extends Controller
         //$ticketid = $request->get('ticketid');
         $agencia = $request->get('agencia');
         $cajero = $request->get('cajero');
+        $nota = $request->get('nota');
+       // dd($nota);
         $ticketid1 = Ticketc::where('codigo', $ticketnum)
         ->get();
         $ticketid = $ticketid1[0]->id; 
@@ -386,7 +388,7 @@ class CobroController extends Controller
         $ticketc->metodo = $request->get('metodo');
         $ticketc->entrega = $request->get('pago');
         $ticketc->cambio = $request->get('cambio');
-        $ticketc->nota = $request->get('notad');
+        $ticketc->nota = $nota;
         $ticketc->agencia = $agencia;
         //$ticketc->iva = $ ;
         $ticketc->save();

@@ -485,7 +485,7 @@ $(document).ready(function() {
                     <div class="row mb-6">
                         <label class="col-lg-3 col-form-label">Nota</label>
                         <div class="col-lg-8">
-                            <input type="text" name="nota" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
+                            <input type="text" name="nota2" class="form-control form-control-lg form-control-solid" placeholder="Nota" />
                         </div>
                     </div>
                 </form>
@@ -859,7 +859,7 @@ $(document).ready(function() {
                                         
                                         <button type="button" class="btn btn-link py-1" onclick="descontar()" >Agregar descuento</button>
                                         <input type="text" class="form-control form-control-solid" id="descuent" name="descuent"  value="0" hidden/>
-                                        <textarea class="form-control form-control-solid mt-1" id="notad" name="notad" rows="3" cols="20" ></textarea>
+                                        <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" hidden>Ingresar nota</textarea>
                                     </div>
                                 </th> 
 

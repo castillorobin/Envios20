@@ -329,7 +329,7 @@ if (searchText == "") {
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->cajero}}</td>
                                                 <td>{{$ticket->agencia}}</td>
-                                                <td>${{$ticket->total - $ticket->descuento - $ticket->iva}}</td>
+                                                <td>${{$ticket->persoi + $ticket->puntoi + $ticket->casili + $ticket->depari + $ticket->guiasi}}</td>
                                                 <td>
                                                     @if ($ticket->iva == NULL)
                                                         $0
@@ -377,7 +377,7 @@ if (searchText == "") {
                                     </table>
                                     </div>
                                     </div>
-                                     <div style="float:right; margin-bottom: 15px;"  >
+                                     <div style="float:right; margin: 15px; "  >
     <a href="/envios/listadoticket" >
     <button type="button" class="btn btn-secondary " style="float: right; ">Cancelar</button>
     </a>
