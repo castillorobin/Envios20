@@ -41,6 +41,34 @@ class PagoController extends Controller
         return view('envios.listadoticket', compact('repartidores'));
     }
 
+    public function exportarpago(Request $request)
+    {
+
+        $rango = $request->input('rango2');
+        $usuario = $request->input('usuario2');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
+
+        if($usuario == "todos")
+        {
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+        $pdf = PDF::loadView('reportes.exportarpago', ['cajas'=>$tickets])->setPaper('letter', 'landscape');
+
+        return $pdf->stream();
+     
+    }
+
     public function ticketdatos(Request $request)
     {
         

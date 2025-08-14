@@ -240,6 +240,8 @@ Route::post('/envios/pagotodo/', [App\Http\Controllers\PagoController::class, 'p
 
 Route::get('/reporte/exportarrecepcion/', [App\Http\Controllers\CobroController::class, 'exportarrecepcion'] )->name('exportarrecepcion') ;
 Route::get('/reporte/exportarrecepcionExcel/', [App\Http\Controllers\CobroController::class, 'exportarrecepcionExcel'] )->name('exportarrecepcionExcel') ;
+
+Route::get('/reporte/exportarpago/', [App\Http\Controllers\PagoController::class, 'exportarpago'] )->name('exportarpago') ;
 /*
 envios/detalleeditando
 
