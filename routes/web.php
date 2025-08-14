@@ -239,6 +239,7 @@ Route::get('/envios/lisdopagosdatosticket/{id}', [App\Http\Controllers\PagoContr
 Route::post('/envios/pagotodo/', [App\Http\Controllers\PagoController::class, 'pagotodo'] )->name('pagotodo') ;
 
 Route::get('/reporte/exportarrecepcion/', [App\Http\Controllers\CobroController::class, 'exportarrecepcion'] )->name('exportarrecepcion') ;
+Route::get('/reporte/exportarrecepcionExcel/', [App\Http\Controllers\CobroController::class, 'exportarrecepcionExcel'] )->name('exportarrecepcionExcel') ;
 /*
 envios/detalleeditando
 

@@ -17,6 +17,8 @@ use App\Models\Conceptocaja;
 use App\Models\Empleado;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\RecepcionExport;
 
 class CobroController extends Controller
 { 
@@ -57,18 +59,14 @@ class CobroController extends Controller
 
     public function exportarrecepcion(Request $request)
     {
-        // $idcaja2= Caja::find($id);
 
         $rango = $request->input('rango2');
         $usuario = $request->input('usuario2');
         $parte1 = Str::of($rango)->explode('-');
         $fecha1 = $parte1[0];
         $fecha2 = $parte1[1];
-        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
         $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
         $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
-
-       // dd($fechacam1, $fechacam2);
 
         if($usuario == "todos")
         {
@@ -82,12 +80,39 @@ class CobroController extends Controller
         }
 
         $pdf = PDF::loadView('reportes.pagopdf', ['cajas'=>$tickets])->setPaper('letter', 'landscape');
-          // $customPaper = array(0,0,360,750);
-       
-         //  $pdf->setPaper();
+
         return $pdf->stream();
      
     }
+
+    public function exportarrecepcionExcel(Request $request)
+{
+    $rango   = $request->input('rango2');
+    $usuario = $request->input('usuario2');
+
+    $parte1  = Str::of($rango)->explode('-');
+    $fecha1  = $parte1[0];
+    $fecha2  = $parte1[1];
+
+    $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1));
+    $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2));
+
+    $query = Ticketc::whereBetween('created_at', [$fechacam1, $fechacam2]);
+
+    if ($usuario !== 'todos') {
+        $query->where('cajero', $usuario);
+    }
+
+    // Trae los campos que usas en el Excel/PDF
+    $tickets = $query->get([
+        'codigo','comercio','cajero','agencia',
+        'persoi','puntoi','casili','depari','guiasi',
+        'iva','descuento','nota','total','created_at'
+    ]);
+
+    $filename = 'recepcion_' . date('Ymd_His') . '.xlsx';
+    return Excel::download(new RecepcionExport($tickets), $filename);
+}
     
     
     public function limpieza($tipo11, $ticketactual)

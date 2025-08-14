@@ -382,16 +382,47 @@ if (searchText == "") {
     <button type="button" class="btn btn-secondary " style="float: right; ">Cancelar</button>
     </a>
     
-                                             <form action="/reporte/exportarrecepcion" method="GET" target="_blank">
-                                        <input type="text" value="{{$rango}}" name="rango2" hidden>
-                                        <input type="text" value="{{$usuario}}" name="usuario2" hidden>
-                                    <button type="submit" class="btn btn-light-primary" data-kt-menu-placement="bottom-end" style="float: right; margin-right: 15px;">
+                                             
+                                        
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" style="float: right; margin-right: 15px;">
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>Exportar Reporte</button>
+
+                                        <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                                        <!--begin::Menu item
+                                     
+                                        -->
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <form action="/reporte/exportarrecepcionExcel" method="GET" target="_blank">
+
+                                                <input type="text" value="{{$rango}}" name="rango2" hidden>
+                                        <input type="text" value="{{$usuario}}" name="usuario2" hidden>
+
+                                            <button type="submit" class="btn btn-outline-primary"  >Exportar a Excel</button>
+
+                                            </form >
+                                        </div>
+                                        
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                               <form action="/reporte/exportarrecepcion" method="GET" target="_blank">
+
+                                                <input type="text" value="{{$rango}}" name="rango2" hidden>
+                                        <input type="text" value="{{$usuario}}" name="usuario2" hidden>
+
+                                            <button type="submit" class="btn btn-outline-primary"  >Exportar a PDF</button>
+
+                                            </form >
+                                        </div>
+                                        
+                                    </div>
                                     <!--begin::Menu-->
-                                    </form >
+                                    
+                                    
                                   
 </div>
                                   

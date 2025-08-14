@@ -112,7 +112,7 @@
                                                 <td>{{$caja->comercio}}</td> 
                                                 <td>{{$caja->cajero}}</td>
                                                 <td>{{$caja->agencia}}</td>
-                                                <td>${{$caja->total - $caja->descuento - $caja->iva}}</td>
+                                                <td>${{$caja->persoi + $caja->puntoi + $caja->casili + $caja->depari + $caja->guiasi}}</td>
                                                 <td>
                                                     @if ($caja->iva == NULL)
                                                         $0
