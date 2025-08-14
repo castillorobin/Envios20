@@ -192,13 +192,14 @@ if (searchText == "") {
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de pago</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
+                            
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
@@ -231,92 +232,59 @@ if (searchText == "") {
                 <!--begin::Content-->
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container container-xxl">
+                    <div id="kt_app_content_container" class="app-container ">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class=" ">
-                                <!--begin::Card title-->
-                                <div class="p-5">
+                           <!--begin::Card header-->
+                            <div class="card-header align-items-center py-5 gap-2 gap-md-5" data-select2-id="select2-data-123-8u6f">
+        <!--begin::Card title-->
+        <div class="card-title">
+            <form action="/envios/rpagodatos" method="GET">
+            <!--begin::Search-->
+            <div class="d-flex align-items-center position-relative my-1">
+                
 
-                                <div class="row" >
+            </div>
+            <!--end::Search-->
+        </div>
+        <!--end::Card title-->
 
-                                <!--primera colummna-->
-                                    <div class="col-12 col-md-3" >
-                                    <div class="d-flex align-items-center position-relative my-1">
-                                        <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
-                                            <span class="path1"></span>
-                                            <span class="path2"></span>
-                                        </i>
+        <!--begin::Card toolbar-->
+        <div class="card-toolbar flex-row-fluid justify-content-end gap-5" data-select2-id="select2-data-122-79op">
+            <!--begin::Flatpickr-->
+             
+            <div class="input-group w-250px">
+            <input class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+            </div>
+            <!--end::Flatpickr-->
 
-                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" disabled />
-                                    </div>
-                                    </div>
-<!-- fin primera colummna-->
-<!--segunda colummna-->
-                                    <div class="col-12 col-md-9">
-                                    <form action="/envios/rpagodatos" method="GET">
-                                        <table  style="float:right;">
-                                            <tr>
-                                                <td>
-                                    <div class="col-auto" style="margin-right: 15px;">
-                                    <input style="width: 220px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
-  </div>
-  </td>
-  <td style="width: 30%;">
-                                    <div class=" ">
-
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
+            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
+                                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
                                    
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
                                     @endforeach
                                 </select>
-  </div>
-  </td>
-  <td >
-  <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
-  </div>
-  </td>
-  <td >
-    <a href="/envios/reportepago">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
-    </a>
-</td>
-  </tr>
-  </table>
+
+            </div>
+
+            <!--begin::Add product-->
+              <button type="submit" class="btn btn-primary " >Filtrar</button>
+            <!--end::Add product-->
+                
+        </div>
           
-                                   
-                                    </form>
-                                    </div>
-                                    <!-- fin segunda colummna-->
-                                     <!--tercera colummna-->
-                                  
-                                    <!--fin tercera colummna-->
-                                </div>
-
-
-
-
-                                    <!--begin::Search-->
-                                   
-                                    <!--end::Search-->
-                                  
-                                    <!--end::Export buttons-->
-                                </div>
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                                          
-                                   
-
-
-                                    
-                                </div>
+        <!--end::Card toolbar-->
+    </div>
+     </form>
 
                                 <!--end::Card toolbar-->
-                            </div>
+                           
+                                <!--end::Card toolbar-->
+                         
+                            <!--end::Card header-->
 
                             <!--end::Card header-->
                             <!--begin::Card body-->
@@ -340,7 +308,7 @@ if (searchText == "") {
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
                                            
-                                            <tr class="'table-row-gray' : 'table-row-white' ">
+                                            <tr >
                                                 <td>                                   </td>
                                                 <td></td> 
                                                 <td></td>
