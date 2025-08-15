@@ -20,6 +20,8 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use DateInterval;
 use App\Models\Empleado;
+use App\Exports\TicketRepoExport;
+use Maatwebsite\Excel\Facades\Excel;
  
 class PagoController extends Controller
 { 
@@ -656,10 +658,12 @@ class PagoController extends Controller
 
     }
 
+
+
     public function exportarticketrepo( $ticketc)
     {
         //Alert::message('Mensaje', 'Título opcional');
-
+ 
         $pedidos = Envio::where('pagoticket', $ticketc)->get();
         $comercio = $pedidos[0]->comercio;
         $total = 0;
@@ -667,9 +671,6 @@ class PagoController extends Controller
         $pagototal = Ticktpago::where('id', $ticketc)->get();
         $total = $pagototal[0]->total  ;
         foreach($pedidos as $pedido){
-            
-           
-            
             $cantidad = $cantidad + 1;
             }
 
@@ -677,9 +678,37 @@ class PagoController extends Controller
         $pdf = PDF::loadView('envios.exportarpagarticketrepo', ['pedidos'=>$pedidos, 'comerset'=>$comerset, 'total'=>$total, 'cantidad'=>$cantidad]);
             $pdf->setPaper('letter', 'landscape');
             return $pdf->stream();
-
-
     }
+
+
+    public function exportarticketrepoExcel($ticketc)
+{
+    // Mismos datos que usas para el PDF
+    $pedidos = Envio::where('pagoticket', $ticketc)->get();
+    if ($pedidos->isEmpty()) {
+        abort(404, 'No se encontraron guías para el ticket especificado.');
+    }
+
+    $pago   = Ticktpago::find($ticketc);
+    $total  = (float) ($pago?->total ?? 0);
+    $user   = Auth::user()?->name ?? '—';
+    $rep    = $pedidos[0]->repartidor ?? null;
+    $count  = $pedidos->count();
+
+    // Descarga el Excel
+    $filename = 'reporte_ticket_' . $ticketc . '_' . date('Ymd_His') . '.xlsx';
+    return Excel::download(
+        new TicketRepoExport(
+            rows: $pedidos,
+            usuario: $user,
+            repartidor: $rep,
+            ticketId: $ticketc,
+            cantidadGuias: $count,
+            totalPagado: $total
+        ),
+        $filename
+    );
+}
 
     public function exportarticketentre( $ticketc)
     {

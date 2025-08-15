@@ -204,6 +204,7 @@ Route::get('pago/exportarticket/{ticketc}', [App\Http\Controllers\PagoController
 Route::get('pago/exportarcomercio/{comercio}', [App\Http\Controllers\PagoController::class, 'exportarcomercio'] )->name('exportarcomercio') ;
 
 Route::get('pago/exportarticketrepo/{ticketc}', [App\Http\Controllers\PagoController::class, 'exportarticketrepo'] )->name('exportarticketrepo') ;
+Route::get('pago/exportarticketrepoExcel/{ticketc}', [App\Http\Controllers\PagoController::class, 'exportarticketrepoExcel'] )->name('exportarticketrepoExcel') ;
 Route::get('pago/exportarticketentre/{ticketc}', [App\Http\Controllers\PagoController::class, 'exportarticketentre'] )->name('exportarticketentre') ;
 
 //Administracion Tickets

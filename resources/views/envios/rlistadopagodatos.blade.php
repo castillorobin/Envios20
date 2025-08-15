@@ -397,7 +397,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                            <a href="/pago/exportarticketrepoExcel/{{$tickets[0]->pagoticket}}" class="menu-link px-3" >Exportar a Excel</a>
                                         </div>
                                         <!--end::Menu item-->
                                        
