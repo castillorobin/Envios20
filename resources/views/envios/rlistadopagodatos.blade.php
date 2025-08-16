@@ -181,15 +181,15 @@ if (searchText == "") {
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <div  >
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <!--begin::Content wrapper-->
-            <div >
+            <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div >
+                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div >
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de pago</h1>
                             <!--end::Title-->
@@ -201,6 +201,13 @@ if (searchText == "") {
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
+                                <li class="breadcrumb-item">
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item text-muted">Reportes</li>
+
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
@@ -311,7 +318,7 @@ if (searchText == "") {
                                                
                                                 <th class="min-w-100px"># de Guía</th>
                                                 <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-100px">Cliente</th>
+                                                <th class="min-w-100px">Destinatario</th>
                                                 <th class="min-w-50px">Usuario</th>
                                                 <th class="min-w-50px">Agencia</th>
                                                 <th class="min-w-50px">Estado</th>
@@ -376,14 +383,16 @@ if (searchText == "") {
 
                                     </table>
                                     
-                                </div> </div> <div style="width: 100%; float:right;">
-                                <div style="width: 25%; float:right; margin-top:10px;margin-bottom:20px; " >
+                                </div> </div> 
+                                
+                                <div style="float:right ; margin: 15px; "  >
+                                
                                     <a href="/envios/reportepago">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+    <button type="button" class="btn btn-secondary " style=" float: right;" >Cancelar</button>
     </a>
 
 
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end">
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" style="float: right; margin-right: 15px;">
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
@@ -410,7 +419,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                     </div>
                                     </div>
-                                    </div>
+                                    
                                 <!--end::Table-->
                            
                             <!--end::Table-->
