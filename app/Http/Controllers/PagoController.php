@@ -22,6 +22,7 @@ use DateInterval;
 use App\Models\Empleado;
 use App\Exports\TicketRepoExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\PagoExport;
  
 class PagoController extends Controller
 { 
@@ -70,6 +71,32 @@ class PagoController extends Controller
         return $pdf->stream();
      
     }
+
+    public function exportarpagoExcel(Request $request)
+{
+    $rango   = $request->input('rango2');
+    $usuario = $request->input('usuario2');
+
+    $parte1   = Str::of($rango)->explode('-');
+    $fecha1   = $parte1[0];
+    $fecha2   = $parte1[1];
+    $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1));
+    $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2));
+
+    $query = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2]);
+
+    if ($usuario !== 'todos') {
+        $query->where('cajero', $usuario);
+    }
+
+    // Traemos solo los campos que usamos
+    $tickets = $query->get([
+        'id','comercio','estado','cajero','agencia','descuento','nota','total','created_at'
+    ]);
+
+    $filename = 'reporte_pago_' . date('Ymd_His') . '.xlsx';
+    return Excel::download(new PagoExport($tickets), $filename);
+}
 
     public function ticketdatos(Request $request)
     {

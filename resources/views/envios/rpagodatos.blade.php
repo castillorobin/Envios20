@@ -215,13 +215,28 @@ if (searchText == "") {
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
+
+
                         </div>
                         <!--end::Page title--> 
+
+
+
+
+
    
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">
-                        <div class="col-6">                         
-                          @if (session('Error'))
+                       
+                            <!--end::Primary button-->
+                        </div>
+
+                       
+                        <!--end::Actions-->
+                    </div>
+
+                     <div class="col-6">                         
+                  @if (session('Error'))         
     <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert-error" style="margin-left: 25px;">
         {{ session('Error') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
@@ -238,13 +253,9 @@ if (searchText == "") {
             }
         }, 3000);
     </script>
-@endif         
-
+        
+@endif 
 </div>
-                            <!--end::Primary button-->
-                        </div>
-                        <!--end::Actions-->
-                    </div>
                     <!--end::Toolbar container-->
                 </div>
                 <!--end::Toolbar-->
@@ -269,8 +280,21 @@ if (searchText == "") {
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
 
             </div>
+
+
+
+           
+
+
+
+
+
+
+
             <!--end::Search-->
         </div>
+
+      
         <!--end::Card title-->
 
         <!--begin::Card toolbar-->
@@ -302,7 +326,7 @@ if (searchText == "") {
         <!--end::Card toolbar-->
     </div>
      </form>
-
+   
                                 <!--end::Card toolbar-->
                            
                                 <!--end::Card toolbar-->

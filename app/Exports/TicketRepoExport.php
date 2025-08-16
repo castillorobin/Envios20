@@ -52,29 +52,31 @@ class TicketRepoExport implements
     public function headings(): array
     {
         return [
-            'Guia','Comercio','Destinatario','Direccion',
-            'Tipo','Estado del envio','Fecha de entrega',
-            'Precio','Envio','Total'
+            'Guia','Comercio','Destinatario','Usuario',
+            'Agencia','Estado','Estado del pago',
+            'Tipo','Total','Fecha'
         ];
     }
 
     /** Mapeo 1:1 con tus campos */
     public function map($row): array
     {
-        $fechaExcel = $this->toExcelDate($row->fecha_entrega ?? null);
+        $fechaExcel = $this->toExcelDate($row->created_at ?? null);
 
         return [
             $row->guia,
             $row->comercio,
             $row->destinatario,
-            $row->direccion,
-            $row->tipo,
+            $row->usuario,
+            $row->agencia,
             $row->estado,
+            $row->pago,
+            $row->tipo,
+            (float) ($row->total ?? 0),
             // Fecha de entrega como fecha de Excel
             $fechaExcel,
-            (float) ($row->precio ?? 0),
-            (float) ($row->envio ?? 0),
-            (float) ($row->total ?? 0),
+           
+            
         ];
     }
 
@@ -109,7 +111,7 @@ class TicketRepoExport implements
             'G' => NumberFormat::FORMAT_DATE_DDMMYYYY,       // Fecha de entrega
             'H' => NumberFormat::FORMAT_CURRENCY_USD_SIMPLE, // Precio
             'I' => NumberFormat::FORMAT_CURRENCY_USD_SIMPLE, // Envio
-            'J' => NumberFormat::FORMAT_CURRENCY_USD_SIMPLE, // Total
+            'J' => NumberFormat::FORMAT_DATE_DDMMYYYY, // Total
         ];
     }
 

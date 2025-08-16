@@ -32,7 +32,7 @@
     <img src="../public/fotos/logo24.png" alt="" width="10%">
     <br>
             
-            
+           <p></p> 
      
            
            <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Reporte de pago</span> </div>

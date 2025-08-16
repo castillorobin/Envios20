@@ -243,6 +243,7 @@ Route::get('/reporte/exportarrecepcion/', [App\Http\Controllers\CobroController:
 Route::get('/reporte/exportarrecepcionExcel/', [App\Http\Controllers\CobroController::class, 'exportarrecepcionExcel'] )->name('exportarrecepcionExcel') ;
 
 Route::get('/reporte/exportarpago/', [App\Http\Controllers\PagoController::class, 'exportarpago'] )->name('exportarpago') ;
+Route::get('/reporte/exportarpagoExcel/', [App\Http\Controllers\PagoController::class, 'exportarpagoExcel'] )->name('exportarpagoExcel') ;
 /*
 envios/detalleeditando
 

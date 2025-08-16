@@ -29,9 +29,9 @@
 
     </style>
 <div style="width:100%; " class="text-center centrar"> 
-    <img src="../public/fotos/logo24.png" alt="" width="10%">
+    <img src="../public/fotos/logo24.png" alt="" width="10%" >
     <br>
-            
+            <p></p>
             
      
            
@@ -116,7 +116,7 @@
 </thead>
 <tbody >
     @foreach($pedidos as $pedido)
-    <tr class="'table-row-gray' : 'table-row-white' ">
+    <tr class="'table-row-gray' : 'table-row-white' " style="font-size:12px;">
     
     <td class="text-center">{{ $pedido->guia }}</td>
     <td class="text-center">{{ $pedido->comercio }}</td>
