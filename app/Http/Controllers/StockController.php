@@ -888,7 +888,7 @@ class StockController extends Controller
         ->where('estado', "No entregado")
         ->get();
 
-         if($pedidos->isEmpty()){
+         if($pedidos->isEmpty()){ 
             //dd("no hay envio");
             $nota = "El ticket que se ingreso no existe"; 
             return view('stocks.entreganoret', compact('nota'));

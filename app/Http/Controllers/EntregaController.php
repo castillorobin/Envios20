@@ -21,8 +21,60 @@ class EntregaController extends Controller
     public function index()
     {
         $nota = " "; 
-        return view('envios.entregas', compact('nota'));
+        return view('entrega.entregas ', compact('nota'));
     } 
+
+     public function entregacasidatos(Request $request)
+    {
+        $nota = " ";
+
+        $guia = $request->get('guia') ;
+        $pedidos = Envio::where('ticketc', $guia)
+        ->where('tipo', "Casillero")
+        ->get();
+
+         if($pedidos->isEmpty()){ 
+            //dd("no hay envio");
+            $nota = "El ticket que se ingreso no existe"; 
+            return view('entrega.entregacasidatos', compact('nota'));
+
+        }
+
+         return view('entrega.entregacasidatos', compact('pedidos', 'nota'));
+    }
+
+    public function filtrarcasi(Request $request)
+    {
+        $estado = $request->input('estado');
+        $ticket = $request->input('ticketc');
+        
+
+         if ($estado !="todos"){
+            $pedidos = Envio::where('ticketc', $ticket)
+        ->where('estado', $estado)
+        ->get();
+         }else{
+            $pedidos = Envio::where('ticketc', $ticket)
+       
+        ->get();
+         }
+
+$numti = $ticket;
+
+if($pedidos->isEmpty()){
+            //dd("no hay envio");
+            $nota = "No hay envios con el estado seleccionado"; 
+
+            return view('entrega.entregas', compact('numti', 'nota')); 
+
+        }
+
+
+        $nota = " ";
+
+         return view('entrega.entregacasidatos', compact('pedidos', 'nota'));
+        
+    }
     
     public function listadoentregas()
     {
