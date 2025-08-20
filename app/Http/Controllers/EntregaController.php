@@ -29,14 +29,12 @@ class EntregaController extends Controller
         $nota = " ";
 
         $guia = $request->get('guia') ;
-        $pedidos = Envio::where('ticketc', $guia)
-        ->where('tipo', "Casillero")
-        ->get();
+        $pedidos = Envio::where('guia', $guia)->get();
 
          if($pedidos->isEmpty()){ 
             //dd("no hay envio");
-            $nota = "El ticket que se ingreso no existe"; 
-            return view('entrega.entregacasidatos', compact('nota'));
+            $nota = "La guia que se ingreso no existe"; 
+            return view('entrega.entregacasidatos', compact('pedidos', 'nota'));
 
         }
 
@@ -151,7 +149,8 @@ if($pedidos->isEmpty()){
         ->get();
 
         
-        return view('envios.entregasagregar', compact('actual', 'pedidos'));
+        return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual'));
+        //return view('envios.entregasagregar', compact('actual', 'pedidos'));
     }
 
     public function agregarparte(Request $request)
@@ -169,8 +168,6 @@ if($pedidos->isEmpty()){
            
         }
        
-
-
 
 
         $envioid= $envio[0]->id ;

@@ -173,12 +173,12 @@ $(document).ready(function() {
                                 <div class="card-title ">
                                     <!--begin::Search-->
                                     <!--begin::Search-->
-                                    <form action="/entrega/entregacasidatos/" class="row g-2" method="GET">
+                                    <form action="/entrega/agregarparte" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto ">
-                                            <label for="guia" class="visually-hidden">ticket</label>
-                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar ticket" autofocus>
-                                            <input type="text" value=" " class="visually-hidden" name="actual" id="actual">
+                                            <label for="guia" class="visually-hidden">Guia</label>
+                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia" autofocus>
+                                           <input type="text" class="visually-hidden" name="entrega" id="entrega" value="{{$actual}}">
                                             <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar guia">
                                         </div>
                                         <div class="col-auto">
@@ -210,7 +210,7 @@ $(document).ready(function() {
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                <input type="text" value="{{$pedidos[0]->ticketc}}" class="visually-hidden" name="ticketc" id="ticketc">
+                                <input type="text" value="{{$pedidos[0]->ticketc ?? ''}} " class="visually-hidden" name="ticketc" id="ticketc">
                                     
                                     <div class="w-150px"> 
                                         <!--begin::Select2-->
@@ -340,7 +340,7 @@ $(document).ready(function() {
 
                                 <div class="row mt-7">
                                     <div class="col-12 mb-3" >
-                                        <a href="/stocks/entreganoret">
+                                        <a href="/entregas">
                                         <button type="button" class="btn btn-secondary mb-3" style="float: right; margin-left:10px; ">Cancelar</button>
                                     </a>
                                    
@@ -368,7 +368,7 @@ $(document).ready(function() {
         </div>
         <div class="modal-body"> <!-- Inicia Modalbody -->
             <form action="/entrega/ticketentrega/" class="row g-2" method="GET">
-                <input type="text" class="visually-hidden" name="entrega2" id="entrega2" value="">
+                <input type="text" class="visually-hidden" name="entrega2" id="entrega2" value="{{$actual}}">
             <!--begin::Mixed Widget 12-->
             <div class="card mb-5 mb-lg-10">
                 <!--begin::Header-->

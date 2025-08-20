@@ -66,13 +66,13 @@
 
 
 
-                                                    <form action="/entrega/entregacasidatos/" class="row g-2" method="GET">
+                                                    <form action="/entrega/agregar" class="row g-2" method="GET">
                                                    
                                                    
 
                                                         <div class="col-auto">
-                                                            <label for="guia" class="visually-hidden">Ticket</label>
-                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar ticket" autofocus>
+                                                            <label for="guia" class="visually-hidden">Guia</label>
+                                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia" autofocus>
                                                             <input type="text" value="Departamental" class="visually-hidden" name="tipo" id="tipo">
                                                             <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar guia">
                                                         </div>
