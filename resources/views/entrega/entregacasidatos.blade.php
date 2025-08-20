@@ -243,7 +243,7 @@ $(document).ready(function() {
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
 
- <form action="/stocks/guardarentrega/" method="GET">
+
                                 <!--begin::Table-->
                                 <span hidden id="total3"> {{ $total4 = 0 }}</span>
                                             @foreach ($pedidos as $pedido) 
@@ -267,7 +267,9 @@ $(document).ready(function() {
                                             <td class="text-center" rowspan="5">
                                                 <!--    
                                                 <button type="button"  value="{{$pedido->id}}" class="btn btn-primary btn-sm edit" data-bs-toggle="modal" data-bs-target="#kt_modal_1">Entregar</button>
--->                                                 <input type="checkbox" name="selec[]" id="selec[]" value="{{$pedido->id}}">
+-->                                                 <!-- 
+                                                 <input type="checkbox" name="selec[]" id="selec[]" value="{{$pedido->id}}">
+-->     
                                                  </td>
                                             </tr>
                                                  <tr><td style="width:200px; font-weight: bolder;">
@@ -331,13 +333,13 @@ $(document).ready(function() {
                                                 </div>
                                                 </div>
 
-
+<span hidden id="total2"> {{ $total4 = $total4 + $pedido->total }}</span>
 
 
                                            
                                             @endforeach
                                 
-
+<span hidden id="total5"> {{ $total4 }}</span>
                                 <div class="row mt-7">
                                     <div class="col-12 mb-3" >
                                         <a href="/entregas">

@@ -179,9 +179,9 @@ if($pedidos->isEmpty()){
 
         $pedidos = Envio::where('entrega2', $actual)
         ->get();
-
-        
-        return view('envios.entregasagregar', compact('actual', 'pedidos'));
+$nota = " "; 
+        return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual'));
+        //return view('envios.entregasagregar', compact('actual', 'pedidos'));
     }
     public function limpiar($id)
     {
