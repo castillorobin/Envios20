@@ -11,6 +11,9 @@ use Illuminate\Http\Request;
 use PDF; 
 use App\Models\User;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use App\Models\Empleado;
 //use App\Models\Entrega;
 
 class EntregaController extends Controller
@@ -20,7 +23,22 @@ class EntregaController extends Controller
      */
     public function index()
     {
-        $nota = " "; 
+$nota = " "; 
+        //guardar movimiento
+        $idcaja = Caja::where('cajero', Auth::user()->name)
+        ->where('estado', 0)->get();
+
+        if($idcaja->isEmpty()){
+           // dd("entro al IF");
+          // $conceptos = Conceptocaja::all();
+       // $cajas = Detallecaja::whereDate('created_at', Carbon::today());
+         $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        session()->flash('Error', 'Recuerda que antes de realizar un pago tienes que aperturar caja');
+        return view('entrega.entregas ', compact('nota'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        //return redirect()->route('indexentre')->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+        }
+
+        
         return view('entrega.entregas ', compact('nota'));
     } 
 
@@ -258,9 +276,12 @@ $nota = " ";
         ->get();
 
         if($idcaja->isEmpty()){
-           $conceptos = Conceptocaja::all();
-        $cajas = Detallecaja::all();
-         return view('caja.cajero', compact('cajas', 'conceptos'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
+             $conceptos = Conceptocaja::all();
+       $cajas = Detallecaja::whereDate('created_at', Carbon::today())->where('cajero', Auth::user()->name)
+        ->get();;
+          $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+          session()->flash('Error', 'Recuerda que antes de realizar un pago tienes que aperturar caja');
+         return view('caja.cajero', compact('cajas', 'conceptos', 'empleado'))->with('Error', 'Debe de abrir caja antes de agregar movimientos');
         }
         $ultimoMovi = Detallecaja::where('idcaja', $idcaja[0]->id)
                 ->latest('id') // o cualquier columna de ordenamiento como created_at
