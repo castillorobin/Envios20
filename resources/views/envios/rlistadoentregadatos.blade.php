@@ -191,7 +191,7 @@ if (searchText == "") {
                         <!--begin::Page title-->
                         <div >
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de entrega</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de entregas</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -318,7 +318,7 @@ if (searchText == "") {
                                                
                                                 <th class="min-w-100px"># de Guía</th>
                                                 <th class="min-w-50px">Comercio</th>
-                                                <th class="min-w-100px">Cliente</th>
+                                                <th class="min-w-100px">Destinatario</th>
                                                 <th class="min-w-50px">Usuario</th>
                                                 <th class="min-w-50px">Agencia</th>
                                                 <th class="min-w-50px">Estado</th>
@@ -404,7 +404,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                            <a href="/reporte/exportarentregalistaExcel/{{$tickets[0]->entrega2}}" class="menu-link px-3" >Exportar a Excel</a>
                                         </div>
                                         <!--end::Menu item-->
                                        

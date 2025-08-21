@@ -711,11 +711,12 @@ class PagoController extends Controller
     public function exportarticketrepoExcel($ticketc)
 {
     // Mismos datos que usas para el PDF
+    //dd("entro al metodo");
     $pedidos = Envio::where('pagoticket', $ticketc)->get();
     if ($pedidos->isEmpty()) {
         abort(404, 'No se encontraron guías para el ticket especificado.');
     }
-
+ 
     $pago   = Ticktpago::find($ticketc);
     $total  = (float) ($pago?->total ?? 0);
     $user   = Auth::user()?->name ?? '—';

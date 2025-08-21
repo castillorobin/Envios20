@@ -26,7 +26,7 @@
     
     text-align: right;
 }
-
+ 
     </style>
 <div style="width:100%; " class="text-center centrar"> 
     <img src="../public/fotos/logo24.png" alt="" width="10%" >

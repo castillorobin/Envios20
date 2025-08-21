@@ -14,6 +14,9 @@ use Illuminate\Support\Str;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Empleado;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\EntregalistaExport;
+
 //use App\Models\Entrega;
 
 class EntregaController extends Controller
@@ -41,6 +44,36 @@ $nota = " ";
         
         return view('entrega.entregas ', compact('nota'));
     } 
+
+        public function exportarentregalistaExcel($ticketc)
+{
+    // Mismos datos que usas para el PDF
+    //dd("entro al metodo");
+    $pedidos = Envio::where('entrega2', $ticketc)->get();
+    if ($pedidos->isEmpty()) {
+        abort(404, 'No se encontraron guías para el ticket especificado.');
+    }
+ 
+    $pago   = Entrega::find($ticketc);
+    $total  = (float) ($pago?->total ?? 0);
+    $user   = Auth::user()?->name ?? '—';
+    $rep    = $pedidos[0]->repartidor ?? null;
+    $count  = $pedidos->count();
+
+    // Descarga el Excel
+    $filename = 'reporte_ticket_' . $ticketc . '_' . date('Ymd_His') . '.xlsx';
+    return Excel::download(
+        new EntregalistaExport(
+            rows: $pedidos,
+            usuario: $user,
+            repartidor: $rep,
+            ticketId: $ticketc,
+            cantidadGuias: $count,
+            totalPagado: $total
+        ),
+        $filename
+    );
+}
 
      public function entregacasidatos(Request $request)
     {
@@ -84,7 +117,7 @@ if($pedidos->isEmpty()){
             return view('entrega.entregas', compact('numti', 'nota')); 
 
         }
-
+ 
 
         $nota = " ";
 
