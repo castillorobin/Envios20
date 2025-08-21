@@ -206,14 +206,14 @@ $(document).ready(function() {
                                     </div>
                                     <!--begin::Filter-->
                                  
-                                      <form action="stocks/filtrarnotre" method="GET"  >
+                                      <form action="/entrega/filtrarcasi" method="GET"  >
                                         @method('GET') 
                                       
                                 
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                <input type="text" value="{{$pedidos[0]->ticketc ?? ''}} " class="visually-hidden" name="ticketc" id="ticketc">
+                                <input type="text" value="{{$pedidos[0]->entrega2 ?? ''}} " class="visually-hidden" name="ticketc" id="ticketc">
                                     
                                     <div class="w-150px"> 
                                         <!--begin::Select2-->

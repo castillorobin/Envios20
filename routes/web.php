@@ -354,6 +354,7 @@ Route::get('/caja/exportarexcel/{id}', [App\Http\Controllers\CajaController::cla
 
 //Entregas
 Route::get('/entrega/entregacasidatos', [App\Http\Controllers\EntregaController::class, 'entregacasidatos'] )->name('entregacasidatos');
+Route::get('/entrega/filtrarcasi', [App\Http\Controllers\EntregaController::class, 'filtrarcasi'] )->name('filtrarcasi');
 /*
 
 Rutas 

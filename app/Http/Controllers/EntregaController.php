@@ -99,29 +99,29 @@ $nota = " ";
         
 
          if ($estado !="todos"){
-            $pedidos = Envio::where('ticketc', $ticket)
+            $pedidos = Envio::where('entrega2', $ticket)
         ->where('estado', $estado)
         ->get();
          }else{
-            $pedidos = Envio::where('ticketc', $ticket)
+            $pedidos = Envio::where('entrega2', $ticket)
        
         ->get();
          }
 
-$numti = $ticket;
+$actual = $ticket;
 
 if($pedidos->isEmpty()){
             //dd("no hay envio");
             $nota = "No hay envios con el estado seleccionado"; 
 
-            return view('entrega.entregas', compact('numti', 'nota')); 
+           return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual'));
 
         }
  
 
         $nota = " ";
 
-         return view('entrega.entregacasidatos', compact('pedidos', 'nota'));
+         return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual'));
         
     }
     
