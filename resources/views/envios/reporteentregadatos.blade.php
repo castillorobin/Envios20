@@ -334,6 +334,7 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Agencia</th>
                                                 <th class="min-w-50px">Descuento</th>
                                                 <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Nota</th>
                                                 <th class="min-w-50px">Fecha de recepcion</th>
                                                 
                                             </tr>
@@ -355,6 +356,7 @@ if (searchText == "") {
                                                 <td>${{$ticket->desceunto}}</td>
                                                
                                                 <td>${{$ticket->total}}</td>
+                                                <td>{{$ticket->nota}}</td>
                                                 <td>{{$ticket->created_at}}</td>
                                                
                                                     

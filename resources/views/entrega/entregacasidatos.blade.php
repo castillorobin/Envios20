@@ -184,6 +184,9 @@ $(document).ready(function() {
                                         <div class="col-auto">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
                                             <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
+                                             @if($errors->any())
+                                                            <span style="font-size:18px; color: red;">{{$errors->first()}} </span>
+                                                            @endif
                                         </div>
 
                                     </form>
@@ -416,7 +419,7 @@ $(document).ready(function() {
                                         </div>
                                     </div>
                                     <div class="form-floating col-lg-12 mb-4">
-                                        <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
+                                        <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" value="{{ \Carbon\Carbon::now()->format('d/m/Y') }}" readonly  />
                                         <label for="fecha_entrega">Fecha de entrega</label>
                                         <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
                                             Por favor seleccione una fecha de entrega.
