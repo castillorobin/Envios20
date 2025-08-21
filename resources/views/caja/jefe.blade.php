@@ -48,21 +48,7 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
-        #kt_ecommerce_report_shipping_table_paginate {
-            display: none;
-        }
-
-
-        #kt_ecommerce_report_shipping_table_previous{
-            display: none;
-        }
-        #kt_ecommerce_report_shipping_table_next{
-            display: none;
-        }
-            
+       
     </style>
 
     <!--end::Global Stylesheets Bundle-->
@@ -421,9 +407,7 @@ if (searchText == "") {
         </tbody>
 <tfoot></tfoot></table></div><div id="" class="row">
     <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" style="float:bottom;">
-        <div >
-            <select name="kt_ecommerce_report_returns_table_length" aria-controls="kt_ecommerce_report_returns_table" class="form-select form-select-solid form-select-sm" id="dt-length-0"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><label for="dt-length-0"></label></div></div><div id="" class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"><div class="dt-paging paging_simple_numbers"><nav aria-label="pagination"><ul class="pagination"><li class="dt-paging-button page-item disabled"><button class="page-link previous" role="link" type="button" aria-controls="kt_ecommerce_report_returns_table" aria-disabled="true" aria-label="Previous" data-dt-idx="previous" tabindex="-1"><i class="previous"></i></button></li><li class="dt-paging-button page-item active"><button class="page-link" role="link" type="button" aria-controls="kt_ecommerce_report_returns_table" aria-current="page" data-dt-idx="0">1</button></li></ul></nav></div></div></div></div>
-<!--end::Table-->    </div>
+    <!--end::Table-->    
     <!--end::Card body-->
 </div>
 <!--end::Products-->        </div>
