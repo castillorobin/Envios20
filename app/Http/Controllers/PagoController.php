@@ -483,7 +483,21 @@ class PagoController extends Controller
 
     public function pagoticket(Request $request)
     {
+        
+
         $activo = $request->has('pagado') ? 1 : 0;
+         $verificado = $request->has('verificado') ? 1 : 0;
+          $revision = $request->has('enrevision') ? 1 : 0;
+
+          if ($activo== 0 && $verificado== 0 && $revision== 0 ) {
+
+           // dd("todo desactivado");
+           // return back()->with('Error', 'Debe de seleccionar Pagado, Verificado o En revision');
+            $nota = "Debe de seleccionar Pagado, Verificado o En revision ";
+        return view('envios.pagoslistaticket', compact('nota'));
+
+            }
+
         if ($activo== 1) {
          //guardar movimiento
         $idcaja = Caja::where('cajero', Auth::user()->name)

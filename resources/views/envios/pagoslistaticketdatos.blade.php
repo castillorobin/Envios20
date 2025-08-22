@@ -410,6 +410,25 @@ const subtotal = document.getElementById("sutota").value;
                                     <!--end::Menu item-->
                                 </div>
                                <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
+
+                               @if (session('Error'))
+    <div class="alert alert-danger alert-dismissible fade show " role="alert" id="alert-error" style="margin-left: 35px; margin-top: 35px; font-size: 14px;">
+        {{ session('Error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        // Espera 4 segundos (4000 ms) y luego oculta el mensaje
+        setTimeout(function () {
+            let alertBox = document.getElementById('alert-error');
+            if (alertBox) {
+                alertBox.classList.remove('show');
+                alertBox.classList.add('fade');
+                alertBox.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+@endif
                                 <!--end::Menu-->
                                 <!--end::Export dropdown-->
                             </div>
