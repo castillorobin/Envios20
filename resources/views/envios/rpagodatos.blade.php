@@ -283,14 +283,6 @@ if (searchText == "") {
 
 
 
-           
-
-
-
-
-
-
-
             <!--end::Search-->
         </div>
 
