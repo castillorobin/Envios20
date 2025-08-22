@@ -133,6 +133,18 @@ if($pedidos->isEmpty()){
         return view('envios.reporteentrega', compact('tickets', 'repartidores'));
     }
 
+     public function cancelar($actual)
+    {
+         // Encuentra el empleado por su ID
+        $entrega = Entrega::findOrFail($actual);
+    
+        // Elimina el empleado
+        $entrega->delete();
+    
+        // Redirige a la vista de empleados con un mensaje de éxito
+        return redirect('/entregas');
+    }
+
     public function entregadatos(Request $request)
     {
         $rango = $request->input('rango');
