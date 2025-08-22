@@ -345,7 +345,7 @@ $(document).ready(function() {
 <span hidden id="total5"> {{ $total4 }}</span>
                                 <div class="row mt-7">
                                     <div class="col-12 mb-3" >
-                                        <a href="/entregas">
+                                        <a href="/entrega/cancelar/{{$actual}}">
                                         <button type="button" class="btn btn-secondary mb-3" style="float: right; margin-left:10px; ">Cancelar</button>
                                     </a>
                                    
