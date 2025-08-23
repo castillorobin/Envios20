@@ -48,20 +48,7 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
-        #kt_ecommerce_report_shipping_table_paginate {
-            display: none;
-        }
-
-
-        #kt_ecommerce_report_shipping_table_previous{
-            display: none;
-        }
-        #kt_ecommerce_report_shipping_table_next{
-            display: none;
-        }
+        
             
     </style>
 
@@ -108,7 +95,7 @@
 
 {
 
-const tableReg = document.getElementById('kt_ecommerce_report_returns_table');
+const tableReg = document.getElementById('kt_ecommerce_report_shipping_table');
 
 const searchText = document.getElementById('searchTerm').value.toLowerCase();
 
@@ -380,7 +367,7 @@ if (searchText == "") {
         
 <!--begin::Table-->
 <div  id="kt_ecommerce_report_returns_table_wrapper" class="dt-container dt-bootstrap5 dt-empty-footer"><div id="" class="table-responsive">
-    <table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_returns_table" style="width: 100%;">
+    <table class="table align-middle table-bordered fs-6 gy-5 dataTable" id="kt_ecommerce_report_shipping_table" style="width: 100%;">
         <colgroup><col data-dt-column="0" style="width: 124.688px;"><col data-dt-column="1" style="width: 192.797px;"><col data-dt-column="2" style="width: 192.766px;"><col data-dt-column="3" style="width: 190.156px;"><col data-dt-column="4" style="width: 148.828px;"><col data-dt-column="5" style="width: 146.266px;"></colgroup>
     <thead>
         <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
@@ -446,7 +433,7 @@ if (searchText == "") {
     <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" style="float:bottom;">
         <div >
     
-            <select name="kt_ecommerce_report_returns_table_length" aria-controls="kt_ecommerce_report_returns_table" class="form-select form-select-solid form-select-sm" id="dt-length-0"><option value="10">10</option><option value="25">25</option><option value="50">50</option><option value="100">100</option></select><label for="dt-length-0"></label></div></div><div id="" class="col-sm-12 col-md-7 d-flex align-items-center justify-content-center justify-content-md-end"><div class="dt-paging paging_simple_numbers"><nav aria-label="pagination"><ul class="pagination"><li class="dt-paging-button page-item disabled"><button class="page-link previous" role="link" type="button" aria-controls="kt_ecommerce_report_returns_table" aria-disabled="true" aria-label="Previous" data-dt-idx="previous" tabindex="-1"><i class="previous"></i></button></li><li class="dt-paging-button page-item active"><button class="page-link" role="link" type="button" aria-controls="kt_ecommerce_report_returns_table" aria-current="page" data-dt-idx="0">1</button></li></ul></nav></div></div></div></div>
+           
 <!--end::Table-->    </div>
 
 

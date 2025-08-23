@@ -289,65 +289,61 @@ if (searchText == "") {
     <!--begin::Card header-->
     <div class="card-header align-items-center py-5 gap-2 gap-md-5" >
         <!--begin::Card title-->
-        <div class="card-title" >
+        <!--begin::Card title-->
+        <div class="card-title">
+            <form action="/caja/listadofiltro" method="GET">
             <!--begin::Search-->
             <div class="d-flex align-items-center position-relative my-1">
-                <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4"><span class="path1"></span><span class="path2"></span></i>                <input type="text" data-kt-ecommerce-order-filter="search" class="form-control form-control-solid w-250px ps-12" placeholder="Buscar" spellcheck="false" data-ms-editor="true" id="searchTerm" onkeyup="doSearch()">
+                 <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>
+
+                                        <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
+
             </div>
+
+
+
             <!--end::Search-->
-
-            <!--begin::Export buttons-->
-
-            <!--end::Export buttons-->
         </div>
+
+      
         <!--end::Card title-->
 
         <!--begin::Card toolbar-->
-        <div class="card-toolbar flex-row-fluid justify-content-end gap-5" >
- <div class="col-12 col-md-9">
-                                    <form action="/caja/listadofiltro" method="GET">
-                                        <div class="row"  >
-                                            
-                                    <div class="col-12 col-sm-4 pt-1" style="margin-right: 15px;" >
-                                    <input style="min-width: 250px;" class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" style="float: right"/>
-  </div>
+        <div class="card-toolbar flex-row-fluid justify-content-end gap-5" data-select2-id="select2-data-122-79op">
+            <!--begin::Flatpickr-->
+             
+            <div class="input-group w-250px">
+            <input class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+            </div>
+            <!--end::Flatpickr-->
 
-  
-                                    <div class="col-12 col-sm-3 pt-1" >
-
-                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" style="margin-left:10px; float: right">
+            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
+                                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="usuario" id="usuario" >
                                    
                                     <option value="todos" >Todos</option>
                                     @foreach ($repartidores as $repartidor)
                                     <option value="{{$repartidor->name}}">{{$repartidor->name}}</option>
                                     @endforeach
                                 </select>
-  </div>
-  
 
- 
+            </div>
 
-  <div class="col-12 col-sm-2 pt-1" >
-  <button type="submit" class="btn btn-primary " style="float: right; width:100%;">Filtrar</button>
-  </div>
- <div class="col-12 col-sm-2 pt-1" >
-    <a href="/caja/jefe" >
-    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
-    </a>
-</div>
-        
-           </div>                        
-                              </form> 
-                                    </div>
-
-
-
-
-    </div>
+            <!--begin::Add product-->
+              <button type="submit" class="btn btn-primary " >Filtrar</button>
+            <!--end::Add product-->
+                
+        </div>
+          
         <!--end::Card toolbar-->
     </div>
-    <!--end::Card header-->
-
+     </form>
+   
+                                <!--end::Card toolbar-->
+                         
+                            <!--end::Card header-->
     <!--begin::Card body-->
     <div class="card-body pt-0" style="min-height: 550px;">
         
@@ -407,11 +403,15 @@ if (searchText == "") {
         </tbody>
 <tfoot></tfoot></table></div><div id="" class="row">
     <div id="" class="col-sm-12 col-md-5 d-flex align-items-center justify-content-center justify-content-md-start dt-toolbar" style="float:bottom;">
-    <!--end::Table-->    
-    <!--end::Card body-->
+   
 </div>
 <!--end::Products-->        </div>
         <!--end::Content container-->
+          
+    <a href="/caja/jefe" style="float: right;">
+    <button type="button" class="btn btn-secondary " style="float: right; width:100%;">Cancelar</button>
+    </a>
+
     </div>
 <!--end::Content-->	
 
