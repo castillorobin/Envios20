@@ -357,7 +357,7 @@ if (searchText == "") {
                                         <a href="/envios/reportedevo">
     <button type="button" class="btn btn-secondary " style="margin-right:15px;">Cancelar</button>
     </a>
-                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" disabled>
+                                    <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" >
                                         <i class="ki-duotone ki-exit-up fs-2">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
