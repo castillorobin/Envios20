@@ -242,7 +242,7 @@ if (searchText == "") {
             <!--begin::Search-->
             <div class="d-flex align-items-center position-relative my-1">
                 
-
+ 
             </div>
             <!--end::Search-->
         </div>

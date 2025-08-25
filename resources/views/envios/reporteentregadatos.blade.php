@@ -280,7 +280,7 @@ if (searchText == "") {
 
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
 
-            </div>
+            </div> 
 
 
 
