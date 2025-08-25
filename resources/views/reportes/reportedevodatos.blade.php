@@ -379,7 +379,15 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
+                                             <form action="/reporte/exportardevo" method="GET" target="_blank">
+
+                                                <input type="text" value="{{$rango}}" name="rango2" hidden>
+                                        <input type="text" value="{{$usuario}}" name="usuario2" hidden>
+
+                                            <button type="submit" class="btn btn-outline-primary"  >Exportar a PDF</button>
+
+                                            </form >
+
                                         </div>
                                         <!--end::Menu item-->
                                     </div>

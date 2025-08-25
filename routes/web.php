@@ -246,6 +246,9 @@ Route::get('/reporte/exportarpago/', [App\Http\Controllers\PagoController::class
 Route::get('/reporte/exportarpagoExcel/', [App\Http\Controllers\PagoController::class, 'exportarpagoExcel'] )->name('exportarpagoExcel') ;
 Route::get('/reporte/exportarentregalistaExcel/{ticketc}', [App\Http\Controllers\EntregaController::class, 'exportarentregalistaExcel'] )->name('exportarentregalistaExcel') ;
 Route::get('/reporte/exportarentregaentre/{ticketc}', [App\Http\Controllers\EntregaController::class, 'exportarentregaentre'] )->name('exportarentregaentre') ;
+Route::get('/reporte/exportardevo/', [App\Http\Controllers\DevolucionController::class, 'exportardevo'] )->name('exportardevo') ;
+
+
 /*
 envios/detalleeditando
 

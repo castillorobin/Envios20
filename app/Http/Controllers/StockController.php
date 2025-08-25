@@ -977,7 +977,7 @@ if($pedidos->isEmpty()){
     }
 
     public function reportedevodatos(Request $request)
-    {
+    { 
 
         
         $rango = $request->input('rango');
@@ -1004,7 +1004,7 @@ if($pedidos->isEmpty()){
 
        
          $repartidores = User::all();
-        return view('reportes.reportedevodatos', compact('repartidores', 'tickets'));
+        return view('reportes.reportedevodatos', compact('repartidores', 'tickets', 'rango', 'usuario'));
     }
 
 
