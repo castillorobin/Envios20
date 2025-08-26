@@ -145,14 +145,21 @@ if (searchText == "") {
                     <div id="kt_app_content_container" class="app-container">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Busqueda por ticket</h1>
-                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
+                           <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="/" class="text-muted text-hover-primary">Inicio</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Inicio</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <span class="bullet bg-gray-400 w-5px h-2px"></span>
+                                </li>
+                                <li class="breadcrumb-item text-muted">
+                                    <a href="" class="text-muted text-hover-primary">Gentión de ordenes</a>
                                 </li>
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
                                 <li class="breadcrumb-item text-muted">Busqueda por ticket</li>
+                                
                                 
                             </ul>
                         </div>

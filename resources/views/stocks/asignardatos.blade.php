@@ -178,9 +178,9 @@ if(tipo=='suelto'){
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                                            <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
                                                 <th class="min-w-50px"># de guía</th>
                                                 <th class="min-w-50px">Comercio</th>
                                                 <th class="min-w-50px">Destinatario</th>
@@ -231,7 +231,7 @@ if(tipo=='suelto'){
                                                                 @endif
                                                 </td>
                                                 <td class="text-center">{{$pedido->fecha_entrega}}</td>
-                                                <td class="text-center">{{$pedido->agencia}}</td>
+                                                <td class="text-center">{{$pedido->agenciaubi}}</td>
                                                 <td class="text-center">{{$pedido->ubicacion}}</td>
                                                 <td class="text-center">{{$pedido->rack}}</td>
                                                 <td class="text-center">{{$pedido->nivel}}</td>
@@ -246,16 +246,7 @@ if(tipo=='suelto'){
                                     </table>
                                     
                                 </div>
-                                <div class="row mt-7">
-                                    <div class="col-12" >
-                                        <ul class="pagination"style="float: right;" >
-                                            <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                            <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                            <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                
 
                                 <div class="row mt-7">
                                     <div class="col-12 mb-3" >
@@ -395,7 +386,8 @@ if(tipo=='suelto'){
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
-
+   <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
 </body>
 <!--end::Body-->
 

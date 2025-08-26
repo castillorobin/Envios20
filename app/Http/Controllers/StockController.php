@@ -228,14 +228,14 @@ class StockController extends Controller
         $envios = Envio::where('asignado', $actual)->get();
         foreach($envios as $envio){
 
-            $envio->ubicacion = $cajasuelto;
+            $envio->ubicacion = $cajasuelto; 
 
             if($cajasuelto=="caja"){
                 $envio->rack = $rack;
             $envio->nivel = $nivel;
             $envio->caja = $caja;
             $envio->tarima = $tarima;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
             } 
 
@@ -244,7 +244,7 @@ class StockController extends Controller
             $envio->nivel = $nivels;
             $envio->caja = NULL;
             $envio->tarima = $tarimas;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
             } 
             
@@ -372,26 +372,26 @@ class StockController extends Controller
         //$envio->cambiando = $actual;
         if($caja){
             $envio->caja = $caja;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
            
         }
         if($rack){
             $envio->rack = $rack;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
            
         }
 
         if($nivel){
             $envio->nivel = $nivel;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
         }
 
         if($tarima){
             $envio->tarima = $tarima;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
            // dd($cajasuelto);
         }
@@ -399,21 +399,21 @@ class StockController extends Controller
 /*suelto*/////////
         if($racks){
             $envio->rack = $racks;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
             $envio->caja = NULL;
         }
 
         if($nivels){
             $envio->nivel = $nivels;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
             $envio->caja = NULL;
         }
 
         if($tarimas){
             $envio->tarima = $tarimas;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
           //  dd($cajasuelto);
           $envio->caja = NULL;
@@ -819,7 +819,7 @@ class StockController extends Controller
             $envio->nivel = $nivel;
             $envio->caja = $caja;
             $envio->tarima = $tarima;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
             } 
 
@@ -828,7 +828,7 @@ class StockController extends Controller
             $envio->nivel = $nivels;
             $envio->caja = NULL;
             $envio->tarima = $tarimas;
-            $envio->agencia = $agencia;
+            $envio->agenciaubi = $agencia;
             $envio->ubicacion = $cajasuelto;
             } 
 
@@ -923,7 +923,7 @@ foreach ($tickets as $ticket) {
         $entrega = new devolucion();
         $entrega->comercio = $pedidos[0]->comercio;
         $entrega->usuario = $usuario;
-        $entrega->agencia = $pedidos[0]->agencia;
+        $entrega->agenciaubi = $pedidos[0]->agencia;
         $entrega->nombre = $nombre;
         $entrega->nota = $nota;
         $entrega->idenvio = $ticket;
@@ -1099,7 +1099,7 @@ if($pedidos->isEmpty()){
         $entrega->destinatario = $envio->destinatario;
         $entrega->tipo = "Reenvio";
         $entrega->fecha_pro = $reenvi;
-        $entrega->ubicacion = $envio->agencia;
+        $entrega->ubicacion = $envio->agenciaubi;
         $entrega->estado = "Pendiente";
         $entrega->nota = $nota;
         $entrega->save();
@@ -1163,7 +1163,7 @@ $nota = " ";
         $entrega->destinatario = $envio->destinatario;
         $entrega->tipo = "Devolucion";
         $entrega->fecha_pro = $reenvi;
-        $entrega->ubicacion = $envio->agencia;
+        $entrega->ubicacion = $envio->agenciaubi;
         $entrega->estado = "Pendiente";
         $entrega->nota = $nota;
         $entrega->lugar = $lugar;

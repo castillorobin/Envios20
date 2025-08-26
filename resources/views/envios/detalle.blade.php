@@ -455,13 +455,13 @@
                                         </div>
                                         <!--end::Card title-->
                                     </div>
-                                    <!--begin::Card header--> 
+                                    <!--begin::Card header-->  
                                     <!--begin::Card body-->
                                     <div class="card-body p-9">
                                         <table style="font-size:16px;">
                                         <tr>
                                             <td>Agencia: </td>
-                                            <td>{{ $envio[0]->agencia }}</td>
+                                            <td>{{ $envio[0]->agenciaubi }}</td>
                                         </tr>
                                         <tr>
                                             <td>Tipo de ubicación: </td>
