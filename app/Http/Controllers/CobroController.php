@@ -152,16 +152,18 @@ class CobroController extends Controller
         ->where('tipo', "Casillero")
         ->get();
         $cobrocasi =  $cobrocasi->count();
-
-        $precio1= 0;
-        $precio2=0;
-        $precio3= 0;
-        $precio4= 0;
-        $precio5= 0;
-        $nota = " ";
+//$ticketactual = Ticketc::where('codigo', $codigo)->get();
+        
         //$ticketactual = $codigo;
 
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
+
+        $precio1= 0;
+        $precio2= $ticketactual[0]->depari;
+        $precio3= $ticketactual[0]->puntoi;
+        $precio4= $ticketactual[0]->casili;
+        $precio5= $ticketactual[0]->guiasi;
+        $nota = " ";
 
         $comercios = Comercio::all(); 
         $empleado = Empleado::where('nombre', Auth::user()->name)->get();
@@ -193,13 +195,15 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
-        $precio1= 0;
-        $precio2=0;
-        $precio3= 0;
-        $precio4= 0;
-        $precio5= 0;
+        $precio1= $ticketactual[0]->persoi;
+        $precio2= 0;
+        $precio3= $ticketactual[0]->puntoi;
+        $precio4= $ticketactual[0]->casili;
+        $precio5= $ticketactual[0]->guiasi;
         $nota = " ";
         //$ticketactual = $codigo;
+
+        
 
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
 
@@ -233,11 +237,11 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
-        $precio1= 0;
-        $precio2=0;
+        $precio1= $ticketactual[0]->persoi;
+        $precio2= $ticketactual[0]->depari;
         $precio3= 0;
-        $precio4= 0;
-        $precio5= 0;
+        $precio4= $ticketactual[0]->casili;
+        $precio5= $ticketactual[0]->guiasi;
         $nota = " ";
         //$ticketactual = $codigo;
 
@@ -271,11 +275,11 @@ class CobroController extends Controller
         ->get();
         $cobrocasi =  $cobrocasi->count();
 
-        $precio1= 0;
-        $precio2=0;
-        $precio3= 0;
+        $precio1= $ticketactual[0]->persoi;
+        $precio2= $ticketactual[0]->depari;
+        $precio3= $ticketactual[0]->puntoi;
         $precio4= 0;
-        $precio5= 0;
+        $precio5= $ticketactual[0]->guiasi;
         $nota = " ";
         //$ticketactual = $codigo;
 
@@ -824,6 +828,7 @@ class CobroController extends Controller
 
      
         $ticketactual = Ticketc::where('codigo', $codigo)->get();
+        $ticketactualid = $ticketactual[0]->id;
 
         $precio1= $request->get('precio1');
         $precio2= $request->get('precio2');
@@ -832,6 +837,19 @@ class CobroController extends Controller
         $precio5= $request->get('precio5');
         $cajero = $request->get('cajero1');
         $nota="Guia Duplicada";
+
+        $ticketcedit = Ticketc::find($ticketactualid);
+      
+        $ticketcedit->persoi = $precio1;
+        $ticketcedit->puntoi = $precio3;
+        $ticketcedit->casili = $precio4;
+        $ticketcedit->depari = $precio2;
+        $ticketcedit->guiasi = $precio5;
+       
+
+        $ticketcedit->save();
+
+        $ticketactual = Ticketc::where('codigo', $codigo)->get();
 
         if ($request->filled('guia')) {
             

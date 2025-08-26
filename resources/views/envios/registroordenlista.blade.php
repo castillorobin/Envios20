@@ -527,7 +527,7 @@ $(document).ready(function() {
         <!--begin::Form-->
         <form action="/cobro/ticketpartes" id="kt_invoice_form" method="POST"> 
         @csrf
-        @method('GET')
+        @method('GET') 
             <!--begin::Wrapper-->
             <input type="text" name="cajero1" class="form-control form-control-solid text-end" value="{{ Auth::user()->name }}" hidden>
             <div class="d-flex flex-column align-items-start flex-xxl-row">
