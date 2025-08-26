@@ -84,7 +84,7 @@
                 <span class="dt-column-title" role="button">Fecha de entrega</span><span class="dt-column-order"></span>
             </th>
              <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Nombre d equien recibe</span><span class="dt-column-order"></span>
+                <span class="dt-column-title" role="button">Nombre de quien recibe</span><span class="dt-column-order"></span>
             </th>
            
             <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
@@ -111,7 +111,7 @@
                                                 <td>{{$caja->usuario}}</td>
                                                 
                                                 <td>{{date('d/m/Y', strtotime($caja->created_at)) }}</td>
-                                                 <td>${{$caja->nombre}}</td>
+                                                 <td>{{$caja->nombre}}</td>
                                                <td>{{$caja->nota}} </td>
                                                 
                                               

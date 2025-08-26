@@ -328,7 +328,7 @@
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
-                                Facturacion
+                                Recepción de paquete
                             </h1>
                             <!--end::Title-->
 
@@ -345,11 +345,21 @@
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-500 w-5px h-2px"></span>
                                 </li>
+
+                                <li class="breadcrumb-item text-muted">
+                                    <a href="/metronic8/demo1/index.html" class="text-muted text-hover-primary">
+                                        Facturación </a>
+                                </li>
+                                <!--end::Item-->
+                                <!--begin::Item-->
+                                <li class="breadcrumb-item">
+                                    <span class="bullet bg-gray-500 w-5px h-2px"></span>
+                                </li>
                                 <!--end::Item-->
 
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    Cobros </li>
+                                    Recepción de paquete </li>
                                 <!--end::Item-->
 
                             </ul>
@@ -828,7 +838,7 @@
 
                                                             <button type="button" class="btn btn-link py-1" onclick="descontar()">Agregar descuento</button>
                                                             <input type="text" class="form-control form-control-solid" id="descuent" name="descuent" value="0" hidden />
-                                                            <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" hidden >Ingresar nota</textarea>
+                                                            <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" placeholder="Ingresar nota" hidden ></textarea>
                                                         </div>
                                                     </th>
 

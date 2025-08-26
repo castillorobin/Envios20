@@ -314,7 +314,7 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Descuento</th>
                                                 <th class="min-w-50px">Nota</th>
                                                 <th class="min-w-50px">Total</th>
-                                                <th class="min-w-50px">Fecha</th>
+                                                <th class="min-w-50px">Fecha y hora</th>
                                                 
                                                 
                                             </tr>
@@ -345,7 +345,7 @@ if (searchText == "") {
                                                     @endif</td>
                                                 <td>{{$ticket->nota}} </td>
                                                 <td>${{$ticket->total}}</td>
-                                                <td>{{ date('d/m/Y', strtotime($ticket->created_at))}} </td>
+                                                <td>{{ $ticket->created_at->format('d/m/Y h:i A' ) }} </td>
                                                 
                                                
                                                     
