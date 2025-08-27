@@ -92,9 +92,9 @@
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registo</label>
                                     <div class="col-lg-8">
                                         <select name="agencia" id="agencia" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar agencia" required>
-                                            <option value="Santa Ana">Santa ana</option>
-                                            <option value="San Miguel">San Miguel</option>
-                                            <option value="San Salvador">San salvador </option>
+                                        @foreach($agencias as $agencia)    
+                                        <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
+                                           @endforeach
                                         </select>
                                     </div>
                                 </div>

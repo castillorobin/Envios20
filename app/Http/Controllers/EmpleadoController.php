@@ -7,6 +7,7 @@ use App\Models\Vendedor;
 use App\Models\Empleado;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
+use App\Models\Agencia;
 
 
 class EmpleadoController extends Controller
@@ -112,7 +113,8 @@ class EmpleadoController extends Controller
 
        */
       $ultimo = 1;
-        return view('empleados.crear', compact('ultimo'));
+ $agencias = Agencia::all();
+        return view('empleados.crear', compact('ultimo', 'agencias'));
     }
 
     public function empleadoguardar(Request $request)
