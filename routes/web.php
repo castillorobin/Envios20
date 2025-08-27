@@ -360,6 +360,13 @@ Route::get('/entrega/entregacasidatos', [App\Http\Controllers\EntregaController:
 Route::get('/entrega/filtrarcasi', [App\Http\Controllers\EntregaController::class, 'filtrarcasi'] )->name('filtrarcasi');
 Route::get('/entrega/cancelar/{actual}', [App\Http\Controllers\EntregaController::class, 'cancelar'] )->name('cancelar');
 
+//configuraciones
+Route::get('/configuraciones/agencia', [App\Http\Controllers\RutaController::class, 'agencia'] )->name('agencia') ;
+Route::get('/agencia/guardar', [App\Http\Controllers\RutaController::class, 'guardaragencia'] )->name('guardaragencia') ;
+Route::get('/agencia/editar/{id}', [App\Http\Controllers\RutaController::class, 'editaragencia'] )->name('editaragencia') ;
+Route::get('/agencia/editandoagencia', [App\Http\Controllers\RutaController::class, 'editandoagencia'])->name('caja.editandoagencia');
+Route::get('/agencia/eliminar/{id}', [App\Http\Controllers\RutaController::class, 'eliminaragencia'] )->name('eliminaragencia') ;
+
 
 /*
 

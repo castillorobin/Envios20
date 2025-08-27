@@ -676,6 +676,17 @@
 						</a>
 					</div>
 				</div>
+
+				<div class="menu-sub menu-sub-accordion">
+					<div class="menu-item">
+						<a class="menu-link" href="/configuraciones/agencia">
+							<span class="menu-bullet">
+								<span class="bullet bullet-dot"></span>
+							</span>
+							<span class="menu-title">Configuraciones de agencia</span>
+						</a>
+					</div>
+				</div>
 				
 
 			</div>

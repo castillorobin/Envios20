@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Rutas;
+use App\Models\Agencia;
 
 class RutaController extends Controller
 {
@@ -58,6 +59,53 @@ class RutaController extends Controller
 
         return view('ruta.ajustes', compact('rutas'));
     }
+
+    public function agencia()
+    {
+        $cajas = Agencia::all();
+        return view('ruta.ajustesagencia', compact('cajas'));
+    }
+
+    public function guardaragencia(Request $request)
+    {
+        $envio = new Agencia();
+
+        $envio->nombre = $request->get('nombre');
+          
+
+        $envio->save();
+       // $cajas = Agencia::all();
+       // return view('ruta.ajustes', compact('cajas'));
+       return redirect()->back()->with('success', 'Registro guardado correctamente');
+    }
+
+    public function editaragencia($id)
+    {
+         $ruta = Agencia::find($id);
+         return view('ruta.editaragencia', compact('ruta'));
+    }
+
+    public function editandoagencia(Request $request)
+    {
+        $id = $request->get('id') ;
+        $concepto = $request->get('nombre') ;
+        $conce = Agencia::find($id);
+        $conce->nombre = $concepto ;
+        $conce->save();
+         
+         $cajas = Agencia::all();
+         return view('ruta.ajustesagencia', compact('cajas'));
+    }
+
+    public function eliminaragencia($id)
+    {
+        $ruta = Agencia::find($id);
+         $ruta->delete();
+    
+      $cajas = Agencia::all();
+        return redirect()->back()->with('success', 'Registro Eliminado correctamente');
+    }
+
 
     /**
      * Show the form for creating a new resource.

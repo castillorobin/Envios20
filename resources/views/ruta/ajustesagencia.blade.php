@@ -53,13 +53,13 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Configuracion de caja</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Configuracion de agencia</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Inicio</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -76,7 +76,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Configuracion de caja</li>
+                                <li class="breadcrumb-item text-muted">Configuracion de agencia</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -121,7 +121,7 @@
                                                 <span class="path3"></span>
                                                 <span class="path4"></span>
                                                 <span class="path5"></span>
-                                            </i>Listado de conceptos</a>
+                                            </i>Listado de agencias</a>
                                     </li>
                                     
                                     <!--begin:::Tab item-->
@@ -159,11 +159,11 @@
                                             
                                             <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px text-center">Tipo</th>
-                                                <th class="min-w-150px text-center">Concepto</th>
+                                                <th class="min-w-100px text-center">ID</th>
+                                                <th class="min-w-150px text-center">Agencia</th>
                                                 
                                                 <th class="min-w-100px text-center">Acción</th>
 
@@ -174,15 +174,15 @@
                                         <tbody class="fw-semibold ">
                                             @foreach ($cajas as $ruta) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td class="text-center"> {{$ruta->tipo}}</td>
-                                                <td class="text-center">{{ $ruta->concepto }}</td>
+                                                <td class="text-center"> {{$ruta->id}}</td>
+                                                <td class="text-center">{{ $ruta->nombre }}</td>
                                            
                                                 
                                                
                                                 <td class="text-center">
-                                                    <a href="/caja/editar/{{$ruta->id}}">
+                                                    <a href="/agencia/editar/{{$ruta->id}}">
                                                 <button type="button" class="btn btn-warning">Editar</button></a>
-                                                <a href="/caja/eliminar/{{$ruta->id}}">
+                                                <a href="/agencia/eliminar/{{$ruta->id}}">
                                                 <button type="button" class="btn btn-danger">Eliminar</button></a>
                                             </td>
                                                 
@@ -192,12 +192,7 @@
                                         </tbody>
 
                                     </table>
-                                    <ul class="pagination">
-                                        <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                    </ul>
+                                   
                                 </div>
                                 <!--end::Table-->
                                           
@@ -249,8 +244,8 @@
      
     <div class="modal-content">
         <div class="modal-header">
-            <h3 class="modal-title">Crear Concepto</h3>
-<form action="/caja/guardarconcepto" method="GET">
+            <h3 class="modal-title">Crear Agencia</h3>
+<form action="/agencia/guardar" method="GET">
      
             <!--begin::Close-->
             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
@@ -261,19 +256,8 @@
 
         <div class="modal-body">
             
-
-            <select class="form-select form-select-solid" aria-label="Select example" name="tipo">
-    <option>Tipo</option>
-    
-    <option value="Entrada">Entrada</option>
-    <option value="Salida">Salida</option>
-   
-</select>
-            <br>
-            <input type="text" class="form-control form-control-solid" placeholder="Concepto" name="concepto" />
+            <input type="text" class="form-control form-control-solid" placeholder="Nombre" name="nombre" />
                
-
-
 
         </div>
 
@@ -299,6 +283,9 @@
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
 
 </body>
 <!--end::Body-->
