@@ -31,9 +31,7 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
+       
 /*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;

@@ -496,7 +496,8 @@ class StockController extends Controller
         ->get();
         $empleados = Empleado::all(); 
             //return view('stocks.asignarrepartidor', compact('nota'));
-            return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota' ));
+            $agencias = Agencia::all();
+            return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias' ));
             
         }
  
@@ -511,8 +512,8 @@ class StockController extends Controller
         ->get();
 
         $empleados = Empleado::all(); 
- 
-        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota' ));
+  $agencias = Agencia::all();
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias'));
     }
 
 
@@ -536,8 +537,8 @@ class StockController extends Controller
         }
         
         $empleados = Empleado::all(); 
-
-        return view('stocks.asignarrepartidorcajadatos', compact('pedidos', 'empleados' ));
+$agencias = Agencia::all();
+        return view('stocks.asignarrepartidorcajadatos', compact('pedidos', 'empleados', 'agencias'));
     }
 
     public function guardarasignarrepartidor(Request $request)
@@ -732,7 +733,8 @@ class StockController extends Controller
             $pedidos = Envio::where('cestado', $actual)
         ->get();
             //return view('stocks.asignarrepartidor', compact('nota'));
-            return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
+            $agencias = Agencia::all();
+            return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota', 'agencias'));
             
         }
  //dd($actual);
@@ -747,8 +749,8 @@ class StockController extends Controller
         ->get();
 
         //$empleados = Empleado::all(); 
-
-        return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
+$agencias = Agencia::all();
+        return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota', 'agencias'));
     }
 
     public function agregarestado(Request $request)
@@ -766,7 +768,8 @@ class StockController extends Controller
             $pedidos = Envio::where('cestado', $actual)
         ->get();
             //return view('stocks.asignarrepartidor', compact('nota'));
-            return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
+            $agencias = Agencia::all();
+            return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota', 'agencias'));
             
         }
  //dd($actual);
@@ -781,8 +784,8 @@ class StockController extends Controller
         ->get();
 
         //$empleados = Empleado::all(); 
-
-        return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota' ));
+$agencias = Agencia::all();
+        return view('stocks.asignarestadodatos', compact('pedidos', 'actual', 'nota', 'agencias'));
     }
 
     public function guardarestado(Request $request)

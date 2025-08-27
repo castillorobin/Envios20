@@ -21,7 +21,7 @@
     <!--begin::Vendor Stylesheets(used for this page only) 
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
    -->
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+
 
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
@@ -177,7 +177,7 @@ if(tipo=='suelto'){
 
                                 <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-50px"># de guía</th>
@@ -259,12 +259,7 @@ if(tipo=='suelto'){
                               
                                 <div class="row mt-7">
                                     <div class="col-12" >
-                                        <ul class="pagination"style="float: right;" >
-                                            <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                            <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                            <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                        </ul>
+                                        
                                     </div>
                                 </div>
 
@@ -311,10 +306,9 @@ if(tipo=='suelto'){
                                             <div class="row my-2 mx-2 justify-content-center">
                                                 <div class="form-floating col-lg-12 mb-4">
                                                     <select class="form-select form-select-solid" name="agencia" id="agencia" aria-label="Floating label select example" >
-                                                       
-                                                        <option value="San Salvador">San Salvador</option>
-                                                        <option value="Santa Ana">Santa Ana</option>
-                                                        <option value="San Miguel">San Miguel</option>
+                                                      @foreach($agencias as $agencia)    
+ <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
+ @endforeach
                                                     </select>
                                                     <label for="cenvio" style="padding-left: 25px;">Agencia</label>
                                                 </div>
@@ -368,7 +362,8 @@ if(tipo=='suelto'){
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
-    <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+    <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+    <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
 
 </body>
 <!--end::Body-->
