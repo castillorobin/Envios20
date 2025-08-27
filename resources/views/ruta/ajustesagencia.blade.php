@@ -159,11 +159,11 @@
                                             
                                             <!--begin::Table-->
                                 <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
+                                    <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="min-w-100px text-center">ID</th>
-                                                <th class="min-w-150px text-center">Agencia</th>
+                                                <th class="min-w-10px text-center">ID</th>
+                                                <th class="min-w-100px text-center">Agencia</th>
                                                 
                                                 <th class="min-w-100px text-center">Acción</th>
 
