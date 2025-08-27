@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Comercio;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request; 
-
+use App\Models\Agencia;
 class ComercioController extends Controller
 {
     /**
@@ -22,7 +22,8 @@ class ComercioController extends Controller
      */
     public function create()
     {
-        return view('comercio.crearcomercio');
+        $agencias = Agencia::all();
+        return view('comercio.crearcomercio', compact('agencias'));
     
     }
 

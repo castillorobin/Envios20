@@ -426,15 +426,13 @@ $(document).ready(function() {
                                         </div>
                                     </div> 
                                     <div class="form-floating col-lg-12 mb-4">
+                                        <input type="text" class="form-control form-control-solid" name="agencia" id="agencia" value="{{ $empleado[0]->agencia }}" readonly  />
+                                        <label for="fecha_entrega">Agencia de registro</label>
+                                        <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
+                                            Por favor seleccione una fecha de entrega.
+                                        </div>
                                         
-                                        
-                                            <select name="agencia" id="agencia" class="form-select form-select-solid" data-placeholder="Seleccionar Agencia" >
-                                                <option value="San_Salvador">San Salvador</option>
-                                                <option value="San_Miguel">San Miguel</option>
-                                                <option value="Santa_ana">Santa Ana</option>
-                                                <option value="Centro de distribucion">Centro de distribucion</option>
-                                            </select>
-                                            <label class="col-lg-3 col-form-label fw-semibold fs-6">Agencia de registro</label>
+                                            
                                     </div>
                                     <!-- Campo para la cantidad de descuento -->
                                     <div class="form-floating col-lg-12 mb-4">

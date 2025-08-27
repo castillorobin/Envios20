@@ -295,6 +295,8 @@
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>¿
+     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+ 
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
     <script src="assets/js/widgets.bundle.js"></script>
     <script src="assets/js/custom/widgets.js"></script>

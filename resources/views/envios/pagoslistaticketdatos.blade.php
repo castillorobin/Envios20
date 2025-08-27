@@ -860,10 +860,9 @@ const subtotal = document.getElementById("sutota").value;
                                         
                                         
                                                                                 <select name="agencia" id="agencia" class="form-select form-select-solid" data-placeholder="Seleccionar Agencia" >
-                                                                                    <option value="San_Salvador">San Salvador</option>
-                                                                                    <option value="San_Miguel">San Miguel</option>
-                                                                                    <option value="Santa_ana">Santa Ana</option>
-                                                                                    <option value="Centro de distribucion">Centro de distribucion</option>
+                                                                                     @foreach($agencias as $agencia)    
+ <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
+ @endforeach
                                                                                 </select>
                                                                                 <label class="col-lg-3 col-form-label fw-semibold fs-6">Agencia</label>
                                                                         </div>

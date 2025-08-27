@@ -21,7 +21,7 @@
     <!--begin::Vendor Stylesheets(used for this page only) 
     <link href="assets/plugins/custom/datatables/datatables.bundle.css" rel="stylesheet" type="text/css" />
    -->
-   <link rel="stylesheet" href="https://cdn.datatables.net/2.0.2/css/dataTables.dataTables.css" />
+
 
     <!--end::Vendor Stylesheets-->
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
@@ -53,9 +53,7 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
+       
 /*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
@@ -358,33 +356,22 @@ if (searchText == "") {
                                                 <td>{{$ticket->created_at}}</td>
                                                 <td>{{$ticket->userpago}}</td>
                                                 <td>{{$ticket->fechapago}}</td>
-                                                 @if($ticket->estado == "Pagado" )
-                                                 <td > 
-                                                    <span class="badge text-bg-success "  > <span style="color:white; font-weight:bolder;">{{$ticket->estado}}</span></span>
-                                                </td> 
-                                                @endif
-                                                @if($ticket->estado == "Verificado" )
-                                                 <td>
-                                                    <span class="badge text-bg-warning"><span style="color:white; font-weight:bolder;">{{$ticket->estado}}</span></span>
-                                                </td> 
-                                                @endif
-                                                @if($ticket->estado == "En revision" )
-                                                 <td>
-                                                    <span class="badge text-bg-danger"><span style="color:white; font-weight:bolder;">{{$ticket->estado}}</span></span>
-                                                </td> 
-                                                @endif
-
-
-                                                 
-                                                
-                                               <td>{{$ticket->nota}}</td>
-                                            
-                                                
-                                               
-                                                    
-                                                   
-
-
+                                                @php
+    $estado = $ticket->estado ?? '';
+    $badge = match($estado) {
+        'Pagado'     => 'success',
+        'Verificado' => 'warning',
+        'En revision'=> 'danger',
+        default      => 'secondary', // <-- SIEMPRE habrá un <td>
+    };
+@endphp
+<td>
+    <span class="badge text-bg-{{ $badge }}">
+        <span style="color:white; font-weight:bolder;">{{ $estado ?: '—' }}</span>
+    </span>
+</td>
+                                                                                  
+                                               <td>{{$ticket->nota}}</td>                                                                                                                                                                            
                                                 
                                             </tr>
                                             @endforeach
@@ -455,6 +442,7 @@ if (searchText == "") {
     <!--end::Global Javascript Bundle-->
     <!--begin::Vendors Javascript(used for this page only)-->
     <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+ 
     <script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
     <!--begin::Javascript-->
     <script>

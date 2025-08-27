@@ -23,6 +23,7 @@ use App\Models\Empleado;
 use App\Exports\TicketRepoExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\PagoExport;
+use App\Models\Agencia;
  
 class PagoController extends Controller
 { 
@@ -475,9 +476,9 @@ class PagoController extends Controller
             $comer = $pedidos[0]->comercio;
             $comercioset = Comercio::where('comercio', $comer)->get();
         }
-        
+        $agencias = Agencia::all();
 
-        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota'));
+        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'agencias'));
         
     }
 

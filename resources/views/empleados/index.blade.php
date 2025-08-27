@@ -24,10 +24,7 @@
             
         }
 
-        .dataTables_length{
-            display:none;
-            
-        }
+       
     
     </style>
 

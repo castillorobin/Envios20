@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Empleado;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EntregalistaExport;
+use App\Models\Agencia;
 
 //use App\Models\Entrega;
 
@@ -211,8 +212,9 @@ if($pedidos->isEmpty()){
         $pedidos = Envio::where('entrega2', $actual)
         ->get();
 
-        
-        return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual'));
+        $agencias = Agencia::all();
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual', 'agencias', 'empleado'));
         //return view('envios.entregasagregar', compact('actual', 'pedidos'));
     }
 
@@ -243,7 +245,8 @@ if($pedidos->isEmpty()){
         $pedidos = Envio::where('entrega2', $actual)
         ->get();
 $nota = " "; 
-        return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual'));
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual', 'empleado'));
         //return view('envios.entregasagregar', compact('actual', 'pedidos'));
     }
     public function limpiar($id)
