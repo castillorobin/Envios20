@@ -291,9 +291,9 @@ if(tipo=='suelto'){
                                                 <div class="form-floating col-lg-12 mb-4">
                                                     <select class="form-select form-select-solid" name="agencia" id="agencia" aria-label="Floating label select example" >
                                                        
-                                                        <option value="San Salvador">San Salvador</option>
-                                                        <option value="Santa Ana">Santa Ana</option>
-                                                        <option value="San Miguel">San Miguel</option>
+                                                         @foreach($agencias as $agencia)    
+ <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
+ @endforeach
                                                     </select>
                                                     <label for="cenvio" style="padding-left: 25px;">Agencia</label>
                                                 </div>

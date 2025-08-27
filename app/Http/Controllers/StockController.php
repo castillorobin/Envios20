@@ -17,6 +17,7 @@ use App\Models\Orden;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use App\Models\Agencia;
 
 class StockController extends Controller
 {
@@ -169,9 +170,9 @@ class StockController extends Controller
 
         $pedidos = Envio::where('guia', $guia)
         ->get();
-
+        $agencias = Agencia::all();
         
-        return view('stocks.asignardatos', compact('pedidos', 'actual', 'nota' ));
+        return view('stocks.asignardatos', compact('pedidos', 'actual', 'nota', 'agencias'));
     }
 
     public function agregarmasguia(Request $request)
@@ -204,8 +205,8 @@ class StockController extends Controller
         $pedidos = Envio::where('asignado', $actual)
         ->get();
 
-        
-        return view('stocks.asignardatos', compact('pedidos', 'actual', 'nota' ));
+        $agencias = Agencia::all();
+        return view('stocks.asignardatos', compact('pedidos', 'actual', 'nota', 'agencias'));
     }
 
     public function guardarasignar(Request $request)
@@ -305,9 +306,9 @@ class StockController extends Controller
         $pedidos = Envio::where('guia', $guia)
         ->get();
 
-        
+        $agencias = Agencia::all();
 
-        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota'  ));
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota', 'agencias'));
     }
     public function agregarmascambiarguia(Request $request)
     {
@@ -339,8 +340,8 @@ class StockController extends Controller
         $pedidos = Envio::where('cambiando', $actual)
         ->get();
 
-        
-        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota' ));
+        $agencias = Agencia::all();
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota', 'agencias'));
     }
     public function guardarcambiarguia(Request $request)
     {
@@ -474,8 +475,8 @@ class StockController extends Controller
         ->get();
 
         $empleados = Empleado::all(); 
-
-        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota' ));
+        $agencias = Agencia::all();
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias'));
     }
 
     public function agregarrepartidorlote(Request $request)
