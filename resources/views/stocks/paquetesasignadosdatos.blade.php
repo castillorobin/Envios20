@@ -108,64 +108,57 @@
                             <!--begin::Card header-->
                             <div class="card-header align-items-center ">   
                                 <!--begin::Card title-->
-                                <div class="card-title">
-                                    <!--begin::Search-->
-                                    
-                                    <form action="/stocks/paquetesasignadosdatos/" class="row g-2" method="GET">
-                                                   
-                                        <div class="row">
-                                            <div class="col-5 mt-5 d-flex justify-content-between align-items-center">
-                                            Rango: 
-                                            <input style="line-height: 28px;" class="form-control form-control-solid w-100 mw-250px" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
-                                                
-                                            </div>
-                                            <div class="form-floating  col-3 mt-5">
-                                                <select class="form-select form-select-solid mi-selector" name="repartidor" id="repartidor"  >
+                                  <div class="card-title">
+            <form action="/stocks/paquetesasignadosdatos/" method="GET">
+            <!--begin::Search-->
+            <div class="d-flex align-items-center position-relative my-1">
+               
+                                        
+
+            </div>
+
+
+
+            <!--end::Search-->
+        </div>
+
+      
+        <!--end::Card title-->
+
+        <!--begin::Card toolbar-->
+        <div class="card-toolbar flex-row-fluid justify-content-end gap-5" data-select2-id="select2-data-122-79op">
+            <!--begin::Flatpickr-->
+             
+            <div class="input-group w-250px">
+            
+                                                <input class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />
+
+            </div>
+            <!--end::Flatpickr-->
+
+            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
+                                                   <select class="form-select form-select-solid mi-selector" name="repartidor" id="repartidor"  >
                                                     <option value="todos" style="height: 60px;">TODOS</option>
                                                     @foreach ($empleados as $empleado)
                                                     <option value="{{$empleado->nombre}}" >{{$empleado->nombre}} </option>
                                                     @endforeach
                                                 </select>
-                                                <label for="cenvio" style="padding-left: 25px;">Repartidor</label>
-                                            </div>
-                                            <div class="col-2 mt-2">
-                                                <button type="submit" class="btn btn-primary mt-5 ">Buscar</button>
-                                               
-                                            </div>
-                                        </div>
-                                       
+                                             
 
-                                    </form>
-                                    <!--end::Search-->
-                                    <!--begin::Export buttons-->
-                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                    <!--end::Export buttons-->
-                                </div>
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                    <!--begin::Filter-->
-                                    <div class="w-190px">
-                                        <!--begin::Select2-->
-                                    
-                                        <!--end::Select2-->
-                                    </div>
-                                    <!--begin::Filter-->
-                                    <div class="w-190px">
-                                        <!--begin::Select2
-                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
-                                            Asignar en lote
-                                        </button>
-                                        -->
-                                        <!--end::Select2-->
-                                    </div>
-                                    <!--end::Filter-->
 
-                                </div>
+            </div>
+
+            <!--begin::Add product-->
+               <button type="submit" class="btn btn-primary ">Buscar</button>
+            <!--end::Add product-->
+                
+        </div>
+          
+        <!--end::Card toolbar-->
+    </div>
+     </form>
+   
                                 <!--end::Card toolbar-->
-
-                            </div>
-                            <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 590px;  ">
 
@@ -266,7 +259,7 @@
 
 
     </x-default-layout>
-    <script>
+    <script> 
         var hostUrl = "assets/";
     </script>
     <!--begin::Global Javascript Bundle(mandatory for all pages)-->

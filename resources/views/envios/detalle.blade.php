@@ -643,7 +643,7 @@
                                     <td>
                                     <span style="font-size:14px;">Repartidor: 
                                     </td>
-                                    <td>{{ $envio[0]->repartidor }}</span>
+                                    <td>{{ $histo->nombre }}</span>
                                     
                                     </td>
                                     </tr>

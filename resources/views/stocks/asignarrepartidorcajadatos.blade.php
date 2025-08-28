@@ -232,7 +232,7 @@ if(tipo=='suelto'){
                                                 </td>
                                                 <td class="text-center">{{$pedido->fecha_entrega}}</td>
                                                 <td class="text-center">{{$pedido->repartidor}}</td>
-                                                <td class="text-center">{{$pedido->agencia}}</td>
+                                                <td class="text-center">{{$pedido->agenciaubi}}</td>
                                                 <td class="text-center">{{$pedido->ubicacion}}</td>
                                                 <td class="text-center">{{$pedido->rack}}</td>
                                                 <td class="text-center">{{$pedido->nivel}}</td>

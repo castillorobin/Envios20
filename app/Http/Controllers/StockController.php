@@ -570,6 +570,8 @@ $agencias = Agencia::all();
             $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "En ruta";
+            $hesta->nombre = $repartidor;
+            $hesta->usuario = $usuario;
             $hesta->save();
 
         }

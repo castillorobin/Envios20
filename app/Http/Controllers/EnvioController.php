@@ -56,6 +56,9 @@ class EnvioController extends Controller
         $idhisto = $envio[0]->id;
         $comer = $envio[0]->comercio;
         $comercio = Comercio::where('comercio', $comer)->get();
+
+        //dd($comer);
+        //$vendedores = Vendedor::all(
         //$vendedores = Vendedor::all();
         $enviostotal = Envio::where('comercio', $comer)->get()->count();
         $entregados = Envio::where('comercio', $comer)->
