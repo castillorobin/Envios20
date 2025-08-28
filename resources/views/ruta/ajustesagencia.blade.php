@@ -157,7 +157,7 @@
                                           
                                             <!--end::Heading-->
                                             
-                                            <!--begin::Table-->
+                                            <!--begin::Table--> 
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table">
                                         <thead>
@@ -181,9 +181,11 @@
                                                
                                                 <td class="text-center">
                                                     <a href="/agencia/editar/{{$ruta->id}}">
-                                                <button type="button" class="btn btn-warning">Editar</button></a>
+                                                <button type="button" class="btn btn-warning">Editar</button>
+                                            </a>
                                                 <a href="/agencia/eliminar/{{$ruta->id}}">
-                                                <button type="button" class="btn btn-danger">Eliminar</button></a>
+                                                <button type="button" class="btn btn-danger">Eliminar</button>
+                                            </a>
                                             </td>
                                                 
                                                 

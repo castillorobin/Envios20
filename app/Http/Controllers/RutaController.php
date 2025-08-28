@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Rutas;
 use App\Models\Agencia;
+use Illuminate\Support\Facades\Auth;
 
 class RutaController extends Controller
 {
@@ -89,8 +90,11 @@ class RutaController extends Controller
     {
         $id = $request->get('id') ;
         $concepto = $request->get('nombre') ;
+        //dd($concepto);
+        
         $conce = Agencia::find($id);
-        $conce->nombre = $concepto ;
+        $conce->nombre = $concepto ; 
+
         $conce->save();
          
          $cajas = Agencia::all();
@@ -103,9 +107,11 @@ class RutaController extends Controller
          $ruta->delete();
     
       $cajas = Agencia::all();
-        return redirect()->back()->with('success', 'Registro Eliminado correctamente');
+        //return redirect()->back()->with('success', 'Registro Eliminado correctamente');
+        return view('ruta.ajustesagencia', compact('cajas'));
     }
 
+   
 
     /**
      * Show the form for creating a new resource.

@@ -18,6 +18,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 use App\Models\Agencia;
+use Illuminate\Support\Facades\Auth;
 
 class StockController extends Controller
 {
@@ -326,8 +327,8 @@ class StockController extends Controller
             $pedidos = Envio::where('cambiando', $actual)
         ->get();
 
-        
-        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota'  ));
+        $agencias = Agencia::all();
+        return view('stocks.cambiarasignardatos', compact('pedidos', 'actual', 'nota', 'agencias' ));
         }
  
         $envioid= $envio[0]->id ;
@@ -476,7 +477,8 @@ class StockController extends Controller
 
         $empleados = Empleado::all(); 
         $agencias = Agencia::all();
-        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias'));
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias', 'empleado'));
     }
 
     public function agregarrepartidorlote(Request $request)
@@ -497,7 +499,8 @@ class StockController extends Controller
         $empleados = Empleado::all(); 
             //return view('stocks.asignarrepartidor', compact('nota'));
             $agencias = Agencia::all();
-            return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias' ));
+            $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+            return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias', 'empleado'));
             
         }
  
@@ -513,7 +516,8 @@ class StockController extends Controller
 
         $empleados = Empleado::all(); 
   $agencias = Agencia::all();
-        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias'));
+  $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('stocks.asignarrepartidordatos', compact('pedidos', 'actual', 'empleados', 'nota', 'agencias', 'empleado'));
     }
 
 
