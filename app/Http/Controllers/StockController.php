@@ -594,10 +594,12 @@ $agencias = Agencia::all();
 
 
         foreach($envios as $envio){
-            $envio->repartidor = $repartidor;
+             $envio->empleados()->sync($request->repartidor);
+           // $envio->repartidor = $repartidor;
             $envio->estado = "En ruta";
             $envio->cambioasi = 0;
             $envio->fechaasigna = Carbon::today();
+
             $envio->save();
 
             $hesta = new Hestado();

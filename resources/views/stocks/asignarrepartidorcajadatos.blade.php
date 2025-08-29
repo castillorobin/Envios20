@@ -317,10 +317,10 @@ if(tipo=='suelto'){
 
                                             <div class="row my-2 mx-2 justify-content-center">
                                                 <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="repartidor" id="repartidor"  >
+                                                    <select class="form-select form-select-solid mi-selector" data-control="select2" name="repartidor[]" id="repartidor"  multiple>
                                                         <option value="" style="height: 60px;"></option>
                                                         @foreach ($empleados as $empleado)
-                                                        <option value="{{$empleado->nombre}}" >{{$empleado->nombre}} </option>
+                                                        <option value="{{$empleado->id}}" >{{$empleado->nombre}} </option>
                                                         @endforeach
                                                     </select>
                                                     <label for="cenvio" style="padding-left: 25px;">Repartidor</label>
