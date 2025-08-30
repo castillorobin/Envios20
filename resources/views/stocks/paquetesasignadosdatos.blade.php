@@ -107,13 +107,13 @@
                         <div class="card card-flush">
                             <!--begin::Card header-->
                             <div class="card-header align-items-center ">   
-                                <!--begin::Card title-->
-                                  <div class="card-title">
+                               <!--begin::Card title-->
+                                 <div class="card-title">
             <form action="/stocks/paquetesasignadosdatos/" method="GET">
             <!--begin::Search-->
             <div class="d-flex align-items-center position-relative my-1">
                
-                                        
+                                 
 
             </div>
 
@@ -138,9 +138,9 @@
 
             <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
                                                    <select class="form-select form-select-solid mi-selector" name="repartidor" id="repartidor"  >
-                                                    <option value="todos" style="height: 60px;">TODOS</option>
+                                                    
                                                     @foreach ($empleados as $empleado)
-                                                    <option value="{{$empleado->nombre}}" >{{$empleado->nombre}} </option>
+                                                    <option value="{{$empleado->id}}" >{{$empleado->nombre}} </option>
                                                     @endforeach
                                                 </select>
                                              
@@ -148,8 +148,19 @@
 
             </div>
 
+            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
+                                                   <select class="form-select form-select-solid mi-selector" name="camino" id="camino"  >
+                                                    <option value="Asignados" style="height: 60px;">Asignados</option>
+                                                    <option value="Entregados" style="height: 60px;">Entregados</option>
+                                                  
+                                                </select>
+                                             
+
+
+            </div>
+
             <!--begin::Add product-->
-               <button type="submit" class="btn btn-primary ">Buscar</button>
+               <button type="submit" class="btn btn-primary ">Filtrar</button>
             <!--end::Add product-->
                 
         </div>
@@ -159,6 +170,7 @@
      </form>
    
                                 <!--end::Card toolbar-->
+                         
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 590px;  ">
 
@@ -213,7 +225,7 @@
                                                 </td>
                                                
                                                 <td class="text-center">${{ $envio->total }}</td>
-                                              
+                                               
                                             </tr>
                                             @endforeach
                                         </tbody>

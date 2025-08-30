@@ -48,9 +48,11 @@ class StockController extends Controller
 
     public function paquetesasignadosdatos(Request $request) 
     {
+        /*
         $rango = $request->input('rango');
        // $desde = $request->input('desde');
        // $hasta = $request->input('hasta');
+       dd($rango);
        $rangol = $rango;
         $parte1 = Str::of($rango)->explode('-');
         $fecha1 = $parte1[0];
@@ -78,6 +80,84 @@ class StockController extends Controller
         $nota = " ";
         $empleados = Empleado::all(); 
         return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios')); 
+        */
+
+         // Validación básica
+         
+
+    $request->validate([
+        'rango'      => 'required|string',          // "08/01/2025 - 08/30/2025"
+        'repartidor' => 'required|integer|exists:empleados,id',
+        'camino'     => 'required|in:Asignados,Entregados',
+    ]);
+
+    // Obtención del ID del empleado (repartidor)
+    $empleadoId = (int) $request->repartidor;
+
+    // 1) Parseo de rango flexible (acepta "08/01/2025 - 08/30/2025", "2025-08-01 - 2025-08-30", "01/08/2025 - 30/08/2025", etc.)
+    [$iniStr, $finStr] = array_map('trim', preg_split('/\s*-\s*/u', $request->rango));
+
+    $inicio = $this->parseDateFlexible($iniStr)?->startOfDay();
+    $fin    = $this->parseDateFlexible($finStr)?->endOfDay();
+
+    if (!$inicio || !$fin) {
+        return back()->withErrors([
+            'rango' => 'Formato de rango inválido. Usa, por ejemplo: 08/01/2025 - 08/30/2025 o 2025-08-01 - 2025-08-30',
+        ])->withInput();
+    }
+
+    // 2) Query base: filtra por fechaasigna en el rango (por FECHA, compatible con columnas date/datetime)
+    $query = Envio::query()
+        ->whereDate('fechaasigna', '>=', $inicio->toDateString())
+        ->whereDate('fechaasigna', '<=', $fin->toDateString());
+
+    // Filtro por tipo
+    if ($request->camino === 'Asignados') {
+        // Envios asignados al empleado (tabla pivote empleado_envio)
+        $query->whereHas('empleados', function ($q) use ($empleadoId) {
+            $q->where('empleados.id', $empleadoId);
+        });
+    } else { // 'Entregados'
+        // Envios entregados por el empleado (campo entregadopor en envios)
+        $query->where('entregadopor', $empleadoId);
+    }
+
+    // Eager load útil (evita N+1)
+    $envios = $query
+        ->with(['empleados:id,nombre']) // ajusta columnas según tu modelo
+        ->orderByDesc('fechaasigna')
+        ->get();
+$empleados = Empleado::all(); 
+return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios')); 
+
+    }
+
+      private function parseDateFlexible(?string $s): ?Carbon
+    {
+        if (!$s) return null;
+
+        $s = trim($s);
+        $formats = [
+            'm/d/Y', // 08/30/2025
+            'd/m/Y', // 30/08/2025
+            'Y-m-d', // 2025-08-30
+            'd-m-Y', // 30-08-2025
+            'Y/m/d', // 2025/08/30
+        ];
+
+        foreach ($formats as $f) {
+            try {
+                return Carbon::createFromFormat($f, $s);
+            } catch (\Throwable $e) {
+                // probar el siguiente formato
+            }
+        }
+
+        try {
+            return Carbon::parse($s);
+        } catch (\Throwable $e) {
+            return null;
+        }
     }
     
     public function buscarcajadatos(Request $request) 
