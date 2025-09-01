@@ -128,7 +128,10 @@ class StockController extends Controller
         ->orderByDesc('fechaasigna')
         ->get();
 $empleados = Empleado::all(); 
-return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios')); 
+$repa = Empleado::query()->find($empleadoId);
+//dd($repa);
+
+return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios', 'repa')); 
 
     }
 
@@ -622,7 +625,8 @@ return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios'));
         
         $empleados = Empleado::all(); 
 $agencias = Agencia::all();
-        return view('stocks.asignarrepartidorcajadatos', compact('pedidos', 'empleados', 'agencias'));
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('stocks.asignarrepartidorcajadatos', compact('pedidos', 'empleados', 'agencias', 'empleado'));
     }
 
     public function guardarasignarrepartidor(Request $request)
@@ -667,8 +671,9 @@ $agencias = Agencia::all();
         $agencia = $request->get('agencia');
         $repartidor = $request->get('repartidor');
         $caja = $request->get('caja6');
-//dd($caja);
-
+        //dd($request->repartidor[0]);
+       /// $emplea = Empleado::where('nombre', Auth::user()->name)->get();
+        $emplea = Empleado::find($request->repartidor[0]);
         $envios = Envio::where('caja', $caja)
         ->get();
 
@@ -684,6 +689,7 @@ $agencias = Agencia::all();
 
             $hesta = new Hestado();
             $hesta->idenvio = $envio->id;
+            $hesta->nombre = $emplea->nombre;
             $hesta->estado = "En ruta";
             $hesta->save();
         }

@@ -303,17 +303,7 @@ if(tipo=='suelto'){
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-                                            <div class="row my-2 mx-2 justify-content-center">
-                                                <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid" name="agencia" id="agencia" aria-label="Floating label select example" >
-                                                      @foreach($agencias as $agencia)    
- <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
- @endforeach
-                                                    </select>
-                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
-                                                </div>
-                                               
-                                            </div>
+                                           
 
                                             <div class="row my-2 mx-2 justify-content-center">
                                                 <div class="form-floating col-lg-12 mb-4">

@@ -204,7 +204,7 @@
                                                 <td>{{ $envio->direccion }}</td>
                                                 <td style="text-align: center;"><span class="badge badge-dark">{{ $envio->tipo}}</span></td>
                                                 <td style="text-align: center;">{{ $envio->fecha_entrega}}</td>
-                                                <td style="text-align: center;">{{ $envio->repartidor}}</td>
+                                                <td style="text-align: center;">{{ $repa->nombre}}</td>
                                                
                                                 <td style="text-align: center;">
                                                     @if( $envio->estado == 'No entregado')
