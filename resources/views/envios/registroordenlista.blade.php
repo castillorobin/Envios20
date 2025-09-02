@@ -922,7 +922,7 @@ $(document).ready(function() {
     data-kt-sticky-offset="{default: false, lg: '200px'}"
     data-kt-sticky-width="{lg: '250px', lg: '300px'}"
     data-kt-sticky-left="auto"
-    data-kt-sticky-top="150px"
+    data-kt-sticky-top="50px"
     data-kt-sticky-animation="false"
     data-kt-sticky-zindex="95">
 
