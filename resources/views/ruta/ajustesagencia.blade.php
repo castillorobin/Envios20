@@ -179,17 +179,15 @@
                                            
                                                  
                                                
-                                                <td class="text-center">
-                                                    <a href="/agencia/editar/{{$ruta->id}}">
-                                                <button type="button" class="btn btn-warning">Editar</button>
-                                           </a>
-                                           <form action="{{ route('agencia.destroy', $ruta->id) }}" method="POST"
-     >
-    @csrf
-    @method('DELETE')
-    <button type="submit" class="btn btn-danger">Eliminar</button>
-</form>
-                                            </td>
+                                               <td class="text-center">
+    <a href="/agencia/editar/{{ $ruta->id }}" class="btn btn-warning">Editar</a>
+
+    <form action="{{ route('agencia.destroy', $ruta->id) }}" method="POST" class="d-inline">
+        @csrf
+        @method('DELETE')
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+    </form>
+</td>
                                                 
                                                 
                                             </tr>
