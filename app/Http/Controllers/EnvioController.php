@@ -10,7 +10,7 @@ use App\Models\Comercio;
 use App\Models\Rutas;
 use App\Models\Hestado;
 use Carbon\Carbon;
-
+use App\Models\Agencia;
 use Illuminate\Support\Str;
 use App\Models\Ticketc;
 use App\Models\User;
@@ -451,9 +451,9 @@ class EnvioController extends Controller
             return view('envios.registroconguia', compact('nota'));
         }
 
+$agencias = Agencia::all();
 
-
-        return view('envios.registroconguiadatos', compact('pedido', 'puntos', 'nota'));
+        return view('envios.registroconguiadatos', compact('pedido', 'puntos', 'nota', 'agencias'));
 
     }
     public function guardarconguia(Request $request, $id)

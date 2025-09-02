@@ -250,8 +250,18 @@
                                     <label for="direccionp" style="padding-left: 25px; height: 50px;">Buscar punto</label>
                                     <br>
                                 </div>
-                                    @else
+                                    @elseif ($pedido[0]->tipo == "Casillero" )
 
+                                     <div class="form-floating col-lg-7 mb-4">
+                                                    <select class="form-select form-select-solid" name="agencia" id="agencia" aria-label="Floating label select example" >
+                                                       
+                                                         @foreach($agencias as $agencia)    
+ <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
+ @endforeach
+                                                    </select>
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
+                                    @else
 
                                     <div class="form-floating col-lg-7 mb-4">
                                         <input type="text" class="form-control form-control-solid" name="direccionp" id="direccionp" placeholder="Dirección" value="{{$pedido[0]->direccion}}" />
