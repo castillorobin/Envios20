@@ -282,9 +282,10 @@
 
             const descu = parseFloat($(this).val());
 
-            const total = parseFloat($('#total1').text());
+            const total = parseFloat($('#subto').text());
+            const ivam2 = parseFloat($('#ivam').text());
 
-            const totalsin = total - descu;
+            const totalsin = total - descu - ivam2;
 
             $('#total1').text(totalsin.toFixed(2));
 
@@ -365,6 +366,24 @@
                             </ul>
                             <!--end::Breadcrumb-->
                         </div>
+                        @if (session('error'))
+    <div class="alert alert-danger alert-dismissible fade show " role="alert" id="alert-error" style="margin-left: 35px; margin-top: 35px; font-size: 14px;">
+        {{ session('error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        // Espera 4 segundos (4000 ms) y luego oculta el mensaje
+        setTimeout(function () {
+            let alertBox = document.getElementById('alert-error');
+            if (alertBox) {
+                alertBox.classList.remove('show');
+                alertBox.classList.add('fade');
+                alertBox.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+@endif
                         <!--end::Page title-->
                         <!--begin::Actions-->
                         <div class="d-flex align-items-center gap-2 gap-lg-3">

@@ -303,13 +303,14 @@ $(document).ready(function() {
  $("#descuent").change(function() {
     //alert("Hola");
 
-    const descu =parseFloat($(this).val());
+     const descu = parseFloat($(this).val());
 
-    const total =parseFloat($('#total1').text());
+            const total = parseFloat($('#subto').text());
+            const ivam2 = parseFloat($('#ivam').text());
 
-    const totalsin = total - descu ;
- 
-    $('#total1').text(totalsin.toFixed(2));
+            const totalsin = total - descu - ivam2;
+
+            $('#total1').text(totalsin.toFixed(2));
     document.getElementById("total2").value = totalsin.toFixed(2) ;
 
     });
