@@ -1114,6 +1114,15 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
     }
     public function agregarcomercio(Request $request)
     {
+
+        $ncomercio = $request->input('fname');
+        $comerto = Comercio::where('comercio', $ncomercio)->get();
+        if(!empty($comerto[0]->comercio)){
+             $nota = " ";
+       session()->flash('error', 'El comercio que esta intentando crear ya existe');
+           return redirect('/registro-orden');
+        }
+
         $comercio = new Comercio();
         $comercio->comercio = $request->input('fname');
         $comercio->direccion = $request->input('direccion');
