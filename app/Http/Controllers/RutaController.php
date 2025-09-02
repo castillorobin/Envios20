@@ -101,14 +101,14 @@ class RutaController extends Controller
          return view('ruta.ajustesagencia', compact('cajas'));
     }
 
-    public function eliminaragencia($id)
+    public function destroy($id)
     {
         $ruta = Agencia::find($id);
          $ruta->delete();
     
       $cajas = Agencia::all();
         //return redirect()->back()->with('success', 'Registro Eliminado correctamente');
-        return view('ruta.ajustesagencia', compact('cajas'));
+        return view('ruta.ajustesagencia', compact('cajas')); 
     }
 
    

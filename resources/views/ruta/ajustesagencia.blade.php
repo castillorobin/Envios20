@@ -177,15 +177,18 @@
                                                 <td class="text-center"> {{$ruta->id}}</td>
                                                 <td class="text-center">{{ $ruta->nombre }}</td>
                                            
-                                                
+                                                 
                                                
                                                 <td class="text-center">
                                                     <a href="/agencia/editar/{{$ruta->id}}">
                                                 <button type="button" class="btn btn-warning">Editar</button>
-                                            </a>
-                                                <a href="/agencia/eliminar/{{$ruta->id}}">
-                                                <button type="button" class="btn btn-danger">Eliminar</button>
-                                            </a>
+                                           </a>
+                                           <form action="{{ route('agencia.destroy', $ruta->id) }}" method="POST"
+     >
+    @csrf
+    @method('DELETE')
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>
                                             </td>
                                                 
                                                 
@@ -240,39 +243,31 @@
 
         
 <!--inicia::Modal-->	
-
+<!-- Modal -->
 <div class="modal fade" tabindex="-1" id="kt_modal_stacked_1">
-<div class="modal-dialog modal-dialog-centered">
-     
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
-        <div class="modal-header">
-            <h3 class="modal-title">Crear Agencia</h3>
-<form action="/agencia/guardar" method="GET">
-     
-            <!--begin::Close-->
-            <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
-                <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
-            </div>
-            <!--end::Close-->
+      <div class="modal-header">
+        <h3 class="modal-title">Crear Agencia</h3>
+        <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+          <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
         </div>
+      </div>
 
+      <form action="{{ route('agencia.store') }}" method="POST">
+        @csrf
         <div class="modal-body">
-            
-            <input type="text" class="form-control form-control-solid" placeholder="Nombre" name="nombre" />
-               
-
+          <input type="text" class="form-control form-control-solid" name="nombre" placeholder="Nombre" required />
         </div>
 
         <div class="modal-footer">
-            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
-            <button type="submit" class="btn btn-primary">Guardar</button>
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Guardar</button>
         </div>
+      </form>
     </div>
+  </div>
 </div>
-</div>
-
-    </form>
-
 
 
 

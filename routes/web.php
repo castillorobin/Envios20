@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\AgenciaController;
 //use App\Http\Controllers\Controller;
 
 /*
@@ -365,9 +366,13 @@ Route::get('/configuraciones/agencia', [App\Http\Controllers\RutaController::cla
 Route::get('/agencia/guardar', [App\Http\Controllers\RutaController::class, 'guardaragencia'] )->name('guardaragencia') ;
 Route::get('/agencia/editar/{id}', [App\Http\Controllers\RutaController::class, 'editaragencia'] )->name('editaragencia') ;
 Route::get('/agencia/editandoagencia', [App\Http\Controllers\RutaController::class, 'editandoagencia'])->name('caja.editandoagencia');
-Route::get('/agencia/eliminar/{id}', [App\Http\Controllers\RutaController::class, 'eliminaragencia'] )->name('eliminaragencia') ;
+//Route::get('/agencia/eliminar/{id}', [App\Http\Controllers\RutaController::class, 'eliminaragencia'] )->name('eliminaragencia') ;
 
 
+Route::get('/agencia',            [AgenciaController::class, 'index'])->name('agencia.index');
+Route::post('/agencia',           [AgenciaController::class, 'store'])->name('agencia.store');
+Route::delete('/agencia/{agencia}', [AgenciaController::class, 'destroy'])->name('agencia.destroy');
+ 
 /*
 
 Rutas 
