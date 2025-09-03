@@ -460,7 +460,7 @@ $agencias = Agencia::all();
     {
         $punto = $request->get('punto');
         $usuario = $request->get('usuario');
-        
+        $agencia = $request->get('agencia');
         $envio = Envio::find($id);
 
         
@@ -471,6 +471,8 @@ $agencias = Agencia::all();
             $envio->punto = $request->get('punto');
             $envio->direccion = $rutas[0]->punto;
 
+        }elseif($agencia){
+            $envio->direccion = $agencia;
         }else{
             $envio->direccion = $request->get('direccionp');
         }
