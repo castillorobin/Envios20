@@ -52,11 +52,11 @@ function agregariva() {
     const subtotal3 = parseFloat(document.getElementById("precio3").value);
     const subtotal4 = parseFloat(document.getElementById("precio4").value);
     const subtotal5 = parseFloat(document.getElementById("precio5").value);
-
+const descu = parseFloat(document.getElementById("descuent").value);
     const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
     const coniva = total * 0.13;
 
-    const totalfin = (total + coniva);
+    const totalfin = (total + coniva) - descu;
 
     $('#total1').text(totalfin.toFixed(2));
     document.getElementById("total2").value = totalfin.toFixed(2) ;
@@ -79,8 +79,8 @@ const subtotal2 = parseFloat(document.getElementById("precio2").value);
 const subtotal3 = parseFloat(document.getElementById("precio3").value);
 const subtotal4 = parseFloat(document.getElementById("precio4").value);
 const subtotal5 = parseFloat(document.getElementById("precio5").value);
-
-const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+const descu = parseFloat(document.getElementById("descuent").value);
+ const total = (subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ) - descu;
 //const coniva = total * 0.13;
 
 //const totalfin = (total + coniva);
@@ -217,6 +217,7 @@ $(document).ready(function() {
                       $("#precio1").change(function() {
                                                                     
          const subtotal =parseFloat($(this).val());
+       
          const subtotal2 = parseFloat(document.getElementById("precio2").value); 
          const subtotal3 = parseFloat(document.getElementById("precio3").value); 
          const subtotal4 = parseFloat(document.getElementById("precio4").value); 
@@ -306,10 +307,12 @@ $(document).ready(function() {
 
      const descu = parseFloat($(this).val());
 
-            const total = parseFloat($('#subto').text());
+           const descu = parseFloat($(this).val());
+
+            const stotal = parseFloat($('#subto').text());
             const ivam2 = parseFloat($('#ivam').text());
 
-            const totalsin = total - descu - ivam2;
+            const totalsin = (stotal + ivam2) - descu ;
 
             $('#total1').text(totalsin.toFixed(2));
     document.getElementById("total2").value = totalsin.toFixed(2) ;
@@ -352,7 +355,7 @@ $(document).ready(function() {
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 ">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-gray-900 fw-bold fs-3 flex-column justify-content-center my-0">
-                                Recepción de paquete
+                                Recepción de paquetesss
                             </h1>
                             <!--end::Title-->
 

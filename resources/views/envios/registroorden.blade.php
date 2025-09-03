@@ -44,11 +44,11 @@
         const subtotal3 = parseFloat(document.getElementById("precio3").value);
         const subtotal4 = parseFloat(document.getElementById("precio4").value);
         const subtotal5 = parseFloat(document.getElementById("precio5").value);
-
+        const descu = parseFloat(document.getElementById("descuent").value);
         const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
         const coniva = total * 0.13;
 
-        const totalfin = (total + coniva);
+        const totalfin = (total + coniva) - descu;
 
         $('#total1').text(totalfin.toFixed(2));
         $('#ivam').text(coniva.toFixed(2));
@@ -69,8 +69,12 @@
         const subtotal3 = parseFloat(document.getElementById("precio3").value);
         const subtotal4 = parseFloat(document.getElementById("precio4").value);
         const subtotal5 = parseFloat(document.getElementById("precio5").value);
+        const descu = parseFloat(document.getElementById("descuent").value);
+       // const descu = parseFloat($('#descuent').text());
 
-        const total = subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5;
+        const total = (subtotal + subtotal2 + subtotal3 + subtotal4 + subtotal5 ) - descu;
+        
+        
         //const coniva = total * 0.13;
 
         //const totalfin = (total + coniva);
@@ -282,10 +286,10 @@
 
             const descu = parseFloat($(this).val());
 
-            const total = parseFloat($('#subto').text());
+            const stotal = parseFloat($('#subto').text());
             const ivam2 = parseFloat($('#ivam').text());
 
-            const totalsin = total - descu - ivam2;
+            const totalsin = (stotal + ivam2) - descu ;
 
             $('#total1').text(totalsin.toFixed(2));
 
@@ -917,7 +921,7 @@
                                     <input type="text" name="cajero" class="form-control form-control-solid text-end" value="{{ Auth::user()->name }}" readonly>
                                     
                                     <!--end::Label
-                                    
+                                     
                                     <label class="form-label fw-bold fs-6 text-gray-400">{{ Auth::user()->name }}</label>
                                     -->
 
