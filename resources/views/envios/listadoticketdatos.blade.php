@@ -312,7 +312,7 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Subtotal</th>
                                                 <th class="min-w-50px">IVA</th>
                                                 <th class="min-w-50px">Descuento</th>
-                                                <th class="min-w-50px">Nota</th>
+                                                <th class="min-w-50px">Nota</th> 
                                                 <th class="min-w-50px">Total</th>
                                                 <th class="min-w-50px">Fecha y hora</th>
                                                 
@@ -367,6 +367,7 @@ if (searchText == "") {
                                                     <span hidden id="tot{{ $ticket->codigo }}"> {{ $ticket->total }}</span>
                                                     <span hidden id="ent{{ $ticket->codigo }}"> {{ $ticket->entrega }}</span>
                                                     <span hidden id="cam{{ $ticket->codigo }}"> {{ $ticket->cambio }}</span>
+                                                    <span hidden id="des{{ $ticket->codigo }}"> {{ $ticket->descuento }}</span>
 
 
                                                 
@@ -543,7 +544,7 @@ if (searchText == "") {
             <tr >
                 <td></td>
                 <td>DESCUENTO</td>
-                <td>$
+                <td>$<label for="" id="desc"> </label>
                  
                 </td>
                 
@@ -654,6 +655,7 @@ if (searchText == "") {
            var total=$('#tot'+cod).text();
            var entre=$('#ent'+cod).text();
            var cambi=$('#cam'+cod).text();
+           var desc=$('#des'+cod).text();
             
     //alert("HOla");
             
@@ -678,6 +680,7 @@ if (searchText == "") {
            $('#entr').text(entre);
            $('#camb').text(cambi);
            $('#cod2').text(cod);
+           $('#desc').text(desc);
           
            var ide = '/cobro/ticketlistado/'+cod ;
 		   document.getElementById("impri").href = ide;

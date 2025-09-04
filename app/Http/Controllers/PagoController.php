@@ -315,7 +315,7 @@ class PagoController extends Controller
     public function enviosdeticketdatos(Request $request)
     {
         $comercio = $request->get('ticket') ;
-
+ 
         $envios = Envio::where('ticketc', $comercio)->get();
 
         return view('envios.enviosdeticketdatos', compact('envios', 'comercio'));
