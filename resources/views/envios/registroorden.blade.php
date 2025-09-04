@@ -864,7 +864,7 @@
                                                             <textarea class="form-control form-control-solid mt-1" id="nota" name="nota" rows="3" cols="20" placeholder="Ingresar nota" hidden ></textarea>
                                                         </div>
                                                     </th>
-
+ 
                                                     <th colspan="2" class="border-bottom border-bottom-dashed text-end">
                                                         $ <span data-kt-element="sub-total" id="subto">0.00</span>
                                                         

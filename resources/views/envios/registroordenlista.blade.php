@@ -15,6 +15,9 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
    
     <!--end::Global Stylesheets Bundle-->
 </head>
@@ -127,74 +130,81 @@ document.getElementById('nota').hidden = false;
        
     }
 
-    function aumentar1() {
- nombre = parseFloat(document.getElementById("cantidad1").value);
- nom= nombre + 1;
- document.getElementById("cantidad1").value = parseFloat(nom);
- document.getElementById("guia").value = " ";
-
-}
-function aumentar2() {
- nombre = parseFloat(document.getElementById("cantidad2").value);
- nom= nombre + 1;
- document.getElementById("cantidad2").value = parseFloat(nom);
- document.getElementById("guia2").value = " ";
-}
- function aumentar3() {
- nombre = parseFloat(document.getElementById("cantidad3").value);
- nom= nombre + 1;
- document.getElementById("cantidad3").value = parseFloat(nom);
- document.getElementById("guia3").value = " ";
-
-}
-function aumentar4() {
- nombre = parseFloat(document.getElementById("cantidad4").value);
- nom= nombre + 1;
- document.getElementById("cantidad4").value = parseFloat(nom);
- document.getElementById("guia4").value = " ";
-
-}
-function aumentar5() {
- nombre = parseFloat(document.getElementById("cantidad5").value);
- nom= nombre + 1;
- document.getElementById("cantidad5").value = parseFloat(nom);
- document.getElementById("guia5").value = " ";
-
-}
-
-function limpiar1() {
- document.getElementById("guia").value = "";
- document.getElementById("cantidad1").value = "0";
- document.getElementById("precio1").value = "0";
-}
-function limpiar2() {
- document.getElementById("guia2").value = "";
- document.getElementById("cantidad2").value = "0";
- document.getElementById("precio2").value = "0";
-}
-function limpiar3() {
- document.getElementById("guia3").value = "";
- document.getElementById("cantidad3").value = "0";
- document.getElementById("precio3").value = "0";
-}
-function limpiar4() {
- document.getElementById("guia4").value = "";
- document.getElementById("cantidad4").value = "0";
- document.getElementById("precio4").value = "0";
-}
-function limpiar5() {
- //document.getElementById("guia5").value = "";
- document.getElementById("cantidad5").value = "0";
- document.getElementById("precio5").value = "0";
-}
-
-
+   
 
     
     </script>
 
     <script>
-        
+     
+$(document).ready(function () {
+
+  // Utilidad: convierte a número, devolviendo 0 si está vacío/NaN
+  const n = v => {
+    const x = parseFloat(v);
+    return isNaN(x) ? 0 : x;
+  };
+
+  function subtotal() {
+    return n($("#precio1").val())
+         + n($("#precio2").val())
+         + n($("#precio3").val())
+         + n($("#precio4").val())
+         + n($("#precio5").val());
+  }
+
+  function actualizarTotales() {
+    const st = subtotal();
+    $("#subto").text(st.toFixed(2));
+
+    const iva = n($("#ivam").text());   // cuando no usas IVA, queda 0.00
+    const desc = n($("#descuent").val());
+
+    const total = st + iva - desc;
+    $("#total1").text(total.toFixed(2));
+    $("#total2").val(total.toFixed(2));
+  }
+
+  // Pago -> calcular cambio
+  $("#pago").on("input change", function () {
+    const pago = n($(this).val());
+    const total = n($("#total2").val());
+    const cambio = pago - total;
+    $("#cambio").val(cambio.toFixed(2));
+  });
+
+  // Precio 1..4 cambian -> recalcular
+  $("#precio1, #precio2, #precio3, #precio4").on("input change", function () {
+    // además guardas el último valor en preN (según tu lógica original)
+    const id = this.id.replace("precio", "pre");
+    $("#" + id).val(n($(this).val()));
+    actualizarTotales();
+  });
+
+  // cantidad5 escribe en precio5 (como tenías) y recalcula
+  $("#cantidad5").on("input change", function () {
+    const val = n($(this).val());
+    $("#precio5").val(val);
+    $("#pre5").val(val);
+    actualizarTotales();
+  });
+
+  // Si el usuario edita directamente precio5 (por si acaso)
+  $("#precio5").on("input change", function () {
+    $("#pre5").val(n($(this).val()));
+    actualizarTotales();
+  });
+
+  // Descuento (¡sin duplicar la constante!)
+  $("#descuent").on("input change", function () {
+    actualizarTotales();
+  });
+
+  // Al cargar, calcula una vez con los valores iniciales
+  actualizarTotales();
+});
+
+     /*   
 
 $(document).ready(function() {
 
@@ -215,7 +225,8 @@ $(document).ready(function() {
 
  
                       $("#precio1").change(function() {
-                                                                    
+                    
+             
          const subtotal =parseFloat($(this).val());
        
          const subtotal2 = parseFloat(document.getElementById("precio2").value); 
@@ -324,7 +335,9 @@ $(document).ready(function() {
 
 
                 });
+                */
     </script>
+    
 
 <body id="kt_body" class="" style="background-color:white; ">
     <x-default-layout>
