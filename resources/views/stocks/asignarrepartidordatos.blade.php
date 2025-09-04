@@ -291,7 +291,7 @@ if(tipo=='suelto'){
                                                     <select class="form-select form-select-solid mi-selector" name="repartidor" id="repartidor"  >
                                                         <option value="" style="height: 60px;"></option>
                                                         @foreach ($empleados as $empleado)
-                                                        <option value="{{$empleado->nombre}}" >{{$empleado->nombre}} </option>
+                                                        <option value="{{$empleado->id}}" >{{$empleado->nombre}} </option>
                                                         @endforeach
                                                     </select>
                                                     <label for="cenvio" style="padding-left: 25px;">Repartidor</label>

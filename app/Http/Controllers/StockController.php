@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
 use App\Models\Agencia;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class StockController extends Controller
 {
@@ -631,6 +632,59 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
 
     public function guardarasignarrepartidor(Request $request)
     {
+
+         $usuario     = $request->get('usuario');
+    $agencia     = $request->get('agencia');   // (si lo usas en otro lado)
+    $repartidor  = (int) $request->get('repartidor'); // ID del empleado
+    $guia        = $request->get('guia2');     // criterio para buscar envíos
+    $ruta        = $request->get('ruta');
+
+  
+
+    $envios = Envio::where('cambiando', $guia)->get();
+
+    if ($envios->isEmpty()) {
+        return back()->with('warning', 'No se encontraron envíos para asignar con ese criterio.');
+    }
+
+    // Si quieres guardar el nombre del empleado en Hestado->nombre:
+    $empleado = Empleado::find($repartidor);
+
+    DB::transaction(function () use ($envios, $repartidor, $ruta, $usuario, $empleado) {
+
+        foreach ($envios as $envio) {
+
+            // ===== Asignación en la tabla pivote =====
+            // A) Agregar sin quitar otros repartidores (no duplica gracias a unique en pivote):
+            $envio->empleados()->sync([$repartidor]);
+
+            // --- O ---
+            // B) Reemplazar a cualquier otro repartidor y dejar solo este:
+            // $envio->empleados()->sync([$repartidor]);
+
+            // ===== Actualizaciones del envío =====
+            $envio->estado       = "En ruta";
+            $envio->cambioasi    = 0;
+            $envio->ruta         = $ruta;
+            $envio->fechaasigna  = Carbon::today();  // si tu columna es DATE, queda perfecto
+            $envio->save();
+
+            // ===== Historial de estado =====
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado  = "En ruta";
+            // Si antes guardabas el ID en 'nombre', puedes dejarlo así.
+            // Si prefieres guardar el nombre legible:
+            $hesta->nombre  = $empleado?->nombre ?? $repartidor;
+            $hesta->usuario = $usuario;
+            $hesta->save();
+        }
+    });
+
+    // Vista de retorno
+    $nota = "Asignación realizada correctamente.";
+    return view('stocks.asignarrepartidor', compact('nota'));
+        /*
         $usuario = $request->get('usuario');
         $agencia = $request->get('agencia');
         $repartidor = $request->get('repartidor');
@@ -664,6 +718,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
 
        $nota = " "; 
         return view('stocks.asignarrepartidor', compact('nota'));
+        */
     }
     public function guardarasignarrepartidorcaja(Request $request)
     {
