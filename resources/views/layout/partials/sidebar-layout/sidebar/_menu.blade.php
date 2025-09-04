@@ -329,7 +329,14 @@
 			@can('factura-ver')
 			<div data-kt-menu-trigger="click" id="menu-item-5" class="menu-item menu-accordion">
 				<span class="menu-link">
-					<span class="menu-icon">{!! getIcon('document', 'fs-2') !!}</span>
+					<span class="menu-icon" ><i class="ki-duotone ki-bill " style="font-size: 24px;">
+					<span class="path1 "></span>
+					<span class="path2 "></span>
+					<span class="path3 "></span>
+					<span class="path4 "></span>
+					<span class="path5 "></span>
+					<span class="path6 "></span>
+					</i></span>
 					<span class="menu-title">Facturacion</span>
 					<span class="menu-arrow"></span>
 				</span>
