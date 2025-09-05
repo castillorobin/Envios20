@@ -241,18 +241,15 @@ if(tipo=='suelto'){
 
                                             @if($envio[0]->tipo !== 'Punto fijo')
 
-                                            <tr class="'table-row-gray' : 'table-row-white' }}">
-                                                
-                                                <td class="text-center">{{$envio[0]->tipo}}</td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-                                                <td class="text-center"></td>
-
+                                           
+                                            <tr>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
+                                                <td colspan="6" class=" text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Direccion: {{$envio[0]->direccion }} </span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6" class=" text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Fecha de entrega: {{ \Carbon\Carbon::parse($envio[0]->fecha_entrega)->translatedFormat('j \d\e F') }}  </span></td>
                                             </tr>
 
                                             @if($envio[0]->tipo == 'Casillero')
