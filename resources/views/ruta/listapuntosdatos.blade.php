@@ -217,19 +217,19 @@ if(tipo=='suelto'){
                                             </tr>
                                             -->
                                             <tr>
-                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Zona: {{$pedido->zona }}   </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Zona: {{$pedido->zona }}   </span></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Ruta: {{$pedido->ruta }}   </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Ruta: {{$pedido->ruta }}   </span></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Fecha de entrega: {{ \Carbon\Carbon::parse($envio[0]->fecha_entrega)->translatedFormat('j \d\e F') }}  </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Fecha de entrega: {{ \Carbon\Carbon::parse($envio[0]->fecha_entrega)->translatedFormat('j \d\e F') }}  </span></td>
                                             </tr>
 
 
 
                                             <tr>
-                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;">Ubicación: Ruta {{$pedido->nruta}} </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;">Ubicación: Ruta {{$pedido->nruta}} </span></td>
                                             </tr>
 
                                            
