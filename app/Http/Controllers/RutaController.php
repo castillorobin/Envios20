@@ -53,6 +53,7 @@ class RutaController extends Controller
         $ruta->punto = $request->get('punto');
         $ruta->nfijo = $request->get('nfijo');
         $ruta->nruta = $request->get('nruta');
+        $envio->color = $request->get('color');
 
         $ruta->save();
         
