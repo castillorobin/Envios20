@@ -179,20 +179,13 @@ if(tipo=='suelto'){
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="tenvios">
                                         <thead>
-                                        <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th class="text-center min-w-50px">Tipo de envio</th>
-                                                <th class="text-center min-w-50px">Zona</th>
-                                                <th class="text-center min-w-50px" >Ruta</th>
-                                                <th class="text-center min-w-50px">Punto fijo</th>
-                                                <th class="text-center min-w-50px">Fecha de entrega</th>
-                                                <th class="text-center min-w-50px">Estado</th>
-                                                
-                                            </tr>
+                                        
                                         </thead>
                                         <tbody class="fw-semibold  text-gray-400">
                                             
                                             @foreach ($pedidos as $pedido) 
                                             @if($envio[0]->tipo = "Punto fijo")
+ <!--end::Table
                                             <tr class="'table-row-gray' : 'table-row-white' }}">
                                                 
                                                 <td class="text-center">{{$envio[0]->tipo}}</td>
@@ -222,8 +215,21 @@ if(tipo=='suelto'){
                                               
 
                                             </tr>
+                                            -->
                                             <tr>
-                                                <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{strtoupper(substr($pedido->zona, 0, 3)) }}  {{$pedido->nruta}} - {{$pedido->nfijo}} </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Zona: {{$pedido->zona }}   </span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Ruta: {{$pedido->ruta }}   </span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Fecha de entrega: {{ \Carbon\Carbon::parse($envio[0]->fecha_entrega)->translatedFormat('j \d\e F') }}  </span></td>
+                                            </tr>
+
+
+
+                                            <tr>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: yellow; width: 100%; padding: 10px;">Ubicación: Ruta {{$pedido->nruta}} </span></td>
                                             </tr>
 
                                            

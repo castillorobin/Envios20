@@ -440,15 +440,19 @@
             <span class="menu-title">Selección de paquetería</span>
           </a>
         </div>
-        <div class="menu-item">
-          <a href="{{ url('/stocks/agregarfoto') }}" class="menu-link py-3 {{ request()->is('stocks/agregarfoto') ? 'active' : '' }}">
-            <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-            <span class="menu-title">Agregar foto</span>
-          </a>
-        </div>
+        
       </div>
     </div>
   </div>
+    <div class="menu-sub menu-sub-accordion">
+    <div class="menu-item">
+      <a class="menu-link {{ request()->is('stocks/agregarfoto') ? 'active' : '' }}" href="{{ url('stocks/agregarfoto') }}">
+        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+        <span class="menu-title">Toma de fotografia</span>
+      </a>
+    </div>
+  </div>
+
 
   <div class="menu-sub menu-sub-accordion">
     <div class="menu-item menu-accordion {{ $inUbic ? 'here show' : '' }}" data-kt-menu-trigger="click">
