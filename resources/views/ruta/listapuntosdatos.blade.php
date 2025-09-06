@@ -281,7 +281,7 @@ if(tipo=='suelto'){
 
                                 <div class="row mt-7">
                                     <div class="col-12 mb-3" >
-                                        <a href="/stocks/asignar">
+                                        <a href="/stocks/seleccionarpunto">
                                         <button type="button" class="btn btn-secondary mb-3" style="float: right;">Cancelar</button>
                                     </a>
                                     </div>
