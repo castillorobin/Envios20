@@ -241,13 +241,13 @@ if(tipo=='suelto'){
 
                                            
                                             <tr>
-                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6" class=" text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Direccion: {{$envio[0]->direccion }} </span></td>
+                                                <td colspan="6" class=" text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Direccion: {{$envio[0]->direccion }} </span></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6" class=" text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> Fecha de entrega: {{ \Carbon\Carbon::parse($envio[0]->fecha_entrega)->translatedFormat('j \d\e F') }}  </span></td>
+                                                <td colspan="6" class=" text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Fecha de entrega: {{ \Carbon\Carbon::parse($envio[0]->fecha_entrega)->translatedFormat('j \d\e F') }}  </span></td>
                                             </tr>
 
                                             @if($envio[0]->tipo == 'Casillero')
