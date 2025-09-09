@@ -77,7 +77,7 @@ if(tipo=='suelto'){
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Preparación por zona</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Preparacion por punto</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -100,7 +100,7 @@ if(tipo=='suelto'){
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Preparación por zona</li>
+                                <li class="breadcrumb-item text-muted">Preparacion por punto</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -128,20 +128,21 @@ if(tipo=='suelto'){
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <form action="/stocks/preparaciondatos" class="row g-2" method="GET">
-                                                   
-                                        <div class="col-auto">
-                                            <label for="guia" class="visually-hidden">Guía</label>
-                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia" required autofocus>
-                                           
-                                            
-                                        </div>
-                                        <div class="col-auto">
+                                     <form action="/stocks/preparaciondatos" id="kt_invoice_form" method="POST"> 
+                                    @csrf
+                                    @method('GET')
+                                <div class="row mb-7">
+                                    <div class="col-auto">
+                                        <input type="text" class="form-control form-control-solid" name="guia" id="guia" placeholder="# de guia" required autofocus />
+                                     
+                                        <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                    </div>
+                                    <div class="col-auto">
                                             <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                                         
+                                            <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
                                         </div>
-
-                                    </form>
+                                        </div>
+                                </form>
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
@@ -159,9 +160,7 @@ if(tipo=='suelto'){
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
-                                            Asignar en lote
-                                        </button>
+                                      
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -220,7 +219,7 @@ if(tipo=='suelto'){
                                                 <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Zona: {{$pedido->zona }}   </span></td>
                                             </tr>
                                             <tr>
-                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Ruta: {{$pedido->ruta }}   </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Punto: {{$pedido->punto }}   </span></td>
                                             </tr>
                                             <tr>
                                                 <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 25px; "><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;"> Fecha de entrega: {{ \Carbon\Carbon::parse($envio[0]->fecha_entrega)->translatedFormat('j \d\e F') }}  </span></td>
@@ -229,7 +228,7 @@ if(tipo=='suelto'){
 
 
                                             <tr>
-                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;">Ubicación: Ruta {{$pedido->nruta}} </span></td>
+                                                <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:75px;"><span style="background-color: {{$pedido->color }}; width: 100%; padding: 10px;">Ubicación: Punto {{$pedido->nfijo}} </span></td>
                                             </tr>
 
                                            
@@ -240,7 +239,7 @@ if(tipo=='suelto'){
                                             @endforeach
 
                                             @if($envio[0]->tipo !== 'Punto fijo')
-
+                                            <!-- Empty list item to push elements to the right 
                                            
                                             <tr>
                                                 <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
@@ -256,8 +255,9 @@ if(tipo=='suelto'){
                                             <tr>
                                                 <td colspan="6" class="text-center text-gray-800" style="font-weight:bolder; font-size: 50px; padding-top:15px;"><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->direccion}} </span></td>
                                             </tr>
+                                           
                                             @endif
-                                            
+                                             -->
                                             @endif
 
 

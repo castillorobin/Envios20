@@ -53,7 +53,7 @@
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Preparación por zona</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Preparacion por punto</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -76,7 +76,7 @@
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Preparación por zona</li>
+                                <li class="breadcrumb-item text-muted">Preparacion por punto</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -105,19 +105,19 @@
                                 <div class="card-title">
                                     <!--begin::Search-->
                                     
-                                <form action="/stocks/puntodatos" id="kt_invoice_form" method="POST"> 
+                                <form action="/stocks/preparaciondatos" id="kt_invoice_form" method="POST"> 
                                     @csrf
                                     @method('GET')
                                 <div class="row mb-7">
-                                    <div class="form-floating col-lg-10 mb-4">
+                                    <div class="col-auto">
                                         <input type="text" class="form-control form-control-solid" name="guia" id="guia" placeholder="# de guia" required autofocus />
-                                        <label for="rack" style="padding-left: 25px;"># de guia</label>
+                                     
                                         <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                     </div>
-                                    <div class="form-floating col-lg-2 mb-4">
-                                        <button type="submit" class="btn btn-primary btn-kg">Buscar</button>
-                                        
-                                    </div>
+                                    <div class="col-auto">
+                                            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
+                                            <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
+                                        </div>
                                 </form>
                                 </div>
                                 

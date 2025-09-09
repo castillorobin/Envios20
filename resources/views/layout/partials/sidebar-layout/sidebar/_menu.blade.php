@@ -437,7 +437,16 @@
         <div class="menu-item">
           <a href="{{ url('/stocks/seleccionarpunto') }}" class="menu-link py-3 {{ request()->is('stocks/seleccionarpunto') ? 'active' : '' }}">
             <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-            <span class="menu-title">Selección de paquetería</span>
+            <span class="menu-title">Preparación por zona</span>
+          </a>
+        </div>
+        
+      </div>
+       <div class="menu-sub menu-sub-accordion">
+        <div class="menu-item">
+          <a href="{{ url('/stocks/preparacionpunto') }}" class="menu-link py-3 {{ request()->is('stocks/preparacionpunto') ? 'active' : '' }}">
+            <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+            <span class="menu-title">Preparación por punto</span>
           </a>
         </div>
         

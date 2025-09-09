@@ -104,6 +104,11 @@ Route::get('/stocks/seleccionarpunto', function () {
     return view('ruta.listapuntos', compact('nota'));
 });
 
+Route::get('/stocks/preparacionpunto', function () {
+    $nota = " ";
+    return view('ruta.preparacionpunto', compact('nota'));
+});
+
 Route::get('/envios/registroconguia', function () {
     $nota = " ";
     return view('envios.registroconguia', compact('nota'));
@@ -276,6 +281,9 @@ Route::get('/envios/entregadatos', [App\Http\Controllers\EntregaController::clas
 Route::get('/stocks/seleccionarzona', [App\Http\Controllers\StockController::class, 'index'] )->name('indexstock') ;
 Route::get('/stocks/zonadatos', [App\Http\Controllers\StockController::class, 'zonadatos'] )->name('zonadatos') ;
 Route::get('/stocks/puntodatos', [App\Http\Controllers\StockController::class, 'puntodatos'] )->name('puntodatos') ;
+Route::get('/stocks/preparaciondatos', [App\Http\Controllers\StockController::class, 'preparaciondatos'] )->name('preparaciondatos') ;
+
+
 Route::get('/stocks/agregarguia', [App\Http\Controllers\StockController::class, 'agregarguia'] )->name('agregarguia') ;
 Route::get('/stocks/agregarmasguia', [App\Http\Controllers\StockController::class, 'agregarmasguia'] )->name('agregarmasguia') ;
 Route::get('/stocks/guardarasignar', [App\Http\Controllers\StockController::class, 'guardarasignar'] )->name('guardarasignar') ;

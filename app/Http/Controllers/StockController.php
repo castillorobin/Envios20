@@ -203,7 +203,7 @@ return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios', 'rep
 
 */
     } 
-
+ 
     public function puntodatos(Request $request)
     {
         $id = $request->get('guia') ;
@@ -219,6 +219,24 @@ return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios', 'rep
         $pedidos = Rutas::where('id', $idpunto)->get();
         $nota = " ";
         return view('ruta.listapuntosdatos', compact('envio', 'pedidos', 'nota'));
+
+    }
+
+    public function preparaciondatos(Request $request)
+    {
+        $id = $request->get('guia') ;
+        $envio = Envio::where('guia', $id)->get();
+        if($envio->isEmpty()){
+            //dd("no hay envio"); 
+            $nota = "La Guía que se ingreso no existe"; 
+            return view('ruta.preparacionpunto', compact('nota'));
+
+        }
+
+        $idpunto = $envio[0]->punto;
+        $pedidos = Rutas::where('id', $idpunto)->get();
+        $nota = " ";
+        return view('ruta.preparacionpuntodatos', compact('envio', 'pedidos', 'nota'));
 
     }
 
