@@ -118,13 +118,13 @@ if(tipo=='suelto'){
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid">
+                <div id="kt_app_content" class="content flex-column-fluid">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="">
+                    <div id="kt_content_container" class="">
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                            <div class="card-header align-items-center ">
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
@@ -172,7 +172,7 @@ if(tipo=='suelto'){
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
 
 
                                 <!--begin::Table-->
