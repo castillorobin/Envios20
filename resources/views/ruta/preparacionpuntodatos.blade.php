@@ -171,7 +171,7 @@ if(tipo=='suelto'){
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
 
 
                                 <!--begin::Table-->
@@ -269,14 +269,7 @@ if(tipo=='suelto'){
                                     
                                 </div>
                                 <div class="row mt-7">
-                                    <div class="col-12" >
-                                        <ul class="pagination"style="float: right;" >
-                                            <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                            <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                            <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                        </ul>
-                                    </div>
+                                  
                                 </div>
 
                                 <div class="row mt-7">

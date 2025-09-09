@@ -383,7 +383,7 @@
   // SOLO las rutas que son realmente del módulo "Control de stock"
   $stockRoutes = [
     'stocks/seleccionarpunto',
-    'stocks/agregarfoto',
+    'stocks/preparacionpunto',
     'stocks/asignar',
     'stocks/cambiar',
     'stocks/asignarrepartidor',
@@ -405,7 +405,7 @@
   $inStock  = request()->is($stockRoutes)
             && !request()->is($stockExcluded);
 
-  $inSelec = request()->is(['stocks/seleccionarpunto', 'stocks/agregarfoto']);
+  $inSelec = request()->is(['stocks/seleccionarpunto', 'stocks/preparacionpunto']);
   $inUbic  = request()->is(['stocks/asignar', 'stocks/cambiar']);
   $inAsig  = request()->is([
     'stocks/asignarrepartidor',

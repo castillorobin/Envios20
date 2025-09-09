@@ -128,7 +128,7 @@ if(tipo=='suelto'){
                                 <!--begin::Card title-->
                                 <div class="card-title">
                                     <!--begin::Search-->
-                                    <form action="/stocks/preparaciondatos" class="row g-2" method="GET">
+                                    <form action="/stocks/puntodatos" class="row g-2" method="GET">
                                                    
                                         <div class="col-auto">
                                             <label for="guia" class="visually-hidden">Guía</label>
@@ -159,9 +159,7 @@ if(tipo=='suelto'){
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
-                                            Asignar en lote
-                                        </button>
+                                       
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -172,7 +170,7 @@ if(tipo=='suelto'){
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
 
 
                                 <!--begin::Table-->
@@ -269,14 +267,7 @@ if(tipo=='suelto'){
                                     
                                 </div>
                                 <div class="row mt-7">
-                                    <div class="col-12" >
-                                        <ul class="pagination"style="float: right;" >
-                                            <li style="margin-left:auto"></li> <!-- Empty list item to push elements to the right -->
-                                            <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                            <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                            <li class="page-item next"><a href="#" class="page-link">Next</a></li>
-                                        </ul>
-                                    </div>
+                                 
                                 </div>
 
                                 <div class="row mt-7">
