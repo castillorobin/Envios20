@@ -239,7 +239,7 @@ if(tipo=='suelto'){
                                             @endforeach
 
                                             @if($envio[0]->tipo !== 'Punto fijo')
-                                            <!-- Empty list item to push elements to the right 
+                                    
                                            
                                             <tr>
                                                 <td colspan="6" class="text-gray-800" style="font-weight:bolder; font-size: 50px; "><span style="background-color: yellow; width: 100%; padding: 10px;"> {{$envio[0]->tipo}} </span></td>
@@ -257,7 +257,7 @@ if(tipo=='suelto'){
                                             </tr>
                                            
                                             @endif
-                                             -->
+                                            
                                             @endif
 
 
