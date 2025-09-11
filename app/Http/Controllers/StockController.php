@@ -72,6 +72,39 @@ class StockController extends Controller
 
          }
 
+    public function repartidorfiltroestado(Request $request) 
+    {
+        $id = $request->input('idrepa');
+        $filtro = $request->input('filtro');
+        
+
+        if ($filtro == 'asignado') {
+            $envios = Envio::whereHas('empleados', function ($q) use ($id) {
+                    $q->where('empleados.id', $id);
+                })
+                
+                ->with(['empleados:id,nombre']) // opcional, para evitar N+1
+                ->get();
+        }else {
+            $envios = Envio::whereHas('empleados', function ($q) use ($id) {
+                    $q->where('empleados.id', $id);
+                })->where('entregadopor', $id)
+                
+                ->with(['empleados:id,nombre']) // opcional, para evitar N+1
+                ->get();
+        }
+
+
+        $nota = " ";
+       
+        $user = Empleado::query()->find($id);
+        return view('stocks.repartidorview', compact('user', 'nota', 'envios')); 
+
+    }
+
+
+         
+
     public function paquetesasignadosdatos222(Request $request) 
     {
         /*
