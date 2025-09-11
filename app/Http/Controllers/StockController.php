@@ -46,8 +46,16 @@ class StockController extends Controller
         $empleados = Empleado::all(); 
         return view('stocks.paquetesasignados', compact('empleados')); 
     }
-
+    
     public function paquetesasignadosdatos(Request $request) 
+    {
+        $nota = " ";
+        $usuarios = Empleado::all(); 
+        return view('stocks.repartidorlista', compact('usuarios', 'nota')); 
+
+         }
+
+    public function paquetesasignadosdatos222(Request $request) 
     {
         /*
         $rango = $request->input('rango');
@@ -131,6 +139,7 @@ class StockController extends Controller
 $empleados = Empleado::all(); 
 $repa = Empleado::query()->find($empleadoId);
 //dd($repa);
+
 
 return view('stocks.paquetesasignadosdatos', compact('empleados', 'envios', 'repa')); 
 

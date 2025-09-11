@@ -109,7 +109,7 @@ cb(start, end);
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="#" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -177,9 +177,28 @@ cb(start, end);
             </div>
             <!--end::Flatpickr-->
 
-           
+            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
+                                                   <select class="form-select form-select-solid mi-selector" name="repartidor" id="repartidor"  >
+                                                    
+                                                    @foreach ($empleados as $empleado)
+                                                    <option value="{{$empleado->id}}" >{{$empleado->nombre}} </option>
+                                                    @endforeach
+                                                </select>
+                                             
 
-         
+
+            </div>
+
+            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
+                                                   <select class="form-select form-select-solid mi-selector" name="camino" id="camino"  >
+                                                    <option value="Asignados" style="height: 60px;">Asignados</option>
+                                                    <option value="Entregados" style="height: 60px;">Entregados</option>
+                                                  
+                                                </select>
+                                             
+
+
+            </div>
 
             <!--begin::Add product-->
                <button type="submit" class="btn btn-primary ">Filtrar</button>
