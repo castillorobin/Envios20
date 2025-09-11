@@ -66,7 +66,7 @@ class StockController extends Controller
                 ->get();
 
         $nota = " ";
-        $usuarios = Empleado::all(); 
+       
         $user = Empleado::query()->find($id);
         return view('stocks.repartidorview', compact('user', 'nota', 'envios')); 
 
