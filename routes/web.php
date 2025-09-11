@@ -328,6 +328,8 @@ Route::get('/stocks/detallepick/{id}', [App\Http\Controllers\StockController::cl
 Route::get('/stocks/realizado/{id}', [App\Http\Controllers\StockController::class, 'realizado'] )->name('realizado');
 Route::get('/stocks/filtrarpicking', [App\Http\Controllers\StockController::class, 'filtrarpicking'] )->name('filtrarpicking');
 
+Route::get('/repartidor/vista/{id}', [App\Http\Controllers\StockController::class, 'vistarepartidor'] )->name('vistarepartidor');
+
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;

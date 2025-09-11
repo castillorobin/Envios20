@@ -55,6 +55,23 @@ class StockController extends Controller
 
          }
 
+         public function vistarepartidor($id) 
+    {
+
+        $envios = Envio::whereHas('empleados', function ($q) use ($id) {
+                    $q->where('empleados.id', $id);
+                })
+                
+                ->with(['empleados:id,nombre']) // opcional, para evitar N+1
+                ->get();
+
+        $nota = " ";
+        $usuarios = Empleado::all(); 
+        $user = Empleado::query()->find($id);
+        return view('stocks.repartidorview', compact('user', 'nota', 'envios')); 
+
+         }
+
     public function paquetesasignadosdatos222(Request $request) 
     {
         /*
