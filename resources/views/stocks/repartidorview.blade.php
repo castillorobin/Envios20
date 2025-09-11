@@ -325,13 +325,15 @@ function verificarPasswords() {
                                                             <td>Agencia</td>
                                                             
                                                         </tr>
-                                                        @foreach ($envios as $envio)
+                                                             @foreach ($envios as $envio)
+                                                             @if ($envio->entregadopor == $user->id)
                                                         <tr>
-                                                           <td></td>
-                                                            <td></td>
-                                                            <td></td>
-                                                            <td></td>
+                                                           <td>{{ $envio->comercio }}</td>
+                                                            <td>{{ $envio->direccion }}</td>
+                                                            <td>{{ $envio->destinatario }}</td>
+                                                            <td>{{ $envio->agenciaubi }}</td>
                                                         </tr>
+                                                        @endif
                                                         @endforeach
                                                     </tbody>
                                                 </table>
