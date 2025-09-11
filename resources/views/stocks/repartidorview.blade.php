@@ -213,7 +213,11 @@ function verificarPasswords() {
                                             </div>
                                           
                                             <!--begin::Details item-->
+                                            
                                         </div>
+                                        <a href="/stocks/paquetesasignados">
+                                        <button type="button" class="btn btn-secondary" style="float:right;">Cancelar</button>
+                                        </a>
                                     </div>
                                     <!--end::Details content-->
                                 </div>
