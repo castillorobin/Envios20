@@ -343,7 +343,7 @@ Route::get('/stocks/guardarfoto', [App\Http\Controllers\StockController::class, 
 Route::get('/guardandofoto', [App\Http\Controllers\StockController::class, 'guardandofoto'] )->name('guardandofoto');
 Route::get('/repartidorfiltroestado', [App\Http\Controllers\StockController::class, 'repartidorfiltroestado'] )->name('repartidorfiltroestado');
 Route::get('/repartidor/exportarlista', [App\Http\Controllers\StockController::class, 'repartidorlistapdf'] )->name('repartidorlistapdf');
-
+Route::get('/reportes/repartidor/excel', [App\Http\Controllers\StockController::class, 'repartidorlistaexcel'])->name('reportes.repartidor.excel');
 
 
 Route::get('/ruta/editar/{id}', [App\Http\Controllers\RutaController::class, 'editarruta'] )->name('editarruta') ;

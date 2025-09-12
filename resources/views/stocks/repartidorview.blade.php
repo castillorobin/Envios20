@@ -308,10 +308,18 @@ if (searchText == "") {
                                     <!--begin::Menu-->
                                     <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
                                        
-                                        <!--end::Menu item-->
+                                        <!--end::Menu /reportes/repartidor/excel   item    -->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                             <form action="/reportes/repartidor/excel" method="GET" >
+
+                                                <input type="text" value="{{ $estado }}" name="estado" hidden>
+                                        <input type="text" value="{{ $user->id }}" name="repaid" hidden>
+
+                                            <button type="submit" class="btn btn-outline-primary"  >Exportar a Excel</button>
+
+                                            </form >
+
                                         </div>
                                         <!--end::Menu item-->
                                      

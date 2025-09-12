@@ -21,6 +21,9 @@ use App\Models\Agencia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use PDF; 
+use App\Exports\RepartidorListaExport;
+use Maatwebsite\Excel\Facades\Excel;
+
 
 class StockController extends Controller
 {
@@ -131,14 +134,37 @@ class StockController extends Controller
 $user = Empleado::query()->find($id);
         $pdf = PDF::loadView('reportes.exportarrepalista', ['user'=>$user, 'pedidos'=>$pedidos])->setPaper('letter', 'landscape');
        
-      //  $customPaper = array(0,0,360,750);
-       
-      //  $pdf->setPaper($customPaper );
         return $pdf->stream();
-     
-       // return view('stocks.repartidorview', compact('user', 'nota', 'envios', 'estado')); 
+
+
 
     }
+
+
+    public function repartidorlistaexcel(Request $request)
+{
+    $id = $request->input('repaid');
+    $filtro = $request->input('estado');
+
+    if ($filtro == 'asignado') {
+        $pedidos = Envio::whereHas('empleados', fn($q) => $q->where('empleados.id', $id))
+            ->with(['empleados:id,nombre'])
+            ->get();
+        $estado = "asignado";
+    } else {
+        $pedidos = Envio::whereHas('empleados', fn($q) => $q->where('empleados.id', $id))
+            ->where('entregadopor', $id)
+            ->with(['empleados:id,nombre'])
+            ->get();
+        $estado = "entregado";
+    }
+
+    $user = Empleado::query()->find($id);
+    $usuarioSistema = Auth::user()->name ?? '—';
+
+    $filename = 'reporte_repartidor_' . $user->nombre . '_' . date('Ymd_His') . '.xlsx';
+    return Excel::download(new RepartidorListaExport($pedidos, $user, $estado, $usuarioSistema), $filename);
+}
 
 
 
