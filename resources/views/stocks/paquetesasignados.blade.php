@@ -91,7 +91,7 @@ cb(start, end);
 </script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
-<input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
+
     <x-default-layout>
     <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
@@ -132,7 +132,7 @@ cb(start, end);
                             <!--end::Breadcrumb-->
                         </div>
                         <!--end::Page title-->
-
+<input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
                         <!--begin::Actions-->
                         
                         <!--end::Actions-->
@@ -195,7 +195,7 @@ cb(start, end);
                          
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 630px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px;  ">
 
 
                                 <!--begin::Table-->

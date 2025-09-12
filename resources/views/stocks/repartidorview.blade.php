@@ -128,16 +128,14 @@ if (searchText == "") {
 
     <x-default-layout>
 
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
-
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
-            <div class="d-flex flex-column flex-column-fluid">
-
+           <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid">
+                <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container">
-                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
+                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
+                        <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de repartidor</h1>
                            <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
@@ -157,7 +155,9 @@ if (searchText == "") {
                                 
                             </ul>
                         </div>
-                        
+                        </div>
+                         </div>
+                         
                         <div class="row m-1 rounded" style="background-color:white; min-height: 100px; display: flex; align-items: center;">
                             <div class="col-md-3 m-2 mb-4">
                                <h2>Repartidor: {{ $user->nombre }}</h2>
@@ -173,7 +173,9 @@ if (searchText == "") {
                             </div>
                         </div>
 
-                        <br>
+ <br>
+
+                       
                         <!--begin::Products-->
                         <div class="card card-flush">
                             <!--begin::Card header-->
@@ -237,7 +239,7 @@ if (searchText == "") {
                             </div>
                             <!--end::Card header       fs-8 -->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0 " style="background-color:white; min-height: 450px;  ">
+                            <div class="card-body pt-0 " style="background-color:white; min-height: 610px;  ">
                                 <!--begin::Table-->
                                 <div class="table-responsive" >
                                     <table  class="table align-middle table-row-dashed fs-6 gy-5" style="font-size: 12px;" id="kt_ecommerce_report_shipping_table">
