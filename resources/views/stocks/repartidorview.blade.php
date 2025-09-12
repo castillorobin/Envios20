@@ -316,8 +316,16 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                      
                                         <!--begin::Menu item-->
-                                        <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf">Exportar a PDF</a>
+                                         <div class="menu-item px-3">
+                                             <form action="/repartidor/exportarlista" method="GET" target="_blank">
+
+                                                <input type="text" value="{{ $estado }}" name="estado" hidden>
+                                        <input type="text" value="{{ $user->id }}" name="repaid" hidden>
+
+                                            <button type="submit" class="btn btn-outline-primary"  >Exportar a PDF</button>
+
+                                            </form >
+
                                         </div>
                                         <!--end::Menu item-->
                                     </div>

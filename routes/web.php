@@ -342,7 +342,7 @@ Route::get('/stocks/agregarguiafoto', [App\Http\Controllers\StockController::cla
 Route::get('/stocks/guardarfoto', [App\Http\Controllers\StockController::class, 'guardarfoto'] )->name('aguardarfoto');
 Route::get('/guardandofoto', [App\Http\Controllers\StockController::class, 'guardandofoto'] )->name('guardandofoto');
 Route::get('/repartidorfiltroestado', [App\Http\Controllers\StockController::class, 'repartidorfiltroestado'] )->name('repartidorfiltroestado');
-
+Route::get('/repartidor/exportarlista', [App\Http\Controllers\StockController::class, 'repartidorlistapdf'] )->name('repartidorlistapdf');
 
 
 

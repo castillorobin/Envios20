@@ -63,12 +63,8 @@
    <hr>
       <span>Usuario: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
    <br>
-<span>Repartidor: {{ $pedidos[0]->repartidor }}</span>
-<br>
+<span>Repartidor: {{ $user->nombre }}</span>
 
-<span>Ticket: {{ $pedidos[0]->pagoticket }}</span>
-<br>
-<span>Cantidad de Guias: {{ $cantidad }}</span>
 <p></p>
 
 
@@ -89,29 +85,24 @@
             </th>
             
             <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="2" rowspan="1" colspan="1" aria-label="No. Orders Refunded: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Usuario</span><span class="dt-column-order"></span>
+                <span class="dt-column-title" role="button">Direccion</span><span class="dt-column-order"></span>
             </th>
             
             <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="3" rowspan="1" colspan="1" aria-label="No. Orders Replaced: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Agencia</span><span class="dt-column-order"></span>
+                <span class="dt-column-title" role="button">Tipo</span><span class="dt-column-order"></span>
             </th>
             
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Fecha de entrega</span><span class="dt-column-order"></span>
+            </th>
             <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Estado</span><span class="dt-column-order"></span>
             </th>
-            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Estado del pago</span><span class="dt-column-order"></span>
-            </th>
-            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Tipo</span><span class="dt-column-order"></span>
-            </th>
+       
             <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
                 <span class="dt-column-title" role="button">Total</span><span class="dt-column-order"></span>
             </th>
-            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
-                <span class="dt-column-title" role="button">Fecha</span><span class="dt-column-order"></span>
-            </th>
-            
+           
         </tr>
 </thead>
 <tbody >
@@ -121,14 +112,14 @@
     <td class="text-center">{{ $pedido->guia }}</td>
     <td class="text-center">{{ $pedido->comercio }}</td>
     <td  >{{ $pedido->destinatario }}</td>
-    <td >{{ $pedido->usuario }}</td>
+    <td >{{ $pedido->direccion }}</td>
 
-    <td >{{ $pedido->agencia }}</td>
+    <td >{{ $pedido->tipo }}</td>
+    <td > {{  date('d/m/Y', strtotime($pedido->fecha_entrega))}}</td>
     <td > {{ $pedido->estado }}</td>
-    <td > {{ $pedido->pago }}</td>
-    <td class="text-center">{{ $pedido->tipo }}</td>
+   
     <td  >${{ $pedido->total }}</td>
-    <td > {{  date('d/m/Y', strtotime($pedido->created_at))}}</td>
+   
     
     
 </tr>
@@ -152,11 +143,6 @@
    <tr  >
    <td>&nbsp;</td>
   
-       <td >  
-       Total Pagado:  $ {{ $total }}
-       <br>
-     
-    </td>
         
    </tr>
   </table>   

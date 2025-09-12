@@ -20,6 +20,7 @@ use Carbon\Carbon;
 use App\Models\Agencia;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use PDF; 
 
 class StockController extends Controller
 {
@@ -66,9 +67,9 @@ class StockController extends Controller
                 ->get();
 
         $nota = " ";
-       
+       $estado = "asignado";
         $user = Empleado::query()->find($id);
-        return view('stocks.repartidorview', compact('user', 'nota', 'envios')); 
+        return view('stocks.repartidorview', compact('user', 'nota', 'envios', 'estado')); 
 
          }
 
@@ -85,6 +86,7 @@ class StockController extends Controller
                 
                 ->with(['empleados:id,nombre']) // opcional, para evitar N+1
                 ->get();
+                $estado = "asignado";
         }else {
             $envios = Envio::whereHas('empleados', function ($q) use ($id) {
                     $q->where('empleados.id', $id);
@@ -92,15 +94,59 @@ class StockController extends Controller
                 
                 ->with(['empleados:id,nombre']) // opcional, para evitar N+1
                 ->get();
+                $estado = "entregado";
         }
 
 
         $nota = " ";
        
         $user = Empleado::query()->find($id);
-        return view('stocks.repartidorview', compact('user', 'nota', 'envios')); 
+        return view('stocks.repartidorview', compact('user', 'nota', 'envios', 'estado')); 
 
     }
+
+    public function repartidorlistapdf(Request $request) 
+    {
+        $id = $request->input('repaid');
+        $filtro = $request->input('estado');
+        
+
+        if ($filtro == 'asignado') {
+            $pedidos = Envio::whereHas('empleados', function ($q) use ($id) {
+                    $q->where('empleados.id', $id);
+                })
+                
+                ->with(['empleados:id,nombre']) // opcional, para evitar N+1
+                ->get();
+                $estado = "asignado";
+        }else {
+            $pedidos = Envio::whereHas('empleados', function ($q) use ($id) {
+                    $q->where('empleados.id', $id);
+                })->where('entregadopor', $id)
+                
+                ->with(['empleados:id,nombre']) // opcional, para evitar N+1
+                ->get();
+                $estado = "entregado";
+        }
+$user = Empleado::query()->find($id);
+        $pdf = PDF::loadView('reportes.exportarrepalista', ['user'=>$user, 'pedidos'=>$pedidos])->setPaper('letter', 'landscape');
+       
+      //  $customPaper = array(0,0,360,750);
+       
+      //  $pdf->setPaper($customPaper );
+        return $pdf->stream();
+     
+       // return view('stocks.repartidorview', compact('user', 'nota', 'envios', 'estado')); 
+
+    }
+
+
+
+
+
+
+     
+
 
 
          
