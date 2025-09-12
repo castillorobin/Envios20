@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reporte de recepcion</title>
+    <title>Reporte de repartidor</title>
     
 </head>
 <body>
@@ -35,7 +35,7 @@
             
      
            
-           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Reporte de recepcion</span> </div>
+           <div class="margenint " style="background-color: black; color:white; width:100%;">  <span style="background-color: black; color:white; width:100%;">Reporte de repartidorcambo</span> </div>
            
            <br>
            <span>Centro Comercial Metrogaleria
