@@ -105,6 +105,7 @@
            
         </tr>
 </thead>
+<input type="text" value="{{ $total = 0 }}" style="display: none;">
 <tbody >
     @foreach($pedidos as $pedido)
     <tr class="'table-row-gray' : 'table-row-white' " style="font-size:12px;">
@@ -123,7 +124,7 @@
     
     
 </tr>
-
+<input type="text" value="{{ $total = $pedido->total + $total }}" style="display: none;">
     @endforeach
 </tbody>
 </table>
@@ -136,13 +137,13 @@
 <tr >
        <td style="width:85%; ">&nbsp;</td>
        
-       <td >  </td>
+       <td >   Total cobrado: ${{ $total }}</td>
        
    </tr>
 
    <tr  >
-   <td>&nbsp;</td>
-  
+   <td>&nbsp; </td>
+
         
    </tr>
   </table>   

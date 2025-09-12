@@ -127,7 +127,7 @@ class RepartidorListaExport implements
             // --- Total general ---
             $totalRow = 10 + $this->pedidos->count() + 1;
             $s->mergeCells("A{$totalRow}:G{$totalRow}");
-            $s->setCellValue("A{$totalRow}", 'Total general:');
+            $s->setCellValue("A{$totalRow}", 'Total cobrado:');
             $s->setCellValue("H{$totalRow}", $this->pedidos->sum('total'));
 
             // Alineamos el texto a la derecha
