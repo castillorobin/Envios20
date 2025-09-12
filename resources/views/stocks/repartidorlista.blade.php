@@ -225,7 +225,7 @@ document.getElementById("valores").value = nombre;
                         <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
                             <!--begin::Table-->
                         
-                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_table_users">
+                            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                                 <thead>
                                     <tr class="text-start text-muted fw-bold fs-7 text-uppercase gs-0">
                                         <th class="w-10px pe-2">
@@ -540,6 +540,7 @@ document.getElementById("valores").value = nombre;
 <!--end::Global Javascript Bundle-->
 <!--begin::Vendors Javascript(used for this page only)-->
 <script src="assets/plugins/custom/datatables/datatables.bundle.js"></script>
+<script src="assets/js/custom/apps/ecommerce/reports/shipping/shipping.js"></script>
 <!--end::Vendors Javascript-->
 <!--begin::Custom Javascript(used for this page only)-->
 <script src="assets/js/custom/apps/user-management/users/list/table.js"></script>

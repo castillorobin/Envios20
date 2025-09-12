@@ -739,7 +739,7 @@ if (searchText == "") {
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
 
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+  
 
 
 
