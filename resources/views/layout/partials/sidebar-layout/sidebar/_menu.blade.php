@@ -390,7 +390,7 @@
     'stocks/asignarrepartidorcaja',
     'stocks/buscarcaja',
     'stocks/paquetesasignados',
-    'stocks/asignarestado',
+   
     // si "asignar devolución" tiene ruta propia, ponla aquí:
     'stocks/asignar-devolucion',
   ];
@@ -398,7 +398,8 @@
   // Rutas que NO deben abrir "Control de stock" (pertenecen a otras secciones)
   $stockExcluded = [
     'stocks/entreganoret',     // Devoluciones
-    'stocks/reportedevo',      // Reportes
+    'stocks/reportedevo',
+        // Reportes
     // agrega aquí cualquiera otra bajo /stocks/ que pertenezca a otra sección
   ];
 
@@ -520,18 +521,15 @@
             <span class="menu-title">Reporte de repartidor</span>
           </a>
         </div>
-        <div class="menu-item">
-          <a class="menu-link py-3 {{ request()->is('stocks/asignarestado') ? 'active' : '' }}" href="{{ url('/stocks/asignarestado') }}">
-            <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-            <span class="menu-title">Asignar No retirado</span>
-          </a>
-        </div>
+        
+<!--begin::Menu item
         <div class="menu-item">
           <a class="menu-link py-3 {{ request()->is('stocks/*devolucion*') ? 'active' : '' }}" href="{{ url('/') }}">
             <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
             <span class="menu-title">Asignar devolución</span>
           </a>
         </div>
+-->
       </div>
     </div>
   </div>
@@ -581,7 +579,7 @@
 
 			
 			@php
-  $inDevo = request()->is('stocks/entreganoret');
+  $inDevo = request()->is('stocks/entreganoret') || request()->is('stocks/asignarestado');
 @endphp
 
 <div data-kt-menu-trigger="click" id="menu-item-devo" class="menu-item menu-accordion {{ $inDevo ? 'here show' : '' }}">
@@ -599,6 +597,15 @@
       </a>
     </div>
   </div>
+
+  <div class="menu-sub menu-sub-accordion">
+          <a class="menu-link {{ request()->is('stocks/asignarestado') ? 'active' : '' }}" href="{{ url('/stocks/asignarestado') }}">
+            <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+            <span class="menu-title">No retirados</span>
+          </a>
+        </div>
+
+
 </div>
 
 
