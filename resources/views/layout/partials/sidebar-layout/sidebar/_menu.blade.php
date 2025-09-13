@@ -526,12 +526,14 @@
             <span class="menu-title">Asignar No retirado</span>
           </a>
         </div>
+<!--begin::Menu item
         <div class="menu-item">
           <a class="menu-link py-3 {{ request()->is('stocks/*devolucion*') ? 'active' : '' }}" href="{{ url('/') }}">
             <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
             <span class="menu-title">Asignar devolución</span>
           </a>
         </div>
+-->
       </div>
     </div>
   </div>
