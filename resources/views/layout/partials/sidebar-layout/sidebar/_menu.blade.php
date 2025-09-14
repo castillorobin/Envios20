@@ -579,7 +579,7 @@
 
 			
 			@php
-  $inDevo = request()->is('stocks/entreganoret') || request()->is('stocks/asignarestado');
+  $inDevo = request()->is('stocks/entreganoret') || request()->is('stocks/asignarestado') || request()->is('stocks/cuadrepaquete');   
 @endphp
 
 <div data-kt-menu-trigger="click" id="menu-item-devo" class="menu-item menu-accordion {{ $inDevo ? 'here show' : '' }}">
@@ -603,10 +603,18 @@
             <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
             <span class="menu-title">No retirados</span>
           </a>
-        </div>
+  </div>
+
+  <div class="menu-sub menu-sub-accordion">
+          <a class="menu-link {{ request()->is('stocks/cuadrepaquete') ? 'active' : '' }}" href="{{ url('/stocks/cuadrepaquete') }}">
+            <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+            <span class="menu-title">Cuadre de paquetería</span>
+          </a>
+  </div>
 
 
-</div>
+
+ </div>
 
 
 

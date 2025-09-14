@@ -328,6 +328,10 @@ Route::get('/stocks/detallepick/{id}', [App\Http\Controllers\StockController::cl
 Route::get('/stocks/realizado/{id}', [App\Http\Controllers\StockController::class, 'realizado'] )->name('realizado');
 Route::get('/stocks/filtrarpicking', [App\Http\Controllers\StockController::class, 'filtrarpicking'] )->name('filtrarpicking');
 
+Route::get('/stocks/cuadrepaquete', [App\Http\Controllers\StockController::class, 'cuadrepaquete'] )->name('cuadrepaquete');
+Route::get('/stocks/cuadrepaquetedatos', [App\Http\Controllers\StockController::class, 'cuadrepaquetedatos'] )->name('cuadrepaquetedatos');
+
+
 Route::get('/repartidor/vista/{id}', [App\Http\Controllers\StockController::class, 'vistarepartidor'] )->name('vistarepartidor');
 
 

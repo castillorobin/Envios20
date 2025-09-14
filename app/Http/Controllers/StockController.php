@@ -36,6 +36,39 @@ class StockController extends Controller
         $nota = " ";
         return view('stocks.seleccionarzona', compact('nota')); 
     }
+
+    public function cuadrepaquete() 
+    {
+        
+        $nota = " ";
+        return view('stocks.cuadrepaquete', compact('nota')); 
+    }
+
+    public function cuadrepaquetedatos(Request $request) 
+    {
+        
+        $nota = " ";
+
+        $rango = $request->input('rango');
+       // $usuario = $request->input('usuario');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
+        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+
+        $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+            ->where('estado', 'No entregado')
+            ->get();
+       
+//dd($envios);
+
+        return view('stocks.cuadrepaquetedatos', compact('nota', 'envios')); 
+    }
+
+
+
     public function buscarcaja() 
     {
        
