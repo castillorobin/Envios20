@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\AgenciaController;
+
+use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
 
 /*
@@ -330,7 +332,10 @@ Route::get('/stocks/filtrarpicking', [App\Http\Controllers\StockController::clas
 
 Route::get('/stocks/cuadrepaquete', [App\Http\Controllers\StockController::class, 'cuadrepaquete'] )->name('cuadrepaquete');
 Route::get('/stocks/cuadrepaquetedatos', [App\Http\Controllers\StockController::class, 'cuadrepaquetedatos'] )->name('cuadrepaquetedatos');
-
+Route::get('/cuadrepaquetedatos/reiniciar', function (Request $request) {
+    session()->forget('codigos_excluidos');
+    return redirect()->route('cuadrepaquetedatos', ['rango' => $request->input('rango')]);
+})->name('cuadrepaquetedatos.reiniciar');
 
 Route::get('/repartidor/vista/{id}', [App\Http\Controllers\StockController::class, 'vistarepartidor'] )->name('vistarepartidor');
 

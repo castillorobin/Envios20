@@ -44,28 +44,34 @@ class StockController extends Controller
         return view('stocks.cuadrepaquete', compact('nota')); 
     }
 
-    public function cuadrepaquetedatos(Request $request) 
-    {
-        
-        $nota = " ";
+    public function cuadrepaquetedatos(Request $request)
+{
+    $nota   = " ";
+    $rango  = $request->input('rango');
 
-        $rango = $request->input('rango');
-       // $usuario = $request->input('usuario');
-        $parte1 = Str::of($rango)->explode('-');
-        $fecha1 = $parte1[0];
-        $fecha2 = $parte1[1];
-        //$partenueva1 = Carbon::createFromFormat('m/d/Y',$fecha1)->format('Y-m-d');
-        $fechacam1 = date('Y-m-d', strtotime($fecha1)) ;
-        $fechacam2 = date('Y-m-d', strtotime($fecha2)) ;
+    // Parseo de rango
+    [$fecha1, $fecha2] = array_map('trim', explode('-', $rango));
+    $fechacam1 = date('Y-m-d', strtotime($fecha1));
+    $fechacam2 = date('Y-m-d', strtotime($fecha2));
 
-        $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
-            ->where('estado', 'No entregado')
-            ->get();
-       
-//dd($envios);
+    // Códigos ya ingresados (persistidos en sesión)
+    $codigos_excluidos = session()->get('codigos_excluidos', []);
 
-        return view('stocks.cuadrepaquetedatos', compact('nota', 'envios')); 
+    // ¿Se envió un nuevo código?
+    if ($request->filled('codigo')) {
+        $nuevo = trim($request->input('codigo'));
+        $codigos_excluidos[] = $nuevo;
+        session()->put('codigos_excluidos', $codigos_excluidos);
     }
+
+    // Consulta filtrando los excluidos
+    $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+        ->where('estado', 'No entregado')
+        ->whereNotIn('guia', $codigos_excluidos)
+        ->get();
+
+    return view('stocks.cuadrepaquetedatos', compact('nota', 'envios', 'codigos_excluidos'));
+}
 
 
 

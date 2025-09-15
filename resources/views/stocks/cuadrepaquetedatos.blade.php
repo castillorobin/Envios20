@@ -188,13 +188,13 @@ if (searchText == "") {
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
                 <div id="kt_app_toolbar" class="app-toolbar py-3 py-lg-6">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3">
                             <!--begin::Title-->
@@ -204,7 +204,7 @@ if (searchText == "") {
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
+                                    <a href="#" class="text-muted text-hover-primary">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -215,56 +215,76 @@ if (searchText == "") {
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">Control de stocks</li>
                                 <!--end::Item-->
-
+                                <!--begin::Item-->
                                 <li class="breadcrumb-item">
                                     <span class="bullet bg-gray-400 w-5px h-2px"></span>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">Cuadre de paquetería</li>
+                                <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
                         </div>
-                        <!--end::Page title--> 
-
+                        <!--end::Page title-->
+<input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
                         <!--begin::Actions-->
-                        <div class="d-flex align-items-center gap-2 gap-lg-3">
-      
-                        </div>
+                        
                         <!--end::Actions-->
                     </div>
                     <!--end::Toolbar container-->
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                 <div id="kt_app_content" class="app-content flex-column-fluid">
+                <div id="kt_content" class="content flex-column-fluid " >
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container">
+                    <div id="kt_content_container" class="">
                         <!--begin::Products-->
-                        <div class="card card-flush">
+                        <div class="card card-flush ">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center py-5 gap-2 gap-md-5" data-select2-id="select2-data-123-8u6f">
-        <!--begin::Card title-->
-        <div class="card-title">
-            <form action="/stocks/cuadrepaquetedatosfiltro" method="GET">
-            <!--begin::Search-->
+                            <div class="card-header align-items-center">
+                                <!--begin::Card title-->
+                                 <div class="card-title">
+ <!--begin::Search-->
+           
+           
             <div class="d-flex align-items-center position-relative my-1">
+                <!--end::Search
                  <i class="ki-duotone ki-magnifier fs-3 position-absolute ms-4">
                                             <span class="path1"></span>
                                             <span class="path2"></span>
                                         </i>
 
                                         <input type="search" spellcheck="false" data-ms-editor="true" id="searchTerm" class="dt-input form-control form-control-solid w-200px ps-12" placeholder="Buscar ticket" onkeyup="doSearch()" />
+-->
 
-            </div>
-            <!--end::Search-->
+<!-- Formulario para ingresar guías -->
+<form action="{{ route('cuadrepaquetedatos') }}" method="GET" class="row g-2 align-items-center">
+    <input type="hidden" name="rango" value="{{ request('rango') }}">
+
+    <div class="col-md-6">
+        <input class="form-control form-control-solid" type="text" name="codigo" placeholder="Ingresar guía">
+    </div>
+
+    <div class="col-md-3">
+        <button class="btn btn-primary w-100" type="submit">Verificar</button>
+    </div>
+
+    <div class="col-md-3">
+        <a href="{{ route('cuadrepaquetedatos.reiniciar', ['rango' => request('rango')]) }}" 
+           class="btn btn-danger w-100">
+           Reiniciar
+        </a>
+    </div>
+</form>   </div>
+            
         </div>
         <!--end::Card title-->
-
+<form action="/stocks/cuadrepaquetedatosfiltro" method="GET">
         <!--begin::Card toolbar-->
         <div class="card-toolbar flex-row-fluid justify-content-end gap-5" data-select2-id="select2-data-122-79op">
             <!--begin::Flatpickr-->
-             
+              
             <div class="input-group w-250px">
         <!--begin::Flatpickr    <input class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />   -->
             </div>
