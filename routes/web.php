@@ -337,6 +337,14 @@ Route::get('/cuadrepaquetedatos/reiniciar', function (Request $request) {
     return redirect()->route('cuadrepaquetedatos', ['rango' => $request->input('rango')]);
 })->name('cuadrepaquetedatos.reiniciar');
 
+Route::get('/cuadrepaquetedatos/export/excel', [App\Http\Controllers\StockController::class, 'exportExcel'])
+    ->name('cuadrepaquetedatos.export.excel');
+
+Route::get('/cuadrepaquetedatos/export/pdf', [App\Http\Controllers\StockController::class, 'exportPDF'])
+    ->name('cuadrepaquetedatos.export.pdf');
+
+    
+
 Route::get('/repartidor/vista/{id}', [App\Http\Controllers\StockController::class, 'vistarepartidor'] )->name('vistarepartidor');
 
 

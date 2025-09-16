@@ -23,6 +23,7 @@ use Illuminate\Support\Facades\DB;
 use PDF; 
 use App\Exports\RepartidorListaExport;
 use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\EnviosExport;
 
 
 class StockController extends Controller
@@ -93,6 +94,50 @@ class StockController extends Controller
         ->get();
 
     return view('stocks.cuadrepaquetedatos', compact('nota', 'envios', 'codigos_excluidos'));
+}
+
+public function exportExcel(Request $request)
+{
+
+     [$fechacam1, $fechacam2, $codigos_excluidos] = $this->filtros($request);
+
+    $pedidos = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+        ->where('estado', 'No entregado')
+        ->whereNotIn('guia', $codigos_excluidos)
+        ->get();
+
+    $usuario = Auth::user()->name ?? '—';
+
+    $filename = 'cuadre_paqueteria_' . date('Ymd_His') . '.xlsx';
+    return Excel::download(new EnviosExport($pedidos, $usuario), $filename);
+}
+
+public function exportPDF(Request $request)
+{
+    [$fechacam1, $fechacam2, $codigos_excluidos] = $this->filtros($request);
+
+    $pedidos = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+        ->where('estado', 'No entregado')
+        ->whereNotIn('guia', $codigos_excluidos)
+        ->get();
+
+  
+   $user = Auth::user()->name ?? '—';
+    $pdf = PDF::loadView('reportes.exportarcuadre', ['user'=>$user, 'pedidos'=>$pedidos])->setPaper('letter', 'landscape');
+       
+        return $pdf->stream();
+}
+
+private function filtros(Request $request)
+{
+    $rango = $request->input('rango');
+    [$fecha1, $fecha2] = array_map('trim', explode('-', $rango));
+    $fechacam1 = date('Y-m-d', strtotime($fecha1));
+    $fechacam2 = date('Y-m-d', strtotime($fecha2));
+
+    $codigos_excluidos = session()->get('codigos_excluidos', []);
+
+    return [$fechacam1, $fechacam2, $codigos_excluidos];
 }
 
 
