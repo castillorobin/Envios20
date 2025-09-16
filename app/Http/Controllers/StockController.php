@@ -49,22 +49,44 @@ class StockController extends Controller
     $nota   = " ";
     $rango  = $request->input('rango');
 
-    // Parseo de rango
+    if (!$rango) {
+        return view('stocks.cuadrepaquetedatos', [
+            'nota' => $nota,
+            'envios' => collect([]),
+            'codigos_excluidos' => []
+        ]);
+    }
+
     [$fecha1, $fecha2] = array_map('trim', explode('-', $rango));
     $fechacam1 = date('Y-m-d', strtotime($fecha1));
     $fechacam2 = date('Y-m-d', strtotime($fecha2));
 
-    // Códigos ya ingresados (persistidos en sesión)
     $codigos_excluidos = session()->get('codigos_excluidos', []);
 
-    // ¿Se envió un nuevo código?
+    // 👉 Validar código ingresado
     if ($request->filled('codigo')) {
         $nuevo = trim($request->input('codigo'));
-        $codigos_excluidos[] = $nuevo;
-        session()->put('codigos_excluidos', $codigos_excluidos);
+
+        $existe = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+            ->where('estado', 'No entregado')
+            ->where('guia', $nuevo)
+            ->exists();
+
+        if ($existe) {
+            // Guardar en excluidos si estaba en la lista
+            $codigos_excluidos[] = $nuevo;
+            session()->put('codigos_excluidos', $codigos_excluidos);
+
+            // Mensaje flash
+            session()->flash('mensaje', "La guía {$nuevo} fue encontrada y retirada de la lista.");
+            session()->flash('tipo', 'success');
+        } else {
+            // Mensaje flash de error
+            session()->flash('mensaje', "La guía {$nuevo} no ha sido encontrada en la lista.");
+            session()->flash('tipo', 'danger');
+        }
     }
 
-    // Consulta filtrando los excluidos
     $envios = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
         ->where('estado', 'No entregado')
         ->whereNotIn('guia', $codigos_excluidos)

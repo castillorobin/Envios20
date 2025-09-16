@@ -318,9 +318,14 @@ if (searchText == "") {
                          
                             <!--end::Card header-->
                             <!--begin::Card body-->
+
                             <div class="card-body pt-0" style="background-color:white; min-height: 590px; max-height: 590px; overflow-y: scroll">
 
-
+@if(session('mensaje'))
+    <div class="alert alert-{{ session('tipo') }}">
+        {{ session('mensaje') }}
+    </div>
+@endif
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
@@ -666,7 +671,18 @@ if (searchText == "") {
     
         </script>
 
-
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        let alerta = document.getElementById('alerta-mensaje');
+        if (alerta) {
+            setTimeout(() => {
+                alerta.style.transition = "opacity 0.5s ease";
+                alerta.style.opacity = "0";
+                setTimeout(() => alerta.remove(), 500); // quitar del DOM
+            }, 3000); // 3 segundos
+        }
+    });
+</script>
 
 
 
