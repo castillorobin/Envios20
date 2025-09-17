@@ -95,12 +95,7 @@ function esconder1(){
     document.getElementById('file4l').style.display = '';
 
  };
- function esconder4(){
-    
-    document.getElementById('file4l').style.display = 'none';
-    document.getElementById('file5l').style.display = '';
 
- };
 </script>
 
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
@@ -112,17 +107,17 @@ function esconder1(){
                 <!--begin::Toolbar-->
                 <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Toma de fotografia</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Captura de fotografia</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Inicio</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -139,7 +134,7 @@ function esconder1(){
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
-                                <li class="breadcrumb-item text-muted">Toma de fotografia</li>
+                                <li class="breadcrumb-item text-muted">Captura de fotografia</li>
                                 <!--end::Item-->
                             </ul>
                             <!--end::Breadcrumb-->
@@ -156,34 +151,24 @@ function esconder1(){
                 <!--begin::Content-->
                 <div id="kt_content" class="content flex-column-fluid " >
                     <!--begin::Content container-->
-                    <div id="kt_content_container" class="">
+                    <div id="kt_content_container" class="app-container container-xxl">
                         <!--begin::Products-->
                         <div class="card card-flush ">
                             <!--begin::Card header-->
                             <div class="card-header align-items-center">
                                 <!--begin::Card title-->
-                                <div class="card-title ">
+                                <div class="card-title " style="margin-top: 15px; width: 100%;">
                                     <!--begin::Search-->
                                     
-                                    <form action="/stocks/agregarguiafoto/" class="row g-2" method="GET">
-                                                   
-                                        <div class="col-auto ">
-                                            <label for="guia" class="visually-hidden">Guía</label>
-                                            <input type="text" class="form-control " id="guia" name="guia" placeholder="Buscar guia">
-                                            <input type="text" value="Departamental" class="visually-hidden" name="asignar" id="asignar">
-                                            <input type="text" class="visually-hidden" name="comerci" id="comerci" value="Buscar guia">
-                                        </div>
-                                        <div class="col-auto">
-                                            <button type="submit" class="btn btn-primary mb-3">Buscar</button>
-                                            <span style="font-size:18px; color: red;"> &nbsp; {{ $nota }} &nbsp; </span>
-                                        </div>
-
-                                    </form>
+                                   Captura de fotografia
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
-                                    <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
-                                    <!--end::Export buttons-->
+                                     <div style="width: 80%; text-align: right; margin-top: 15px;">
+    <span style="font-size: 18px; font-weight: bolder;">Guia: {{ $envio[0]->guia }}</span>
+</div>
                                 </div>
+
+                                <hr style="width: 100%; color: #000000ff; height: 2px; background-color: #000000ff; margin-top: 15px;"> 
                                 <!--end::Card title-->
                                 <!--begin::Card toolbar-->
                                 <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
@@ -207,46 +192,59 @@ function esconder1(){
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
+
                             <form action="/guardandofoto" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                                 @csrf
                             @method('GET')
                         
                             <div class="card-body pt-0" style="background-color:white; min-height: 605px;">
 
-                            <span style="font-size: 20px; font-weight: bolder;"> Guia: {{ $envio[0]->guia }}</span>
-                            <input type="text" value="{{ $envio[0]->guia }}" class="visually-hidden" name="guia2" id="guia2">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" value="{{ $envio[0]->guia }}" class="visually-hidden" name="guia2" id="guia2">
                             <br>
-                            <span style="font-size: 12px; font-weight: bolder;"> Comercio: {{ $envio[0]->comercio }}</span>
+                            <span style="font-size: 12px; font-weight: bolder;"> Comercio: </span>
+                            <input type="text" value="{{ $envio[0]->comercio }}" name="comercio2" id="comercio2" class="form-control form-control-solid mb-3 mb-lg-0 " readonly>
                             <br>
-                            <span style="font-size: 12px; font-weight: bolder;"> Destinatario: {{ $envio[0]->destinatario }}</span>
+                            <span style="font-size: 12px; font-weight: bolder;"> Destinatario:</span>
+                            <input type="text" value="{{ $envio[0]->destinatario }}" name="destinatario" id="destinatario" class="form-control form-control-solid mb-3 mb-lg-0 " readonly>
+                            <br>
+                            <span style="font-size: 12px; font-weight: bolder;"> Direccion: </span>
+                            <input type="text" value="{{ $envio[0]->direccion }}" name="direccion" id="direccion" class="form-control form-control-solid mb-3 mb-lg-0 " readonly>
                            
                             <p></p>
-                                <p><input type="file" class="inputfile file-input-control" name="foto1" id="file" onchange="loadFile(event)" onclick="esconder1()" style="">
-                                <label for="file" class="file-input-label" id="file1l"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
+
+                                </div>
+                                <div class="col-md-6 text-center">
+                                     <p><input type="file" class="inputfile file-input-control" name="foto1" id="file" onchange="loadFile(event)" onclick="esconder1()" style="">
+                                <label for="file" class="file-input-label" id="file1l"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
                             </p>
                                 <input type="file" class="inputfile file-input-control" name="foto2" id="file2" onchange="loadFile(event)" onclick="esconder2()">
-                                <label for="file2" class="file-input-label" id="file2l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
+                                <label for="file2" class="file-input-label" id="file2l" style="display: none;"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
 
                                 <input type="file" class="inputfile file-input-control" name="foto3" id="file3" onchange="loadFile(event)" onclick="esconder3()">
-                                <label for="file3" class="file-input-label" id="file3l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
-
-                                <input type="file" class="inputfile file-input-control" name="foto4" id="file4" onchange="loadFile(event)" onclick="esconder4()">
-                                <label for="file4" class="file-input-label" id="file4l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
-
-                                <input type="file" class="inputfile file-input-control" name="foto5" id="file5" onchange="loadFile(event)" >
-                                <label for="file5" class="file-input-label" id="file5l" style="display: none;"><i class="far fa-image" style="color: #fff;"></i> Agregar fotos</label>
-
+                                <label for="file3" class="file-input-label" id="file3l" style="display: none;"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
                                 <p></p>
-                                <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
-                                <p> 
-                                    <a href="/stocks/agregarfoto">
-                                        <button type="button" class="btn btn-danger mb-3" style="float: right; margin-left: 5px;">Limpiar</button>
+                                <a href="/stocks/agregarfoto">
+                                        <button type="button" class="btn btn-danger mb-3" style="margin-left: 5px;">&nbsp;&nbsp; &nbsp;<i class="fas fa-trash-alt"></i> Borrar &nbsp; &nbsp;&nbsp;</button>
                                     </a>
-                                    
-                                    <button type="submit" class="btn btn-primary mb-3" style="float: right;">Guardar</button> 
-                                   
-                                </p>
-                            
+                                </div>
+                                
+
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-8" style="height: 300px;">
+                                    <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
+                                </div>
+                                <div class="col-md-4 d-flex flex-column justify-content-end align-items-center" style="height: 300px;">
+                                    <button type="submit" class="btn btn-primary mb-3" style="width:145px; margin-right: 150px;">Guardar</button> 
+                                </div>
+
+                            </div>
+
+
                         </div>
                         <!--end::Card body-->
                     </form>

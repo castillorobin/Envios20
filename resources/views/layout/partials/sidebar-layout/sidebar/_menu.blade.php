@@ -458,7 +458,7 @@
     <div class="menu-item">
       <a class="menu-link {{ request()->is('stocks/agregarfoto') ? 'active' : '' }}" href="{{ url('stocks/agregarfoto') }}">
         <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
-        <span class="menu-title">Toma de fotografia</span>
+        <span class="menu-title">Captura de fotografia</span>
       </a>
     </div>
   </div>
