@@ -26,6 +26,7 @@ use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\EnviosExport;
 
 
+
 class StockController extends Controller
 {
     /**
@@ -43,6 +44,48 @@ class StockController extends Controller
         
         $nota = " ";
         return view('stocks.cuadrepaquete', compact('nota')); 
+    }
+
+    public function cuadrepaquetedatosfiltro(Request $request) 
+    {
+        
+        $nota = " ";
+      $rango  = $request->input('rango');
+    $punto  = $request->input('punto');
+    $tipo   = $request->input('tipo');
+
+    // Validamos que venga el rango
+    if (!$rango) {
+        return back()->withErrors(['rango' => 'Debes seleccionar un rango de fechas.']);
+    }
+
+    // Parseamos el rango: "MM/DD/YYYY - MM/DD/YYYY"
+    [$fecha1, $fecha2] = array_map('trim', explode('-', $rango));
+    $fechacam1 = date('Y-m-d', strtotime($fecha1));
+    $fechacam2 = date('Y-m-d', strtotime($fecha2));
+
+    // Query base: rango de fechas + estado fijo = "No entregado"
+    $query = Envio::whereBetween('fecha_entrega', [$fechacam1, $fechacam2])
+                  ->where('estado', 'No entregado');
+
+    // Filtro por punto (si no es "Todos" ni vacío)
+    if ($punto && $punto !== 'Todos' && $punto !== 'punto') {
+        $query->where('punto', $punto);
+    }
+
+    // Filtro por tipo de paquete (si no es "Todos" ni "Tipo")
+    if ($tipo && $tipo !== 'Todos' && $tipo !== 'Tipo') {
+        $query->where('tipo', $tipo);
+    }
+
+    $envios = $query->get();
+
+    // Lista de puntos para el select
+    $puntos = Rutas::all();
+
+    return view('stocks.cuadrepaquetedatos', compact('nota', 'envios', 'puntos', 'punto', 'tipo', 'rango'));
+
+
     }
 
     public function cuadrepaquetedatos(Request $request)
@@ -79,11 +122,11 @@ class StockController extends Controller
             session()->put('codigos_excluidos', $codigos_excluidos);
 
             // Mensaje flash
-            session()->flash('mensaje', "La guía {$nuevo} fue encontrada y retirada de la lista.");
+            session()->flash('mensaje', "{$nuevo} encontrada");
             session()->flash('tipo', 'success');
         } else {
             // Mensaje flash de error
-            session()->flash('mensaje', "La guía {$nuevo} no ha sido encontrada en la lista.");
+            session()->flash('mensaje', "{$nuevo} no encontrada");
             session()->flash('tipo', 'danger');
         }
     }
@@ -92,8 +135,10 @@ class StockController extends Controller
         ->where('estado', 'No entregado')
         ->whereNotIn('guia', $codigos_excluidos)
         ->get();
-
-    return view('stocks.cuadrepaquetedatos', compact('nota', 'envios', 'codigos_excluidos'));
+$puntos = Rutas::all();
+ $punto = 'Todos';
+    $tipo  = 'Todos';
+    return view('stocks.cuadrepaquetedatos', compact('nota', 'envios', 'codigos_excluidos', 'puntos', 'rango', 'punto', 'tipo'));
 }
 
 public function exportExcel(Request $request)

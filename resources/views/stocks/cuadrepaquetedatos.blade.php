@@ -263,7 +263,7 @@ if (searchText == "") {
     <input type="hidden" name="rango" value="{{ request('rango') }}">
 
     <div class="col-md-6">
-        <input class="form-control form-control-solid" type="text" name="codigo" placeholder="Ingresar guía">
+        <input class="form-control form-control-solid" type="text" name="codigo" placeholder="Ingresar guía" autofocus>
     </div>
 
     <div class="col-md-3">
@@ -277,40 +277,47 @@ if (searchText == "") {
         </a>
     </div>
 </form>   </div>
-            
+            @if(session('mensaje'))
+    <div class="alert alert-{{ session('tipo') }}" style="margin-left:10px;" id="alerta-mensaje">
+        {{ session('mensaje') }}
+    </div>
+@endif
         </div>
         <!--end::Card title-->
-<form action="/stocks/cuadrepaquetedatosfiltro" method="GET">
-        <!--begin::Card toolbar-->
-        <div class="card-toolbar flex-row-fluid justify-content-end gap-5" data-select2-id="select2-data-122-79op">
-            <!--begin::Flatpickr-->
-              
-            <div class="input-group w-250px">
-        <!--begin::Flatpickr    <input class="form-control" placeholder="Rango" id="kt_ecommerce_report_shipping_daterangepicker" name="rango" />   -->
-            </div>
-            <!--end::Flatpickr-->
+<form action="{{ url('/stocks/cuadrepaquetedatosfiltro') }}" method="GET">
+    <input type="hidden" name="rango" value="{{ $rango }}">
 
-            <div class="w-100 mw-200px" data-select2-id="select2-data-121-dtky">
-                                                    <select class="form-select form-select-solid mi-selector"  name="tipo" id="tipo" >
-                                   <option value="Todos">Tipo de paquete</option>
-                                    <option value="Todos">Todos</option>
-                                    <option value="Personalizado">Personalizado </option>
-                                    <option value="Personalizado departamental">Personalizado departamental</option>
-                                    <option value="Casillero">Casillero</option>
-                                    <option value="Punto fijo">Punto fijo</option>
-                                </select>
+    <div class="row g-2 align-items-center">
+        <div class="col-md-3">
+            <select class="form-select form-select-solid mi-selector" name="punto" id="punto" data-control="select2">
+                <option value="punto">Punto</option>
+                <option value="Todos" {{ $punto == 'Todos' ? 'selected' : '' }}>Todos</option>
+                @foreach ($puntos as $p)
+                    <option value="{{ $p->id }}" {{ $punto == $p->id ? 'selected' : '' }}>
+                        {{ $p->punto }}
+                    </option>
+                @endforeach
+            </select>
+        </div> 
 
-            </div>
-
-            <!--begin::Add product-->
-              <button type="submit" class="btn btn-primary " >Filtrar</button>
-            <!--end::Add product-->
-                
+        <div class="col-md-5">
+            <select class="form-select form-select-solid mi-selector" name="tipo" id="tipo">
+                <option value="Tipo">Tipo de paquete</option>
+                <option value="Todos" {{ $tipo == 'Todos' ? 'selected' : '' }}>Todos</option>
+                <option value="Personalizado" {{ $tipo == 'Personalizado' ? 'selected' : '' }}>Personalizado</option>
+                <option value="Personalizado departamental" {{ $tipo == 'Personalizado departamental' ? 'selected' : '' }}>Personalizado departamental</option>
+                <option value="Casillero" {{ $tipo == 'Casillero' ? 'selected' : '' }}>Casillero</option>
+                <option value="Punto fijo" {{ $tipo == 'Punto fijo' ? 'selected' : '' }}>Punto fijo</option>
+            </select>
         </div>
-          
-        <!--end::Card toolbar-->
+
+        <div class="col-md-3">
+            <button type="submit" class="btn btn-primary w-100">Filtrar</button>
+        </div>
     </div>
-     </form>
+</form>
+    </div>
+    
 
                                 <!--end::Card toolbar-->
                            
@@ -321,11 +328,7 @@ if (searchText == "") {
 
                             <div class="card-body pt-0" style="background-color:white; min-height: 590px; max-height: 590px; overflow-y: scroll">
 
-@if(session('mensaje'))
-    <div class="alert alert-{{ session('tipo') }}">
-        {{ session('mensaje') }}
-    </div>
-@endif
+
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
@@ -385,7 +388,7 @@ if (searchText == "") {
                                     </div>
                                     </div>
                                      <div style="float:right; margin: 15px; "  >
-    <a href="/envios/cuadrepaquete" >
+    <a href="/stocks/cuadrepaquete" >
     <button type="button" class="btn btn-secondary " style="float: right; margin-left: 10px; ">Cancelar</button>
     </a>
     
@@ -703,7 +706,7 @@ if (searchText == "") {
                 alerta.style.transition = "opacity 0.5s ease";
                 alerta.style.opacity = "0";
                 setTimeout(() => alerta.remove(), 500); // quitar del DOM
-            }, 3000); // 3 segundos
+            }, 2000); // 2 segundos
         }
     });
 </script>

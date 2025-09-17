@@ -343,7 +343,8 @@ Route::get('/cuadrepaquetedatos/export/excel', [App\Http\Controllers\StockContro
 Route::get('/cuadrepaquetedatos/export/pdf', [App\Http\Controllers\StockController::class, 'exportPDF'])
     ->name('cuadrepaquetedatos.export.pdf');
 
-    
+Route::get('/stocks/cuadrepaquetedatosfiltro', [App\Http\Controllers\StockController::class, 'cuadrepaquetedatosfiltro'] )->name('cuadrepaquetedatosfiltro');
+
 
 Route::get('/repartidor/vista/{id}', [App\Http\Controllers\StockController::class, 'vistarepartidor'] )->name('vistarepartidor');
 
