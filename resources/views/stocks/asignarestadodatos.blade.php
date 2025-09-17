@@ -170,7 +170,7 @@ if(tipo=='suelto'){
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 610px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px;  ">
 
 
                                 <!--begin::Table-->
