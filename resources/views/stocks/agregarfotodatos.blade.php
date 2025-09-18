@@ -158,16 +158,16 @@ function esconder1(){
                            
                             <!--end::Card header-->
                             <!--begin::Card body-->
-  <div class="row" style="margin-top: 20px;">
+  <div class="row" style="margin: 20px;">
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-6" >
                                             Captura de fotografia
                                         </div>
                                    
                                     <!--end::Search-->
                                     <!--begin::Export buttons-->
                                         <div class="col-md-6">
-                                            <div style="width: 80%; text-align: right; margin-top: 15px;">
+                                            <div style="width: 80%; text-align: right; ">
                                                 <span style="font-size: 18px; font-weight: bolder;">Guia: {{ $envio[0]->guia }}</span>
                                             </div>
                                         </div>
