@@ -66,16 +66,19 @@
 </head>
 
 <script>
-    var loadFile = function(event) {
-  for (let i = 0; i < event.target.files.length; i++) {
-    var image = document.createElement('img');
-    image.src = URL.createObjectURL(event.target.files[i]);
-    image.id = "output";
-    image.width = "200";
-    image.style.margin = "10px";
-    document.querySelector(".cont").appendChild(image);
-  }
-};
+   function loadFile(event, contenedorClass) {
+    const contenedor = document.querySelector(`.${contenedorClass}`);
+    contenedor.innerHTML = ""; // Limpia antes de agregar nueva imagen
+
+    for (let i = 0; i < event.target.files.length; i++) {
+        let image = document.createElement('img');
+        image.src = URL.createObjectURL(event.target.files[i]);
+        image.width = 125;
+        image.height = 125;
+        image.style.margin = "5px";
+        contenedor.appendChild(image);
+    }
+}
 
 function esconder1(){
     
@@ -107,7 +110,7 @@ function esconder1(){
                 <!--begin::Toolbar-->
                 <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack" style="margin-top: 15px;">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
@@ -149,108 +152,166 @@ function esconder1(){
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_content" class="content flex-column-fluid " >
+                <div id="kt_content" class="content flex-column-fluid container-xxl" style="margin-top: 15px;">
                     <!--begin::Content container-->
-                    <div id="kt_content_container" class="app-container container-xxl">
-                        <!--begin::Products-->
-                        <div class="card card-flush ">
-                            <!--begin::Card header-->
-                            <div class="card-header align-items-center">
-                                <!--begin::Card title-->
-                                <div class="card-title " style="margin-top: 15px; width: 100%;">
-                                    <!--begin::Search-->
-                                    
-                                   Captura de fotografia
-                                    <!--end::Search-->
-                                    <!--begin::Export buttons-->
-                                     <div style="width: 80%; text-align: right; margin-top: 15px;">
-    <span style="font-size: 18px; font-weight: bolder;">Guia: {{ $envio[0]->guia }}</span>
-</div>
-                                </div>
 
-                                <hr style="width: 100%; color: #000000ff; height: 2px; background-color: #000000ff; margin-top: 15px;"> 
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                    <!--begin::Filter-->
-                                    <div class="w-190px">
-                                        <!--begin::Select2-->
-                                       
-                                        <!--end::Select2-->
-                                    </div>
-                                    <!--begin::Filter-->
-                                    <div class="w-190px">
-                                        <!--begin::Select2-->
-                                       
-                                        <!--end::Select2-->
-                                    </div>
-                                    <!--end::Filter-->
 
-                                </div>
-                                <!--end::Card toolbar-->
 
-                            </div>
-                            <!--end::Card header-->
-                            <!--begin::Card body-->
 
-                            <form action="/guardandofoto" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
+<div class="card">
+    <!--begin::Card header-->
+    <div class="card-header">
+        <!--begin::Card title-->
+        <div class="card-title fs-3 fw-bold">Guia: {{ $envio[0]->guia }}</div>
+        <!--end::Card title-->
+    </div>
+    <!--end::Card header-->
+
+    <!--begin::Form-->
+    <form action="/guardandofoto" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                                 @csrf
                             @method('GET')
                         
-                            <div class="card-body pt-0" style="background-color:white; min-height: 605px;">
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input type="text" value="{{ $envio[0]->guia }}" class="visually-hidden" name="guia2" id="guia2">
-                            <br>
-                            <span style="font-size: 12px; font-weight: bolder;"> Comercio: </span>
-                            <input type="text" value="{{ $envio[0]->comercio }}" name="comercio2" id="comercio2" class="form-control form-control-solid mb-3 mb-lg-0 " readonly>
-                            <br>
-                            <span style="font-size: 12px; font-weight: bolder;"> Destinatario:</span>
-                            <input type="text" value="{{ $envio[0]->destinatario }}" name="destinatario" id="destinatario" class="form-control form-control-solid mb-3 mb-lg-0 " readonly>
-                            <br>
-                            <span style="font-size: 12px; font-weight: bolder;"> Direccion: </span>
-                            <input type="text" value="{{ $envio[0]->direccion }}" name="direccion" id="direccion" class="form-control form-control-solid mb-3 mb-lg-0 " readonly>
-                           
-                            <p></p>
-
-                                </div>
-                                <div class="col-md-6 text-center">
-                                     <p><input type="file" class="inputfile file-input-control" name="foto1" id="file" onchange="loadFile(event)" onclick="esconder1()" style="">
-                                <label for="file" class="file-input-label" id="file1l"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
-                            </p>
-                                <input type="file" class="inputfile file-input-control" name="foto2" id="file2" onchange="loadFile(event)" onclick="esconder2()">
-                                <label for="file2" class="file-input-label" id="file2l" style="display: none;"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
-
-                                <input type="file" class="inputfile file-input-control" name="foto3" id="file3" onchange="loadFile(event)" onclick="esconder3()">
-                                <label for="file3" class="file-input-label" id="file3l" style="display: none;"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
-                                <p></p>
-                                <a href="/stocks/agregarfoto">
-                                        <button type="button" class="btn btn-danger mb-3" style="margin-left: 5px;">&nbsp;&nbsp; &nbsp;<i class="fas fa-trash-alt"></i> Borrar &nbsp; &nbsp;&nbsp;</button>
-                                    </a>
-                                </div>
-                                
-
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-8" style="height: 300px;">
-                                    <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
-                                </div>
-                                <div class="col-md-4 d-flex flex-column justify-content-end align-items-center" style="height: 300px;">
-                                    <button type="submit" class="btn btn-primary mb-3" style="width:145px; margin-right: 150px;">Guardar</button> 
-                                </div>
-
-                            </div>
-
-
-                        </div>
-                        <!--end::Card body-->
-                    </form>
-                    </div>
-                    <!--end::Products-->
+        <!--begin::Card body-->
+        <div class="card-body p-9">
+            <!--begin::Row-->
+            <div class="row mb-5">
+                 <!--begin::Row-->
+            <div class="row mb-8">
+                 <!--begin::Col-->
+                <div class="col-xl-3">
+                    <div class="fs-6 fw-semibold mt-2 mb-3">Comercio:</div>
                 </div>
+                <!--end::Col-->
+
+                 <!--begin::Col-->
+                <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                    <input type="text" class="form-control form-control-solid" name="name" value="{{ $envio[0]->comercio }}">
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                </div>
+            </div>
+            <!--end::Row-->
+            <!--begin::Row-->
+            <div class="row mb-8">
+                 <!--begin::Col-->
+                <div class="col-xl-3">
+                    <div class="fs-6 fw-semibold mt-2 mb-3">Destinatario:</div>
+                </div>
+                <!--end::Col-->
+
+                 <!--begin::Col-->
+                <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                    <input type="text" class="form-control form-control-solid" name="name" value="{{ $envio[0]->destinatario }}">
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                </div>
+            </div>
+            <!--end::Row-->
+            <!--begin::Row-->
+            <div class="row mb-8">
+                 <!--begin::Col-->
+                <div class="col-xl-3">
+                    <div class="fs-6 fw-semibold mt-2 mb-3">Direccion:</div>
+                </div>
+                <!--end::Col-->
+
+                 <!--begin::Col-->
+                <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                    <input type="text" class="form-control form-control-solid" name="name" value="{{ $envio[0]->direccion }}">
+                    <div class="fv-plugins-message-container fv-plugins-message-container--enabled invalid-feedback"></div>
+                </div>
+            </div>
+            <!--end::Row-->
+                
+                <div class="row">
+    <!-- Imagen 1 -->
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+        <div class="image-input image-input-outline" data-kt-image-input="true" 
+             style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
+            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont1"></div>
+
+            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" 
+                   data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar">
+                <i class="ki-duotone ki-pencil fs-7"><span class="path1"></span><span class="path2"></span></i>
+                <input type="file" name="avatar1" accept=".png, .jpg, .jpeg">
+                <input type="hidden" name="avatar1_remove">
+            </label>
+
+            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" 
+                  data-kt-image-input-action="cancel" aria-label="Cancel avatar">
+                <i class="ki-duotone ki-cross fs-2"></i>
+            </span>
+
+            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" 
+                  data-kt-image-input-action="remove" aria-label="Remove avatar">
+                <i class="ki-duotone ki-cross fs-2"></i>
+            </span>
+        </div>
+    </div>
+
+    <!-- Imagen 2 -->
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+        <div class="image-input image-input-outline" data-kt-image-input="true" 
+             style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
+            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont2"></div>
+            <!-- ... igual que el anterior pero con avatar2 -->
+        </div>
+    </div>
+
+    <!-- Imagen 3 -->
+    <div class="col-12 col-md-4 d-flex justify-content-center">
+        <div class="image-input image-input-outline" data-kt-image-input="true" 
+             style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
+            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont3"></div>
+            <!-- ... igual que el anterior pero con avatar3 -->
+        </div>
+    </div>
+</div>
+            </div>
+            <br>
+            <!--end::Row-->
+            
+<div class="row justify-content-end">
+    <!-- Botón Borrar -->
+    <div class="col-sm-12 col-md-2 py-2">
+        <a href="/stocks/agregarfoto" class="w-100">
+            <button type="reset" class="btn btn-light btn-active-light-primary w-100">Borrar</button>
+        </a>
+    </div>
+
+    <!-- Botón Capturar foto -->
+    <div class="col-sm-12 col-md-2 py-2">
+        <input type="file" class="inputfile file-input-control w-100" name="foto1" id="file" onchange="loadFile(event, 'cont1')" onclick="esconder1()">
+        <label for="file" class="file-input-label btn btn-primary w-100" id="file1l">
+            <i class="fas fa-camera"></i> Abrir cámara
+        </label>
+
+        <input type="file" class="inputfile file-input-control w-100" name="foto2" id="file2" onchange="loadFile(event, 'cont2')" onclick="esconder2()">
+        <label for="file2" class="file-input-label btn btn-primary w-100" id="file2l" style="display: none;">
+            <i class="fas fa-camera"></i> Abrir cámara
+        </label>
+
+        <input type="file" class="inputfile file-input-control w-100" name="foto3" id="file3" onchange="loadFile(event, 'cont3')" onclick="esconder3()">
+        <label for="file3" class="file-input-label btn btn-primary w-100" id="file3l" style="display: none;">
+            <i class="fas fa-camera"></i> Abrir cámara
+        </label>
+    </div>
+</div>
+
+<!-- Botón Guardar -->
+<div class="row justify-content-end">
+    <div class="col-sm-12 col-md-2 py-2">
+        <button type="submit" class="btn btn-primary w-100" id="kt_project_settings_submit">Guardar</button>
+    </div>
+</div>
+        <!--end::Card footer-->
+    <input type="hidden"></form>
+    <!--end:Form-->
+</div>
+</div>
+
+
+
+                 
                 <!--end::Content container-->
             </div>
             <!--end::Content-->
