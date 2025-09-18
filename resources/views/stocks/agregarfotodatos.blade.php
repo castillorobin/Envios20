@@ -219,8 +219,8 @@ function esconder1(){
                             </div>
 
                             <div class="row">
-                                <div class="col-md-12" style="height: 300px;">
-                                    <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
+                                <div class="col-md-12" >
+                                    <p class="cont" name="imagen" style="padding: 15px;"></p>
                                 </div>
                                 
 
