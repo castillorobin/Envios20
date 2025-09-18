@@ -155,44 +155,24 @@ function esconder1(){
                         <!--begin::Products-->
                         <div class="card card-flush ">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center">
-                                <!--begin::Card title-->
-                                <div class="card-title " style="margin-top: 15px; width: 100%;">
-                                    <!--begin::Search-->
-                                    
-                                   Captura de fotografia
-                                    <!--end::Search-->
-                                    <!--begin::Export buttons-->
-                                     <div style="width: 80%; text-align: right; margin-top: 15px;">
-    <span style="font-size: 18px; font-weight: bolder;">Guia: {{ $envio[0]->guia }}</span>
-</div>
-                                </div>
-
-                                <hr style="width: 100%; color: #000000ff; height: 2px; background-color: #000000ff; margin-top: 15px;"> 
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                    <!--begin::Filter-->
-                                    <div class="w-190px">
-                                        <!--begin::Select2-->
-                                       
-                                        <!--end::Select2-->
-                                    </div>
-                                    <!--begin::Filter-->
-                                    <div class="w-190px">
-                                        <!--begin::Select2-->
-                                       
-                                        <!--end::Select2-->
-                                    </div>
-                                    <!--end::Filter-->
-
-                                </div>
-                                <!--end::Card toolbar-->
-
-                            </div>
+                           
                             <!--end::Card header-->
                             <!--begin::Card body-->
+  <div class="row" style="margin-top: 20px;">
 
+                                        <div class="col-md-6">
+                                            Captura de fotografia
+                                        </div>
+                                   
+                                    <!--end::Search-->
+                                    <!--begin::Export buttons-->
+                                        <div class="col-md-6">
+                                            <div style="width: 80%; text-align: right; margin-top: 15px;">
+                                                <span style="font-size: 18px; font-weight: bolder;">Guia: {{ $envio[0]->guia }}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <hr style="width: 100%; color: #000000ff; height: 2px; background-color: #000000ff; margin-top: 15px;"> 
                             <form action="/guardandofoto" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                                 @csrf
                             @method('GET')
@@ -226,8 +206,12 @@ function esconder1(){
                                 <label for="file3" class="file-input-label" id="file3l" style="display: none;"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
                                 <p></p>
                                 <a href="/stocks/agregarfoto">
-                                        <button type="button" class="btn btn-danger mb-3" style="margin-left: 5px;">&nbsp;&nbsp; &nbsp;<i class="fas fa-trash-alt"></i> Borrar &nbsp; &nbsp;&nbsp;</button>
+                                        <button type="button" class="btn btn-danger mb-3" style="margin-left: 5px;">&nbsp;&nbsp; &nbsp;&nbsp;<i class="fas fa-trash-alt"></i> Borrar &nbsp; &nbsp;</button>
                                     </a>
+                                    <br>
+                                    <button type="submit" class="btn btn-primary mb-3" style="width:140px;"><i class="fas fa-save"></i> Guardar</button> 
+                                </div>
+
                                 </div>
                                 
 
@@ -235,12 +219,10 @@ function esconder1(){
                             </div>
 
                             <div class="row">
-                                <div class="col-md-8" style="height: 300px;">
+                                <div class="col-md-12" style="height: 300px;">
                                     <p class="cont" name="imagen" style="padding: 15px; margin-top: 50px;"></p>
                                 </div>
-                                <div class="col-md-4 d-flex flex-column justify-content-end align-items-center" style="height: 300px;">
-                                    <button type="submit" class="btn btn-primary mb-3" style="width:145px; margin-right: 150px;">Guardar</button> 
-                                </div>
+                                
 
                             </div>
 

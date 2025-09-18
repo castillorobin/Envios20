@@ -49,7 +49,7 @@
                 <!--begin::Toolbar-->
                 <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="app-container container-xxl d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
@@ -93,7 +93,7 @@
                 <!--begin::Content-->
                 <div id="kt_content" class="content flex-column-fluid " >
                     <!--begin::Content container-->
-                    <div id="kt_content_container" class="">
+                    <div id="kt_content_container" class="app-container container-xxl">
                         <!--begin::Products-->
                         <div class="card card-flush ">
                             <!--begin::Card header-->
