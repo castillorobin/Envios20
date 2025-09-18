@@ -177,7 +177,7 @@ function esconder1(){
                                 @csrf
                             @method('GET')
                         
-                            <div class="card-body pt-0" style="background-color:white; min-height: 605px;">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px;">
 
                             <div class="row">
                                 <div class="col-md-6">
@@ -192,19 +192,19 @@ function esconder1(){
                             <span style="font-size: 12px; font-weight: bolder;"> Direccion: </span>
                             <input type="text" value="{{ $envio[0]->direccion }}" name="direccion" id="direccion" class="form-control form-control-solid mb-3 mb-lg-0 " readonly>
                            
-                            <p></p>
+                           
 
                                 </div>
                                 <div class="col-md-6 text-center">
                                      <p><input type="file" class="inputfile file-input-control" name="foto1" id="file" onchange="loadFile(event)" onclick="esconder1()" style="">
                                 <label for="file" class="file-input-label" id="file1l"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
-                            </p>
+                            
                                 <input type="file" class="inputfile file-input-control" name="foto2" id="file2" onchange="loadFile(event)" onclick="esconder2()">
                                 <label for="file2" class="file-input-label" id="file2l" style="display: none;"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
 
                                 <input type="file" class="inputfile file-input-control" name="foto3" id="file3" onchange="loadFile(event)" onclick="esconder3()">
                                 <label for="file3" class="file-input-label" id="file3l" style="display: none;"><i class="fas fa-camera" style="color: #fff;"></i> Abrir camara</label>
-                                <p></p>
+                                </p>
                                 <a href="/stocks/agregarfoto">
                                         <button type="button" class="btn btn-danger mb-3" style="margin-left: 5px;">&nbsp;&nbsp; &nbsp;&nbsp;<i class="fas fa-trash-alt"></i> Borrar &nbsp; &nbsp;</button>
                                     </a>
@@ -214,18 +214,12 @@ function esconder1(){
 
                                 </div>
                                 
-
-
-                            </div>
-
-                            <div class="row">
-                                <div class="col-md-12" >
-                                    <p class="cont" name="imagen" style="padding: 15px;"></p>
-                                </div>
-                                
+<p class="cont" name="imagen" style="padding: 15px;"></p>
 
                             </div>
 
+                                    
+                             
 
                         </div>
                         <!--end::Card body-->
