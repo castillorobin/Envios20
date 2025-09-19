@@ -249,7 +249,7 @@ function esconder1(){
     </div>
 
     <!-- Imagen 2 -->
-    <div class="col-12 col-md-4 d-flex justify-content-center">
+    <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
             <div class="image-input-wrapper w-125px h-125px bgi-position-center cont2"></div>
@@ -258,7 +258,7 @@ function esconder1(){
     </div>
 
     <!-- Imagen 3 -->
-    <div class="col-12 col-md-4 d-flex justify-content-center">
+    <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
             <div class="image-input-wrapper w-125px h-125px bgi-position-center cont3"></div>
