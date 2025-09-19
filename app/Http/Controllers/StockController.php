@@ -1086,7 +1086,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
     {
         $guia = $request->get('guia2') ;    
         $foto1 = $request->file("foto1");
-        //dd($foto1);
+        //dd($guia);
         if ($request->hasFile('foto1')) {
             $pedidos = Envio::where('guia', $guia)
         ->get(); 

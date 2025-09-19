@@ -174,12 +174,12 @@ function esconder1(){
     <form action="/guardandofoto" method="POST" id="kt_account_profile_details_form" class="form" enctype="multipart/form-data">
                                 @csrf
                             @method('GET')
-                        
+                        <input type="text" value="{{ $envio[0]->guia }}" class="visually-hidden" name="guia2" id="guia2">
         <!--begin::Card body-->
         <div class="card-body p-9">
             <!--begin::Row-->
             <div class="row mb-5">
-                 <!--begin::Row-->
+                 <!--begin::Row--> 
             <div class="row mb-8">
                  <!--begin::Col-->
                 <div class="col-xl-3">
@@ -227,7 +227,7 @@ function esconder1(){
                 
                 <div class="row">
     <!-- Imagen 1 -->
-    <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
+    <div class="col-12 col-md-2 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
             <div class="image-input-wrapper w-125px h-125px bgi-position-center cont1 d-none"></div>
@@ -236,7 +236,7 @@ function esconder1(){
     </div>
 
     <!-- Imagen 2 -->
-    <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
+    <div class="col-12 col-md-2 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
             <div class="image-input-wrapper w-125px h-125px bgi-position-center cont2 d-none"></div>
@@ -245,7 +245,7 @@ function esconder1(){
     </div>
 
     <!-- Imagen 3 -->
-    <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
+    <div class="col-12 col-md-2 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
             <div class="image-input-wrapper w-125px h-125px bgi-position-center cont3 d-none"></div>
