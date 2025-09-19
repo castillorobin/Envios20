@@ -68,10 +68,8 @@
 <script>
    function loadFile(event, contenedorClass) {
     const contenedor = document.querySelector(`.${contenedorClass}`);
-
-    // Mostrar el contenedor (por si estaba oculto)
     contenedor.classList.remove("d-none");
-    contenedor.innerHTML = ""; // Limpiar antes de agregar nueva imagen
+    contenedor.innerHTML = "";
 
     for (let i = 0; i < event.target.files.length; i++) {
         let image = document.createElement('img');
@@ -79,6 +77,15 @@
         image.width = 125;
         image.height = 125;
         image.style.margin = "5px";
+        image.style.cursor = "pointer";
+
+        // 👇 al hacer clic abre el modal con la imagen en grande
+        image.addEventListener("click", function() {
+            document.getElementById("previewImage").src = this.src;
+            let modal = new bootstrap.Modal(document.getElementById("previewModal"));
+            modal.show();
+        });
+
         contenedor.appendChild(image);
     }
 }
@@ -305,7 +312,16 @@ function esconder1(){
         </div>
         <!--end::Content wrapper-->
 
-
+<!-- Modal para mostrar imagen -->
+<div class="modal fade" id="previewModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img id="previewImage" src="" class="img-fluid rounded" alt="Preview">
+      </div>
+    </div>
+  </div>
+</div>
 
     </x-default-layout>
     <!--begin::Javascript-->
