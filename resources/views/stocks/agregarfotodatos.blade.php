@@ -68,7 +68,10 @@
 <script>
    function loadFile(event, contenedorClass) {
     const contenedor = document.querySelector(`.${contenedorClass}`);
-    contenedor.innerHTML = ""; // Limpia antes de agregar nueva imagen
+
+    // Mostrar el contenedor (por si estaba oculto)
+    contenedor.classList.remove("d-none");
+    contenedor.innerHTML = ""; // Limpiar antes de agregar nueva imagen
 
     for (let i = 0; i < event.target.files.length; i++) {
         let image = document.createElement('img');
@@ -224,27 +227,11 @@ function esconder1(){
                 
                 <div class="row">
     <!-- Imagen 1 -->
-    <div class="col-12 col-md-4 d-flex justify-content-center">
+    <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
-            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont1"></div>
-
-            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" 
-                   data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar">
-                <i class="ki-duotone ki-pencil fs-7"><span class="path1"></span><span class="path2"></span></i>
-                <input type="file" name="avatar1" accept=".png, .jpg, .jpeg">
-                <input type="hidden" name="avatar1_remove">
-            </label>
-
-            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" 
-                  data-kt-image-input-action="cancel" aria-label="Cancel avatar">
-                <i class="ki-duotone ki-cross fs-2"></i>
-            </span>
-
-            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-white shadow" 
-                  data-kt-image-input-action="remove" aria-label="Remove avatar">
-                <i class="ki-duotone ki-cross fs-2"></i>
-            </span>
+            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont1 d-none"></div>
+            <!-- ... igual que el anterior pero con avatar1 -->         
         </div>
     </div>
 
@@ -252,7 +239,7 @@ function esconder1(){
     <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
-            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont2"></div>
+            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont2 d-none"></div>
             <!-- ... igual que el anterior pero con avatar2 -->
         </div>
     </div>
@@ -261,7 +248,7 @@ function esconder1(){
     <div class="col-12 col-md-4 d-flex justify-content-center" style="margin-top: 20px">
         <div class="image-input image-input-outline" data-kt-image-input="true" 
              style="background-image: url('/metronic8/demo1/assets/media/svg/avatars/blank.svg')">
-            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont3"></div>
+            <div class="image-input-wrapper w-125px h-125px bgi-position-center cont3 d-none"></div>
             <!-- ... igual que el anterior pero con avatar3 -->
         </div>
     </div>
