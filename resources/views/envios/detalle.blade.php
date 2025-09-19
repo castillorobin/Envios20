@@ -299,31 +299,38 @@
                             <div class="card-body p-9" style="min-height: 150px;">
                                 <div class="row mb-7 text-center">
                                     <!--begin::Label-->
-                                    @if ($envio[0]->foto1 != Null)
-                                        
-                                    
-                                 <div class="col-sm-2">                                 
-                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto1}})"></div>
-                                    </div>
-                                </div>  
-                                @endif
-                                @if ($envio[0]->foto2 != Null)
-                                <div class="col-sm-2">  
-                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto2}})"></div>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                @endif
-                                @if ($envio[0]->foto3 != Null)
-                                <div class="col-sm-2">  
-                                    <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                        <div class="image-input-wrapper w-125px h-125px" style="background-image: url(/fotos/{{$envio[0]->foto3}})"></div>
-                                    </div>
-                                    <!--end::Col-->
-                                </div>
-                                @endif
+                                   @if ($envio[0]->foto1 != Null)
+<div class="col-sm-2">                                 
+    <div class="image-input image-input-outline" data-kt-image-input="true">
+        <div class="image-input-wrapper w-125px h-125px" 
+             style="background-image: url(/fotos/{{$envio[0]->foto1}})" 
+             onclick="mostrarFoto('/fotos/{{$envio[0]->foto1}}')">
+        </div>
+    </div>
+</div>  
+@endif
+
+@if ($envio[0]->foto2 != Null)
+<div class="col-sm-2">  
+    <div class="image-input image-input-outline" data-kt-image-input="true">
+        <div class="image-input-wrapper w-125px h-125px" 
+             style="background-image: url(/fotos/{{$envio[0]->foto2}})" 
+             onclick="mostrarFoto('/fotos/{{$envio[0]->foto2}}')">
+        </div>
+    </div>
+</div>
+@endif
+
+@if ($envio[0]->foto3 != Null)
+<div class="col-sm-2">  
+    <div class="image-input image-input-outline" data-kt-image-input="true">
+        <div class="image-input-wrapper w-125px h-125px" 
+             style="background-image: url(/fotos/{{$envio[0]->foto3}})" 
+             onclick="mostrarFoto('/fotos/{{$envio[0]->foto3}}')">
+        </div>
+    </div>
+</div>
+@endif
                                 @if ($envio[0]->foto4 != Null)
                                 <div class="col-sm-2">  
                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
@@ -1055,6 +1062,17 @@
         <!--end::Footer-->
         </div>
         <!--end:::Main-->
+
+        <!-- Modal para ver fotos en grande -->
+<div class="modal fade" id="fotoModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-body text-center">
+        <img id="fotoModalImg" src="" class="img-fluid rounded" alt="Foto">
+      </div>
+    </div>
+  </div>
+</div>
     </x-default-layout>
     <!--begin::Javascript-->
     <script>
@@ -1083,6 +1101,14 @@
             });
         }
     </script>
+
+    <script>
+function mostrarFoto(src) {
+    document.getElementById("fotoModalImg").src = src;
+    let modal = new bootstrap.Modal(document.getElementById("fotoModal"));
+    modal.show();
+}
+</script>
 </body>
 
 </html>

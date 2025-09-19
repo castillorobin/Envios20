@@ -158,15 +158,15 @@ if (searchText == "") {
 <body>
 <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" hidden>
     <x-default-layout>
-        <div >
+        <div class="app-main flex-column flex-row-fluid" id="kt_app_main" >
             <!--begin::Content wrapper-->
-            <div >
+            <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
-                <div >
+                <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
-                    <div id="kt_app_toolbar_container" class="app-container d-flex flex-stack">
+                    <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
-                        <div class="">
+                        <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
                             <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Listado de picking</h1>
                             <!--end::Title-->
@@ -201,15 +201,15 @@ if (searchText == "") {
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
-                <div id="kt_app_content" class="app-content flex-column-fluid">
+               <div id="kt_content" class="content flex-column-fluid " >
                     <!--begin::Content container-->
-                    <div id="kt_app_content_container" class="app-container">
+                    <div id="kt_content_container" class="">
                         <!--begin::Products-->
-                        <div class="card card-flush">
+                        <div class="card card-flush ">
                             <!--begin::Card header-->
-                            <div class="card-header align-items-center py-5 gap-2 gap-md-5">
+                            <div class="card-header align-items-center">
                                 <!--begin::Card title-->
-                                <div class="card-title">
+                                <div class="card-title ">
                                     <!--begin::Search-->
                                     <div class="col-auto ">
                                             <label for="guia" class="visually-hidden">Ticket</label>
@@ -246,7 +246,7 @@ if (searchText == "") {
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 450px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px;  ">
 
                                 <!--begin::Table-->
                                 <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
