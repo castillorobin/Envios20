@@ -174,6 +174,9 @@ function esconder1(){
         <!--begin::Card title-->
         <div class="card-title fs-3 fw-bold">Guia: {{ $envio[0]->guia }}</div>
         <!--end::Card title-->
+        <a href="/stocks/agregarfoto" class="w-200" style="float:right; margin-top:20px; font-size:20px;">
+            <i class="fas fa-window-close" style="font-size:40px; color:red;"></i>
+        </a>
     </div>
     <!--end::Card header-->
 
@@ -267,9 +270,10 @@ function esconder1(){
 <div class="row justify-content-end">
     <!-- Botón Borrar -->
     <div class="col-sm-12 col-md-2 py-2">
-        <a href="/stocks/agregarfoto" class="w-100">
-            <button type="reset" class="btn btn-light btn-active-light-primary w-100">Borrar</button>
-        </a>
+        <button type="button" class="btn btn-light btn-active-light-primary w-100"
+        onclick="location.reload();">
+    Borrar
+</button>
     </div>
 
     <!-- Botón Capturar foto -->
