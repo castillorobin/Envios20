@@ -1660,6 +1660,24 @@ $nota = " ";
          return view('stocks.listapi', compact('envios', 'nota'));
     }
 
+    public function listapifiltro(Request $request)
+    {
+        $rango  = $request->input('rango');
+
+         [$fecha1, $fecha2] = array_map('trim', explode('-', $rango));
+    $fechacam1 = date('Y-m-d', strtotime($fecha1));
+    $fechacam2 = date('Y-m-d', strtotime($fecha2));
+
+    // Query base: rango de fechas + estado fijo = "No entregado"
+    $envios = Orden::whereBetween('fecha_pro', [$fechacam1, $fechacam2])->get();
+                 
+
+        $nota = " ";
+        // $envios = Orden::whereDate('fecha_pro', Carbon::tomorrow())->get();
+
+         return view('stocks.listapi', compact('envios', 'nota'));
+    }
+
      public function detallepick($guia)
     {
       $pedidos = Orden::where('guia', $guia)

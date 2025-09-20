@@ -221,7 +221,7 @@ if (searchText == "") {
                                     <!--begin::Export buttons-->
                                     <div id="kt_ecommerce_report_shipping_export" class="d-none"></div>
                                     <!--end::Export buttons-->
-                                    <form action="envios/filtrandoenvios" method="GET" id="myForm" >
+                                    <form action="/stocks/listapifiltro" method="GET" id="myForm" >
                                         @method('GET') 
                                 </div>
                                 <!--end::Card title-->
