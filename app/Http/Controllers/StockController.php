@@ -1347,8 +1347,8 @@ $agencias = Agencia::all();
             return view('stocks.entreganoret', compact('nota'));
 
         }
-
-         return view('stocks.entreganoretdatos', compact('pedidos', 'nota'));
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+         return view('stocks.entreganoretdatos', compact('pedidos', 'nota', 'empleado'));
     }
     
 
@@ -1376,7 +1376,7 @@ foreach ($tickets as $ticket) {
         $entrega = new devolucion();
         $entrega->comercio = $pedidos[0]->comercio;
         $entrega->usuario = $usuario;
-        $entrega->agenciaubi = $pedidos[0]->agencia;
+        $entrega->agencia = $pedidos[0]->agenciaubi;
         $entrega->nombre = $nombre;
         $entrega->nota = $nota;
         $entrega->idenvio = $ticket;
@@ -1418,8 +1418,8 @@ if($pedidos->isEmpty()){
 
         }
 
-
-         return view('stocks.entreganoretdatos', compact('pedidos', 'nota'));
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+         return view('stocks.entreganoretdatos', compact('pedidos', 'nota','empleado'));
         
     }
 
