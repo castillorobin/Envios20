@@ -1360,6 +1360,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $tickets = $request->get('selec') ;
         $idtic = $request->input('idtic');
        //dd($ticket);
+       $agen = $request->input('agencia');
 
         $usuario = $request->get('usuario') ;
         $nota = $request->get('nota') ;
@@ -1376,7 +1377,7 @@ foreach ($tickets as $ticket) {
         $entrega = new devolucion();
         $entrega->comercio = $pedidos[0]->comercio;
         $entrega->usuario = $usuario;
-        $entrega->agencia = $pedidos[0]->agenciaubi;
+        $entrega->agencia = $agen;
         $entrega->nombre = $nombre;
         $entrega->nota = $nota;
         $entrega->idenvio = $ticket;
