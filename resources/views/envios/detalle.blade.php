@@ -115,11 +115,11 @@
                                                         <td style="width: 25%;">
                                                 Telefono:  
                                                </td>
-                                                        <td >{{ $comercio[0]->telefono }} </td>
+                                                        <td ><a href="tel:+503{{ $comercio[0]->telefono }}" >{{ $comercio[0]->telefono }}</a> </td>
                                                     </tr>
                                                     <tr>
                                                         <td>WhatsApp:</td>
-                                                        <td>{{ $comercio[0]->whatsapp }}</td>
+                                                        <td><a href="https://api.whatsapp.com/send?phone=503{{ $comercio[0]->telefono }}" >{{ $comercio[0]->telefono }}</a></td>
                                                     </tr>
                                                     <tr>
                                                         <td>Correo: </td>
