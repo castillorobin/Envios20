@@ -892,15 +892,18 @@ const subtotal = document.getElementById("sutota").value;
 
                                                                            
                                                                             <!-- Campo para la cantidad de descuento -->
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0" onClick="this.select()"/>
-                                                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
-                                                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                                            <div class="row">
+                                                                            <div class="form-floating col-lg-6 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="recibe" id="recibe" placeholder="Quien recibe" value="" />
+                                                                                <label for="recibe" style="padding-left: 25px;">Quien recibe</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                             </div>
-                                                                            <div class="form-floating col-lg-12 mb-4">
-                                                                                <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
-                                                                                <label for="nota" style="padding-left: 25px;">Nota de descuento</label>
+                                                                            <div class="form-floating col-lg-6 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="dui" id="dui" placeholder="DUI" value="" />
+                                                                                <label for="dui" style="padding-left: 25px;">DUI</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                             </div>
+                                                                        </div>
                                                                             
                                                                         </tbody>
                                                                         <!--end::Table body-->
@@ -1353,6 +1356,11 @@ const subtotal = document.getElementById("sutota").value;
     }, 2000);
 }
     
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+<script>
+    Inputmask("99999999-9").mask("#dui");
 </script>
 </body>
 <!--end::Body-->
