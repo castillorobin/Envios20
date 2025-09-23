@@ -136,72 +136,70 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del titular</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="ftitu" id="ftitu" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{ $comercio->titular }} " readonly/>
-                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                     <span>{{ $comercio->titular }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Nombre del comercio</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="fname" id="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{ $comercio->comercio }} " readonly/>
-                                        <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                        <span>{{ $comercio->comercio }}</span>
                                     </div>
                                 </div>
 
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Dirección del comercio</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="direccion" class="form-control form-control-lg form-control-solid" value=" {{ $comercio->direccion }}" readonly/>
+                                        <span>{{ $comercio->direccion }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Telefono</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="telefono" class="form-control form-control-lg form-control-solid" value=" {{ $comercio->telefono }}" readonly/>
+                                       <span>{{ $comercio->telefono }}</span>
                                     </div>
 
                                     <label class="col-lg-2 col-form-label">WhatsApp</label>
                                     <div class="col-lg-3">
-                                        <input type="tel" name="whatsapp" class="form-control form-control-lg form-control-solid" value="{{ $comercio->whatsapp }} " readonly/>
+                                        <span>{{ $comercio->whatsapp }}</span>
                                     </div>
                                 </div>
-                                <div class="row mb-12">
+                                <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Fecha de Alta</label>
-                                    <div class="col-lg-6">
-                                        <input type="text" name="fecha_alta" class="form-control form-control-lg form-control-solid" id="fecha_alta" value="{{ $comercio->f_alta }} " readonly />
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->f_alta }}</span>
                                     </div>
 
-                                    
+                                    <label class="col-lg-2 col-form-label">Fecha de baja</label>
+                                    <div class="col-lg-3">
+                                       <span>{{ $comercio->f_baja }}</span>
+                                    </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Tipo de comercio</label>
-                                    <div class="col-lg-6">
-                                        <select name="tipo" id="Tipo" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de comercio" readonly>
-                                          <option value="{{ $comercio->tipo }}">{{ $comercio->tipo }}</option>  
-                                        
-                                        </select>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->tipo }}</span>
                                     </div>
-                                    
+                                    <label class="col-lg-2 col-form-label required fw-semibold fs-6">Estado de comercio</label>
+                                    <div class="col-lg-3">
+                                        <span>{{ $comercio->estado }}</span>
+                                    </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label required fw-semibold fs-6">Agencia de registro</label>
                                     <div class="col-lg-8">
-                                        <select name="agencia_registro" id="Agencia_registro" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Agencia de registro" readonly>
-                                        <option value="{{ $comercio->agencia }}">{{ $comercio->agencia }}</option>    
-                                        
-                                        </select>
+                                        <span>{{ $comercio->agencia }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Correo Electrónico</label>
                                     <div class="col-lg-8">
-                                        <input type="email" name="email" class="form-control form-control-lg form-control-solid" value="{{ $comercio->correo }} " readonly/>
+                                       <span>{{ $comercio->correo }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nota</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="nota" class="form-control form-control-lg form-control-solid" value="{{ $comercio->nota }} " readonly/>
+                                        <span>{{ $comercio->nota }}</span>
                                     </div>
                                 </div>
                                 <div class="separator my-10"></div>
@@ -212,40 +210,37 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nombre del titular de la cuenta</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="titular" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{ $comercio->titular }} " readonly/>
+                                        <span>{{ $comercio->titular }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nombre del banco</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="banco" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{ $comercio->banco }} " readonly/>
+                                        <span>{{ $comercio->banco }}</span>
                                     </div>
                                     <label class="col-lg-2 col-form-label">Numero de cuenta</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="cuenta" class="form-control form-control-lg form-control-solid" value="{{ $comercio->cuenta }} " readonly/>
+                                        <span>{{ $comercio->cuenta }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Numero de DUI</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="dui" class="form-control form-control-lg form-control-solid" value="{{ $comercio->dui }} " readonly/>
+                                        <span>{{ $comercio->dui }}</span>
                                     </div>
                                     <label class="col-lg-2 col-form-label">Tipo de cuenta</label>
                                     <div class="col-lg-3">
-                                        <select name="tipo_cuenta" id="tipo_cuenta" class="form-control form-control-lg form-control-solid" data-control="select2" data-placeholder="Seleccionar Tipo de cuenta" readonly>
-                                            <option value="{{ $comercio->tipo_cuenta }}">{{ $comercio->tipo_cuenta }}</option>
-                                            
-                                        </select>
+                                       <span>{{ $comercio->tipo_cuenta }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Cuenta de chivo</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="chivo" class="form-control form-control-lg form-control-solid" value="{{ $comercio->chivo }} " readonly/>
+                                        <span>{{ $comercio->chivo }}</span>
                                     </div>
                                     <label class="col-lg-2 col-form-label">Cuenta tigo money</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="tigo" class="form-control form-control-lg form-control-solid" value="{{ $comercio->tigo }} " readonly/>
+                                        <span>{{ $comercio->tigo }}</span>
                                     </div>
                                 </div>
                                 <div class="separator my-10"></div>
@@ -256,40 +251,40 @@
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Nombre de la empresa</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="empresa" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" value="{{ $comercio->empresa }} " readonly/>
+                                        <span>{{ $comercio->empresa }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Tipo de contribuyente</label>
                                     <div class="col-lg-3">
-                                        <select name="tipo_contribuyente" id="Tipo_contribuyente" class="form-control form-control-lg form-control-solid" readonly>
-                                            <option value="{{ $comercio->tipo_contri }}">{{ $comercio->tipo_contri }}</option>
-                                            
-                                        </select>
+                                       <span>{{ $comercio->tipo_contri }}</span>
                                     </div>
                                     <label class="col-lg-2 col-form-label">Giro</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="giro" class="form-control form-control-lg form-control-solid" value="{{ $comercio->giro }} " readonly/>
+                                        <span>{{ $comercio->giro }}</span>
                                     </div>
 
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Numero de IVA</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="nit" class="form-control form-control-lg form-control-solid" value="{{ $comercio->iva }} " readonly/>
+                                       <span>{{ $comercio->iva }}</span>
                                     </div>
                                     <label class="col-lg-2 col-form-label">Numero de regristro (NCR)</label>
                                     <div class="col-lg-3">
-                                        <input type="text" name="ncr" class="form-control form-control-lg form-control-solid" value="{{ $comercio->nrc }} " readonly/>
+                                        <span>{{ $comercio->nrc }}</span>
                                     </div>
                                 </div>
                                 <div class="row mb-6">
                                     <label class="col-lg-3 col-form-label">Dirección Fisical</label>
                                     <div class="col-lg-8">
-                                        <input type="text" name="direccionf" class="form-control form-control-lg form-control-solid" value="{{ $comercio->d_fiscal }} " readonly/>
+                                        <span>{{ $comercio->d_fiscal }}</span>
                                     </div>
                                 </div>
-                                
+                                <div class="card-footer d-flex justify-content-end py-6 px-9">
+                                    <a href="/comercio" class="btn btn-primary btn-active-light-primary me-2">Cancelar</a>
+                                    
+                                </div>
                             </div>
                       
 
