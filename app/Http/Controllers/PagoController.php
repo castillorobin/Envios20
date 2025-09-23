@@ -477,8 +477,8 @@ class PagoController extends Controller
             $comercioset = Comercio::where('comercio', $comer)->get();
         }
         $agencias = Agencia::all();
-
-        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'agencias'));
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'agencias', 'empleado'));
         
     }
 

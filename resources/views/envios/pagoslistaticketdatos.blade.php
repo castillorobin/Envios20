@@ -602,7 +602,7 @@ const subtotal = document.getElementById("sutota").value;
                                     </div>
 
 
-
+ 
 
                                 </div>
 
@@ -859,12 +859,11 @@ const subtotal = document.getElementById("sutota").value;
                                                                              <div class="form-floating col-lg-12 mb-4">
                                         
                                         
-                                                                                <select name="agencia" id="agencia" class="form-select form-select-solid" data-placeholder="Seleccionar Agencia" >
-                                                                                     @foreach($agencias as $agencia)    
- <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
- @endforeach
-                                                                                </select>
-                                                                                <label class="col-lg-3 col-form-label fw-semibold fs-6">Agencia</label>
+                                                                                            
+                                              <input type="text" name="agencia" id="agencia" class="form-control form-control-solid" value="{{$empleado[0]->agencia}}" readonly/>         
+                                                    
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
                                                                         </div>
                                                                             <div class="form-floating col-lg-12 mb-4">
                                                                                 <select class="form-select form-select-solid" name="metodo" id="metodo" required>
@@ -920,7 +919,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                     <div class="fs-6 fw-bold text-white text-end">
                                                                         
                                                                         <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
+                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0.00</span>
                                                                         <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$0.00</span>
                                                                        
                                                                         
@@ -989,7 +988,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="button" id="pagadito" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()">Pagar</button>
+                                                                        <button type="button" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()" disabled>Pagar</button>
 
 <!--
                                                                         <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
