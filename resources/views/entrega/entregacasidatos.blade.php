@@ -206,36 +206,7 @@ $(document).ready(function() {
                                     </div>
                                     <!--begin::Filter-->
                                  
-                                      <form action="/entrega/filtrarcasi" method="GET"  >
-                                        @method('GET') 
-                                      
-                                
-                                <!--end::Card title-->
-                                <!--begin::Card toolbar-->
-                                <div class="card-toolbar flex-row-fluid justify-content-end gap-5">
-                                <input type="text" value="{{$pedidos[0]->entrega2 ?? ''}} " class="visually-hidden" name="ticketc" id="ticketc">
-                                    
-                                    <div class="w-150px"> 
-                                        <!--begin::Select2-->
-                                        <select class="form-select form-select-solid" name="estado" data-control="select2" data-hide-search="true" data-placeholder="Estados" data-kt-ecommerce-order-filter="Estados">
-                                            <option value="todos" >Todos</option>
-                                        <option value="Creado">Creado</option>
-                                        <option value="En ruta">En ruta</option>
-                                        <option value="Entregado">Entregado</option>
-                                        <option value="No entregado">No entregado</option>
-                                        <option value="Reprogramado">Reprogramado</option>
-                                        <option value="Devuelto al comercio">Devuelto al comercio</option>
-                                        <option value="Recepcionado">Recepcionado</option>
-                                        <option value="Fallido">Fallido</option>
-                                        </select>
-                                        <!--end::Select2-->
-                                        
-                                    </div>
-                                    <button type="submit" class="btn btn-primary" >Filtrar</button>
-                                    <!--end::Filter-->
-                                    <!--begin::Export dropdown-->
-                                   
-                                </form>                                    </div>
+                                                                   </div>
                                     <!--end::Filter-->
 
                                 </div>

@@ -341,6 +341,8 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Descuento</th>
                                                 <th class="min-w-50px">Nota</th>
                                                 <th class="min-w-50px">Total</th>
+                                                <th class="min-w-50px">Quien recibe</th>
+                                                <th class="min-w-50px">DUI</th>
                                                 <th class="min-w-50px">Fecha de recepcion</th>
                                                 
                                             </tr>
@@ -360,11 +362,11 @@ if (searchText == "") {
                                                 <td>${{$ticket->descuento}}</td>
                                                <td>{{$ticket->nota}}</td>
                                                 <td>${{$ticket->total}}</td>
+                                                <td>{{$ticket->recibe}}</td>
+                                                <td>{{$ticket->dui}}</td>
                                                 <td>{{$ticket->created_at}}</td>
-                                               
-                                                    
-                                                   
- 
+                                                
+
 
                                                 
                                             </tr>
