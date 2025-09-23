@@ -28,7 +28,7 @@
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
  
-    <style>
+    <style> 
         .table th,
         .table td { 
             padding: 0.10rem;
@@ -349,7 +349,7 @@ function abrirURL(){
                                                <th><div class="form-group form-check" style="width: 5px;">
                                                
                                                    
-                                                    
+                                                     
                                                     
                                                    </div></th>
                                                 <th class="min-w-100px"># de Guía</th>

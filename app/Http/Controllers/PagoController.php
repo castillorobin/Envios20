@@ -188,7 +188,7 @@ class PagoController extends Controller
         {
             /*
             $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
-            ->get();
+            ->get(); 
             */
             $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
                     ->orderBy('created_at', 'desc') // ordena del más reciente al más antiguo
@@ -865,7 +865,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
        // $pedidos = Cobro::all();
         //$tickets = Ticketc::all(); 
         //$envios = Envios::where('pagoticket', $id)->get();
-
+$usuario = Auth::user()->name ?? '—';
 
        $checked = $request->input('checked');
      //  $checked2 = $request->input('pruebita');
@@ -874,8 +874,8 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
 
        $tickepago = Ticktpago::query()->find($quienpago);
        $ticketact = Ticktpago::query()->find($quienpago);
-        $tickepago->userpago = "Eugenia Bosco";
-        $tickepago->fechapago = Carbon::today();
+        $tickepago->userpago = $usuario;
+        $tickepago->fechapago = Carbon::now();
         $tickepago->estado = "Pagado";
         $tickepago->save();
       // dd($checked);
