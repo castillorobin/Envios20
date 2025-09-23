@@ -440,9 +440,8 @@ const subtotal = document.getElementById("sutota").value;
                                 <!--begin::Table-->
                                 
                                 <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-                                    <form action="/pago/pagoticket/" method="POST" name="f1" id="formElement">
-  @csrf
-  @method('POST') 
+                               <form action="{{ url('/pago/pagoticket') }}" method="POST" id="formElement">
+                                        @csrf
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table" data-ordering="false">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
@@ -1338,7 +1337,7 @@ const subtotal = document.getElementById("sutota").value;
     </script>
 
 
-<script>
+<script> 
     function submitAndRedirect() {
     // Establece el target del formulario para que se abra en una nueva pestaña
     const form = document.getElementById('formElement');
