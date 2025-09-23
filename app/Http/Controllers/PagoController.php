@@ -489,6 +489,8 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $activo = $request->has('pagado') ? 1 : 0;
          $verificado = $request->has('verificado') ? 1 : 0;
           $revision = $request->has('enrevision') ? 1 : 0;
+          $recibe = $request->get('recibe');
+          $dui = $request->get('dui');
 
           if ($activo== 0 && $verificado== 0 && $revision== 0 ) {
 
@@ -545,6 +547,8 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $pedido->cajero = $cajero;
         $pedido->nota = $nota;
         $pedido->agencia = $agencia;
+        $pedido->recibe = $recibe;
+        $pedido->dui = $dui;
         $pedido->save();
         $ticketact = Ticktpago::latest('id')->first();
         $checked = $request->input('checked');
