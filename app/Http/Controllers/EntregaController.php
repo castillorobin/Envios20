@@ -280,6 +280,9 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $tota = $request->get('tota');
         $agencia = $request->get('agencia');
 
+        $envios = Envio::where('entrega2', $identrega)
+        ->get();
+
 
         $pedido = Entrega::find($identrega);
         $pedido->cajero = $cajero;
@@ -289,6 +292,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $pedido->subtotal = $sutota;
         $pedido->total = $tota;
         $pedido->agencia = $agencia;
+        $pedido->comercio = $envios[0]->comercio;
         $pedido->entrega = $request->get('entrega3');
         $pedido->cambio = $request->get('cambio');
         $pedido->save();
