@@ -22,9 +22,6 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
         .fw-bolder {
             text-transform: uppercase;
         }
@@ -57,11 +54,6 @@ tbody td {
 }
 
 
-.dataTables_paginate {
-           
-           
-          display: none;   
-        }
 
 
     </style>
@@ -268,12 +260,30 @@ document.getElementById("tota").value = 0;
 //document.getElementById("stotal").text = 0;
 const subtotal = document.getElementById("sutota").value;
  const miSpan = document.getElementById("stotal");
+ const descu = document.getElementById("descuento");
  miSpan.textContent = subtotal; 
 
  const miSpanto = document.getElementById("totalito");
- miSpanto.textContent = subtotal; 
-document.getElementById("stota").value = subtotal;
-document.getElementById("tota").value = subtotal;
+ miSpanto.textContent = subtotal - descu.value; 
+document.getElementById("stota").value = subtotal - descu.value;
+document.getElementById("tota").value = subtotal - descu.value;
+
+
+}
+
+function descontar() {
+    //alert("Helo");
+document.getElementById("tota").value = 0;
+//document.getElementById("stotal").text = 0;
+const subtotal = document.getElementById("sutota").value;
+ const miSpan = document.getElementById("stotal");
+ const descu = document.getElementById("descuento");
+ miSpan.textContent = subtotal; 
+
+ const miSpanto = document.getElementById("totalito");
+ miSpanto.textContent = subtotal - descu.value; 
+document.getElementById("stota").value = subtotal - descu.value;
+document.getElementById("tota").value = subtotal - descu.value;
 
 
 }
@@ -298,7 +308,7 @@ document.getElementById("tota").value = subtotal;
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetessss</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
                                     <a href="/" class="text-muted text-hover-primary">Inicio</a>
@@ -572,13 +582,7 @@ document.getElementById("tota").value = subtotal;
                                 <div class="row justify-content-end">
 
 
-                                <ul class="pagination" style="margin-bottom: 15px;">
-                                        <li style="margin-left:auto"></li> 
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item "><a href="" class="page-link">2</a></li>
-                                        <li class="page-item next"><a href="" class="page-link">Next</a></li>
-                                    </ul>
+                              
 
 
                                     <div class="col-auto align-self-end text-end">
@@ -891,7 +895,16 @@ document.getElementById("tota").value = subtotal;
                                                                                 </div>
                                                                             </div>
                                                                            
-
+                                                                             <!-- Campo para la cantidad de descuento -->
+                                                                            <div class="form-floating col-lg-12 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0"onchange="calcularsub()" />
+                                                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                                            </div>
+                                                                            <div class="form-floating col-lg-12 mb-4">
+                                                                                <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
+                                                                                <label for="nota" style="padding-left: 25px;">Nota</label>
+                                                                            </div>
                                                                            
                                                                             <!-- Campo para la cantidad de descuento -->
                                                                             <div class="row">
