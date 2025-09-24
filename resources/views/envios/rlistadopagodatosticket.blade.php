@@ -47,9 +47,6 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
 /*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
@@ -283,7 +280,7 @@ function abrirURL(){
                                         <table  style="float:right;">
                                             <tr>
                                                 <td>
-                                    <div class="col-auto" style="margin-right: 15px;">´
+                                    <div class="col-auto" style="margin-right: 15px;">
 
                                     
                          <td>
@@ -337,7 +334,7 @@ function abrirURL(){
                           
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 490px;  max-height: 590px; overflow-y: scroll">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px; overflow-y: scroll ">
 
   <form action="/envios/pagotodo" method="POST">
                                          @csrf
