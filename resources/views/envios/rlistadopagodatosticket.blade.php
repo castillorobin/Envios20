@@ -371,8 +371,9 @@ function abrirURL(){
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
+                                                        @if($ticket->pago != 'Pagado')
                                                      <input type="checkbox" value="{{ $ticket->id }}" name="checked[]" class="form-check-input" id="check3">
-                                                     
+                                                     @endif
                                                     </div>
                                                     </td>
                                                 <td> 
