@@ -193,6 +193,8 @@ Route::get('comercio/crearcomercio', [App\Http\Controllers\ComercioController::c
 Route::get('comercio/guardar', [App\Http\Controllers\ComercioController::class, 'store'] )->name('storeco') ;
 Route::get('comercio/vercomercio/{id}', [App\Http\Controllers\ComercioController::class, 'vercomercio'] )->name('vercomercio') ;
 Route::get('comercio/editando', [App\Http\Controllers\ComercioController::class, 'editando'] )->name('editandoco') ;
+
+Route::post('/comercio/baja', [App\Http\Controllers\ComercioController::class, 'baja'])->name('comercio.baja');
  
 //facturacion - Pago
 Route::get('listapagos', [App\Http\Controllers\PagoController::class, 'index'] )->name('indexpago') ;
