@@ -465,7 +465,7 @@ class PagoController extends Controller
       
      //  return ($pedidos[0]->comercio);
        
-        $comercios = Comercio::all(); 
+        $comercios = Comercio::all();  
         $nota = " ";
         if(empty($pedidos[0]->comercio)){
             $comer = $comercios[0]->comercio;
@@ -491,7 +491,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
           $revision = $request->has('enrevision') ? 1 : 0;
           $recibe = $request->get('recibe');
           $dui = $request->get('dui');
-
+$usuario = Auth::user()->name ?? '—';
           if ($activo== 0 && $verificado== 0 && $revision== 0 ) {
 
            // dd("todo desactivado");
@@ -548,6 +548,9 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $pedido->nota = $nota;
         $pedido->agencia = $agencia;
         $pedido->recibe = $recibe;
+
+        $pedido->userpago = $usuario;
+        $pedido->fechapago = Carbon::now();
         $pedido->dui = $dui;
         $pedido->save();
         $ticketact = Ticktpago::latest('id')->first();

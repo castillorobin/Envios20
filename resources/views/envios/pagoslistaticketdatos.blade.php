@@ -272,7 +272,8 @@ const subtotal = document.getElementById("sutota").value;
 
  const miSpanto = document.getElementById("totalito");
  miSpanto.textContent = subtotal; 
-
+document.getElementById("stota").value = subtotal;
+document.getElementById("tota").value = subtotal;
 
 
 }
