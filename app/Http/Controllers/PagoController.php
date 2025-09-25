@@ -194,7 +194,7 @@ class PagoController extends Controller
                     ->orderBy('created_at', 'desc') // ordena del más reciente al más antiguo
                     ->take(20)                      // limita a los últimos 20
                     ->get();
-                    $tickets = $tickets->sortBy('created_at');
+                  //  $tickets = $tickets->sortBy('created_at');
  
         }else{
             /*
@@ -205,10 +205,10 @@ class PagoController extends Controller
 
             $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
                     ->where('cajero', $usuario)
-                    ->orderBy('created_at', 'desc') // ordena del más reciente al más antiguo
-                    ->take(20)                      // limita a los últimos 20
+                    ->orderBy('created_at', 'desc') 
+                    ->take(20)                     
                     ->get();
-                    $tickets = $tickets->sortBy('created_at');
+                   // $tickets = $tickets->sortBy('created_at');
         }
 
        
