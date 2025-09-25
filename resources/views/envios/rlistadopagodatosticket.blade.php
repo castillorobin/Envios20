@@ -507,7 +507,7 @@ function abrirURL(){
 
 
                                                                              <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="" onchange="calcularsub()"/>
+                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="{{$pago[0]->subtotal}}" onchange="calcularsub()"/>
                                                                                 <label for="Cajero">Subtotal</label>
                                                                                 <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                                                     Por favor ingrese el destinatario.
@@ -516,12 +516,12 @@ function abrirURL(){
                                                                            
                                                                              <!-- Campo para la cantidad de descuento -->
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0"onchange="calcularsub()" />
+                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="{{$pago[0]->descuento}}" onchange="calcularsub()" />
                                                                                 <label for="descuento" style="padding-left: 25px;">Descuento</label>
                                                                                 <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                                             </div>
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
+                                                                                <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota">{{$pago[0]->nota}}</textarea>
                                                                                 <label for="nota" style="padding-left: 25px;">Nota</label>
                                                                             </div>
                                                                            
@@ -555,9 +555,9 @@ function abrirURL(){
                                                                     <!-- Content -->
                                                                     <div class="fs-6 fw-bold text-white text-end">
                                                                         
-                                                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0.00</span>
-                                                                        <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$0.00</span>
+                                                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">${{$pago[0]->subtotal}}</span>
+                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">${{$pago[0]->descuento}}</span>
+                                                                        <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">${{$pago[0]->total}}</span>
                                                                        
                                                                         
                                                                         
