@@ -343,12 +343,7 @@ function abrirURL(){
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table" >
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                               <th><div class="form-group form-check" style="width: 5px;">
                                                
-                                                   
-                                                     
-                                                    
-                                                   </div></th>
                                                 <th class="min-w-100px"># de Guía</th>
                                                 <th class="min-w-50px">Comercio</th>
                                                 <th class="min-w-100px">Cliente</th>
@@ -366,13 +361,7 @@ function abrirURL(){
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td >
-                                                    <div class="form-group form-check" style="width: 5px;">
-                                                        @if($ticket->pago != 'Pagado')
-                                                     <input type="checkbox" value="{{ $ticket->id }}" name="checked[]" class="form-check-input" id="check3">
-                                                     @endif
-                                                    </div>
-                                                    </td>
+                                                
                                                 <td> 
                                                     
                                                 
@@ -412,18 +401,14 @@ function abrirURL(){
                                                
                                                 <td>${{$ticket->total}}</td>
                                                 <td>{{$pago[0]->created_at}}</td>
-                                               
-                                                   
-                                                  
-
-                                                
+                                                                                         
                                             </tr>
                                             @endforeach
                                         </tbody>
 
                                     </table>
                                      <div style="width: 100%; margin-top:10px;margin-bottom:20px; " >
-                                    <button type="button" class="btn btn-primary" id="pago" style="float:right; " data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
+                                    <button type="button" class="btn btn-primary" id="pago" style="float:right; " data-bs-toggle="modal" data-bs-target="#kt_modal_2 " >Pagar</button>
                                     </div>
                                 </div> </div> 
 
