@@ -19,7 +19,7 @@ use App\Exports\EntregalistaExport;
 use App\Models\Agencia;
 
 //use App\Models\Entrega;
-
+ 
 class EntregaController extends Controller
 {
     /** 
@@ -188,17 +188,17 @@ if($pedidos->isEmpty()){
         $actual = $actualid->id;
 
         $envio = Envio::where('guia', $guia)
-        ->get();
+    ->where('estado', '!=', 'Entregado')
+    ->get();
 
        
         //$pedido = Envio::where('guia', $guia)->get();
 
         $nota = " "; 
         if($envio->isEmpty()){
-            $nota = "La Guía que se ingreso no existe"; 
+            $nota = "La Guía que se ingreso no existe o ya fue entregada"; 
             //return view('envios.registroconguia', compact('nota'));
-            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
-           
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe o ya fue entregada']);
         }
        
  
@@ -224,13 +224,13 @@ if($pedidos->isEmpty()){
         $actual = $request->get('entrega') ;
 
         $envio = Envio::where('guia', $guia)
-        ->get();
+    ->where('estado', '!=', 'Entregado')
+    ->get();
 
         if($envio->isEmpty()){
-            $nota = "La Guía que se ingreso no existe"; 
+            $nota = "La Guía que se ingreso no existe o ya fue entregada"; 
             //return view('envios.registroconguia', compact('nota'));
-            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe']);;
-           
+            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe o ya fue entregada']);
         }
        
 
@@ -280,6 +280,9 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $tota = $request->get('tota');
         $agencia = $request->get('agencia');
 
+        $envios = Envio::where('entrega2', $identrega)
+        ->get();
+
 
         $pedido = Entrega::find($identrega);
         $pedido->cajero = $cajero;
@@ -289,6 +292,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
         $pedido->subtotal = $sutota;
         $pedido->total = $tota;
         $pedido->agencia = $agencia;
+        $pedido->comercio = $envios[0]->comercio;
         $pedido->entrega = $request->get('entrega3');
         $pedido->cambio = $request->get('cambio');
         $pedido->save();

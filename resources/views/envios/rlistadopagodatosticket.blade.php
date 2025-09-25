@@ -28,7 +28,7 @@
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
  
-    <style>
+    <style> 
         .table th,
         .table td { 
             padding: 0.10rem;
@@ -47,9 +47,6 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
 /*
         #kt_ecommerce_report_shipping_table_previous{
             display: none;
@@ -283,7 +280,7 @@ function abrirURL(){
                                         <table  style="float:right;">
                                             <tr>
                                                 <td>
-                                    <div class="col-auto" style="margin-right: 15px;">´
+                                    <div class="col-auto" style="margin-right: 15px;">
 
                                     
                          <td>
@@ -337,7 +334,7 @@ function abrirURL(){
                           
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 490px;  max-height: 590px; overflow-y: scroll">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px; overflow-y: scroll ">
 
   <form action="/envios/pagotodo" method="POST">
                                          @csrf
@@ -349,7 +346,7 @@ function abrirURL(){
                                                <th><div class="form-group form-check" style="width: 5px;">
                                                
                                                    
-                                                    
+                                                     
                                                     
                                                    </div></th>
                                                 <th class="min-w-100px"># de Guía</th>
@@ -371,8 +368,9 @@ function abrirURL(){
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
+                                                        @if($ticket->pago != 'Pagado')
                                                      <input type="checkbox" value="{{ $ticket->id }}" name="checked[]" class="form-check-input" id="check3">
-                                                     
+                                                     @endif
                                                     </div>
                                                     </td>
                                                 <td> 

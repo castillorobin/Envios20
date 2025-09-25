@@ -335,9 +335,18 @@ if(tipo=='suelto'){
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-                                            
+                                              <div class="row my-2 mx-2 justify-content-center">
+                                                <div class="form-floating col-lg-12 mb-4">
+                                                    
+                                                       
+                                              <input type="text" name="agencia" id="agencia" class="form-control form-control-solid" value="{{$empleado[0]->agencia}}" readonly/>         
+                                                    
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
+                                               
+                                            </div>
                                             <input type="text" name="ticket" id="ticket" hidden>
-
+ 
                                             
                                                 <div class="row my-2 mx-2 justify-content-center" name="caja1" id="caja1">
                                                     <div class="form col-lg-12 mb-4">

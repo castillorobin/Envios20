@@ -27,6 +27,25 @@ class ComercioController extends Controller
     
     }
 
+    public function baja(Request $request)
+{
+    $request->validate([
+        'comercios' => 'required|array',
+        'nota_baja' => 'required|string|max:255',
+    ]);
+
+    foreach ($request->comercios as $id) {
+        $comercio = Comercio::find($id);
+        if ($comercio) {
+            $comercio->estado = 'Baja';
+            $comercio->notadebaja = $request->nota_baja;
+            $comercio->save();
+        }
+    }
+
+    return redirect()->back()->with('success', 'Comercio(s) dado(s) de baja correctamente.');
+}
+
     /**
      * Store a newly created resource in storage.
      */

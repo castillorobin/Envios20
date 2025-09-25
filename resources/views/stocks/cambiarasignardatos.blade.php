@@ -160,7 +160,9 @@ if(tipo=='suelto'){
                                     <!--begin::Filter-->
                                     <div class="w-190px">
                                         <!--begin::Select2-->
-                                        
+                                        <button type="button" value="" class="btn btn-primary btn-sm edit" id="kt_drawer_example_basic_button" style="float: right; margin-bottom: 15px;"> 
+                                                        Cambiar
+                                                    </button>
                                         <!--end::Select2-->
                                     </div>
                                     <!--end::Filter-->
@@ -172,10 +174,8 @@ if(tipo=='suelto'){
                             <!--end::Card header-->
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 550px;  ">
-<button type="button" value="" class="btn btn-primary btn-sm edit" id="kt_drawer_example_basic_button" style="float: right; margin-bottom: 15px;"> 
-                                                        Cambiar
-                                                    </button>
-<p></p>
+
+
                                 <!--begin::Table-->
                                 <div class="table-responsive">
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ticket de Entrega</title>
+    <title>Pago por Ticket</title>
     
 </head>
 <body>
@@ -113,9 +113,12 @@
                 <tr class="izqui">
                     
                     <td><span style="margin-right: -45px;"> DESCUENTO</span></td>
+                    @if ($ticketact->descuento == null)
+                    <td style="text-align: left; padding-left: 55px;">$0.00</td>
+                    @else
                     <td style="text-align: left; padding-left: 55px;">${{ $ticketact->descuento }}
-                     
-                    </td>
+                     </td>
+                    @endif
                     
                 </tr>
                 <tr class="izqui">
@@ -138,7 +141,7 @@
     
 
 <br>
-<div class="centrar">Le atendio: {{ Auth::user()->name }}o</div>
+<div class="centrar">Le atendio: {{ Auth::user()->name }}</div>
 <hr>
 <div class="centrar">¡¡GRACIAS POR PREFERIRNOS!!</div>
 <hr>

@@ -161,7 +161,7 @@ if(tipo=='suelto'){
                                     <div class="w-190px">
                                         <!--begin::Select2-->
                                         <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#kt_modal_1">
-                                            Asignar en lote
+                                            Asignar
                                         </button>
                                         <!--end::Select2-->
                                     </div>

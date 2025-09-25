@@ -228,49 +228,102 @@
                             <!--begin::Card body-->
                             <div class="card-body pt-0">
 
+    <!-- Botón Dar de baja -->
+    <div class="mb-3 d-flex justify-content-end">
+    <button type="button" id="btnDarBaja" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDarBaja" disabled>
+        Dar de baja
+    </button>
+</div>
 
-                                <!--begin::Table-->
-                                <div class="table-responsive">
-                                    <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
-                                        <thead>
-                                            <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
-                                                <th style="min-width: 120px;">ID</th>
-                                                <th style="min-width: 120px;">Titular</th>
-                                                <th style="min-width: 120px;">Comercio</th>
-                                                <th style="min-width: 120px;">Numero</th>
-                                                <th style="min-width: 120px;">Whatsapp</th>
-                                                <th style="min-width: 120px;">Agencia</th>
-                                                <th style="min-width: 120px;">Fecha de alta</th>
-                                                <th style="min-width: 120px;">Estado</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="fw-semibold text-black-400">
-                                            @foreach ($comercios as $comercio)
+    <!-- Tabla comercios -->
+    <form id="formDarBaja" action="{{ url('/comercio/baja') }}" method="POST">
+        @csrf
+        <div class="table-responsive">
+            <table class="table align-middle table-row-dashed fs-6 gy-5" id="tablaComercios">
+                <thead>
+                    <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
+                        <th><input type="checkbox" id="checkAll"></th>
+                        <th>ID</th>
+                        <th>Titular</th>
+                        <th>Comercio</th>
+                        <th>Numero</th>
+                        <th>Whatsapp</th>
+                        <th>Agencia</th>
+                        <th>Fecha de alta</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody class="fw-semibold text-black-400">
+                    @foreach ($comercios as $comercio)
+                    <tr>
+                        <td><input type="checkbox" class="checkComercio" name="comercios[]" value="{{ $comercio->id }}"></td>
+                        <td><a href="/comercio/vercomercio/{{$comercio->id}}" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
+                        <td>{{$comercio->titular}}</td>
+                        <td>{{$comercio->comercio}}</td>
+                        <td>{{$comercio->telefono}}</td>
+                        <td>{{$comercio->whatsapp}}</td>
+                        <td>{{$comercio->agencia}}</td>
+                        <td>{{$comercio->f_alta}}</td>
+                        <td>
+                            @if($comercio->estado == 'Baja')
+                                <span class="badge badge-danger">{{ $comercio->estado }}</span>
+                            @elseif($comercio->estado == 'Lista negra')
+                                <span class="badge badge-dark">{{ $comercio->estado }}</span>
+                            @else
+                                <span class="badge badge-success">{{ $comercio->estado }}</span>
+                            @endif
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
 
+        <!-- Modal Dar de baja -->
+        <div class="modal fade" id="modalDarBaja" tabindex="-1" aria-labelledby="modalDarBajaLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-danger text-white">
+                        <h5 class="modal-title" id="modalDarBajaLabel">Dar de baja comercio(s)</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>¿Está seguro que desea dar de baja el/los comercio(s) seleccionado(s)?</p>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" name="nota_baja" id="nota_baja" placeholder="Motivo de la baja" required></textarea>
+                            <label for="nota_baja">Nota de baja</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="submit" class="btn btn-danger">Aceptar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
 
-                                            <tr>
-                                                <td><a href="/comercio/vercomercio/{{$comercio->id}}" class="text-gray-900 text-hover-primary">{{$comercio->id}}</a></td>
-                                                <td>{{$comercio->titular}}</td>
-                                                <td>{{$comercio->comercio}}</td>
-                                                <td>{{$comercio->telefono}}</td>
-                                                <td>{{$comercio->whatsapp}}</td>
-                                                <td>{{$comercio->agencia}}</td>
-                                                <td>{{$comercio->f_alta}}</td>
-                                                <td class="text-star">
-                                                    @if( $comercio->estado == 'Baja')
-                                                    <span class="badge badge-danger">{{ $comercio->estado }}</span>
-                                                    @elseif( $comercio->estado == 'Lista negra')
-                                                    <span class="badge badge-dark">{{ $comercio->estado }}</span>
-                                                    @else
-                                                    <span class="badge badge-success">{{ $comercio->estado }}</span>
-                                                    @endif
-                                                </td>
-                                            </tr>
-                                            @endforeach
-                                        </tbody>
-                                    </table>
+<!-- Script para activar botón -->
+<script>
+    const checkboxes = document.querySelectorAll('.checkComercio');
+    const btnDarBaja = document.getElementById('btnDarBaja');
+    const checkAll = document.getElementById('checkAll');
 
-                                </div>
+    checkboxes.forEach(chk => {
+        chk.addEventListener('change', toggleButton);
+    });
+
+    checkAll.addEventListener('change', function() {
+        checkboxes.forEach(chk => chk.checked = this.checked);
+        toggleButton();
+    });
+
+    function toggleButton() {
+        const anyChecked = [...checkboxes].some(chk => chk.checked);
+        btnDarBaja.disabled = !anyChecked;
+    }
+</script>
                                 <!--end::Table-->
                             </div>
                             <!--end::Table-->

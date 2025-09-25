@@ -188,7 +188,7 @@ class PagoController extends Controller
         {
             /*
             $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
-            ->get();
+            ->get(); 
             */
             $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
                     ->orderBy('created_at', 'desc') // ordena del más reciente al más antiguo
@@ -465,7 +465,7 @@ class PagoController extends Controller
       
      //  return ($pedidos[0]->comercio);
        
-        $comercios = Comercio::all(); 
+        $comercios = Comercio::all();  
         $nota = " ";
         if(empty($pedidos[0]->comercio)){
             $comer = $comercios[0]->comercio;
@@ -477,8 +477,8 @@ class PagoController extends Controller
             $comercioset = Comercio::where('comercio', $comer)->get();
         }
         $agencias = Agencia::all();
-
-        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'agencias'));
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'agencias', 'empleado'));
         
     }
 
@@ -489,7 +489,9 @@ class PagoController extends Controller
         $activo = $request->has('pagado') ? 1 : 0;
          $verificado = $request->has('verificado') ? 1 : 0;
           $revision = $request->has('enrevision') ? 1 : 0;
-
+          $recibe = $request->get('recibe');
+          $dui = $request->get('dui');
+$usuario = Auth::user()->name ?? '—';
           if ($activo== 0 && $verificado== 0 && $revision== 0 ) {
 
            // dd("todo desactivado");
@@ -545,6 +547,11 @@ class PagoController extends Controller
         $pedido->cajero = $cajero;
         $pedido->nota = $nota;
         $pedido->agencia = $agencia;
+        $pedido->recibe = $recibe;
+
+        $pedido->userpago = $usuario;
+        $pedido->fechapago = Carbon::now();
+        $pedido->dui = $dui;
         $pedido->save();
         $ticketact = Ticktpago::latest('id')->first();
         $checked = $request->input('checked');
@@ -861,7 +868,7 @@ class PagoController extends Controller
        // $pedidos = Cobro::all();
         //$tickets = Ticketc::all(); 
         //$envios = Envios::where('pagoticket', $id)->get();
-
+$usuario = Auth::user()->name ?? '—';
 
        $checked = $request->input('checked');
      //  $checked2 = $request->input('pruebita');
@@ -870,8 +877,8 @@ class PagoController extends Controller
 
        $tickepago = Ticktpago::query()->find($quienpago);
        $ticketact = Ticktpago::query()->find($quienpago);
-        $tickepago->userpago = "Eugenia Bosco";
-        $tickepago->fechapago = Carbon::today();
+        $tickepago->userpago = $usuario;
+        $tickepago->fechapago = Carbon::now();
         $tickepago->estado = "Pagado";
         $tickepago->save();
       // dd($checked);

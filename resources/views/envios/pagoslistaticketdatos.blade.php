@@ -22,9 +22,6 @@
             display: none;
         }
 
-        .dataTables_length {
-            display: none;
-        }
         .fw-bolder {
             text-transform: uppercase;
         }
@@ -57,11 +54,6 @@ tbody td {
 }
 
 
-.dataTables_paginate {
-           
-           
-          display: none;   
-        }
 
 
     </style>
@@ -268,11 +260,30 @@ document.getElementById("tota").value = 0;
 //document.getElementById("stotal").text = 0;
 const subtotal = document.getElementById("sutota").value;
  const miSpan = document.getElementById("stotal");
+ const descu = document.getElementById("descuento");
  miSpan.textContent = subtotal; 
 
  const miSpanto = document.getElementById("totalito");
- miSpanto.textContent = subtotal; 
+ miSpanto.textContent = subtotal - descu.value; 
+document.getElementById("stota").value = subtotal - descu.value;
+document.getElementById("tota").value = subtotal - descu.value;
 
+
+}
+
+function descontar() {
+    //alert("Helo");
+document.getElementById("tota").value = 0;
+//document.getElementById("stotal").text = 0;
+const subtotal = document.getElementById("sutota").value;
+ const miSpan = document.getElementById("stotal");
+ const descu = document.getElementById("descuento");
+ miSpan.textContent = subtotal; 
+
+ const miSpanto = document.getElementById("totalito");
+ miSpanto.textContent = subtotal - descu.value; 
+document.getElementById("stota").value = subtotal - descu.value;
+document.getElementById("tota").value = subtotal - descu.value;
 
 
 }
@@ -297,7 +308,7 @@ const subtotal = document.getElementById("sutota").value;
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetessss</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
                                     <a href="/" class="text-muted text-hover-primary">Inicio</a>
@@ -440,8 +451,8 @@ const subtotal = document.getElementById("sutota").value;
                                 <!--begin::Table-->
                                 
                                 <div class="table-responsive" style="max-height: 400px; overflow-y: auto;">
-                                    <form action="/pago/pagoticket/" method="POST" name="f1" id="formElement">
-  @csrf
+                               <form action="{{ url('/pago/pagoticket') }}" method="POST" id="formElement">
+                                        @csrf
                                     <table class="table align-middle table-row-dashed fs-6 gy-5 " id="kt_ecommerce_report_shipping_table" data-ordering="false">
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 gs-0">
@@ -479,8 +490,9 @@ const subtotal = document.getElementById("sutota").value;
 
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
+                                                        @if($pedido->pago != 'Pagado')
                                                      <input type="checkbox" value="{{ $pedido->id }}" class="form-check-input" id="check3" name="checked[]" >
-                                                     
+                                                     @endif
                                                     </div>
                                                     </td>
 
@@ -570,13 +582,7 @@ const subtotal = document.getElementById("sutota").value;
                                 <div class="row justify-content-end">
 
 
-                                <ul class="pagination" style="margin-bottom: 15px;">
-                                        <li style="margin-left:auto"></li> 
-                                        <li class="page-item previous disabled"><a href="#" class="page-link">Previous</a></li>
-                                        <li class="page-item active"><a href="#" class="page-link">1</a></li>
-                                        <li class="page-item "><a href="" class="page-link">2</a></li>
-                                        <li class="page-item next"><a href="" class="page-link">Next</a></li>
-                                    </ul>
+                              
 
 
                                     <div class="col-auto align-self-end text-end">
@@ -602,7 +608,7 @@ const subtotal = document.getElementById("sutota").value;
                                     </div>
 
 
-
+ 
 
                                 </div>
 
@@ -859,12 +865,11 @@ const subtotal = document.getElementById("sutota").value;
                                                                              <div class="form-floating col-lg-12 mb-4">
                                         
                                         
-                                                                                <select name="agencia" id="agencia" class="form-select form-select-solid" data-placeholder="Seleccionar Agencia" >
-                                                                                     @foreach($agencias as $agencia)    
- <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
- @endforeach
-                                                                                </select>
-                                                                                <label class="col-lg-3 col-form-label fw-semibold fs-6">Agencia</label>
+                                                                                            
+                                              <input type="text" name="agencia" id="agencia" class="form-control form-control-solid" value="{{$empleado[0]->agencia}}" readonly/>         
+                                                    
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
                                                                         </div>
                                                                             <div class="form-floating col-lg-12 mb-4">
                                                                                 <select class="form-select form-select-solid" name="metodo" id="metodo" required>
@@ -890,18 +895,30 @@ const subtotal = document.getElementById("sutota").value;
                                                                                 </div>
                                                                             </div>
                                                                            
-
-                                                                           
-                                                                            <!-- Campo para la cantidad de descuento -->
+                                                                             <!-- Campo para la cantidad de descuento -->
                                                                             <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0" onClick="this.select()"/>
+                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0"onchange="calcularsub()" />
                                                                                 <label for="descuento" style="padding-left: 25px;">Descuento</label>
                                                                                 <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                                             </div>
                                                                             <div class="form-floating col-lg-12 mb-4">
                                                                                 <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
-                                                                                <label for="nota" style="padding-left: 25px;">Nota de descuento</label>
+                                                                                <label for="nota" style="padding-left: 25px;">Nota</label>
                                                                             </div>
+                                                                           
+                                                                            <!-- Campo para la cantidad de descuento -->
+                                                                            <div class="row">
+                                                                            <div class="form-floating col-lg-6 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="recibe" id="recibe" placeholder="Quien recibe" value="" />
+                                                                                <label for="recibe" style="padding-left: 25px;">Quien recibe</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                                                            </div>
+                                                                            <div class="form-floating col-lg-6 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="dui" id="dui" placeholder="DUI" value="" />
+                                                                                <label for="dui" style="padding-left: 25px;">DUI</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                                                            </div>
+                                                                        </div>
                                                                             
                                                                         </tbody>
                                                                         <!--end::Table body-->
@@ -920,7 +937,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                     <div class="fs-6 fw-bold text-white text-end">
                                                                         
                                                                         <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
-                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">-$0.00</span>
+                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0.00</span>
                                                                         <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$0.00</span>
                                                                        
                                                                         
@@ -989,7 +1006,7 @@ const subtotal = document.getElementById("sutota").value;
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                        <button type="button" id="pagadito" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()">Pagar</button>
+                                                                        <button type="button" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()" disabled>Pagar</button>
 
 <!--
                                                                         <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
@@ -1338,7 +1355,7 @@ const subtotal = document.getElementById("sutota").value;
     </script>
 
 
-<script>
+<script> 
     function submitAndRedirect() {
     // Establece el target del formulario para que se abra en una nueva pestaña
     const form = document.getElementById('formElement');
@@ -1354,6 +1371,11 @@ const subtotal = document.getElementById("sutota").value;
     }, 2000);
 }
     
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
+<script>
+    Inputmask("99999999-9").mask("#dui");
 </script>
 </body>
 <!--end::Body-->
