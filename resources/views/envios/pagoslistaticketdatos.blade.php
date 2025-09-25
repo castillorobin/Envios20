@@ -308,7 +308,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class="app-container">
                         <div class="page-title d-flex flex-column justify-content-center flex-wrap me-3 pt-4 mb-5">
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetessss</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Pago de paquetes</h1>
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <li class="breadcrumb-item text-muted">
                                     <a href="/" class="text-muted text-hover-primary">Inicio</a>

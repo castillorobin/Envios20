@@ -423,7 +423,7 @@ function abrirURL(){
 
                                     </table>
                                      <div style="width: 100%; margin-top:10px;margin-bottom:20px; " >
-                                    <button type="submit" class="btn btn-primary" id="pago" style="float:right; "onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
+                                    <button type="button" class="btn btn-primary" id="pago" style="float:right; " data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
                                     </div>
                                 </div> </div> 
 
@@ -445,7 +445,172 @@ function abrirURL(){
 
 
 
-   
+
+                                    <div class="modal fade" tabindex="-1" id="kt_modal_2">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content shadow-none">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title">Detalles del pago</h5>
+
+                                                <!--begin::Close-->
+                                                <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
+                                                    <i class="ki-duotone ki-cross"><span class="path1"></span><span class="path2"></span></i>
+                                                </div>
+                                                <!--end::Close-->
+                                            </div>
+
+                                            
+                                                <div class="modal-body">
+                                                    
+                                                   
+                                                        <div class="col-lg-12">
+                                                            <div style="border: 2px solid white; border-radius: 30px; padding: 10px;">
+
+                                                                <div class="table-responsive mb-8">
+                                                                    <!--begin::Table-->
+                                                                    <table class="table align-middle gs-0 gy-4 my-0">
+                                                                        <!--begin::Table head-->
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th class="min-w-100px"></th>
+                                                                                <th class="w-200px"></th>
+                                                                                <th class="w-60px"></th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <!--end::Table head-->
+                                                                        <!--begin::Table body-->
+                                                                        <tbody>
+                                                                            <h2>Datos de pagar</h2>
+                                                                            <br>
+                                                                            <div class="form-floating col-lg-12 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="cajero" id="cajero" placeholder="Cajero" value="{{ Auth::user()->name }}" required readonly />
+                                                                                <label for="Cajero">Cajero</label>
+                                                                                <div id="CajeroValidationFeedback" class="invalid-feedback">
+                                                                                    Por favor ingrese el destinatario.
+                                                                                </div>
+                                                                            </div>
+                                                                             <div class="form-floating col-lg-12 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="fecha_entrega" id="fecha_entrega" placeholder="Fecha de entrega" readonly />
+                                                                                <label for="fecha_entrega">Fecha de pago</label>
+                                                                                <div id="fechaEntregaValidationFeedback" class="invalid-feedback">
+                                                                                    Por favor seleccione una fecha de entrega.
+                                                                                </div>
+                                                                            </div>
+                                                                             <div class="form-floating col-lg-12 mb-4">
+                                        
+                                        
+                                                                                            
+                                              <input type="text" name="agencia" id="agencia" class="form-control form-control-solid" value="{{$empleado[0]->agencia}}" readonly/>         
+                                                    
+                                                    <label for="cenvio" style="padding-left: 25px;">Agencia</label>
+                                                </div>
+                                                                        </div>
+                                                                            <div class="form-floating col-lg-12 mb-4">
+                                                                                <select class="form-select form-select-solid" name="metodo" id="metodo" required>
+                                                                                    <option value="Efectivo">Efectivo</option>
+                                                                                    <option value="Deposito">Deposito</option>
+                                                                                    <option value="Transferencia_empresa">Transferencia a la empresa</option>
+                                                                                    <option value="Transferencia_comercio">Transferencia al comercio</option>
+                                                                                    <option value="Tigo_money">Tigo money</option>
+                                                                                    <option value="Chivo">Chivo</option>
+                                                                                </select>
+                                                                                <label for="estado_envio">Método de pago</label>
+                                                                                <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
+                                                                                    Por favor seleccione el método de pago.
+                                                                                </div>
+                                                                            </div>
+
+
+                                                                             <div class="form-floating col-lg-12 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="" onchange="calcularsub()"/>
+                                                                                <label for="Cajero">Subtotal</label>
+                                                                                <div id="CajeroValidationFeedback" class="invalid-feedback">
+                                                                                    Por favor ingrese el destinatario.
+                                                                                </div>
+                                                                            </div>
+                                                                           
+                                                                             <!-- Campo para la cantidad de descuento -->
+                                                                            <div class="form-floating col-lg-12 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="descuento" id="descuento" placeholder="Descuento" value="0"onchange="calcularsub()" />
+                                                                                <label for="descuento" style="padding-left: 25px;">Descuento</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
+                                                                            </div>
+                                                                            <div class="form-floating col-lg-12 mb-4">
+                                                                                <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
+                                                                                <label for="nota" style="padding-left: 25px;">Nota</label>
+                                                                            </div>
+                                                                           
+                                                                            <!-- Campo para la cantidad de descuento -->
+                                                                            <div class="row">
+                                                                            <div class="form-floating col-lg-6 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="recibe" id="recibe" placeholder="Quien recibe" value="" />
+                                                                                <label for="recibe" style="padding-left: 25px;">Quien recibe</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                                                            </div>
+                                                                            <div class="form-floating col-lg-6 mb-4">
+                                                                                <input type="text" class="form-control form-control-solid" name="dui" id="dui" placeholder="DUI" value="" />
+                                                                                <label for="dui" style="padding-left: 25px;">DUI</label>
+                                                                                <div class="invalid-feedback">Este campo es obligatorio.</div>
+                                                                            </div>
+                                                                        </div>
+                                                                            
+                                                                        </tbody>
+                                                                        <!--end::Table body-->
+                                                                    </table>
+                                                                    <!--end::Table-->
+                                                                </div>
+                                                                <!-- Summary -->
+                                                                <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-5">
+                                                                    <!-- Content -->
+                                                                    <div class="fs-6 fw-bold text-white">
+                                                                        <span class="d-block lh-1 mb-2">Subtotal</span>
+                                                                        <span class="d-block mb-2">Descuento</span>
+                                                                        <span class="d-block fs-2qx lh-1">Total</span>
+                                                                    </div>
+                                                                    <!-- Content -->
+                                                                    <div class="fs-6 fw-bold text-white text-end">
+                                                                        
+                                                                        <span id="stotal" name="stotal" class="d-block lh-1 mb-2" data-kt-pos-element="total">$0.00</span>
+                                                                        <span id="sdescuento" name="sdescuento" class="d-block mb-2" data-kt-pos-element="discount">$0.00</span>
+                                                                        <span class="d-block fs-2qx lh-1" id="totalito" name="totalito" data-kt-pos-element="tot1">$0.00</span>
+                                                                       
+                                                                        
+                                                                        
+                                                                    </div>
+
+                                                                    
+
+
+                                                                </div>
+                                                             
+                                                                <!-- End of Summary -->
+                                                                <!-- Payment and Change -->
+                                                               
+                                                                
+                                                                
+                                                                <input type="text" name="tota" id="tota" hidden>
+                                                                <input type="text" name="stota" id="stota" hidden>
+                                                                <!-- End of Payment and Change -->
+                                                                <br>
+                                                                <div class="modal-footer">
+                                                                    <div class="d-flex justify-content-between w-100">
+                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
+                                                                        <button type="button" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()" disabled>Pagar</button>
+
+<!--
+                                                                        <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
+                                                                        -->
+                                                                        <button type="submit" id="pagadito2" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" hidden>Pagar</button>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                         </div>
+                                                         </div></div>
+                                                   
+                                                   
+
+
 
 
 

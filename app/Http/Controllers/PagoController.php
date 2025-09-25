@@ -860,7 +860,8 @@ $usuario = Auth::user()->name ?? '—';
        // $rango = $request->input('rango');
         $tickets = Envio::where('pagoticket', $id)
         ->get();
-        return view('envios.rlistadopagodatosticket', compact('tickets', 'pago'));
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('envios.rlistadopagodatosticket', compact('tickets', 'pago', 'empleado'));
     }
 
      public function pagotodo(Request $request)
