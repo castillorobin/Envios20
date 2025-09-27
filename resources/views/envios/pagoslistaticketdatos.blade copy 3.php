@@ -475,7 +475,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                 <th class="min-w-50px text-center">Total </th>
                                                 <th class="min-w-100px text-center">Nota</th>
                                                 <th class="min-w-100px text-center">Acción</th>
-                                              
+
                                                 
                                              
                                             </tr>
@@ -486,7 +486,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                             
                                             @foreach ($pedidos as $pedido)                                               
                                            
-                                            <tr data-id="{{ $pedido->id }}">
+                                            <tr >
 
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
@@ -502,7 +502,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     {{$pedido->guia}}
                                                     </a>
                                                 </td>
-                                                <td >{{$pedido->comercio}}</td>
+                                                <td>{{$pedido->comercio}}</td>
                                                 <td>{{$pedido->destinatario}}</td>
                                                 <td>{{$pedido->direccion}}</td>
                                                 <td class="text-center"><span class="badge badge-dark">{{$pedido->tipo}}</span></td>
@@ -524,7 +524,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     @endif
                                                 </td>
                                                 <td class="text-center">{{$pedido->fecha_entrega}}</td>
-                                                <td class="editable pago text-center">
+                                                <td class="text-center">
                                                     @if( $pedido->pago == 'Pagado')
                                                     <span class="badge badge-success">{{ $pedido->pago}}</span>
                                                     @else
@@ -532,17 +532,14 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     @endif
 
                                                 </td>
-                                                <td class="editable text-center">${{$pedido->precio}}</td>
-                                                <td class="editable text-center">${{$pedido->envio}}</td>
-                                                <td class="editable text-center">${{$pedido->total}}</td>
+                                                <td class="text-center">${{$pedido->precio}}</td>
+                                                <td class="text-center">${{$pedido->envio}}</td>
+                                                <td class="text-center">${{$pedido->total}}</td>
                                                 <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
                                                 <td class="text-center">{{$pedido->nota}}</td>
                                                 <td class="text-center">
-    <div class="btn-group" role="group">
-        <button class="btn btn-primary edit" value="{{$pedido->id}}" id="kt_drawer_example_basic_button">Ver</button>
-        <button type="button" class="btn btn-warning btn-edit" style="margin-left: 5px;">Editar</button>
-    </div>
-</td>
+                                                <button class="btn btn-primary edit " value="{{$pedido->id}}" id="kt_drawer_example_basic_button" >Ver</button>
+                                                </td>
 
                                                 <span hidden id="gu{{ $pedido->id }}"> {{ $pedido->guia }}</span>
                                                 <span hidden id="co{{ $pedido->id }}"> {{ $pedido->comercio }}</span>
@@ -569,7 +566,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                 <span hidden id="ni{{ $pedido->id }}"> {{ $pedido->nivel }}</span>
                                                 <span hidden id="ta{{ $pedido->id }}"> {{ $pedido->tarima }}</span>
 
-                                                                          
+                                                
                                                 
                                             </tr>
                                             <span hidden >  {{ $total4 = $total4 + $pedido->total}}</span>
@@ -952,17 +949,53 @@ document.getElementById("tota").value = subtotal - descu.value;
 
                                                                 </div>
                                                                 <div class="row">
-                                                                
+                                                                <div class=" col-lg-12 mb-4" >
                                                                                
-                 
+                                                                  <div class="form-check form-check-custom form-check-solid p-3" style="float: right;">
+                                                                        
+                                                                        <label class="form-check-label" for="">
+                                                                            Pagado &nbsp; &nbsp;
+                                                                        </label>
+                                                                        <input class="form-check-input" type="checkbox" name="pagado" value="1" id="paga"/>
+                                                                    </div>
+
+                                                                    
+                                                                </div>
+                                                                <br>
                                                                 
 
-             
+                                                                <div class=" col-lg-12 mb-4" >
+                                                                               
+                                                                
+                                                                    <div class="form-check form-check-custom form-check-solid p-3" style="float: right;">
+                                                                        
+                                                                        <label class="form-check-label" for="">
+                                                                            Verificado &nbsp; &nbsp;
+                                                                        </label>
+                                                                        <input class="form-check-input" type="checkbox" name="verificado" value="1" id="veri" />
+                                                                    </div>
 
-                                                 
+                                                                    
+                                                                </div>
+
+                                                                 <div class=" col-lg-12 mb-4" >
+                                                                                
+                                                                
+                                                                    <div class="form-check form-check-custom form-check-solid p-3" style="float: right;">
+                                                                        
+                                                                        <label class="form-check-label" for="">
+                                                                            En revision &nbsp; &nbsp;
+                                                                        </label>
+                                                                        <input class="form-check-input" type="checkbox" name="enrevision" value="1" id="enre" />
+                                                                    </div>
+
+                                                                    
+                                                                </div>
 
                                                                                                                                </div>
 
+                                                                <!-- End of Summary -->
+                                                                <!-- Payment and Change -->
                                                                
                                                                 
                                                                 <input type="text" value="{{$comercioset[0]->comercio}}" name="comercio" hidden>
@@ -973,11 +1006,12 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
                                                                         <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
-                                                                       <!-- <button type="button" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()" disabled>Pagar</button>
-                                                                             -->                    
-                                                                        <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Pagar</button>
-                                                                        
-                                                                       
+                                                                        <button type="button" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()" disabled>Pagar</button>
+
+<!--
+                                                                        <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank" disabled>Pagar</button>
+                                                                        -->
+                                                                        <button type="submit" id="pagadito2" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" hidden>Pagar</button>
                                                                     </div>
                                                                 </div>
                                                             </div>
@@ -1282,7 +1316,6 @@ document.getElementById("tota").value = subtotal - descu.value;
     <!--end::Custom Javascript-->
     <!--end::Javascript-->
     <script>
-
         document.getElementById('pago').addEventListener('click', function() {
             var myModal = new bootstrap.Modal(document.getElementById('modalPago'));
             myModal.show();
@@ -1322,89 +1355,28 @@ document.getElementById("tota").value = subtotal - descu.value;
     </script>
 
 
+<script> 
+    function submitAndRedirect() {
+    // Establece el target del formulario para que se abra en una nueva pestaña
+    const form = document.getElementById('formElement');
+    form.setAttribute('target', '_blank'); // para el PDF
+    form.setAttribute('method', 'POST');
+    form.setAttribute('action', '/pago/pagoticket');
+    
+    form.submit(); // envía el formulario y abre el PDF en nueva pestaña
 
+    // Redirige la página actual después de 2 segundos
+    setTimeout(function() {
+        window.location.href = "/listapagosticket";
+    }, 2000);
+}
+    
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
 <script>
     Inputmask("99999999-9").mask("#dui");
 </script>
-
-<script>
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('btn-edit')) {
-        let row = e.target.closest('tr');
-        let cells = row.querySelectorAll('.editable');
-
-        if (e.target.textContent === 'Editar') {
-            // Convertir celdas en inputs o select
-            cells.forEach(cell => {
-                let value = cell.textContent.trim();
-
-                if (cell.classList.contains('pago')) {
-                    // Celda de Estado del pago => usar select
-                    cell.innerHTML = `
-                        <select class="form-select form-select-sm">
-                            <option value="Pagado" ${value === 'Pagado' ? 'selected' : ''}>Pagado</option>
-                            <option value="Verificado" ${value === 'Verificado' ? 'selected' : ''}>Verificado</option>
-                            <option value="En revision" ${value === 'En revision' ? 'selected' : ''}>En revisión</option>
-                        </select>
-                    `;
-                } else {
-                    // Otras celdas => usar input
-                    cell.innerHTML = `<input type="text" class="form-control form-control-sm" value="${value}">`;
-                }
-            });
-
-            e.target.textContent = 'Guardar';
-            e.target.classList.replace('btn-warning', 'btn-success');
-        } else {
-            // Recolectar datos
-            let data = {};
-            cells.forEach(cell => {
-                if (cell.querySelector('select')) {
-                    let value = cell.querySelector('select').value;
-                    data['pago'] = value;
-
-                    // Pintar badge según valor
-                    let badgeClass = 'badge-secondary';
-                    if (value === 'Pagado') badgeClass = 'badge-success';
-                    else if (value === 'Verificado') badgeClass = 'badge-warning';
-                    else if (value === 'En revision') badgeClass = 'badge-secondary';
-
-                    cell.innerHTML = `<span class="badge ${badgeClass}">${value}</span>`;
-                } else if (cell.querySelector('input')) {
-                    let value = cell.querySelector('input').value;
-                    let field = cell.dataset.field ?? 'otro';
-                    data[field] = value;
-                    cell.textContent = value;
-                }
-            });
-
-            let id = row.dataset.id;
-
-            // Enviar por AJAX a Laravel
-            fetch(`/pedidos/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                },
-                body: JSON.stringify(data)
-            })
-            .then(res => res.json())
-            .then(res => {
-                console.log('Guardado!', res);
-            })
-            .catch(err => console.error(err));
-
-            e.target.textContent = 'Editar';
-            e.target.classList.replace('btn-success', 'btn-warning');
-        }
-    }
-});
-</script>
-
-
 </body>
 <!--end::Body-->
 
