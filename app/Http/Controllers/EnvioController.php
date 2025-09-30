@@ -26,6 +26,38 @@ class EnvioController extends Controller
         $vendedores = Vendedor::all();
         return view('envios.index', compact('vendedores'));
     }
+
+    public function updatelinea(Request $request, $id)
+{
+    $pedido = Envio::findOrFail($id);
+
+    if ($request->filled('pago')) {
+        $pedido->pago = $request->pago;
+    }
+
+    if ($request->filled('cobro')) {
+        $pedido->cobro = $request->cobro;
+    }
+
+    if ($request->has('precio')) {
+        $pedido->precio = (float) $request->precio;
+    }
+
+    if ($request->has('envio')) {
+        $pedido->envio = (float) $request->envio;
+    }
+
+    if ($request->has('total')) {
+        $pedido->total = (float) $request->total;
+    } 
+
+    $pedido->save();
+
+    return response()->json([
+        'success' => true,
+        'pedido' => $pedido
+    ]);
+}
     public function cancelar($id)
     {
 

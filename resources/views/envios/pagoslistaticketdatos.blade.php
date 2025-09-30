@@ -57,7 +57,7 @@ tbody td {
 
 
     </style>
-
+<meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 
@@ -473,7 +473,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                 <th class="min-w-50px text-center">Precio del paquete</th>
                                                 <th class="min-w-50px text-center">Precio de envío</th>
                                                 <th class="min-w-50px text-center">Total </th>
-                                                <th class="min-w-100px text-center">Nota</th>
+                                                <th class="min-w-100px text-center">Cobro del envío</th>
                                                 <th class="min-w-100px text-center">Acción</th>
                                               
                                                 
@@ -486,7 +486,9 @@ document.getElementById("tota").value = subtotal - descu.value;
                                             
                                             @foreach ($pedidos as $pedido)                                               
                                            
-                                            <tr data-id="{{ $pedido->id }}">
+                                            <tr
+                                            data-id="{{ $pedido->id }}"
+                                            data-update-url="{{ route('pedidos.updatelinea', $pedido->id) }}">
 
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
@@ -524,7 +526,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     @endif
                                                 </td>
                                                 <td class="text-center">{{$pedido->fecha_entrega}}</td>
-                                                <td class="editable pago text-center">
+                                                <td class="editable estado-pago text-center">
                                                     @if( $pedido->pago == 'Pagado')
                                                     <span class="badge badge-success">{{ $pedido->pago}}</span>
                                                     @else
@@ -532,16 +534,22 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     @endif
 
                                                 </td>
-                                                <td class="editable text-center">${{$pedido->precio}}</td>
-                                                <td class="editable text-center">${{$pedido->envio}}</td>
-                                                <td class="editable text-center">${{$pedido->total}}</td>
+                                                <td class="editable text-center precio" data-field="precio">${{$pedido->precio}}</td>
+                                                <td class="editable text-center envio" data-field="envio">${{$pedido->envio}}</td>
+                                                <td class="editable text-center total" data-field="total">${{$pedido->total}}</td>
                                                 <span hidden id="tot{{ $pedido->id }}"> {{ $pedido->total }}</span>
-                                                <td class="text-center">{{$pedido->nota}}</td>
+                                                <td class="editable text-center cobro">
+                                                    @if($pedido->cobro == 'Pagado')
+                                                        <span class="badge badge-success">{{ $pedido->cobro }}</span>
+                                                    @else
+                                                        <span class="badge badge-danger">{{ $pedido->cobro }}</span>
+                                                    @endif
+                                                </td>
                                                 <td class="text-center">
-    <div class="btn-group" role="group">
-        <button class="btn btn-primary edit" value="{{$pedido->id}}" id="kt_drawer_example_basic_button">Ver</button>
-        <button type="button" class="btn btn-warning btn-edit" style="margin-left: 5px;">Editar</button>
-    </div>
+  <div class="btn-group" role="group">
+      <button type="button" class="btn btn-primary edit" value="{{$pedido->id}}" id="kt_drawer_example_basic_button">Ver</button>
+      <button type="button" class="btn btn-warning btn-edit" style="margin-left: 5px;">Editar</button>
+  </div>
 </td>
 
                                                 <span hidden id="gu{{ $pedido->id }}"> {{ $pedido->guia }}</span>
@@ -1330,78 +1338,117 @@ document.getElementById("tota").value = subtotal - descu.value;
 </script>
 
 <script>
-  document.addEventListener('click', function(e) {
-    if (e.target.classList.contains('btn-edit')) {
-        let row = e.target.closest('tr');
-        let cells = row.querySelectorAll('.editable');
+  document.addEventListener('click', function (e) {
+    if (!e.target.classList.contains('btn-edit')) return;
 
-        if (e.target.textContent === 'Editar') {
-            // Convertir celdas en inputs o select
-            cells.forEach(cell => {
-                let value = cell.textContent.trim();
+    e.preventDefault(); // evita submit del form
+    const btn   = e.target;
+    const row   = btn.closest('tr');
+    const cells = row.querySelectorAll('.editable');
 
-                if (cell.classList.contains('pago')) {
-                    // Celda de Estado del pago => usar select
-                    cell.innerHTML = `
-                        <select class="form-select form-select-sm">
-                            <option value="Pagado" ${value === 'Pagado' ? 'selected' : ''}>Pagado</option>
-                            <option value="Verificado" ${value === 'Verificado' ? 'selected' : ''}>Verificado</option>
-                            <option value="En revision" ${value === 'En revision' ? 'selected' : ''}>En revisión</option>
-                        </select>
-                    `;
-                } else {
-                    // Otras celdas => usar input
-                    cell.innerHTML = `<input type="text" class="form-control form-control-sm" value="${value}">`;
-                }
-            });
+    // --- MODO EDICIÓN ---
+    if (btn.textContent.trim() === 'Editar') {
+      cells.forEach((cell) => {
+        const value = cell.textContent.trim();
 
-            e.target.textContent = 'Guardar';
-            e.target.classList.replace('btn-warning', 'btn-success');
+        if (cell.classList.contains('estado-pago')) {
+          cell.innerHTML = `
+            <select class="form-select form-select-sm">
+              <option value="Pagado" ${value === 'Pagado' ? 'selected' : ''}>Pagado</option>
+              <option value="Verificado" ${value === 'Verificado' ? 'selected' : ''}>Verificado</option>
+              <option value="En revision" ${value === 'En revision' ? 'selected' : ''}>En revisión</option>
+            </select>
+          `;
+        } else if (cell.classList.contains('cobro')) {
+          cell.innerHTML = `
+            <select class="form-select form-select-sm">
+              <option value="Pendiente" ${value === 'Pendiente' ? 'selected' : ''}>Pendiente</option>
+              <option value="Pagado" ${value === 'Pagado' ? 'selected' : ''}>Pagado</option>
+            </select>
+          `;
+        } else if (
+          cell.classList.contains('precio') ||
+          cell.classList.contains('envio')  ||
+          cell.classList.contains('total')
+        ) {
+          let numeric = value.replace(/[^0-9.\-]/g, ''); // quitar $
+          cell.innerHTML = `<input type="number" step="0.01" class="form-control form-control-sm" value="${numeric}">`;
         } else {
-            // Recolectar datos
-            let data = {};
-            cells.forEach(cell => {
-                if (cell.querySelector('select')) {
-                    let value = cell.querySelector('select').value;
-                    data['pago'] = value;
-
-                    // Pintar badge según valor
-                    let badgeClass = 'badge-secondary';
-                    if (value === 'Pagado') badgeClass = 'badge-success';
-                    else if (value === 'Verificado') badgeClass = 'badge-warning';
-                    else if (value === 'En revision') badgeClass = 'badge-secondary';
-
-                    cell.innerHTML = `<span class="badge ${badgeClass}">${value}</span>`;
-                } else if (cell.querySelector('input')) {
-                    let value = cell.querySelector('input').value;
-                    let field = cell.dataset.field ?? 'otro';
-                    data[field] = value;
-                    cell.textContent = value;
-                }
-            });
-
-            let id = row.dataset.id;
-
-            // Enviar por AJAX a Laravel
-            fetch(`/pedidos/${id}`, {
-                method: 'PUT',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
-                },
-                body: JSON.stringify(data)
-            })
-            .then(res => res.json())
-            .then(res => {
-                console.log('Guardado!', res);
-            })
-            .catch(err => console.error(err));
-
-            e.target.textContent = 'Editar';
-            e.target.classList.replace('btn-success', 'btn-warning');
+          cell.innerHTML = `<input type="text" class="form-control form-control-sm" value="${value}">`;
         }
+      });
+
+      btn.textContent = 'Guardar';
+      btn.classList.replace('btn-warning', 'btn-success');
+      return;
     }
-});
+
+    // --- MODO GUARDAR ---
+    const data = {};
+    cells.forEach((cell) => {
+      const input = cell.querySelector('select, input');
+      let value   = input ? input.value : cell.textContent.trim();
+
+      if (cell.classList.contains('estado-pago')) {
+        data.pago = value;
+        const badgeClass = value === 'Pagado' ? 'success' : (value === 'Verificado' ? 'warning' : 'secondary');
+        cell.innerHTML = `<span class="badge badge-${badgeClass}">${value}</span>`;
+      } 
+      else if (cell.classList.contains('cobro')) {
+        data.cobro = value;
+        const badgeClass = value === 'Pagado' ? 'success' : 'danger';
+        cell.innerHTML = `<span class="badge badge-${badgeClass}">${value}</span>`;
+      } 
+      else if (
+        cell.classList.contains('precio') ||
+        cell.classList.contains('envio')  ||
+        cell.classList.contains('total')
+      ) {
+        let numeric = value.replace(/[^0-9.\-]/g, '');
+        numeric = parseFloat(numeric) || 0;
+        data[cell.dataset.field] = numeric;
+        cell.textContent = '$' + numeric.toFixed(2); // vuelve a pintar con $
+      }
+      else {
+        cell.textContent = value;
+      }
+    });
+
+    const url  = row.dataset.updateUrl; // viene del <tr data-update-url="...">
+    const csrf = document.querySelector('meta[name="csrf-token"]').content;
+
+    console.log('[UPDATE URL]', url);
+    console.log('[PAYLOAD]', data);
+
+    fetch(url, {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'X-CSRF-TOKEN': csrf,
+        'X-Requested-With': 'XMLHttpRequest'
+      },
+      body: JSON.stringify(data),
+      credentials: 'same-origin'
+    })
+    .then(async res => {
+      const text = await res.text();
+      console.log('[STATUS]', res.status, text);
+      if (!res.ok) throw new Error(text || ('HTTP ' + res.status));
+      return JSON.parse(text);
+    })
+    .then(json => {
+      console.log('Guardado OK:', json);
+    })
+    .catch(err => {
+      console.error('Error guardando:', err);
+      alert('No se pudo guardar.\nRevisa la consola para más detalles.');
+    })
+    .finally(() => {
+      btn.textContent = 'Editar';
+      btn.classList.replace('btn-success', 'btn-warning');
+    });
+  });
 </script>
 
 
