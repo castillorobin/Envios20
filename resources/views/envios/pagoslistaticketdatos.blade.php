@@ -1338,18 +1338,41 @@ document.getElementById("tota").value = subtotal - descu.value;
 </script>
 
 <script>
-  document.addEventListener('click', function (e) {
+   document.addEventListener('click', function (e) {
     if (!e.target.classList.contains('btn-edit')) return;
 
-    e.preventDefault(); // evita submit del form
+    e.preventDefault(); 
     const btn   = e.target;
     const row   = btn.closest('tr');
     const cells = row.querySelectorAll('.editable');
 
+    // --- Función para recalcular el total ---
+    function recalcularTotal() {
+      const precioInput = row.querySelector('.precio input');
+      const envioInput  = row.querySelector('.envio input');
+      const cobroSelect = row.querySelector('.cobro select');
+      const totalInput  = row.querySelector('.total input');
+
+      let precio = parseFloat(precioInput?.value) || 0;
+      let envio  = parseFloat(envioInput?.value)  || 0;
+      let cobro  = cobroSelect?.value || 'Pendiente';
+
+      let total = 0;
+      if (cobro === 'Pendiente') {
+        total = precio + envio;
+      } else if (cobro === 'Pagado') {
+        total = precio;
+      }
+
+      if (totalInput) {
+        totalInput.value = total.toFixed(2);
+      }
+    }
+
     // --- MODO EDICIÓN ---
     if (btn.textContent.trim() === 'Editar') {
       cells.forEach((cell) => {
-        const value = cell.textContent.trim();
+        let value = cell.textContent.trim();
 
         if (cell.classList.contains('estado-pago')) {
           cell.innerHTML = `
@@ -1359,24 +1382,38 @@ document.getElementById("tota").value = subtotal - descu.value;
               <option value="En revision" ${value === 'En revision' ? 'selected' : ''}>En revisión</option>
             </select>
           `;
-        } else if (cell.classList.contains('cobro')) {
+        } 
+        else if (cell.classList.contains('cobro')) {
           cell.innerHTML = `
             <select class="form-select form-select-sm">
               <option value="Pendiente" ${value === 'Pendiente' ? 'selected' : ''}>Pendiente</option>
               <option value="Pagado" ${value === 'Pagado' ? 'selected' : ''}>Pagado</option>
             </select>
           `;
-        } else if (
-          cell.classList.contains('precio') ||
-          cell.classList.contains('envio')  ||
-          cell.classList.contains('total')
-        ) {
-          let numeric = value.replace(/[^0-9.\-]/g, ''); // quitar $
+        } 
+        else if (cell.classList.contains('precio') || cell.classList.contains('envio') || cell.classList.contains('total')) {
+          let numeric = value.replace(/[^0-9.\-]/g, '');
           cell.innerHTML = `<input type="number" step="0.01" class="form-control form-control-sm" value="${numeric}">`;
-        } else {
+        } 
+        else {
           cell.innerHTML = `<input type="text" class="form-control form-control-sm" value="${value}">`;
         }
       });
+
+      // --- Agregar listeners a los campos que afectan el total ---
+      const precioInput = row.querySelector('.precio input');
+      const envioInput  = row.querySelector('.envio input');
+      const cobroSelect = row.querySelector('.cobro select');
+
+      [precioInput, envioInput, cobroSelect].forEach(el => {
+        if (el) {
+          el.addEventListener('input', recalcularTotal);
+          el.addEventListener('change', recalcularTotal);
+        }
+      });
+
+      // Calcula de entrada
+      recalcularTotal();
 
       btn.textContent = 'Guardar';
       btn.classList.replace('btn-warning', 'btn-success');
@@ -1399,26 +1436,18 @@ document.getElementById("tota").value = subtotal - descu.value;
         const badgeClass = value === 'Pagado' ? 'success' : 'danger';
         cell.innerHTML = `<span class="badge badge-${badgeClass}">${value}</span>`;
       } 
-      else if (
-        cell.classList.contains('precio') ||
-        cell.classList.contains('envio')  ||
-        cell.classList.contains('total')
-      ) {
-        let numeric = value.replace(/[^0-9.\-]/g, '');
-        numeric = parseFloat(numeric) || 0;
+      else if (cell.classList.contains('precio') || cell.classList.contains('envio') || cell.classList.contains('total')) {
+        let numeric = parseFloat(value) || 0;
         data[cell.dataset.field] = numeric;
-        cell.textContent = '$' + numeric.toFixed(2); // vuelve a pintar con $
-      }
+        cell.textContent = '$' + numeric.toFixed(2);
+      } 
       else {
         cell.textContent = value;
       }
     });
 
-    const url  = row.dataset.updateUrl; // viene del <tr data-update-url="...">
+    const url  = row.dataset.updateUrl;
     const csrf = document.querySelector('meta[name="csrf-token"]').content;
-
-    console.log('[UPDATE URL]', url);
-    console.log('[PAYLOAD]', data);
 
     fetch(url, {
       method: 'PUT',
@@ -1433,12 +1462,12 @@ document.getElementById("tota").value = subtotal - descu.value;
     })
     .then(async res => {
       const text = await res.text();
-      console.log('[STATUS]', res.status, text);
       if (!res.ok) throw new Error(text || ('HTTP ' + res.status));
       return JSON.parse(text);
     })
     .then(json => {
       console.log('Guardado OK:', json);
+      location.reload(); // refrescar para que spans ocultos queden correctos
     })
     .catch(err => {
       console.error('Error guardando:', err);
