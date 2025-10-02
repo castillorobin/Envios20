@@ -261,6 +261,11 @@ Route::get('/reporte/exportarentregaentre/{ticketc}', [App\Http\Controllers\Entr
 Route::get('/reporte/exportardevo/', [App\Http\Controllers\DevolucionController::class, 'exportardevo'] )->name('exportardevo') ;
 
 
+
+Route::post('/authorize-editing', [App\Http\Controllers\EnvioController::class, 'authorizeEditing'])
+    ->name('authorize.editing');
+
+    Route::get('/reporte/testmodel/', [App\Http\Controllers\EnvioController::class, 'testmodel'] )->name('testmodel') ;
 /*
 envios/detalleeditando
 

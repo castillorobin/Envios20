@@ -26,9 +26,19 @@ class EnvioController extends Controller
         $vendedores = Vendedor::all();
         return view('envios.index', compact('vendedores'));
     }
+     public function testmodel()
+    {
+
+        $vendedores = Vendedor::all();
+        return view('entrega.testmodel', compact('vendedores'));
+    }
 
     public function updatelinea(Request $request, $id)
 {
+    if (!auth()->user()->can('editar filas')) {
+        abort(403, 'No tienes permiso para editar filas.');
+    }
+
     $pedido = Envio::findOrFail($id);
 
     if ($request->filled('pago')) {
@@ -38,7 +48,7 @@ class EnvioController extends Controller
     if ($request->filled('cobro')) {
         $pedido->cobro = $request->cobro;
     }
-
+ 
     if ($request->has('precio')) {
         $pedido->precio = (float) $request->precio;
     }
@@ -57,6 +67,22 @@ class EnvioController extends Controller
         'success' => true,
         'pedido' => $pedido
     ]);
+}
+
+public function authorizeEditing(Request $request)
+{
+    $credentials = $request->only('email', 'password');
+
+    if (Auth::validate($credentials)) {
+        $user = \App\Models\User::where('email', $credentials['email'])->first();
+
+        if ($user && $user->can('autorizar ediciones')) {
+            session(['authorized_to_edit' => true]);
+            return response()->json(['success' => true]);
+        }
+    }
+
+    return response()->json(['success' => false], 403);
 }
     public function cancelar($id)
     {
