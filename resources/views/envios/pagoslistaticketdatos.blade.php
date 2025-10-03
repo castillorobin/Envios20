@@ -1406,7 +1406,7 @@ document.getElementById("tota").value = subtotal - descu.value;
 
       let total = 0;
       if (cobro === 'Pendiente') {
-        total = precio + envio;   // 👉 pendiente = precio + envío
+        total = precio - envio;   // 👉 pendiente = precio + envío
       } else if (cobro === 'Pagado') {
         total = precio;           // 👉 pagado = solo precio
       }
