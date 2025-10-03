@@ -20,18 +20,14 @@ class EnvioController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function checkPermission($id, Request $request)
+   public function checkPermission($id, Request $request)
 {
     $pedido = Envio::findOrFail($id);
 
-    // Si tiene permiso directo
-    if (auth()->user()->can('editar paquetes')) {
-        return redirect()->route('envios.pagoslistaticketdatos', $request->query());
-    }
-
-    // Si ya fue autorizado antes
-    if (session('autorizado_editar') === true) {
-        return redirect()->route('envios.pagoslistaticketdatos', $request->query());
+    // Si ya tiene permiso directo o autorización previa
+    if (auth()->user()->can('editar paquetes') || session('autorizado_editar') === true) {
+        // Redirigir directo al listado usando el ticket del pedido
+        return redirect()->route('conticket', ['ticket' => $pedido->ticketc]);
     }
 
     // De lo contrario → pedir autorización
@@ -40,7 +36,7 @@ class EnvioController extends Controller
     return view('configuraciones.autorizar', [
         'pedido' => $pedido,
         'supervisores' => $supervisores,
-        'filtros' => $request->query(), // Guardar filtros de rango de fechas
+        'ticket' => $pedido->ticketc, // 👈 le pasamos el ticket
     ]);
 }
 
@@ -48,7 +44,8 @@ public function autorizar(Request $request)
 {
     $request->validate([
         'supervisor_id' => 'required|exists:users,id',
-        'password' => 'required'
+        'password' => 'required',
+        'ticket' => 'required' // 👈 validamos ticket
     ]);
 
     $supervisor = \App\Models\User::find($request->supervisor_id);
@@ -58,16 +55,15 @@ public function autorizar(Request $request)
         return back()->with('error', 'Credenciales inválidas del supervisor.');
     }
 
-    // Validar que tiene rol
     if (!$supervisor->hasRole('Administrador')) {
         return back()->with('error', 'Este usuario no es supervisor.');
     }
 
-    // ✅ Marcar al usuario logueado como autorizado en sesión
+    // ✅ Autorización concedida
     session(['autorizado_editar' => true]);
 
-    // Regresar al listado con los mismos filtros
-    return redirect()->route('conticket', $request->filtros)
+    // Redirigimos al listado con el mismo ticket
+    return redirect()->route('conticket', ['ticket' => $request->ticket])
                      ->with('success', 'Autorización concedida. Ya puedes editar.');
 }
     public function index()

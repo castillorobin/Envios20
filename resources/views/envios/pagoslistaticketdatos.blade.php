@@ -560,13 +560,21 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     @endif
                                                 </td>
                                                 <td class="text-center">
- <div class="btn-group" role="group">
- <button type="button" class="btn btn-primary edit" value="{{$pedido->id}}" id="kt_drawer_example_basic_button">Ver</button>
- <a href="{{ route('pedidos.checkPermission', ['id' => $pedido->id] + request()->query()) }}" class="btn btn-warning">
-    Editar
-</a>
- </div>
- </td>
+  <div class="btn-group" role="group">
+    <button type="button" class="btn btn-primary edit" value="{{ $pedido->id }}">Ver</button>
+
+    @if(session('autorizado_editar'))
+      {{-- Si ya está autorizado, botón que usa JS inline edit --}}
+      <button type="button" class="btn btn-warning btn-edit">Editar</button>
+    @else
+      {{-- Si no tiene permiso todavía, manda a pedir autorización --}}
+      <a href="{{ route('pedidos.checkPermission', ['id' => $pedido->id, 'ticket' => $pedido->ticketc]) }}" 
+         class="btn btn-warning">
+        Editar
+      </a>
+    @endif
+  </div>
+</td>
 
                                                 <span hidden id="gu{{ $pedido->id }}"> {{ $pedido->guia }}</span>
                                                 <span hidden id="co{{ $pedido->id }}"> {{ $pedido->comercio }}</span>
@@ -1353,7 +1361,9 @@ document.getElementById("tota").value = subtotal - descu.value;
         establecerFechaEntrega();
     </script>
 
-
+<script>
+    window.autorizadoEditar = @json($autorizado);
+</script>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/inputmask/5.0.8/inputmask.min.js"></script>
@@ -1362,6 +1372,11 @@ document.getElementById("tota").value = subtotal - descu.value;
 </script>
 
 <script>
+  // Esta variable viene desde el backend: 
+  // en tu controlador la pasas como -> session('autorizado_editar', false)
+  // y en el Blade la imprimes con window.autorizadoEditar = @json($autorizado);
+  let autorizado = window.autorizadoEditar || false;
+
   document.addEventListener('click', function (e) {
     if (!e.target.classList.contains('btn-edit')) return;
 
@@ -1369,6 +1384,14 @@ document.getElementById("tota").value = subtotal - descu.value;
     const btn   = e.target;
     const row   = btn.closest('tr');
     const cells = row.querySelectorAll('.editable');
+
+    // 🚨 Si no está autorizado, redirige a pedir autorización
+    if (!autorizado) {
+      const id = row.dataset.id;
+      const ticket = "{{ $pedidos[0]->ticketc ?? '' }}"; // el ticket actual
+      window.location.href = `/pedidos/${id}/check-permission?ticket=${ticket}`;
+      return;
+    }
 
     // --- Función para recalcular el total ---
     function recalcularTotal() {
@@ -1383,9 +1406,9 @@ document.getElementById("tota").value = subtotal - descu.value;
 
       let total = 0;
       if (cobro === 'Pendiente') {
-        total = precio - envio;
+        total = precio + envio;   // 👉 pendiente = precio + envío
       } else if (cobro === 'Pagado') {
-        total = precio;
+        total = precio;           // 👉 pagado = solo precio
       }
 
       if (totalInput) {
@@ -1490,11 +1513,11 @@ document.getElementById("tota").value = subtotal - descu.value;
       return JSON.parse(text);
     })
     .then(json => {
-      console.log('Guardado OK:', json);
+      console.log('✅ Guardado OK:', json);
       location.reload(); // refrescar para que spans ocultos queden correctos
     })
     .catch(err => {
-      console.error('Error guardando:', err);
+      console.error('❌ Error guardando:', err);
       alert('No se pudo guardar.\nRevisa la consola para más detalles.');
     })
     .finally(() => {
@@ -1503,7 +1526,6 @@ document.getElementById("tota").value = subtotal - descu.value;
     });
   });
 </script>
-
 
 
 </body>

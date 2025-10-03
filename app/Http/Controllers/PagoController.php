@@ -459,9 +459,9 @@ class PagoController extends Controller
     public function conticket(Request $request)
     { 
        // $pedidos = Cobro::all();
-       $comercio = $request->get('ticket') ;
+       $ticket = $request->get('ticket') ;
 
-       $pedidos = Envio::where('ticketc', $comercio)->get();
+       $pedidos = Envio::where('ticketc', $ticket)->get();
       
      //  return ($pedidos[0]->comercio);
        
@@ -478,7 +478,13 @@ class PagoController extends Controller
         }
         $agencias = Agencia::all();
 $empleado = Empleado::where('nombre', Auth::user()->name)->get();
-        return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'agencias', 'empleado'));
+
+$autorizado = session('autorizado_editar', false);
+
+return view('envios.pagoslistaticketdatos', compact(
+    'comercios', 'pedidos', 'comercioset', 'nota', 'agencias', 'empleado', 'autorizado'
+));
+        //return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'agencias', 'empleado'));
         
     }
 
