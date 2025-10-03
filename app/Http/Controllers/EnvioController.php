@@ -35,9 +35,7 @@ class EnvioController extends Controller
 
     public function updatelinea(Request $request, $id)
 {
-    if (!auth()->user()->can('editar filas')) {
-        abort(403, 'No tienes permiso para editar filas.');
-    }
+    
 
     $pedido = Envio::findOrFail($id);
 

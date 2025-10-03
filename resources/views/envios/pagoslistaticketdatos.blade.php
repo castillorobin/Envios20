@@ -560,22 +560,11 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     @endif
                                                 </td>
                                                 <td class="text-center">
-  <div class="btn-group" role="group">
-      <!-- Botón VER abre el drawer de Metronic -->
-      <button type="button" 
-              class="btn btn-primary btn-ver" 
-              data-kt-drawer-toggle="#kt_drawer_example_basic">
-          Ver
-      </button>
-
-      <!-- Botón EDITAR dispara el modal de autorización -->
-      <button type="button" 
-              class="btn btn-warning btn-edit" 
-              style="margin-left: 5px;">
-          Editar
-      </button>
-  </div>
-</td>
+ <div class="btn-group" role="group">
+ <button type="button" class="btn btn-primary edit" value="{{$pedido->id}}" id="kt_drawer_example_basic_button">Ver</button>
+ <button type="button" class="btn btn-warning btn-edit" style="margin-left: 5px;">Editar</button>
+ </div>
+ </td>
 
                                                 <span hidden id="gu{{ $pedido->id }}"> {{ $pedido->guia }}</span>
                                                 <span hidden id="co{{ $pedido->id }}"> {{ $pedido->comercio }}</span>
@@ -1216,41 +1205,6 @@ document.getElementById("tota").value = subtotal - descu.value;
 
 
 
-<!-- Modal Supervisor -->
-<div class="modal fade" id="modalSupervisor" tabindex="-1" aria-labelledby="modalSupervisorLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      
-      <div class="modal-header">
-        <h5 class="modal-title" id="modalSupervisorLabel">Autorización de Supervisor</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-      </div>
-      
-      <div class="modal-body">
-        <form id="formSupervisor">
-            @csrf
-            <div class="mb-3">
-                <label for="emailSupervisor" class="form-label">Correo del Supervisor</label>
-                <input type="email" class="form-control" id="emailSupervisor" name="email" required>
-            </div>
-            <div class="mb-3">
-                <label for="passwordSupervisor" class="form-label">Contraseña</label>
-                <input type="password" class="form-control" id="passwordSupervisor" name="password" required>
-            </div>
-            <div id="authError" class="text-danger small" style="display:none;">
-                Credenciales inválidas o sin permisos.
-            </div>
-        </form>
-      </div>
-      
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-primary" id="btnAutorizar">Autorizar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
 
 
 
@@ -1406,68 +1360,15 @@ document.getElementById("tota").value = subtotal - descu.value;
 </script>
 
 <script>
-  let autorizado = false;
-let pendingButton = null; // Para recordar qué botón pidió autorización
+  document.addEventListener('click', function (e) {
+    if (!e.target.classList.contains('btn-edit')) return;
 
-// --- CLICK EN EDITAR ---
-document.addEventListener('click', function (e) {
-    if (!e.target.matches('.btn-edit')) return;
-    e.preventDefault();
-
-    if (!autorizado) {
-        pendingButton = e.target;
-
-        const modalEl = document.getElementById('modalSupervisor');
-        const modal = bootstrap.Modal.getOrCreateInstance(modalEl);
-        modal.show();
-    } else {
-        e.target.dispatchEvent(new Event('start-edit', { bubbles: true }));
-    }
-});
-
-// --- BOTÓN AUTORIZAR DEL MODAL ---
-document.getElementById('btnAutorizar').addEventListener('click', function () {
-    const email = document.getElementById('emailSupervisor').value;
-    const password = document.getElementById('passwordSupervisor').value;
-
-    fetch("{{ route('authorize.editing') }}", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "X-CSRF-TOKEN": document.querySelector('meta[name="csrf-token"]').content
-        },
-        body: JSON.stringify({ email, password })
-    })
-    .then(res => res.json())
-    .then(data => {
-        if (data.success) {
-            autorizado = true;
-            bootstrap.Modal.getInstance(document.getElementById('modalSupervisor')).hide();
-            alert("✅ Autorización concedida. Ya puedes editar filas.");
-
-            // si había un botón esperando, le disparamos el evento de edición
-            if (pendingButton) {
-                pendingButton.dispatchEvent(new Event('start-edit', { bubbles: true }));
-                pendingButton = null;
-            }
-        } else {
-            document.getElementById('authError').style.display = 'block';
-        }
-    })
-    .catch(err => {
-        console.error(err);
-        document.getElementById('authError').style.display = 'block';
-    });
-});
-
-
-// --- EDICIÓN EN LÍNEA ---
-document.addEventListener('start-edit', function (e) {
+    e.preventDefault(); 
     const btn   = e.target;
     const row   = btn.closest('tr');
     const cells = row.querySelectorAll('.editable');
 
-    // función para recalcular total
+    // --- Función para recalcular el total ---
     function recalcularTotal() {
       const precioInput = row.querySelector('.precio input');
       const envioInput  = row.querySelector('.envio input');
@@ -1480,7 +1381,7 @@ document.addEventListener('start-edit', function (e) {
 
       let total = 0;
       if (cobro === 'Pendiente') {
-        total = precio + envio;
+        total = precio - envio;
       } else if (cobro === 'Pagado') {
         total = precio;
       }
@@ -1521,16 +1422,19 @@ document.addEventListener('start-edit', function (e) {
         }
       });
 
-      // listeners para recalcular
+      // --- Agregar listeners a los campos que afectan el total ---
       const precioInput = row.querySelector('.precio input');
       const envioInput  = row.querySelector('.envio input');
       const cobroSelect = row.querySelector('.cobro select');
+
       [precioInput, envioInput, cobroSelect].forEach(el => {
         if (el) {
           el.addEventListener('input', recalcularTotal);
           el.addEventListener('change', recalcularTotal);
         }
       });
+
+      // Calcula de entrada
       recalcularTotal();
 
       btn.textContent = 'Guardar';
@@ -1585,17 +1489,17 @@ document.addEventListener('start-edit', function (e) {
     })
     .then(json => {
       console.log('Guardado OK:', json);
-      location.reload(); // refrescar la vista para que se actualicen totales ocultos
+      location.reload(); // refrescar para que spans ocultos queden correctos
     })
     .catch(err => {
       console.error('Error guardando:', err);
-      alert('❌ No se pudo guardar.\nRevisa la consola para más detalles.');
+      alert('No se pudo guardar.\nRevisa la consola para más detalles.');
     })
     .finally(() => {
       btn.textContent = 'Editar';
       btn.classList.replace('btn-success', 'btn-warning');
     });
-});
+  });
 </script>
 
 
