@@ -413,6 +413,13 @@ Route::get('/agencia/editandoagencia', [App\Http\Controllers\RutaController::cla
 Route::get('/agencia',            [AgenciaController::class, 'index'])->name('agencia.index');
 Route::post('/agencia',           [AgenciaController::class, 'store'])->name('agencia.store');
 Route::delete('/agencia/{agencia}', [AgenciaController::class, 'destroy'])->name('agencia.destroy');
+
+
+Route::get('/pedidos/{id}/editar', [App\Http\Controllers\EnvioController::class, 'checkPermission'])
+    ->name('pedidos.checkPermission');
+
+Route::post('/pedidos/autorizar', [App\Http\Controllers\EnvioController::class, 'autorizar'])
+    ->name('pedidos.autorizar');
  
 /*
 

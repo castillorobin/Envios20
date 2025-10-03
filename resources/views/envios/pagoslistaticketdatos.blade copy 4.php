@@ -562,9 +562,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                 <td class="text-center">
  <div class="btn-group" role="group">
  <button type="button" class="btn btn-primary edit" value="{{$pedido->id}}" id="kt_drawer_example_basic_button">Ver</button>
- <a href="{{ route('pedidos.checkPermission', ['id' => $pedido->id] + request()->query()) }}" class="btn btn-warning">
-    Editar
-</a>
+ <button type="button" class="btn btn-warning btn-edit" style="margin-left: 5px;">Editar</button>
  </div>
  </td>
 

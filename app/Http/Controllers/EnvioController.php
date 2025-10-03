@@ -20,6 +20,56 @@ class EnvioController extends Controller
     /**
      * Display a listing of the resource.
      */
+    public function checkPermission($id, Request $request)
+{
+    $pedido = Envio::findOrFail($id);
+
+    // Si tiene permiso directo
+    if (auth()->user()->can('editar paquetes')) {
+        return redirect()->route('envios.pagoslistaticketdatos', $request->query());
+    }
+
+    // Si ya fue autorizado antes
+    if (session('autorizado_editar') === true) {
+        return redirect()->route('envios.pagoslistaticketdatos', $request->query());
+    }
+
+    // De lo contrario → pedir autorización
+    $supervisores = \App\Models\User::role('Administrador')->get();
+
+    return view('configuraciones.autorizar', [
+        'pedido' => $pedido,
+        'supervisores' => $supervisores,
+        'filtros' => $request->query(), // Guardar filtros de rango de fechas
+    ]);
+}
+
+public function autorizar(Request $request)
+{
+    $request->validate([
+        'supervisor_id' => 'required|exists:users,id',
+        'password' => 'required'
+    ]);
+
+    $supervisor = \App\Models\User::find($request->supervisor_id);
+
+    // Validar password
+    if (!\Hash::check($request->password, $supervisor->password)) {
+        return back()->with('error', 'Credenciales inválidas del supervisor.');
+    }
+
+    // Validar que tiene rol
+    if (!$supervisor->hasRole('Administrador')) {
+        return back()->with('error', 'Este usuario no es supervisor.');
+    }
+
+    // ✅ Marcar al usuario logueado como autorizado en sesión
+    session(['autorizado_editar' => true]);
+
+    // Regresar al listado con los mismos filtros
+    return redirect()->route('conticket', $request->filtros)
+                     ->with('success', 'Autorización concedida. Ya puedes editar.');
+}
     public function index()
     {
 
