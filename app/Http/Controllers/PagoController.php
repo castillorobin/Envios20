@@ -435,7 +435,8 @@ class PagoController extends Controller
      
             ->get();
         }
-
+$empleado = Empleado::where('nombre', Auth::user()->name)->get();
+$autorizado = session('autorizado_editar', false);
         $comercios = Comercio::all(); 
        $comercioset = Comercio::where('comercio', $comerset)->get();
        $nota = " ";
@@ -443,10 +444,11 @@ class PagoController extends Controller
             $pedidos = Envio::where('ticketc', $ticketc)->get();
             $nota = "No hay envios con el estado seleccionado";
 
-            return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota'));
+            return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'empleado', 'autorizado'));
 
         }else{
-            return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota'));
+
+            return view('envios.pagoslistaticketdatos', compact('comercios', 'pedidos', 'comercioset', 'nota', 'empleado', 'autorizado'));
         }
       
 

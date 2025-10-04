@@ -506,9 +506,9 @@ document.getElementById("tota").value = subtotal - descu.value;
 
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
-                                                        @if($pedido->pago != 'Pagado')
+                                                        
                                                      <input type="checkbox" value="{{ $pedido->id }}" class="form-check-input" id="check3" name="checked[]" >
-                                                     @endif
+                                                  
                                                     </div>
                                                     </td>
 
