@@ -210,8 +210,8 @@ $('#totalito').text(total);
     
 function abrirURL(){
     
-   window.location = "http://127.0.0.1:8000/listapagosticket";
-   //window.location = "https://meloexpress.site/listapagosticket";
+   //window.location = "http://127.0.0.1:8000/listapagosticket";
+   window.location = "https://meloexpress.site/listapagosticket";
 };
 </script>
 
@@ -410,6 +410,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                         <option value="Reprogramado">Reprogramado</option>
                                         <option value="Devuelto al comercio">Devuelto al comercio</option>
                                         <option value="Recepcionado">Recepcionado</option>
+                                        <option value="Fallido">Fallido</option>
                                     </select>
                                     <!--end::Select2-->
                                    
@@ -561,7 +562,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                 </td>
                                                 <td class="text-center">
   <div class="btn-group" role="group">
-    <button type="button" class="btn btn-primary edit" value="{{ $pedido->id }}">Ver</button>
+    <button class="btn btn-primary edit " value="{{$pedido->id}}" id="kt_drawer_example_basic_button" >Ver</button>
 
     @if(session('autorizado_editar'))
       {{-- Si ya está autorizado, botón que usa JS inline edit --}}
