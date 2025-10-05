@@ -14,7 +14,8 @@ use App\Models\Agencia;
 use Illuminate\Support\Str;
 use App\Models\Ticketc;
 use App\Models\User;
- 
+use Illuminate\Support\Facades\Auth;
+
 class EnvioController extends Controller
 { 
     /**
@@ -87,10 +88,13 @@ public function autorizar(Request $request)
 
     if ($request->filled('pago')) {
         $pedido->pago = $request->pago;
+       
+       
     }
 
     if ($request->filled('cobro')) {
         $pedido->cobro = $request->cobro;
+      
     }
  
     if ($request->has('precio')) {
@@ -106,6 +110,13 @@ public function autorizar(Request $request)
     } 
 
     $pedido->save();
+
+        $hesta = new Hestado();
+        $hesta->idenvio = $pedido->id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Edicion de linea";
+        $hesta->usuario =  Auth::user()->name ;
+        $hesta->save();
 
     return response()->json([
         'success' => true,
