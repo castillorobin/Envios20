@@ -87,12 +87,28 @@ public function autorizar(Request $request)
     $pedido = Envio::findOrFail($id);
 
     if ($request->filled('pago')) {
+        if ($pedido->pago != $request->pago) {
+        $hesta = new Hestado();
+        $hesta->idenvio = $pedido->id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Estado del pago";
+        $hesta->usuario =  Auth::user()->name ;
+        $hesta->save();
+       }
         $pedido->pago = $request->pago;
        
        
     }
 
     if ($request->filled('cobro')) {
+        if ($pedido->cobro != $request->cobro) {
+        $hesta = new Hestado();
+        $hesta->idenvio = $pedido->id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Cobro del envio";
+        $hesta->usuario =  Auth::user()->name ;
+        $hesta->save();
+       }
         $pedido->cobro = $request->cobro;
       
     }
@@ -111,12 +127,7 @@ public function autorizar(Request $request)
 
     $pedido->save();
 
-        $hesta = new Hestado();
-        $hesta->idenvio = $pedido->id;
-        $hesta->estado = "Editado";
-        $hesta->nota = "Edicion de linea";
-        $hesta->usuario =  Auth::user()->name ;
-        $hesta->save();
+        
 
     return response()->json([
         'success' => true,
