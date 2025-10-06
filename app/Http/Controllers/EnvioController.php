@@ -114,14 +114,40 @@ public function autorizar(Request $request)
     }
  
     if ($request->has('precio')) {
+        if ($pedido->precio != $request->precio) {
+        $hesta = new Hestado();
+        $hesta->idenvio = $pedido->id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Precio";
+        $hesta->usuario =  Auth::user()->name ;
+        $hesta->save();
+       }
         $pedido->precio = (float) $request->precio;
     }
 
     if ($request->has('envio')) {
+        if ($pedido->envio != $request->envio) {
+        $hesta = new Hestado();
+        $hesta->idenvio = $pedido->id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Envio";
+        $hesta->usuario =  Auth::user()->name ;
+        $hesta->save();
+       }
+        
+
         $pedido->envio = (float) $request->envio;
     }
 
     if ($request->has('total')) {
+         if ($pedido->total != $request->total) {
+        $hesta = new Hestado();
+        $hesta->idenvio = $pedido->id;
+        $hesta->estado = "Editado";
+        $hesta->nota = "Total";
+        $hesta->usuario =  Auth::user()->name ;
+        $hesta->save();
+       }
         $pedido->total = (float) $request->total;
     } 
 
