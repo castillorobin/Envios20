@@ -23,7 +23,8 @@
 
 
     </style>
-    {{date_default_timezone_set('America/El_Salvador') }}
+    <input type="text" value="{{date_default_timezone_set('America/El_Salvador') }}" style="display:none;">
+    
     <div>
         
  <img src="../public/fotos/logo24.png" alt="" width="10%">
@@ -52,23 +53,45 @@
 
 <table class="table table-bordered shadow-lg mt-4" style="width:100%">
 <thead >
-    <tr style='background: #223161; color:white; font-size:13px; text-align: center;'>
-        
-    <th scope="col">ID</th>
-    <th scope="col">Comercio</th>
-        <th scope="col">Destinatario</th>
-        <th scope="col">Direccion</th>
-        
-        <th scope="col">Tipo</th>
-        <th scope="col">Estado del envio</th>
-        <th scope="col">Fecha de entrega</th>
-        <th scope="col">Precio</th>
-        <th scope="col">Envio</th>
-        <th scope="col">Total</th>
-        
-        
-    </tr>
-</thead>
+    <thead class="centrar" style="border-top: 2px solid black; border-bottom: 2px solid black; ">
+     <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+            <th class="min-w-100px dt-orderable-asc dt-orderable-desc text-center" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">ID</span><span class="dt-column-order"></span>
+            </th>
+            <th class="min-w-100px dt-orderable-asc dt-orderable-desc text-center" data-dt-column="0" rowspan="1" colspan="1" aria-label="Date: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Comercio</span><span class="dt-column-order"></span>
+            </th>
+
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="1" rowspan="1" colspan="1" aria-label="No. Orders Returned: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Destinatario</span><span class="dt-column-order"></span>
+            </th>
+            
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="2" rowspan="1" colspan="1" aria-label="No. Orders Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Direccion</span><span class="dt-column-order"></span>
+            </th>
+            
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="3" rowspan="1" colspan="1" aria-label="No. Orders Replaced: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Tipo</span><span class="dt-column-order"></span>
+            </th>
+            
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Estado</span><span class="dt-column-order"></span>
+            </th>
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Fecha de entrega</span><span class="dt-column-order"></span>
+            </th>
+            <th class="text-end min-w-100px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Precio</span><span class="dt-column-order"></span>
+            </th>
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Envio</span><span class="dt-column-order"></span>
+            </th>
+            <th class="text-end min-w-75px dt-type-numeric dt-orderable-asc dt-orderable-desc text-center" data-dt-column="4" rowspan="1" colspan="1" aria-label="Total Refunded: Activate to sort" tabindex="0">
+                <span class="dt-column-title" role="button">Total</span><span class="dt-column-order"></span>
+            </th>
+            
+        </tr>
+
 <tbody>
     @foreach($pedidos as $pedido)
     <tr style='border-bottom: 1px solid; font-size: 12px'>
@@ -115,14 +138,10 @@
        
    </tr>
   </table>   
-  <span style="font-weight: bolder;"> Centro Comercial Metrogaleria</span>
-           local 3-9 San Salvador
+ 
         </div>
         
 
-                        <div style="font-weight: bolder;">
-   Teléfono 7457-6280
-   </div>
 
   <p></p>
 
