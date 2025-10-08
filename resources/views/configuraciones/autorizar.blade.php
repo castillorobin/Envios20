@@ -25,7 +25,7 @@
 
                     <div class="d-flex justify-content-between">
                         <button type="submit" class="btn btn-primary">Autorizar</button>
-                        <a href="{{ url()->previous() }}" class="btn btn-secondary">Cancelar</a>
+                        <a href="{{ route('conticket', ['ticket' => $ticket]) }}" class="btn btn-secondary">Cancelar</a>
                     </div>
                 </form>
             </div>

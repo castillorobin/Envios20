@@ -40,8 +40,6 @@
    <hr>
       <span>Usuario: {{\Illuminate\Support\Facades\Auth::user()->name}}</span>
    <br>
-<span>Repartidor: </span>
-<br>
 
 <span>Ticket: {{ $pedidos[0]->ticketc }}</span>
 <br>
