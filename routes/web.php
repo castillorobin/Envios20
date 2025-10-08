@@ -421,6 +421,13 @@ Route::get('/pedidos/{id}/editar', [App\Http\Controllers\EnvioController::class,
 Route::post('/pedidos/autorizar', [App\Http\Controllers\EnvioController::class, 'autorizar'])
     ->name('pedidos.autorizar');
  
+
+
+Route::get('/pago/exportarExcel/{ticketc}', [App\Http\Controllers\EnvioController::class, 'exportarExcel'])
+    ->name('pago.exportarExcel');
+
+    Route::get('/pago/exportarTicketExcel/{ticketc}', [App\Http\Controllers\EnvioController::class, 'exportarTicketExcel'])
+    ->name('pago.exportarTicketExcel');
 /*
 
 Rutas 

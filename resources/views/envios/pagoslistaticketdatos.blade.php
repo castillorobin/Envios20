@@ -618,21 +618,53 @@ document.getElementById("tota").value = subtotal - descu.value;
                                 <div class="row justify-content-end">
 
 
+
+                                     
+
+
+
                               
 
 
                                     <div class="col-auto align-self-end text-end">
                                         <button type="button" style="height: 42px; margin-top: 10px;" class="btn btn-dark btn-sm mb-3" id="pago" data-bs-toggle="modal" data-bs-target="#kt_modal_2 " disabled>Pagar</button>
                                        
-                                        <a href="/pago/exportarticket/{{$pedidos[0]->ticketc}}" target="_blank"> 
-                                        <button type="button" class="btn btn-light-primary" data-kt-menu-placement="bottom-end"  >
-                                            <i class="ki-duotone ki-exit-up fs-2">
-                                                <span class="path1"></span>
-                                                <span class="path2"></span>
-                                            </i>Exportar Reporte</button>
 
 
+
+                                        <button type="button" class="btn btn-light-primary" data-kt-menu-trigger="click" data-kt-menu-placement="bottom-end" style="float: right; margin: 10px;">
+                                        <i class="ki-duotone ki-exit-up fs-2">
+                                            <span class="path1"></span>
+                                            <span class="path2"></span>
+                                        </i>Exportar Reporte</button>
+                                    <!--begin::Menu-->
+                                    
+                                    <div id="kt_ecommerce_report_shipping_export_menu" class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-600 menu-state-bg-light-primary fw-semibold fs-7 w-200px py-4" data-kt-menu="true">
+                                        <!--begin::Menu item
+                                     
+                                        -->
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                           
+
+                                            <a href="{{ route('pago.exportarTicketExcel', $pedidos[0]->ticketc) }}" class="menu-link px-3" target="_blank">
+                                                
+                                                    <i class="ki-duotone ki-file-spreadsheet fs-2"></i> Exportar Excel
+                                                
                                             </a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                       
+                                      
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a href="/pago/exportarticket/{{$pedidos[0]->ticketc}}" class="menu-link px-3" target="_blank">Exportar a PDF</a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                    </div>
+
 
                                     </div>
 

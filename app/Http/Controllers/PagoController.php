@@ -695,8 +695,6 @@ $usuario = Auth::user()->name ?? '—';
 
     public function exportarticket( $ticketc)
     {
-        //Alert::message('Mensaje', 'Título opcional');
-
         $pedidos = Envio::where('ticketc', $ticketc)->get();
         $comercio = $pedidos[0]->comercio;
         $total = 0;

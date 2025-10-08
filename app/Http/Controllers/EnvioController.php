@@ -15,12 +15,30 @@ use Illuminate\Support\Str;
 use App\Models\Ticketc;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use App\Exports\ReporteTicketExport;
+use App\Exports\ReporteTicketExcelExport;
+use Maatwebsite\Excel\Facades\Excel;
 
 class EnvioController extends Controller
 { 
     /**
      * Display a listing of the resource.
      */
+    public function exportarTicketExcel($ticketc)
+{
+    $usuario = Auth::user()->name ?? '—';
+    $filename = 'reporte_ticket_' . $ticketc . '_' . date('Ymd_His') . '.xlsx';
+
+    return Excel::download(new ReporteTicketExcelExport($ticketc, $usuario), $filename);
+}
+    public function exportarExcel($ticketc)
+{
+    $pedidos = Envio::where('ticketc', $ticketc)->get();
+    $total = $pedidos->sum('total');
+    $cantidad = $pedidos->count();
+
+    return Excel::download(new ReporteTicketExport($ticketc, $total, $cantidad), 'reporte_ticket_' . $ticketc . '.xlsx');
+}
    public function checkPermission($id, Request $request)
 {
     $pedido = Envio::findOrFail($id);
