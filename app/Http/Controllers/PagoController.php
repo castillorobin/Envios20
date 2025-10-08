@@ -494,12 +494,14 @@ return view('envios.pagoslistaticketdatos', compact(
     {
         
 
-        $activo = $request->has('pagado') ? 1 : 0;
-         $verificado = $request->has('verificado') ? 1 : 0;
-          $revision = $request->has('enrevision') ? 1 : 0;
+        //$activo = $request->get('estado') ? 1 : 0;
+
+        //$verificado = $request->has('verificado') ? 1 : 0;
+         // $revision = $request->has('enrevision') ? 1 : 0;
           $recibe = $request->get('recibe');
           $dui = $request->get('dui');
 $usuario = Auth::user()->name ?? '—';
+/*
           if ($activo== 0 && $verificado== 0 && $revision== 0 ) {
 
            // dd("todo desactivado");
@@ -507,9 +509,9 @@ $usuario = Auth::user()->name ?? '—';
             $nota = "Debe de seleccionar Pagado, Verificado o En revision ";
         return view('envios.pagoslistaticket', compact('nota'));
 
-            }
+            }*/
 
-        if ($activo== 1) {
+        if ($request->get('estado')  == "Pagado") {
          //guardar movimiento
         $idcaja = Caja::where('cajero', Auth::user()->name)
         ->where('estado', 0)
@@ -539,11 +541,11 @@ $usuario = Auth::user()->name ?? '—';
         $agencia = $request->get('agencia');
         $comercio = $request->get('comercio');
 
-        $pagado = $request->get('pagado');
+       // $pagado = $request->get('pagado');
         
         
-         $verificado = $request->has('verificado') ? 1 : 0;
-          $revision = $request->has('enrevision') ? 1 : 0;
+        // $verificado = $request->has('verificado') ? 1 : 0;
+        //  $revision = $request->has('enrevision') ? 1 : 0;
         $pedido = new Ticktpago();
         $pedido->comercio = $comercio;
         $pedido->descuento = $descu;
@@ -572,20 +574,20 @@ $usuario = Auth::user()->name ?? '—';
        if($envios){     
         foreach($envios as $envio){        
             $envio->pagoticket = $ticketact->id;
-            if ($activo== 1) {
-                $envio->pago = "Pagado";
+            if ($request->get('estado') == "Pagado") {
+               // $envio->pago = "Pagado";
                 $idinforme->estado = "Pagado";
             }
-            if ($verificado== 1) {
-                $envio->pago = "Verificado";
+            if ($request->get('estado') == "Verificado") {
+               // $envio->pago = "Verificado";
                 $idinforme->estado = "Verificado";
                 $idinforme->save();      
             $envio->save();          
                $nota = " ";
         return view('envios.pagoslistaticket', compact('nota'));
             }
-            if ($revision== 1) {
-                $envio->pago = "En revision";
+            if ($request->get('estado') == "En revision") {
+               // $envio->pago = "En revision";
                 $idinforme->estado = "En revision";
                 $idinforme->save();     
             $envio->save();
@@ -600,7 +602,7 @@ $usuario = Auth::user()->name ?? '—';
        }
 
        
- if ($activo== 1) {
+ if ($request->get('estado') == "Pagado") {
          //guardar movimiento
         $idcaja = Caja::where('cajero', $cajero)
         ->where('estado', 0)

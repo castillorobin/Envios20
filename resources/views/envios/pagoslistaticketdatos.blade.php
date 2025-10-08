@@ -924,7 +924,7 @@ document.getElementById("tota").value = subtotal - descu.value;
 
 
                                                                              <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="" onchange="calcularsub()"/>
+                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="" readonly/>
                                                                                 <label for="Cajero">Subtotal</label>
                                                                                 <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                                                     Por favor ingrese el destinatario.
@@ -954,6 +954,23 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                                                 <label for="dui" style="padding-left: 25px;">DUI</label>
                                                                                 <div class="invalid-feedback">Este campo es obligatorio.</div>
                                                                             </div>
+
+
+                                                                                <div class="form-floating col-lg-12 mb-4">
+                                                                                <select class="form-select form-select-solid" name="estado" id="estado" required>
+                                                                                    <option value="Pagado">Pagado</option>
+                                                                                    <option value="Verificado">Verificado</option>
+                                                                                    <option value="En revision">En revision</option>
+                                                                                    
+                                                                                    
+                                                                                </select>
+                                                                                <label for="estado_envio">Estado</label>
+                                                                                <div id="estadoEnvioValidationFeedback" class="invalid-feedback">
+                                                                                    Por favor seleccione el estado.
+                                                                                </div>
+                                                                            </div>
+
+
                                                                         </div>
                                                                             
                                                                         </tbody>
