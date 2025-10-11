@@ -216,6 +216,28 @@ function abrirURL(){
 </script>
 
 <script>
+
+    function cancelando() {
+        
+       document.getElementById('total1').innerText = 0;
+document.getElementById('totalito').innerText = 0;
+document.getElementById('stotal').innerText = 0;
+document.getElementById("tota").value = 0;
+document.getElementById("sutota").value = 0;
+document.getElementById("descuento").value = 0;
+document.getElementById('sdescuento').innerText = 0;
+document.querySelectorAll('#formElement input[type=checkbox]').forEach(function(checkElement) {
+checkElement.checked = false;
+nada();
+
+document.getElementById('checktodo').style.display = '';
+document.getElementById('checknada').style.display = 'none';
+
+});
+//alert(total5);
+$("#pago").prop('disabled',true)
+
+}
    
 
     $(document).on('click', '#checktodo', function(){
@@ -240,6 +262,7 @@ function abrirURL(){
         document.getElementById('stotal').innerText = total5;
         $totalisimo=parseFloat(total5);
         document.getElementById("tota").value = $totalisimo.toFixed(2);
+        document.getElementById("sutota").value = $totalisimo.toFixed(2);
        // $('#tot1').text(total);
        $("#pago").prop('disabled',false)
        //alert("Hola");
@@ -264,6 +287,7 @@ document.getElementById('total1').innerText = 0;
 document.getElementById('totalito').innerText = 0;
 document.getElementById('stotal').innerText = 0;
 document.getElementById("tota").value = 0;
+document.getElementById("sutota").value = 0;
 //alert(total5);
 $("#pago").prop('disabled',true)
 }
@@ -1054,7 +1078,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                                 <br>
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
-                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
+                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal" onclick="cancelando()">Cancelar</button>
                                                                        <!-- <button type="button" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="submitAndRedirect()" disabled>Pagar</button>
                                                                              -->                    
                                                                         <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Pagar</button>
