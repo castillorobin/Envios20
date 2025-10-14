@@ -1696,10 +1696,10 @@ $nota = " ";
          return view('stocks.detallepick', compact('pedidos', 'envio'));
     }
 
-     public function realizado($guia)
+     public function realizado(Request $request)
     {
-
-     
+        $guia = $request->input('guia');
+        $nota = $request->input('nota');
          $ticketc = Orden::find($guia);
         $ticketc->estado = "Realizado";
         $ticketc->save();
@@ -1727,6 +1727,7 @@ $nota = " ";
         }
             
             $hesta->usuario = Auth::user()->name;
+            $hesta->nota = $nota;
             $hesta->save();
 
         $nota = " ";

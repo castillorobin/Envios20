@@ -337,7 +337,7 @@ Route::get('/stocks/listapi', [App\Http\Controllers\StockController::class, 'lis
 Route::get('/stocks/listapifiltro', [App\Http\Controllers\StockController::class, 'listapifiltro'] )->name('listapifiltro');
 
 Route::get('/stocks/detallepick/{id}', [App\Http\Controllers\StockController::class, 'detallepick'] )->name('detallepick');
-Route::get('/stocks/realizado/{id}', [App\Http\Controllers\StockController::class, 'realizado'] )->name('realizado');
+Route::get('/stocks/realizado/', [App\Http\Controllers\StockController::class, 'realizado'] )->name('realizado');
 Route::get('/stocks/filtrarpicking', [App\Http\Controllers\StockController::class, 'filtrarpicking'] )->name('filtrarpicking');
 
 Route::get('/stocks/cuadrepaquete', [App\Http\Controllers\StockController::class, 'cuadrepaquete'] )->name('cuadrepaquete');

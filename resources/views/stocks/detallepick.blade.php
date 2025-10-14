@@ -374,10 +374,10 @@ if (searchText == "") {
                                         <a href="{{ url()->previous() }}">
                                         <button type="button" class="btn btn-secondary  edit2" style="float: right; margin-left:10px; " >Cancelar</button>
                                     </a>
-                                   <a href="/stocks/realizado/{{$pedidos[0]->id}}">
+                            
                                      
-                                        <button type="button" class="btn btn-primary edit "  style="float: right; margin-left:10px; " >Realizado</button>
-                                    </a>
+                                        <button type="button" class="btn btn-primary edit "  style="float: right; margin-left:10px; " data-bs-toggle="modal" data-bs-target="#kt_modal_1" >Realizado</button>
+                                
                                     </div>
 
 
@@ -393,14 +393,14 @@ if (searchText == "") {
                                 <!--end::Table-->
                             </div>
 
-                            <form action="/stocks/guardarreenvio/" method="GET">
+                            <form action="/stocks/realizado" method="GET">
                             <!--Start::Reenvio-->
                             <div class="modal fade" tabindex="-1" id="kt_modal_1">
                            
                                 <div class="modal-dialog modal-dialog-centered ">
                                     <div class="modal-content">
                                         <div class="modal-header mt-5 m-5" >
-                                            <h3 class="modal-title">Reenvio</h3>
+                                            <h3 class="modal-title">Realizado</h3>
                                             <!--begin::Close-->
                                             <div class="btn btn-icon btn-sm btn-active-light-primary ms-2" data-bs-dismiss="modal" aria-label="Close">
                                                 <i class="ki-duotone ki-cross fs-1"><span class="path1"></span><span class="path2"></span></i>
@@ -423,15 +423,14 @@ if (searchText == "") {
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
                                             </div>
-                                            
-                                            <input type="text" name="idenvio" id="idenvio" hidden>
+
+                                           
+                                            <input type="text" value="{{ $pedidos[0]->id }}" name="guia" id="guia" hidden>
 
                                             
                                                 <div class="row my-2 mx-2 justify-content-center" name="caja1" id="caja1">
                                                     <div class="form col-lg-12 mb-4">
-                                                      
-                                                         <input class="form-control form-control-solid" placeholder="Fecha de reenvio" id="kt_datepicker_1" name="reenvi"/>
-                                                       <p></p>
+                                                     
                                                         <textarea class="form-control form-control-solid" name="nota" id="nota" placeholder="Nota"></textarea>
                                                         
                                                     </div>
