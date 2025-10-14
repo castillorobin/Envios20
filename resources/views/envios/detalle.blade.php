@@ -917,7 +917,93 @@
 
                                 <!-- Termina Devuelto -->
 
-                                @if($histo->estado == "Reenvio")
+                                @if($histo->estado == "Reenvio en proceso")
+                                    <tr>
+                                        <td style="width: 250px; padding-top: 15px;">
+                                    <h3 >Reenvio en proceso</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha de proceso: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha de reenvio: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Nota: </td>
+                                        <td>{{ $histo->nota }}</td>
+                                    </tr>
+                                    @endif
+
+
+
+                                <!-- Termina Reenvio -->
+
+
+                                @if($histo->estado == "Devolucion en proceso") 
+                                    <tr>
+                                        <td style="width: 250px; padding-top: 15px;">
+                                    <h3 >Devolucion en proceso</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha de proceso: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                    <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha de devolucion: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->freprogra))}}</span>
+                                    </td>
+                                    </tr>
+                                   
+                                    <tr>
+                                        <td>Nota: </td>
+                                        <td>{{ $histo->nota }}</td>
+                                    </tr>
+                                    @endif
+
+
+
+                                <!-- Termina Devolucion -->
+
+
+                                     <!-- Termina Devuelto -->
+
+                                @if($histo->estado == "Reenvio preparado")
                                     <tr>
                                         <td style="width: 250px; padding-top: 15px;">
                                     <h3 >Reenvio preparado</h3>
@@ -959,7 +1045,7 @@
                                 <!-- Termina Reenvio -->
 
 
-                                @if($histo->estado == "Devolucion")
+                                @if($histo->estado == "Devolucion preparada") 
                                     <tr>
                                         <td style="width: 250px; padding-top: 15px;">
                                     <h3 >Devolucion preparada</h3>
@@ -1000,35 +1086,7 @@
 
                                 <!-- Termina Devolucion 
 
-                                
-                                @if($histo->estado == "Realizado")
-                                    <tr>
-                                        <td style="width: 250px; padding-top: 15px;">
-                                    <h3 >Realizado</h3>
-                                    </td>
-                                    <td></td>
-                                    </tr>
-                                  
-                                    
-                                    <tr>
-                                        <td>Usuario: </td>
-                                        <td>{{ $histo->usuario }}</td>
-                                    </tr>
-                                    <tr>
-                                    <td> 
-
-                                    <span style="font-size:14px;">Fecha: 
-                                    </td>
-                                    <td>
-                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
-                                    </td>
-                                    </tr>
-                                   
-                                    <tr>
-                                        <td>Nota: </td>
-                                        <td>{{ $histo->nota }}</td>
-                                    </tr>
-                                    @endif
+                               
 -->
 
 

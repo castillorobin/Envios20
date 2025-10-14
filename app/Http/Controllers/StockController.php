@@ -1578,7 +1578,7 @@ if($pedidos->isEmpty()){
 
             $hesta = new Hestado();
             $hesta->idenvio = $idenvio;
-            $hesta->estado = "Reenvio";
+            $hesta->estado = "Reenvio en proceso";
             $hesta->usuario = $usuario;
             $hesta->nota = $nota;
             $hesta->freprogra = $reenvi;
@@ -1643,7 +1643,7 @@ $nota = " ";
 
             $hesta = new Hestado();
             $hesta->idenvio = $idenvio;
-            $hesta->estado = "Devolucion";
+            $hesta->estado = "Devolucion en proceso";
             $hesta->usuario = $usuario;
             $hesta->nota = $nota;
             $hesta->freprogra = $reenvi;
@@ -1720,13 +1720,13 @@ $nota = " ";
             $hesta = new Hestado();
             $hesta->idenvio = $pedidoid;
             if ($ticketc->tipo == "Reenvio") {
-           $hesta->estado = "Reenvio";
+           $hesta->estado = "Reenvio preparado";
         }else {
             
-            $hesta->estado = "Devolucion";
+            $hesta->estado = "Devolucion preparada";
         }
             
-            $hesta->usuario = $ticketc->usuario;
+            $hesta->usuario = Auth::user()->name;
             $hesta->save();
 
         $nota = " ";

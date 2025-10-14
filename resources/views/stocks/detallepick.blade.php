@@ -328,7 +328,7 @@ if (searchText == "") {
                                             </tr>
                                              </tr>
                                                  <tr><td style="width:150px; font-weight: bolder;">UBICACION:</td>
-                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$envio[0]->agencia}} </span></TD>
+                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$envio[0]->agenciaubi}} </span></TD>
                                                 
                                                 <td style="width:150px; font-weight: bolder;">TARIMA:</td>
                                                 <TD style="width:100px;">{{$envio[0]->tarima}} </TD>
