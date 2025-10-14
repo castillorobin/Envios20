@@ -1531,6 +1531,8 @@ if($pedidos->isEmpty()){
         $idenvio = $request->get('idenvio') ;
         $reenvi = $request->get('reenvi') ;
 
+        //dd($usuario);
+
         //dd($idenvio);
 
         $envio = Envio::find($idenvio);
@@ -1558,7 +1560,7 @@ if($pedidos->isEmpty()){
         $entrega->nota = $nota;
         $entrega->save();
 
-$nota = " ";
+
 
         $tick = $envio->ticketc ;
 
@@ -1582,7 +1584,7 @@ $nota = " ";
             $hesta->freprogra = $reenvi;
             $hesta->save();
 
-
+$nota = " ";
          return view('stocks.generarpdatos', compact('pedidos', 'nota'));
 
     }
@@ -1623,7 +1625,6 @@ $nota = " ";
         $entrega->lugar = $lugar;
         $entrega->save();
 
-$nota = " ";
 
         $tick = $envio->ticketc ;
 
@@ -1647,6 +1648,7 @@ $nota = " ";
             $hesta->nota = $nota;
             $hesta->freprogra = $reenvi;
             $hesta->save();
+$nota = " ";
 
          return view('stocks.generarpdatos', compact('pedidos', 'nota'));
 
