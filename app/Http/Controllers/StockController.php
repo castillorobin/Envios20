@@ -1525,7 +1525,7 @@ if($pedidos->isEmpty()){
 
     public function guardarreenvio(Request $request)
     {
-        $usuario = $request->get('usuario') ;
+        $usuario = $request->get('usuariore') ;
         $reenvi = $request->get('reenvi') ;
         $nota = $request->get('nota') ;
         $idenvio = $request->get('idenvio') ;

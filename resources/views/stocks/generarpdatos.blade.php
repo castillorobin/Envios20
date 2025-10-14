@@ -427,7 +427,7 @@ if (searchText == "") {
                                         <div class="modal-body">
                                             <div class="row my-2 mx-2 justify-content-center" >
                                                 <div class="form-floating col-lg-6 mb-4">
-                                                    <input type="text" class="form-control form-control-solid" name="usuario" id="usuario" value="{{ Auth::user()->name }}" readonly />
+                                                    <input type="text" class="form-control form-control-solid" name="usuariore" id="usuariore" value="{{ Auth::user()->name }}" readonly />
                                                     <label for="rack" style="padding-left: 25px;">Usuario</label>
                                                     <div class="invalid-feedback">Este campo es obligatorio y solo se permiten números.</div>
                                                 </div>
