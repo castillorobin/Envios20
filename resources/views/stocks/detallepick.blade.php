@@ -371,9 +371,9 @@ if (searchText == "") {
                                                         </div>
 
                                             <div class="col-12 mb-12" >
-                                        
-                                        <button type="button" class="btn btn-secondary  edit2" style="float: right; margin-left:10px; " data-bs-toggle="modal" data-bs-target="#kt_modal_2">Cancelar</button>
-                                    
+                                        <a href="{{ url()->previous() }}">
+                                        <button type="button" class="btn btn-secondary  edit2" style="float: right; margin-left:10px; " >Cancelar</button>
+                                    </a>
                                    <a href="/stocks/realizado/{{$pedidos[0]->id}}">
                                      
                                         <button type="button" class="btn btn-primary edit "  style="float: right; margin-left:10px; " >Realizado</button>
