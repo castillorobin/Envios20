@@ -283,7 +283,7 @@ if (searchText == "") {
                                                 </td>
 
                                                 <td style="text-align: center;">{{ $envio->fecha_pro}}</td>
-                                                <td style="text-align: center;">{{ $envio->ubicacion}}</td>
+                                                <td style="text-align: center;"><span class="badge text-bg-dark">{{ $envio->ubicacion}}</span></td>
                                                 
                                                 
                                                 <td class="text-center">

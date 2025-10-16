@@ -1247,6 +1247,7 @@ $agencias = Agencia::all();
         $rack = $request->get('rack');
         $nivel = $request->get('nivel');
         $tarima = $request->get('tarima');
+        $usuario = $request->get('usuario');
         //$id = $request->get('asignum2');
 
         //$envio = Envio::find($id);
@@ -1318,6 +1319,18 @@ $agencias = Agencia::all();
                 $envio->ubicacion = $cajasuelto;
             }
 */
+
+            
+
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Cambio No entregado";
+            $hesta->usuario = $usuario;
+            $hesta->nota = $nota;
+            //$hesta->nombre = $nombre;
+            $hesta->save();
+
+
             $envio->save();
         }
 

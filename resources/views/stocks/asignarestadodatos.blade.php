@@ -300,12 +300,10 @@ if(tipo=='suelto'){
                                                 </div>
                                             </div>
                                             <div class="row my-2 mx-2 justify-content-center">
-                                                <div class="form-floating col-lg-12 mb-4">
-                                                    <select class="form-select form-select-solid mi-selector" name="estado" id="estado"  >
-                                                        <option value="No entregado">No entregado</option>
-                                                        
-                                                    </select>
-                                                </div>
+                                               <div class="form-floating col-lg-12 mb-4">
+
+                                                <input type="text" class="form-control form-control-solid" name="estado" id="estado" value="No entregado" readonly/>
+                                                   </div>
                                                
                                             </div>
 
@@ -314,8 +312,8 @@ if(tipo=='suelto'){
                                                     <select class="form-select form-select-solid" name="agencia" id="agencia" aria-label="Floating label select example" >
                                                        
                                                          @foreach($agencias as $agencia)    
- <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
- @endforeach
+                                                        <option value="{{$agencia->nombre}}">{{$agencia->nombre}}</option>
+                                                        @endforeach
                                                     </select>
                                                     <label for="cenvio" style="padding-left: 25px;">Agencia</label>
                                                 </div>
