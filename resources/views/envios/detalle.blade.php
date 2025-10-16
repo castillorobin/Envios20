@@ -1088,7 +1088,31 @@
 
                                
 -->
+                                    @if($histo->estado == "Cambio No entregado") 
+                                    <tr>
+                                        <td style="width: 250px; padding-top: 15px;">
+                                    <h3 >Cambio No entregado</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  <tr>
+                                    <td> 
 
+                                    <span style="font-size:14px;">Fecha de cambio: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                  
+                                   
+                                    
+                                    @endif
 
                                 <!-- Termina Devolucion -->
 

@@ -1326,10 +1326,9 @@ $agencias = Agencia::all();
             $hesta->idenvio = $envio->id;
             $hesta->estado = "Cambio No entregado";
             $hesta->usuario = $usuario;
-            $hesta->nota = $nota;
+            //$hesta->nota = $nota;
             //$hesta->nombre = $nombre;
             $hesta->save();
-
 
             $envio->save();
         }
