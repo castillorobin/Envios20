@@ -231,7 +231,7 @@ $(document).ready(function() {
                                                 <td style="width:300px;"> 
                                                     <a href="/envios/detalle/{{$pedido->guia}}" class="text-gray-900 text-hover-primary">{{$pedido->guia}} </a></td>
                                                 <td style="width:150px; font-weight: bolder;">UBICACION:</td>
-                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$pedido->agencia}} </span></TD>
+                                                <TD style="width:100px;"><span class="badge text-bg-dark" style="padding:10px;">{{$pedido->agenciaubi}} </span></TD>
                                                 <td style="width:500px; " class="text-center" rowspan="5">
                                                     <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                         <div class="image-input-wrapper w-200px h-200px" style="background-image: url(/fotos/{{$pedido->foto1}})"></div>
