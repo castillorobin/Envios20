@@ -181,12 +181,7 @@ if($pedidos->isEmpty()){
     {
         $guia = $request->get('guia') ;
 
-        $ticket = new Entrega();
-        //$ticket->codigo = $request->get('codigo');
-        $ticket->save();
-        $actualid = Entrega::latest('id')->first();
-        $actual = $actualid->id;
-
+       
         $envio = Envio::where('guia', $guia)
     ->where('estado', '!=', 'Entregado')
     ->get();
@@ -200,7 +195,12 @@ if($pedidos->isEmpty()){
             //return view('envios.registroconguia', compact('nota'));
             return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe o ya fue entregada']);
         }
-       
+        $ticket = new Entrega();
+        //$ticket->codigo = $request->get('codigo');
+        $ticket->save();
+        $actualid = Entrega::latest('id')->first();
+        $actual = $actualid->id;
+
  
         $envioid= $envio[0]->id ;
 
