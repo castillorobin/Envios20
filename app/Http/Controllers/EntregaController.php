@@ -229,8 +229,17 @@ if($pedidos->isEmpty()){
 
         if($envio->isEmpty()){
             $nota = "La Guía que se ingreso no existe o ya fue entregada"; 
+
+            
+        $pedidos = Envio::where('entrega2', $actual)
+        ->get();
+
+        $agencias = Agencia::all();
+        $empleado = Empleado::where('nombre', Auth::user()->name)->get();
+        return view('entrega.entregacasidatos', compact('pedidos', 'nota', 'actual', 'agencias', 'empleado'));
+
             //return view('envios.registroconguia', compact('nota'));
-            return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe o ya fue entregada']);
+           // return redirect()->back()->withErrors(['msg' => 'La Guía que se ingreso no existe o ya fue entregada']);
         }
        
 
