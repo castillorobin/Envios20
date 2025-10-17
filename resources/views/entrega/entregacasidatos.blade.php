@@ -27,7 +27,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
-
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--end::Global Stylesheets Bundle-->
     <style>
@@ -561,6 +561,43 @@ $(document).ready(function() {
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona todos los enlaces de la página
+    const allLinks = document.querySelectorAll('a');
+
+    // Botones permitidos (los que sí pueden hacer clic)
+    const allowedButtons = [
+        'Buscar',
+        'Entregar',
+        'Cancelar'
+    ];
+
+    allLinks.forEach(link => {
+        // Verifica si el enlace contiene alguno de los textos permitidos
+        const isAllowed = allowedButtons.some(text => 
+            link.textContent.trim().includes(text)
+        );
+
+        // Si no está permitido, bloquea el clic
+        if (!isAllowed) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Bloquea el enlace
+                Swal.fire({
+                    title: 'Acción no permitida',
+                    text: 'Para salir de esta vista, usa el botón "Cancelar".',
+                    icon: 'warning',
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#3085d6'
+                });
+            });
+        }
+    });
+});
+</script>
+
 
 </body>
 <!--end::Body-->
