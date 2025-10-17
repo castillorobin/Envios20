@@ -285,7 +285,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
 
 
         $pedido = Entrega::find($identrega);
-        $pedido->cajero = $cajero;
+        $pedido->cajero = Auth::user()->name;
         $pedido->metodo = $metodo;
         $pedido->desceunto = $descu;
         $pedido->nota = $nota; 
