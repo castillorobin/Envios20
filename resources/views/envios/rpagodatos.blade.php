@@ -181,15 +181,17 @@ if (searchText == "") {
     <x-default-layout>
        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
             <!--begin::Content wrapper-->
+            <br>
             <div class="d-flex flex-column flex-column-fluid">
                 <!--begin::Toolbar-->
+               
                 <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
                     <div id="kt_app_toolbar_container" class="d-flex flex-stack">
                         <!--begin::Page title-->
                         <div class="page-title d-flex flex-column justify-content-center ">
                             <!--begin::Title-->
-                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center my-0">Reporte de pago</h1>
+                            <h1 class="page-heading d-flex text-dark fw-bold fs-3 flex-column justify-content-center mb-0">Reporte de pago</h1>
                             <!--end::Title-->
                             <!--begin::Breadcrumb-->
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
@@ -260,6 +262,7 @@ if (searchText == "") {
                 </div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
+                <br>
                 <div id="kt_app_content" class="app-content flex-column-fluid">
                     <!--begin::Content container-->
                     <div id="kt_app_content_container" class=" ">
