@@ -342,7 +342,7 @@ if (searchText == "") {
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->destinatario}}</td> 
                                                 <td>{{$pago[0]->cajero}}</td>
-                                                <td>{{$pago[0]->agenciaubi}}</td>
+                                                <td>{{$pago[0]->agencia}}</td>
                                                 <td style="text-align: center;">
                                                     @if( $ticket->estado == 'No entregado')
                                                     <span class="badge badge-danger">{{ $ticket->estado }}</span>

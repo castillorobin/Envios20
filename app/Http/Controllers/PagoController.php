@@ -846,15 +846,23 @@ $usuario = Auth::user()->name ?? '—';
         return view('envios.rlistadopagodatos', compact('tickets', 'pago'));
     }
 
-    public function lisdoentregadatos($id)
+    public function lisdoentregadatos($id) 
     {
        // $pedidos = Cobro::all();
         //$tickets = Ticketc::all(); 
+
         $pago = Entrega::where('id', $id)->get();
         //return ($id);
        // $rango = $request->input('rango');
         $tickets = Envio::where('entrega2', $id)
         ->get();
+
+        if($tickets->isEmpty()){
+
+           
+           return redirect()->back()->with('Error', 'El ticket no contiene datos');
+           
+        }
         return view('envios.rlistadoentregadatos', compact('tickets', 'pago'));
     }
 

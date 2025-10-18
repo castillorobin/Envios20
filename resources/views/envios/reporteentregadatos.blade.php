@@ -238,7 +238,7 @@ if (searchText == "") {
 
                      <div class="col-6">                         
                   @if (session('Error'))         
-    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert-error" style="margin-left: 25px;">
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert-error">
         {{ session('Error') }}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
