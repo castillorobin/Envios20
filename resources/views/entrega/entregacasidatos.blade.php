@@ -48,10 +48,10 @@
     window.setTimeout( abrirURL, 2000 ); // 3 segundos
 };
     
-function abrirURL(){
+function abrirURL(){ 
     
-  // window.location = "http://127.0.0.1:8000/entregas";
-   window.location = "https://meloexpress.site/entregas";
+   //window.location = "http://127.0.0.1:8000/entregas";
+     window.location = "https://meloexpress.site/entregas";
 };
          
 

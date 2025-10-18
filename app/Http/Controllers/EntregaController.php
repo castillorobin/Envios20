@@ -357,7 +357,7 @@ $empleado = Empleado::where('nombre', Auth::user()->name)->get();
     $movimiento->concepto =  "Entrega ticket " . $identrega;
     $movimiento->valor =  $tota;
     $movimiento->saldo = $saldomovi + $tota;
-    $movimiento->idcaja = $idcaja[0]->id ;
+    $movimiento->idcaja = $idcaja[0]->id ; 
     $movimiento->save();
 
         $pdf = PDF::loadView('envios.ticketentrega', ['ticketact'=>$ticketact, 'envios'=>$envios]);
