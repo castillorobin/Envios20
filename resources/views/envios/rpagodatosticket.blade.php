@@ -27,7 +27,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
- 
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .table th,
         .table td { 
@@ -273,7 +273,7 @@ if (searchText == "") {
                                     @endforeach
                                 </select>
   </div>
-  </td>
+  </td> 
   <td >
   <div class="col-auto">
   <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
@@ -476,6 +476,41 @@ if (searchText == "") {
 
 
 
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // Selecciona todos los enlaces de la página
+    const allLinks = document.querySelectorAll('a');
+
+    // Botones permitidos (los que sí pueden hacer clic)
+    const allowedButtons = [
+        'Buscar',
+        'Entregar',
+        'Cancelar'
+    ];
+
+    allLinks.forEach(link => {
+        // Verifica si el enlace contiene alguno de los textos permitidos
+        const isAllowed = allowedButtons.some(text => 
+            link.textContent.trim().includes(text)
+        );
+
+        // Si no está permitido, bloquea el clic
+        if (!isAllowed) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault(); // Bloquea el enlace
+                Swal.fire({
+                    title: 'Acción no permitida',
+                    text: 'Para salir de esta vista, usa el botón "Cancelar".',
+                    icon: 'warning',
+                    confirmButtonText: 'Entendido',
+                    confirmButtonColor: '#3085d6'
+                });
+            });
+        }
+    });
+});
+</script>
 
 
 

@@ -27,7 +27,7 @@
     <!--begin::Global Stylesheets Bundle(mandatory for all pages)-->
     <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
     <link href="assets/css/style.bundle.css" rel="stylesheet" type="text/css" />
- 
+
     <style> 
         .table th,
         .table td { 
@@ -336,9 +336,9 @@ function abrirURL(){
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 700px; overflow-y: scroll ">
 
-  <form action="/envios/pagotodo" method="GET">
+  <form action="/envios/pagotodo" method="POST">
                                          @csrf
-                                         @method('GET') 
+                                       
                                 <!--begin::Table-->
                                 <div class="table-responsive" >
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table" >
@@ -639,7 +639,6 @@ function abrirURL(){
     
     
         </script>
-
 
 
 
