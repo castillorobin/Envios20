@@ -226,6 +226,27 @@ if (searchText == "") {
                     </div>
                     <!--end::Toolbar container-->
                 </div>
+                <div class="col-6">                         
+                  @if (session('Error'))         
+    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="alert-error">
+        {{ session('Error') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+
+    <script>
+        // Espera 4 segundos (4000 ms) y luego oculta el mensaje
+        setTimeout(function () {
+            let alertBox = document.getElementById('alert-error');
+            if (alertBox) {
+                alertBox.classList.remove('show');
+                alertBox.classList.add('fade');
+                alertBox.style.display = 'none';
+            }
+        }, 3000);
+    </script>
+        
+@endif 
+</div>
                 <!--end::Toolbar-->
                 <!--begin::Content-->
                 <div id="kt_content" class="content flex-column-fluid " >
@@ -314,9 +335,10 @@ if (searchText == "") {
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> 
-                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->codigo}}" id="kt_drawer_example_basic_button" ># {{$ticket->id}}</button>
-                                                    
-                                                    </td>
+                                                   <a href="/envios/lisdodevolista/{{$ticket->id}}">
+                                                    <button type="button" class="btn btn-active-light-secondary " value="{{$ticket->id}}"  ># {{$ticket->id}}</button>
+                                                    </a>
+                                                </td>
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->usuario}}</td>
                                                 <td>{{$ticket->agencia}}</td>

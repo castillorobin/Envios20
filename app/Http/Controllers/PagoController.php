@@ -24,6 +24,7 @@ use App\Exports\TicketRepoExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\PagoExport;
 use App\Models\Agencia;
+use App\Models\devolucion;
  
 class PagoController extends Controller
 { 
@@ -819,6 +820,7 @@ $usuario = Auth::user()->name ?? '—';
 
 
     }
+  
 
     public function lisdopagosdatos($id)
     {
@@ -864,6 +866,28 @@ $usuario = Auth::user()->name ?? '—';
            
         }
         return view('envios.rlistadoentregadatos', compact('tickets', 'pago'));
+    }
+
+    public function lisdodevolista($id) 
+    {
+       // $pedidos = Cobro::all();
+        //$tickets = Ticketc::all(); 
+
+        $pago = devolucion::where('id', $id)->get();
+        //return ($id);
+       // $rango = $request->input('rango');
+        $tickets = Envio::where('id', $pago[0]->idenvio)
+        ->get();
+
+        
+
+        if($tickets->isEmpty()){    
+
+           //dd("se fue");
+           return redirect()->back()->with('Error', 'El ticket no contiene datos');
+           
+        }
+        return view('envios.rlistadodevolista', compact('tickets', 'pago'));
     }
 
 
