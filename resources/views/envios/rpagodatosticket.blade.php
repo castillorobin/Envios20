@@ -276,12 +276,12 @@ if (searchText == "") {
   </td> 
   <td >
   <div class="col-auto">
-  <button type="submit" class="btn btn-primary " style="margin-left:10px;">Filtrar</button>
+  <button type="submit" class="btn btn-primary " style="margin-left:10px;" class="btn-cancelar">Filtrar</button>
   </div>
   </td>
   <td >
-    <a href="/envios/reportepagoticket">
-    <button type="button" class="btn btn-secondary " style="margin-left:10px;">Cancelar</button>
+    <a href="/envios/reportepagoticket" class="btn-cancelar">
+    <button type="button" class="btn btn-secondary btn-cancelar" style="margin-left:10px;">Cancelar</button>
     </a>
 </td>
   </tr>
@@ -349,8 +349,8 @@ if (searchText == "") {
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> <a href="/envios/lisdopagosdatosticket/{{$ticket->id}}">
-                                                    <button class="btn btn-active-light-secondary edit " value="{{$ticket->id}}" id="kt_drawer_example_basic_button" ># {{$ticket->id}}</button>
+                                                <td> <a href="/envios/lisdopagosdatosticket/{{$ticket->id}}" class="btn-guias">
+                                                    <button class="btn btn-active-light-secondary edit btn-guias" value="{{$ticket->id}}" id="kt_drawer_example_basic_button" ># {{$ticket->id}}</button>
                                                     </a>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
@@ -398,7 +398,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                            <a href="#" class="menu-link px-3 btn-cancelar" data-kt-ecommerce-export="excel">Exportar a Excel</a>
                                         </div>
                                         <!--end::Menu item-->
                                        
@@ -406,7 +406,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
+                                            <a href="#" class="menu-link px-3 btn-cancelar" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
                                         </div>
                                         <!--end::Menu item-->
                                     </div>
@@ -476,24 +476,17 @@ if (searchText == "") {
 
 
 
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     // Selecciona todos los enlaces de la página
     const allLinks = document.querySelectorAll('a');
 
     // Botones permitidos (los que sí pueden hacer clic)
-    const allowedButtons = [
-        'Buscar',
-        'Entregar',
-        'Cancelar'
-    ];
+   const allowedClasses = ['btn-buscar', 'btn-guias', 'btn-cancelar'];
 
     allLinks.forEach(link => {
         // Verifica si el enlace contiene alguno de los textos permitidos
-        const isAllowed = allowedButtons.some(text => 
-            link.textContent.trim().includes(text)
-        );
+       const isAllowed = allowedClasses.some(cls => link.classList.contains(cls));
 
         // Si no está permitido, bloquea el clic
         if (!isAllowed) {
@@ -511,6 +504,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 </script>
+
 
 
 

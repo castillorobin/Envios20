@@ -580,7 +580,7 @@ function abrirURL(){
                                                                 <br>
                                                                 <div class="modal-footer">
                                                                     <div class="d-flex justify-content-between w-100">
-                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" data-bs-dismiss="modal">Cancelar</button>
+                                                                        <button type="button" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2 btn-cancelar" data-bs-dismiss="modal">Cancelar</button>
                                                                         <button type="submit" id="pagadito" style="margin: 10px" class="btn btn-secondary flex-grow-1 mr-2" onclick="redireccionarPagina()" formtarget="_blank">Pagar</button>
 
 <!--
@@ -639,7 +639,6 @@ function abrirURL(){
     
     
         </script>
-
 
 
 
