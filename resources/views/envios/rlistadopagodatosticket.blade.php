@@ -336,8 +336,9 @@ function abrirURL(){
                             <!--begin::Card body-->
                             <div class="card-body pt-0" style="background-color:white; min-height: 700px; overflow-y: scroll ">
 
-  <form action="/envios/pagotodo" method="POST">
+  <form action="/envios/pagotodo" method="GET">
                                          @csrf
+                                         @method('GET') 
                                 <!--begin::Table-->
                                 <div class="table-responsive" >
                                     <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table" >
@@ -363,7 +364,7 @@ function abrirURL(){
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 
                                                 <td> 
-                                                    
+                                                    <input type="checkbox" value="{{ $ticket->id }}" class="form-check-input" id="check3" name="checked[]" checked hidden >
                                                 
                                                 <a href="/envios/detalle/{{$ticket->guia}}" class="text-gray-900 text-hover-primary">
                                                 {{$ticket->guia}}
@@ -507,7 +508,7 @@ function abrirURL(){
 
 
                                                                              <div class="form-floating col-lg-12 mb-4">
-                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="{{$pago[0]->subtotal}}" onchange="calcularsub()"/>
+                                                                                <input type="text" class="form-control form-control-solid" name="subtotal" id="sutota" value="{{$pago[0]->subtotal}}" onchange="calcularsub()" readonly/>
                                                                                 <label for="Cajero">Subtotal</label>
                                                                                 <div id="CajeroValidationFeedback" class="invalid-feedback">
                                                                                     Por favor ingrese el destinatario.

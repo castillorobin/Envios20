@@ -160,7 +160,7 @@ class PagoController extends Controller
             ->get();
         }
 
-       
+        
 
         $repartidores = User::all();
         return view('envios.rpagodatos', compact('tickets', 'repartidores', 'rango', 'usuario'));
@@ -912,6 +912,9 @@ $usuario = Auth::user()->name ?? '—';
 $usuario = Auth::user()->name ?? '—';
 
        $checked = $request->input('checked');
+       
+//dd($checked);
+
      //  $checked2 = $request->input('pruebita');
        $envios = Envio::query()->find($checked);
        $quienpago = $envios[0]->pagoticket;

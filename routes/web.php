@@ -250,7 +250,7 @@ Route::get('/envios/lisdodevolista/{id}', [App\Http\Controllers\PagoController::
 Route::get('/envios/reportepagoticket', [App\Http\Controllers\PagoController::class, 'reportepagoticket'] )->name('reportepagoticket') ;
 Route::get('/envios/rpagodatosticket', [App\Http\Controllers\PagoController::class, 'rpagodatosticket'] )->name('rpagodatosticket') ;
 Route::get('/envios/lisdopagosdatosticket/{id}', [App\Http\Controllers\PagoController::class, 'lisdopagosdatosticket'] )->name('lisdopagosdatosticket') ;
-Route::post('/envios/pagotodo/', [App\Http\Controllers\PagoController::class, 'pagotodo'] )->name('pagotodo') ;
+Route::get('/envios/pagotodo/', [App\Http\Controllers\PagoController::class, 'pagotodo'] )->name('pagotodo') ;
 
 Route::get('/reporte/exportarrecepcion/', [App\Http\Controllers\CobroController::class, 'exportarrecepcion'] )->name('exportarrecepcion') ;
 Route::get('/reporte/exportarrecepcionExcel/', [App\Http\Controllers\CobroController::class, 'exportarrecepcionExcel'] )->name('exportarrecepcionExcel') ;
