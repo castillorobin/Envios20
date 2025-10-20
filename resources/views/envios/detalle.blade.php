@@ -1114,6 +1114,32 @@
                                     
                                     @endif
 
+                                    @if($histo->estado == "Pagado") 
+                                    <tr>
+                                        <td style="width: 250px; padding-top: 15px;">
+                                    <h3 >Pagado</h3>
+                                    </td>
+                                    <td></td>
+                                    </tr>
+                                  <tr>
+                                    <td> 
+
+                                    <span style="font-size:14px;">Fecha de pago: 
+                                    </td>
+                                    <td>
+                                    {{date('d-m-Y H:i',strtotime($histo->created_at))}}</span>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>Usuario: </td>
+                                        <td>{{ $histo->usuario }}</td>
+                                    </tr>
+                                  
+                                   
+                                    
+                                    @endif
+
                                 <!-- Termina Devolucion -->
 
                                    

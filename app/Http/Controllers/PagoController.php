@@ -934,6 +934,12 @@ $usuario = Auth::user()->name ?? '—';
             $envio->pago = "Pagado";
             $envio->save();
 
+            $hesta = new Hestado();
+            $hesta->idenvio = $envio->id;
+            $hesta->estado = "Pagado";
+            $hesta->usuario = $usuario;
+            $hesta->save();
+
             }
        }
 
