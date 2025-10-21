@@ -54,7 +54,7 @@
                             <ul class="breadcrumb breadcrumb-separatorless fw-semibold fs-7 my-0 pt-1">
                                 <!--begin::Item-->
                                 <li class="breadcrumb-item text-muted">
-                                    <a href="../../demo1/dist/index.html" class="text-muted text-hover-primary">Home</a>
+                                    <a href="/dashboard" class="text-muted text-hover-primary">Home</a>
                                 </li>
                                 <!--end::Item-->
                                 <!--begin::Item-->
@@ -200,21 +200,17 @@
                                     <!--end::Daterangepicker-->
                                     <!--begin::Filter-->
                                     <div class="w-150px">
-                                        <!--begin::Select2
-                                        <select class="form-select form-select-solid" data-control="select2" data-hide-search="true" data-placeholder="Estado" data-kt-ecommerce-order-filter="status">
-                                            <option></option>
-                                            <option value="all">Todo</option>
-                                            <option value="Completed">Completed</option>
-                                            <option value="In Transit">In Transit</option>
-                                            <option value="Pending">Pending</option>
-                                            <option value="Cancelled">Cancelled</option>
-                                        </select>
-                                        -->
-                                        <!--end::Select2-->
-
+                                      
                                          @can('comercios-crear')
-                            <a href="/comercio/crearcomercio" class="btn btn-sm fw-bold btn-primary" style="float: right; ">Agregar</a>
-                            @endcan
+                                        <a href="/comercio/crearcomercio" class="btn fw-bold btn-primary" style="float: right; ">Agregar</a>
+                                        @endcan
+                            
+                                    </div>
+                                    <div class="w-150px">
+                                      
+                                       <button type="button" id="btnDarBaja" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDarBaja" disabled>
+                                            Dar de baja
+                                        </button>
                                     </div>
                                     <!--end::Filter-->
                                     <!--begin::Export dropdown-->
@@ -226,20 +222,16 @@
                             </div>
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px; overflow-y: scroll">
 
     <!-- Botón Dar de baja -->
-    <div class="mb-3 d-flex justify-content-end">
-    <button type="button" id="btnDarBaja" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalDarBaja" disabled>
-        Dar de baja
-    </button>
-</div>
+ 
 
     <!-- Tabla comercios -->
     <form id="formDarBaja" action="{{ url('/comercio/baja') }}" method="POST">
         @csrf
         <div class="table-responsive">
-            <table class="table align-middle table-row-dashed fs-6 gy-5" id="tablaComercios">
+            <table class="table align-middle table-row-dashed fs-6 gy-5" id="kt_ecommerce_report_shipping_table">
                 <thead>
                     <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                         <th><input type="checkbox" id="checkAll"></th>
