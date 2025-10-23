@@ -186,10 +186,10 @@ if (searchText == "") {
 <body id="kt_app_body" data-kt-app-layout="dark-sidebar" data-kt-app-header-fixed="true" data-kt-app-sidebar-enabled="true" data-kt-app-sidebar-fixed="true" data-kt-app-sidebar-hoverable="true" data-kt-app-sidebar-push-header="true" data-kt-app-sidebar-push-toolbar="true" data-kt-app-sidebar-push-footer="true" data-kt-app-toolbar-enabled="true" class="app-default">
 
     <x-default-layout>
-        <div class="app-main flex-column flex-row-fluid" id="kt_app_main">
+        <div class="app-main flex-column flex-row-fluid pt-2" id="kt_app_main">
             <!--begin::Content wrapper-->
-            <br>
-            <div class="d-flex flex-column flex-column-fluid">
+           
+            <div class="d-flex flex-column flex-column-fluid pt-2">
                 <!--begin::Toolbar-->
                 <div id="kkt_content" class="content flex-column-fluid">
                     <!--begin::Toolbar container-->
@@ -282,7 +282,7 @@ if (searchText == "") {
 
                             <!--end::Card header-->
                             <!--begin::Card body-->
-                            <div class="card-body pt-0" style="background-color:white; min-height: 590px;  ">
+                            <div class="card-body pt-0" style="background-color:white; min-height: 700px;  ">
 
 
                                 <!--begin::Table-->
