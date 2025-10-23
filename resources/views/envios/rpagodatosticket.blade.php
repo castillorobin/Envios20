@@ -338,8 +338,9 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Fecha de pago</th>
                                                 <th class="min-w-50px">Estado</th>
                                                 <th class="min-w-50px">Subtotal</th>
-                                                <th class="min-w-50px">Total</th>
                                                 <th class="min-w-50px">Descuento</th>
+                                                <th class="min-w-50px">Total</th>
+                                                
                                                 <th class="min-w-50px">Nota</th>
                                                
                                                 
@@ -360,22 +361,23 @@ if (searchText == "") {
                                                 <td>{{$ticket->userpago}}</td>
                                                 <td>{{$ticket->fechapago}}</td>
                                                 @php
-    $estado = $ticket->estado ?? '';
-    $badge = match($estado) {
-        'Pagado'     => 'success',
-        'Verificado' => 'warning',
-        'En revision'=> 'danger',
-        default      => 'secondary', // <-- SIEMPRE habrá un <td>
-    };
-@endphp
+                                            $estado = $ticket->estado ?? '';
+                                            $badge = match($estado) {
+                                                'Pagado'     => 'success',
+                                                'Verificado' => 'warning',
+                                                'En revision'=> 'danger',
+                                                default      => 'secondary', // <-- SIEMPRE habrá un <td>
+                                            };
+                                        @endphp
 <td>
     <span class="badge text-bg-{{ $badge }}">
         <span style="color:white; font-weight:bolder;">{{ $estado ?: '—' }}</span>
     </span>
 </td>
-                                            <td class="text-center">{{$ticket->subtotal}}</td>                                
+                                            <td class="text-center">{{$ticket->subtotal}}</td>
+                                            <td class="text-center">{{$ticket->descuento}}</td>                                 
                                             <td class="text-center">{{$ticket->total}}</td> 
-                                            <td class="text-center">{{$ticket->descuento}}</td> 
+                                            
                                                <td>{{$ticket->nota}}</td>                                                                                                                                                                            
                                                 
                                             </tr>
@@ -398,15 +400,26 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3 btn-cancelar" data-kt-ecommerce-export="excel">Exportar a Excel</a>
+                                            <form action="/reporte/exportarpagoExcel" method="GET">
+
+                                                <input type="text" value="{{$rango}}" name="rango2" hidden>
+                                        <input type="text" value="{{$usuario}}" name="usuario2" hidden>
+
+                                            <button type="submit" class="btn btn-outline-primary"  >Exportar a Excel</button>
+
+                                            </form >
                                         </div>
-                                        <!--end::Menu item-->
-                                       
-                                      
-                                        <!--end::Menu item-->
+                                        
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <a href="#" class="menu-link px-3 btn-cancelar" data-kt-ecommerce-export="pdf" disabled>Exportar a PDF</a>
+                                               <form action="/reporte/reporteestadoticket" method="GET" target="_blank">
+
+                                                <input type="text" value="{{$rango}}" name="rango2" hidden>
+                                        <input type="text" value="{{$usuario}}" name="usuario2" hidden>
+
+                                            <button type="submit" class="btn btn-outline-primary"  >Exportar a PDF</button>
+
+                                            </form >
                                         </div>
                                         <!--end::Menu item-->
                                     </div>

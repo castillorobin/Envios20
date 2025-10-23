@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
 use PDF; 
+use App\Models\Ticktpago; 
 
 
 class DevolucionController extends Controller
@@ -41,6 +42,32 @@ class DevolucionController extends Controller
         }
 
         $pdf = PDF::loadView('reportes.exportardevo', ['cajas'=>$tickets])->setPaper('letter', 'landscape');
+
+        return $pdf->stream();
+    } 
+
+    public function  reporteestadoticket(Request $request)
+    {
+        $rango = $request->input('rango2');
+        $usuario = $request->input('usuario2');
+        $parte1 = Str::of($rango)->explode('-');
+        $fecha1 = $parte1[0];
+        $fecha2 = $parte1[1];
+        $fechacam1 = date('Y-m-d H:i:s', strtotime($fecha1)) ;
+        $fechacam2 = date('Y-m-d 23:59:50', strtotime($fecha2)) ;
+
+        if($usuario == "todos")
+        {
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->get();
+ 
+        }else{
+            $tickets = Ticktpago::whereBetween('created_at', [$fechacam1, $fechacam2])
+            ->where('cajero', $usuario)
+            ->get();
+        }
+
+        $pdf = PDF::loadView('reportes.exportarpago', ['cajas'=>$tickets])->setPaper('letter', 'landscape');
 
         return $pdf->stream();
     } 

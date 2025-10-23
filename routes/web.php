@@ -261,7 +261,7 @@ Route::get('/reporte/exportarentregalistaExcel/{ticketc}', [App\Http\Controllers
 Route::get('/reporte/exportarentregaentre/{ticketc}', [App\Http\Controllers\EntregaController::class, 'exportarentregaentre'] )->name('exportarentregaentre') ;
 Route::get('/reporte/exportardevo/', [App\Http\Controllers\DevolucionController::class, 'exportardevo'] )->name('exportardevo') ;
 
-
+Route::get('/reporte/reporteestadoticket', [App\Http\Controllers\DevolucionController::class, 'reporteestadoticket'] )->name('reporteestadoticket') ;
 
 Route::post('/authorize-editing', [App\Http\Controllers\EnvioController::class, 'authorizeEditing'])
     ->name('authorize.editing');

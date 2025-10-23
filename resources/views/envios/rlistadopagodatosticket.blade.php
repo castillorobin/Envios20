@@ -390,14 +390,20 @@ function abrirURL(){
                                                     <span class="badge badge-light">{{ $ticket->estado }}</span>
                                                     @endif
                                                 </td>
-                                                <td class="text-center">
-                                                    @if( $ticket->pago == 'Pagado')
-                                                    <span class="badge badge-success">{{ $ticket->pago}}</span>
-                                                    @else
-                                                    <span class="badge badge-danger">{{ $ticket->pago }}</span>
-                                                    @endif
-
-                                                </td>
+                                                 @php
+                                                $estado = $ticket->pago ?? '';
+                                                $badge = match($estado) {
+                                                    'Pagado'     => 'success',
+                                                    'Verificado' => 'warning',
+                                                    'En revision'=> 'danger',
+                                                    default      => 'secondary', // <-- SIEMPRE habrá un <td>
+                                                };
+                                            @endphp
+<td style="text-align: center;">
+    <span class="badge text-bg-{{ $badge }} ">
+        <span style="color:white; font-weight:bolder;">{{ $estado ?: '—' }}</span>
+    </span>
+</td>
                                                 <td>{{$ticket->tipo}}</td>
                                                
                                                 <td>${{$ticket->total}}</td>
