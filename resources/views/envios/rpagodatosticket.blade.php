@@ -400,7 +400,7 @@ if (searchText == "") {
                                         <!--end::Menu item-->
                                         <!--begin::Menu item-->
                                         <div class="menu-item px-3">
-                                            <form action="/reporte/exportarpagoExcel" method="GET">
+                                            <form action="/reporte/exportarpagoExcel/" method="GET">
 
                                                 <input type="text" value="{{$rango}}" name="rango2" hidden>
                                         <input type="text" value="{{$usuario}}" name="usuario2" hidden>

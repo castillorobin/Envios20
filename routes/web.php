@@ -262,6 +262,9 @@ Route::get('/reporte/exportarentregaentre/{ticketc}', [App\Http\Controllers\Entr
 Route::get('/reporte/exportardevo/', [App\Http\Controllers\DevolucionController::class, 'exportardevo'] )->name('exportardevo') ;
 
 Route::get('/reporte/reporteestadoticket', [App\Http\Controllers\DevolucionController::class, 'reporteestadoticket'] )->name('reporteestadoticket') ;
+Route::get('/reporte/reporteestadoticket', [App\Http\Controllers\DevolucionController::class, 'reporteestadoticket'] )->name('reporteestadoticket') ;
+
+Route::get('/reporte/reporteestadoExcel', [App\Http\Controllers\DevolucionController::class, 'reporteestadoExcel'] )->name('reporteestadoExcel');
 
 Route::post('/authorize-editing', [App\Http\Controllers\EnvioController::class, 'authorizeEditing'])
     ->name('authorize.editing');
