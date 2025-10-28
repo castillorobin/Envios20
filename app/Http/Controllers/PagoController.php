@@ -578,6 +578,7 @@ $usuario = Auth::user()->name ?? '—';
             if ($request->get('estado') == "Pagado") {
                // $envio->pago = "Pagado";
                 $idinforme->estado = "Pagado";
+
             }
             if ($request->get('estado') == "Verificado") {
                // $envio->pago = "Verificado";
@@ -585,7 +586,7 @@ $usuario = Auth::user()->name ?? '—';
                 $idinforme->save();      
             $envio->save();          
                $nota = " ";
-        return view('envios.pagoslistaticket', compact('nota'));
+        //return view('envios.pagoslistaticket', compact('nota'));
             }
             if ($request->get('estado') == "En revision") {
                // $envio->pago = "En revision";
@@ -593,9 +594,9 @@ $usuario = Auth::user()->name ?? '—';
                 $idinforme->save();     
             $envio->save();
                $nota = " ";
-        return view('envios.pagoslistaticket', compact('nota'));
+        //return view('envios.pagoslistaticket', compact('nota'));
             } 
-                  
+                 
             $envio->save();   
 
             }
@@ -628,6 +629,10 @@ $usuario = Auth::user()->name ?? '—';
     $movimiento->idcaja = $idcaja[0]->id ;
     $movimiento->save();
 }
+
+if ($request->get('estado') == "En revision" || $request->get('estado') == "Verificado") {
+    return view('envios.pagoslistaticket', compact('nota'));
+    }
 
         $pdf = PDF::loadView('envios.pagoticket', ['ticketact'=>$ticketact, 'envios'=>$envios]);
        
