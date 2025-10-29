@@ -531,9 +531,9 @@ document.getElementById("tota").value = subtotal - descu.value;
 
                                                 <td >
                                                     <div class="form-group form-check" style="width: 5px;">
-                                                        
+                                                        @if($pedido->pagado == 0)
                                                      <input type="checkbox" value="{{ $pedido->id }}" class="form-check-input" id="check3" name="checked[]" >
-                                                  
+                                                    @endif
                                                     </div>
                                                     </td>
 
@@ -585,6 +585,7 @@ document.getElementById("tota").value = subtotal - descu.value;
                                                     @endif
                                                 </td>
                                                 <td class="text-center">
+                                                    @if($pedido->pagado == 0)
   <div class="btn-group" role="group">
     <button class="btn btn-primary edit " value="{{$pedido->id}}" id="kt_drawer_example_basic_button" >Ver</button>
 
@@ -599,6 +600,7 @@ document.getElementById("tota").value = subtotal - descu.value;
       </a>
     @endif
   </div>
+  @endif
 </td>
 
                                                 <span hidden id="gu{{ $pedido->id }}"> {{ $pedido->guia }}</span>

@@ -578,11 +578,12 @@ $usuario = Auth::user()->name ?? '—';
             if ($request->get('estado') == "Pagado") {
                // $envio->pago = "Pagado";
                 $idinforme->estado = "Pagado";
-
+                    $envio->pagado = 1;
             }
             if ($request->get('estado') == "Verificado") {
                // $envio->pago = "Verificado";
                 $idinforme->estado = "Verificado";
+                $envio->pagado = 1;
                 $idinforme->save();      
             $envio->save();          
                $nota = " ";
@@ -591,6 +592,7 @@ $usuario = Auth::user()->name ?? '—';
             if ($request->get('estado') == "En revision") {
                // $envio->pago = "En revision";
                 $idinforme->estado = "En revision";
+                $envio->pagado = 1;
                 $idinforme->save();     
             $envio->save();
                $nota = " ";
