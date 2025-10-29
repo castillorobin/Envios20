@@ -361,6 +361,8 @@ function abrirURL(){
 
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($tickets as $ticket) 
+                                            @if($ticket->pago != 'Pagado')
+
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 
                                                 <td> 
@@ -399,6 +401,8 @@ function abrirURL(){
                                                     default      => 'secondary', // <-- SIEMPRE habrá un <td>
                                                 };
                                             @endphp
+
+
 <td style="text-align: center;">
     <span class="badge text-bg-{{ $badge }} ">
         <span style="color:white; font-weight:bolder;">{{ $estado ?: '—' }}</span>
@@ -410,6 +414,9 @@ function abrirURL(){
                                                 <td>{{$pago[0]->created_at}}</td>
                                                                                          
                                             </tr>
+
+
+                                            @endif
                                             @endforeach
                                         </tbody>
 
