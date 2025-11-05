@@ -1,3 +1,6 @@
+@php
+    use Illuminate\Support\Str;
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 <!--begin::Head-->
@@ -400,8 +403,13 @@
                                          <div class="col-sm-2">    
                                          @if($envio[0]->fotocambio != Null)                             
                                             <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
-                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://www.meloexpressdomicilios.site/fotos/{{$envio[0]->fotocambio}})"></div>
-                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://meloexpresspuntofijo.site/storage/fotos/{{$envio[0]->fotocambio}})"></div>
+                                            @if(substr($envio[0]->fotocambio, 0, 6) != 'cambio')    
+                                            <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://www.meloexpressdomicilios.site/fotos/{{$envio[0]->fotocambio}})"></div>
+                                            @endif
+                                                @if($envio[0]->fotocambio && Str::startsWith($envio[0]->fotocambio, 'cambio'))
+                                                    <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://meloexpresspuntofijo.site/storage/fotos/{{$envio[0]->fotocambio}})"></div>
+                                                @endif
+                                                
                                             </div>
                                             @endif
                                         </div>  
