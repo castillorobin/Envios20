@@ -401,7 +401,7 @@
                                          @if($envio[0]->fotocambio != Null)                             
                                             <div class="image-input image-input-outline" data-kt-image-input="true" style="background-image: url('assets/media/svg/avatars/blank.svg')">
                                                 <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://www.meloexpressdomicilios.site/fotos/{{$envio[0]->fotocambio}})"></div>
-                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://meloexpresspuntofijo.site/fotos/{{$envio[0]->fotocambio}})"></div>
+                                                <div class="image-input-wrapper w-125px h-125px" style="background-image: url(https://meloexpresspuntofijo.site/storage/fotos/{{$envio[0]->fotocambio}})"></div>
                                             </div>
                                             @endif
                                         </div>  
