@@ -7,6 +7,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RolController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\AgenciaController;
+use App\Http\Controllers\ComercioController;
+
 
 use Illuminate\Http\Request;
 //use App\Http\Controllers\Controller;
@@ -432,6 +434,10 @@ Route::get('/pago/exportarExcel/{ticketc}', [App\Http\Controllers\EnvioControlle
 
     Route::get('/pago/exportarTicketExcel/{ticketc}', [App\Http\Controllers\EnvioController::class, 'exportarTicketExcel'])
     ->name('pago.exportarTicketExcel');
+
+
+    Route::post('/comercios/{comercio}/usuario', [ComercioController::class, 'crearUsuario'])
+    ->name('comercios.crearUsuario');
 /*
 
 Rutas 

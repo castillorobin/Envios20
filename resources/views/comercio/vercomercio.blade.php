@@ -523,9 +523,14 @@
             <div class="card  mb-5 mb-xl-10">
     <!--begin::Card header-->
     <div class="card-header border-0 cursor-pointer" role="button" data-bs-toggle="collapse" data-bs-target="#kt_account_signin_method">
-        <div class="card-title m-0">
+        <div class="card-title m-0 w">
             <h3 class="fw-bold m-0">Datos de acceso</h3>
+            
         </div>
+        <button type="button" class="btn btn-primary" style="float:right; height:45px;"
+        data-bs-toggle="modal" data-bs-target="#modalCrearUsuario">
+    Crear usuario
+</button>
     </div>
     <!--end::Card header-->
 
@@ -538,7 +543,7 @@
                 <!--begin::Label-->
                 <div id="kt_signin_email">
                     <div class="fs-6 fw-bold mb-1">Correo</div>
-                    <div class="fw-semibold text-gray-600">support@keenthemes.com</div>
+                    <div class="fw-semibold text-gray-600">{{ $comercio->correo }}</div>
                 </div>
                 <!--end::Label-->
 
@@ -688,6 +693,55 @@
     <script src="{{ asset('assets/js/selectempleados.js') }}"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
     
+
+
+
+    <div class="modal fade" id="modalCrearUsuario" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form method="POST" action="{{ route('comercios.crearUsuario', $comercio->id) }}">
+        @csrf
+
+        <div class="modal-header">
+          <h5 class="modal-title">Crear usuario del comercio</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Correo </label>
+            <input type="email" class="form-control form-control-solid"
+                   name="email" value="{{ $comercio->correo }}" readonly>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Nombre</label>
+            <input type="text" class="form-control form-control-solid"
+                   name="name" value="{{ $comercio->comercio }}" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label fw-semibold">Contraseña inicial</label>
+            <input type="text" class="form-control form-control-solid"
+                   value="Melo2025$" readonly>
+            
+          </div>
+
+          <div class="mb-0">
+            <label class="form-label fw-semibold">Rol</label>
+            <input type="text" class="form-control form-control-solid" name="rol"
+                   value="Comercio" readonly>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancelar</button>
+          <button type="submit" class="btn btn-primary">Crear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
     
 
 </body>

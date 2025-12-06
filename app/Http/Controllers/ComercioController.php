@@ -6,6 +6,8 @@ use App\Models\Comercio;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request; 
 use App\Models\Agencia;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 class ComercioController extends Controller
 {
     /**
@@ -16,6 +18,41 @@ class ComercioController extends Controller
         $comercios = Comercio::all();
         return view('comercio.index', compact('comercios'));
     }
+
+
+    public function crearUsuario(Request $request, Comercio $comercio)
+{
+    $request->validate([
+        'email' => ['required','email'],
+        'name'  => ['required','string','max:255'],
+        'rol'   => ['required','string'],
+    ]);
+
+    $passwordInicial = 'Melo2025$';
+
+    // Crea o actualiza si ya existe el usuario con ese email
+    $user = User::updateOrCreate(
+        ['email' => $request->email],
+        [
+            'name' => $request->name,
+            'password' => Hash::make($passwordInicial),
+        ]
+    );
+
+    // Asigna rol Spatie (borra roles anteriores y asigna el nuevo)
+    $user->syncRoles([$request->rol]);
+
+    // (Opcional) Si tienes relación en la tabla comercios para guardar user_id:
+    // $comercio->user_id = $user->id;
+    // $comercio->save();
+
+    // (Opcional) Marcar que debe cambiar contraseña al entrar:
+    // si tienes una columna boolean en users: must_change_password
+    // $user->must_change_password = true;
+    // $user->save();
+
+    return back()->with('success', 'Usuario creado/actualizado: '.$user->email.' | Password inicial: '.$passwordInicial);
+}
 
     /**
      * Show the form for creating a new resource.
