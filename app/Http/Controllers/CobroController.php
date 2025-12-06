@@ -455,18 +455,17 @@ class CobroController extends Controller
        //  return view('caja.cajero', compact('empleado', 'cajas', 'conceptos'))->with('error', 'Debe de abrir caja antes de agregar movimientos');
        return redirect()->route('cajero')->with('Error', 'Debe de abrir caja antes de agregar movimientos');
         }
+      
        
-        $guia = $request->get('guia');
-        $hayguia = Envio::where('guia', $guia)->exists();
+        $guia  = trim((string) $request->get('guia'));
+$guia2 = trim((string) $request->get('guia2'));
+$guia3 = trim((string) $request->get('guia3'));
+$guia4 = trim((string) $request->get('guia4'));
 
-        $guia2 = $request->get('guia2');
-        $hayguia2 = Envio::where('guia', $guia2)->exists();
-
-        $guia3 = $request->get('guia3');
-        $hayguia3 = Envio::where('guia', $guia3)->exists();
-
-        $guia4 = $request->get('guia4');
-        $hayguia4 = Envio::where('guia', $guia4)->exists();
+$hayguia  = $guia  !== '' ? Envio::where('guia', $guia)->exists() : false;
+$hayguia2 = $guia2 !== '' ? Envio::where('guia', $guia2)->exists() : false;
+$hayguia3 = $guia3 !== '' ? Envio::where('guia', $guia3)->exists() : false;
+$hayguia4 = $guia4 !== '' ? Envio::where('guia', $guia4)->exists() : false;
 
         $codigo11 = $request->get('codigo');
         $comercio11 = $request->get('comercio');
@@ -475,13 +474,15 @@ class CobroController extends Controller
         $telefono11 = $request->get('telefono');
         $cajero = $request->get('cajero1');
 
-     //   dd($cajero);
+      
+//dd($hayguia, $hayguia2, $hayguia3, $hayguia4);
+      //dd($hayguia2);
         if ($hayguia== true) {
 
             $nota="Guía Duplicada";
             $pedidos = Cobro::all();
             $comercios = Comercio::all(); 
-            
+          
     
             $comer=" ";
             $cobrodepa = Cobro::where('tipo', "Personalizado")->get();
@@ -614,11 +615,13 @@ class CobroController extends Controller
         $precio4= $request->get('precio4');
         $precio5= $request->get('precio5');
 
-        $nota="Guía Duplicada";
+       // $nota="Guía Duplicada";
 
         if ($request->filled('guia')) {
+       
             if($hayguia== 0){
                 $nota=" ";
+                 
         $envio = new Envio();
         $envio->tipo = $request->get('tipo1');
         $envio->guia = $request->get('guia');
@@ -812,14 +815,15 @@ class CobroController extends Controller
     {
        
 
-        $guia = $request->get('guia');
-        $guia2 = $request->get('guia2');
-        $guia3 = $request->get('guia3');
-        $guia4 = $request->get('guia4');
-        $hayguia = Envio::where('guia', $guia)->exists();
-        $hayguia2 = Envio::where('guia', $guia2)->exists();
-        $hayguia3 = Envio::where('guia', $guia3)->exists();
-        $hayguia4 = Envio::where('guia', $guia4)->exists();
+        $guia  = trim((string) $request->get('guia'));
+$guia2 = trim((string) $request->get('guia2'));
+$guia3 = trim((string) $request->get('guia3'));
+$guia4 = trim((string) $request->get('guia4'));
+
+$hayguia  = $guia  !== '' ? Envio::where('guia', $guia)->exists() : false;
+$hayguia2 = $guia2 !== '' ? Envio::where('guia', $guia2)->exists() : false;
+$hayguia3 = $guia3 !== '' ? Envio::where('guia', $guia3)->exists() : false;
+$hayguia4 = $guia4 !== '' ? Envio::where('guia', $guia4)->exists() : false;
         
         $codigo= $request->get('codigo');
         $comercios = Comercio::all(); 

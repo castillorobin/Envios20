@@ -517,7 +517,7 @@
                                 <div class="card">
                                     <!--begin::Card body-->
                                     <div class="card-body p-12">
-                                        <!--begin::Form-->
+                                        <!--begin::Form--> 
                                         <form action="/cobro/ticketcabeza" id="kt_invoice_form" method="POST">
                                             @csrf
                                             @method('GET')
