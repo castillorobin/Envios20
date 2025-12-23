@@ -18,6 +18,11 @@ class RutaController extends Controller
         $rutas = Rutas::all();
         return view('ruta.ajustes', compact('rutas'));
     }
+    public function destinos()
+    {
+        $rutas = Rutas::all();
+        return view('configuraciones.destinos', compact('rutas'));
+    }
 
     public function agregar(Request $request)
     {

@@ -367,6 +367,9 @@ Route::get('/repartidor/vista/{id}', [App\Http\Controllers\StockController::clas
 
 //Rutas
 Route::get('/configuraciones/ajustes', [App\Http\Controllers\RutaController::class, 'index'] )->name('indexruta') ;
+
+Route::get('/configuraciones/destinos', [App\Http\Controllers\RutaController::class, 'destinos'] )->name('destinos') ;
+
 Route::get('/ruta/agregar', [App\Http\Controllers\RutaController::class, 'agregar'] )->name('agregarruta') ;
 Route::get('/stocks/guardarasignarrepartidor', [App\Http\Controllers\StockController::class, 'guardarasignarrepartidor'] )->name('guardarasignarrepartidor');
 Route::get('/stocks/guardarasignarrepartidorcaja', [App\Http\Controllers\StockController::class, 'guardarasignarrepartidorcaja'] )->name('guardarasignarrepartidorcaja');

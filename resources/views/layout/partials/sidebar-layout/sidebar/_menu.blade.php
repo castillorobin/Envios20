@@ -575,6 +575,15 @@
       </a>
     </div>
   </div>
+
+  <div class="menu-sub menu-sub-accordion">
+    <div class="menu-item">
+      <a class="menu-link {{ request()->is('configuraciones/destinos') ? 'active' : '' }}" href="{{ url('/configuraciones/destinos') }}">
+        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+        <span class="menu-title">Puntos de Entrega</span>
+      </a>
+    </div>
+  </div>
 </div>
 
 			
