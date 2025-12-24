@@ -441,6 +441,9 @@ Route::get('/pago/exportarExcel/{ticketc}', [App\Http\Controllers\EnvioControlle
 
     Route::post('/comercios/{comercio}/usuario', [ComercioController::class, 'crearUsuario'])
     ->name('comercios.crearUsuario');
+
+
+    Route::post('/ruta/agregardestino', [App\Http\Controllers\RutaController::class, 'guardardestino'])->name('destinos.guardar');
 /*
 
 Rutas 

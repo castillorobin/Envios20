@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Rutas;
 use App\Models\Agencia;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Destino;
 
 class RutaController extends Controller
 {
@@ -167,4 +168,37 @@ class RutaController extends Controller
         Rutas::find($id)->delete();
         return redirect()->back();
     }
+
+
+    public function guardardestino(Request $request)
+    {
+        // 1. Validar la información
+        $request->validate([
+            'punto' => 'required',
+            'hora_llegada' => 'nullable',
+            'hora_retirada' => 'nullable',
+            'lugar_entrega' => 'nullable',
+            'dias' => 'nullable',
+            'archivo_dias' => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
+        ]);
+
+        // 2. Preparar los datos
+        $datos = $request->all();
+
+        // 3. Manejar la subida del archivo (si existe)
+        if ($request->hasFile('archivo_dias')) {
+            // Guarda en storage/app/public/destinos
+            $rutaArchivo = $request->file('archivo_dias')->store('destinos', 'public');
+            $datos['archivo_dias'] = $rutaArchivo;
+        }
+
+        // 4. Crear el registro en la base de datos
+        Destino::create($datos);
+
+        // 5. Redireccionar con un mensaje de éxito
+        return redirect()->back()->with('success', 'Destino guardado correctamente');
+    }
+
+
+
 }

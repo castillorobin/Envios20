@@ -133,9 +133,10 @@
                                     <!--begin:::Tab pane-->
                                     <div class="tab-pane fade show active" id="kt_ecommerce_settings_general" role="tabpanel">
                                         <!--begin::Form-->
-                                        <form action="/ruta/agregar" id="kt_invoice_form" method="POST"> 
+                                        <form action="{{ route('destinos.guardar') }}" id="kt_invoice_form" method="POST" enctype="multipart/form-data"> 
                                             @csrf
-                                            @method('GET')
+    @csrf
+                                        
                                             <!--begin::Heading-->
                                             <div class="row mb-7">
                                                 <div class="col-md-9 offset-md-3">
@@ -157,8 +158,11 @@
                                                 <div class="col-md-9">
                                                     <div class="w-100">
                                                         <!--begin::Select2-->
-                                                        <select class="form-select form-select-solid" name="zona" data-control="select2" data-hide-search="true" data-placeholder="Select a layout" required>
-                                                            <option></option>
+                                                        <select class="form-select form-select-solid" name="punto" data-placeholder="Seleccionar punto">
+                                                           
+                                                            @foreach ($rutas as $punto) 
+                                                            <option value="{{ $punto->id }}">{{ $punto->punto }} </option>
+                                                            @endforeach
                                                             
                                                         </select>
                                                         <!--end::Select2-->
@@ -179,7 +183,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="ruta" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="hora_llegada" id="hora_llegada" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
 
@@ -198,7 +202,7 @@
                                                 </div>
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="nruta" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="hora_retirada" id="hora_retirada" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                                 </div>
@@ -215,7 +219,7 @@
                                                 </div>
                                                 <div class="col-md-9">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="punto" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="lugar_entrega" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
                                             </div>
@@ -233,11 +237,35 @@
                                                 
                                                 <div class="col-md-3">
                                                     <!--begin::Input-->
-                                                    <input type="text" class="form-control form-control-solid" name="nfijo" value="" data-kt-ecommerce-settings-type="tagify" required />
+                                                    <input type="text" class="form-control form-control-solid" name="dias" value="" data-kt-ecommerce-settings-type="tagify" />
                                                     <!--end::Input-->
                                                 </div>
+
+
+                                                
+
+
+
                                             </div>
                                             <!--end::Input group-->
+
+                                             <div class="row fv-row mb-7">
+
+                                                <div class="col-md-3 text-md-end">
+                                                    <!--begin::Label-->
+                                                    <label class="fs-6 fw-semibold form-label mt-3">
+                                                        <span>Imagen 24/7</span>
+                                                        
+                                                    </label>
+                                                    <!--end::Label-->
+                                                </div>
+
+                                            <div class="col-md-3">
+                                                    <!--begin::Input-->
+                                                    <input type="file" class="form-control form-control-solid" name="archivo_dias" value="" data-kt-ecommerce-settings-type="tagify" />
+                                                    <!--end::Input-->
+                                                </div>
+                                                </div>
 
                                             <!--begin::Action buttons-->
                                             <div class="row py-5">
@@ -371,6 +399,19 @@
     <script src="assets/plugins/global/plugins.bundle.js"></script>
     <script src="assets/js/scripts.bundle.js"></script>
     <script src="https://cdn.datatables.net/2.0.2/js/dataTables.js"></script>
+
+
+    <script>
+    const configHora = {
+        enableTime: true,
+        noCalendar: true,
+        dateFormat: "H:i",
+        time_24hr: true
+    };
+
+    flatpickr("#hora_retirada", configHora);
+    flatpickr("#hora_llegada", configHora);
+</script>
 
 </body>
 <!--end::Body-->
