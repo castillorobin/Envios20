@@ -444,6 +444,11 @@ Route::get('/pago/exportarExcel/{ticketc}', [App\Http\Controllers\EnvioControlle
 
 
     Route::post('/ruta/agregardestino', [App\Http\Controllers\RutaController::class, 'guardardestino'])->name('destinos.guardar');
+
+    Route::get('/destino/editar/{id}', [App\Http\Controllers\RutaController::class, 'editardestino'] )->name('editardestino') ;
+Route::get('/destino/editandodestino', [App\Http\Controllers\RutaController::class, 'editandodestino'] )->name('editandodestino') ;
+Route::get('/destino/eliminar/{id}', [App\Http\Controllers\RutaController::class, 'eliminardestino'] )->name('eliminardestino') ;
+
 /*
 
 Rutas 

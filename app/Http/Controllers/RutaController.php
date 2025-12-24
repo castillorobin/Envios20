@@ -206,6 +206,48 @@ class RutaController extends Controller
         return redirect()->back()->with('success', 'Destino guardado correctamente');
     }
 
+    public function editardestino($id)
+    {
+        $destino = Destino::find($id)->with('ruta')->first();
+        $rutas = Rutas::all();
+//dd($destino);
+        return view('ruta.editardestino', compact('destino', 'rutas'));
+    }
+    
+    public function editandodestino(Request $request)
+    {
+        $id = $request->get('id');
+        $destino = Destino::find($id);
+        
+        $destino->punto = $request->get('punto');
+        $destino->hora_llegada = $request->get('hora_llegada');
+        $destino->hora_retirada = $request->get('hora_retirada');
+        $destino->lugar_entrega = $request->get('lugar_entrega');
+        $destino->dias = $request->get('dias');
+        if ($request->hasFile('archivo_dias')) {
+            // Guarda en storage/app/public/destinos
+            $rutaArchivo = $request->file('archivo_dias')->store('destinos', 'public');
+            $destino->archivo_dias = $rutaArchivo;
+        }
+
+        $destino->save();
+        
+        $rutas = Rutas::all();
+        //$destinos = Destino::all();
+        $destinos = Destino::with('ruta')
+        
+        ->orderBy('created_at', 'desc')
+        ->get();
+        return view('configuraciones.destinos', compact('rutas', 'destinos'));
+    }
+    public function eliminardestino($id)
+    {
+        Destino::find($id)->delete();
+        return redirect()->back();
+    }
+       
+
+
 
 
 }
