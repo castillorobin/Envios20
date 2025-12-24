@@ -19,11 +19,7 @@ class RutaController extends Controller
         $rutas = Rutas::all();
         return view('ruta.ajustes', compact('rutas'));
     }
-    public function destinos()
-    {
-        $rutas = Rutas::all();
-        return view('configuraciones.destinos', compact('rutas'));
-    }
+    
 
     public function agregar(Request $request)
     {
@@ -167,6 +163,17 @@ class RutaController extends Controller
     {
         Rutas::find($id)->delete();
         return redirect()->back();
+    }
+
+    public function destinos()
+    {
+        $rutas = Rutas::all();
+        //$destinos = Destino::all();
+        $destinos = Destino::with('ruta')
+        
+        ->orderBy('created_at', 'desc')
+        ->get();
+        return view('configuraciones.destinos', compact('rutas', 'destinos'));
     }
 
 

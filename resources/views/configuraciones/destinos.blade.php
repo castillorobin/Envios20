@@ -301,7 +301,7 @@
                                             <!--begin::Heading-->
                                             <div class="row mb-7">
                                                 <div class="col-md-9 offset-md-3">
-                                                    <h2>Listado de rutas</h2>
+                                                    <h2>Listado de destinos</h2>
                                                 </div>
                                             </div>
                                             <!--end::Heading-->
@@ -312,11 +312,11 @@
                                         <thead>
                                             <tr class="text-start text-gray-400 fw-bold fs-7 text-uppercase gs-0">
                                                 <th class="min-w-100px">ID</th>
-                                                <th class="min-w-50px">Zona</th>
-                                                <th class="min-w-50px">Ruta</th>
-                                                <th class="min-w-50px"># Ruta</th>
                                                 <th class="min-w-50px">Punto</th>
-                                                <th class="min-w-50px"># Punto</th>
+                                                <th class="min-w-50px">Llegada</th>
+                                                <th class="min-w-50px">Retirada</th>
+                                                <th class="min-w-50px">Lugar de entrega</th>
+                                                <th class="min-w-50px">Dias de entrega</th>
                                                 <th class="min-w-100px">Acción</th>
 
                                               
@@ -324,15 +324,15 @@
                                             </tr>
                                         </thead>
                                         <tbody class="fw-semibold ">
-                                            @foreach ($rutas as $ruta) 
+                                            @foreach ($destinos as $ruta) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
                                                 <td> #{{$ruta->id}}</td>
-                                                <td>{{ $ruta->zona }}</td>
-                                                <td>{{$ruta->ruta}}</td>
-                                                <td>{{$ruta->nruta}}</td>
-                                                <td>{{$ruta->punto}}</td>
-                                                <td>{{$ruta->nfijo}}</td>
-                                               
+                                                <td>{{  mb_strtolower($ruta->ruta->punto ?? '', 'UTF-8') }}</td>
+                                                <td>{{$ruta->hora_llegada_hm}}</td>
+                                                <td>{{$ruta->hora_retirada_hm}}</td>
+                                                <td>{{$ruta->lugar_entrega}}</td>
+                                                <td>{{$ruta->dias}}</td>
+
                                                 <td>
                                                     <a href="/ruta/editar/{{$ruta->id}}">
                                                 <button type="button" class="btn btn-warning">Editar</button></a>
