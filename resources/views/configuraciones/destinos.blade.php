@@ -334,9 +334,9 @@
                                                 <td>{{$ruta->dias}}</td>
 
                                                 <td>
-                                                    <a href="/ruta/editar/{{$ruta->id}}">
+                                                    <a href="/ruta/edita/{{$ruta->id}}">
                                                 <button type="button" class="btn btn-warning">Editar</button></a>
-                                                <a href="/ruta/eliminar/{{$ruta->id}}">
+                                                <a href="/ruta/elimina/{{$ruta->id}}">
                                                 <button type="button" class="btn btn-danger">Eliminar</button></a>
                                             </td>
                                                 
