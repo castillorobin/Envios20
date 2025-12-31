@@ -326,7 +326,7 @@ if (searchText == "") {
                                                 <th class="min-w-50px">Fecha de cobro</th>
                                                 
                                                 <th class="min-w-50px">Nota</th>
-                                                <th class="min-w-50px">Estado</th>
+                                                <th class="min-w-50px text-center">Estado</th>
                                                
                                                 
                                                 
