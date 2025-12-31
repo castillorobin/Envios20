@@ -8,6 +8,7 @@ use App\Models\Rutas;
 use App\Models\Agencia;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Destino;
+use App\Models\Solicitud;
 
 class RutaController extends Controller
 {
@@ -244,6 +245,18 @@ class RutaController extends Controller
     {
         Destino::find($id)->delete();
         return redirect()->back();
+    }
+
+    public function solicitudpago()
+    {
+
+        $solicitudes = Solicitud::with('ruta')
+        
+        ->orderBy('created_at', 'desc')
+        ->get();
+
+       
+        return view('envios.solicitudpago', compact('solicitudes'));
     }
        
 

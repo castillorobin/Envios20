@@ -292,6 +292,14 @@
         <span class="menu-title">Estado de tickets</span>
       </a>
     </div>
+    <div class="menu-item">
+      <a class="menu-link {{ request()->is('envios/solicitudpago') ? 'active' : '' }}" href="{{ url('/envios/solicitudpago') }}">
+        <span class="menu-bullet"><span class="bullet bullet-dot"></span></span>
+        <span class="menu-title">Solicitud de pago</span>
+      </a>
+    </div>
+
+
   </div>
 </div>
 
