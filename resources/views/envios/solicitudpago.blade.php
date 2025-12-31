@@ -335,9 +335,12 @@ if (searchText == "") {
                                         <tbody class="fw-semibold  text-gray-400">
                                             @foreach ($solicitudes as $ticket) 
                                             <tr class="'table-row-gray' : 'table-row-white' ">
-                                                <td> <a href="/envios/lisdopagosdatosticket/{{$ticket->id}}" class="btn-guias">
-                                                    <button class="btn btn-active-light-secondary edit btn-guias" value="{{$ticket->id}}" id="kt_drawer_example_basic_button" ># {{$ticket->ticket_id}}</button>
-                                                    </a>
+                                                <td> 
+                                                    <form action="/pago/conticket" id="kt_invoice_form" method="POST"> 
+                            @csrf
+                            @method('GET')
+                                                    <button class="btn btn-active-light-secondary edit btn-guias" value="{{$ticket->ticket_id}}" id="kt_drawer_example_basic_button" name="ticket"># {{$ticket->ticket_id}}</button>
+                                                    </form>
                                                     </td>
                                                 <td>{{$ticket->comercio}}</td> 
                                                 <td>{{$ticket->tipo_lugar}}</td>
