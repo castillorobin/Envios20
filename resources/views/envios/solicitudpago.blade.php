@@ -356,7 +356,13 @@ if (searchText == "") {
                                                 </td>
                                                 <td>{{$ticket->fecha_cobro}}</td>
                                                  <td>{{$ticket->nota}}</td>  
-                                                <td>{{$ticket->estado}}</td>
+                                                <td class="text-center">
+                                                     @if( $ticket->estado == 'Pendiente')
+                                                    <span class="badge badge-danger">{{ $ticket->estado }}</span>
+                                                 @else 
+                                                    <span class="badge badge-success">{{ $ticket->estado}}</span>
+                                                    @endif
+                                                </td>
                                                
                                            
                                             
